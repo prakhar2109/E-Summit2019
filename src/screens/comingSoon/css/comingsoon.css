@@ -131,7 +131,7 @@ body{
 }
 .contactUs{
 
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-bottom: 0%;
   font-weight: 300;
   padding: 0px;
@@ -140,32 +140,30 @@ body{
   -webkit-text-fill-color: transparent;
 }
 #right p{
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
   margin-top: 5%;
 }
 
-.form{
-  margin-top: 13%;
+.form{ 
   background-color: white;
   height: 80%;
   width: 60%;
-  margin-left: 20%;
   border-radius: 2%;
-
-  padding: 44px 49px 41px 49px;
+  margin : 6.25rem 8.0625rem 6.375rem 10rem ;
+  padding: 2.75rem 3.0625rem 2.5625rem 3.0625rem;
 }
 .formAlerts{
   margin-top: 0px;
   color: green;
   display: none;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .formErrors{
   margin-top: 0px;
   color: red;
   font-weight: 600;
-  font-size: 10;
+  font-size: 0.625rem;
 }
 .line{
   margin-top: 3%;
@@ -177,7 +175,7 @@ body{
   margin-left: 10%;
   width: 80%;
   margin-top: 10%;
-  box-shadow: 5px;
+  box-shadow: 0.3125rem;
   border: 0px;
   border-bottom: 3px solid #E67D82;
 
@@ -185,23 +183,23 @@ body{
 #submitBtn{
     font-family: 'SF Compact Display Thin';
     font-weight: 600;
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 #registerPhone{
   margin-left: 10%;
   width: 80%;
   margin-top: 15%;
-  box-shadow: 5px;
+  box-shadow: 0.3125rem;
   border: 0px;
-  border-bottom: 3px solid #E67D82; 
+  border-bottom: 0.1875rem solid #E67D82; 
 }
 #registerEmail{
   margin-left: 10%;
   width: 80%;
-  box-shadow: 5px;
+  box-shadow: 0.3125rem;
   border: 0px;
   margin-top: 15%;
-  border-bottom: 3px solid #E67D82;
+  border-bottom: 0.1875rem solid #E67D82;
 }
 #registerCity{
   margin-left: 10%;
@@ -209,7 +207,7 @@ body{
   box-shadow: 5px;
   margin-top: 15%;
   border: 0px;
-  border-bottom: 3px solid #E67D82;
+  border-bottom: 0.1875rem solid #E67D82;
   margin-bottom: 0%;
 }
 #registerDropDown{
@@ -218,7 +216,7 @@ body{
   width: 80%;
   box-shadow: 5px;
   border: 0px;
-  border-bottom: 3px solid #E67D82;
+  border-bottom: 0.1875rem solid #E67D82;
 }
 #main-container
 {
