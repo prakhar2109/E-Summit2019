@@ -107,7 +107,7 @@ class ComingSoon extends Component {
             <p className='comingsoon'>COMING SOON</p>
             <p className='staytuned'><strong>Stay tuned for more updates!</strong></p>
             <p className='staytuned'><strong>and till then, check out our new website</strong></p>
-            <button className='e-cellWeb'>E-cell Website</button>
+             <a href ="http://ecelliitr.org/"> <button className='e-cellWeb'>E-cell Website</button></a>
             <div className='contacts'>
               <p className='contactUs'><strong>Contact Us</strong></p>
               <p>
