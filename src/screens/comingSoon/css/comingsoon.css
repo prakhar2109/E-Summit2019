@@ -152,7 +152,7 @@ body{
   height: 70%;
   width: 60%;
   border-radius: 2%;
-  margin : 9.5rem 8.0625rem 6.375rem 10rem ;
+  margin : 9.5rem auto 6.375rem auto ;
   padding: 2.75rem 3.0625rem 2.5625rem 3.0625rem;
 }
 .formAlerts{
