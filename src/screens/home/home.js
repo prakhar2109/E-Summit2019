@@ -29,15 +29,15 @@ export default class ComingSoon extends Component {
 
                         <div className = "space"></div>
 
-                                <span>
+                                <span className = "phone">
                                     <img src = {phone} alt ="phone"></img>
                                 </span>
 
-                                <span>
+                                <span className = "phone_no">
                                     +91 8888 888 88
                                 </span>
 
-                                <span>
+                                <span className = "phone">
                                     <img src = {phone} alt ="phone"></img>
                                 </span>
 

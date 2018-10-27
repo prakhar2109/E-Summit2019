@@ -1,13 +1,19 @@
 @mixin desktop {
+    @media(max-width: 1100px)
+    {
+        @content;
+    }
+    
+}
+@mixin desktop3 {
     @media(max-width: 1400px)
     {
         @content;
     }
     
 }
-
 @mixin desktop2 {
-    @media(max-width: 600px)
+    @media(max-width: 640px)
     {
         @content;
     }
@@ -24,6 +30,10 @@
         display: block;
       }
 
+    @include desktop3{
+        grid-template-columns: 60% 40%;
+    }
+
 
     .Part1{
         background-color: white;
@@ -31,29 +41,32 @@
         padding: 0 9rem 0 8.75rem;
 
         @include desktop{
-            padding : 1rem;
+            padding : 2rem;
             height:auto;
             width:100%;
           }
     
 
         img{
-            width: 39.81rem;
-
+            width: 39.8125rem;
             @include desktop{
               
                 width:100%;
               }
+
+            @include desktop3{
+                width: 30rem;
+            }
         }
 
         div{
              
-            font-size: 1.75em;
+            line-height: 39px;
+            font-size: 28px;
             text-align: center;
             letter-spacing: 0.09em;
-            text-align: justify;
             color: rgba(0, 0, 0, 0.45);
-            
+            text-align: justify;
         }
 
         button{
@@ -69,10 +82,9 @@
         }
 
         span{     
-            margin: 0;
+        
             padding: 0; 
             
-           
             img{
                width: 2.125rem;
                height: 2.125rem;
@@ -81,13 +93,9 @@
             }
         }
 
-        span:nth-child(2n ){
-            margin-right: 2.0625rem;
-        }
+        
 
-        span:nth-child(2n -1){
-            margin-right: 5.625rem;
-        }
+       
 
     }
    
@@ -108,10 +116,9 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    min-height: 95vh;
+    min-height: 54rem;
     border: none !important;
     border-radius: none !important;
-    
     display: grid;
     grid-template-rows: auto;
     justify-items: center;
@@ -186,6 +193,13 @@
             @include desktop2{
                 width:70vw;
                }
+               @include desktop3{
+                width: 20rem;
+               }
+
+               @include desktop{
+                width: 24.25rem !important;
+               }
             
         }
         
@@ -200,6 +214,12 @@
 
             @include desktop2{
                 width:70vw;
+               }
+               @include desktop3{
+                width: 20rem;
+               }
+               @include desktop{
+                width: 24.26rem !important; 
                }
         }
         button{
@@ -216,9 +236,24 @@
             @include desktop2{
                 width:70vw;
                }
+               @include desktop3{
+                width: 20rem;
+               }
+               @include desktop{
+                width: 24.25rem !important;
+               }
         }
       
     }
         
     
+}
+
+
+.phone{
+    margin-right: 2.2rem;
+}
+
+.phone_no{
+    margin-right :5.5225rem;
 }
