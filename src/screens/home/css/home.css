@@ -1,1 +1,203 @@
-/* No CSS *//*# sourceMappingURL=home.css.map */
+.main_conta {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65% 35%;
+  grid-template-columns: 65% 35%;
+  width: 100%;
+}
+
+@media (max-width: 1400px) {
+  .main_conta {
+    display: block;
+  }
+}
+
+.main_conta .Part1 {
+  background-color: white;
+  height: 100vh;
+  padding: 0 9rem 0 8.75rem;
+}
+
+@media (max-width: 1400px) {
+  .main_conta .Part1 {
+    padding: 1rem;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.main_conta .Part1 img {
+  width: 39.81rem;
+}
+
+@media (max-width: 1400px) {
+  .main_conta .Part1 img {
+    width: 100%;
+  }
+}
+
+.main_conta .Part1 div {
+  font-size: 1.75em;
+  text-align: center;
+  letter-spacing: 0.09em;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.main_conta .Part1 button {
+  margin: 2.1875rem;
+  height: 4rem;
+  width: 11.75rem;
+  border: 0.125rem solid #3A667B;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  text-align: center;
+  letter-spacing: 0.09em;
+  color: #3A667B;
+}
+
+.main_conta .Part1 span {
+  margin: 0;
+  padding: 0;
+}
+
+.main_conta .Part1 span img {
+  width: 2.125rem;
+  height: 2.125rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main_conta .Part1 span:nth-child(2n) {
+  margin-right: 2.0625rem;
+}
+
+.main_conta .Part1 span:nth-child(2n -1) {
+  margin-right: 5.625rem;
+}
+
+.space {
+  min-height: 11.875rem;
+}
+
+.form {
+  background: #F39423;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 95vh;
+  border: none !important;
+  border-radius: none !important;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1400px) {
+  .form {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+.form form {
+  background-color: white;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  padding: 3rem;
+}
+
+@media (max-width: 1400px) {
+  .form form {
+    padding: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .form form {
+    padding: 1.5rem;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+}
+
+.form form p {
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: #21526B;
+}
+
+.form form hr {
+  width: 3.5rem;
+  height: 0.1875rem;
+  background: #F39423;
+}
+
+.form form label {
+  line-height: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: #9B9B9B;
+  display: block;
+  margin-top: 3rem;
+}
+
+.form form input {
+  border-bottom: 1px solid #4F4F4F;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 24.25rem;
+}
+
+@media (max-width: 600px) {
+  .form form input {
+    width: 70vw;
+  }
+}
+
+.form form input:focus {
+  border-bottom: 1px solid #4F4F4F;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 24.25rem;
+}
+
+@media (max-width: 600px) {
+  .form form input:focus {
+    width: 70vw;
+  }
+}
+
+.form form button {
+  background: #F39423;
+  border-radius: 4px;
+  width: 24.25rem;
+  height: 4rem;
+  display: block;
+  border: none;
+  margin-top: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .form form button {
+    width: 70vw;
+  }
+}
+/*# sourceMappingURL=home.css.map */

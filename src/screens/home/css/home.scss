@@ -1,0 +1,224 @@
+@mixin desktop {
+    @media(max-width: 1400px)
+    {
+        @content;
+    }
+    
+}
+
+@mixin desktop2 {
+    @media(max-width: 600px)
+    {
+        @content;
+    }
+    
+}
+
+
+.main_conta{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    width:100%;
+
+    @include desktop{
+        display: block;
+      }
+
+
+    .Part1{
+        background-color: white;
+        height:100vh;
+        padding: 0 9rem 0 8.75rem;
+
+        @include desktop{
+            padding : 1rem;
+            height:auto;
+            width:100%;
+          }
+    
+
+        img{
+            width: 39.81rem;
+
+            @include desktop{
+              
+                width:100%;
+              }
+        }
+
+        div{
+             
+            font-size: 1.75em;
+            text-align: center;
+            letter-spacing: 0.09em;
+            text-align: justify;
+            color: rgba(0, 0, 0, 0.45);
+            
+        }
+
+        button{
+            margin:2.1875rem;
+            height: 4rem;
+            width: 11.75rem;
+            border: 0.125rem solid #3A667B;
+            box-sizing: border-box;
+            background-color: white;
+            text-align: center;
+            letter-spacing: 0.09em;
+            color: #3A667B;
+        }
+
+        span{     
+            margin: 0;
+            padding: 0; 
+            
+           
+            img{
+               width: 2.125rem;
+               height: 2.125rem;
+               margin: 0;
+               padding: 0;
+            }
+        }
+
+        span:nth-child(2n ){
+            margin-right: 2.0625rem;
+        }
+
+        span:nth-child(2n -1){
+            margin-right: 5.625rem;
+        }
+
+    }
+   
+
+}
+
+.space{
+    min-height: 11.875rem;
+
+
+     
+}
+ 
+
+
+.form{
+    background: #F39423;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 95vh;
+    border: none !important;
+    border-radius: none !important;
+    
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+
+    @include desktop{
+       height: auto;
+       min-height: 100vh;
+      }
+
+    
+
+  
+    form{
+        background-color: white;
+        background: #FFFFFF;
+        box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+        border-radius: 1.5rem;
+        padding:3rem;
+
+        @include desktop{
+            
+            padding:2.5rem;
+            margin-top: 2.5rem;
+            margin-bottom:2.5rem;
+           }
+
+           @include desktop2{
+            
+            padding:1.5rem;
+            margin-top: 1.25rem !important;
+            margin-bottom:1.25rem !important ;
+           }
+        
+
+      
+
+        p{
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            font-size: 1.5rem;
+            letter-spacing: 0.06em;
+           
+            color: #21526B;
+        }
+
+        hr{
+            width: 3.5rem;
+            height: 0.1875rem;
+            background: #F39423;
+        }
+
+        label{
+            line-height: normal;
+            font-size: 1.25rem;
+            letter-spacing: 0.06em;
+            color: #9B9B9B;
+            display: block;
+            margin-top: 3rem;
+        }
+
+        input{
+           
+            border-bottom:  1px solid #4F4F4F;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            width: 24.25rem;
+
+
+            @include desktop2{
+                width:70vw;
+               }
+            
+        }
+        
+
+        input:focus{
+           
+            border-bottom:  1px solid #4F4F4F;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            width: 24.25rem;
+
+            @include desktop2{
+                width:70vw;
+               }
+        }
+        button{
+            background: #F39423;
+            border-radius: 4px;
+            width: 24.25rem;
+            height: 4rem;
+            display: block;
+            border:none;
+            margin-top: 3rem;
+            color:white;
+            cursor: pointer;
+
+            @include desktop2{
+                width:70vw;
+               }
+        }
+      
+    }
+        
+    
+}
