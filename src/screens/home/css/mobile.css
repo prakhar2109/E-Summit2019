@@ -1,0 +1,161 @@
+.main_conta {
+  width: 100%;
+}
+
+.main_conta .Part1 {
+  background-color: white;
+  margin-top: 0.5rem;
+}
+
+.main_conta .Part1 img {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.main_conta .Part1 .text {
+  font-size: 1.74rem;
+  text-align: center;
+  letter-spacing: 0.09em;
+  color: rgba(0, 0, 0, 0.45);
+  text-align: justify;
+  margin: 0 1rem 0 1rem;
+}
+
+.main_conta .Part1 button {
+  margin: 3.4375rem;
+  height: 3.9rem;
+  width: 11.75rem;
+  border: 0.125rem solid #3A667B;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  line-height: 1.5625rem;
+  font-size: 1.25rem;
+  text-align: center;
+  letter-spacing: 0.09em;
+  color: #3A667B;
+  cursor: pointer;
+}
+
+.main_conta .Part1 span {
+  padding: 0;
+}
+
+.main_conta .Part1 span img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main_conta .Part1 .social {
+  font-size: 2rem;
+  padding: 1rem 0 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: center;
+}
+
+.main_conta .Part1 .social i {
+  padding: 0.9375rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: white;
+  border-radius: 50%;
+  display: inline;
+  margin: 1rem 2rem 1rem 2rem;
+  background: rgba(26, 77, 102, 0.86);
+}
+
+.main_conta .Part1 .social .fa-facebook-f {
+  padding: 0.9375rem 1.4rem 0.9375rem 1.4rem;
+}
+
+.main_conta .Part1 .social br {
+  height: 0rem;
+}
+
+.form {
+  background: #F39423;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form form {
+  -webkit-box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  margin: 3rem 0 3rem  0;
+  background: white;
+  padding: 2rem;
+}
+
+.form form p {
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: #21526B;
+}
+
+.form form hr {
+  width: 3.5rem;
+  height: 0.1875rem;
+  background: #F39423;
+}
+
+.form form label {
+  line-height: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: #9B9B9B;
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.form form input {
+  border-bottom: 1px solid #4F4F4F;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 70vw;
+}
+
+.form form button {
+  background: #F39423;
+  border-radius: 4px;
+  width: 70vw;
+  height: 4rem;
+  display: block;
+  border: none;
+  margin-top: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+.contact {
+  margin: 2rem 0 2rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: center;
+}
+
+.contact .phone {
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=mobile.css.map */

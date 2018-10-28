@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./css/home.css";
+import "./css/main.css";
 import  logo from "./static/logo-18.svg"
 import phone from "./static/Group.svg"
 
@@ -17,7 +17,7 @@ export default class ComingSoon extends Component {
                     <center>
                         <img src = {logo} alt = "logo"></img>
 
-                        <div>
+                        <div className ="text">
                             At esummit, we believe everyone deserves to have a website or online store. Innovation and simplicity makes us happy: our goal is to remove any technical or financial barriers that can prevent business owners from making their own website. We're excited to help you on your journey!
                         </div>
 
@@ -25,10 +25,18 @@ export default class ComingSoon extends Component {
                             Know More 
                         </button>
 
-                        <br />
+                    </center>
 
-                        <div className = "space"></div>
+                                <div class = "social">
+                                    <span>
+                                    <i class="fab fa-twitter"></i>  
+                                    <i class="fab fa-facebook-f"></i> 
+                                    <i class="fab fa-instagram"></i> 
+                                    </span>
+                                </div>
+                     <center className  ="contact">
 
+                            <span>
                                 <span className = "phone">
                                     <img src = {phone} alt ="phone"></img>
                                 </span>
@@ -36,14 +44,17 @@ export default class ComingSoon extends Component {
                                 <span className = "phone_no">
                                     +91 8888 888 88
                                 </span>
+                            </span>
 
+                            <span>
                                 <span className = "phone">
                                     <img src = {phone} alt ="phone"></img>
                                 </span>
 
-                                <span>
+                                <span className = "email">
                                 esummit18@gmail.com
                                 </span>
+                            </span>
 
 
                       

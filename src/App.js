@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import ComingSoon from './screens/comingSoon/js/comingsoon';
+ 
 import HomePage from "./screens/home/home";
+import Header from "./screens/header/header"
 class App extends Component{
   render(){
     return(
-      
-      < HomePage />
+
+      <div>
+          <Header />
+          < HomePage />
+      </div>
       )
   }
 }
