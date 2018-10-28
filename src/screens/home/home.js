@@ -27,11 +27,11 @@ export default class ComingSoon extends Component {
 
                     </center>
 
-                                <div class = "social">
+                                <div className = "social">
                                     <span>
-                                    <i class="fab fa-twitter"></i>  
-                                    <i class="fab fa-facebook-f"></i> 
-                                    <i class="fab fa-instagram"></i> 
+                                    <i className="fab fa-twitter"></i>  
+                                    <i className="fab fa-facebook-f"></i> 
+                                    <i className="fab fa-instagram"></i> 
                                     </span>
                                 </div>
                      <center className  ="contact">
@@ -52,7 +52,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "email">
-                                esummit18@gmail.com
+                                <a href ="mailto:esummit18@gmail.com"> esummit18@gmail.com</a>
                                 </span>
                             </span>
 
@@ -83,7 +83,7 @@ export default class ComingSoon extends Component {
                            <input type = "text"></input>
 
                            <label>Phone</label>
-                           <input type = "text"></input>
+                           <input type = "number"></input>
 
                            <label>Email</label>
                            <input type = "email"></input>

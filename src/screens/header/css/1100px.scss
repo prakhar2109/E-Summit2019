@@ -4,28 +4,36 @@
     background: #FFFFFF;
     box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
     padding:  1.5625rem 0 1.5625rem 0 ;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+  
+    
 
     .ecell_logo{
-        margin-right: 30.125vw;
+       
         margin-left:4.125rem;
 
         img{
-           height:3.5rem;
+           height:3rem;
         }
 
     }
 
     .esummit_logo{
+         
         
-        margin-right: 12vw;
         img{
-        height:3.5rem;    
+        height:3.7rem;    
         }
  
        
 }
     
     .links{
+        float:right;
+        
         a{
             line-height: normal;
             font-size: 1.25rem;
@@ -40,5 +48,4 @@
     }
  
 }
-
  

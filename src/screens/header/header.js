@@ -5,25 +5,15 @@ import React, { Component } from 'react';
 import "./css/main.css";
 import ecell from "./static/image.svg"
 import esummit from "./static/esummit.png"
-import { Menu, Dropdown, Icon } from 'antd';
+ 
 
-
-const menu = (
-    <Menu>
-      <Menu.Item>
-        <a > Campus Ambassador </a>
-      </Menu.Item>
-  
-      <Menu.Item>
-        <a > Startup Ignite </a>
-      </Menu.Item>
-
-    </Menu>
-  );
+ 
 export default class ComingSoon extends Component {
     render () {
         return ( 
-            <div class ="header">
+            <div className ="header">
+
+ 
                 <span className = "ecell_logo">
                    <img src = {ecell} alt = "Ecell Logo" />
                </span>
@@ -41,11 +31,11 @@ export default class ComingSoon extends Component {
                <span className = "mobile_menu">
               
                   
-                        <i class="fas fa-bars"></i> 
+                        <i className="fas fa-bars"></i> 
                      
                </span>
 
-             
+            
             
                 
             </div>

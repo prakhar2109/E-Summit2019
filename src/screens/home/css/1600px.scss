@@ -4,6 +4,7 @@ body{
  
 .main_conta{
    
+    
     display: grid;
     grid-template-columns: 65% 35%;
     width:100%;
@@ -50,6 +51,11 @@ body{
         span{     
         
             padding: 0; 
+
+            a{
+                color:black;
+                text-decoration: none;
+            }
             
             img{
                width: 2rem;

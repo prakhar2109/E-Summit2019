@@ -51,6 +51,11 @@ body {
   padding: 0;
 }
 
+.main_conta .Part1 span a {
+  color: black;
+  text-decoration: none;
+}
+
 .main_conta .Part1 span img {
   width: 2rem;
   height: 2rem;

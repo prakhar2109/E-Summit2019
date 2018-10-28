@@ -3,23 +3,31 @@
   -webkit-box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
           box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
   padding: 1.5625rem 0 1.5625rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header .ecell_logo {
-  margin-right: 30.125vw;
   margin-left: 4.125rem;
 }
 
 .header .ecell_logo img {
-  height: 4.125rem;
-}
-
-.header .esummit_logo {
-  margin-right: 12.25vw;
+  height: 3.75rem;
 }
 
 .header .esummit_logo img {
-  height: 4.125rem;
+  height: 4.5rem;
+}
+
+.header .links {
+  float: right;
 }
 
 .header .links a {
