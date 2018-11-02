@@ -25,32 +25,33 @@ export default class ComingSoon extends Component {
                 </div>
             
 
-                <div className = "login_form">
-                        
-                        <span> <NavLink to = "/login">Sign In</NavLink></span>
-                        <span> Sign Up</span>
 
-                        
+                <div className="login_form">
 
-            
+                    <span> <NavLink to="/login">Sign In</NavLink></span>
+                    <span> <NavLink to="/register">Sign Up</NavLink></span>
+
+
                     <form >
 
-                        <label>EMAIL ID </label>
+                        <label>EMAIL </label>
 
-                        <input type = "email" ></input>
+                        <input type="email" ></input>
 
-                        <label>PASSWORD</label>
+                        <label>PASS</label>
 
-                        <input type = "passowrd" ></input>
+                        <input type="passowrd" ></input>
 
 
                     </form>
 
                     <br /> 
 
-                    <a href = "#">  Forgot password?</a>
+                    <a href="#">  Forgot password?</a>
 
                     <button > SIGN IN </button>
+
+
 
 
                 </div>
