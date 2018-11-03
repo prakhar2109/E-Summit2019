@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
- 
+import  {NavLink} from "react-router-dom"
 
 import "./css/main.css";
 import ecell from "./static/image.svg"
@@ -19,11 +19,11 @@ export default class ComingSoon extends Component {
                </span>
 
                <span className = "esummit_logo">
-                    <img src = {esummit} alt = "Esummit Logo" />
+                   <NavLink to = "/"> <img src = {esummit} alt = "Esummit Logo" /></NavLink>
                </span>
 
                <span className = "links">
-               <a href = "#"> Campus Ambassador</a>
+                    <NavLink to = "/login"> Campus Ambassador</NavLink>
                <a href = "#"> Startup Ignite</a>
                
                </span>
