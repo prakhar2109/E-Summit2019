@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+ import React,{Component} from 'react'
 import './../css/tasks.css'
 import Dropzone from 'react-dropzone' 
 export default class tasksnew extends Component{
