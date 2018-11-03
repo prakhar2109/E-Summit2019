@@ -1,0 +1,211 @@
+.campusAmb-leader-indexMain
+{
+    height:100vh;
+    width: 80.83vw;
+    background-color:#E5E5E5;
+   
+}
+.campusAmb-leader-parent-maintable{
+    background-color:white;
+    width: 76.83vw;
+    height:85vh;
+    margin-right: auto;
+    margin-left: auto;
+}
+.campusAmb-leader-maintable
+{
+    width:100%;
+    float:right;
+}
+.campusAmb-heading-content{
+    font-size: 14px;
+    color: rgba(130, 130, 130, 0.93);
+
+}
+.campusAmb-heading{
+    padding: 27px;
+    display: flex;
+}
+.hline {
+     width:92%;
+     height:1px;  
+     border: 1px solid #cdcbcb;
+     margin-top: 8px;
+     margin-left: 30px;
+    }
+.campusAmb-leader-heading th:nth-child(1){
+    width: 15%;
+    padding-left: 5vw;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.campusAmb-leader-heading th:nth-child(2){
+    width: 24%;
+    padding-left:12vw;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.campusAmb-leader-heading th:nth-child(3){
+    width: 45%;
+    padding-left: 10vw;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.campusAmb-leader-heading th:nth-child(4){
+    width: 17.5%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.campusAmb-leader-rank th:nth-child(1){
+    width: 15%;
+}
+.campusAmb-leader-rank th:nth-child(2){
+    text-transform: capitalize;
+    width: 24%;
+}
+.campusAmb-leader-rank th:nth-child(3){
+    width: 45%;
+}
+.campusAmb-leader-rank th:nth-child(4){
+    width: 17.5%;
+}
+.campusAmb-leader-desktop-name{
+    text-transform: capitalize;
+}
+.campusAmb-leader-heading > th,td {
+    padding: 10px;
+    text-align: left;
+    word-wrap:break-word;
+}
+.campusAmb-leader-heading > th{
+    border-bottom:1px solid rgba(223, 223, 223, 0.59);
+    word-wrap:break-word;
+}
+.campusAmb-leader-user-table >td
+{
+    padding: 20px;
+    text-align: left;
+    word-wrap:break-word;
+}
+.campusAmb-leader-rank{
+    padding-top:20px; 
+}
+.campusAmb-leader-rank >th
+{
+    padding:10px 10px;
+    text-align:left;
+    word-wrap:break-word;
+}
+.campusAmb-leader-rank-child >td
+{
+    padding:20px;
+    text-align:left;
+    word-wrap:break-word;
+}
+.campusAmb-leader-rank
+{
+    border-top:1px solid white;
+}
+.campusAmb-leader-rank-mobile> tr
+{
+   padding:0px;
+   text-align:left;
+
+}
+.ownrank
+{
+    position:fixed;
+    bottom:0px;
+    border-bottom:none;
+    width:80%;
+}
+.campusAmb-leaderboard-table {
+    border-collapse: collapse;
+    border-spacing:0px;
+    width: 100%;
+    font-weight: bold;
+    font-family: Montserrat ;
+    font-size: 10px;
+    color:rgba(79, 79, 79, 0.44);
+    table-layout:fixed;
+}
+@media only screen and (max-width: 768px) {
+    .campusAmb-leader-indexMain{
+        width: calc(100% - 56px);
+    }
+    .campusAmb-leader-maintable
+    {
+        width: 100%;
+    }
+    .campusAmb-leader-maintable
+    {
+        overflow-x:hidden;
+    }
+    .campusAmb-leader-arrow
+    {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+    .campusAmb-leader-downarrows
+    {
+        position:relative;
+    }
+    .campusAmb-leader-downarrows::after
+    {
+        content:"";
+        background:url('./img/arrow.svg') no-repeat;
+        background-size: 10px 20px;
+        display:inline-block;
+        width:20px;
+        height:20px;
+        position:absolute;
+        left:78%;
+        top:0%;
+
+    }  
+    .campusAmb-leader-mobile
+    {
+        display:none;
+    }
+    .campusAmb-leader-heading > th,td {
+        padding: 5px;
+        text-align: left;
+    }
+    .campusAmb-leader-desktop
+    {
+        padding:5px;
+    }
+    .campusAmb-leader-rank>th
+    {
+        padding:5px;
+    }
+    .campusAmb-leader-heading th:nth-child(1){
+        width: 15%;
+    }
+    .campusAmb-leader-heading th:nth-child(2){
+        width: 24%;
+    }
+    .campusAmb-leader-heading th:nth-child(3){
+        width: 45%;
+    }
+    .campusAmb-leader-heading th:nth-child(4){
+        width: 17.5%;
+    }
+    .campusAmb-leader-rank th:nth-child(1){
+        width: 15%;
+    }
+    .campusAmb-leader-rank th:nth-child(2){
+        width: 24%;
+        text-transform: capitalize;
+    }
+    .campusAmb-leader-rank th:nth-child(3){
+        width: 45%;
+    }
+    .campusAmb-leader-rank th:nth-child(4){
+        width: 17.5%;
+    }
+}

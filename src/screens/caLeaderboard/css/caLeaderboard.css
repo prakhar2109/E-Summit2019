@@ -1,0 +1,110 @@
+#container{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 0px;
+    padding:0px;
+    height: 100%;
+    width: 100%;
+}
+#leftPane{
+    max-width: 18%;
+    background-color: white;
+    padding-bottom: 3.5%;
+    height: 100%;
+    width: 18%;
+    /* display: inline; */
+    
+}
+img{
+    max-width: 100%;
+    padding: 0%;
+    margin: 0%;
+    margin-right: 20%;
+}
+#line1{
+    margin-top: 0%;
+    margin-left: 6%;
+    margin-right: 6%;
+    color: #F2F2F2;
+    height: 2px;
+    margin-bottom: 0%;
+}
+#viewProfile{
+    padding: 0%;
+    color: #F39423 !important;
+    margin-left: 60%;
+    margin-right: 8%;
+    font-size:60%;
+}
+#dropShape{
+   
+    margin-top:10%; 
+    margin-left: 40%;
+    background-color: #F39423;
+    color: white;
+    max-width: 25%;
+    max-height: 20%;
+    padding-left: 7%;
+    padding-top: 1.5%;
+    font-size: 2.4vw;
+    font-weight: 500;
+    /* height: 20%; */
+    border-top-left-radius: 6%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+#name{
+    padding-top: 10%;
+    text-align: center;
+    font-weight: 500;
+}
+#scoreWritten{
+    font-size: 85%;
+    color: rgba(79, 79, 79, 0.44);
+    margin-left: 5%;
+}
+
+#scoreValue{
+    float: right;
+    margin-right: 5%;
+}
+.progress{
+    margin-top: 5%;
+    margin-left: 4%;
+    width: 92%;
+    height: 5px !important;
+    
+}
+
+.bg-custom{
+    background-color: #F39423 !important;
+
+}
+#optionsToggle{
+    display: block;
+    text-align: left;
+    margin-top: 20%;
+    margin-left: 5%;
+    font-size: 112%;
+    max-width: 92%;
+    line-height: 300%;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-bottom: 90%;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-style: solid; 
+    max-height: 50vh;
+    height: 50vh;    
+
+}
+#rightPane{
+    display: inline;   
+}
+#tasksButton{
+    color: #333333;
+}
+#leaderboardButton{
+    color: rgba(189, 189, 189, 0.55);
+}
