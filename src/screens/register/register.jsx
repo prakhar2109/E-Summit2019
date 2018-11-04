@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import './register.css';
+import Footer  from "../footer/footer";
 import { NavLink } from "react-router-dom"
 
 
@@ -9,9 +10,9 @@ export default class ComingSoon extends Component {
     render() {
         return (
 
-            <div className="login_main">
+            <div className="register_main">
 
-                <div className="login_text">
+                <div className="register_text">
 
                     <span> CAMPUS AMBASSADOR</span>
 
@@ -24,7 +25,7 @@ export default class ComingSoon extends Component {
                 </div>
 
 
-                <div className="login_form">
+                <div className="register_form">
 
                     <span> <NavLink to="/login">Sign In</NavLink></span>
                     <span> <NavLink to="/register">Sign Up</NavLink></span>
@@ -82,7 +83,7 @@ export default class ComingSoon extends Component {
 
 
                 </div>
-
+                <Footer/>
 
 
 
