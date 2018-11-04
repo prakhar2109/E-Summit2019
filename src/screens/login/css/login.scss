@@ -6,6 +6,16 @@
     
 }
 
+@mixin hd {
+    @media(max-height:900px)
+    {
+        @content;
+    }
+    
+}
+
+
+
 .login_main{
 
     display: grid;
@@ -21,11 +31,8 @@
 
     .login_text{
 
-        display: grid;
-   
-        justify-items: center;
-
-        height:90%;
+  
+  
 
 
         span{
@@ -34,68 +41,50 @@
 
         span:first-child{
 
-            margin-top:11.5rem;
+            margin-top:10vh;
             line-height: normal;
             font-size: 3rem;
             text-align: center;
             letter-spacing: 0.06em;
             color: #1A4D66;
+       
 
 
             @include desktop{
             
-              margin-top:30px;
-              font-size: 24px;
+              margin-top:1.875rem;
+              font-size: 1.5rem;
             }
+
+          
         }
 
 
         span:nth-child(2){
-            margin: 4rem;
+            margin: 6vh 4rem 6vh 4rem ;
             line-height: 2.3125rem;
             font-size: 1.75rem;
             text-align: justify;
             letter-spacing: 0.06em;
             color: #1A4D66;
 
+            @include hd{
+                font-size: 1.5rem;
+                line-height: normal;
+            }
+
             @include desktop{
      
-                margin:32px 22px;
-                font-size: 14px;
-                line-height: 19px;
+                margin:2rem 1.375rem;
+                font-size: 0.875rem;
+                line-height: 1.1875rem;
             }
 
               
         }
 
 
-        span:nth-child(3){
-            line-height: normal;
-            font-size: 36px;
-            text-align: center;
-            letter-spacing: 0.06em;
-
-            color: #1A4D66;
-
-            @include desktop{
-                font-size: 16px;
-            }
-
-        }
-
-        button{
-            border: 0.125rem solid #3A667B;
-            box-sizing: border-box;
-            padding: 1.125rem 1.875rem;
-            line-height: 1.5625rem;
-            font-size: 1.25rem;
-            text-align: center;
-            letter-spacing: 0.09em;
-            background: none;
-            color: #3A667B;
-            margin-top: 24px;
-
-        }
+    
 
 
     }
@@ -105,6 +94,8 @@
         background: #1A4D66;
         padding:36px 100px ;
         height: 89vh;
+
+        min-height: 40rem;
 
         @include desktop{
             
