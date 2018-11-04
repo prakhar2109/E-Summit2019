@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
- 
 import HomePage from "./screens/home/home";
 import Header from "./screens/header/header";
 import Login from "./screens/login/login";
 import Register from "./screens/register/register";
 
 import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
-
 import { BrowserRouter as Router, Route,Switch} from "react-router-dom";
+import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 class App extends Component{
   render(){
     return(
