@@ -1,19 +1,19 @@
- import React,{Component} from 'react'
-import './../css/tasks.css'
+import React,{Component} from 'react'
+import './../css/task.css'
 import Dropzone from 'react-dropzone' 
-export default class tasksnew extends Component{
+export default class tasks extends Component{
     constructor(){
         super();
     }
     render(){
         return(
-            <React.Fragment>
+            
             <div className="task">
             <div className="taskItem">
-                Task 1
+                Task {this.props.number}
             </div>
             <div className="taskDescription">
-                Description about what is to be done in tasks
+                {this.props.tasks.description}
             </div>
             <Dropzone className="dropZone"
             onDrop={(files)=>{
@@ -40,7 +40,7 @@ export default class tasksnew extends Component{
             </div>
             </Dropzone>
             </div>
-            </React.Fragment>
+            
         )
     }
 }

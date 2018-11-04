@@ -3,7 +3,7 @@ import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css'
 
 
-import Task from "../../../components/js/pendingTasks"
+import Task from "../../../components/js/TaskIndex"
  
 import { NavLink } from 'react-router-dom'
 
