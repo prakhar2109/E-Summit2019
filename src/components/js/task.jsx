@@ -5,7 +5,8 @@ export default class tasks extends Component{
     constructor(){
         super();
         this.state={
-            fileCounter:0
+            fileCounter:0,
+            file:[]
         }
     }
 
