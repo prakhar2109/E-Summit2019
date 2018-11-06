@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HomePage from "./screens/home/home";
 import Header from "./screens/header/header";
 import Login from "./screens/login/login";
+import ignite from "./screens/ignite/ignite"
 
 import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route,Switch} from "react-router-dom";
@@ -12,11 +13,13 @@ class App extends Component{
       <Router>
       <div>
           
+          <Header />
            <Switch>
     
               <Route path = "/" component = {HomePage} exact  />
               <Route path = "/login" component = {Login} exact  />
-              <Route path = "/login/leaderboard" component = {LeaderBoard} exact  />
+              <Route path = "/login/leaderboard" component = {LeaderBoard}    />
+              <Route path = "/ignite" component = {ignite} />
 
             </Switch>
       </div>

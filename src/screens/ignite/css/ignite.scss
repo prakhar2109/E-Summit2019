@@ -1,3 +1,256 @@
-.ignite_main{
+@mixin hd {
+    @media(max-height:900px)
+    {
+        @content;
+    }
     
 }
+
+@mixin desktop {
+    @media(max-width:800px)
+    {
+        @content;
+    }
+    
+}
+
+
+.ignite_main{
+    height: 89vh;
+    width: 100vw;
+    display: grid;
+    min-height: 768px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    background: #1A4D66;
+
+    @include desktop{
+        min-height: 0px;
+    }
+
+    div{
+        color:white;
+    }
+    
+
+    div:first-child{
+        font-family: Proxima Nova;
+        line-height: normal;
+        font-size: 6rem;
+        text-align: center;
+        letter-spacing: 0.06em;
+
+        color: #FFFFFF;
+
+
+        @include desktop{
+            font-size: 24px;
+        }
+    }
+
+    div:nth-child(2){
+        font-family: Proxima Nova;
+        line-height: 2.3125rem;
+        font-size: 1.75rem;
+        text-align: justify;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+
+        margin: 12.25vh 10.5rem 5vh 10.5rem;
+
+        @include hd{
+            margin: 5vh 10.5rem 5vh 10.5rem;
+        }
+    
+        @include desktop{
+            font-family: Proxima Nova;
+            line-height: 18px;
+            font-size: 14px;
+            text-align: center;
+            letter-spacing: 0.06em;
+            color: #FFFFFF;
+            margin: 33px 22px;
+
+        }
+    }
+
+    div:nth-child(3){
+        img{
+            margin-right:none !important;
+
+            
+        }
+    }
+
+    div:nth-child(4){
+        font-family: Proxima Nova;
+        line-height: normal;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        margin-top:3vh;
+        color: #FFFFFF;
+
+        @include desktop{
+            font-size: 12px;
+        }
+    }
+
+}
+
+ 
+.ignite_head{
+    font-family: Proxima Nova;
+    line-height: normal;
+    font-size: 64px;
+    margin-bottom:72px;
+    color: #1A4D66;
+
+
+    @include desktop{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+ 
+.ignite{
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width:100vw;
+ 
+    
+  
+ 
+
+}
+ 
+
+.ignite_events , .ignite_venus{
+    margin-bottom: 10rem;
+
+    @include desktop{
+        margin-bottom: 2.125rem;
+    }
+}
+
+.ignite_events{
+    background: #F7F8F9;
+    padding:5rem;
+    width:100vw;
+    @include desktop{
+        padding: 2.125rem 1.625rem;
+    }
+    
+}
+ 
+
+.ignite_event_unit{
+
+    display: inline-block;
+    margin :3.125rem;
+
+    @include desktop{
+        margin: 0 0.625rem 1.5rem 0; 
+    }
+    div{
+        width: 14.0181rem;
+        height: 14.0181rem;
+        background: #F39423;
+        border-radius: 50%;
+        margin-bottom: 4vh;
+
+        @include desktop{
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    span{
+        line-height: normal;
+        font-size: 1.75rem;
+    
+        color: #4C4C4C;
+         
+        @include desktop{
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.ignite_venu_unit{
+
+    display: inline-block;
+    padding:3.125rem;
+    
+    @include desktop{
+        padding:1.5rem; 
+         
+    
+    }
+     
+
+    div{
+        width: 14.0181rem;
+        height: 14.0181rem;
+        background: #138AD6;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        margin-bottom: 4vh;
+
+        @include desktop{
+            width: 4.5rem;
+            height: 4.5rem;
+            margin-bottom: 2vh;
+        }
+    }
+
+    span{
+       p{
+           margin:0;
+           padding:0;
+       }
+
+       p:first-child{
+        font-family: Proxima Nova;
+        line-height: normal;
+        font-size: 36px;
+        color: #C1C1C1;
+
+        @include desktop{
+            font-size: 16px;
+        }
+       }
+
+       p:nth-child(2){
+        font-family: Proxima Nova;
+        line-height: normal;
+        font-size: 24px;
+        
+        color: #333333;
+
+        @include desktop{
+            font-size: 14px;
+        }
+       }
+
+       p:nth-child(3){
+        line-height: normal;
+        font-size: 24px;
+        
+        color: #A5A6A6;
+
+        @include desktop{
+            font-size: 14px;
+        }
+       }
+         
+    }
+}
+
+
+ 

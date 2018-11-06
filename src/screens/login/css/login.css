@@ -11,19 +11,12 @@
   }
 }
 
-.login_main .login_text {
-  display: -ms-grid;
-  display: grid;
-  justify-items: center;
-  height: 90%;
-}
-
 .login_main .login_text span {
   display: block;
 }
 
 .login_main .login_text span:first-child {
-  margin-top: 11.5rem;
+  margin-top: 10vh;
   line-height: normal;
   font-size: 3rem;
   text-align: center;
@@ -33,13 +26,13 @@
 
 @media (max-width: 960px) {
   .login_main .login_text span:first-child {
-    margin-top: 30px;
-    font-size: 24px;
+    margin-top: 1.875rem;
+    font-size: 1.5rem;
   }
 }
 
 .login_main .login_text span:nth-child(2) {
-  margin: 4rem;
+  margin: 6vh 4rem 6vh 4rem;
   line-height: 2.3125rem;
   font-size: 1.75rem;
   text-align: justify;
@@ -47,46 +40,26 @@
   color: #1A4D66;
 }
 
+@media (max-height: 900px) {
+  .login_main .login_text span:nth-child(2) {
+    font-size: 1.5rem;
+    line-height: normal;
+  }
+}
+
 @media (max-width: 960px) {
   .login_main .login_text span:nth-child(2) {
-    margin: 32px 22px;
-    font-size: 14px;
-    line-height: 19px;
+    margin: 2rem 1.375rem;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
   }
-}
-
-.login_main .login_text span:nth-child(3) {
-  line-height: normal;
-  font-size: 36px;
-  text-align: center;
-  letter-spacing: 0.06em;
-  color: #1A4D66;
-}
-
-@media (max-width: 960px) {
-  .login_main .login_text span:nth-child(3) {
-    font-size: 16px;
-  }
-}
-
-.login_main .login_text button {
-  border: 0.125rem solid #3A667B;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 1.125rem 1.875rem;
-  line-height: 1.5625rem;
-  font-size: 1.25rem;
-  text-align: center;
-  letter-spacing: 0.09em;
-  background: none;
-  color: #3A667B;
-  margin-top: 24px;
 }
 
 .login_main .login_form {
   background: #1A4D66;
   padding: 36px 100px;
   height: 89vh;
+  min-height: 40rem;
 }
 
 @media (max-width: 960px) {

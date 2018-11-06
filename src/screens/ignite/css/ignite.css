@@ -1,1 +1,246 @@
-/* No CSS *//*# sourceMappingURL=ignite.css.map */
+.ignite_main {
+  height: 89vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  min-height: 768px;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #1A4D66;
+}
+
+@media (max-width: 800px) {
+  .ignite_main {
+    min-height: 0px;
+  }
+}
+
+.ignite_main div {
+  color: white;
+}
+
+.ignite_main div:first-child {
+  font-family: Proxima Nova;
+  line-height: normal;
+  font-size: 6rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+}
+
+@media (max-width: 800px) {
+  .ignite_main div:first-child {
+    font-size: 24px;
+  }
+}
+
+.ignite_main div:nth-child(2) {
+  font-family: Proxima Nova;
+  line-height: 2.3125rem;
+  font-size: 1.75rem;
+  text-align: justify;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  margin: 12.25vh 10.5rem 5vh 10.5rem;
+}
+
+@media (max-height: 900px) {
+  .ignite_main div:nth-child(2) {
+    margin: 5vh 10.5rem 5vh 10.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .ignite_main div:nth-child(2) {
+    font-family: Proxima Nova;
+    line-height: 18px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin: 33px 22px;
+  }
+}
+
+.ignite_main div:nth-child(3) img {
+  margin-right: none !important;
+}
+
+.ignite_main div:nth-child(4) {
+  font-family: Proxima Nova;
+  line-height: normal;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.06em;
+  margin-top: 3vh;
+  color: #FFFFFF;
+}
+
+@media (max-width: 800px) {
+  .ignite_main div:nth-child(4) {
+    font-size: 12px;
+  }
+}
+
+.ignite_head {
+  font-family: Proxima Nova;
+  line-height: normal;
+  font-size: 64px;
+  margin-bottom: 72px;
+  color: #1A4D66;
+}
+
+@media (max-width: 800px) {
+  .ignite_head {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.ignite {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  width: 100vw;
+}
+
+.ignite_events, .ignite_venus {
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 800px) {
+  .ignite_events, .ignite_venus {
+    margin-bottom: 2.125rem;
+  }
+}
+
+.ignite_events {
+  background: #F7F8F9;
+  padding: 5rem;
+  width: 100vw;
+}
+
+@media (max-width: 800px) {
+  .ignite_events {
+    padding: 2.125rem 1.625rem;
+  }
+}
+
+.ignite_event_unit {
+  display: inline-block;
+  margin: 3.125rem;
+}
+
+@media (max-width: 800px) {
+  .ignite_event_unit {
+    margin: 0 0.625rem 1.5rem 0;
+  }
+}
+
+.ignite_event_unit div {
+  width: 14.0181rem;
+  height: 14.0181rem;
+  background: #F39423;
+  border-radius: 50%;
+  margin-bottom: 4vh;
+}
+
+@media (max-width: 800px) {
+  .ignite_event_unit div {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.ignite_event_unit span {
+  line-height: normal;
+  font-size: 1.75rem;
+  color: #4C4C4C;
+}
+
+@media (max-width: 800px) {
+  .ignite_event_unit span {
+    font-size: 0.75rem;
+  }
+}
+
+.ignite_venu_unit {
+  display: inline-block;
+  padding: 3.125rem;
+}
+
+@media (max-width: 800px) {
+  .ignite_venu_unit {
+    padding: 1.5rem;
+  }
+}
+
+.ignite_venu_unit div {
+  width: 14.0181rem;
+  height: 14.0181rem;
+  background: #138AD6;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  margin-bottom: 4vh;
+}
+
+@media (max-width: 800px) {
+  .ignite_venu_unit div {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 2vh;
+  }
+}
+
+.ignite_venu_unit span p {
+  margin: 0;
+  padding: 0;
+}
+
+.ignite_venu_unit span p:first-child {
+  font-family: Proxima Nova;
+  line-height: normal;
+  font-size: 36px;
+  color: #C1C1C1;
+}
+
+@media (max-width: 800px) {
+  .ignite_venu_unit span p:first-child {
+    font-size: 16px;
+  }
+}
+
+.ignite_venu_unit span p:nth-child(2) {
+  font-family: Proxima Nova;
+  line-height: normal;
+  font-size: 24px;
+  color: #333333;
+}
+
+@media (max-width: 800px) {
+  .ignite_venu_unit span p:nth-child(2) {
+    font-size: 14px;
+  }
+}
+
+.ignite_venu_unit span p:nth-child(3) {
+  line-height: normal;
+  font-size: 24px;
+  color: #A5A6A6;
+}
+
+@media (max-width: 800px) {
+  .ignite_venu_unit span p:nth-child(3) {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=ignite.css.map */
