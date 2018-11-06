@@ -1,12 +1,56 @@
 import React, { Component } from 'react';
 import "./css/login.css";
-
+import axios from "axios"
 import {NavLink} from "react-router-dom"
 
-
+const url = "loajeafkj/jhkj"
 
 
 export default class ComingSoon extends Component {
+
+    state = {
+          username: '',
+          password : '',
+        }
+    
+    
+    handleClick = e => {
+            e.preventDefault()
+            const err = this.validate()
+            let { username , password } = this.state
+        
+            if (!err) {
+
+             
+            
+
+            axios({
+                method: 'post',
+                url: url,
+                data:  username,
+                config: { headers: {'Content-Type': 'multipart/form-data' }}
+                })
+                .then(function (res) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+                    document.cookie = 'token=' + res.data.token + ';expires=' + d.toUTCString() + ';path=/';
+
+                    this.setState({
+                        username: '',
+                        password: '',
+                    })
+
+                })
+                .catch(function (response) {
+                    
+                    alert(response);
+                });
+            }
+        }
+
+
+        
+    
     render () {
         return (
 
@@ -28,7 +72,7 @@ export default class ComingSoon extends Component {
 
                 <div className = "login_form">
                         
-                        <span> <NavLink to = "/login">Sign In</NavLink></span>
+                        <span> <NavLink activeClassName="act"  to = "/login">Sign In</NavLink></span>
                         <span> Sign Up</span>
 
                         
@@ -38,11 +82,39 @@ export default class ComingSoon extends Component {
 
                         <label>EMAIL ID </label>
 
-                        <input type = "email" ></input>
+                        <input 
+                            
+                            type = "email"
+
+                            value={this.state.username}
+
+                            onChange={event => {
+                                this.setState({
+                                    username: event.target.value
+                                })
+                            }}
+
+                            required
+                        
+                        ></input>
 
                         <label>PASSWORD</label>
 
-                        <input type = "passowrd" ></input>
+                        <input
+                         
+                         type = "passowrd" 
+
+                         value={this.state.password}
+
+                         onChange={event => {
+                             this.setState({
+                                 password: event.target.value
+                             })
+                         }}
+                         
+                         required
+                         
+                         ></input>
 
 
                     </form>

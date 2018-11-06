@@ -46,7 +46,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "phone_no">
-                                    +91 8888 888 88
+                                 +91 9992929203
                                 </span>
                             </span>
 
@@ -56,7 +56,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "email">
-                                <a href ="mailto:esummit18@gmail.com"> esummit18@gmail.com</a>
+                                <a href ="esummit@iitr.ac.in"> esummit@iitr.ac.in</a>
                                 </span>
                             </span>
 

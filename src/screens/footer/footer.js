@@ -32,13 +32,13 @@ export default class ComingSoon extends Component {
 
                 <div>
                     <p> Phone Number</p>
-                    <p> +91 8888 888 88</p>
+                    <p> +91 9992929203</p>
                 </div>
 
                 <div>
                 <p> E-Mail ID </p>
 
-                <p> <a href = "mailto:esummit18@gmail.com">esummit18@gmail.com</a></p>
+                <p> <a href = "mailto:esummit@iitr.ac.in">esummit@iitr.ac.in</a></p>
                 </div>
             </div>
 
