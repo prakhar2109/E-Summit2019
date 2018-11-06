@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./css/login.css";
-
+import Header from './../header/header'
 import {NavLink} from "react-router-dom"
 
 
@@ -9,7 +9,8 @@ import {NavLink} from "react-router-dom"
 export default class ComingSoon extends Component {
     render () {
         return (
-
+            <React.Fragment>
+            <Header />
             <div className  = "login_main">
             
                 <div className = "login_text">
@@ -58,7 +59,7 @@ export default class ComingSoon extends Component {
             
             </div>
 
-
+            </React.Fragment>
         );
 
     }

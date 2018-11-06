@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./css/main.css";
+import Header from './../header/header';
 import {NavLink} from "react-router-dom";
 import  logo from "./static/logo-18.svg";
  
@@ -10,7 +11,10 @@ import phone from "./static/Group.svg";
 export default class ComingSoon extends Component {
     render () {
         return (
+            <React.Fragment>
+                <Header />
 
+            
             <div className = "main_conta">
 
 
@@ -144,6 +148,7 @@ export default class ComingSoon extends Component {
 
                      
             </div>
+            </React.Fragment>
         );
     }
 }

@@ -25,7 +25,7 @@ export default class caLeaderboard extends Component {
             <div id = "container">
                 <div id='leftPane'>
                     <div id='header'>
-                        <NavLink to = "/"><img src={logo} alt="" ></img></NavLink>
+                        <NavLink to = "/"><img id="logo" src={logo} alt="" ></img></NavLink>
                     </div>
                     <hr id="line1" />
                     <div id="viewProfile">

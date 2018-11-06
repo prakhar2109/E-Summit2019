@@ -13,7 +13,6 @@ class App extends Component{
       <Router>
       <div>
           
-          <Header />
            <Switch>
     
               <Route path = "/" component = {HomePage} exact  />
