@@ -1,9 +1,7 @@
 import React, { Component } from 'react'; 
 import "./css/ignite.css";
-import Footer  from "../footer/footer"
-import scroll  from  "./static/Union.svg"
-
-
+import scroll  from  "./static/Union.svg";
+import Footer  from "../footer/footer";
 
 export default class ComingSoon extends Component {
     render () {
@@ -28,11 +26,12 @@ export default class ComingSoon extends Component {
 
                 <div className = "ignite"> 
                     
-                    <div className = "ignite_head">EVENTS</div>
 
                     <div className = "ignite_events">
 
                     <center>
+
+                    <div className = "ignite_head">EVENTS</div>
 
                         <span className = "ignite_event_unit">
                             
@@ -187,7 +186,7 @@ export default class ComingSoon extends Component {
  
 
             
-        </div>
+            </div>
 
 
          <Footer />

@@ -109,41 +109,45 @@
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  height: 89vh;
   width: 100vw;
-  padding: 5rem;
-}
-
-@media (max-width: 800px) {
-  .ignite {
-    padding: 34px 26px;
-  }
 }
 
 .ignite_events, .ignite_venus {
-  margin-bottom: 265px;
+  margin-bottom: 10rem;
 }
 
 @media (max-width: 800px) {
   .ignite_events, .ignite_venus {
-    margin-bottom: 34px;
+    margin-bottom: 2.125rem;
+  }
+}
+
+.ignite_events {
+  background: #F7F8F9;
+  padding: 5rem;
+  width: 100vw;
+}
+
+@media (max-width: 800px) {
+  .ignite_events {
+    padding: 2.125rem 1.625rem;
   }
 }
 
 .ignite_event_unit {
   display: inline-block;
-  margin: 50px;
+  margin: 3.125rem;
 }
 
 @media (max-width: 800px) {
   .ignite_event_unit {
-    margin: 0 10px 24px 0;
+    margin: 0 0.625rem 1.5rem 0;
   }
 }
 
 .ignite_event_unit div {
-  width: 224.29px;
-  height: 224.29px;
+  width: 14.0181rem;
+  height: 14.0181rem;
   background: #F39423;
   border-radius: 50%;
   margin-bottom: 4vh;
@@ -151,8 +155,8 @@
 
 @media (max-width: 800px) {
   .ignite_event_unit div {
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -164,24 +168,24 @@
 
 @media (max-width: 800px) {
   .ignite_event_unit span {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 
 .ignite_venu_unit {
   display: inline-block;
-  padding: 50px;
+  padding: 3.125rem;
 }
 
 @media (max-width: 800px) {
   .ignite_venu_unit {
-    padding: 24px;
+    padding: 1.5rem;
   }
 }
 
 .ignite_venu_unit div {
-  width: 224.29px;
-  height: 224.29px;
+  width: 14.0181rem;
+  height: 14.0181rem;
   background: #138AD6;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -191,8 +195,8 @@
 
 @media (max-width: 800px) {
   .ignite_venu_unit div {
-    width: 72px;
-    height: 72px;
+    width: 4.5rem;
+    height: 4.5rem;
     margin-bottom: 2vh;
   }
 }

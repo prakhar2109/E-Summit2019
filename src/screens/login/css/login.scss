@@ -31,13 +31,7 @@
 
     .login_text{
 
-        display: grid;
-   
-        justify-items: center;
-         
-
-        align-items: center;
-
+  
   
 
 
@@ -47,7 +41,7 @@
 
         span:first-child{
 
-            margin-top:7vh;
+            margin-top:10vh;
             line-height: normal;
             font-size: 3rem;
             text-align: center;
@@ -67,7 +61,7 @@
 
 
         span:nth-child(2){
-            margin: 4vh 4rem 0 4rem ;
+            margin: 6vh 4rem 6vh 4rem ;
             line-height: 2.3125rem;
             font-size: 1.75rem;
             text-align: justify;
@@ -90,33 +84,7 @@
         }
 
 
-        span:nth-child(3){
-            line-height: normal;
-            font-size: 2.25rem;
-            text-align: center;
-            letter-spacing: 0.06em;
-            color: #1A4D66;
-            margin:0;
-
-            @include desktop{
-                font-size: 1rem;
-            }
-
-        }
-
-        button{
-            border: 0.125rem solid #3A667B;
-            box-sizing: border-box;
-            padding: 1.125rem 1.875rem;
-            line-height: 1.5625rem;
-            font-size: 1.25rem;
-            text-align: center;
-            letter-spacing: 0.09em;
-            background: none;
-            color: #3A667B;
-            margin-top: 3vh;
-
-        }
+    
 
 
     }
