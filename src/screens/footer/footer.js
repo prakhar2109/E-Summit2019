@@ -12,7 +12,7 @@ export default class ComingSoon extends Component {
             <div className = "footer" >
 
             
-                <div> <p>For Sponsorship Opportunities contact </p><p> <a href = "http://ecelliitr.ac.in">ecelliitr.ac.in</a> </p> </div>
+                <div> <p>For Sponsorship Opportunities contact </p><p> <a href = "mailto:esummit@iitr.ac.in">esummit@iitr.ac.in</a> </p> </div>
 
                 <div>
                      <p>Social Media</p>
@@ -20,9 +20,9 @@ export default class ComingSoon extends Component {
                      <p> 
                      <div className = "footer_social">
                                     <span>
-                                    <i className="fab fa-twitter"></i>  
-                                    <i className="fab fa-facebook-f"></i> 
-                                    <i className="fab fa-instagram"></i> 
+                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                     </span>
                      </div>
                      </p>
@@ -32,13 +32,13 @@ export default class ComingSoon extends Component {
 
                 <div>
                     <p> Phone Number</p>
-                    <p> +91 8888 888 88</p>
+                    <p> +91 9992929203</p>
                 </div>
 
                 <div>
                 <p> E-Mail ID </p>
 
-                <p> <a href = "mailto:esummit18@gmail.com">esummit18@gmail.com</a></p>
+                <p> <a href = "mailto:ecell@iitr.ac.in">ecell@iitr.ac.in</a></p>
                 </div>
             </div>
 
@@ -46,20 +46,20 @@ export default class ComingSoon extends Component {
                 <div className = "footer_mobile" >
 
                 <center>
-                    <span>  For Sponsorship Opportunities contact <br></br>   <a href = "http://ecelliitr.ac.in">ecelliitr.ac.in</a> </span>
+                    <span>  For Sponsorship Opportunities contact <br></br>   <a href = "mailto:esummit@iitr.ac.in">esummit@iitr.ac.in</a> </span>
 
                      
 
                     <div className = "footer_mobile_phone">
                     <div>
                         <p> Phone Number</p>
-                        <p> +91 8888 888 88</p>
+                        <p> +91 9992929203</p>
                     </div>
 
                     <div>
                             <p> E-Mail ID </p>
 
-                            <p> <a href = "mailto:esummit18@gmail.com">esummit18@gmail.com</a></p>
+                            <p> <a href = "mailto:ecell@iitr.ac.in">ecell@iitr.ac.in</a></p>
                     </div>
 
                     </div>
@@ -70,9 +70,9 @@ export default class ComingSoon extends Component {
                     <span>
                         <div className = "footer_social">
                                         <span>
-                                        <i className="fab fa-twitter"></i>  
-                                        <i className="fab fa-facebook-f"></i> 
-                                        <i className="fab fa-instagram"></i> 
+                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                         </span>
                         </div>
                     </span>

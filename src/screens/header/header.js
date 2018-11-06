@@ -30,8 +30,7 @@ export default class ComingSoon extends Component {
 
                <span className = "mobile_menu">
               
-                  
-                        <i className="fas fa-bars"></i> 
+                 <i className="fas fa-bars"></i> 
                      
                </span>
 

@@ -36,10 +36,10 @@ export default class ComingSoon extends Component {
                     </center>
 
                                 <div className = "social">
-                                    <span>
-                                    <i className="fab fa-twitter"></i>  
-                                    <i className="fab fa-facebook-f"></i> 
-                                    <i className="fab fa-instagram"></i> 
+                                <span>
+                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                     </span>
                                 </div>
                      <center className  ="contact">
@@ -50,7 +50,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "phone_no">
-                                    +91 8888 888 88
+                                 +91 9992929203
                                 </span>
                             </span>
 
@@ -60,7 +60,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "email">
-                                <a href ="mailto:esummit18@gmail.com"> esummit18@gmail.com</a>
+                                <a href ="esummit@iitr.ac.in"> esummit@iitr.ac.in</a>
                                 </span>
                             </span>
 
@@ -111,10 +111,10 @@ export default class ComingSoon extends Component {
  
 
                      <div className = "social_mobile">
-                                    <span>
-                                    <i className="fab fa-twitter"></i>  
-                                    <i className="fab fa-facebook-f"></i> 
-                                    <i className="fab fa-instagram"></i> 
+                                        <span>
+                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                     </span>
                                 </div>
                      <center className  ="contact_mobile">
