@@ -173,6 +173,12 @@
   margin-bottom: 4vh;
 }
 
+.ignite_event_unit div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 @media (max-width: 800px) {
   .ignite_event_unit div {
     width: 4rem;
@@ -204,13 +210,21 @@
 }
 
 .ignite_venu_unit div {
-  width: 14.0181rem;
-  height: 14.0181rem;
+  width: 13vw;
+  height: 13vw;
   background: #138AD6;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
   margin-bottom: 4vh;
+}
+
+.ignite_venu_unit div img {
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
 
 @media (max-width: 800px) {

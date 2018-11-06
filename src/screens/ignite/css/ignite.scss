@@ -198,6 +198,12 @@
         border-radius: 50%;
         margin-bottom: 4vh;
 
+        img{
+            width:100%;
+            height:100%;
+            border-radius: 50%;
+        }
+
         @include desktop{
             width: 4rem;
             height: 4rem;
@@ -229,13 +235,22 @@
      
 
     div{
-        width: 14.0181rem;
-        height: 14.0181rem;
+        width: 13vw;
+        height: 13vw;
         background: #138AD6;
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
         border-bottom-left-radius: 50%;
         margin-bottom: 4vh;
+
+        img{
+            width:100%;
+            height:100%;
+
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
 
         @include desktop{
             width: 4.5rem;
