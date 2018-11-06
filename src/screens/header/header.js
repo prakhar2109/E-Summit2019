@@ -24,7 +24,7 @@ export default class ComingSoon extends Component {
 
                <span className = "links">
                     <NavLink to = "/login"> Campus Ambassador</NavLink>
-               <a href = "#"> Startup Ignite</a>
+               <NavLink to = "/ignite"> Startup Ignite</NavLink>
                
                </span>
 

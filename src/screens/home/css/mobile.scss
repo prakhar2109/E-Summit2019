@@ -17,11 +17,10 @@
 
         .text{
             
-            font-size: 1.74rem;
+          line-height: 19px;
+            font-size: 14px;
             text-align: center;
             letter-spacing: 0.09em;
-            color: rgba(0, 0, 0, 0.45);
-            text-align: justify;
             margin: 0 1rem 0 1rem;
 
         }
@@ -56,36 +55,8 @@
 
         }
 
-        
-
         .social{
-         
-            font-size: 2rem;
-            padding: 1rem 0 1rem 0;
-             display: grid;
-             grid-template-rows: auto;
-             justify-items: center;
-             
-           
-             i{
-               
-                 padding:0.9375rem;
-                 width:max-content;
-                 color:white;
-                 border-radius:  50%;
-                 display: inline;
-                 margin:1rem 2rem 1rem 2rem ;
-                 background: rgba(26, 77, 102, 0.86);
-                 
-             }
-
-             .fa-facebook-f{
-                 padding: 0.9375rem 1.4rem 0.9375rem 1.4rem;
-             }
-
-             br{
-                 height :0rem;
-             }
+             display: none;
         }
        
 
@@ -102,7 +73,7 @@
     width: 100%;
     display: grid;
     grid-template-rows: auto;
-    
+    min-height:100vh;
     justify-items: center;
     align-items: center;
   
@@ -180,16 +151,53 @@
 
  
 .contact{
-    margin: 2rem 0 2rem 0;
-    display: grid;
-    grid-template-rows: auto;
-    
-    justify-items: center;
-
-    .phone{
-        margin-right: 1rem;
-    }
+  
+    display: none;
     
 }
 
  
+.social_mobile{
+         
+    font-size: 1.25rem;
+    padding: 32px 0 32px 0;
+     display: grid;
+     grid-template-rows: auto;
+     justify-items: center;
+     
+   
+     i{
+       
+         padding:0.9375rem;
+         width:max-content;
+         color:white;
+         border-radius:  50%;
+         display: inline;
+         margin:1rem 2rem 1rem 2rem ;
+         background: rgba(26, 77, 102, 0.86);
+         
+     }
+
+     .fa-facebook-f{
+         padding: 0.9375rem 1.4rem 0.9375rem 1.4rem;
+     }
+
+     br{
+         height :0rem;
+     }
+}
+
+.contact_mobile{
+    font-size: 14px;
+    padding: 0 0 32px 0;
+    img{
+        height:16px;
+        width:16px;
+        
+    }
+    .phone2{
+        margin-left:28px;
+    }
+
+
+}
