@@ -19,10 +19,10 @@ export default class ComingSoon extends Component {
 
                      <p> 
                      <div className = "footer_social">
-                                    <span>
-                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
-                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
-                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
+                     <span>
+                                        <a target = "_blank" href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a target = "_blank" href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a target = "_blank" href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                     </span>
                      </div>
                      </p>
@@ -32,7 +32,7 @@ export default class ComingSoon extends Component {
 
                 <div>
                     <p> Phone Number</p>
-                    <p> +91 9992929203</p>
+                    <p> <a href = "tel:9992929203">+91 9992929203</a></p>
                 </div>
 
                 <div>
@@ -53,7 +53,7 @@ export default class ComingSoon extends Component {
                     <div className = "footer_mobile_phone">
                     <div>
                         <p> Phone Number</p>
-                        <p> +91 9992929203</p>
+                        <p>  <a href = "tel:9992929203">+91 9992929203</a></p>
                     </div>
 
                     <div>
@@ -69,11 +69,11 @@ export default class ComingSoon extends Component {
 
                     <span>
                         <div className = "footer_social">
-                                        <span>
-                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
-                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
-                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
-                                        </span>
+                        <span>
+                                        <a target = "_blank" href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a target = "_blank" href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a target = "_blank" href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
+                                    </span>
                         </div>
                     </span>
                     </center>

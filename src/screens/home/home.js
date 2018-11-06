@@ -2,12 +2,31 @@ import React, { Component } from 'react';
 import "./css/main.css";
 import {NavLink} from "react-router-dom";
 import  logo from "./static/logo-18.svg";
- 
+ import $ from 'jquery'
 import phone from "./static/Group.svg";
-
+import 'form-serializer'
 
 
 export default class ComingSoon extends Component {
+    handleClick = e => {
+        e.preventDefault()          
+    
+          let $form = $('form')
+          let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
+          $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'json',
+            data: $form.serializeObject(),
+            success: function () {
+              console.log('submit')
+            },
+            error: function () {
+              
+            }
+          })
+        
+      }
     render () {
         return (
 
@@ -33,9 +52,9 @@ export default class ComingSoon extends Component {
 
                                 <div className = "social">
                                 <span>
-                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
-                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
-                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
+                                        <a target = "_blank" href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a target = "_blank" href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a target = "_blank" href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                     </span>
                                 </div>
                      <center className  ="contact">
@@ -46,7 +65,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "phone_no">
-                                 +91 9992929203
+                                 <a href = "tel:9992929203">+91 9992929203</a>
                                 </span>
                             </span>
 
@@ -56,7 +75,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "email">
-                                <a href ="esummit@iitr.ac.in"> esummit@iitr.ac.in</a>
+                                <a href ="mailto:esummit@iitr.ac.in"> esummit@iitr.ac.in</a>
                                 </span>
                             </span>
 
@@ -84,21 +103,21 @@ export default class ComingSoon extends Component {
                            </center>
 
                            <label>Name</label>
-                           <input type = "text"></input>
+                           <input name="name" type = "text"></input>
 
                            <label>Phone</label>
-                           <input type = "number"></input>
+                           <input name="phone" type = "number"></input>
 
                            <label>Email</label>
-                           <input type = "email"></input>
+                           <input name="email" type = "email"></input>
 
                            <label>College</label>
-                           <input type = "text"></input>
+                           <input name="college" type = "text"></input>
 
                            <label>City</label>
-                           <input type = "text"></input>
+                           <input name="city" type = "text"></input>
 
-                           <button>Submit</button>
+                           <button onClick={this.handleClick}>Submit</button>
                         </form>
                 
                 </div>
@@ -107,10 +126,10 @@ export default class ComingSoon extends Component {
  
 
                      <div className = "social_mobile">
-                                        <span>
-                                        <a href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
-                                         <a href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
-                                        <a href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
+                     <span>
+                                        <a target = "_blank" href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
+                                         <a target = "_blank" href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
+                                        <a target = "_blank" href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
                                     </span>
                                 </div>
                      <center className  ="contact_mobile">
@@ -122,7 +141,7 @@ export default class ComingSoon extends Component {
                                 </span>
 
                                 <span className = "phone_no">
-                                    +91 8888 888 88
+                                <a href = "tel:9992929203">+91 9992929203</a>
                                 </span>
                             </span>
 

@@ -11,13 +11,15 @@ import chandi from "../../utils/chandigarh.jpg"
 import guru from "../../utils/gurugram.jpg"
 
 import case1 from  "../../utils/case1.png"
-import case2 from  "../../utils/CaseStudy.jpeg"
+import case2 from  "../../utils/Workshops.jpg"
 
 import comp from  "../../utils/competetions.jpg"
 
 import lec from "../../utils/guestlecture.png"
 
 import panal from "../../utils/paneldiscussions.jpeg"
+
+import nodia from "../../utils/noida.jpg"
 
 
 
@@ -65,7 +67,7 @@ export default class ComingSoon extends Component {
                             </div>
 
                             <span>
-                            Panel Discussion
+                            Case Study
                             </span>
 
                         </span>
@@ -78,7 +80,7 @@ export default class ComingSoon extends Component {
                             </div>
 
                             <span>
-                            Panel Discussion
+                            Workshop
                             </span>
 
                         </span>
@@ -90,7 +92,7 @@ export default class ComingSoon extends Component {
                             </div>
 
                             <span>
-                            Panel Discussion
+                            Competetions
                             </span>
 
                         </span>
@@ -103,7 +105,7 @@ export default class ComingSoon extends Component {
                             </div>
 
                             <span>
-                            Panel Discussion
+                            Guest Lecture
                             </span>
 
                         </span>
@@ -140,9 +142,9 @@ export default class ComingSoon extends Component {
                                     </div>
 
                                     <span>
-                                        <p>Gurugram </p>
-                                        <p>College Name</p>
-                                        <p> 23.08.2018</p>                                        
+                                        <p>Jaipur </p>
+                                        <p>College: TBD</p>
+                                        <p>Date: TBD</p>                                        
                                     </span>
 
                                 </div>   
@@ -154,9 +156,9 @@ export default class ComingSoon extends Component {
                                     </div>
 
                                     <span>
-                                        <p>Gurugram </p>
-                                        <p>College Name</p>
-                                        <p> 23.08.2018</p>                                        
+                                        <p>Chandigarh </p>
+                                        <p>College: TBD</p>
+                                        <p>Date: TBD</p>                                        
                                     </span>
 
                                 </div> 
@@ -170,9 +172,9 @@ export default class ComingSoon extends Component {
                                     </div>
 
                                     <span>
-                                        <p>Gurugram </p>
-                                        <p>College Name</p>
-                                        <p> 23.08.2018</p>                                        
+                                        <p>Dehradun </p>
+                                        <p>College: TBD</p>
+                                        <p>Date: TBD</p>                                        
                                     </span>
 
                                 </div> 
@@ -186,8 +188,8 @@ export default class ComingSoon extends Component {
 
                                     <span>
                                         <p>Gurugram </p>
-                                        <p>College Name</p>
-                                        <p> 23.08.2018</p>                                        
+                                        <p>College: TBD</p>
+                                        <p>Date: TBD</p>                                        
                                     </span>
 
                                 </div> 
@@ -196,13 +198,14 @@ export default class ComingSoon extends Component {
                                 <div className = "ignite_venu_unit">
                                     
                                     <div>
+                                    <img alt = "Noida " src = {nodia}/>
 
                                     </div>
 
                                     <span>
-                                        <p>Gurugram </p>
-                                        <p>College Name</p>
-                                        <p> 23.08.2018</p>                                        
+                                        <p>Noida  </p>
+                                        <p>College: TBD</p>
+                                        <p>Date: TBD</p>                                        
                                     </span>
 
                                 </div>  
