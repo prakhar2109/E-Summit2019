@@ -8,6 +8,7 @@ import Task from "../../../components/js/TaskIndex"
  
 import { NavLink } from 'react-router-dom'
 
+const AuthStr = ""
 export default class caLeaderboard extends Component {
     constructor() {
         super();
@@ -18,11 +19,14 @@ export default class caLeaderboard extends Component {
         score: '0',
     }
 
+    
+
     componentDidMount = () => {
-        axios.get("http://esummit.in//api/user/")
+        axios.get("http://esummit.in//api/user/" ,{ 'headers': { 'Authorization': AuthStr } })
             .then( res=> {
                 this.setState({
-                    score: res.data.body.score
+                    score: res.data.body.score,
+                    Name: res.data.body.name
                 }) ;
             })
             .catch(function (response) {

@@ -50,15 +50,9 @@ export default class ComingSoon extends Component {
     e.preventDefault()
     this.state.college = this.state.college['value']
     this.state.gender = this.state.gender['value']
-    let data = this.state
-    this.setState({
-      name: '',
-      email: '',
-      contact: '',
-      password: '',
-      state: '',
-      gender: '0'
-    })
+    let data = [{ name : this.state.name },{college :this.state.college}  ,{email : this.state.email}, {contact :this.state.contact} ,{password: this.state.password} , {state :this.state.state} , {gender: this.state.gender} ] 
+    console.log(data)
+   
 
     if (this.state.password.length < 8) {
       alert('Password length  must be greater than 8  ')
