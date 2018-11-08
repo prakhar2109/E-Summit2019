@@ -19,7 +19,7 @@ export default class ComingSoon extends Component {
   state = {
     name: '',
     email: '',
-    contact: '',
+    contact: 0,
     password: '',
     college: '',
     state: '',
@@ -50,9 +50,12 @@ export default class ComingSoon extends Component {
     e.preventDefault()
     this.state.college = this.state.college['value']
     this.state.gender = this.state.gender['value']
-    let data = [{ name : this.state.name },{college :this.state.college}  ,{email : this.state.email}, {contact :this.state.contact} ,{password: this.state.password} , {state :this.state.state} , {gender: this.state.gender} ] 
-    console.log(data)
-   
+    this.state.contact = Number(this.state.contact)
+
+    let user_type = 0
+    let data = [{ name : this.state.name },{college :this.state.college}  ,{email : this.state.email}, {contact :this.state.contact} ,{password: this.state.password} , {state :this.state.state} , {gender: this.state.gender} ,{ user_type: user_type }] 
+ 
+   console.log(data)
 
     if (this.state.password.length < 8) {
       alert('Password length  must be greater than 8  ')
@@ -125,6 +128,7 @@ export default class ComingSoon extends Component {
               <input
                 type='number'
                 value={this.state.contact}
+                parse={value => Number(value)}
                 onChange={event => {
                   this.setState({
                     contact: event.target.value
