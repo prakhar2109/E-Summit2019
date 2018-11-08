@@ -105,7 +105,7 @@ export default class ComingSoon extends Component {
 
             <span>Click to the see the exciting perks!</span>
 
-            <center><button> PERKS</button></center>
+            <center><a href="./../../pdfs/perks.pdf" target="_blank"> <button>PERKS</button></a></center>
 
           </div>
 

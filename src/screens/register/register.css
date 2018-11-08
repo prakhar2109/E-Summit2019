@@ -92,7 +92,8 @@
   letter-spacing: 0.09em;
   background: none;
   color: #3A667B;
-  margin-top: 24px;
+  margin-top: 1.5rem;
+  cursor: pointer;
 }
 
 .register_main .register_form {
@@ -130,13 +131,14 @@
   border-radius: 15rem;
   border: none;
   line-height: normal;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
   letter-spacing: 0.06em;
   display: block;
-  padding: 14px 60px;
-  margin-top: 80px;
+  padding: 0.875rem 3.75rem;
+  margin-top: 5rem;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .register_main .register_form .register_login {
