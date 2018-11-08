@@ -4,41 +4,48 @@ import Header from './../header/header'
 import axios from "axios"
 import {NavLink} from "react-router-dom"
 
-const url = "loajeafkj/jhkj"
+const url = "http://esummit.in/api/signin/";
 
 
 export default class ComingSoon extends Component {
 
     state = {
-          username: '',
+          email: '',
           password : '',
         }
     
     
     handleClick = e => {
             e.preventDefault()
-            let { username , password } = this.state
+
+            let data= this.state
+            this.setState({
+                email: '',
+                password : '',
+
+            });
             axios({
                 method: 'post',
                 url: url,
-                data:  this.state,
+                data: data,
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
                 })
                 .then(function (res) {
                     var d = new Date();
                     d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
                     document.cookie = 'token=' + res.data.token + ';expires=' + d.toUTCString() + ';path=/';
-
-                    this.setState({
-                        username: '',
-                        password: '',
-                    })
+ 
                     window.location.href = '/login/leaderboard';
+                    
+                    data = ""
 
                 })
                 .catch(function (response) {
                     
                     alert(response);
+                    console.log(response);
+
+             
                 });
             
         }
@@ -82,11 +89,11 @@ export default class ComingSoon extends Component {
                             
                             type = "email"
 
-                            value={this.state.username}
+                            value={this.state.email}
 
                             onChange={event => {
                                 this.setState({
-                                    username: event.target.value
+                                    email: event.target.value
                                 })
                             }}
 

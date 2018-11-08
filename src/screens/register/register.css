@@ -139,29 +139,34 @@
   color: #FFFFFF;
 }
 
-.register_main .register_form span {
+.register_main .register_form .register_login {
+  padding: 1rem 1.25rem;
+  background: #265C77;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
   float: right;
   color: white !important;
 }
 
 @media (max-width: 960px) {
-  .register_main .register_form span {
+  .register_main .register_form .register_login {
     margin: auto;
   }
 }
 
-.register_main .register_form span:first-child {
-  padding: 1rem 1.25rem;
-  background: #265C77;
-  border-top-right-radius: 3rem;
-  border-bottom-right-radius: 3rem;
-}
-
-.register_main .register_form span:nth-child(2) {
+.register_main .register_form .register_register {
   padding: 1rem 1.25rem;
   background: #F39423;
   border-top-left-radius: 3rem;
   border-bottom-left-radius: 3rem;
+  float: right;
+  color: white !important;
+}
+
+@media (max-width: 960px) {
+  .register_main .register_form .register_register {
+    margin: auto;
+  }
 }
 
 .register_main .register_form form {
@@ -205,5 +210,25 @@
   letter-spacing: 0.06em;
   height: 2rem;
   color: #FFFFFF;
+}
+
+.register_main .register_form form select {
+  width: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  background: #FFFFFF;
+  padding: 0.5rem;
+  height: 3.3rem;
+  border-radius: 0.3rem;
+  color: black;
+  border: none;
+}
+
+.register_main .register_form form option {
+  color: black;
 }
 /*# sourceMappingURL=register.css.map */

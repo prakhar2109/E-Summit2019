@@ -4,60 +4,105 @@ import Footer  from "../footer/footer";
 import { NavLink } from "react-router-dom"
 import Header from './../header/header'
 import axios from "axios"
+import Select from 'react-select';
 
-const url = "";
 
+const url = "http://esummit.in/api/signup";
+
+
+
+ 
+const gender_option = [
+    {value: 0, label:"Male"},
+    {value: 1, label:"Female"},
+    {value: 2, label:"Others"},
+    {value: 3, label:"Prefer Not Say"},
+]
 export default class ComingSoon extends Component {
+ 
+    CollegeData = [];
     state = {
         name : "",
         email: '',
-        mobile : "",
+        contact : "",
         password : '',
         college : "",
-        program:"",
-        year:"",
-        city:"",
         state:"",
-        how :"",
-        
+        gender:"0",
+  
 
-      }
+      } 
+    componentDidMount() {
+        axios.get("http://esummit.in/api/college/list")
+            .then( res=> {
+
+               this.CollegeData = res.data.body;
+            })
+            .catch(function (response) {
+                alert(response);
+          });
+    }
+    
+    handleChange = (college) => {
+        this.setState({ college });
+         
+    }
   
-  
+    handleChange2 = (gender) => {
+        this.setState({ gender });
+        
+    }
   handleClick = e => {
           e.preventDefault()
-          axios({
-              method: 'post',
-              url: url,
-              data: this.state  ,
-              config: { headers: {'Content-Type': 'multipart/form-data' }}
-              })
-              .then(function (res) {
-                this.setState({
-                    name : "",
-                    email: '',
-                    mobile : "",
-                    password : '',
-                    college : "",
-                    program:"",
-                    year:"",
-                    city:"",
-                    state:"",
-                    how :"",
+          this.state.college = this.state.college["value"];
+          this.state.gender = this.state.gender["value"];
+          let data = this.state
+          this.setState({
+            name : "",
+            email: '',
+            contact : "",
+            password : '',
+            state:"",
+            gender:"0",
+           
+        })
+
+
+        if(this.state.password.length < 8)
+        {
+            alert("Password length  must be greater than 8  ")
+        }
+
+        else{
+
+            axios({
+                method: 'post',
+                url: url,
+                data:data,
+                config: { headers: {'Content-Type': 'multipart/form-data' }}
                 })
-                window.location.href = '/login';
-              })
-              .catch(function (response) {
-                  
-                  alert(response);
-              });
-          
-      }
+                .then(function (res) {
+                    window.location.href = '/login';
+                })
+                .catch(function   (response) {
+                        console.log(data);
+                        alert(response);
+                });
+            
+        }
+    }
+
+
 
     render() {
+        const {college, gender} = this.state ;
 
         return (
             <>
+
+           
+            
+
                 <Header />
 
             <div className="register_main">
@@ -77,44 +122,34 @@ export default class ComingSoon extends Component {
 
                 <div className="register_form">
 
-                               <span> <NavLink activeClassName="act" to="/login">Sign In</NavLink></span>
-                               <span> <NavLink activeClassName="act" to="/register">Sign Up</NavLink></span>
-
-
-
-
+                               <span className = "register_login"> <NavLink activeClassName="act" to="/login">Sign In</NavLink></span>
+                               <span className = "register_register"> <NavLink activeClassName="act" to="/register">Sign Up</NavLink></span>
 
                     <form >
 
                         <label>NAME </label>
 
                         <input 
-                        
-                        type="text"
-                        value={this.state.name}
-
+                            type="text"
+                            value={this.state.name}
                             onChange={event => {
-                                this.setState({
-                                    name: event.target.value
-                                })
-                            }}
-
-
-                        
-
-
-                        
+                                    this.setState({
+                                        name: event.target.value
+                                    })
+                                }}
                         ></input>
+
+                         
 
                         <label>PHONE NO.</label>
 
                         <input
                          type="number"
-                         value={this.state.mobile}
+                         value={this.state.contact}
 
                             onChange={event => {
                                 this.setState({
-                                    mobile: event.target.value
+                                    contact: event.target.value
                                 })
                             }}
 
@@ -123,10 +158,9 @@ export default class ComingSoon extends Component {
 
                         <label>EMAIL-ID</label>
 
-                        <input type="email"
-                        
+                        <input 
+                        type="email"
                         value={this.state.email}
-
                         onChange={event => {
                             this.setState({
                                 email: event.target.value
@@ -151,17 +185,28 @@ export default class ComingSoon extends Component {
                         ></input>
                         <label>COLLEGE </label>
 
-                        <input type="college"
-                        
-                        value={this.state.college}
+                     
 
-                        onChange={event => {
-                            this.setState({
-                                college: event.target.value
-                            })
-                        }}
+                        <Select
+                             
+                             value={college}
+                             onChange={this.handleChange}
+                             options = {this.CollegeData}
+                            />
 
-                        ></input>
+                          <label>GENDER </label>
+
+                          <Select
+                             
+                             value={gender}
+                             onChange={this.handleChange2}
+                             options={gender_option}
+                            />
+
+     
+                             
+
+                        {/*
                         <label>PROGRAMME </label>
 
                         <input type="text" 
@@ -174,7 +219,7 @@ export default class ComingSoon extends Component {
                                 })
                             }}
 
-                        ></input>
+                        ></input> 
                         <label>YEAR </label>
 
                         <input type="number"
@@ -200,7 +245,7 @@ export default class ComingSoon extends Component {
                             }}
 
                         ></input>
-
+                            */} 
                         <label>STATE </label>
 
                         <input type="text" 
@@ -215,6 +260,8 @@ export default class ComingSoon extends Component {
 
                         
                         ></input>
+
+                        {/*
                         <label>HOW DID YOU KNOW ABOUT CA </label>
 
                         <input type="text" 
@@ -227,7 +274,7 @@ export default class ComingSoon extends Component {
                                 })
                             }}
 
-                        ></input>
+                        ></input>*/}
 
 
 
@@ -236,7 +283,7 @@ export default class ComingSoon extends Component {
                     <br />
 
 
-                    <button > SIGN UP </button>
+                    <button onClick = {this.handleClick} > SIGN UP </button>
 
 
 
