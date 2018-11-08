@@ -53,9 +53,18 @@ export default class ComingSoon extends Component {
     this.state.contact = Number(this.state.contact)
 
     let user_type = 0
-    let data = [{ name : this.state.name },{college :this.state.college}  ,{email : this.state.email}, {contact :this.state.contact} ,{password: this.state.password} , {state :this.state.state} , {gender: this.state.gender} ,{ user_type: user_type }] 
- 
-   console.log(data)
+    let data = {
+             name: this.state.name ,
+             college: this.state.college,
+             email: this.state.email,
+             contact: this.state.contact,
+             password: this.state.password,
+             state: this.state.state,
+             gender: this.state.gender,
+             user_type: user_type
+    }
+
+    console.log(data)
 
     if (this.state.password.length < 8) {
       alert('Password length  must be greater than 8  ')
