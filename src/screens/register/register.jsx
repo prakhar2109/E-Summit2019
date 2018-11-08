@@ -103,9 +103,9 @@ export default class ComingSoon extends Component {
                             {' '}
             </span>
 
-            <span>Have a look at the rulebook</span>
+            <span>Click to the see the exciting perks!</span>
 
-            <center><button> RULEBOOK</button></center>
+            <center><button> PERKS</button></center>
 
           </div>
 
