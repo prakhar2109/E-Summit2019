@@ -3,7 +3,7 @@ import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css'
 
 
-import Task from "../../../components/js/pendingTasks"
+import Task from "../../../components/js/TaskIndex"
  
 import { NavLink } from 'react-router-dom'
 
@@ -25,7 +25,7 @@ export default class caLeaderboard extends Component {
             <div id = "container">
                 <div id='leftPane'>
                     <div id='header'>
-                        <NavLink to = "/"><img src={logo} alt="" ></img></NavLink>
+                        <NavLink to = "/"><img id="logo" src={logo} alt="" ></img></NavLink>
                     </div>
                     <hr id="line1" />
                     <div id="viewProfile">

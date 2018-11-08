@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import jump from 'jump.js'
 import "./css/ignite.css";
+import Header from './../header/header'
 import scroll  from  "./static/Union.svg";
 import Footer  from "../footer/footer";
 
@@ -34,8 +35,9 @@ export default class ComingSoon extends Component {
     render () {
         return (
 
-            <>
+            
             <div>
+                <Header />
             <div className  = "ignite_main">
 
                 <div className = "ignite_text">
@@ -215,12 +217,10 @@ export default class ComingSoon extends Component {
                 </div>
  
 
-            
+                <Footer />            
             </div>
 
 
-         <Footer />
-        </>
         );
     }
 }

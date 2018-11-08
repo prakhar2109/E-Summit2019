@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./css/login.css";
+import Header from './../header/header'
 import axios from "axios"
 import {NavLink} from "react-router-dom"
 
@@ -53,7 +54,8 @@ export default class ComingSoon extends Component {
     
     render () {
         return (
-
+            <React.Fragment>
+            <Header />
             <div className  = "login_main">
             
                 <div className = "login_text">
@@ -70,17 +72,17 @@ export default class ComingSoon extends Component {
                 </div>
             
 
-                <div className = "login_form">
-                        
-                        <span> <NavLink activeClassName="act"  to = "/login">Sign In</NavLink></span>
-                        <span> Sign Up</span>
+                
 
-                        
+                <div className="login_form">
 
-            
+                    <span> <NavLink activeClassName="act" to="/login">Sign In</NavLink></span>
+                    <span> <NavLink activeClassName="act" to="/register">Sign Up</NavLink></span>
+
+
                     <form >
 
-                        <label>EMAIL ID </label>
+                        <label>EMAIL </label>
 
                         <input 
                             
@@ -98,7 +100,7 @@ export default class ComingSoon extends Component {
                         
                         ></input>
 
-                        <label>PASSWORD</label>
+                        <label>PASS</label>
 
                         <input
                          
@@ -121,9 +123,11 @@ export default class ComingSoon extends Component {
 
                     <br /> 
 
-                    <a href = "#">  Forgot password?</a>
+                    <a href="#">  Forgot password?</a>
 
                     <button > SIGN IN </button>
+
+
 
 
                 </div>
@@ -133,7 +137,7 @@ export default class ComingSoon extends Component {
             
             </div>
 
-
+            </React.Fragment>
         );
 
     }
