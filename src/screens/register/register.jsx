@@ -52,8 +52,8 @@ export default class ComingSoon extends Component {
     this.state.gender = this.state.gender['value']
     this.state.contact = Number(this.state.contact)
 
-    let user_type = 0
-    let data = [{ name : this.state.name },{college :this.state.college}  ,{email : this.state.email}, {contact :this.state.contact} ,{password: this.state.password} , {state :this.state.state} , {gender: this.state.gender} ,{ user_type: user_type }] 
+     
+    let data = [{ name : this.state.name },{college :this.state.college}  ,{email : this.state.email}, {contact :this.state.contact} ,{password: this.state.password} , {state :this.state.state} , {gender: this.state.gender} , {user_type: 0 }] 
  
    console.log(data)
 
