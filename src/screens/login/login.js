@@ -17,18 +17,11 @@ export default class ComingSoon extends Component {
     
     handleClick = e => {
             e.preventDefault()
-            const err = this.validate()
             let { username , password } = this.state
-        
-            if (!err) {
-
-             
-            
-
             axios({
                 method: 'post',
                 url: url,
-                data:  username,
+                data:  this.state,
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
                 })
                 .then(function (res) {
@@ -40,13 +33,14 @@ export default class ComingSoon extends Component {
                         username: '',
                         password: '',
                     })
+                    window.location.href = '/login/leaderboard';
 
                 })
                 .catch(function (response) {
                     
                     alert(response);
                 });
-            }
+            
         }
 
 
@@ -100,11 +94,11 @@ export default class ComingSoon extends Component {
                         
                         ></input>
 
-                        <label>PASS</label>
+                        <label>PASSWORD</label>
 
                         <input
                          
-                         type = "passowrd" 
+                         type = "password" 
 
                          value={this.state.password}
 
@@ -118,15 +112,16 @@ export default class ComingSoon extends Component {
                          
                          ></input>
 
+                          <br /> 
+
+                        <a href="#">  Forgot password?</a>
+
+                        <button onClick ={this.handleClick }> SIGN IN </button>
+
 
                     </form>
 
-                    <br /> 
-
-                    <a href="#">  Forgot password?</a>
-
-                    <button > SIGN IN </button>
-
+                   
 
 
 
