@@ -35,7 +35,6 @@ export default class ComingSoon extends Component {
     componentDidMount() {
         axios.get("http://esummit.in/api/college/list")
             .then( res=> {
-
                this.CollegeData = res.data.body;
             })
             .catch(function (response) {

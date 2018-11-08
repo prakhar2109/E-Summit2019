@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logo from './../../../utils/esummitLogo.png'
-import './../css/caLeaderboard.css'
+import './../css/caLeaderboard.css';
+import axios from "axios"
 
 
 import Task from "../../../components/js/TaskIndex"
@@ -11,15 +12,27 @@ export default class caLeaderboard extends Component {
     constructor() {
         super();
     }
+
     state = {
-        firstName: 'Sanditya',
-        lastName: 'Srivastava',
+        Name: 'Sanditya',
         score: '0',
+    }
+
+    componentDidMount = () => {
+        axios.get("http://esummit.in//api/user/")
+            .then( res=> {
+                this.setState({
+                    score: res.data.body.score
+                }) ;
+            })
+            .catch(function (response) {
+                alert(response);
+          });
     }
 
 
     render() {
-        let { firstName, lastName, score } = this.state
+        let {Name  ,score } = this.state
         let scorePercentage = score / 360 * 100 + ''
         return (
             <div id = "container">
@@ -32,9 +45,9 @@ export default class caLeaderboard extends Component {
                         VIEW PROFILE
                     </div>
                     <div id="dropShape">
-                        {firstName[0]}
+                        {Name[0]}
                     </div>
-                    <p id="name">{firstName + ' ' + lastName}</p>
+                    <p id="name">{Name}</p>
                     <div className="score">
                         <span id="scoreWritten">SCORE</span>
                         <span id="scoreValue">{score}/360</span>
