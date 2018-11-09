@@ -3,17 +3,19 @@ import "./css/login.css";
 import Header from './../header/header'
 import axios from "axios"
 import {NavLink} from "react-router-dom"
-
+// import AuthService from "../../handlers/ca/Authtoken"
 const url = "http://esummit.in/api/signin/";
 
 
 export default class ComingSoon extends Component {
-
-    state = {
-          email: '',
-          password : '',
-        }
-    
+constructor(props){
+    super(props);
+    this.state = {
+        email: '',
+        password : ''
+    }
+    // this.Authenticate = new AuthService();
+}
     
     handleClick = e => {
             e.preventDefault()
@@ -31,21 +33,26 @@ export default class ComingSoon extends Component {
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
                 })
                 .then(function (res) {
-                    var d = new Date();
-                    d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
-                    document.cookie = 'token=' + res.data.token + ';expires=' + d.toUTCString() + ';path=/';
- 
-                    window.location.href = '/login/leaderboard';
-                    
-                    data = ""
-
+                    console.log(res.data,"res")
+                    if(res && res.data){
+                        if(res.data){
+                            var d = new Date();
+                            d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+                            document.cookie = 'token=' + res.data.token + ';expires=' + d.toUTCString() + ';path=/';
+                            window.location.href = '/dashboard';
+                            data = ""
+                            if(res.data.token){
+                                localStorage.setItem('ca_token',res.data.token)
+                            }
+                        }
+                    }
                 })
-                .catch(function (response) {
-                    
-                    alert(response);
-                    console.log(response);
-
-             
+               .catch(function (response) {
+                    // console.log(response);
+                    alert("Something went wrong")
+                    // this.setState({
+                    //     error: "Something went wrong"
+                    // })
                 });
             
         }
@@ -80,7 +87,9 @@ export default class ComingSoon extends Component {
                     <span> <NavLink activeClassName="act" to="/login">Sign In</NavLink></span>
                     <span> <NavLink activeClassName="act" to="/register">Sign Up</NavLink></span>
 
-
+                    <div>
+                        {this.state.error}
+                    </div>
                     <form >
 
                         <label>EMAIL </label>

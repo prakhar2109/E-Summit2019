@@ -6,27 +6,7 @@ export default class IndexNew extends Component{
     constructor(){
         super();
         this.state={
-            tasks:[{
-                description:"bifsi",
-                number:"2"
-
-            },
-            {
-                description:"hfsioh",
-                number:"3"
-            },
-            {
-                description:"hfsioh",
-                number:"3"
-            },
-            {
-                description:"hfsioh",
-                number:"1"
-            },
-            {
-                description:"hfsioh",
-                number:"1"
-            }
+            tasks:[
         ]
         }
         
