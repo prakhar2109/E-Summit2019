@@ -3,7 +3,6 @@ import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css';
 import axios from "axios"
 
-
 import Task from "../../../components/js/TaskIndex"
  
 import { NavLink } from 'react-router-dom'
@@ -12,21 +11,28 @@ const AuthStr = ""
 export default class caLeaderboard extends Component {
     constructor() {
         super();
+        this.state = {
+            name: '',
+            score: '0',
+        }
     }
 
-    state = {
-        Name: 'Sanditya',
-        score: '0',
-    }
+
 
     
-
+    handleLogout = ()=>{
+        localStorage.removeItem('ca_token')
+        window.location.href = '/login';
+    }
     componentDidMount = () => {
-        axios.get("http://esummit.in//api/user/" ,{ 'headers': { 'Authorization': AuthStr } })
+
+        const token = localStorage.getItem('ca_token')
+        axios.get("http://esummit.in/api/user/" ,{ 'headers': { 'Authorization': token } })
             .then( res=> {
+                // console.log(res.data,"hasjgdukagh")
                 this.setState({
-                    score: res.data.body.score,
-                    Name: res.data.body.name
+                    score: res.data.score,
+                    name: res.data.name
                 }) ;
             })
             .catch(function (response) {
@@ -36,7 +42,7 @@ export default class caLeaderboard extends Component {
 
 
     render() {
-        let {Name  ,score } = this.state
+        let {name  ,score } = this.state
         let scorePercentage = score / 360 * 100 + ''
         return (
             <div id = "container">
@@ -49,9 +55,9 @@ export default class caLeaderboard extends Component {
                         VIEW PROFILE
                     </div>
                     <div id="dropShape">
-                        {Name[0]}
+                        {name[0]}
                     </div>
-                    <p id="name">{Name}</p>
+                    <p id="name">{name}</p>
                     <div className="score">
                         <span id="scoreWritten">SCORE</span>
                         <span id="scoreValue">{score}/360</span>
@@ -63,6 +69,9 @@ export default class caLeaderboard extends Component {
                     <div id="optionsToggle">
                         <span ><NavLink id="tasksButton" to = "/pendingtask"> Tasks </NavLink><br /></span>
                         <span id="leaderboardButton">LeaderBoard</span>
+                    </div>
+                    <div id="submitButton">
+                        <button type="submit" onClick={this.handleLogout}>Log Out</button>
                     </div>
                 </div>
  
