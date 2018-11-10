@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom'
 import logo from './static/logo-18.svg'
 import $ from 'jquery'
 import phone from './static/Group.svg'
+import mail from './static/mail-icon.png'
+
 import 'form-serializer'
 
 export default class ComingSoon extends Component {
@@ -78,7 +80,7 @@ export default class ComingSoon extends Component {
 
               <span>
                 <span className='phone'>
-                  <img src={phone} alt='phone' />
+                  <img src={mail} alt='phone' />
                 </span>
 
                 <span className='email'>
