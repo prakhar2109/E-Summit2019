@@ -156,7 +156,7 @@
 
 .ignite_event_unit {
   display: inline-block;
-  padding: 3.125rem;
+  margin: 3.125rem;
 }
 
 @media (max-width: 800px) {
