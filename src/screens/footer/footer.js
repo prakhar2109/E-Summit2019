@@ -12,7 +12,7 @@ export default class ComingSoon extends Component {
             <div className = "footer" >
 
             
-                <div> <p>For Sponsorship Opportunities contact </p><p> <a href = "mailto:esummit@iitr.ac.in">esummit@iitr.ac.in</a> </p> </div>
+                <div> <p>For queries: </p><p> <a href = "mailto:esummit@iitr.ac.in">esummit@iitr.ac.in</a> </p> </div>
 
                 <div>
                      <p>Social Media</p>
@@ -23,6 +23,9 @@ export default class ComingSoon extends Component {
                                         <a target = "_blank" href = "https://twitter.com/EDC_IITRoorkee">  <i className="fab fa-twitter"></i>  </a>
                                          <a target = "_blank" href  = "https://www.facebook.com/ecelliitr/"><i className="fab fa-facebook-f"></i> </a>
                                         <a target = "_blank" href = "https://www.instagram.com/ecelliitr/"> <i className="fab fa-instagram"></i> </a>
+                                        <a target='_blank' href='https://www.linkedin.com/company/esummit/'>
+                  <i className='fab fa-linkedin' />
+                </a>
                                     </span>
                      </div>
                      </p>
@@ -36,7 +39,7 @@ export default class ComingSoon extends Component {
                 </div>
 
                 <div>
-                <p> E-Mail ID </p>
+                <p> For collaborations: </p>
 
                 <p> <a href = "mailto:ecell@iitr.ac.in">ecell@iitr.ac.in</a></p>
                 </div>
