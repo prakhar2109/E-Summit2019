@@ -144,7 +144,7 @@
 
 .ignite_events {
   background: #F7F8F9;
-  padding: 5rem;
+  padding: 5rem 0;
   width: 100vw;
 }
 
@@ -182,8 +182,9 @@
 
 @media (max-width: 800px) {
   .ignite_event_unit div {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem !important;
+    height: 5rem !important;
+    margin: 0.6rem;
   }
 }
 
@@ -230,8 +231,8 @@
 
 @media (max-width: 800px) {
   .ignite_venu_unit div {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.5rem !important;
+    height: 4.5rem !important;
     margin-bottom: 2vh;
   }
 }
