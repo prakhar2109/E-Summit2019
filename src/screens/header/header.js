@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 import { NavLink } from 'react-router-dom'
-
-import './css/main.css'
+import Hamburger from './hamburger'
+import './css/main.css' 
 import ecell from './static/image.svg'
 import esummit from './static/esummit.png'
 
@@ -25,11 +25,13 @@ export default class ComingSoon extends Component {
 
         </span>
 
+     
+
         <span className='mobile_menu'>
 
-          <i className='fas fa-bars' />
+             <Hamburger/>
 
-        </span>
+        </span> 
 
       </div>
     )
