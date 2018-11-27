@@ -7,7 +7,21 @@ import $ from 'jquery'
 import phone from './static/Group.svg'
 import mail from './static/mail-icon.png'
 
-import 'form-serializer'
+import Select from 'react-select';
+
+import 'form-serializer';
+
+const category_option = [
+  {
+    value :"Student", 
+    label :"Student"
+  },
+
+  {
+    value : "Professional",
+    label : "Professional"
+  }
+]
 
 export default class ComingSoon extends Component {
   handleClick = e => {
@@ -113,28 +127,33 @@ export default class ComingSoon extends Component {
               <label>Email</label>
               <input name='email' type='email' />
 
-              <label>College</label>
+              <label>Category</label>
+
+              <Select  options={category_option} name = "category" />
+              <label>College / Company</label>
               <input name='college' type='text' />
 
               <label>City</label>
               <input name='city' type='text' />
 
-              <button onClick={this.handleClick}>Submit</button>
+              <button style = {{fontSize : "24px"}} onClick={this.handleClick}>Submit</button>
             </form>
 
           </div>
 
           <div className='social_mobile'>
             <span>
-              <a target='_blank' href='https://twitter.com/EDC_IITRoorkee'>
-                <i className='fab fa-twitter' />
-              </a>
-              <a target='_blank' href='https://www.facebook.com/ecelliitr/'>
-                <i className='fab fa-facebook-f' />
-              </a>
-              <a target='_blank' href='https://www.instagram.com/ecelliitr/'>
-                <i className='fab fa-instagram' />
-              </a>
+            <a target='_blank' href='https://www.linkedin.com/company/esummit/'>
+                  <i className='fab fa-linkedin' />
+                </a>
+                
+                <a target='_blank' href='https://www.facebook.com/ecelliitr/'>
+                  <i className='fab fa-facebook-f' />
+                </a>
+                
+                <a target='_blank' href='https://www.instagram.com/ecelliitr/'>
+                  <i className='fab fa-instagram' />
+                </a>
             </span>
           </div>
           <center className='contact_mobile'>

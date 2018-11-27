@@ -26,7 +26,7 @@ export default class tasks extends Component{
         return(
             
             <div className="task">
-            <div className="taskItem">
+            <div  className="taskItem">
                 Task {this.props.number}
             </div>
             <div className="taskDescription">

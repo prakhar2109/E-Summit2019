@@ -94,7 +94,6 @@
   color: #3A667B;
   margin-top: 24px;
   cursor: pointer;
-  outline: none;
 }
 
 .login_main .login_form {
@@ -154,14 +153,14 @@
   }
 }
 
-.login_main .login_form span:first-child {
+.login_main .login_form .login_login {
   padding: 16px 20px;
   background: #F39423;
   border-top-right-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
 
-.login_main .login_form span:nth-child(2) {
+.login_main .login_form .login_register {
   background: #265C77;
   padding: 16px 20px;
   border-top-left-radius: 3rem;

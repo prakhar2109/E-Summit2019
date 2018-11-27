@@ -1,5 +1,5 @@
 .main_conta {
-  width: 100%;
+  width: 100vw;
 }
 
 .main_conta .Part1 {
@@ -55,7 +55,6 @@
   background: #F39423;
   padding: 0;
   margin: 0;
-  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto;
@@ -65,6 +64,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100vw;
 }
 
 .form form {

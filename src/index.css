@@ -12,3 +12,7 @@ a{
 .active{
     color:#F39423  !important;
 }
+
+body , html ,p ,div, button , a , span  {
+    font-family: proxima-nova, sans-serif;
+}

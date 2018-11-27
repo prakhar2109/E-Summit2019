@@ -48,8 +48,18 @@ constructor(props){
                     }
                 })
                .catch(function (response) {
-                    // console.log(response);
-                    alert("Something went wrong")
+                   console.log(response);
+
+                   console.log(response.status);
+
+                   if(response.response.status == 401)
+                    {
+                     alert("username or password incorrect")
+                    }
+                    else{
+                    alert(response)
+                    }
+
                     // this.setState({
                     //     error: "Something went wrong"
                     // })
@@ -84,8 +94,22 @@ constructor(props){
 
                 <div className="login_form">
 
-                    <span> <NavLink activeClassName="act" to="/login">Sign In</NavLink></span>
-                    <span> <NavLink activeClassName="act" to="/register">Sign Up</NavLink></span>
+                     <NavLink activeClassName="act" to="/login">
+						<span className="login_login">
+							{' '}
+						
+								Sign In
+						
+						</span>
+          	</NavLink>
+            <NavLink activeClassName="act" to="/register">
+						<span className="login_register">
+							{' '}
+						
+								Sign Up
+					
+						</span>
+            </NavLink>
 
                     <div>
                         {this.state.error}

@@ -44,7 +44,7 @@ export default class ComingSoon extends Component {
                             
             </div>
 
-            <div> <img onClick={this.jum} src={scroll} alt='' /></div>
+            <div> <i class="fa fa-arrow-down" style = {{cursor :"pointer"}} aria-hidden="true"  onClick={this.jum}  /></div>
 
             <div> SCROLL DOWN</div>
 

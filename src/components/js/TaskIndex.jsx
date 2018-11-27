@@ -6,8 +6,7 @@ export default class IndexNew extends Component{
     constructor(){
         super();
         this.state={
-            tasks:[
-        ]
+            tasks:[]
         }
         
     

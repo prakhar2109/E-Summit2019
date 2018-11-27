@@ -36,7 +36,7 @@
           box-sizing: border-box;
   background-color: white;
   line-height: 1.5625rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: center;
   letter-spacing: 0.09em;
   color: #3A667B;
@@ -136,7 +136,7 @@
   letter-spacing: 0.06em;
   color: #9B9B9B;
   display: block;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .form form input {
