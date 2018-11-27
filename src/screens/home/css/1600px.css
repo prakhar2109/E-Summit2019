@@ -19,12 +19,13 @@
 
 .main_conta .Part1 .text {
   line-height: 2.4375rem;
-  font-size: 1.74rem;
+  font-size: 1.8rem;
   text-align: center;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.45);
   text-align: center;
   margin: 0 8.12rem 0 9rem;
+  font-family: Montserrat;
 }
 
 .main_conta .Part1 button {
@@ -48,8 +49,11 @@
 }
 
 .main_conta .Part1 span a {
-  color: black;
+  color: #3A667B;
   text-decoration: none;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 
 .main_conta .Part1 span img {
@@ -62,7 +66,7 @@
 .main_conta .Part1 .social {
   margin-left: 3.9375rem;
   font-size: 2rem;
-  margin-top: -6.25rem;
+  margin-top: 0rem;
 }
 
 .main_conta .Part1 .social i {
@@ -118,6 +122,7 @@
 .form form p {
   font-style: normal;
   font-weight: 600;
+  font-family: Montserrat;
   line-height: normal;
   font-size: 1.5rem;
   letter-spacing: 0.06em;
@@ -135,26 +140,56 @@
   font-size: 1.25rem;
   letter-spacing: 0.06em;
   color: #9B9B9B;
-  display: block;
-  margin-top: 2rem;
+  display: none;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.form-errors{
+  height: 5px;
+  color: red;
+  font-size: 12px;
+  font-family: Montserrat;
 
+}
+.form-success{
+  height: 5px;
+  color: green;
+  font-size: 12px;
+  font-family: Montserrat;
+}
 .form form input {
-  border-bottom: 1px solid #4F4F4F;
+  display: block;
+  border-bottom: 1px solid #9B9B9B;
   border-top: none;
   border-left: none;
   border-right: none;
-  width: 24.25rem;
+  line-height: normal;
+  font-size: 1.25rem;
+  width: 20.25rem;
+  font-family: Montserrat;
+  outline: #F39423;
+  padding: 4px 0px;
 }
-
+.form form .form-fields{
+  padding: 0.9rem 0px;
+  margin-top: 2.5rem;
+}
 .form form button {
   background: #F39423;
   border-radius: 4px;
-  width: 24.25rem;
-  height: 4rem;
+  width: 20.25rem;
+  height: 3.3rem;
+  font-family: Montserrat;
+  font-weight: 600;
+  letter-spacing: 1px;
   display: block;
   border: none;
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: white;
   cursor: pointer;
 }

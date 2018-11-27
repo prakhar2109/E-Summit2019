@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './css/main.css'
 import Header from './../header/header'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import logo from './static/logo-18.svg'
 import $ from 'jquery'
 import phone from './static/Group.svg'
@@ -24,23 +24,91 @@ const category_option = [
 ]
 
 export default class ComingSoon extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      phone: "",
+      email: "",
+      college: "",
+      city: "",
+      error: "",
+      success: ""
+    }
+  }
+  onChange = (e) => {
+    const name = e.target.name;
+    let value = e.target.value;
+    this.setState({ [name]: value });
+  }
   handleClick = e => {
     e.preventDefault()
 
-    let $form = $('form')
-    let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
-    $.ajax({
-      url: url,
-      method: 'GET',
-      dataType: 'json',
-      data: $form.serializeObject(),
-      success: function () {
-        console.log('submit')
-      },
-      error: function () {}
-    })
+    let { name, phone, email, college, city } = this.state
+
+    if (name) name = name.trim()
+    if (phone) phone = phone.trim()
+    if (email) email = email.trim()
+    if (college) college = college.trim()
+    if (city) city = city.trim()
+
+    if (name) {
+      if (phone) {
+        if (!isNaN(phone) && phone.substring(0).length === 10) {
+          if (email) {
+            let $form = $('form')
+            let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
+            $.ajax({
+              url: url,
+              method: 'GET',
+              dataType: 'json',
+              data: $form.serializeObject(),
+              success:
+                this.setState({
+                  success: "Form submitted successfully",
+                  errors: "",
+                  name: "",
+                  phone: "",
+                  email: "",
+                  college: "",
+                  city: "",
+                })
+              ,
+              error:
+                console.log("error")
+              //   this.setState({
+              //   errors: "Something went wrong"
+              // })
+
+            })
+          }
+          else {
+            this.setState({
+              errors: "Email field is invalid"
+            })
+          }
+        }
+        else {
+          this.setState({
+            errors: "Contact number is invalid"
+          })
+        }
+      }
+      else {
+        this.setState({
+          errors: "Contact cannot be empty"
+        })
+      }
+    }
+    else {
+      this.setState({
+        errors: "Name cannot be empty"
+      })
+    }
+
+
   }
-  render () {
+  render() {
     return (
       <React.Fragment>
         <Header />
@@ -53,8 +121,8 @@ export default class ComingSoon extends Component {
               <img src={logo} alt='logo' />
 
               <div className='text'>
-                
-              E-Summit IIT Roorkee brings a platform to celebrate the history and the spirit of  entrepreneurship and to inspire the leaders and problem solvers of today and tomorrow. This 2-day extravaganza will be a congregation of students, corporates, entrepreneurs and budding enthusiasts on a common stage.
+
+                E-Summit IIT Roorkee brings a platform to celebrate the history and the spirit of  entrepreneurship and to inspire the leaders and problem solvers of today and tomorrow. This 2-day extravaganza will be a congregation of students, corporates, entrepreneurs and budding enthusiasts on a common stage.
 
                             </div>
 
@@ -112,31 +180,36 @@ export default class ComingSoon extends Component {
             <form>
               <center>
                 <p>
-                                    Pre-Register Now
+                  Pre-Register Now
                                 </p>
                 <hr />
 
               </center>
+              <div className={this.state.success ? "form-success" : "form-errors"}>
+                {this.state.errors}{this.state.success}
+              </div>
+              {/* <label>Name</label> */}
+              <div className="form-fields">
+                <input onChange={this.onChange} name='name' value={this.state.name} type='text' placeholder="Name*" />
+              </div>
 
-              <label>Name</label>
-              <input name='name' type='text' />
-
-              <label>Phone</label>
-              <input name='phone' type='number' />
-
-              <label>Email</label>
-              <input name='email' type='email' />
-
-              <label>Category</label>
-
-              <Select  options={category_option} name = "category" />
-              <label>College / Company</label>
-              <input name='college' type='text' />
-
-              <label>City</label>
-              <input name='city' type='text' />
-
-              <button style = {{fontSize : "24px"}} onClick={this.handleClick}>Submit</button>
+              {/* <label>Phone</label> */}
+              <div className="form-fields">
+                <input onChange={this.onChange} name='phone' type='number' value={this.state.phone} minlength="10" maxlength="10" placeholder="Phone*" />
+              </div>
+              {/* <label>Email</label> */}
+              <div className="form-fields">
+                <input onChange={this.onChange} name='email' type='email' value={this.state.email} placeholder="Email*" />
+              </div>
+              {/* <label>College</label> */}
+              <div className="form-fields">
+                <input onChange={this.onChange} name='college' type='text' value={this.state.college} placeholder="College" />
+              </div>
+              {/* <label>City</label> */}
+              <div className="form-fields">
+                <input onChange={this.onChange} name='city' type='text' value={this.state.city} placeholder="City" />
+              </div>
+              <button onClick={this.handleClick}>SUBMIT</button>
             </form>
 
           </div>
