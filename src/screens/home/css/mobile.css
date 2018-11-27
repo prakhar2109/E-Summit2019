@@ -14,10 +14,12 @@
 
 .main_conta .Part1 .text {
   line-height: 19px;
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
   letter-spacing: 0.09em;
+  font-family: Montserrat;
   margin: 0 1rem 0 1rem;
+  padding: 30px;
 }
 
 .main_conta .Part1 button {
@@ -39,6 +41,23 @@
 .main_conta .Part1 span {
   padding: 0;
 }
+.phone_no a{
+  padding: 0;
+  color: #3A667B;
+  text-decoration: none;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.email a{
+  padding: 0;
+  color: #3A667B;
+  text-decoration: none;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
 
 .main_conta .Part1 span img {
   width: 2rem;
@@ -81,6 +100,7 @@
   font-weight: 600;
   line-height: normal;
   font-size: 1.25rem;
+  font-family: Montserrat;
   letter-spacing: 0.06em;
   color: #21526B;
 }
@@ -91,21 +111,48 @@
   background: #F39423;
 }
 
-.form form label {
+/* .form form label {
   line-height: normal;
   font-size: 1.25rem;
   letter-spacing: 0.06em;
   color: #9B9B9B;
   display: block;
   margin-top: 1.5rem;
+} */
+.form-fields{
+  padding: 0.7rem 0;
+  margin-top: 1rem;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.form-errors{
+  height: 5px;
+  color: red;
+  font-size: 12px;
+  font-family: Montserrat;
 
+}
+.form-success{
+  height: 5px;
+  color: green;
+  font-size: 12px;
+  font-family: Montserrat;
+}
 .form form input {
-  border-bottom: 1px solid #4F4F4F;
+  border-bottom: 1px solid #9B9B9B;
   border-top: none;
   border-left: none;
   border-right: none;
   width: 70vw;
+  line-height: normal;
+  font-size: 1.1rem;
+  font-family: Montserrat;
+  padding: 4px 0px;
 }
 
 .form form button {

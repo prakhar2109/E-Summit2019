@@ -4,7 +4,7 @@ import './../css/caLeaderboard.css';
 import axios from "axios"
 
 import Task from "../../../components/js/TaskIndex"
- 
+
 import { NavLink } from 'react-router-dom'
 
 const AuthStr = ""
@@ -19,36 +19,36 @@ export default class caLeaderboard extends Component {
 
 
 
-    
-    handleLogout = ()=>{
+
+    handleLogout = () => {
         localStorage.removeItem('ca_token')
         window.location.href = '/login';
     }
     componentDidMount = () => {
 
         const token = localStorage.getItem('ca_token')
-        axios.get("http://esummit.in/api/user/" ,{ 'headers': { 'Authorization': token } })
-            .then( res=> {
+        axios.get("http://esummit.in/api/user/", { 'headers': { 'Authorization': token } })
+            .then(res => {
                 // console.log(res.data,"hasjgdukagh")
                 this.setState({
                     score: res.data.score,
                     name: res.data.name
-                }) ;
+                });
             })
             .catch(function (response) {
                 alert(response);
-          });
+            });
     }
 
 
     render() {
-        let {name  ,score } = this.state
+        let { name, score } = this.state
         let scorePercentage = score / 360 * 100 + ''
         return (
-            <div id = "container">
+            <div id="container">
                 <div id='leftPane'>
                     <div id='header'>
-                        <NavLink to = "/"><img id="logo" src={logo} alt="" ></img></NavLink>
+                        <NavLink to="/"><img id="logo" src={logo} alt="" ></img></NavLink>
                     </div>
                     <hr id="line1" />
                     <div id="viewProfile">
@@ -67,14 +67,15 @@ export default class caLeaderboard extends Component {
                         </div>
                     </div>
                     <div id="optionsToggle">
-                        <span ><NavLink id="tasksButton" to = "/pendingtask"> Tasks </NavLink><br /></span>
+                        <span ><NavLink id="tasksButton" to="/pendingtask"> Tasks </NavLink><br /></span>
                         <span id="leaderboardButton">LeaderBoard</span>
+                        <div id="leaderboardButton">Rulebook</div>
                     </div>
                     <div id="submitButton">
                         <button type="submit" onClick={this.handleLogout}>Log Out</button>
                     </div>
                 </div>
- 
+
                 <Task />
             </div>
 
