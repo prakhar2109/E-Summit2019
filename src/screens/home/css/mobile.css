@@ -1,5 +1,7 @@
 .main_conta {
   width: 100%;
+  position: relative;
+  margin-top: 86px;
 }
 
 .main_conta .Part1 {

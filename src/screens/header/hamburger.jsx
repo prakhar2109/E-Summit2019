@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import './hamburger.css'
 import $ from 'jquery';
+import { Link } from "react-router-dom"
 export default class Hamburger extends Component {
-
-
 
     render() {
         $(document).ready(function () {
 
             $(".cross").hide();
             $(".menu").hide();
+            $(".hamburger").show();
+
             $(".hamburger").click(function () {
                 $(".menu").slideToggle("slow", function () {
                     $(".hamburger").hide();
@@ -35,11 +36,11 @@ export default class Hamburger extends Component {
 
                 <div className="menu">
                     <ul>
-                        <a href="#"><li>LINK ONE</li></a>
-                        <a href="#"><li>LINK TWO</li></a>
-                        <a href="#"><li>LINK THREE</li></a>
-                        <a href="#"><li>LINK FOUR</li></a>
-                        <a href="#"><li>LINK FIVE</li></a>
+                        <Link to="/"><li id="menu">LINK ONE</li></Link>
+                        <Link to="/login"><li>LINK TWO</li></Link>
+                        <Link to="/ignite"><li>LINK THREE</li></Link>
+                        <Link to="/"><li>LINK FOUR</li></Link>
+                        <Link to="/"><li>LINK FIVE</li></Link>
                     </ul>
                 </div>
             </div>
