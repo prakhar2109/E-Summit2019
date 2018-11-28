@@ -4,6 +4,9 @@
   -moz-box-shadow: 0px 9px 15px -10px rgba(155,155,155,1);
   box-shadow: 0px 9px 15px -10px rgba(155,155,155,1);
   padding: 0.5rem 2rem 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
   width: 100vw;
 }
 
@@ -11,7 +14,6 @@
   float: right;
   text-decoration: none;
   color: black;
-  font-size: 3rem;
 }
 
 .esummit_logo img {
