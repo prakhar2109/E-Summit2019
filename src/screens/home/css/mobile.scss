@@ -2,7 +2,7 @@
 .main_conta{
    
   
-    width:100%;
+    width:100vw;
 
     .Part1{
         background-color: white;
@@ -70,12 +70,12 @@
     background: #F39423;
     padding: 0;
     margin: 0;
-    width: 100%;
     display: grid;
     grid-template-rows: auto;
     min-height:100vh;
     justify-items: center;
     align-items: center;
+    width:100vw;
   
   
     form{
