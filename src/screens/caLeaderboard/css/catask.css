@@ -1,7 +1,7 @@
 .taskparent{
     background:#F7F8F9;
     height: 100vh;
-    width: 130vh;
+    width: 166vh;
 }
 
 .taskchildrow{
@@ -16,7 +16,7 @@
 
     background:#FFFFFF;
     height: 41.57vh;
-    width: 30.83%;
+    width: 40vh;
     margin-left: 1.875%;
     margin-bottom: 1.875%;
     box-shadow: 1.5px 2px 15px rgba(51, 51, 51, 0.08);
@@ -51,4 +51,34 @@
     border-style: dashed;
     border-width: 2px;
     height: 25vh;
+}
+.taskchildheaderrow{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.taskchild-line{
+    width: 200vh;
+    height: 0.4vh;
+    background-color: #E0E0E0;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 90vh;
+    margin-left: 1vh;
+}
+.taskchild-weeklyuploads{
+    margin-top: 2vh;
+    margin-left: 3vh;
+    margin-right: 2vh;
+    color:rgba(130, 130, 130, 0.93);
+    font-size: 20px;
+
+}
+.taskchild-dates{
+    margin-top: 2vh;
+    font-size: 20px;
+    color:rgba(130, 130, 130, 0.93);
+    margin-left: 3vh;
 }

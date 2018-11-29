@@ -26,6 +26,17 @@ export default class Catask extends Component{
         return(
 
             <div className="taskparent">
+              <div className="taskchildheaderrow">
+                <div className="taskchild-weeklyuploads">
+                Weekly Uploads
+                </div>
+                <div className="taskchild-line">
+                
+                </div>
+                <div className="taskchild-dates">
+                23 September - 30 September 2018
+                </div>
+              </div>
               <div className="taskchildrow">
               
               {/* {this.state.task && this.state.task.map((e, index) => */}
