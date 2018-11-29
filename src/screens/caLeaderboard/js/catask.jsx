@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../css/catask.css'
 import axios from "axios"
 import { normalizeUnits } from 'moment';
-const baseurl="http://192.168.1.134:8000" 
+const baseurl="http://warm-retreat-90641.herokuapp.com" 
 export default class Catask extends Component{
     constructor(){
         super()
@@ -14,8 +14,8 @@ export default class Catask extends Component{
     componentDidMount = () => {
 
         // const token = localStorage.getItem('ca_token')
-        let token="2a495f85989e77404b1b3ba329ee861975e7c949" //for devonly
-        axios.get(baseurl+'/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
+        let token="bcf746263ad4cdcfda1abc2dfd80675a04382fd4" //for devonly
+        axios.get(baseurl+'/v1/api/task/list/', { 'headers': { 'Authorization': `Token ${token}` } })
         .then(res => {
             if (res && res.data && res.data) {
                 console.log(res.data, "res.data")
@@ -59,17 +59,17 @@ export default class Catask extends Component{
               </div>
               <div className="taskchildrow">
               
-              {/* {this.state.task && this.state.task.map((e, index) => */}
+            {this.state.task && this.state.task.map((e, index) =>
                     
                 <div className="taskchild">
                 
                     <div className="taskchild-body">
                         <div className="taskchild-heading">
-                        {/* Task {e.id} */}Task 1
+                          Task {e.id}   
                         </div>
 
                         <div className="taskchild-description">
-                        {/* {e.description} */}Description about what is to be done in the task
+                       {e.description}   
                         </div>
                         <div className="taskchild-fileupload">
                         <input id="fileInput{e.id}" type='file' onChange={(e)=>this.fileUploadHandler(e.target.files)}/>
@@ -80,7 +80,7 @@ export default class Catask extends Component{
                     </div>
                 </div>
 
-                {/* )} */}
+                 )} 
                 
               </div>
             </div>

@@ -7,7 +7,7 @@ import Task from "../../../components/js/TaskIndex"
 
 import { NavLink } from 'react-router-dom'
 
-const baseurl="http://192.168.1.134:8000" 
+const baseurl="http://warm-retreat-90641.herokuapp.com" 
 export default class caLeaderboard extends Component {
     constructor() {
         super();
@@ -27,8 +27,8 @@ export default class caLeaderboard extends Component {
     componentDidMount = () => {
 
         // const token = localStorage.getItem('ca_token')
-        let token="2a495f85989e77404b1b3ba329ee861975e7c949" //for devonly
-        axios.get(baseurl+'/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
+        let token="bcf746263ad4cdcfda1abc2dfd80675a04382fd4" //for devonly
+        axios.get(baseurl+'/v1/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
             .then(res => {
                 // console.log(res.data,"hasjgdukagh")
                 this.setState({
