@@ -8,7 +8,7 @@ export default class pendingTasks extends Component{
     state={
 
     }
-    render(){
+    render(){ 
         return(
             <div id="pendingTasks">
                 <div id="headerLeft">

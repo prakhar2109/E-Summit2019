@@ -7,6 +7,8 @@ import Register from "./screens/register/register";
 
 import ignite from "./screens/ignite/ignite"
 
+import Lfooter from "./screens/footer/landingpagefooter"
+
 import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
@@ -29,14 +31,18 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
 
-            <Route exact path="/register" component={Register} />
+            {/* <Route exact path="/register" component={Register} />
             {
               this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
                 <Route exact path="/login" component={Login} />
-            }
+            } */}
+
+             <Route exact path="/register" component={Register} />
+             <Route exact path="/dashboard" component={LeaderBoard} />
 
 
             <Route path="/ignite" component={ignite} />
+            <Route path="/footer" component={Lfooter} />
 
 
           </Switch>

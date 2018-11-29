@@ -19,6 +19,6 @@ export default class IndexNew extends Component {
                 }) : null
                 }
             </div>
-        )
+        ) 
     }
 }

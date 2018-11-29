@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css';
 import axios from "axios"
-
+import Catask from './catask'
 import Task from "../../../components/js/TaskIndex"
 
 import { NavLink } from 'react-router-dom'
 
-const AuthStr = ""
+const baseurl="http://192.168.1.134:8000" 
 export default class caLeaderboard extends Component {
     constructor() {
         super();
@@ -26,8 +26,9 @@ export default class caLeaderboard extends Component {
     }
     componentDidMount = () => {
 
-        const token = localStorage.getItem('ca_token')
-        axios.get("http://esummit.in/api/user/", { 'headers': { 'Authorization': token } })
+        // const token = localStorage.getItem('ca_token')
+        let token="2a495f85989e77404b1b3ba329ee861975e7c949" //for devonly
+        axios.get(baseurl+'/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
             .then(res => {
                 // console.log(res.data,"hasjgdukagh")
                 this.setState({
@@ -40,7 +41,7 @@ export default class caLeaderboard extends Component {
             });
     }
 
-
+ 
     render() {
         let { name, score } = this.state
         let scorePercentage = score / 360 * 100 + ''
@@ -76,7 +77,7 @@ export default class caLeaderboard extends Component {
                     </div>
                 </div>
 
-                <Task />
+                <Catask />
             </div>
 
 

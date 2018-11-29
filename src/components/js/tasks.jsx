@@ -3,7 +3,7 @@ import './../css/tasks.css'
 import Dropzone from 'react-dropzone' 
 export default class Tasks extends Component{
         
-    constructor(){
+    constructor(){ 
         super();
     }
     state={
@@ -22,6 +22,7 @@ export default class Tasks extends Component{
       return(
           <div id="tasks">
             <div className="task">
+            {console.log("hello")}
             <div className="taskItem">
                 Task 1
             </div>

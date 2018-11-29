@@ -11,7 +11,7 @@
 #leftPane{
     max-width: 18%;
     background-color: white;
-    padding-bottom: 3.5%;
+    padding-bottom: 3.5%; 
     height: 100%;
     width: 18%;
     /* display: inline; */
@@ -36,7 +36,7 @@
 #viewProfile{
     padding: 0%;
     color: #F39423 !important;
-    margin-left: 60%;
+    margin-left: 59%;
     margin-right: 8%;
     font-size:60%;
 }
@@ -96,8 +96,6 @@
     padding-top: 10%;
     padding-left: 10%;
     padding-bottom: 90%;
-    border-color: rgba(0, 0, 0, 0.1);
-    border-style: solid; 
     max-height: 45vh;
     height: 45vh;    
 
@@ -119,7 +117,7 @@
 }
 #submitButton button{
     cursor: pointer;
-    color: #F39423;
+    color: #E24F3B;
     font-weight: 500;
     font-size: 2vh;
     margin-left: auto;

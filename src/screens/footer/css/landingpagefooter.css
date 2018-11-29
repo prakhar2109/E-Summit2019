@@ -1,0 +1,36 @@
+.heading{
+    font-size: 100px;
+    color:blue;
+    height: 100px;
+    width: 100px;
+}
+.landingpagefooter{
+    background: #242626;
+    height: 100vh;
+}
+.footerparent{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin-top:152px;
+    background: yellow;
+}
+
+.footerform{
+
+ 
+    height: 80vh;
+    width:50vw
+}
+.footercontact{
+
+    
+    height: 80vh;
+    width: 50vw;
+}
+.footerform-heading{
+    font-family: proxima-nova,sans-serif;
+    font-size:36px;
+    line-height: 36px;
+    text-align: left;
+}
