@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './css/landingpagefooter.css';
 
-export default class Lfooter extends Component {
+export default class FooterWithContactUs extends Component {
 
     render() {
 
@@ -12,14 +12,9 @@ export default class Lfooter extends Component {
                 <div className="footerparent">
 
                     <div className="footercontact">
-                        <div className="footer-logo">
+                        <div className="footer-logo"></div>
 
-
-                        </div>
-
-                        <div className="landing-footer-icons">
-
-                        </div>
+                        <div className="landing-footer-icons"></div>
 
                         <div className="landing-footer-heading">
                             Phone no.
@@ -53,40 +48,37 @@ export default class Lfooter extends Component {
                         <div className="footerformfiels">
 
                             <form>
-                            <input type="text" id="formName" placeholder="Name"></input>
-                            <input type="text" id="formPhone"placeholder="Phone no."></input>
-                            <input type="text" id="formEmail" placeholder="E-Mail ID"></input>
-                            <textarea rows="8" cols="50" name="comment" form="usrform" id="formmessage" placeholder="Message">
-                            </textarea>
+                                <input type="text" id="formName" placeholder="Name"></input>
+                                <input type="text" id="formPhone" placeholder="Phone no."></input>
+                                <input type="text" id="formEmail" placeholder="E-Mail ID"></input>
+                                <textarea
+                                    rows="8"
+                                    cols="50"
+                                    name="comment"
+                                    form="usrform"
+                                    id="formmessage"
+                                    placeholder="Message"></textarea>
 
                             </form>
 
                         </div>
                     </div>
 
-
                 </div>
 
                 <div className="landing-pagefooterbottom">
 
-                <div className="landing-bottomfooter-heading">
-                For Sporsorhip Opportunities or Collaborations
-                </div>
+                    <div className="landing-bottomfooter-heading">
+                        For Sporsorhip Opportunities or Collaborations
+                    </div>
 
-                 <div className="landing-bottomfooter-mail">
-                 esummit18@gmail.com 
-                </div>
-
-
-
-
+                    <div className="landing-bottomfooter-mail">
+                        esummit18@gmail.com
+                    </div>
 
                 </div>
 
             </div>
-
-
-
 
         )
     }
