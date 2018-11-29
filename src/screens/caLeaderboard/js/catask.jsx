@@ -3,6 +3,9 @@ import '../css/catask.css'
 import axios from "axios"
 import { BASE_URL } from './../../../utils/urls'
 
+let token = process.env.REACT_APP_AUTH_TOKEN //for devonly
+
+
 export default class CATaskBoard extends Component {
     constructor() {
         super()
@@ -12,7 +15,6 @@ export default class CATaskBoard extends Component {
         }
     }
     componentDidMount = () => {
-        let token = process.env.REACT_APP_AUTH_TOKEN //for devonly
         axios
             .get(BASE_URL + '/v1/api/task/list/', {
             'headers': {
@@ -66,7 +68,6 @@ class CATask extends Component {
     fileUploadHandler = (file, task) => {
         let name = document.getElementById(`fileInput${task.id}`)
         if (name.files.item(0)) {
-            // alert('Selected file ' + name.files.item(0).name)
 
             let fileUploaded = file
             let isfileUploaded = true
@@ -75,6 +76,19 @@ class CATask extends Component {
                 isfileUploaded
             }, () => {
                 console.log(this.state.isfileUploaded)
+            })
+            let formData = new FormData();
+            formData.append("file", file[0]);
+            formData.append("task", task.id);
+            axios
+            .post(BASE_URL + `/v1/api/task/${task.id}/submit/`, formData, {
+              headers: {
+                'Authorization': `Token ${token}`,
+                'Content-Type': 'multipart/formdata '
+              }
+            })
+            .then(resData => {
+                alert(resData) //do something with this and show the user that the file has been uploaded !
             })
             document
                 .getElementById(`nameOfFileUploadedForTask${task.id}`)
