@@ -8,7 +8,7 @@ export default class Catask extends Component{
         super()
         this.state={
             isfileUploaded:false,
-            fileUploaded:'baba',
+            fileUploaded:null,
         }
     }
     componentDidMount = () => {
@@ -31,14 +31,15 @@ export default class Catask extends Component{
     fileUploadHandler = (file)=>{
         let name = document.getElementById('fileInput{e.id}')
         if(name.files.item(0)){
-        alert('Selected file ' + name.files.item(0).name)
+        // alert('Selected file ' + name.files.item(0).name)
+        
         let fileUploaded = file
         let isfileUploaded = true
         this.setState({
             fileUploaded,
             isfileUploaded
         },()=>{console.log(this.state.isfileUploaded)})
-        let ptag = document.getElementById('nameOfFileUploaded').style.opacity=1;
+        document.getElementById('nameOfFileUploaded').innerHTML=name.files.item(0).name;
         }
     }
 
@@ -73,9 +74,7 @@ export default class Catask extends Component{
                         </div>
                         <div className="taskchild-fileupload">
                         <input id="fileInput{e.id}" type='file' onChange={(e)=>this.fileUploadHandler(e.target.files)}/>
-                        <p id="nameOfFileUploaded" onChange={this.fileUploadHandler}>
-                            {this.state.fileUploaded} has been uploaded
-                        </p>
+                        <p id="nameOfFileUploaded"></p>
                         </div>
                     </div>
                 </div>
