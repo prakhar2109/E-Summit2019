@@ -82,3 +82,15 @@
     color:rgba(130, 130, 130, 0.93);
     margin-left: 3vh;
 }
+.taskchild-fileupload input{
+    background-color: black;
+    height:24vh;
+    opacity: 0;
+   
+}
+#nameOfFileUploaded{
+    opacity: 0;
+    /* position: absolute;
+    top: 45vh;
+    left:49vh; */
+}

@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import '../css/catask.css'
 import axios from "axios"
+import { normalizeUnits } from 'moment';
 const baseurl="http://192.168.1.134:8000" 
 export default class Catask extends Component{
+    constructor(){
+        super()
+        this.state={
+            isfileUploaded:false,
+            fileUploaded:'baba',
+        }
+    }
     componentDidMount = () => {
 
         // const token = localStorage.getItem('ca_token')
@@ -20,7 +28,19 @@ export default class Catask extends Component{
                 alert(response);
             });
     }
-
+    fileUploadHandler = (file)=>{
+        let name = document.getElementById('fileInput{e.id}')
+        if(name.files.item(0)){
+        alert('Selected file ' + name.files.item(0).name)
+        let fileUploaded = file
+        let isfileUploaded = true
+        this.setState({
+            fileUploaded,
+            isfileUploaded
+        },()=>{console.log(this.state.isfileUploaded)})
+        let ptag = document.getElementById('nameOfFileUploaded').style.opacity=1;
+        }
+    }
 
     render(){
         return(
@@ -52,7 +72,10 @@ export default class Catask extends Component{
                         {/* {e.description} */}Description about what is to be done in the task
                         </div>
                         <div className="taskchild-fileupload">
-                        
+                        <input id="fileInput{e.id}" type='file' onChange={(e)=>this.fileUploadHandler(e.target.files)}/>
+                        <p id="nameOfFileUploaded" onChange={this.fileUploadHandler}>
+                            {this.state.fileUploaded} has been uploaded
+                        </p>
                         </div>
                     </div>
                 </div>
