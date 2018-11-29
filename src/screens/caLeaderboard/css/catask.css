@@ -102,6 +102,6 @@ flex-direction: column;
 }
 
 
-#nameOfFileUploaded{
+.taskName{
     margin-top: -5vh;
 }
