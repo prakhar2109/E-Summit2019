@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import '../css/catask.css'
 import axios from "axios"
-import {normalizeUnits} from 'moment';
-
-const BASE_URL = "http://warm-retreat-90641.herokuapp.com"
+import { BASE_URL } from './../../../utils/urls'
 
 export default class CATaskBoard extends Component {
     constructor() {
@@ -14,8 +12,7 @@ export default class CATaskBoard extends Component {
         }
     }
     componentDidMount = () => {
-        // const token = localStorage.getItem('ca_token')
-        let token = "bcf746263ad4cdcfda1abc2dfd80675a04382fd4" //for devonly
+        let token = process.env.REACT_APP_AUTH_TOKEN //for devonly
         axios
             .get(BASE_URL + '/v1/api/task/list/', {
             'headers': {
@@ -94,7 +91,7 @@ class CATask extends Component {
 
                 <div className="taskchild-body">
                     <div className="taskchild-heading">
-                        Task {task.id}
+                        {task.name}
                     </div>
 
                     <div className="taskchild-description">

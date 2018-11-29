@@ -1,24 +1,19 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css';
 import axios from "axios"
-import Catask from './catask'
-import Task from "../../../components/js/TaskIndex"
+import CATaskBoard from './catask'
+import {BASE_URL} from './../../../utils/urls'
+import {NavLink} from 'react-router-dom'
 
-import { NavLink } from 'react-router-dom'
-
-const baseurl="http://warm-retreat-90641.herokuapp.com" 
 export default class caLeaderboard extends Component {
     constructor() {
         super();
         this.state = {
             name: '',
-            score: '0',
+            score: '0'
         }
     }
-
-
-
 
     handleLogout = () => {
         localStorage.removeItem('ca_token')
@@ -26,32 +21,35 @@ export default class caLeaderboard extends Component {
     }
     componentDidMount = () => {
 
-        // const token = localStorage.getItem('ca_token')
-        let token="bcf746263ad4cdcfda1abc2dfd80675a04382fd4" //for devonly
-        axios.get(baseurl+'/v1/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
+        let token = localStorage.getItem('ca_token') || process.env.NODE_ENV === 'development'
+            ? process.env.REACT_APP_AUTH_TOKEN
+            : '' //for devonly
+        axios
+            .get(BASE_URL + '/v1/api/user/profile', {
+            'headers': {
+                'Authorization': `Token ${token}`
+            }
+        })
             .then(res => {
-                // console.log(res.data,"hasjgdukagh")
-                this.setState({
-                    score: res.data.score,
-                    name: res.data.name
-                });
+                this.setState({score: res.data.score, name: res.data.name});
             })
-            .catch(function (response) {
+            .catch((response) => {
                 alert(response);
             });
     }
 
- 
     render() {
-        let { name, score } = this.state
+        let {name, score} = this.state
         let scorePercentage = score / 360 * 100 + ''
         return (
             <div id="container">
                 <div id='leftPane'>
                     <div id='header'>
-                        <NavLink to="/"><img id="logo" src={logo} alt="" ></img></NavLink>
+                        <NavLink to="/">
+                            <img id="logo" src={logo} alt=""></img>
+                        </NavLink>
                     </div>
-                    <hr id="line1" />
+                    <hr id="line1"/>
                     <div id="viewProfile">
                         VIEW PROFILE
                     </div>
@@ -64,11 +62,17 @@ export default class caLeaderboard extends Component {
                         <span id="scoreValue">{score}/360</span>
                     </div>
                     <div className="progress">
-                        <div className="progress-bar bg-custom" style={{ width: scorePercentage + '%' }}>
-                        </div>
+                        <div
+                            className="progress-bar bg-custom"
+                            style={{
+                            width: scorePercentage + '%'
+                        }}></div>
                     </div>
                     <div id="optionsToggle">
-                        <span ><NavLink id="tasksButton" to="/pendingtask"> Tasks </NavLink><br /></span>
+                        <span >
+                            <NavLink id="tasksButton" to="/pendingtask">
+                                Tasks
+                            </NavLink><br/></span>
                         <span id="leaderboardButton">LeaderBoard</span>
                         <div id="leaderboardButton">Rulebook</div>
                     </div>
@@ -77,9 +81,8 @@ export default class caLeaderboard extends Component {
                     </div>
                 </div>
 
-                <Catask />
+                <CATaskBoard/>
             </div>
-
 
         )
     }
