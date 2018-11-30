@@ -1,3 +1,4 @@
+import Ecell from "./logo.png"
 import React, {Component} from 'react';
 import './css/landingpagefooter.css';
 
@@ -12,7 +13,7 @@ export default class FooterWithContactUs extends Component {
                 <div className="footerparent">
 
                     <div className="footercontact">
-                        <div className="footer-logo"></div>
+                        <div className="footer-logo"> <img src  = {Ecell} alt = "Ecell Logo "></img></div>
 
                         <div className="landing-footer-icons"></div>
 

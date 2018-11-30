@@ -42,8 +42,12 @@
 
 .footer-logo{
 
-    height: 7.12vh;
-    background: pink;
+    height: 7.12vh; 
+    
+}
+
+.footer-logo img{
+    height:100%;
 }
 
 .landing-footer-icons{
