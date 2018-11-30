@@ -107,7 +107,7 @@ class CATask extends Component {
                     .name;
             document
                 .getElementById(`filestatus${task.id}`)
-                .innerHTML = "file Submitted ";
+                .innerHTML = "file uploaded ";
 
 
         }
