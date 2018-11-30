@@ -47,7 +47,7 @@ export default class CATaskBoard extends Component {
                     </div>
                     <div className="taskchild-line"></div>
                     <div className="taskchild-dates">
-                        23 September - 30 September 2018
+                        1 Dec - 7 Dec 2018
                     </div>
                 </div>
                 <div className="taskchildrow">
