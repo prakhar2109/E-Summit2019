@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css';
+import {Route } from 'react-router-dom'
 import axios from "axios"
 import CATaskBoard from './catask'
 import {BASE_URL} from './../../../utils/urls'
@@ -51,7 +52,9 @@ export default class caLeaderboard extends Component {
                     </div>
                     <hr id="line1"/>
                     <div id="viewProfile">
-                        VIEW PROFILE
+                    {/* <NavLink to="/Viewprofile">
+                     VIEW PROFILE
+                    </NavLink> */}
                     </div>
                     <div id="dropShape">
                         {name[0]}
@@ -82,6 +85,10 @@ export default class caLeaderboard extends Component {
                 </div>
 
                 <CATaskBoard/>
+
+                {/* <Route path="/dashboard" component="CATaskBoard"></Route>
+                <Route path="/viewprofile" component="Viewprofile"></Route> */}
+
             </div>
 
         )
