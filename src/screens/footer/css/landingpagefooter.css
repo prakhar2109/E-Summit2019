@@ -5,32 +5,71 @@
     width: 100px;
 }
 .landingpagefooter{
-    background: #242626;
+    background: rgba(36, 38, 38, 0.94);
+    position: absolute;
     height: 100vh;
 }
 .footerparent{
     display: flex;
-    position: relative;
     flex-direction: row;
-    margin-top:152px;
-    background: yellow;
+    margin-top:10.03vh;
+    /* background: yellow; */
 }
 
 .footerform{
 
  
     height: 80vh;
-    width:50vw
+    width:50vw;
+    background: green;
 }
 .footercontact{
 
     
     height: 80vh;
     width: 50vw;
+    /* background: red; */
+    padding-left: 13.41%;
 }
 .footerform-heading{
     font-family: proxima-nova,sans-serif;
     font-size:36px;
+    line-height: 36px;
+    text-align: left;
+}
+
+.footer-logo{
+
+    height: 7.12vh;
+    background: pink;
+}
+
+.landing-footer-icons{
+
+
+    margin-top: 7.37vh;
+    height: 2.63vh;
+    background: orange;
+    margin-bottom: 6.38vh;
+}
+
+.landing-footer-heading{
+
+    color:   #F49D35;
+    font-family: proxima-nova,sans-serif;
+    font-size:24px;
+    line-height: 36px;
+    text-align: left;
+}
+
+
+.landing-footer-details{
+
+    margin-top:1.78vh;
+    margin-bottom: 4.08vh;
+    color: #FFFFFF;
+    font-family: proxima-nova,sans-serif;
+    font-size:20px;
     line-height: 36px;
     text-align: left;
 }
