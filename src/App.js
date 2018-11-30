@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HomePage from "./screens/home/home";
 // import Header from "./screens/header/header";
 import Login from "./screens/login/login";
-
+import 'antd/dist/antd.css'
 import Register from "./screens/register/register";
 
 import ignite from "./screens/ignite/ignite"
@@ -39,6 +39,7 @@ class App extends Component {
 
              <Route exact path="/register" component={Register} />
              <Route exact path="/dashboard" component={LeaderBoard} />
+
 
 
             <Route path="/ignite" component={ignite} />

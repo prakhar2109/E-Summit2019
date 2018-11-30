@@ -5,8 +5,7 @@ import { NavLink } from 'react-router-dom';
 import Header from './../header/header';
 import axios from 'axios';
 import Select from 'react-select';
-
-const url = 'http://esummit.in/api/signup';
+import { BASE_URL } from '../../utils/urls';
 
 const gender_option = [
   { value: 0, label: 'Male' },
@@ -14,7 +13,7 @@ const gender_option = [
   { value: 2, label: 'Others' },
   { value: 3, label: 'Prefer Not Say' }
 ]
-export default class ComingSoon extends Component {
+export default class Register extends Component {
   CollegeData = []
   state = {
     name: '',
@@ -70,7 +69,7 @@ export default class ComingSoon extends Component {
     } else {
       axios({
         method: 'post',
-        url: url,
+        url: BASE_URL +'/api/signup',
         data: data,
         config: { headers: { 'Content-Type': 'multipart/form-data' } }
       })

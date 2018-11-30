@@ -1,7 +1,7 @@
 .taskparent{
     background:#F7F8F9;
     height: 100vh;
-    width: 130vh;
+    width: 82%;
 }
 
 .taskchildrow{
@@ -51,4 +51,58 @@
     border-style: dashed;
     border-width: 2px;
     height: 25vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: url('../svg/Group\ 16.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.taskchildheaderrow{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.taskchild-line{
+    width: 200vh;
+    height: 0.4vh;
+    background-color: #E0E0E0;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 50%;
+    margin-left: 1vh;
+}
+.taskchild-weeklyuploads{
+    margin-top: 2vh;
+    margin-left: 3vh;
+    margin-right: 2vh;
+    color:rgba(130, 130, 130, 0.93);
+    font-size: 20px;
+
+}
+.taskchild-dates{
+    margin-top: 2vh;
+    font-size: 20px;
+    color:rgba(130, 130, 130, 0.93);
+    margin-left: 3vh;
+}
+.taskchild-fileupload input{
+    background-color: black;
+    height:24vh;
+    opacity: 0;
+   
+}
+
+.Selectfilesvg{
+display: flex;
+flex-direction: column;
+}
+
+
+.taskName{
+    margin-top: -5vh;
+    line-height: 5vh;
 }

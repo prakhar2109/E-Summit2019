@@ -1,24 +1,20 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import logo from './../../../utils/esummitLogo.png'
 import './../css/caLeaderboard.css';
+import {Route } from 'react-router-dom'
 import axios from "axios"
-import Catask from './catask'
-import Task from "../../../components/js/TaskIndex"
+import CATaskBoard from './catask'
+import {BASE_URL} from './../../../utils/urls'
+import {NavLink} from 'react-router-dom'
 
-import { NavLink } from 'react-router-dom'
-
-const baseurl="http://192.168.1.134:8000" 
 export default class caLeaderboard extends Component {
     constructor() {
         super();
         this.state = {
             name: '',
-            score: '0',
+            score: '0'
         }
     }
-
-
-
 
     handleLogout = () => {
         localStorage.removeItem('ca_token')
@@ -26,34 +22,40 @@ export default class caLeaderboard extends Component {
     }
     componentDidMount = () => {
 
-        // const token = localStorage.getItem('ca_token')
-        let token="2a495f85989e77404b1b3ba329ee861975e7c949" //for devonly
-        axios.get(baseurl+'/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
+        let token = localStorage.getItem('ca_token') || process.env.NODE_ENV === 'development'
+            ? process.env.REACT_APP_AUTH_TOKEN
+            : '' //for devonly
+        axios
+            .get(BASE_URL + '/v1/api/user/profile', {
+            'headers': {
+                'Authorization': `Token ${token}`
+            }
+        })
             .then(res => {
-                // console.log(res.data,"hasjgdukagh")
-                this.setState({
-                    score: res.data.score,
-                    name: res.data.name
-                });
+                this.setState({score: res.data.score, name: res.data.name});
             })
-            .catch(function (response) {
+            .catch((response) => {
                 alert(response);
             });
     }
 
- 
     render() {
-        let { name, score } = this.state
+        let {name, score} = this.state
         let scorePercentage = score / 360 * 100 + ''
         return (
             <div id="container">
                 <div id='leftPane'>
                     <div id='header'>
-                        <NavLink to="/"><img id="logo" src={logo} alt="" ></img></NavLink>
+                        <NavLink to="/">
+                            <img id="logo" src={logo} alt=""></img>
+                        </NavLink>
                     </div>
-                    <hr id="line1" />
+                    <hr id="line1"/>
                     <div id="viewProfile">
-                        VIEW PROFILE
+                    {/* <NavLink to="/Viewprofile">
+                     VIEW PROFILE
+                    </NavLink> */}
+                    VIEW PROFILE
                     </div>
                     <div id="dropShape">
                         {name[0]}
@@ -64,11 +66,17 @@ export default class caLeaderboard extends Component {
                         <span id="scoreValue">{score}/360</span>
                     </div>
                     <div className="progress">
-                        <div className="progress-bar bg-custom" style={{ width: scorePercentage + '%' }}>
-                        </div>
+                        <div
+                            className="progress-bar bg-custom"
+                            style={{
+                            width: scorePercentage + '%'
+                        }}></div>
                     </div>
                     <div id="optionsToggle">
-                        <span ><NavLink id="tasksButton" to="/pendingtask"> Tasks </NavLink><br /></span>
+                        <span >
+                            <NavLink id="tasksButton" to="/pendingtask">
+                                Tasks
+                            </NavLink><br/></span>
                         <span id="leaderboardButton">LeaderBoard</span>
                         <div id="leaderboardButton">Rulebook</div>
                     </div>
@@ -77,9 +85,12 @@ export default class caLeaderboard extends Component {
                     </div>
                 </div>
 
-                <Catask />
-            </div>
+                <CATaskBoard/>
 
+                {/* <Route path="/dashboard" component="CATaskBoard"></Route>
+                <Route path="/viewprofile" component="Viewprofile"></Route> */}
+
+            </div>
 
         )
     }
