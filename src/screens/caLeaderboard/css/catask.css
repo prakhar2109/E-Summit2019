@@ -9,13 +9,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 11.67vh;
+    margin-top: 5vh;
 }
 
 .taskchild{
 
     background:#FFFFFF;
-    height: 41.57vh;
+    height: 42.57vh;
+    
     width: 30.83%;
     margin-left: 1.875%;
     margin-bottom: 1.875%;
@@ -38,25 +39,28 @@
 
 .taskchild-description{
 
-    height: 100%;
+    height: 10vh;
     width: 100%;
+    overflow: hidden;
     /* background: blue; */
     margin-top: 4%;
     opacity: 0.58;
     color:#4F4F4F;
+    font-size: 12px;
 }
 .taskchild-fileupload{
     margin-top:4%; 
     border-color: #B2B2B2;
     border-style: dashed;
     border-width: 2px;
-    height: 25vh;
+    height: 21vh;
     display: grid;
     align-items: center;
     justify-items: center;
     background: url('../svg/Group\ 16.svg');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 8vh;
 
 }
 .taskchildheaderrow{
@@ -91,7 +95,7 @@
 }
 .taskchild-fileupload input{
     background-color: black;
-    height:24vh;
+    height:18vh;
     opacity: 0;
    
 }
@@ -99,10 +103,15 @@
 .Selectfilesvg{
 display: flex;
 flex-direction: column;
+top: -2vh;
+position: relative;
+font-size: 12px;
+    text-align: center
 }
 
 
 .taskName{
-    margin-top: -5vh;
-    line-height: 5vh;
+    margin-top: -4px;
+    line-height: 1vh;
+    color:#4F4F4F;
 }

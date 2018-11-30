@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../css/catask.css'
-import { Modal} from 'antd'
 import axios from "axios"
 import { BASE_URL } from './../../../utils/urls'
 
@@ -8,17 +7,14 @@ let token = process.env.REACT_APP_AUTH_TOKEN //for devonly
 
 
 export default class CATaskBoard extends Component {
-    state = {
-        visible :true,
-    }
+
     constructor() {
         super()
         this.state = {
             isfileUploaded: false,
             fileUploaded: null,
-   
+
         }
-        this.showModal=this.showModal.bind(this)
     }
     componentDidMount = () => {
         axios
@@ -39,26 +35,6 @@ export default class CATaskBoard extends Component {
 
     }
 
-    handleOk = (e) => {
-        console.log(e);
-        this.setState({
-          visible: false,
-        });
-      }
-    
-      handleCancel = (e) => {
-        console.log(e);
-        this.setState({
-          visible: false,
-        });
-      }
-    showModal = () => {
-
-        console.log("click");
-        this.setState({
-            visible: true,
-        });
-    }
 
     render() {
         let { tasks } = this.state;
@@ -76,7 +52,7 @@ export default class CATaskBoard extends Component {
                 </div>
                 <div className="taskchildrow">
 
-                    {tasks && tasks.map((e) => <CATask key  = {e.id} task={e} />)}
+                    {tasks && tasks.map((e) => <CATask key={e.id} task={e} />)}
 
                 </div>
             </div>
@@ -92,6 +68,11 @@ class CATask extends Component {
             fileUploaded: null
         }
     }
+    state = {
+        visible: true,
+    }
+
+
     fileUploadHandler = (file, task) => {
         let name = document.getElementById(`fileInput${task.id}`)
         if (name.files.item(0)) {
@@ -115,7 +96,7 @@ class CATask extends Component {
                     }
                 })
                 .then(resData => {
-                    alert(resData) //do something with this and show the user that the file has been uploaded !
+                    // alert(resData) //do something with this and show the user that the file has been uploaded !
 
                 })
             document
@@ -142,11 +123,10 @@ class CATask extends Component {
                     </div>
 
                     <div className="taskchild-description">
-                        <button type="primary" onClick={this.showModal}>
-                            Open Modal
-                        </button>
-                      
-                       
+
+                        {task.description}
+
+
                     </div>
 
                     <div className="taskchild-fileupload">
@@ -156,23 +136,17 @@ class CATask extends Component {
                             type='file'
                             className="filesvg"
                             onChange={(e) => this.fileUploadHandler(e.target.files, task)} />
-                        <div className="Selectfilesvg"></div>
-                        <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName" ></p>
+                        <div className="Selectfilesvg">
+                            <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName" ></p>
 
-                        <p id={`filestatus${task.id}`} className="taskName" ></p>
+                            <p id={`filestatus${task.id}`} className="taskName" >Choose a File</p>
+                        </div>
 
                     </div>
                 </div>
 
 
-                  <Modal
-                              title="Basic Modal"
-                              visible={this.state.visible}
-                              onOk={this.handleOk}
-                              onCancel={this.handleCancel}
-                        >
-                          {task.description}
-                        </Modal>
+
             </div>
         )
     }

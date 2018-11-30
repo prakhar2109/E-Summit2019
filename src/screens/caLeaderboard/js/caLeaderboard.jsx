@@ -55,7 +55,6 @@ export default class caLeaderboard extends Component {
                     {/* <NavLink to="/Viewprofile">
                      VIEW PROFILE
                     </NavLink> */}
-                    VIEW PROFILE
                     </div>
                     <div id="dropShape">
                         {name[0]}
