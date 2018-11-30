@@ -9,10 +9,10 @@ export default class Lfooter extends Component {
 
             <div className="landingpagefooter">
 
-                <div className="footerparent">
+                <div className="landingpagefooterparent">
 
-                    <div className="footercontact">
-                        <div className="footer-logo">
+                    <div className="landingpagefootercontact">
+                        <div className="landingpagefooter-logo">
 
 
                         </div>
@@ -45,20 +45,20 @@ export default class Lfooter extends Component {
                             E-Cell Office, SAC Building, IIT Roorkee, Roorkee, Uttarakhand,<br/>3.37vh India 247667
                         </div>
                     </div>
-                    <div className="footerform">
+                    <div className="landingpagefooterform">
 
-                        <div className="footerform-heading">
+                        <div className="landingpagefooterform-heading">
                             GET IN TOUCH
                         </div>
-                        <div className="footerformfiels">
+                        <div className="landingpagefooterformfiels">
 
                             <form>
-                            <input type="text" id="formName" placeholder="Name"></input>
-                            <input type="text" id="formPhone"placeholder="Phone no."></input>
-                            <input type="text" id="formEmail" placeholder="E-Mail ID"></input>
-                            <textarea rows="8" cols="50" name="comment" form="usrform" id="formmessage" placeholder="Message">
+                            <input type="text" id="landingpageformName" placeholder="Name"></input>
+                            <input type="text" id="landingpageformPhone"placeholder="Phone no."></input>
+                            <input type="text" id="landingpageformEmail" placeholder="E-Mail ID"></input>
+                            <textarea rows="8" cols="50" name="comment" form="usrform" id="landingpageformmessage" placeholder="Message">
                             </textarea>
-
+                            <input type="button" id="landingpagebutton">SUBMIT</input>
                             </form>
 
                         </div>

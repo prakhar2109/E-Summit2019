@@ -1,54 +1,93 @@
 import React, { Component } from 'react'
 import '../css/catask.css'
 import axios from "axios"
-const baseurl="http://192.168.1.134:8000" 
-export default class Catask extends Component{
-    componentDidMount = () => {
+const baseurl = "http://192.168.1.134:8000"
+export default class Catask extends Component {
 
-        // const token = localStorage.getItem('ca_token')
-        let token="2a495f85989e77404b1b3ba329ee861975e7c949" //for devonly
-        axios.get(baseurl+'/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
-        .then(res => {
-            if (res && res.data && res.data) {
-                console.log(res.data, "res.data")
-                this.setState({
-                    task: res.data
-                })
-            }
-        })
-            .catch(function (response) {
-                alert(response);
-            });
+
+    constructor() {
+        super();
+        this.state = {
+
+           task: [
+                {
+                    id: 1,
+
+                    description: "aaaaaaaaaaaa "
+                },
+
+                {
+                    id: 2,
+                    description: "bbbbbbbbbbbbb"
+                },
+
+                {
+                    id: 3,
+                    description: "ccccccccccccccc"
+                },
+
+                {
+                    id: 4,
+                    description: "dddddddddddddddd"
+                },
+
+                {
+                    id: 5,
+                    description: "eeeeeeeeeeeeeeeee"
+                },
+
+
+            ],
+
+        }
     }
 
+    // componentDidMount = () => {
 
-    render(){
-        return(
+    //     // const token = localStorage.getItem('ca_token')
+    //     let token = "2a495f85989e77404b1b3ba329ee861975e7c949" //for devonly
+    //     axios.get(baseurl + '/api/user/profile', { 'headers': { 'Authorization': `Token ${token}` } })
+    //         .then(res => {
+    //             if (res && res.data && res.data) {
+    //                 console.log(res.data, "res.data")
+    //                 this.setState({
+    //                     task: res.data
+    //                 })
+    //             }
+    //         })
+    //         .catch(function (response) {
+    //             alert(response);
+    //         });
+    // }
+
+
+    render() {
+        return (
 
             <div className="taskparent">
-              <div className="taskchildrow">
-              
-              {/* {this.state.task && this.state.task.map((e, index) => */}
-                    
-                <div className="taskchild">
-                
-                    <div className="taskchild-body">
-                        <div className="taskchild-heading">
-                        {/* Task {e.id} */}Task 1
+                <div className="taskchildrow">
+
+                    {this.state.task && this.state.task.map((e, index) =>
+
+                    <div className="taskchild">
+
+                        <div className="taskchild-body">
+                            <div className="taskchild-heading">
+                                Task {e.id}
                         </div>
 
-                        <div className="taskchild-description">
-                        {/* {e.description} */}Description about what is to be done in the task
+                            <div className="taskchild-description">
+                                {e.description}
                         </div>
-                        <div className="taskchild-fileupload">
-                        
+                            <div className="taskchild-fileupload">
+
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* )} */}
-                
-              </div>
+                     )} 
+
+                </div>
             </div>
         )
     }

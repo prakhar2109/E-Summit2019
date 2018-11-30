@@ -1,4 +1,4 @@
-.heading{
+.landingpageheading{
     font-size: 100px;
     color:blue;
     height: 100px;
@@ -9,21 +9,21 @@
     position: absolute;
     height: 100vh;
 }
-.footerparent{
+.landingpagefooterparent{
     display: flex;
     flex-direction: row;
     margin-top:10.03vh;
     /* background: yellow; */
 }
 
-.footerform{
+.landingpagefooterform{
 
  
     height:fit-content;
     width:50vw;
     /* background: green; */
 }
-.footercontact{
+.landingpagefootercontact{
 
     
     height: fit-content;
@@ -32,7 +32,7 @@
     padding-left: 13.41%;
     padding-right: 10%;
 }
-.footerform-heading{
+.landingpagefooterform-heading{
     font-family: Montserrat;
     font-size:24px;
     line-height: 36px;
@@ -40,7 +40,7 @@
     color: #FFFFFF;
 }
 
-.footer-logo{
+.landingpagefooter-logo{
 
     height: 7.12vh;
     background: pink;
@@ -74,14 +74,14 @@
     text-align: left;
 }
 
-.footerformfiels{
+.landingpagefooterformfiels{
     display: flex;
     flex-direction: column;
     padding-right: 20%;
     padding-top: 2.8vh;
 }
 
-#formName{
+#landingpageformName{
     display: flex;
     width: 80%;
     height: 5.1vh;
@@ -92,20 +92,7 @@
     color: white;
 }
 
-#formPhone{
-
-    display: flex;
-    width: 80%;
-    height: 5.1vh;
-    margin-bottom: 2.8vh;
-    padding: 2%;
-    background: transparent;
-    border: 2px solid #4A4B4B;
-    color: white;
-}
-
-
-#formEmail{
+#landingpageformPhone{
 
     display: flex;
     width: 80%;
@@ -117,7 +104,20 @@
     color: white;
 }
 
-#formmessage{
+
+#landingpageformEmail{
+
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+#landingpageformmessage{
     display: flex;
     width: 80%;
     color: white;
@@ -153,4 +153,9 @@
     font-size:20px;
     text-align: center;
     color: #F49D35;
+}
+
+.landingpagebutton{
+
+    
 }
