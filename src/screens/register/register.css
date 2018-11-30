@@ -1,3 +1,23 @@
+rohit {
+  padding: 6vh 4rem 6vh 4rem;
+  font-size: 1.5rem;
+  line-height: normal;
+  text-align: justify;
+  letter-spacing: 0.06em;
+  display: block;
+  color: #1A4D66;
+}
+
+rohit p {
+  margin-top: 10vh;
+  line-height: normal;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #1A4D66;
+  text-transform: capitalize;
+}
+
 .register_main {
   display: -ms-grid;
   display: grid;
@@ -18,7 +38,7 @@
 .register_main .register_text span:first-child {
   margin-top: 10vh;
   line-height: normal;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   letter-spacing: 0.06em;
   color: #1A4D66;

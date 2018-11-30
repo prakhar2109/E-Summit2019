@@ -21,10 +21,8 @@ export default class caLeaderboard extends Component {
     window.location.href = "/login";
   };
   componentDidMount = () => {
-    let token =
-      localStorage.getItem("ca_token") || process.env.NODE_ENV === "development"
-        ? process.env.REACT_APP_AUTH_TOKEN
-        : ""; //for devonly
+    let token =   localStorage.getItem('ca_token');
+       
 
     console.log(localStorage);
     axios

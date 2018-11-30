@@ -17,6 +17,9 @@ export default class CATaskBoard extends Component {
         }
     }
     componentDidMount = () => {
+
+        let token =  localStorage.getItem('ca_token');
+        console.log(token)
         axios
             .get(BASE_URL + '/v1/api/task/list/', {
                 'headers': {

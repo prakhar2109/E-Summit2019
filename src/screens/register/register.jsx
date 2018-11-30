@@ -1,57 +1,60 @@
-import React, { Component } from 'react';
-import './register.css';
-import Footer from '../footer/footer';
-import { NavLink } from 'react-router-dom';
-import Header from './../header/header';
-import axios from 'axios';
-import Select from 'react-select';
-import { BASE_URL } from '../../utils/urls';
+import React, { Component } from "react";
+import "./register.css";
+import Footer from "../footer/footer";
+import { NavLink } from "react-router-dom";
+import Header from "./../header/header";
+import axios from "axios";
+import Select from "react-select";
+import { BASE_URL } from "../../utils/urls";
 
 const gender_option = [
-  { value: 0, label: 'Male' },
-  { value: 1, label: 'Female' },
-  { value: 2, label: 'Others' },
-  { value: 3, label: 'Prefer Not Say' }
-]
+  { value: 0, label: "Male" },
+  { value: 1, label: "Female" },
+  { value: 2, label: "Others" },
+  { value: 3, label: "Prefer Not Say" },
+];
 export default class Register extends Component {
-  CollegeData = []
+  CollegeData = [];
   state = {
-    name: '',
-    email: '',
-    contact: '',
-    password: '',
-    college: '',
-    states: '',
-    gender: '0',
-    collegeArray: []
-  }
+    name: "",
+    email: "",
+    contact: "",
+    password: "",
+    college: "",
+    states: "",
+    gender: "0",
+    collegeArray: [],
+  };
   componentDidMount() {
     axios
-      .get('http://esummit.in/api/college/list')
+      .get("http://esummit.in/api/college/list")
       .then(res => {
-        let CollegeData = res.data.body
-        CollegeData = CollegeData.map(item => ({ value: item.value, label: item.name }))
-        this.setState({ collegeArray: CollegeData })
+        let CollegeData = res.data.body;
+        CollegeData = CollegeData.map(item => ({
+          value: item.value,
+          label: item.name,
+        }));
+        this.setState({ collegeArray: CollegeData });
       })
-      .catch(function (response) {
-        alert(response)
-      })
+      .catch(function(response) {
+        alert(response);
+      });
   }
 
   handleChange = college => {
-    this.setState({ college })
-  }
+    this.setState({ college });
+  };
 
   handleChange2 = gender => {
-    this.setState({ gender })
-  }
+    this.setState({ gender });
+  };
   handleClick = e => {
-    e.preventDefault()
-    this.state.college = this.state.college['value']
-    this.state.gender = this.state.gender['value']
-    this.state.contact = Number(this.state.contact)
+    e.preventDefault();
+    this.state.college = this.state.college["value"];
+    this.state.gender = this.state.gender["value"];
+    this.state.contact = Number(this.state.contact);
 
-    let user_type = 0
+    let user_type = 0;
     let data = {
       name: this.state.name,
       college: this.state.college,
@@ -60,86 +63,105 @@ export default class Register extends Component {
       password: this.state.password,
       state: this.state.states,
       gender: this.state.gender,
-      
-    }
-
+    };
 
     if (this.state.password.length < 8) {
-      alert('Password length  must be greater than 8  ')
+      alert("Password length  must be greater than 8  ");
     } else {
       axios({
-        method: 'post',
-        url: BASE_URL +'/v1/api/user/signup/',
+        method: "post",
+        url: BASE_URL + "/v1/api/user/signup/",
         data: data,
-        config: { headers: { 'Content-Type': 'multipart/form-data' } }
+        config: { headers: { "Content-Type": "multipart/form-data" } },
       })
-        .then(function (r) {
+        .then(function(r) {
+          var d = new Date();
+          d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
 
-                    var d = new Date();
-                    d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+          console.log(r.data);
+          if (r.data.token) {
+            localStorage.setItem("ca_token", r.data.token);
+          }
+          window.location.href = "/dashboard";
 
-                    console.log(r.data);
-                    if (r.data.token) {
-                      localStorage.setItem('ca_token', r.data.token)
-                  }
-                    window.location.href = '/dashboard';
-
-                    console.log(r.data.token);
-                    data = ""
-                 
+          console.log(r.data.token);
+          data = "";
         })
-        .catch(function (response) {
-          alert(response)
-        })
+        .catch(function(response) {
+          alert(response);
+        });
     }
-  }
+  };
 
   render() {
-    const { college, gender, collegeArray } = this.state
+    const { college, gender, collegeArray } = this.state;
 
     return (
       <div>
-
         <Header />
 
-        <div className='register_main'>
-
-          <div className='register_text'>
-
+        <div className="register_main">
+          <div className="register_text">
             <span> CAMPUS AMBASSADOR</span>
 
             <span>
-              The CAP( Campus Ambassador Programme) is a pinion initiative of E-Summit IIT Roorkee, 2018 organized by the Entrepreneurship Cell, IIT Roorkee and aims to amplify our purview to newer horizons. We aspire to increase our outreach to as many students as possible throughout the country and spread the spirit of entrepreneurship to similar extents. This year E-Summit IIT Roorkee brings with it loads and loads of colossal opportunities for the participating students and exciting perks for the Campus Ambassadors.
-                            {' '}
+              The CAP( Campus Ambassador Programme) is a pinion initiative of
+              E-Summit IIT Roorkee, 2018 organized by the Entrepreneurship Cell,
+              IIT Roorkee and aims to amplify our purview to newer horizons. We
+              aspire to increase our outreach to as many students as possible
+              throughout the country and spread the spirit of entrepreneurship
+              to similar extents. This year E-Summit IIT Roorkee brings with it
+              loads and loads of colossal opportunities for the participating
+              students and exciting perks for the Campus Ambassadors.{" "}
             </span>
 
-            <span>Click to the see the exciting perks!</span>
+            <rohit>
+              <p>the exciting perks! </p> <br/>
+              1. For every successful
+              payment from the participants who have registered from the
+              referral link, the CA would be awarded Rs. 150 off on the
+              registration plus accommodation fees for E-Summit 2019.<br/>
+               2. An official certificate from E-Summit IIT
+              Roorkee will be provided as an acknowledgment of your work as a CA
+              for the same.<br/>
+               3. Endorsement of your LinkedIn profile by E-Summit
+              IIT Roorkee.<br/>
+               4. Other additional goodies and benefits will be
+              awarded to the top performing CAs.
+            </rohit>
 
-            <center><a href="./../../pdfs/perks.pdf" target="_blank"> <button>PERKS</button></a></center>
-
+            {/* <center>
+              <a href="./../../pdfs/perks.pdf" target="_blank">
+                {" "}
+                <button>PERKS</button>
+              </a>
+            </center> */}
           </div>
 
-          <div className='register_form'>
-
-            <span className='register_login'>
-              {' '}<NavLink activeClassName='act' to='/login'>Sign In</NavLink>
+          <div className="register_form">
+            <span className="register_login">
+              {" "}
+              <NavLink activeClassName="act" to="/login">
+                Sign In
+              </NavLink>
             </span>
-            <span className='register_register'>
-              {' '}<NavLink activeClassName='act' to='/register'>Sign Up</NavLink>
+            <span className="register_register">
+              {" "}
+              <NavLink activeClassName="act" to="/register">
+                Sign Up
+              </NavLink>
             </span>
 
             <form>
-
               <label>NAME </label>
 
               <input
-                type='text'
+                type="text"
                 value={this.state.name}
                 onChange={event => {
                   this.setState({
-                    name: event.target.value
-                  })
-
+                    name: event.target.value,
+                  });
                 }}
                 placeholder="Enter your full name"
               />
@@ -147,13 +169,13 @@ export default class Register extends Component {
               <label>PHONE NO.</label>
 
               <input
-                type='tel'
+                type="tel"
                 value={this.state.contact}
                 parse={value => Number(value)}
                 onChange={event => {
                   this.setState({
-                    contact: event.target.value
-                  })
+                    contact: event.target.value,
+                  });
                 }}
                 placeholder="Enter your phone number"
               />
@@ -161,33 +183,43 @@ export default class Register extends Component {
               <label>EMAIL-ID</label>
 
               <input
-                type='email'
+                type="email"
                 value={this.state.email}
                 onChange={event => {
                   this.setState({
-                    email: event.target.value
-                  })
+                    email: event.target.value,
+                  });
                 }}
                 placeholder="Enter your Email ID"
               />
               <label>PASSWORD </label>
 
               <input
-                type='password'
+                type="password"
                 value={this.state.passowrd}
                 onChange={event => {
                   this.setState({
-                    password: event.target.value
-                  })
+                    password: event.target.value,
+                  });
                 }}
                 placeholder="********"
               />
               <label>COLLEGE </label>
 
-              <Select placeholder="Enter your college name" value={college} onChange={this.handleChange} options={collegeArray} />
+              <Select
+                placeholder="Enter your college name"
+                value={college}
+                onChange={this.handleChange}
+                options={collegeArray}
+              />
 
-                <label> GENDER </label>
-              <Select placeholder="Enter your gender" value={gender} onChange={this.handleChange2} options={gender_option} />
+              <label> GENDER </label>
+              <Select
+                placeholder="Enter your gender"
+                value={gender}
+                onChange={this.handleChange2}
+                options={gender_option}
+              />
 
               {/*
                         <label>PROGRAMME </label>
@@ -234,7 +266,7 @@ export default class Register extends Component {
               <input
                 type="text"
                 value={this.state.states}
-                onChange={(event) => {
+                onChange={event => {
                   this.setState({
                     states: event.target.value,
                   });
@@ -242,7 +274,7 @@ export default class Register extends Component {
                 placeholder="Enter your state name"
               />
 
-							{/*
+              {/*
                         <label>HOW DID YOU KNOW ABOUT CA </label>
 
                         <input type="text"
@@ -256,15 +288,15 @@ export default class Register extends Component {
                             }}
 
                         ></input> */}
-						</form>
+            </form>
 
-						<br />
+            <br />
 
-						<button onClick={this.handleClick}> SIGN UP </button>
-					</div>
-					<Footer />
-				</div>
-			</div>
-		);
-	}
+            <button onClick={this.handleClick}> SIGN UP </button>
+          </div>
+          <Footer />
+        </div>
+      </div>
+    );
+  }
 }
