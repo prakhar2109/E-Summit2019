@@ -3,11 +3,13 @@
     color:blue;
     height: 100px;
     width: 100px;
+
+
 }
 .landingpagefooter{
     background: rgba(36, 38, 38, 0.94);
     position: absolute;
-    height: 100vh;
+    min-height: 100vh;
 }
 .footerparent{
     display: flex;
@@ -55,8 +57,15 @@
 
     margin-top: 3.37vh;
     height: 2.63vh;
-    background: orange;
+
+    
     margin-bottom: 4.38vh;
+}
+
+.landing-footer-icons i{
+    color:white;
+    margin-right:35px;
+    font-size: 2rem;
 }
 
 .landing-footer-heading{

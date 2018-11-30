@@ -15,7 +15,15 @@ export default class FooterWithContactUs extends Component {
                     <div className="footercontact">
                         <div className="footer-logo"> <img src  = {Ecell} alt = "Ecell Logo "></img></div>
 
-                        <div className="landing-footer-icons"></div>
+                        <div className="landing-footer-icons">
+                        
+                            <i className="fab fa-facebook-square"></i>
+                            <i className="fab fa-instagram"></i>
+                            <i className="fab fa-youtube-square"></i>
+                            <i className="fab fa-linkedin"></i>
+                            <i className="fab fa-twitter-square"></i>
+
+                        </div>
 
                         <div className="landing-footer-heading">
                             Phone no.
