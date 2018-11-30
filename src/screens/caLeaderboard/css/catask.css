@@ -1,7 +1,7 @@
 .taskparent{
     background:#F7F8F9;
     height: 100vh;
-    width: 82%;
+    width: 130vh;
 }
 
 .taskchildrow{
@@ -31,7 +31,9 @@
     font-family:proxima-nova,sans-serif;
     font-size: 28px;
     line-height: 32px;
-    color:#5A5A5A;
+    color:#3A667B;
+    font-weight: 500;
+    
 }
 
 .taskchild-description{
@@ -40,4 +42,13 @@
     width: 100%;
     /* background: blue; */
     margin-top: 4%;
+    opacity: 0.58;
+    color:#4F4F4F;
+}
+.taskchild-fileupload{
+    margin-top:4%; 
+    border-color: #B2B2B2;
+    border-style: dashed;
+    border-width: 2px;
+    height: 25vh;
 }

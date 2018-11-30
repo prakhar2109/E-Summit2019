@@ -28,22 +28,25 @@ export default class Catask extends Component{
             <div className="taskparent">
               <div className="taskchildrow">
               
-              {this.state.task && this.state.task.map((e, index) =>
+              {/* {this.state.task && this.state.task.map((e, index) => */}
                     
                 <div className="taskchild">
                 
                     <div className="taskchild-body">
                         <div className="taskchild-heading">
-                        Task {e.id}
+                        {/* Task {e.id} */}Task 1
                         </div>
 
                         <div className="taskchild-description">
-                        {e.description}
+                        {/* {e.description} */}Description about what is to be done in the task
+                        </div>
+                        <div className="taskchild-fileupload">
+                        
                         </div>
                     </div>
                 </div>
 
-                )}
+                {/* )} */}
                 
               </div>
             </div>
