@@ -45,7 +45,7 @@ export default class ComingSoon extends Component {
                 in collaboration with local entrepreneurship development organisations.
             </div>
               <div className="ignite-first-page-scroll">
-                <div onClick={this.jum} className='icon-scroll'></div>
+                <div onClick={this.jum} className='icon-scroll'></div> <br />
                 <div id="ignite-first-page-scroll-child"><p> SCROLL DOWN</p></div>
               </div>
             </div>
