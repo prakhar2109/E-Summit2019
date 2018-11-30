@@ -10,6 +10,7 @@ import ignite from "./screens/ignite/ignite"
 import Lfooter from "./screens/footer/landingpagefooter"
 
 import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
+import RSelect from './screens/ReactSelect/ReactSelect'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 
@@ -44,6 +45,7 @@ class App extends Component {
 
             <Route path="/ignite" component={ignite} />
             <Route path="/footer" component={Lfooter} />
+            <Route path="/Rselect" component={RSelect} />
 
 
           </Switch>
