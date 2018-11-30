@@ -34,12 +34,12 @@ export default class ComingSoon extends Component {
                 if (res.data) {
                     var d = new Date();
                     d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
-                    document.cookie = 'token=' + res.data.token + ';expires=' + d.toUTCString() + ';path=/';
-                    window.location.href = '/dashboard';
-                    data = ""
                     if (res.data.token) {
                         localStorage.setItem('ca_token', res.data.token)
                     }
+                    window.location.href = '/dashboard';
+                    data = ""
+                 
                 }
             }
         }).catch((response) => {

@@ -21,7 +21,7 @@ export default class Register extends Component {
     contact: '',
     password: '',
     college: '',
-    state: '',
+    states: '',
     gender: '0',
     collegeArray: []
   }
@@ -56,11 +56,11 @@ export default class Register extends Component {
       name: this.state.name,
       college: this.state.college,
       email: this.state.email,
-      contact: this.state.contact,
+      phone: this.state.contact,
       password: this.state.password,
-      state: this.state.state,
+      state: this.state.states,
       gender: this.state.gender,
-      user_type: user_type
+      
     }
 
 
@@ -69,12 +69,24 @@ export default class Register extends Component {
     } else {
       axios({
         method: 'post',
-        url: BASE_URL +'/api/signup',
+        url: BASE_URL +'/v1/api/user/signup/',
         data: data,
         config: { headers: { 'Content-Type': 'multipart/form-data' } }
       })
-        .then(function (res) {
-          window.location.href = '/login'
+        .then(function (r) {
+
+                    var d = new Date();
+                    d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+
+                    console.log(r.data);
+                    if (r.data.token) {
+                      localStorage.setItem('ca_token', r.data.token)
+                  }
+                    window.location.href = '/dashboard';
+
+                    console.log(r.data.token);
+                    data = ""
+                 
         })
         .catch(function (response) {
           alert(response)
@@ -135,7 +147,7 @@ export default class Register extends Component {
               <label>PHONE NO.</label>
 
               <input
-                type='number'
+                type='tel'
                 value={this.state.contact}
                 parse={value => Number(value)}
                 onChange={event => {
@@ -174,7 +186,7 @@ export default class Register extends Component {
 
               <Select placeholder="Enter your college name" value={college} onChange={this.handleChange} options={collegeArray} />
 
-
+                <label> GENDER </label>
               <Select placeholder="Enter your gender" value={gender} onChange={this.handleChange2} options={gender_option} />
 
               {/*
@@ -221,10 +233,10 @@ export default class Register extends Component {
 
               <input
                 type="text"
-                value={this.state.country}
+                value={this.state.states}
                 onChange={(event) => {
                   this.setState({
-                    country: event.target.value,
+                    states: event.target.value,
                   });
                 }}
                 placeholder="Enter your state name"
