@@ -19,23 +19,25 @@
 .footerform{
 
  
-    height: 80vh;
+    height:fit-content;
     width:50vw;
-    background: green;
+    /* background: green; */
 }
 .footercontact{
 
     
-    height: 80vh;
+    height: fit-content;
     width: 50vw;
     /* background: red; */
     padding-left: 13.41%;
+    padding-right: 10%;
 }
 .footerform-heading{
-    font-family: proxima-nova,sans-serif;
-    font-size:36px;
+    font-family: Montserrat;
+    font-size:24px;
     line-height: 36px;
     text-align: left;
+    color: #FFFFFF;
 }
 
 .footer-logo{
@@ -47,18 +49,17 @@
 .landing-footer-icons{
 
 
-    margin-top: 7.37vh;
+    margin-top: 3.37vh;
     height: 2.63vh;
     background: orange;
-    margin-bottom: 6.38vh;
+    margin-bottom: 4.38vh;
 }
 
 .landing-footer-heading{
 
     color:   #F49D35;
-    font-family: proxima-nova,sans-serif;
-    font-size:24px;
-    line-height: 36px;
+    font-family: Montserrat;
+    font-size:20px;
     text-align: left;
 }
 
@@ -68,8 +69,88 @@
     margin-top:1.78vh;
     margin-bottom: 4.08vh;
     color: #FFFFFF;
-    font-family: proxima-nova,sans-serif;
-    font-size:20px;
-    line-height: 36px;
+    font-family:Montserrat ;
+    font-size:16px;
     text-align: left;
+}
+
+.footerformfiels{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20%;
+    padding-top: 2.8vh;
+}
+
+#formName{
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+#formPhone{
+
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+
+#formEmail{
+
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+#formmessage{
+    display: flex;
+    width: 80%;
+    color: white;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+
+}
+
+::placeholder {
+    color:#B5B9B9;
+    opacity: 1;
+}
+
+.landing-pagefooterbottom{
+    margin-top: 10vh;
+
+}
+
+.landing-bottomfooter-heading{
+    font-family: Montserrat;
+    font-size:20px;
+    text-align: center;
+    color: #FFFFFF;
+
+
+}
+
+.landing-bottomfooter-mail{
+
+    font-family: Montserrat;
+    font-size:20px;
+    text-align: center;
+    color: #F49D35;
 }
