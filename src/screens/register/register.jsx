@@ -115,7 +115,7 @@ export default class Register extends Component {
       password: this.state.password,
       state: this.state.states,
       gender: this.state.gender,
-      user_type :"ATT",
+      user_type :"AMB",
     };
 
     console.log(data);
