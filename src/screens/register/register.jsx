@@ -301,7 +301,7 @@ export default class Register extends Component {
                         ></input>
 
                     */}
-              <label>Country
+              <label>COUNTRY
               </label>
 
               <Select
