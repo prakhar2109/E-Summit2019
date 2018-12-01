@@ -12,10 +12,10 @@ import CreatableSelect from 'react-select/lib/Creatable';
 // import StateSelect from './state'
 
 const gender_option = [
-  { value: 0, label: "Male" },
-  { value: 1, label: "Female" },
-  { value: 2, label: "Others" },
-  { value: 3, label: "Prefer Not Say" },
+  { value: 'M', label: "Male" },
+  { value: 'F', label: "Female" },
+  { value: 'O', label: "Others" },
+  { value: 'N', label: "Prefer Not Say" },
 ];
 
 const options = [
@@ -69,7 +69,9 @@ export default class Register extends Component {
     password: "",
     college: "",
     states: "",
-    gender: "0",
+    gender: "",
+    country:"",
+    city:"",
     collegeArray: [],
   };
   componentDidMount() {
@@ -101,7 +103,7 @@ export default class Register extends Component {
   handleClick = e => {
     e.preventDefault();
     this.state.college = this.state.college["label"];
-    this.state.gender = this.state.gender["label"];
+    this.state.gender = this.state.gender["value"];
     this.state.states= this.state.states["value"];
 
     let user_type = 0;
@@ -115,6 +117,8 @@ export default class Register extends Component {
       state: this.state.states,
       gender: this.state.gender,
       user_type :"AMB",
+      country:this.state.country,
+      city:this.state.city,
     };
 
     console.log(data);
@@ -303,6 +307,41 @@ export default class Register extends Component {
                                 })
                             }}
                         ></input>
+
+                    */}
+                        <label>Country </label>
+
+                      <input type="text"
+
+                      value={this.state.country}
+
+                          onChange={event => {
+                              this.setState({
+                                  country: event.target.value
+                              })
+                          }}
+
+                      ></input>
+
+
+
+
+                        <label>STATE </label>
+
+<Select
+ 
+  value={this.state.states}
+  // onChange={event => {
+  //   this.setState({
+  //     states: event.target.value,
+  //   });
+  // }}
+  onChange={this.handleChange3}
+  options={options}
+  placeholder="Enter your state name"
+/>
+
+
                         <label>CITY </label>
 
                         <input type="text"
@@ -316,36 +355,9 @@ export default class Register extends Component {
                             }}
 
                         ></input>
-                            */}
-              <label>STATE </label>
-
-              <Select
-               
-                value={this.state.states}
-                // onChange={event => {
-                //   this.setState({
-                //     states: event.target.value,
-                //   });
-                // }}
-                onChange={this.handleChange3}
-                options={options}
-                placeholder="Enter your state name"
-              />
-
-              {/*
-                        <label>HOW DID YOU KNOW ABOUT CA </label>
-
-                        <input type="text"
-
-                        value={this.state.how}
-
-                            onChange={event => {
-                                this.setState({
-                                    how: event.target.value
-                                })
-                            }}
-
-                        ></input> */}
+                          
+          
+ 
             </form>
 
             <br />
