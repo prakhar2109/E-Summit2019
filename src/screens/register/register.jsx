@@ -101,7 +101,7 @@ export default class Register extends Component {
   handleClick = e => {
     e.preventDefault();
     this.state.college = this.state.college["label"];
-    this.state.gender = this.state.gender["value"];
+    this.state.gender = this.state.gender["label"];
     this.state.states= this.state.states["value"];
 
     let user_type = 0;
