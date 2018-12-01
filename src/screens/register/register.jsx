@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 import Header from "./../header/header";
 import axios from "axios";
 import Select from "react-select";
+import colleges from './colleges.json';
+import citys from './citys.json';
+import countries from './countries.json';
+
 import { BASE_URL } from "../../utils/urls";
 import CreatableSelect from 'react-select/lib/Creatable';
 
@@ -25,7 +29,7 @@ const options = [
   "Assam",
   "Bihar",
   "Chandigarh",
-  "Chhattisgarh",
+  "Chattisgarh",
   "Dadra and Nagar Haveli",
   "Daman and Diu",
   "Delhi",
@@ -55,9 +59,9 @@ const options = [
   "Uttar Pradesh",
   "Uttarakhand",
   "West Bengal"
-  ].map(state => ({
-    value: state,
-    label: state,
+].map(state => ({
+  value: state,
+  label: state,
 }));
 
 export default class Register extends Component {
@@ -70,8 +74,8 @@ export default class Register extends Component {
     college: "",
     states: "",
     gender: "",
-    country:"",
-    city:"",
+    country: "",
+    city: "",
     collegeArray: [],
   };
   componentDidMount() {
@@ -85,29 +89,56 @@ export default class Register extends Component {
         }));
         this.setState({ collegeArray: CollegeData });
       })
-      .catch(function(response) {
+      .catch(function (response) {
         alert(response);
       });
   }
 
-  handleChange = college => {
-    this.setState({ college });
+  // handleChange = college => {
+  //   this.setState({ college });
+  // };
+  getCountries = () => {
+    return countries.map(country => ({
+      value: country.name,
+      label: country.name,
+    }))
+  }
+
+  getCities = (state) => {
+    let cities = citys[state];
+    cities = cities.map(city => ({
+      value: city,
+      label: city,
+    }))
+    return cities;
+  }
+
+  handleChange = (selectedOption) => {
+    this.setState({ college: selectedOption });
   };
-  handleChange3 = states => {
-    this.setState({ states});
+  handleChange4 = (selectedOption) => {
+    this.setState({ country: selectedOption });
   };
   
+  handleChange1 = (selectedOption) => {
+    this.setState({ city: selectedOption });
+  };
+  handleChange3 = states => {
+    this.setState({ states });
+  };
+
   handleChange2 = gender => {
     this.setState({ gender });
   };
   handleClick = e => {
     e.preventDefault();
     this.state.college = this.state.college["label"];
-    this.state.gender = this.state.gender["value"];
-    this.state.states= this.state.states["value"];
 
-    let user_type = 0;
-    
+    this.state.city = this.state.city["label"];
+    this.state.gender = this.state.gender["value"];
+    this.state.states = this.state.states["value"];
+
+
     let data = {
       name: this.state.name,
       college: this.state.college,
@@ -116,9 +147,9 @@ export default class Register extends Component {
       password: this.state.password,
       state: this.state.states,
       gender: this.state.gender,
-      user_type :"AMB",
-      country:this.state.country,
-      city:this.state.city,
+      user_type: "AMB", //for now in CA dashboard
+      country: this.state.country.value,
+      city: this.state.city,
     };
 
     console.log(data);
@@ -132,7 +163,7 @@ export default class Register extends Component {
         data: data,
         config: { headers: { "Content-Type": "multipart/form-data" } },
       })
-        .then(function(r) {
+        .then(function (r) {
           var d = new Date();
           d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
 
@@ -145,7 +176,7 @@ export default class Register extends Component {
           console.log(r.data.token);
           data = "";
         })
-        .catch(function(response) {
+        .catch(function (response) {
           alert(response);
         });
     }
@@ -174,18 +205,18 @@ export default class Register extends Component {
             </span>
 
             <rohit>
-              <p>the exciting perks! </p> <br/>
+              <p>the exciting perks! </p> <br />
               1. For every successful
               payment from the participants who have registered from the
               referral link, the CA would be awarded Rs. 150 off on the
-              registration plus accommodation fees for E-Summit 2019.<br/>
-               2. An official certificate from E-Summit IIT
-              Roorkee will be provided as an acknowledgment of your work as a CA
-              for the same.<br/>
-               3. Endorsement of your LinkedIn profile by E-Summit
-              IIT Roorkee.<br/>
-               4. Other additional goodies and benefits will be
-              awarded to the top performing CAs.
+              registration plus accommodation fees for E-Summit 2019.<br />
+              2. An official certificate from E-Summit IIT
+             Roorkee will be provided as an acknowledgment of your work as a CA
+              for the same.<br />
+              3. Endorsement of your LinkedIn profile by E-Summit
+              IIT Roorkee.<br />
+              4. Other additional goodies and benefits will be
+             awarded to the top performing CAs.
             </rohit>
 
             {/* <center>
@@ -262,16 +293,7 @@ export default class Register extends Component {
                 }}
                 placeholder="********"
               />
-              <label>COLLEGE </label>
 
-              <CreatableSelect
-                placeholder="Enter your college name"
-                value={college}
-                onChange={this.handleChange}
-                options={collegeArray}
-                searchable={true}
-								required={true}
-              />
 
               <label> GENDER </label>
               <Select
@@ -309,55 +331,83 @@ export default class Register extends Component {
                         ></input>
 
                     */}
-                        <label>Country </label>
+              <label>Country </label>
 
-                      <input type="text"
+              <Select
 
-                      value={this.state.country}
+                value={this.state.country}
+                onChange={this.handleChange4}
+                options={this.getCountries()}
+                placeholder="Enter your state name"
+              />
 
-                          onChange={event => {
-                              this.setState({
-                                  country: event.target.value
-                              })
-                          }}
+              {this.state.country.value == "India" ?
 
-                      ></input>
+                <div>
 
+                  <label>STATE </label>
 
+                  <Select
 
-
-                        <label>STATE </label>
-
-<Select
- 
-  value={this.state.states}
-  // onChange={event => {
-  //   this.setState({
-  //     states: event.target.value,
-  //   });
-  // }}
-  onChange={this.handleChange3}
-  options={options}
-  placeholder="Enter your state name"
-/>
+                    value={this.state.states}
+                    // onChange={event => {
+                    //   this.setState({
+                    //     states: event.target.value,
+                    //   });
+                    // }}
+                    onChange={this.handleChange3}
+                    options={options}
+                    placeholder="Enter your state name"
+                  />
 
 
-                        <label>CITY </label>
 
-                        <input type="text"
+                  <label>COLLEGE </label>
 
-                        value={this.state.city}
+                  <CreatableSelect
+                    placeholder="Enter your college name"
+                    searchable={true}
+                    required={true}
+                    onChange={this.handleChange}
+                    options={colleges[this.state.states.value]}
+                    clearable={false}
+                    value={this.state.college}
+                  />
 
-                            onChange={event => {
-                                this.setState({
-                                    city: event.target.value
-                                })
-                            }}
+                  {console.log(citys[this.state.states.value])}
 
-                        ></input>
-                          
-          
- 
+
+                  <label>CITY </label>
+
+                  <CreatableSelect
+                    placeholder="Enter your city"
+                    searchable={true}
+                    required={true}
+                    onChange={this.handleChange1}
+                    options={this.state.states === "" ? [] : this.getCities(this.state.states.value)}
+                    clearable={false}
+                    value={this.state.city}
+                  />
+
+
+                </div> :
+                <div>
+                  <label>COLLEGE </label>
+                  <input type="text"
+
+                    value={this.state.college}
+
+                    onChange={event => {
+                      this.setState({
+                        college: event.target.value
+                      })
+                    }}
+
+                  ></input>
+
+                </div>
+              }
+
             </form>
 
             <br />
