@@ -103,7 +103,6 @@ export default class Register extends Component {
     this.state.college = this.state.college["label"];
     this.state.gender = this.state.gender["value"];
     this.state.states= this.state.states["value"];
-    this.state.contact = Number(this.state.contact);
 
     let user_type = 0;
     
