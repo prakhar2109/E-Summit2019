@@ -72,9 +72,10 @@ export default class caLeaderboard extends Component {
           </div>
           <div id="optionsToggle">
             <span>
-              <NavLink id="tasksButton" to="/pendingtask">
+              {/* <NavLink id="tasksButton" to="/pendingtask">
                 Tasks
-              </NavLink>
+              </NavLink> */}
+              Tasks
               <br />
             </span>
             {/*<span id="leaderboardButton">LeaderBoard</span>*/}
