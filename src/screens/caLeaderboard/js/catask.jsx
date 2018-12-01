@@ -3,7 +3,7 @@ import '../css/catask.css'
 import axios from "axios"
 import { BASE_URL } from './../../../utils/urls'
 
-let token = process.env.REACT_APP_AUTH_TOKEN //for devonly
+let token =  localStorage.getItem('ca_token');
 
 
 export default class CATaskBoard extends Component {

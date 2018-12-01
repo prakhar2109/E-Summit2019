@@ -138,6 +138,8 @@
   border-left: none;
   border-right: none;
   width: 20.25rem;
+  margin-bottom: calc(1em + 2.5vh);
+  font-size: 1.5rem;
 }
 
 .form form button {

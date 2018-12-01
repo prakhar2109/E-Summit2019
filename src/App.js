@@ -86,8 +86,9 @@ class App extends Component {
 
             <Route path="/ignite" component={ignite} />
             <Route path="/footer" component={Lfooter} />
-          </React.Fragment>
+            {/* <Route path="/Rselect" component={RSelect} /> */}
 
+          </React.Fragment>
           </Switch>
         </div>
       </Router>
