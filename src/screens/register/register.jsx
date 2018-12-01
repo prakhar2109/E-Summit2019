@@ -102,6 +102,7 @@ export default class Register extends Component {
     e.preventDefault();
     this.state.college = this.state.college["label"];
     this.state.gender = this.state.gender["value"];
+    this.state.states= this.state.states["value"];
     this.state.contact = Number(this.state.contact);
 
     let user_type = 0;
@@ -114,6 +115,7 @@ export default class Register extends Component {
       password: this.state.password,
       state: this.state.states,
       gender: this.state.gender,
+      user_type :"ATT",
     };
 
     console.log(data);
