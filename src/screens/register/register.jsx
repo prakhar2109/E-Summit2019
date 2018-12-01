@@ -31,15 +31,14 @@ const gender_option = [
 ];
 
 const options = [
-  "Andaman and Nicobar Islands",
+  
   "Andhra Pradesh",
   "Arunachal Pradesh",
   "Assam",
   "Bihar",
-  "Chandigarh",
+  
   "Chattisgarh",
-  "Dadra and Nagar Haveli",
-  "Daman and Diu",
+
   "Delhi",
   "Goa",
   "Gujarat",
@@ -49,7 +48,7 @@ const options = [
   "Jharkhand",
   "Karnataka",
   "Kerala",
-  "Lakshadweep",
+  
   "Madhya Pradesh",
   "Maharashtra",
   "Manipur",
@@ -57,7 +56,7 @@ const options = [
   "Mizoram",
   "Nagaland",
   "Odisha",
-  "Puducherry",
+  
   "Punjab",
   "Rajasthan",
   "Sikkim",
