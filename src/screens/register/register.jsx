@@ -50,11 +50,12 @@ export default class Register extends Component {
   };
   handleClick = e => {
     e.preventDefault();
-    this.state.college = this.state.college["value"];
+    this.state.college = this.state.college["label"];
     this.state.gender = this.state.gender["value"];
     this.state.contact = Number(this.state.contact);
 
     let user_type = 0;
+    
     let data = {
       name: this.state.name,
       college: this.state.college,
@@ -64,6 +65,8 @@ export default class Register extends Component {
       state: this.state.states,
       gender: this.state.gender,
     };
+
+    console.log(data);
 
     if (this.state.password.length < 8) {
       alert("Password length  must be greater than 8  ");
@@ -211,6 +214,8 @@ export default class Register extends Component {
                 value={college}
                 onChange={this.handleChange}
                 options={collegeArray}
+                searchable={true}
+								required={true}
               />
 
               <label> GENDER </label>
