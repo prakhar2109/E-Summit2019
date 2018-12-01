@@ -6,6 +6,10 @@ import Header from "./../header/header";
 import axios from "axios";
 import Select from "react-select";
 import { BASE_URL } from "../../utils/urls";
+import CreatableSelect from 'react-select/lib/Creatable';
+
+// import CollegeSelect from './College'
+// import StateSelect from './state'
 
 const gender_option = [
   { value: 0, label: "Male" },
@@ -13,6 +17,49 @@ const gender_option = [
   { value: 2, label: "Others" },
   { value: 3, label: "Prefer Not Say" },
 ];
+
+const options = [
+  "Andaman and Nicobar Islands",
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chandigarh",
+  "Chhattisgarh",
+  "Dadra and Nagar Haveli",
+  "Daman and Diu",
+  "Delhi",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jammu and Kashmir",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Lakshadweep",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Puducherry",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal"
+  ].map(state => ({
+    value: state,
+    label: state,
+}));
+
 export default class Register extends Component {
   CollegeData = [];
   state = {
@@ -44,7 +91,10 @@ export default class Register extends Component {
   handleChange = college => {
     this.setState({ college });
   };
-
+  handleChange3 = states => {
+    this.setState({ states});
+  };
+  
   handleChange2 = gender => {
     this.setState({ gender });
   };
@@ -209,7 +259,7 @@ export default class Register extends Component {
               />
               <label>COLLEGE </label>
 
-              <Select
+              <CreatableSelect
                 placeholder="Enter your college name"
                 value={college}
                 onChange={this.handleChange}
@@ -268,14 +318,16 @@ export default class Register extends Component {
                             */}
               <label>STATE </label>
 
-              <input
-                type="text"
+              <Select
+               
                 value={this.state.states}
-                onChange={event => {
-                  this.setState({
-                    states: event.target.value,
-                  });
-                }}
+                // onChange={event => {
+                //   this.setState({
+                //     states: event.target.value,
+                //   });
+                // }}
+                onChange={this.handleChange3}
+                options={options}
                 placeholder="Enter your state name"
               />
 
