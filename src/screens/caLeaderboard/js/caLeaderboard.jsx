@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import logo from "./../../../utils/esummitLogo.png";
+import logo from "./../../../images/esummitLogo.png";
 import "./../css/caLeaderboard.css";
 import axios from "axios";
 import Header from "../../header/caheader";

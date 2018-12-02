@@ -2,26 +2,25 @@ import React, { Component } from 'react'
 import jump from 'jump.js'
 import './css/ignite.css'
 import Header from './../header/header'
-// import scroll from './static/Union.svg'
 import "./css/scrollanimation.css"
 import Footer from '../footer/footer'
 
-import jaipur from '../../utils/jaipur.jpg'
-import deh from '../../utils/dehradun.jpg'
-import chandi from '../../utils/chandigarh.jpg'
+import jaipur from '../../images/jaipur.jpg'
+import deh from '../../images/dehradun.jpg'
+import chandi from '../../images/chandigarh.jpg'
 
-import guru from '../../utils/gurugram.jpg'
+import guru from '../../images/gurugram.jpg'
 
-import case1 from '../../utils/case1.png'
-import case2 from '../../utils/Workshops.jpg'
+import case1 from '../../images/case1.png'
+import case2 from '../../images/Workshops.jpg'
 
-import comp from '../../utils/competetions.jpg'
+import comp from '../../images/competetions.jpg'
 
-import lec from '../../utils/guestlecture.png'
+import lec from '../../images/guestlecture.png'
 
-import panal from '../../utils/paneldiscussions.jpeg'
+import panal from '../../images/paneldiscussions.jpeg'
 
-import nodia from '../../utils/noida.jpg'
+import nodia from '../../images/noida.jpg'
 
 export default class ComingSoon extends Component {
   jum = () => {
