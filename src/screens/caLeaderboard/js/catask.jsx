@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import '../css/catask.css'
 import axios from "axios"
-import { BASE_URL } from './../../../utils/urls'
+import {BASE_URL} from './../../../utils/urls'
 
 // let token = process.env.REACT_APP_AUTH_TOKEN //for devonly
 
@@ -12,22 +12,21 @@ export default class CATaskBoard extends Component {
         super()
         this.state = {
             isfileUploaded: false,
-            fileUploaded: null,
-
+            fileUploaded: null
         }
     }
     componentDidMount = () => {
-        
+
         axios
             .get(BASE_URL + '/v1/api/task/list/', {
-                'headers': {
-                    'Authorization': `Token ${token}`
-                }
-            })
+            'headers': {
+                'Authorization': `Token ${token}`
+            }
+        })
             .then(res => {
                 if (res && res.data && res.data) {
                     // console.log(res.data, "res.data")
-                    this.setState({ tasks: res.data })
+                    this.setState({tasks: res.data})
                 }
             })
             .catch(function (response) {
@@ -36,9 +35,8 @@ export default class CATaskBoard extends Component {
 
     }
 
-
     render() {
-        let { tasks } = this.state;
+        let {tasks} = this.state;
         return (
 
             <div className="taskparent">
@@ -53,7 +51,7 @@ export default class CATaskBoard extends Component {
                 </div>
                 <div className="taskchildrow">
 
-                    {tasks && tasks.map((e) => <CATask key={e.id} task={e} />)}
+                    {tasks && tasks.map((e) => <CATask key={e.id} task={e}/>)}
 
                 </div>
             </div>
@@ -70,9 +68,8 @@ class CATask extends Component {
         }
     }
     state = {
-        visible: true,
+        visible: true
     }
-
 
     fileUploadHandler = (file, task) => {
         let name = document.getElementById(`fileInput${task.id}`)
@@ -83,33 +80,31 @@ class CATask extends Component {
             this.setState({
                 fileUploaded,
                 isfileUploaded
-            }, () => {
-                console.log(this.state.isfileUploaded)
-            })
+            }, () => {})
             let formData = new FormData();
             formData.append("file", file[0]);
             formData.append("task", task.id);
             axios
                 .post(BASE_URL + `/v1/api/task/${task.id}/submit/`, formData, {
-                    headers: {
-                        'Authorization': `Token ${token}`,
-                        'Content-Type': 'multipart/formdata '
-                    }
-                })
-                .then(resData => {
-                    // alert(resData) //do something with this and show the user that the file has been uploaded !
+                headers: {
+                    'Authorization': `Token ${token}`,
+                    'Content-Type': 'multipart/formdata '
+                }
+            })
+                .then(() => {
 
+                    // alert(resData) //do something with this and show the user that the file has
+                    // been uploaded !
+                    document
+                        .getElementById(`nameOfFileUploadedForTask${task.id}`)
+                        .innerHTML = name
+                        .files
+                        .item(0)
+                        .name;
+                    document
+                        .getElementById(`filestatus${task.id}`)
+                        .innerHTML = "file uploaded ";
                 })
-            document
-                .getElementById(`nameOfFileUploadedForTask${task.id}`)
-                .innerHTML = name
-                    .files
-                    .item(0)
-                    .name;
-            document
-                .getElementById(`filestatus${task.id}`)
-                .innerHTML = "file uploaded ";
-
 
         }
     }
@@ -127,7 +122,6 @@ class CATask extends Component {
 
                         {task.description}
 
-
                     </div>
 
                     <div className="taskchild-fileupload">
@@ -136,11 +130,11 @@ class CATask extends Component {
                             id={`fileInput${task.id}`}
                             type='file'
                             className="filesvg"
-                            onChange={(e) => this.fileUploadHandler(e.target.files, task)} />
+                            onChange={(e) => this.fileUploadHandler(e.target.files, task)}/>
                         <div className="Selectfilesvg">
-                            <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName" ></p>
+                            <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName"></p>
 
-                            <p id={`filestatus${task.id}`} className="taskName" >Choose a File</p>
+                            <p id={`filestatus${task.id}`} className="taskName">Choose a File</p>
                         </div>
 
                     </div>

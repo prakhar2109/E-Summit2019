@@ -42,7 +42,6 @@ export default class ComingSoon extends Component {
         }
       }).then(function (res) {
 
-      console.log(res.data, "res");
       if (res && res.data) {
         if (res.data) {
           var d = new Date();

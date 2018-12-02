@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import logo from "./../../../utils/esummitLogo.png";
 import "./../css/caLeaderboard.css";
-import {Route} from "react-router-dom";
 import axios from "axios";
 import Header from "../../header/caheader";
 import CATaskBoard from "./catask";

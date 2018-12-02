@@ -15,7 +15,7 @@ export default class IndexNew extends Component {
     render() {
         return (
             <div id="tasks">
-                {this.state.tasks ? this.state.tasks.map((tasks, number) => {
+                {this.state.tasks ? this.state.tasks.map((tasks) => {
                     return <Task key={tasks.number} tasks={tasks} number={tasks.number}></Task>//have to wite the key
                 }) : null
                 }

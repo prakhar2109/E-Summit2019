@@ -208,7 +208,6 @@ export default class Register extends Component {
         .getElementById("loader")
         .style
         .display = "flex";
-      console.log('data', data)
       axios({
         method: "post",
         url: BASE_URL + "/v1/api/user/signup/",
@@ -227,13 +226,10 @@ export default class Register extends Component {
         var d = new Date();
         d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
 
-        console.log(r.data);
         if (r.data.token) {
           localStorage.setItem("ca_token", r.data.token);
         }
         window.location.href = "/dashboard";
-
-        console.log(r.data.token);
         data = "";
       }).catch((response) => {
         document

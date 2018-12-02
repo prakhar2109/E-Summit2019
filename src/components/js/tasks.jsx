@@ -15,14 +15,13 @@ export default class Tasks extends Component{
         isDropped6:false
         
     }
-    onDrop = (files)=>{
+    onDrop = ()=>{
         document.getElementsByClassName("svg").innerHTML="";
     }
   render(){
       return(
           <div id="tasks">
             <div className="task">
-            {console.log("hello")}
             <div className="taskItem">
                 Task 1
             </div>

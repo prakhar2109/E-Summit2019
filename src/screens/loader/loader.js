@@ -4,9 +4,9 @@ import "./loader.css";
 export default class Loader extends Component {
   render() {
     return (
-        <div id ="loader" class="contaier">
-        <div class="flex">
-        <div class="loader">
+        <div id ="loader" className="contaier">
+        <div className="flex">
+        <div className="loader">
         </div>
         
         </div>
