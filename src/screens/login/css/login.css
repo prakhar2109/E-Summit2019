@@ -26,7 +26,7 @@ rohit{
       text-transform: capitalize;
 
   }
-}
+
 @media (max-width: 960px) {
   .login_main {
     display: block;
