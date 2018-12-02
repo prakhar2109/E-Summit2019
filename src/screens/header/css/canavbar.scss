@@ -1,24 +1,97 @@
-.caheader{
+.caheader {
 
-     
- 
+
+
     padding: 0 1rem;
-    .esummit_logo{
-        img{
-            height:4rem;
+
+    .esummit_logo {
+        img {
+            height: 4rem;
         }
     }
-    i{
-        float:right;
+
+    i {
+        float: right;
+        padding-top:2vh;
         font-size: 2rem;
         cursor: pointer;
+        color: #1A4D66;
     }
 
-    .mob_menu{
-        display:none;
-    }
-    #close_button{
+    .mob_menu {
         display: none;
+        margin-top: 5vh;
+    }
+
+    #close_button {
+        display: none;
+    }
+
+    .headerdata {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        margin-left: 8%;
+        margin-bottom: 35px;
+
+    }
+
+    #droperShape {
+        margin-top: 10%;
+        margin-left: 4%;
+        background-color: #F39423;
+        color: white;
+ 
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        font-size: 3em;
+        font-weight: 500;
+  
+        height: 2em;
+        width: 2em;
+        border-top-left-radius: 6vh;
+        border-top-right-radius: 55vh;
+        border-bottom-left-radius: 50vh;
+        border-bottom-right-radius: 55vh;
+    }
+
+    .progress {
+        margin-top: 0px;
+        margin-left: 0px;
+        height: 7px !important;
+    }
+
+    #nms {
+        line-height: normal;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+
+        color: #4F4F4F;
+    }
+
+    #scoresWritten {
+        line-height: normal;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+
+        color: rgba(79, 79, 79, 0.44)
+    }
+
+    #scoresValue {
+        line-height: normal;
+        font-size: 12px;
+        text-align: right;
+        letter-spacing: 0.02em;
+        float: right;
+        color: #4F4F4F;
     }
 }
 
+
+@media only screen and (min-width: 900px) {
+
+    .caheader{
+        display: none;
+    }
+}

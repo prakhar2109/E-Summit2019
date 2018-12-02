@@ -91,10 +91,9 @@ export default class caLeaderboard extends Component {
             </div>
           </div>
 
-          <CATaskBoard />
-
-          {/* <Route path="/dashboard" component="CATaskBoard"></Route>
-             <Route path="/viewprofile" component="Viewprofile"></Route> */}
+              <CATaskBoard />
+    
+ 
         </div>
       </div>
     );
