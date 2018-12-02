@@ -1,20 +1,28 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import logo from "./../../../utils/esummitLogo.png";
 import "./../css/caLeaderboard.css";
-import { Route } from "react-router-dom";
+import {Route} from "react-router-dom";
 import axios from "axios";
 import Header from "../../header/caheader";
 import CATaskBoard from "./catask";
-import { BASE_URL } from "../../../utils/urls";
-import { NavLink } from "react-router-dom";
+import {BASE_URL} from "../../../utils/urls";
+import {NavLink} from "react-router-dom";
+
+let token = localStorage.getItem('ca_token');
 
 export default class caLeaderboard extends Component {
   constructor() {
     super();
     this.state = {
       name: "",
-      score: "0",
+      score: "0"
     };
+  }
+
+  componentWillMount(){
+    if (token === null || token === undefined) {
+      window.location.href = "/login";
+    }
   }
 
   handleLogout = () => {
@@ -22,18 +30,14 @@ export default class caLeaderboard extends Component {
     window.location.href = "/login";
   };
   componentDidMount = () => {
-    let token = localStorage.getItem('ca_token');
-
-
- 
     axios
       .get(BASE_URL + "/v1/api/user/profile", {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      })
+      headers: {
+        Authorization: `Token ${token}`
+      }
+    })
       .then(res => {
-        this.setState({ score: res.data.score, name: res.data.name });
+        this.setState({score: res.data.score, name: res.data.name});
       })
       .catch(response => {
         alert(response);
@@ -41,19 +45,23 @@ export default class caLeaderboard extends Component {
   };
 
   render() {
-    let { name, score } = this.state;
+    let {name, score} = this.state;
+
+    if (token === null || token === undefined) {
+      window.location.href = "/login";
+    }
     let scorePercentage = (score / 360) * 100 + "";
     return (
       <div>
-        <Header />
+        <Header/>
         <div id="container">
           <div id="leftPane">
             <div id="header">
               <NavLink to="/">
-                <img id="logo" src={logo} alt="" />
+                <img id="logo" src={logo} alt=""/>
               </NavLink>
             </div>
-            <hr id="line1" />
+            <hr id="line1"/>
             <div id="viewProfile">
               {/* <NavLink to="/Viewprofile">
                      VIEW PROFILE
@@ -69,9 +77,8 @@ export default class caLeaderboard extends Component {
               <div
                 className="progress-bar bg-custom"
                 style={{
-                  width: scorePercentage + "%",
-                }}
-              />
+                width: scorePercentage + "%"
+              }}/>
             </div>
             <div id="optionsToggle">
               <span>
@@ -79,7 +86,7 @@ export default class caLeaderboard extends Component {
                 Tasks
               </NavLink> */}
                 Tasks
-              <br />
+                <br/>
               </span>
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton">Rulebook</div>
@@ -87,13 +94,12 @@ export default class caLeaderboard extends Component {
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>
                 Log Out
-            </button>
+              </button>
             </div>
           </div>
 
-              <CATaskBoard />
-    
- 
+          <CATaskBoard/>
+
         </div>
       </div>
     );

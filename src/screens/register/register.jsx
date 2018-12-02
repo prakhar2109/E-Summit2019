@@ -16,6 +16,8 @@ import Loader from "../loader/loader"
 
 // import CollegeSelect from './College' import StateSelect from './state'
 
+let token = localStorage.getItem('ca_token');
+
 const gender_option = [
   {
     value: 'M',
@@ -85,6 +87,12 @@ const defaultState = {
 export default class Register extends Component {
 
   state = defaultState;
+
+  componentWillMount() {
+    if (token !== null && token !== undefined) {
+      window.location.href = "/dashboard";
+    }
+  }
 
   getCountries = () => {
     return countries.map(country => ({value: country.name, label: country.name}))
