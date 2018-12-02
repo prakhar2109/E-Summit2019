@@ -67,7 +67,7 @@ export default class caLeaderboard extends Component {
             <p id="name">{name}</p>
             <div className="score">
               <span id="scoreWritten">SCORE</span>
-              <span id="scoreValue">{score}/360</span>
+              <span id="scoreValue">{score}</span>
             </div>
             <div className="progress">
               <div
