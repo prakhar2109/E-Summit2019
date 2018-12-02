@@ -11,7 +11,7 @@ export default class Viewprofile extends Component{
         return(
 
             <div>
-                hello
+                hello janu
 
             </div>
         )

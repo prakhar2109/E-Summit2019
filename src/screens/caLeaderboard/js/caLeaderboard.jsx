@@ -3,6 +3,7 @@ import logo from "./../../../utils/esummitLogo.png";
 import "./../css/caLeaderboard.css";
 import { Route } from "react-router-dom";
 import axios from "axios";
+import {Link} from "react-router-dom"
 import Header from "../../header/caheader";
 import CATaskBoard from "./catask";
 import { BASE_URL } from "../../../utils/urls";
@@ -55,9 +56,11 @@ export default class caLeaderboard extends Component {
             </div>
             <hr id="line1" />
             <div id="viewProfile">
-              {/* <NavLink to="/Viewprofile">
+              <NavLink to="/Viewprofile">
                      VIEW PROFILE
-                    </NavLink> */}
+                    </NavLink>
+                    
+
             </div>
             <div id="dropShape">{name[0]}</div>
             <p id="name">{name}</p>
@@ -90,9 +93,14 @@ export default class caLeaderboard extends Component {
             </button>
             </div>
           </div>
+              <Link to="/dashboard/leader">
+              
+              LeaderBoard
 
+              
+             
+              </Link>
               <CATaskBoard />
-    
  
         </div>
       </div>
