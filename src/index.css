@@ -7,15 +7,12 @@ body ,html{
 
   
 }
-
-/* a{
-    font-family: proxima-nova, sans-serif !important;   
-} */
-
+ 
 .active{
     color:#F39423  !important;
 }
 
 body , html ,p ,div, button , a , span,input,label ,rohit {
-    font-family: proxima-nova, sans-serif !important;
+    font-family: 'Montserrat'  !important;
+
 }

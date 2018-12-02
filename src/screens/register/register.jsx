@@ -12,6 +12,8 @@ import countries from './countries.json';
 import {BASE_URL} from "../../utils/urls";
 import CreatableSelect from 'react-select/lib/Creatable';
 
+import Loader from "../loader/loader"
+
 // import CollegeSelect from './College' import StateSelect from './state'
 
 const gender_option = [
@@ -144,13 +146,14 @@ export default class Register extends Component {
             document.getElementById('name_error').innerHTML = '';
         }
 
-        if(this.state.contact.length != 9 )
+        if(this.state.contact.length === 9 ||this.state.contact.length === 10)
         {
-          document.getElementById('phone_error').innerHTML = 'Mobile Number Must be 10 digits';
+          document.getElementById('phone_error').innerHTML = '';
         }
         else
         {
-            document.getElementById('phone_error').innerHTML = '';
+            
+            document.getElementById('phone_error').innerHTML = 'Mobile Number Must be 10 digits';
         }
 
 
@@ -180,7 +183,7 @@ export default class Register extends Component {
 
   
   handleClick = e => {
-    
+
     e.preventDefault();
     if (this.state.password.length < 8) {
       alert("Password length must be greater than 8");
@@ -197,7 +200,8 @@ export default class Register extends Component {
         country: this.state.country.value,
         city: this.state.country.value === "India" ? this.state.city.label : null 
       };
-      console.log('data', data)
+    document.getElementById("loader").style.display = "flex";
+    console.log('data', data)
       axios({
           method: "post",
           url: BASE_URL + "/v1/api/user/signup/",
@@ -209,6 +213,8 @@ export default class Register extends Component {
           }
         })
         .then((r) => {
+    document.getElementById("loader").style.display = "none";
+
           var d = new Date();
           d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
 
@@ -222,6 +228,7 @@ export default class Register extends Component {
           data = "";
         })
         .catch((response) => {
+          document.getElementById("loader").style.display = "none";
           this.setState(defaultState);
           alert(response);
         });
@@ -233,6 +240,7 @@ export default class Register extends Component {
 
     return (
       <div>
+        <Loader />
         <Header/>
 
         <div className="register_main">

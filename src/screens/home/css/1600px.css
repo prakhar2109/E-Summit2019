@@ -50,6 +50,7 @@
 .main_conta .Part1 span a {
   color: black;
   text-decoration: none;
+  font-size:1.2rem;
 }
 
 .main_conta .Part1 span img {
@@ -63,6 +64,7 @@
   margin-left: 3.9375rem;
   font-size: 2rem;
   margin-top: -6.25rem;
+
 }
 
 .main_conta .Part1 .social i {
