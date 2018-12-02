@@ -1,0 +1,85 @@
+.caheader {
+    padding: 0 1rem;
+}
+
+.caheader .esummit_logo img {
+    height: 4rem;
+}
+
+.caheader i {
+    float: right;
+    padding-top: 2vh;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #1a4d66;
+}
+
+.caheader .mob_menu {
+    display: none;
+    margin-top: 5vh;
+}
+
+.caheader #close_button {
+    display: none;
+}
+
+.caheader .headerdata {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-bottom: 35px;
+}
+
+.caheader #droperShape {
+    margin-top: 10%;
+    margin-left: 4%;
+    background-color: #f39423;
+    color: white;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 3em;
+    font-weight: 500;
+    height: 2em;
+    width: 2em;
+    border-top-left-radius: 6vh;
+    border-top-right-radius: 55vh;
+    border-bottom-left-radius: 50vh;
+    border-bottom-right-radius: 55vh;
+}
+
+.caheader .progress {
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 7px !important;
+}
+
+.caheader #nms {
+    line-height: normal;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: #4f4f4f;
+}
+
+.caheader #scoresWritten {
+    line-height: normal;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: rgba(79, 79, 79, 0.44);
+}
+
+.caheader #scoresValue {
+    line-height: normal;
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    float: right;
+    color: #4f4f4f;
+}
+
+@media only screen and (min-width: 900px) {
+    .caheader {
+        display: none;
+    }
+}
