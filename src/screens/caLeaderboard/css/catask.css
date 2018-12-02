@@ -126,7 +126,7 @@ font-size: 12px;
     .taskparent{
         background: #F7F8F9;
         min-height: 100vh;
- 
+        width: 100%;
         height: min-content;
     }
 
@@ -144,5 +144,18 @@ font-size: 12px;
     #leftPane{
         display: none;
     }
- 
-}
+    .taskchild-weeklyuploads {
+       
+        font-size: 13px;
+    }
+    .taskchild-line {
+       
+        width: 25%;
+    }
+    .taskchild-dates {
+       
+        font-size: 13px;
+       
+    }
+
+}   

@@ -40,7 +40,7 @@ export default class FooterWithContactUs extends Component {
                     </div>
 
                     <div className="landing-footer-details">
-                        esummit18@gmail.com
+                        esummit19@gmail.com
                     </div>
 
                     <div className="landing-footer-heading">
@@ -78,7 +78,7 @@ export default class FooterWithContactUs extends Component {
                             For Sporsorhip Opportunities or Collaborations
                         </div>
                         <div className="landing-bottomfooter-mail">
-                            esummit18@gmail.com
+                            esummit19@gmail.com
                         </div>
 
                     </div>

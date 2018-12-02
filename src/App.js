@@ -8,8 +8,8 @@ import React, { Component } from 'react';
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Loadable from 'react-loadable'
-import Loader from './screens/common/loader'
+import Loadable from 'react-loadable';
+import Loader from './screens/common/loader';
 
 
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
@@ -23,22 +23,22 @@ const Loading = ({ error }) => {
 
 const Login = Loadable({
   loader: () => import("./screens/login/login"),
-  loading: () => Loading
+  loading: () => <Loader />,
 });
 
 const HomePage = Loadable({
   loader: () => import("./screens/home/home"),
-  loading: () => Loading
+  loading: () => <Loader />,
 });
 
 const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
-  loading: () => Loading
+  loading: () => <Loader />,
 });
 
 const Register = Loadable({
   loader: () => import("./screens/register/register"),
-  loading: () => Loading
+  loading: () => <Loader />,
 });
 
 // const Lfooter = Loadable({
@@ -49,7 +49,7 @@ const Register = Loadable({
 
 const LeaderBoard = Loadable({
   loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
-  loading: () => Loading
+  loading: () => <Loader />,
 });
 
 
@@ -70,6 +70,7 @@ class App extends Component {
         <div>
           <Switch>
           <React.Fragment>
+            <div className ="main_class"> 
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
 
@@ -85,9 +86,10 @@ class App extends Component {
 
 
             <Route path="/ignite" component={ignite} />
+            <Route path="/loader" component={Loader} />
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
-
+            </div>
           </React.Fragment>
           </Switch>
         </div>

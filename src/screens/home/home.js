@@ -216,15 +216,15 @@ export default class ComingSoon extends Component {
 
           <div className='social_mobile'>
             <span>
-            <a target='_blank' href='https://www.linkedin.com/company/esummit/'>
+            <a target='blank' href='https://www.linkedin.com/company/esummit/'>
                   <i className='fab fa-linkedin' />
                 </a>
                 
-                <a target='_blank' href='https://www.facebook.com/ecelliitr/'>
+                <a target='blank' href='https://www.facebook.com/ecelliitr/'>
                   <i className='fab fa-facebook-f' />
                 </a>
                 
-                <a target='_blank' href='https://www.instagram.com/ecelliitr/'>
+                <a target='blank' href='https://www.instagram.com/ecelliitr/'>
                   <i className='fab fa-instagram' />
                 </a>
             </span>
@@ -247,7 +247,7 @@ export default class ComingSoon extends Component {
               </span>
 
               <span className='email'>
-                <a href='mailto:esummit18@gmail.com'> esummit18@gmail.com</a>
+                <a href='mailto:esummit19@gmail.com'> esummit19@gmail.com</a>
               </span>
             </span>
 

@@ -4,6 +4,11 @@
           box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
   padding: 0.5rem 2rem 0.5rem 1rem;
   width: 100vw;
+  position: fixed;
+  top:0;
+  z-index: 300000;
+
+
 }
 
 .mobile_menu {
@@ -23,5 +28,8 @@
 
 .ecell_logo {
   display: none;
+}
+.main_class{
+  margin-top: 13vh;
 }
 /*# sourceMappingURL=mobile.css.map */
