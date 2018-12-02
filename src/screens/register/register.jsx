@@ -116,6 +116,70 @@ export default class Register extends Component {
   handleGenderChange = gendr => {
     this.setState({gender: gendr });
   };
+
+  validate = () =>{
+        
+ 
+
+    var re = /\S+@\S+\.\S+/
+    console.log(this.state.contact.length)
+    if(this.state.email.match(re))
+        {
+            document.getElementById('email_check').innerHTML = '';
+
+        }
+    else
+        {
+            document.getElementById('email_check').innerHTML = 'Please Enter Corrrect Email';
+        }
+
+
+
+        if(this.state.name === "")
+        {
+            document.getElementById('name_error').innerHTML = 'Please Enter Name';
+        }
+
+        else
+        {
+            document.getElementById('name_error').innerHTML = '';
+        }
+
+        if(this.state.contact.length != 9 )
+        {
+          document.getElementById('phone_error').innerHTML = 'Mobile Number Must be 10 digit';
+        }
+        else
+        {
+            document.getElementById('phone_error').innerHTML = '';
+        }
+
+
+        if(this.state.password.length < 7)
+        {
+          document.getElementById('pass_error').innerHTML = 'Password must be greater than 8 character';
+        }
+        else
+        {
+            document.getElementById('pass_error').innerHTML = '';
+        }
+    
+        
+
+        if( this.state.message !== "" &&  this.state.name !=="" && this.state.email.match(re) ){
+            return "true";
+        }
+        else{
+            return "false";
+        }
+
+
+}
+
+
+
+
+  
   handleClick = e => {
     e.preventDefault();
     if (this.state.password.length < 8) {
@@ -229,10 +293,18 @@ export default class Register extends Component {
               <input
                 type="text"
                 value={this.state.name}
-                onChange={event => {
+                onChange={
+                  
+                  
+                event => {
                 this.setState({name: event.target.value});
-              }}
+                {this.validate()}
+              }
+ 
+            }
                 placeholder="Enter your full name"/>
+
+              <div className = "error" id = "name_error"></div>
 
               <label>PHONE NO.</label>
 
@@ -242,8 +314,11 @@ export default class Register extends Component {
                 parse={value => Number(value)}
                 onChange={event => {
                 this.setState({contact: event.target.value});
+                {this.validate()}
               }}
                 placeholder="Enter your phone number"/>
+
+                 <div className = "error" id = "phone_error"></div>
 
               <label>EMAIL-ID</label>
 
@@ -252,8 +327,13 @@ export default class Register extends Component {
                 value={this.state.email}
                 onChange={event => {
                 this.setState({email: event.target.value});
+                {this.validate()}
               }}
                 placeholder="Enter your Email ID"/>
+                <div className = "error" id = "email_check"></div>
+
+
+
               <label>PASSWORD
               </label>
 
@@ -262,8 +342,11 @@ export default class Register extends Component {
                 value={this.state.passowrd}
                 onChange={event => {
                 this.setState({password: event.target.value});
+                {this.validate()}
               }}
-                placeholder="********"/>
+                placeholder="******"/>
+
+                <div className = "error" id = "pass_error"></div>
 
               <label>
                 GENDER
