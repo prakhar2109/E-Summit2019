@@ -8,10 +8,9 @@ export default class Loader extends Component {
         <div class="flex">
         <div class="loader">
         </div>
+        
         </div>
-        <div class="load-text">
-        Loading...
-        </div>
+    
         </div>
     )
   }
