@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./register.css";
 import Footer from "../footer/footer";
 import {NavLink} from "react-router-dom";
-import Header from "./../header/header";
+import Header from "../header/header";
 import axios from "axios";
 import Select from "react-select";
 import colleges from './colleges.json';
