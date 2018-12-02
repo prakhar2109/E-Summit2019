@@ -41,10 +41,10 @@ const Register = Loadable({
   loading: () => Loading
 });
 
-const Lfooter = Loadable({
-  loader: () => import("./screens/footer/landingpagefooter"),
-  loading: () => Loading
-});
+// const Lfooter = Loadable({
+//   loader: () => import("./screens/footer/landingpagefooter"),
+//   loading: () => Loading
+// });
 
 
 const LeaderBoard = Loadable({
