@@ -5,12 +5,39 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./css/main.css";
 import ecell from "./static/image.svg";
+import axios from "axios";
+import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
 import "./css/canavbar.scss";
 
 import Ca from "../caLeaderboard/js/caLeaderboard";
 
 export default class ComingSoon extends Component {
+  state = {
+    name: "",
+    score: "0",
+  };
+
+  componentDidMount = () => {
+    let token = localStorage.getItem('ca_token');
+
+
+ 
+    axios
+      .get(BASE_URL + "/v1/api/user/profile", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then(res => {
+        this.setState({ score: res.data.score, name: res.data.name });
+      })
+      .catch(response => {
+        alert(response);
+      });
+  };
+
+
   handle_menu() {
     document.getElementById("phone").style.display = "flex";
     document.getElementById("close_button").style.display = "block";
@@ -24,7 +51,8 @@ export default class ComingSoon extends Component {
   }
 
   render() {
-    let scorePercentage = (120 / 360) * 100 + "";
+    let {  score } = this.state;
+    let scorePercentage = ( score / 360) * 100 + "";
     return (
       <div className="caheader">
         <span className="esummit_logo">
@@ -37,12 +65,12 @@ export default class ComingSoon extends Component {
         <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
 
         <div id="phone" className="mob_menu">
-          <div id="droperShape">R</div>
+          <div id="droperShape">{this.state.name[0]}</div>
           <div className="headerdata">
-            <p id="nms">Rohit </p>
+            <p id="nms">{this.state.name} </p>
             <div className="scor">
-              <span id="scoresWritten">SCORE</span>
-              <span id="scoresValue">20/360</span>
+              <span id="scoresWritten">{this.state.score}</span>
+              <span id="scoresValue">{this.state.score}/360</span>
             </div>
             <div className="progress">
               <div
