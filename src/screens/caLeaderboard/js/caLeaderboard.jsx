@@ -25,7 +25,7 @@ export default class caLeaderboard extends Component {
     let token = localStorage.getItem('ca_token');
 
 
-    console.log(localStorage);
+ 
     axios
       .get(BASE_URL + "/v1/api/user/profile", {
         headers: {
@@ -91,10 +91,9 @@ export default class caLeaderboard extends Component {
             </div>
           </div>
 
-          <CATaskBoard />
-
-          {/* <Route path="/dashboard" component="CATaskBoard"></Route>
-             <Route path="/viewprofile" component="Viewprofile"></Route> */}
+              <CATaskBoard />
+    
+ 
         </div>
       </div>
     );

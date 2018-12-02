@@ -195,7 +195,7 @@ export default class ComingSoon extends Component {
 
               {/* <label>Phone</label> */}
               <div className="form-fields">
-                <input onChange={this.onChange} name='phone' type='number' value={this.state.phone} minlength="10" maxlength="10" placeholder="Phone*" />
+                <input onChange={this.onChange} name='phone' type='number' value={this.state.phone} minLength="10" maxLength="10" placeholder="Phone*" />
               </div>
               {/* <label>Email</label> */}
               <div className="form-fields">

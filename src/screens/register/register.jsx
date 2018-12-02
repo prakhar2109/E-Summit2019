@@ -122,7 +122,6 @@ export default class Register extends Component {
  
 
     var re = /\S+@\S+\.\S+/
-    console.log(this.state.contact.length)
     if(this.state.email.match(re))
         {
             document.getElementById('email_check').innerHTML = '';
@@ -130,7 +129,7 @@ export default class Register extends Component {
         }
     else
         {
-            document.getElementById('email_check').innerHTML = 'Please Enter Corrrect Email';
+            document.getElementById('email_check').innerHTML = 'Please Enter Correct Email';
         }
 
 
@@ -147,7 +146,7 @@ export default class Register extends Component {
 
         if(this.state.contact.length != 9 )
         {
-          document.getElementById('phone_error').innerHTML = 'Mobile Number Must be 10 digit';
+          document.getElementById('phone_error').innerHTML = 'Mobile Number Must be 10 digits';
         }
         else
         {
@@ -157,7 +156,7 @@ export default class Register extends Component {
 
         if(this.state.password.length < 7)
         {
-          document.getElementById('pass_error').innerHTML = 'Password must be greater than 8 character';
+          document.getElementById('pass_error').innerHTML = 'Password must be greater than 8 characters';
         }
         else
         {
@@ -181,6 +180,7 @@ export default class Register extends Component {
 
   
   handleClick = e => {
+    
     e.preventDefault();
     if (this.state.password.length < 8) {
       alert("Password length must be greater than 8");

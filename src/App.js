@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import HomePage from "./screens/home/home";
 // import Header from "./screens/header/header";
 // import Login from "./screens/login/login";
@@ -12,12 +12,13 @@ import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
 
 
+ 
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 const Loading = ({ error }) => {
   if (error) {
-      return <div>Error loading component</div>;
+    return <div>Error loading component</div>;
   } else {
-      return <Loader />;
+    return <Loader />;
   }
 };
 
@@ -46,22 +47,17 @@ const Register = Loadable({
 //   loading: () => Loading
 // });
 
-
 const LeaderBoard = Loadable({
   loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
   loading: () => <Loader />,
 });
 
-
-
-
-
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      auth: localStorage.getItem('ca_token')
-    }
+      auth: localStorage.getItem("ca_token"),
+    };
   }
 
   render() {
@@ -70,31 +66,32 @@ class App extends Component {
         <div>
           <Switch>
           <React.Fragment>
-            <div className ="main_class"> 
+            <div id = "main_class" className ="main_class"> 
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
 
-            {/* <Route exact path="/register" component={Register} />
+              {/* <Route exact path="/register" component={Register} />
             {
               this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
                 <Route exact path="/login" component={Login} />
             } */}
 
              <Route exact path="/register" component={Register} />
-             <Route exact path="/dashboard/" component={LeaderBoard} />
+            
 
 
-
+            <Route exact path="/dashboard/" component={LeaderBoard} />
             <Route path="/ignite" component={ignite} />
             <Route path="/loader" component={Loader} />
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
             </div>
+            
           </React.Fragment>
           </Switch>
         </div>
       </Router>
-    )
+    );
   }
 }
 
