@@ -181,6 +181,7 @@ export default class Register extends Component {
 
   
   handleClick = e => {
+    
     e.preventDefault();
     if (this.state.password.length < 8) {
       alert("Password length must be greater than 8");

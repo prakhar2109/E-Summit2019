@@ -7,7 +7,7 @@ body ,html{
     padding: 0;
     margin:0;
 
-    font-family: Montserrat;
+  
 }
 
 /* a{
@@ -18,6 +18,6 @@ body ,html{
     color:#F39423  !important;
 }
 
-body , html ,p ,div, button , a , span  {
-    font-family: proxima-nova, sans-serif;
+body , html ,p ,div, button , a , span,input,label ,rohit {
+    font-family: proxima-nova, sans-serif !important;
 }
