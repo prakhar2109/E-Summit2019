@@ -24,7 +24,9 @@ const Loading = ({ error }) => {
 
 const Login = Loadable({
   loader: () => import("./screens/login/login"),
+
   loading: () => <Loader />,
+
 });
 
 const HomePage = Loadable({
@@ -85,6 +87,7 @@ class App extends Component {
             <Route path="/loader" component={Loader} />
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
+      
             </div>
             
           </React.Fragment>
