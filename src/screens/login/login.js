@@ -35,7 +35,7 @@ export default class ComingSoon extends Component {
       },
     })
       .then(function(res) {
-        document.getElementById("loader").style.display = "none";
+       
         console.log(res.data, "res");
         if (res && res.data) {
           if (res.data) {
@@ -45,6 +45,7 @@ export default class ComingSoon extends Component {
               localStorage.setItem("ca_token", res.data.token);
             }
             window.location.href = "/dashboard";
+            document.getElementById("loader").style.display = "none";
             data = "";
           }
         }
