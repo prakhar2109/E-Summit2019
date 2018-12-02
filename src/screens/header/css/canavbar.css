@@ -1,5 +1,6 @@
 .caheader {
-    padding: 0 1rem;
+    padding: 15px 1rem;
+
 }
 
 .caheader .esummit_logo img {
@@ -13,10 +14,15 @@
     cursor: pointer;
     color: #1a4d66;
 }
+.caheader-parent{
+   
 
+}
 .caheader .mob_menu {
     display: none;
     margin-top: 5vh;
+    -webkit-box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
+          box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
 }
 
 .caheader #close_button {

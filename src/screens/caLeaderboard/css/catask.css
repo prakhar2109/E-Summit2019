@@ -52,6 +52,7 @@
 }
 
 .taskchild-fileupload {
+    cursor: pointer;
     margin-top: 4%;
     border-color: #B2B2B2;
     border-style: dashed;
@@ -102,6 +103,7 @@
 }
 
 .taskchild-fileupload input {
+    cursor: pointer;
     background-color: black;
     height: 18vh;
     opacity: 0;

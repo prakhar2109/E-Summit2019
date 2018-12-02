@@ -41,7 +41,10 @@ export default class ComingSoon extends Component {
   // componentWillUnmount(){
   //   document.getElementById("main_class").style.marginTop = '13vh';
   // }
-
+  handleLogout = () => {
+    localStorage.removeItem("ca_token");
+    window.location.href = "/login";
+  };
   handle_menu() {
     document.getElementById("phone").style.display = "flex";
     document.getElementById("close_button").style.display = "block";
@@ -59,6 +62,7 @@ export default class ComingSoon extends Component {
     let scorePercentage = ( score / 360) * 100 + "";
     return (
       <div className="caheader">
+        <div className="caheader-parent">
         <span className="esummit_logo">
           <NavLink to="/">
             <img src={esummit} alt="Esummit Logo" />
@@ -67,7 +71,7 @@ export default class ComingSoon extends Component {
 
         <i id="menu_button" class="fas fa-bars" onClick={this.handle_menu} />
         <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
-
+        </div>
         <div id="phone" className="mob_menu">
           <div id="droperShape">{this.state.name[0]}</div>
           <div className="headerdata">
@@ -83,6 +87,11 @@ export default class ComingSoon extends Component {
                   width: scorePercentage + "%",
                 }}
               />
+            </div>
+            <div id="submitButton">
+              <button type="submit" onClick={this.handleLogout}>
+                Log Out
+            </button>
             </div>
           </div>
         </div>
