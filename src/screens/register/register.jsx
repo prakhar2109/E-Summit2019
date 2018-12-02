@@ -88,7 +88,8 @@ export default class Register extends Component {
 
   state = defaultState;
 
-  componentWillMount() {
+  constructor(props){
+    super(props);
     if (token !== null && token !== undefined) {
       window.location.href = "/dashboard";
     }

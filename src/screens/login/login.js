@@ -13,16 +13,13 @@ let token = localStorage.getItem('ca_token');
 export default class ComingSoon extends Component {
   constructor(props) {
     super(props);
+    if (token !== null && token !== undefined) {
+      window.location.href = "/dashboard";
+    }
     this.state = {
       email: "",
       password: ""
     };
-  }
-
-  componentWillMount() {
-    if (token !== null && token !== undefined) {
-      window.location.href = "/dashboard";
-    }
   }
 
   handleClick = e => {

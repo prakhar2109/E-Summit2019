@@ -13,16 +13,13 @@ let token = localStorage.getItem('ca_token');
 export default class caLeaderboard extends Component {
   constructor() {
     super();
+    if (token === null || token === undefined) {
+      window.location.href = "/login";
+    }
     this.state = {
       name: "",
       score: "0"
     };
-  }
-
-  componentWillMount(){
-    if (token === null || token === undefined) {
-      window.location.href = "/login";
-    }
   }
 
   handleLogout = () => {
