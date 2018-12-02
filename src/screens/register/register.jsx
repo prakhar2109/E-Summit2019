@@ -33,12 +33,12 @@ const gender_option = [
 ];
 
 const options = [
-  
+
   "Andhra Pradesh",
   "Arunachal Pradesh",
   "Assam",
   "Bihar",
-  
+
   "Chattisgarh",
 
   "Delhi",
@@ -50,7 +50,7 @@ const options = [
   "Jharkhand",
   "Karnataka",
   "Kerala",
-  
+
   "Madhya Pradesh",
   "Maharashtra",
   "Manipur",
@@ -58,7 +58,7 @@ const options = [
   "Mizoram",
   "Nagaland",
   "Odisha",
-  
+
   "Punjab",
   "Rajasthan",
   "Sikkim",
@@ -70,7 +70,7 @@ const options = [
   "West Bengal"
 ].map(state => ({value: state, label: state}));
 
-const   defaultState = {
+const defaultState = {
   name: "",
   email: "",
   contact: "",
@@ -79,9 +79,8 @@ const   defaultState = {
   states: "",
   gender: "",
   country: "",
-  city: "",
+  city: ""
 };
-
 
 export default class Register extends Component {
 
@@ -116,72 +115,62 @@ export default class Register extends Component {
   };
 
   handleGenderChange = gendr => {
-    this.setState({gender: gendr });
+    this.setState({gender: gendr});
   };
 
-  validate = () =>{
-        
- 
+  validate = () => {
 
     var re = /\S+@\S+\.\S+/
-    if(this.state.email.match(re))
-        {
-            document.getElementById('email_check').innerHTML = '';
+    if (this.state.email.match(re)) {
+      document
+        .getElementById('email_check')
+        .innerHTML = '';
 
-        }
-    else
-        {
-            document.getElementById('email_check').innerHTML = 'Please Enter Correct Email';
-        }
+    } else {
+      document
+        .getElementById('email_check')
+        .innerHTML = 'Please Enter Correct Email';
+    }
 
+    if (this.state.name === "") {
+      document
+        .getElementById('name_error')
+        .innerHTML = 'Please Enter Name';
+    } else {
+      document
+        .getElementById('name_error')
+        .innerHTML = '';
+    }
 
+    if (this.state.contact.length === 9 || this.state.contact.length === 10) {
+      document
+        .getElementById('phone_error')
+        .innerHTML = '';
+    } else {
 
-        if(this.state.name === "")
-        {
-            document.getElementById('name_error').innerHTML = 'Please Enter Name';
-        }
+      document
+        .getElementById('phone_error')
+        .innerHTML = 'Mobile Number Must be 10 digits';
+    }
 
-        else
-        {
-            document.getElementById('name_error').innerHTML = '';
-        }
+    if (this.state.password.length < 7) {
+      document
+        .getElementById('pass_error')
+        .innerHTML = 'Password must be greater than 8 characters';
+    } else {
+      document
+        .getElementById('pass_error')
+        .innerHTML = '';
+    }
 
-        if(this.state.contact.length === 9 ||this.state.contact.length === 10)
-        {
-          document.getElementById('phone_error').innerHTML = '';
-        }
-        else
-        {
-            
-            document.getElementById('phone_error').innerHTML = 'Mobile Number Must be 10 digits';
-        }
+    if (this.state.message !== "" && this.state.name !== "" && this.state.email.match(re)) {
+      return "true";
+    } else {
+      return "false";
+    }
 
+  }
 
-        if(this.state.password.length < 7)
-        {
-          document.getElementById('pass_error').innerHTML = 'Password must be greater than 8 characters';
-        }
-        else
-        {
-            document.getElementById('pass_error').innerHTML = '';
-        }
-    
-        
-
-        if( this.state.message !== "" &&  this.state.name !=="" && this.state.email.match(re) ){
-            return "true";
-        }
-        else{
-            return "false";
-        }
-
-
-}
-
-
-
-
-  
   handleClick = e => {
 
     e.preventDefault();
@@ -190,57 +179,70 @@ export default class Register extends Component {
     } else {
       let data = {
         name: this.state.name,
-        college: this.state.country.value === "India" ? this.state.college.value : this.state.college,
+        college: this.state.country.value === "India"
+          ? this.state.college.value
+          : this.state.college,
         email: this.state.email,
         phone: this.state.contact,
         password: this.state.password,
-        state: this.state.country.value === "India" ? this.state.states.value : null,
+        state: this.state.country.value === "India"
+          ? this.state.states.value
+          : null,
         gender: this.state.gender.value,
         user_type: "AMB", //for now in CA dashboard
         country: this.state.country.value,
-        city: this.state.country.value === "India" ? this.state.city.label : null 
+        city: this.state.country.value === "India"
+          ? this.state.city.label
+          : null
       };
-    document.getElementById("loader").style.display = "flex";
-    console.log('data', data)
+      document
+        .getElementById("loader")
+        .style
+        .display = "flex";
+      console.log('data', data)
       axios({
-          method: "post",
-          url: BASE_URL + "/v1/api/user/signup/",
-          data: data,
-          config: {
-            headers: {
-              "Content-Type": "multipart/form-data"
-            }
+        method: "post",
+        url: BASE_URL + "/v1/api/user/signup/",
+        data: data,
+        config: {
+          headers: {
+            "Content-Type": "multipart/form-data"
           }
-        })
-        .then((r) => {
-    document.getElementById("loader").style.display = "none";
+        }
+      }).then((r) => {
+        document
+          .getElementById("loader")
+          .style
+          .display = "none";
 
-          var d = new Date();
-          d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+        var d = new Date();
+        d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
 
-          console.log(r.data);
-          if (r.data.token) {
-            localStorage.setItem("ca_token", r.data.token);
-          }
-          window.location.href = "/dashboard";
+        console.log(r.data);
+        if (r.data.token) {
+          localStorage.setItem("ca_token", r.data.token);
+        }
+        window.location.href = "/dashboard";
 
-          console.log(r.data.token);
-          data = "";
-        })
-        .catch((response) => {
-          document.getElementById("loader").style.display = "none";
-          this.setState(defaultState);
-          alert(response);
-        });
+        console.log(r.data.token);
+        data = "";
+      }).catch((response) => {
+        document
+          .getElementById("loader")
+          .style
+          .display = "none";
+        this.setState(defaultState);
+        alert(response);
+      });
     }
   };
 
   render() {
-    const {college, gender, collegeArray} = this.state;
+    const {gender} = this.state;
 
     return (
       <div>
-        <Loader />
+        <Loader/>
         <Header/>
 
         <div className="register_main">
@@ -301,18 +303,15 @@ export default class Register extends Component {
               <input
                 type="text"
                 value={this.state.name}
-                onChange={
-                  
-                  
-                event => {
+                onChange={event => {
                 this.setState({name: event.target.value});
-                {this.validate()}
-              }
- 
-            }
+                {
+                  this.validate()
+                }
+              }}
                 placeholder="Enter your full name"/>
 
-              <div className = "error" id = "name_error"></div>
+              <div className="error" id="name_error"></div>
 
               <label>PHONE NO.</label>
 
@@ -322,11 +321,13 @@ export default class Register extends Component {
                 parse={value => Number(value)}
                 onChange={event => {
                 this.setState({contact: event.target.value});
-                {this.validate()}
+                {
+                  this.validate()
+                }
               }}
                 placeholder="Enter your phone number"/>
 
-                 <div className = "error" id = "phone_error"></div>
+              <div className="error" id="phone_error"></div>
 
               <label>EMAIL-ID</label>
 
@@ -335,12 +336,12 @@ export default class Register extends Component {
                 value={this.state.email}
                 onChange={event => {
                 this.setState({email: event.target.value});
-                {this.validate()}
+                {
+                  this.validate()
+                }
               }}
                 placeholder="Enter your Email ID"/>
-                <div className = "error" id = "email_check"></div>
-
-
+              <div className="error" id="email_check"></div>
 
               <label>PASSWORD
               </label>
@@ -350,11 +351,13 @@ export default class Register extends Component {
                 value={this.state.passowrd}
                 onChange={event => {
                 this.setState({password: event.target.value});
-                {this.validate()}
+                {
+                  this.validate()
+                }
               }}
                 placeholder="******"/>
 
-                <div className = "error" id = "pass_error"></div>
+              <div className="error" id="pass_error"></div>
 
               <label>
                 GENDER
@@ -401,66 +404,67 @@ export default class Register extends Component {
                 placeholder="Enter your country name"/> {this.state.country.value == "India"
                 ? <div>
 
-                    <label>STATE
-                    </label>
-
-                    <Select value={this.state.states} // onChange={event => {} //   this.setState({
-                      //     states: event.target.value,
-                      //   });
-                      // }}
-                      onChange={this.handleStateChange} options={options} placeholder="Enter your state name"/>
-
-                    <label>COLLEGE
-                    </label>
-
-                    <CreatableSelect
-                      placeholder="Enter your college name"
-                      searchable={true}
-                      required={true}
-                      onChange={this.handleChange}
-                      options={colleges[this.state.states.value]}
-                      clearable={false}
-                      value={this.state.college}/> 
-
-                    <label>CITY
-                    </label>
-
-                    <CreatableSelect
-                      placeholder="Enter your city"
-                      searchable={true}
-                      required={true}
-                      onChange={this.handleCityChange}
-                      options={this.state.states === ""
-                      ? []
-                      : this.getCities(this.state.states.value)}
-                      clearable={false}
-                      value={this.state.city}/>
-
-                  </div>
-                : <div>
-                  <label>COLLEGE
+                  <label>STATE
                   </label>
-                  <input
-                    type="text"
-                    value={this.state.college}
-                    onChange={event => {
-                    this.setState({college: event.target.value})
-                  }}></input>
 
-                </div>
-}
+                  <Select value={this.state.states} // onChange={event => {} //   this.setState({} //     states: event.target.value,}}
+              onChange={this.handleStateChange}
+              options={options}
+              placeholder="Enter your state name"/>
 
-            </form>
+              <label>COLLEGE
+              </label>
 
-            <br/>
+              <CreatableSelect
+                placeholder="Enter your college name"
+                searchable={true}
+                required={true}
+                onChange={this.handleChange}
+                options={colleges[this.state.states.value]}
+                clearable={false}
+                value={this.state.college}/>
 
-            <button onClick={this.handleClick}>
-              SIGN UP
-            </button>
-          </div>
-          <Footer/>
+              <label>CITY
+              </label>
+
+              <CreatableSelect
+                placeholder="Enter your city"
+                searchable={true}
+                required={true}
+                onChange={this.handleCityChange}
+                options={this.state.states === ""
+                ? []
+                : this.getCities(this.state.states.value)}
+                clearable={false}
+                value={this.state.city}/>
+
+            </div>
+            :
+            <div>
+              <label>COLLEGE
+              </label>
+              <input
+                type="text"
+                value={this.state.college}
+                onChange={event => {
+                this.setState({college: event.target.value})
+              }}></input>
+
+            </div>
+            }
+
+          </form>
+
+          <br/>
+
+          <button onClick={this.handleClick}>
+            SIGN UP
+          </button>
         </div>
+        <Footer/>
       </div>
-    );
+    </div>
+    )
   }
 }
+

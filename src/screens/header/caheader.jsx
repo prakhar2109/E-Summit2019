@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-
 import { NavLink } from "react-router-dom";
-// import Hamburger from './hamburger'
-import { Link } from "react-router-dom";
 import "./css/main.css";
-import ecell from "./static/image.svg";
 import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
 import "./css/canavbar.css";
-
-import Ca from "../caLeaderboard/js/caLeaderboard";
 
 export default class ComingSoon extends Component {
   state = {
