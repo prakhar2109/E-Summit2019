@@ -4,6 +4,7 @@ import Header from "./../header/header";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { BASE_URL } from "../../utils/urls";
+import Loader from "../loader/loader"
 
 export default class ComingSoon extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class ComingSoon extends Component {
       email: "",
       password: "",
     });
+    document.getElementById("loader").style.display = "flex";
     axios({
       method: "post",
       url: BASE_URL + "/v1/api/user/login",
@@ -33,6 +35,7 @@ export default class ComingSoon extends Component {
       },
     })
       .then(function(res) {
+        document.getElementById("loader").style.display = "none";
         console.log(res.data, "res");
         if (res && res.data) {
           if (res.data) {
@@ -47,6 +50,7 @@ export default class ComingSoon extends Component {
         }
       })
       .catch(response => {
+        document.getElementById("loader").style.display = "none";
         if (response.response.status === 401) {
           alert("username or password incorrect");
         } else {
@@ -58,6 +62,7 @@ export default class ComingSoon extends Component {
   render() {
     return (
       <React.Fragment>
+        <Loader />
         <Header />
         <div className="login_main">
           <div className="login_text">
