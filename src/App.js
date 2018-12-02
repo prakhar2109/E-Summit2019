@@ -68,7 +68,7 @@ class App extends Component {
         <div>
           <Switch>
           <React.Fragment>
-            <div id = "main_class" className ="main_class"> 
+            {/* <div id = "main_class" className ="main_class">  */}
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
 
@@ -88,7 +88,7 @@ class App extends Component {
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
       
-            </div>
+            {/* </div> */}
             
           </React.Fragment>
           </Switch>
