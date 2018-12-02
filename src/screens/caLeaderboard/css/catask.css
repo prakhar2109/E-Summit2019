@@ -12,6 +12,7 @@
     margin-top: 5vh;
 }
 
+
 .taskchild{
 
     background:#FFFFFF;
@@ -114,4 +115,34 @@ font-size: 12px;
     margin-top: -4px;
     line-height: 1vh;
     color:#4F4F4F;
+}
+
+@media only screen and (max-width: 900px) {
+    .taskchildrow{
+        flex-direction: column;
+    justify-items: center;
+    
+    }
+    .taskparent{
+        background: #F7F8F9;
+        min-height: 100vh;
+ 
+        height: min-content;
+    }
+
+    .taskchild{
+
+        background:#FFFFFF;
+        height: auto;
+
+        align-self: center;
+        width:80%;
+        margin-left: 1.875%;
+        margin-bottom: 1.875%;
+        box-shadow: 1.5px 2px 15px rgba(51, 51, 51, 0.08);
+    }
+    #leftPane{
+        display: none;
+    }
+ 
 }
