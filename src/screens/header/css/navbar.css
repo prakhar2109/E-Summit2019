@@ -273,9 +273,11 @@
     .ecell-mobile-navbar-inactive a{
         text-decoration: none;
         outline: none;
+        display: none;
     }
     .ecell-mobile-navbar-inactive a div{
         font-family: Montserrat;
+        display: none;
         font-size: 18px;
         font-weight: 600;
         font-style: normal;

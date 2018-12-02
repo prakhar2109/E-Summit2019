@@ -1,11 +1,12 @@
 .cs-loader{
   margin: 0;
   padding: 0;
-  background:#FFF;
+  background:#fff;
 }
 
 .cs-loader {
   position: absolute;
+
   top: 0;
   left: 0;
   height: 100%;
@@ -16,7 +17,7 @@
   transform: translateY(-50%);
   top: 50%;
   position: absolute;
-  width: calc(100% - 200px);
+  width: calc(100% - 200px); 
   color: #3498db;
   padding: 0 100px;
   text-align: center;

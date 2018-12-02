@@ -20,6 +20,7 @@ export default class ComingSoon extends Component {
 
   componentDidMount = () => {
     let token = localStorage.getItem('ca_token');
+    document.getElementById("main_class").style.marginTop = '0px';
 
 
  
@@ -37,6 +38,9 @@ export default class ComingSoon extends Component {
       });
   };
 
+  componentWillUnmount(){
+    document.getElementById("main_class").style.marginTop = '13vh';
+  }
 
   handle_menu() {
     document.getElementById("phone").style.display = "flex";
