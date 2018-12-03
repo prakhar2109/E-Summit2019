@@ -24,8 +24,8 @@ export default class CATaskBoard extends Component {
             }
         })
             .then(res => {
-                if (res && res.data && res.data) {
-                    // console.log(res.data, "res.data")
+                if (res && res.data) {
+                    console.log(res.data, "res.data")
                     this.setState({tasks: res.data})
                 }
             })
@@ -103,7 +103,7 @@ class CATask extends Component {
                         .name;
                     document
                         .getElementById(`filestatus${task.id}`)
-                        .innerHTML = "file uploaded ";
+                        .innerHTML = "File Uploaded ";
                 })
 
         }
@@ -134,7 +134,7 @@ class CATask extends Component {
                         <div className="Selectfilesvg">
                             <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName"></p>
 
-                            <p id={`filestatus${task.id}`} className="taskName">Choose a File</p>
+                            <p id={`filestatus${task.id}`} className="taskName">{(task.sub === null || task.sub === undefined) ? 'Choose a File': 'File Uploaded'}</p>
                         </div>
 
                     </div>
