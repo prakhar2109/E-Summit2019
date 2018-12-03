@@ -6,8 +6,12 @@ import React, { Component } from "react";
 // import ignite from "./screens/ignite/ignite"
 // import Lfooter from "./screens/footer/landingpagefooter"
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 import Viewprofile from './screens/caLeaderboard/js/Viewprofile'
+import Caindex from './screens/caLeaderboard/js/index'
+
+
 import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
 
@@ -64,7 +68,8 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <BrowserRouter>
+      <React.Fragment>
         <div>
           <Switch>
           <React.Fragment>
@@ -82,10 +87,12 @@ class App extends Component {
             
 
 
-            <Route exact path="/dashboard/" component={LeaderBoard} />
+            {/* <Route exact path="/dashboard/" component={LeaderBoard} /> */}
+            <Route path="/dashboard/" component={Caindex} />
+
             <Route path="/ignite" component={ignite} />
             <Route path="/loader" component={Loader} />
-            <Route path="/Viewprofile" component={Viewprofile} />
+            {/* <Route path="/Viewprofile" component={Viewprofile} /> */}
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
       
@@ -94,7 +101,8 @@ class App extends Component {
           </React.Fragment>
           </Switch>
         </div>
-      </Router>
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }

@@ -8,7 +8,7 @@ import ecell from "./static/image.svg";
 import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
-import "./css/canavbar.css";
+import "./css/canavbar.css"; 
 
 import Ca from "../caLeaderboard/js/caLeaderboard";
 

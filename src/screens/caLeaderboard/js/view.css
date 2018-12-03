@@ -1,0 +1,190 @@
+.caprofile-container{
+    top: 0;
+    left: 18%;
+    height: 110vh;
+    background-color: #F7F8F9;
+    width: 82%;
+    position: absolute;
+}
+
+.caprofile-parent1{
+    padding-top: 4.44vh;
+    padding-left: 1.67vw;
+margin-top: 12.77vh;
+margin-left: 1.875vw;
+height: 45.74vh;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+border-radius: 8px;
+width: 72.135vw;
+display: flex;
+flex-direction: row;
+
+}
+.caprofile-parent2{
+padding-top: 4.44vh;
+padding-left: 1.67vw;
+margin-top: 3.33vh;
+margin-left: 1.875vw;
+height: 45.74vh;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+border-radius: 8px 8px 0px 0px;
+width: 72.135vw;
+
+}
+
+.caprofile-parent1-child1{
+width: 23.39%;
+height: 75.30%;
+background: green;
+
+}
+.caprofile-parent1-child2{
+
+    width: 39.07%;
+height: 100%;
+
+}
+
+.caprofile-parent1-child1-heading{
+
+    
+    line-height: normal;
+    font-size: 18px;
+
+    color: #4F4F4F;
+}
+
+.caprofile-parent1-child3{
+
+    width: 37.54;
+    height: 100%;
+
+
+}
+
+.caprofile-parent1-child2-name-heading{
+  
+    margin-top: 11.66vh;
+    color: #B2B2B2;
+    
+
+}
+
+.caprofile-parent1-child2-name{
+  
+margin-top: 1.22vh;
+color: #4F4F4F;
+}
+
+.caprofile-parent1-child2-emailheading{
+  
+    margin-top: 8.61vh !important;
+    color: #B2B2B2;
+
+}
+
+.caprofile-parent1-child2-email{
+   
+    margin-top: 1.22vh;
+color: #4F4F4F;
+
+
+
+}
+
+.caprofile-parent1-child3-phoneheading{
+
+  
+    margin-top: 20.3vh !important;
+    color: #B2B2B2;
+    
+
+}
+.caprofile-parent1-child3-phone{
+    
+margin-top: 1.22vh;
+color: #4F4F4F;
+}
+#caprofile-scoreValue{
+    line-height: normal;
+font-size: 16px;
+float: right;
+letter-spacing: 0.02em;
+
+color: #4F4F4F;
+
+
+}
+
+#caprofile-scoreWritten{
+
+    line-height: normal;
+font-size: 16px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: rgba(79, 79, 79, 0.44);
+
+
+}
+
+
+.caprofile-parent2-innerchild{
+    display: flex;
+    flex-direction: row;
+}
+
+.caprofile-parent3-innerchild{
+    display: flex;
+    flex-direction: row;
+}
+
+.caprofile-parent2-heading{
+    color: #4F4F4F;
+    line-height: normal;
+    font-size: 18px;
+
+}
+.caprofile-parent3-child2-collegename-heading{
+
+    
+}
+
+
+
+
+.caprofile-heading{
+    line-height: normal;
+    font-size:18px;
+    margin-top: 4.44vh;
+    color: #B2B2B2;
+
+}
+
+.caprofile-data{
+
+    line-height: normal;
+    font-size: 14px;
+    margin-top: 1.22vh;
+    color: #4F4F4F;
+
+}
+
+.caprofile-parent2-child2-programname{
+    width: 30vw;
+    overflow: hidden;
+
+}
+
+.caprofile-parent3-child2-Stateheading{
+
+
+}
+
+.caprofile-parent3-child2-city{
+
+    width: 30vw;
+    overflow: hidden;
+}

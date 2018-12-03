@@ -5,7 +5,6 @@ import { Route } from "react-router-dom";
 import axios from "axios";
 import {Link} from "react-router-dom"
 import Header from "../../header/caheader";
-import CATaskBoard from "./catask";
 import { BASE_URL } from "../../../utils/urls";
 import { NavLink } from "react-router-dom";
 
@@ -56,10 +55,10 @@ export default class caLeaderboard extends Component {
             </div>
             <hr id="line1" />
             <div id="viewProfile">
-              <NavLink to="/Viewprofile">
+              <NavLink to="/dashboard/Viewprofile">
                      VIEW PROFILE
                     </NavLink>
-                    
+
 
             </div>
             <div id="dropShape">{name[0]}</div>
@@ -74,14 +73,33 @@ export default class caLeaderboard extends Component {
                 style={{
                   width: scorePercentage + "%",
                 }}
-              />
+              /> 
             </div>
             <div id="optionsToggle">
               <span>
-                {/* <NavLink id="tasksButton" to="/pendingtask">
-                Tasks
-              </NavLink> */}
-                Tasks
+              <Link to="/dashboard/leader">
+              Tasks
+              </Link>
+              <br />
+              </span>
+
+              <span>
+              <Link to="/dashboard/offers">
+              Offers
+              </Link>
+              <br />
+              </span>
+              <span>
+              <Link to="/dashboard/payment">
+              Payment
+              </Link>
+              <br />
+              </span>
+
+                <span>
+              <Link to="/dashboard/invite">
+              Invite
+              </Link>
               <br />
               </span>
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
@@ -93,14 +111,8 @@ export default class caLeaderboard extends Component {
             </button>
             </div>
           </div>
-              <Link to="/dashboard/leader">
               
-              LeaderBoard
-
               
-             
-              </Link>
-              <CATaskBoard />
  
         </div>
       </div>
