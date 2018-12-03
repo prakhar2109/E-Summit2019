@@ -4,11 +4,12 @@ import Tasks from './tasks.jsx'
 export default class pendingTasks extends Component{
     constructor(){
         super()
-    }
-    state={
+        this.state={
 
+        }
     }
-    render(){
+    
+    render(){ 
         return(
             <div id="pendingTasks">
                 <div id="headerLeft">

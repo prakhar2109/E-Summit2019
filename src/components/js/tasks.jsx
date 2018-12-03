@@ -3,7 +3,7 @@ import './../css/tasks.css'
 import Dropzone from 'react-dropzone' 
 export default class Tasks extends Component{
         
-    constructor(){
+    constructor(){ 
         super();
     }
     state={
@@ -15,7 +15,7 @@ export default class Tasks extends Component{
         isDropped6:false
         
     }
-    onDrop = (files)=>{
+    onDrop = ()=>{
         document.getElementsByClassName("svg").innerHTML="";
     }
   render(){

@@ -1,19 +1,21 @@
 .header {
   background: #FFFFFF;
-  -webkit-box-shadow: 0px 9px 15px -10px rgba(155,155,155,1);
-  -moz-box-shadow: 0px 9px 15px -10px rgba(155,155,155,1);
-  box-shadow: 0px 9px 15px -10px rgba(155,155,155,1);
+  -webkit-box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
+          box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
   padding: 0.5rem 2rem 0.5rem 1rem;
-  position: fixed;
-  top: 0;
-  z-index: 100000;
   width: 100vw;
+  position: fixed;
+  top:0;
+  z-index: 300000;
+
+
 }
 
 .mobile_menu {
   float: right;
   text-decoration: none;
   color: black;
+  font-size: 3rem;
 }
 
 .esummit_logo img {
@@ -26,5 +28,8 @@
 
 .ecell_logo {
   display: none;
+}
+.main_class{
+  margin-top: 13vh;
 }
 /*# sourceMappingURL=mobile.css.map */

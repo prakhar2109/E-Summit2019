@@ -39,7 +39,7 @@ export default class ComingSoon extends Component {
         </span>
 
         <span className='links'>
-          {/* <NavLink to = "/login"> Campus Ambassador</NavLink> */}
+          <NavLink to = "/login"> Campus Ambassador</NavLink> 
           <NavLink to='/ignite'> Startup Ignite</NavLink>
 
         </span>

@@ -1,23 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+ 
 
 
 body ,html{
     padding: 0;
     margin:0;
 
-    font-family: Montserrat;
+  
 }
-
-/* a{
-    font-family: proxima-nova, sans-serif !important;   
-} */
-
+ 
 .active{
     color:#F39423  !important;
 }
 
-body , html ,p ,div, button , a , span  {
-    font-family: proxima-nova, sans-serif;
+body , html ,p ,div, button , a , span,input,label ,rohit {
+    font-family: 'Montserrat'  !important;
+
 }

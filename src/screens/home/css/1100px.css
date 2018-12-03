@@ -19,11 +19,9 @@
 .main_conta .Part1 .text {
   font-size: 1.35rem;
   text-align: center;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.09em;
   color: rgba(0, 0, 0, 0.45);
   margin: 0 4rem 0 4em;
-  padding: 5px;
-  font-family: Montserrat;
 }
 
 .main_conta .Part1 button {
@@ -54,17 +52,17 @@
 }
 
 .main_conta .Part1 span a {
-  color: #3A667B;
+  color: black;
   text-decoration: none;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-size:1.5rem;
+  color:rgba(26, 77, 102, 0.86);
+  font-weight: bolder;
 }
 
 .main_conta .Part1 .social {
   margin-left: 1rem;
   font-size: 1.5rem;
-  margin-top: -3.1rem;
+  margin-top: -4.1rem;
 }
 
 .main_conta .Part1 .social i {
@@ -116,25 +114,12 @@
 .form form p {
   font-style: normal;
   font-weight: 600;
-  font-family: Montserrat;
   line-height: normal;
   font-size: 1.25rem;
   letter-spacing: 0.06em;
   color: #21526B;
 }
-.form-errors{
-  height: 5px;
-  color: red;
-  font-size: 12px;
-  font-family: Montserrat;
 
-}
-.form-success{
-  height: 5px;
-  color: green;
-  font-size: 12px;
-  font-family: Montserrat;
-}
 .form form hr {
   width: 3.5rem;
   height: 0.1875rem;
@@ -146,46 +131,29 @@
   font-size: 1.25rem;
   letter-spacing: 0.06em;
   color: #9B9B9B;
-  display: none;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
-}
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset;
-}
-.form form input {
   display: block;
-  border-bottom: 1px solid #9B9B9B;
+  margin-top: 1rem;
+}
+
+.form form input {
+  border-bottom: 1px solid #4F4F4F;
   border-top: none;
   border-left: none;
   border-right: none;
-  line-height: normal;
-  font-size: 1.1rem;
   width: 20.25rem;
-  font-family: Montserrat;
-  outline: #F39423;
-  padding: 4px 0px;
+  margin-bottom: calc(1em + 2.5vh);
+  font-size: 1.25rem;
 }
-.form form .form-fields{
-  padding: 0.7rem 0px;
-  margin-top: 1rem;
-}
+
 .form form button {
   background: #F39423;
   border-radius: 4px;
   width: 20.25rem;
-  height: 3.3rem;
-  font-family: Montserrat;
-  font-weight: 600;
-  letter-spacing: 1px;
+  height: 2rem;
   display: block;
+  font-weight: 700;
   border: none;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   color: white;
   cursor: pointer;
 }

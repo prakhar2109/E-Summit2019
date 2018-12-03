@@ -1,3 +1,23 @@
+rohit {
+  padding: 6vh 4rem 6vh 4rem;
+  font-size: 1.5rem;
+  line-height: normal;
+  text-align: justify;
+  letter-spacing: 0.06em;
+  display: block;
+  color: #1A4D66;
+}
+
+rohit p {
+  margin-top: 10vh;
+  line-height: normal;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #1A4D66;
+  text-transform: capitalize;
+}
+
 .register_main {
   display: -ms-grid;
   display: grid;
@@ -18,11 +38,10 @@
 .register_main .register_text span:first-child {
   margin-top: 10vh;
   line-height: normal;
-  font-size: 3.1rem;
+  font-size: 2rem;
   text-align: center;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   color: #1A4D66;
-  font-weight: 700;
 }
 
 @media (max-height: 1600px) {
@@ -40,17 +59,17 @@
 
 .register_main .register_text span:nth-child(2) {
   margin: 6vh 4rem 6vh 4rem;
-  line-height: 2.2rem;
-  font-size: 1.4rem;
-  text-align: center;
-  letter-spacing: 0.01em;
+  line-height: 2.3125rem;
+  font-size: 1.75rem;
+  text-align: justify;
+  letter-spacing: 0.06em;
   color: #1A4D66;
-
 }
 
 @media (max-height: 1600px) {
   .register_main .register_text span:nth-child(2) {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    line-height: normal;
   }
 }
 
@@ -64,17 +83,15 @@
 
 .register_main .register_text span:nth-child(3) {
   line-height: normal;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   text-align: center;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.06em;
   color: #1A4D66;
-  font-weight: 600;
-
 }
 
 @media (max-height: 1600px) {
   .register_main .register_text span:nth-child(3) {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -88,13 +105,12 @@
   border: 0.125rem solid #3A667B;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0.8rem 1.5rem;
+  padding: 1.125rem 1.875rem;
   line-height: 1.5625rem;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   text-align: center;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.09em;
   background: none;
-  font-weight: 600;
   color: #3A667B;
   margin-top: 1.5rem;
   cursor: pointer;
@@ -116,12 +132,11 @@
 .register_main .register_form a, .register_main .register_form a:hover {
   font-family: Montserrat;
   font-style: normal;
-  font-weight: 500;
+  font-weight: normal;
   line-height: normal;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
   color: #FFFFFF;
-  text-decoration: none;
 }
 
 @media (max-width: 960px) {
@@ -151,7 +166,6 @@
   background: #265C77;
   border-top-right-radius: 3rem;
   border-bottom-right-radius: 3rem;
-
   float: right;
   color: white !important;
 }
@@ -168,9 +182,6 @@
   border-top-left-radius: 3rem;
   border-bottom-left-radius: 3rem;
   float: right;
-  /* font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.01rem; */
   color: white !important;
 }
 
@@ -187,16 +198,15 @@
 .register_main .register_form form label {
   display: block;
   line-height: normal;
-  font-size: 1.25rem;
-  letter-spacing: 0.02em;
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
   color: #FFFFFF;
-  margin-top: 3rem;
-  font-weight: 500;
+  margin-top: 3.5rem;
 }
 
 @media (max-height: 1600px) {
   .register_main .register_form form label {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -204,6 +214,16 @@
   .register_main .register_form form label {
     font-size: 16px;
     letter-spacing: 0.06em;
+  }
+  rohit p{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  rohit{
+    margin: 2rem 1.375rem;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    padding: 0;
   }
 }
 
@@ -218,24 +238,12 @@
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  outline: none;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
   height: 2rem;
   color: #FFFFFF;
 }
-.register_main .register_form form input::placeholder {
-  color: #FFFFFF;
-  opacity: 0.75; /* Firefox */
-}
 
-.register_main .register_form form input:-ms-input-placeholder {
- color: #FFFFFF;
-}
-
-.register_main .register_form form input::-ms-input-placeholder {
- color: #FFFFFF;
-}
 .register_main .register_form form select {
   width: 100%;
   font-family: Montserrat;
@@ -256,3 +264,7 @@
   color: black;
 }
 /*# sourceMappingURL=register.css.map */
+
+.error{
+  color:white !important;
+}

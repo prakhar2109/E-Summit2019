@@ -1,0 +1,174 @@
+.landingpageheading{
+    font-size: 100px;
+    color:blue;
+    height: 100px;
+    width: 100px;
+
+
+}
+.landingpagefooter{
+    background: rgba(36, 38, 38, 0.94);
+    position: absolute;
+    min-height: 100vh;
+}
+.landingpagefooterparent{
+    display: flex;
+    flex-direction: row;
+    margin-top:10.03vh;
+    /* background: yellow; */
+}
+
+.landingpagefooterform{
+
+ 
+    height:fit-content;
+    width:50vw;
+    /* background: green; */
+}
+.landingpagefootercontact{
+
+    
+    height: fit-content;
+    width: 50vw;
+    /* background: red; */
+    padding-left: 13.41%;
+    padding-right: 10%;
+}
+.landingpagefooterform-heading{
+    font-family: Montserrat;
+    font-size:24px;
+    line-height: 36px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.landingpagefooter-logo{
+
+    height: 7.12vh; 
+    
+}
+
+.footer-logo img{
+    height:100%;
+}
+
+.landing-footer-icons{
+
+
+    margin-top: 3.37vh;
+    height: 2.63vh;
+
+    
+    margin-bottom: 4.38vh;
+}
+
+.landing-footer-icons i{
+    color:white;
+    margin-right:35px;
+    font-size: 2rem;
+}
+
+.landing-footer-heading{
+
+    color:   #F49D35;
+    font-family: Montserrat;
+    font-size:20px;
+    text-align: left;
+}
+
+
+.landing-footer-details{
+
+    margin-top:1.78vh;
+    margin-bottom: 4.08vh;
+    color: #FFFFFF;
+    font-family:Montserrat ;
+    font-size:16px;
+    text-align: left;
+}
+
+.landingpagefooterformfiels{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20%;
+    padding-top: 2.8vh;
+}
+
+#landingpageformName{
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+#landingpageformPhone{
+
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+
+#landingpageformEmail{
+
+    display: flex;
+    width: 80%;
+    height: 5.1vh;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+    color: white;
+}
+
+#landingpageformmessage{
+    display: flex;
+    width: 80%;
+    color: white;
+    margin-bottom: 2.8vh;
+    padding: 2%;
+    background: transparent;
+    border: 2px solid #4A4B4B;
+
+}
+
+::placeholder {
+    color:#B5B9B9;
+    opacity: 1;
+}
+
+.landing-pagefooterbottom{
+    margin-top: 10vh;
+
+}
+
+.landing-bottomfooter-heading{
+    font-family: Montserrat;
+    font-size:20px;
+    text-align: center;
+    color: #FFFFFF;
+
+
+}
+
+.landing-bottomfooter-mail{
+
+    font-family: Montserrat;
+    font-size:20px;
+    text-align: center;
+    color: #F49D35;
+}
+
+.landingpagebutton{
+
+    
+}
