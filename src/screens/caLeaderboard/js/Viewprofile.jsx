@@ -102,7 +102,7 @@ export default class Viewprofile extends Component {
                         </div>
 
 
-                        <div className="caprofile-parent1-child2-emailheading caprofile-heading">
+                        <div className="caprofifooterle-parent1-child2-emailheading caprofile-heading">
                             E-mail ID
                         </div>
 
@@ -118,7 +118,7 @@ export default class Viewprofile extends Component {
                         </div>
 
                         <div className="caprofile-parent1-child3-phone caprofile-data">
-                            888888888888
+                            888888888888footer
                         </div>
 
 
@@ -136,10 +136,10 @@ export default class Viewprofile extends Component {
                         College name
                         </div>
                     <div className="caprofile-parent2-child2-name caprofile-data">
-                        IIT ROORKEE
+                        IIT ROORKEEfooter
                         </div>
 
-                    <div className="caprofile-parent2-innerchild">
+                    <div className="footerarent2-innerchild">
                         <div className="caprofile-parent2-innerchild1-parent">
                             <div className="caprofile-parent2-child2-programheading caprofile-heading">
                                 Program
@@ -197,6 +197,7 @@ export default class Viewprofile extends Component {
                     width={width}
                     bodyStyle={bodyStyle}
                     onOk={this.handleOk}
+                    footer ={null}
                  
                 >
                     <div className="caprofile-parent1 ca-profile-modalparent1">
