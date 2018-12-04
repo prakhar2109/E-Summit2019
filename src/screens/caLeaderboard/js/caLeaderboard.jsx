@@ -78,11 +78,13 @@ export default class caLeaderboard extends Component {
                 {/* <NavLink id="tasksButton" to="/pendingtask">
                 Tasks
               </NavLink> */}
-                Tasks
+                TASKS
               <br />
               </span>
-              {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton">Rulebook</div>
+              <span id="leaderboardButton"><a title="Leaderboard will be displayed after 10Dec"> LeaderBoard</a></span>
+
+              
+              <div id="leaderboardButton"><a href="./pdfs/CARulebook.pdf" target="_blank">CA RULEBOOK</a></div>
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>
