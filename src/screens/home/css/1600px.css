@@ -50,7 +50,9 @@
 .main_conta .Part1 span a {
   color: black;
   text-decoration: none;
-  font-size:1.2rem;
+  font-size:1.5rem;
+  color:rgba(26, 77, 102, 0.86);
+  font-weight: bolder;
 }
 
 .main_conta .Part1 span img {
@@ -148,13 +150,14 @@
   border-right: none;
   width: 24.25rem;
   margin-bottom: calc(1em + 2.5vh);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .form form button {
   background: #F39423;
   border-radius: 4px;
   width: 24.25rem;
+  font-weight: 700;
   height: 4rem;
   display: block;
   border: none;

@@ -57,63 +57,6 @@ const options = [
     label: college,
 }));
 
-const customStyles = {
-    option: (base, state) => ({
-        ...base,
-        borderBottom: '1px solid black',
-        color: 'black',
-        padding: 10,
-    }),
-    control: () => ({
-        width: '100%',
-        display: 'flex',
-        borderBottom: '#BEBEBE 2px solid',
-    }),
-    input: (base) => ({
-        ...base,
-        marginTop: '3px',
-        paddingTop: '5px',
-        color: 'white',
-        fontSize: '14px',
-        overflow: 'hidden'
-    }),
-    menuList: (base) => ({
-        ...base,
-        height: '20vh'
-    }),
-    dropdownIndicator: (base) => ({
-        ...base,
-        fontWeight: '600',
-        color: 'white',
-    }),
-    clearIndicator: () => ({
-        fontWeight: '600',
-        color: 'white'
-    }),
-    placeholder: (base) => ({
-        ...base,
-        fontSize: '14px',
-        color: 'white',
-        fontWeight: '600',
-    }),
-    valueContainer: () => ({
-        color: 'white',
-        fontWeight: '600',
-        opacity: '0.8',
-        width: 'calc(100% - 40px)',
-    }),
-    singleValue: (base, state) => {
-        const opacity = state.isDisabled ? 0.5 : 1;
-        return {
-            ...base,
-            opacity,
-            transition: 'opacity 300ms',
-            color: 'white',
-            fontWeight: '400',
-            fontSize: '14px'
-        };
-    }
-}
 
 export default class CollegeSelect extends Component {
     handleChange = (newValue) => {

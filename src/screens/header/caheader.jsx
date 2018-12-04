@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-
 import { NavLink } from "react-router-dom";
-// import Hamburger from './hamburger'
-import { Link } from "react-router-dom";
 import "./css/main.css";
-import ecell from "./static/image.svg";
 import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
 import "./css/canavbar.css";
-
-import Ca from "../caLeaderboard/js/caLeaderboard";
 
 export default class ComingSoon extends Component {
   state = {
@@ -69,8 +63,8 @@ export default class ComingSoon extends Component {
           </NavLink>
         </span>
 
-        <i id="menu_button" class="fas fa-bars" onClick={this.handle_menu} />
-        <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
+        <i id="menu_button" className="fas fa-bars" onClick={this.handle_menu} />
+        <i id="close_button" className="fas fa-times" onClick={this.hide_menu} />
         </div>
         <div id="phone" className="mob_menu">
           <div id="droperShape">{this.state.name[0]}</div>
