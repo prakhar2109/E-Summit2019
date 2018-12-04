@@ -6,18 +6,16 @@ import React, { Component } from "react";
 // import ignite from "./screens/ignite/ignite"
 // import Lfooter from "./screens/footer/landingpagefooter"
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Viewprofile from './screens/caLeaderboard/js/Viewprofile'
 import Caindex from './screens/caLeaderboard/js/index'
+import Payment from './screens/caLeaderboard/js/payment';
 
 
-import Loadable from 'react-loadable';
-import Loader from './screens/common/loader';
+/*  
+import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 
 
- 
-// import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 const Loading = ({ error }) => {
   if (error) {
     return <div>Error loading component</div>;
@@ -48,25 +46,30 @@ const Register = Loadable({
   loading: () => <Loader />,
 });
 
-// const Lfooter = Loadable({
-//   loader: () => import("./screens/footer/landingpagefooter"),
-//   loading: () => Loading
-// });
+const Lfooter = Loadable({
+  loader: () => import("./screens/footer/landingpagefooter"),
+  loading: () => Loading
+});
 
 const LeaderBoard = Loadable({
   loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
   loading: () => <Loader />,
 });
-
+*/
 class App extends Component {
   constructor() {
     super();
     this.state = {
       auth: localStorage.getItem("ca_token"),
     };
-  }
+  } 
+  // render(){
+  //   return(
+  //     <Payment />
+  //   )
+  // }
 
-  render() {
+  render(){
     return (
       <BrowserRouter>
       <React.Fragment>
@@ -76,8 +79,8 @@ class App extends Component {
             {/* <div id = "main_class" className ="main_class">  */}
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
-
-              {/* <Route exact path="/register" component={Register} />
+            <Route exact path="/payment" component={Payment} />
+              {/*<Route exact path="/register" component={Register} />
             {
               this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
                 <Route exact path="/login" component={Login} />
@@ -104,7 +107,7 @@ class App extends Component {
         </React.Fragment>
       </BrowserRouter>
     );
-  }
+          }
 }
 
 export default App;

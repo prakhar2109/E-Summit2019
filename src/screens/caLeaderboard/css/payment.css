@@ -1,8 +1,242 @@
 .capayment-parent{
-
-
     color: black;
     position: absolute;
     top: 0;
-    left: 18%;
+    left: 18vw;
+    width: 82vw;
+}
+.capayment-headerrow {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.capayment-header{
+    
+    color: rgba(130, 130, 130, 0.93);
+    margin-top: 2vh;
+    margin-left: 1vw;
+    font-size: 14px;
+    font-weight: 500;
+}
+.capayment-line1 {
+    flex-basis: 68vw;
+    height: 0.4vh;
+    background-color: #E0E0E0;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 50%;
+    margin-left: 1vw;
+}
+.capayment-paymentinfo{
+    padding-top: 2.5vh;
+    background-color: white;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    height: 40vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+}
+.capayment-paymentstatus{
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+}
+.capayment-span{
+    color: black;
+    font-size: 20px;
+}
+.capayment-registrationfee{
+    margin-left: 3.6vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1.5vh;
+    color: #8A8A8A;
+}
+.capayment-accomodationfee{
+    margin-left: 3.6vw;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1.5vh;
+    color: #8A8A8A;
+}
+.capayment-discountavailed{
+    margin-left: 3.6vw;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1.5vh;
+    color: #8A8A8A;
+}
+.capayment-discountcoupon{
+    margin-left: 3.6vw;
+
+    margin-top: 1.5vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #8A8A8A;
+}
+.capayment-spaceaboutcolon{
+    width: 30vw;
+}
+.capayment-space{
+    width: 5vw;    
+
+}
+.capayment-toggleaccomodation{
+    margin-left:1.5vw;
+    background-color: white;
+    border:1.5px solid #E2574C;
+    color: #E2574C;
+}
+.capayment-couponapply{
+    color: #F39423;
+    border: 1.5px solid #F39423;
+    background-color: white;
+    margin-left:1.5vw;
+}
+.capayment-horizontalline{
+    height: 0.2vh;
+    background-color: #E0E0E0;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 50vw;
+    margin-left: 1vw;
+}
+svg{
+    margin-left: 1vw;
+    margin-right: 0.5vw;
+}
+.capayment-totalamt{
+    margin-left: 3.6vw;
+    margin-top: 1.5vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-weight: 600;
+    font-size: 22px;
+    color: black;
+}
+.capayment-middlerow{
+    width: 60vw;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.capayment-tnc{
+    border:1px solid #989898;
+    border-radius: 8px;
+    width: 40vw;
+    color: #8A8A8A;
+}
+.capayment-paymentbtn{
+    background-color: #F39423;
+    width: 19.5vw;
+    border: none;
+    margin-left: 0.5vw;
+    border-radius: 8px;
+    color: white;
+    /* display: inline;     */
+}
+.capayment-bottomrow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+      
+}
+.capayment-discountcriterion{
+    margin-top: 2.5vh;
+    margin-left: 1vw;
+    color: rgba(130, 130, 130, 0.93);   
+}
+.capayment-line2{
+    flex-basis: 70vw;
+    height: 0.4vh;
+    background-color: #E0E0E0;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 50%;
+    margin-left: 1vw;
+}
+.capayment-criterialistparent{
+    background-color: white;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    height: 35vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+    padding-left: 1vw;
+    overflow: scroll;
+}
+.capayment-criterialistheader{
+    color: black;
+    font-size: 20px;
+    /* margin-left: 1vw; */
+    /* margin-top: 1vh; */
+    font-weight: 600;  
+}
+.capayment-criterialistminorheader{
+    color: #4F4F4F;
+    opacity: 0.58;
+}
+.capayment-criterialist{
+    margin-top: 2vh;
+    
+}
+.capayment-paymentstatusdone{
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+.capayment-viewbillingdetails{
+    color: orange;
+    margin-left: 25vw;
+    font-size: 14px;
+    cursor:pointer;
+}
+.capayment-paymentinfodoneu{
+    padding-top: 2.5vh;
+    background-color: white;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    height: 10vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+}
+.capayment-criterialistparentdone{
+    background-color: white;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    height: 40vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+    padding-left: 1vw;
+    overflow: scroll;
+}
+.capayment-paymentinfodonee{
+    display: none;
+    padding-top: 2.5vh;
+    background-color: white;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    height: 40vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
 }
