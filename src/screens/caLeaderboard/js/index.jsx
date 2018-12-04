@@ -13,6 +13,8 @@ import CATaskBoard from "./catask"
 import CAOffers from './offers'
 import CAPayment from './payment'
 import CAInvite from './cainvite'
+import CALeader from './caleader'
+
 
 
 
@@ -40,10 +42,12 @@ class App extends Component {
             
           
             <Route exact path="/dashboard/Viewprofile" component={Viewprofile} />
-            <Route exact path="/dashboard/leader" component={CATaskBoard} />
+            <Route exact path="/dashboard/task" component={CATaskBoard} />
             <Route exact path="/dashboard/offers" component={CAOffers} />
             <Route exact path="/dashboard/payment" component={CAPayment} />
             <Route exact path="/dashboard/invite" component={CAInvite} />
+            <Route exact path="/dashboard/leader" component={CALeader} />
+
 
 
           

@@ -1,0 +1,79 @@
+.caleaderboard-parent{
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 18%;
+    width: 82%;
+    height: 100vh;
+
+
+}
+
+.caleader-heading{
+
+    margin-top: 3.33vh;
+    margin-left: 2.24%;
+    color: rgba(130, 130, 130, 0.93);
+}
+
+.caleader-board-parent{
+
+    margin-top: 5.92vh;
+    background: #fff;
+    width: 95.52%;
+    height: 100vh;
+    margin-left: 2.24%;
+    padding: 5.18vh 2vw;
+}
+
+table#ca01{
+
+    width: 100%;
+   
+ 
+
+}
+
+table#ca01 tr{
+    text-align: center;
+    border-bottom: 2px solid rgba(223, 223, 223, 0.59);
+}
+
+table#ca01 td{
+
+    padding-bottom: 2.60vh;
+ 
+    padding-top: 2.60vh;
+    color: #000000;
+    font-size: 1rem;
+ 
+}
+table#ca01 th{
+    padding-bottom: 5vh;
+    color: rgba(79, 79, 79, 0.44);
+    font-size: 1rem;
+}
+th#carank{
+
+width: 8.23%;
+
+
+}
+
+th#caname{
+    width: 40.32%;
+
+}
+th#cacollege{
+
+    width: 40.98%;
+}
+#capointstd{
+    color: #70BF48 !important;
+}
+
+#caranktd{
+
+    color: #1A4D66 !important;
+}
+

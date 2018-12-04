@@ -6,4 +6,43 @@
     position: absolute;
     top: 0;
     left: 18%;
+    height: 100vh;
+    width: 82%;
+}
+.caoffers-earnedcoupons-rowparent1{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5.92vh;
+   
+
+
+}
+.caoffers-earnedcoupons-child{
+
+    height: 24.90vh;
+    width: 30.27%; 
+    margin-left: 2.24%;  
+    margin-bottom: 3.148vh;     
+    background: green;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+}
+
+.ca-offers-parent-heading1{
+
+    margin-top: 3.33vh;
+    margin-left: 2.24%;
+    line-height: normal;
+    font-size: 1.143rem;
+    color: rgba(130, 130, 130, 0.93);
+}
+
+
+.ca-offers-parent-heading2{
+
+    margin-top: 3.33vh;
+    margin-left: 2.24%;
+    line-height: normal;
+    font-size: 1.143rem;
+    color: rgba(130, 130, 130, 0.93);
 }

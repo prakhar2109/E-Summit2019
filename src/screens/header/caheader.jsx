@@ -57,7 +57,7 @@ export default class ComingSoon extends Component {
     document.getElementById("menu_button").style.display = "block";
   }
 
-  render() {
+  render() { 
     let {  score } = this.state;
     let scorePercentage = ( score / 360) * 100 + "";
     return (

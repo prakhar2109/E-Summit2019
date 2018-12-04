@@ -77,8 +77,14 @@ export default class caLeaderboard extends Component {
             </div>
             <div id="optionsToggle">
               <span>
-              <Link to="/dashboard/leader">
+              <Link to="/dashboard/task">
               Tasks
+              </Link>
+              <br />
+              </span>
+              <span>
+              <Link to="/dashboard/leader">
+              Leaderboard
               </Link>
               <br />
               </span>
@@ -96,7 +102,7 @@ export default class caLeaderboard extends Component {
               <br />
               </span>
 
-                <span>
+              <span>
               <Link to="/dashboard/invite">
               Invite
               </Link>
