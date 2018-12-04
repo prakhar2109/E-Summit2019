@@ -5,6 +5,7 @@ import React, { Component } from "react";
 // import Register from "./screens/register/register";
 // import ignite from "./screens/ignite/ignite"
 // import Lfooter from "./screens/footer/landingpagefooter"
+import 'antd/dist/antd.css'
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 

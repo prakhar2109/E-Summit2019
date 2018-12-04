@@ -1,7 +1,8 @@
 .caprofile-container{
     top: 0;
     left: 18%;
-    height: 110vh;
+    height: fit-content;
+    padding-bottom: 4vh;
     background-color: #F7F8F9;
     width: 82%;
     position: absolute;
@@ -37,13 +38,14 @@ width: 72.135vw;
 .caprofile-parent1-child1{
 width: 23.39%;
 height: 75.30%;
-background: green;
+
 
 }
 .caprofile-parent1-child2{
 
     width: 39.07%;
 height: 100%;
+margin-left:6%;
 
 }
 
@@ -52,7 +54,7 @@ height: 100%;
     
     line-height: normal;
     font-size: 18px;
-
+    margin-bottom: 4vh;
     color: #4F4F4F;
 }
 
@@ -68,6 +70,7 @@ height: 100%;
   
     margin-top: 11.66vh;
     color: #B2B2B2;
+    margin-top: 7.44vh !important;
     
 
 }
@@ -97,7 +100,7 @@ color: #4F4F4F;
 .caprofile-parent1-child3-phoneheading{
 
   
-    margin-top: 20.3vh !important;
+    margin-top: 23.3vh !important;
     color: #B2B2B2;
     
 
@@ -109,7 +112,7 @@ color: #4F4F4F;
 }
 #caprofile-scoreValue{
     line-height: normal;
-font-size: 16px;
+font-size: 1rem;
 float: right;
 letter-spacing: 0.02em;
 
@@ -151,7 +154,10 @@ color: rgba(79, 79, 79, 0.44);
 
     
 }
+.ca-profilescore{
 
+    margin-top: 3.55vh;
+}
 
 
 
@@ -187,4 +193,40 @@ color: rgba(79, 79, 79, 0.44);
 
     width: 30vw;
     overflow: hidden;
+}
+
+.caprofile-grandparent{
+    height: 3.24vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+}
+.caprofile-dropshape{
+    margin-top: 6%;
+    margin-left: 22%;
+    background-color: #F39423;
+    color: white;
+    height: 14.62vh;
+    max-width: 14.62vh;
+    max-height: 14.62vh;
+    padding-left: 5.4vh;
+    padding-top: 3.5vh;
+    font-size: 2.5rem;
+    font-weight: 500;
+    border-top-left-radius: 6vh;
+    border-top-right-radius: 55vh;
+    border-bottom-left-radius: 50vh;
+    border-bottom-right-radius: 55vh;
+}
+
+.ca-profile-modalparent1{
+    margin-left: 0 !important;
+}
+
+.ca-profile-modalparent2{
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+}
+
+.ant-modal{
+    
 }
