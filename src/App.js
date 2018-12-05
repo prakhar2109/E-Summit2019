@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Viewprofile from './screens/caLeaderboard/js/Viewprofile'
 import Caindex from './screens/caLeaderboard/js/index'
 import Payment from './screens/caLeaderboard/js/payment';
-
+// import Coupon from './screens/caLeaderboard/js/coupon'
 
 /*  
 import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
@@ -78,24 +78,23 @@ class App extends Component {
           <Switch>
           <React.Fragment>
             {/* <div id = "main_class" className ="main_class">  */}
-            <Route exact path="/" component={HomePage} />
+            {/* <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/payment" component={Payment} />
+            <Route exact path="/payment" component={Payment} /> */}
               {/*<Route exact path="/register" component={Register} />
             {
               this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
                 <Route exact path="/login" component={Login} />
             } */}
 
-             <Route exact path="/register" component={Register} />
+             {/* <Route exact path="/register" component={Register} /> */}
             
 
 
             {/* <Route exact path="/dashboard/" component={LeaderBoard} /> */}
             <Route path="/dashboard/" component={Caindex} />
-
-            <Route path="/ignite" component={ignite} />
-            <Route path="/loader" component={Loader} />
+            {/* <Route path="/ignite" component={ignite} /> */}
+            {/* <Route path="/loader" component={Loader} /> */}
             {/* <Route path="/Viewprofile" component={Viewprofile} /> */}
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
