@@ -3,7 +3,7 @@ import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
 import $ from 'jquery';
 import  'react-bootstrap';
-import { Modal} from 'antd';
+
 
 
 
@@ -75,7 +75,6 @@ export default class Payment extends Component{
             
             this.setState({
                 isApplied:false,
-                visible: true,
                 // visibleAccomodationFee:this.state.accomodationFee,
             },()=>{
                 // console.log(this.state.isDiscarded)
@@ -140,7 +139,7 @@ export default class Payment extends Component{
                      <div className="capayment-line1"></div>
                  </div>
 
-                    <button id="caprofile-b01" onClick={this.showModal}>Edit Profile</button>
+                 
                  <div className="capayment-paymentinfo">
                      <div className="capayment-paymentstatus">
                      <svg width="30" height="30" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,7 +162,7 @@ export default class Payment extends Component{
                      <div className="capayment-discountcoupon">
                      <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" data-target="#myModal" data-toggle="modal" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
                      </div>
-                     <div className="capayment-horizontalline"></div>List
+                     <div className="capayment-horizontalline"></div>
                      <div className="capayment-totalamt">
                      <div className="capayment-spaceaboutcolon">Total Amount</div>:<div className="capayment-space"></div>Rs&nbsp;{totalamt}
                      </div>                                                            
@@ -194,32 +193,7 @@ export default class Payment extends Component{
                     </div>
                 </div>
 
-                 <Modal
-                    visible={visible}
-                    onOk={this.handleOk}
-                    closable={false}
-               
-
-                >
-
-                                    <div className="capayment-applycoupon-parent">
-                                    APPLY COUPON
-                                    </div>
-                                    <div className="capayment-applycoupon-parent-heading">
-                                    Enter coupon code
-                                    </div>
-
-                                    <input type="text"></input>
-                                    <div className="capayment-applycoupon-parent-optionlist-heading">
-                                    Choose a valid coupon
-                                    </div>
-                                    <div className="capayment-applycoupon-parent-optionlist-parent">
-                                        <input type="text"></input>
-                                        <input type="text"></input>
-
-                                    </div>
                 
-               </Modal>
             </div>
         )
                 }

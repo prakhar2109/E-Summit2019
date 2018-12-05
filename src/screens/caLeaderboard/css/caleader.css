@@ -116,11 +116,11 @@ th#cacollege{
 
     display: flex;
     flex-direction: row;
-    width: 24.72vw;
+    width: 34.72vw;
     height: 40vh;
     transition: .5s ease;
     position: relative;
-    right: 10vw;
+    right: 0vw;
    
     
   }
@@ -140,9 +140,11 @@ th#cacollege{
 
     height: 40vh;
     background:#007CB9;
-    width: 24.72vw;
+    width: 34.72vw;
     overflow: scroll;
-    
+    padding: 7.03vh;
+    color:#fff;
+    font-size: 12px;
 
   } 
 
