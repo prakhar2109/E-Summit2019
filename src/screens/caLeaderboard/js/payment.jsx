@@ -3,6 +3,8 @@ import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
 import $ from 'jquery';
 import  'react-bootstrap';
+import { Modal} from 'antd';
+
 
 
 export default class Payment extends Component{
@@ -16,15 +18,26 @@ export default class Payment extends Component{
             isDiscarded:false,
             discountAvailedPercent:20,
             isApplied:false,
-            couponDiscountPercent:0,
+            couponDiscountPercent:20,
             isBillingOpen:false,
-            
+       
             registrationFeePayed:800,//data if payment is already done
             accomodationFeePayed:1000,
             visibleAccomodationFeePayed:1000,
             discountAvailedPercentPayed:20,
             couponDiscountPercentPayed:0,
         }
+    }
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+    handleOk = () => {
+        this.setState({ loading: true });
+        setTimeout(() => {
+            this.setState({ loading: false, visible: false });
+        }, 300);
     }
     toggleAccomodation = (e) =>{
         // e.preventDefault()
@@ -62,11 +75,12 @@ export default class Payment extends Component{
             
             this.setState({
                 isApplied:false,
+                visible: true,
                 // visibleAccomodationFee:this.state.accomodationFee,
             },()=>{
                 // console.log(this.state.isDiscarded)
             }
-            )
+            ) 
         }
         else{
              
@@ -101,7 +115,9 @@ export default class Payment extends Component{
     }
     }
     render()
+   
     {   
+        const { visible } = this.state;
         let {isPayed,registrationFee,visibleAccomodationFee,discountAvailedPercent,couponDiscountPercent} = this.state
         let discountAvailed = (visibleAccomodationFee+registrationFee)*discountAvailedPercent/100//formula has to be changed
         let couponDiscount = registrationFee*couponDiscountPercent/100
@@ -117,10 +133,14 @@ export default class Payment extends Component{
             if(!isPayed){
                 return(
             <div className="capayment-parent">
+
+                
                  <div className="capayment-headerrow">
                      <div className="capayment-header">Payment Information</div>
                      <div className="capayment-line1"></div>
                  </div>
+
+                    <button id="caprofile-b01" onClick={this.showModal}>Edit Profile</button>
                  <div className="capayment-paymentinfo">
                      <div className="capayment-paymentstatus">
                      <svg width="30" height="30" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,15 +163,15 @@ export default class Payment extends Component{
                      <div className="capayment-discountcoupon">
                      <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" data-target="#myModal" data-toggle="modal" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
                      </div>
-                     <div className="capayment-horizontalline"></div>
+                     <div className="capayment-horizontalline"></div>List
                      <div className="capayment-totalamt">
                      <div className="capayment-spaceaboutcolon">Total Amount</div>:<div className="capayment-space"></div>Rs&nbsp;{totalamt}
                      </div>                                                            
                  </div>
                  <div className="capayment-middlerow">
                  <div className="capayment-tnc">
-                    &#x26B9; The criteria for discounts availed in fees have been discussed in the discount criterion below<br/>
-                    &#x26B9; Only one coupon applicable for discounts
+                    &#x26B9; The criteria for discountListiled in fees have been discussed in the discount criterion below<br/>
+                    &#x26B9; Only one coupon applicablList discounts
                 </div> 
                 <button onClick={e=>{this.onPay(e)}} className="capayment-paymentbtn">
                     PAY NOW
@@ -173,6 +193,33 @@ export default class Payment extends Component{
                         <CriteriaMapping/>
                     </div>
                 </div>
+
+                 <Modal
+                    visible={visible}
+                    onOk={this.handleOk}
+                    closable={false}
+               
+
+                >
+
+                                    <div className="capayment-applycoupon-parent">
+                                    APPLY COUPON
+                                    </div>
+                                    <div className="capayment-applycoupon-parent-heading">
+                                    Enter coupon code
+                                    </div>
+
+                                    <input type="text"></input>
+                                    <div className="capayment-applycoupon-parent-optionlist-heading">
+                                    Choose a valid coupon
+                                    </div>
+                                    <div className="capayment-applycoupon-parent-optionlist-parent">
+                                        <input type="text"></input>
+                                        <input type="text"></input>
+
+                                    </div>
+                
+               </Modal>
             </div>
         )
                 }
@@ -185,7 +232,7 @@ export default class Payment extends Component{
                  </div>
                  <div className="capayment-paymentinfodoneu" id="capayment-paymentinfodoneu">
                      <div className="capayment-paymentstatusdone">
-                     <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg width="30" height="30" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M27.9224 12.6543L18.2446 22.5078L13.2885 17.5283L10.6172 20.1997L18.4321 28.0029L30.9921 15.8177L27.9224 12.6543Z" fill="#70BF48"/>
 <path d="M20.4258 0C9.37716 0 0.425781 8.95138 0.425781 20C0.425781 31.0486 9.37716 40 20.4258 40C31.4744 40 40.4258 31.0486 40.4258 20C40.4141 8.95138 31.4627 0 20.4258 0ZM20.4258 36.3679C11.3807 36.3679 4.04617 29.0334 4.04617 19.9883C4.04617 10.9432 11.3807 3.60867 20.4258 3.60867C29.4709 3.62039 36.7937 10.9432 36.8054 19.9883C36.7937 29.0451 29.4709 36.3679 20.4258 36.3679Z" fill="#70BF48"/>
 </svg>
@@ -246,7 +293,7 @@ export default class Payment extends Component{
 
 
 
-
+                             
 
                  <div className="capayment-bottomrow">
                     <div className="capayment-discountcriterion"> Discount Criterion</div>
@@ -263,7 +310,10 @@ export default class Payment extends Component{
                         <CriteriaMapping/>
                     </div>
                 </div>
+           
                         </div>
+
+                    
                     )
                 }
     }

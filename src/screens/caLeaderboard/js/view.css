@@ -7,11 +7,60 @@
     width: 82%;
     position: absolute;
 }
+.caprofile-container-heading{
+    margin-top: 3.33vh;
+    margin-left: 1.875vw;
 
+}
+/* .ant-modal-content{
+    background: none !important;
+} */
+#caprofile-b01{
+    margin-top: 5vh;
+    height: 4.08vh;
+    width: 7.774vw;
+    margin-left: 66.236vw;
+    margin-top: 1.85vh;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.09em;
+    color: #F39423;
+    border: 2px solid #F39423;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: transparent;
+    cursor: pointer;
+}
+#caprofile-b02{
+    margin-top: 5vh;
+    height: 4.08vh;
+    width: 7.774vw;
+    margin-left: 64.236vw;
+    margin-top: 1.85vh;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    color: #FFFFFF;
+    border: 2px solid #F39423;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background: #F39423;
+    border-radius: 2px; 
+    cursor: pointer;
+}
+.caprofile-line1 {
+  flex-basis: 68vw;
+    height: 0.4vh;
+    background-color: #E0E0E0;
+    /* position: absolute; */
+    margin-top: -2vh;
+    width: 87%;
+    margin-left: 8vw;
+}
 .caprofile-parent1{
     padding-top: 4.44vh;
     padding-left: 1.67vw;
-margin-top: 12.77vh;
+margin-top: 2.22vh;
 margin-left: 1.875vw;
 height: 45.74vh;
 background: #FFFFFF;
@@ -27,28 +76,51 @@ padding-top: 4.44vh;
 padding-left: 1.67vw;
 margin-top: 3.33vh;
 margin-left: 1.875vw;
-height: 45.74vh;
+height: fit-content;
+padding-bottom: 4vh;
 background: #FFFFFF;
 box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
-border-radius: 8px 8px 0px 0px;
+border-radius: 8px 8px 8px 8px;
 width: 72.135vw;
 
 }
 
 .caprofile-parent1-child1{
-width: 23.39%;
+width: 22.39%;
 height: 75.30%;
 
 
 }
+.progressline{
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    margin-top: 5%;
+    width: 100%;
+    height: 5px !important;
+}
+
+.caprofile-parent1-childline{
+
+    width: 2px;
+    margin-left: 1%;
+    height: 25vh;
+    background: #E0E0E0;
+    margin-top: 7vh;
+}
 .caprofile-parent1-child2{
 
-    width: 39.07%;
+    width: 34.07%;
 height: 100%;
 margin-left:6%;
 
 }
-
+.footer-parent2-innerchild{
+    display: flex;
+}
 .caprofile-parent1-child1-heading{
 
     
@@ -56,11 +128,12 @@ margin-left:6%;
     font-size: 18px;
     margin-bottom: 4vh;
     color: #4F4F4F;
+    font-weight: 600;
 }
 
 .caprofile-parent1-child3{
 
-    width: 37.54;
+    width: 34.07%;
     height: 100%;
 
 
@@ -68,30 +141,30 @@ margin-left:6%;
 
 .caprofile-parent1-child2-name-heading{
   
-    margin-top: 11.66vh;
+    
     color: #B2B2B2;
-    margin-top: 7.44vh !important;
+    margin-top: 7.22vh !important;
     
 
 }
 
 .caprofile-parent1-child2-name{
   
-margin-top: 1.22vh;
-color: #4F4F4F;
+/* margin-top: 1.22vh;
+color: #4F4F4F; */
 }
 
 .caprofile-parent1-child2-emailheading{
   
-    margin-top: 8.61vh !important;
-    color: #B2B2B2;
+    /* margin-top: 8.61vh !important;
+    color: #B2B2B2; */
 
 }
 
 .caprofile-parent1-child2-email{
    
-    margin-top: 1.22vh;
-color: #4F4F4F;
+    /* margin-top: 1.22vh;
+color: #4F4F4F; */
 
 
 
@@ -100,15 +173,15 @@ color: #4F4F4F;
 .caprofile-parent1-child3-phoneheading{
 
   
-    margin-top: 23.3vh !important;
-    color: #B2B2B2;
+    /* margin-top: 19.5vh !important;
+    color: #B2B2B2; */
     
 
 }
 .caprofile-parent1-child3-phone{
     
-margin-top: 1.22vh;
-color: #4F4F4F;
+/* margin-top: 1.22vh;
+color: #4F4F4F; */
 }
 #caprofile-scoreValue{
     line-height: normal;
@@ -148,6 +221,7 @@ color: rgba(79, 79, 79, 0.44);
     color: #4F4F4F;
     line-height: normal;
     font-size: 18px;
+    font-weight: 600;
 
 }
 .caprofile-parent3-child2-collegename-heading{
@@ -165,12 +239,13 @@ color: rgba(79, 79, 79, 0.44);
     line-height: normal;
     font-size:1.286rem;
     margin-top: 4.44vh;
+    font-weight: 600;
     color: #B2B2B2;
 
 }
 
 .caprofile-data{
-
+    word-break: break-all;
     line-height: normal;
     font-size: 1rem;
     margin-top: 1.22vh;
@@ -197,8 +272,8 @@ color: rgba(79, 79, 79, 0.44);
 
 .caprofile-grandparent{
     height: 3.24vh;
-    background-color: rgba(0, 0, 0, 0.65);
     width: 100%;
+
 }
 .caprofile-dropshape{
     margin-top: 6%;
@@ -227,6 +302,77 @@ color: rgba(79, 79, 79, 0.44);
     margin-top: 0 !important;
 }
 
-.ant-modal{
-    
+.caprofile-parent2-child2-year{
+    width: 30vw;
+}
+
+.caprofile-parent3-child2-State{
+    width: 30vw;
+}
+#caprofile01:focus{
+    border: 2px solid #2EA2F8 !important;
+}
+#caprofile02:focus{
+    border: 2px solid #2EA2F8 !important;
+}
+#caprofile03:focus{
+    border: 2px solid #2EA2F8 !important;
+}
+
+#caprofile01{
+    outline: none !important;
+    width: 90%;
+    border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 4px;
+height: 4.44vh;
+padding: 1.11vh;
+}
+
+#caprofile02{
+    outline: none !important;
+    width: 91%;
+    border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 4px;
+height: 4.44vh;
+padding: 1.11vh;
+}
+
+#caprofile03{
+    outline: none !important;
+    width: 81%;
+    border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 4px;
+height: 4.44vh;
+padding: 1.11vh;
+}
+
+
+.caprofile-containter-parent{
+    padding-left: 1.875vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50vw;
+}
+
+.caprofile-containter-parent-child2{
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 4.17vh;
+}
+
+.caprofile-containter-parent-child2-child1{
+    width: 23vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.caprofile-containter-parent-child2-child2{
+    width: 23vw;
+    display: flex;
+    flex-direction: column;
 }

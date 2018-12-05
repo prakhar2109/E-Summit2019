@@ -7,13 +7,14 @@ import React, { Component } from "react";
 // import Lfooter from "./screens/footer/landingpagefooter"
 import 'antd/dist/antd.css'
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import Viewprofile from './screens/caLeaderboard/js/Viewprofile'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+// import Viewprofile from './screens/caLeaderboard/js/Viewprofile'
 import Caindex from './screens/caLeaderboard/js/index'
 import Payment from './screens/caLeaderboard/js/payment';
 
+import Loadable from 'react-loadable';
+import Loader from './screens/common/loader';
 
-/*  
 import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 
 
@@ -47,16 +48,16 @@ const Register = Loadable({
   loading: () => <Loader />,
 });
 
-const Lfooter = Loadable({
-  loader: () => import("./screens/footer/landingpagefooter"),
-  loading: () => Loading
-});
+// const Lfooter = Loadable({
+//   loader: () => import("./screens/footer/landingpagefooter"),
+//   loading: () => Loading
+// });
 
-const LeaderBoard = Loadable({
-  loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
-  loading: () => <Loader />,
-});
-*/
+// const LeaderBoard = Loadable({
+//   loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
+//   loading: () => <Loader />,
+// });
+
 class App extends Component {
   constructor() {
     super();
@@ -95,7 +96,7 @@ class App extends Component {
             <Route path="/dashboard/" component={Caindex} />
 
             <Route path="/ignite" component={ignite} />
-            <Route path="/loader" component={Loader} />
+            {/* <Route path="/loader" component={Loader} /> */}
             {/* <Route path="/Viewprofile" component={Viewprofile} /> */}
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
