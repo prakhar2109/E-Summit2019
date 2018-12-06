@@ -136,6 +136,7 @@ svg{
     margin-top: 2.59vh;
     margin-left: 1vw;
     display: flex;
+    line-height: 3.5vh;
     flex-direction: row;
     flex-wrap: wrap;
     height: fit-content;
@@ -201,7 +202,7 @@ svg{
 }
 .capayment-criterialist{
     margin-top: 2vh;
-    
+        
 }
 .capayment-paymentstatusdone{
     color: green;

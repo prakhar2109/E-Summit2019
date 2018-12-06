@@ -28,8 +28,8 @@ export default class CriteriaMapping extends Component{
     render() {
         return (
             <React.Fragment>
-                {this.state.noOfCriterias ? this.state.criteria.map((criteria) => {
-                    return <DiscountCriteria discountStatement={criteria} ></DiscountCriteria>
+                {this.state.noOfCriterias ? this.state.criteria.map((criteria,i) => {
+                    return   <DiscountCriteria discountStatement={criteria} key={i} ></DiscountCriteria>
                 }) : null
                 }
             </React.Fragment>

@@ -5,15 +5,20 @@ export default class Coupon extends Component {
     constructor(){
         super()
         this.state={
-            noOfCoupons:4,
-            cashback:['20','30','40','60'],
+            noOfCoupons:2,
+            coupons:{"Abcd":"50","amsm":"40"},//assuming that value of discount and codes are coming as strings,change if necessary
+            
         }
     }
     render(){
+        let {coupons} = this.state
+        let couponsKey = Object.keys(coupons)
+        let couponsValue = Object.values(coupons)
         return(
             <React.Fragment>
-                {this.state.noOfCoupons ? this.state.cashback.map((cashback) => {
-                    return <SingleCoupon cashback={cashback} ></SingleCoupon>
+                {this.state.noOfCoupons ? couponsKey.map((coupon,i) => {
+                    console.log(coupon)
+                    return <SingleCoupon cashback={couponsValue[i]} couponId={couponsKey[i]} ></SingleCoupon>
                 }) : null
                 }
             </React.Fragment>
@@ -34,7 +39,7 @@ class SingleCoupon extends Component{
                 <div className="cacoupon-toprow">
                     <input value={this.props.cashback} id="cacoupon-radiobtn" name="coupon" className="cacoupon-radiobtn" type="radio"></input>
                     <div className="cacoupon-couponcodewrapper">
-                        {/* {this.props.couponId} */}GFDS
+                        {this.props.couponId}
                     </div>
 
                 </div>

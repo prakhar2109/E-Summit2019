@@ -1,17 +1,20 @@
+/* eslint-disable */
 import React, { Component } from 'react'
 import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
-import $ from 'jquery';
-import  'react-bootstrap';
 
-
+import { Modal } from 'antd';
+import Coupon from './coupon'
 
 
 export default class Payment extends Component{
     constructor(){
         super()
         this.state={
-            isPayed:false,
+
+            isPayed:false,//if payment is done, value will come from backend
+            possibleCoupons:{"GFDS":"50"},//coupons which are to be entered
+
             registrationFee:800,//data if payment not done
             accomodationFee:1000,
             visibleAccomodationFee:1000,
@@ -20,8 +23,16 @@ export default class Payment extends Component{
             isApplied:false,
             couponDiscountPercent:20,
             isBillingOpen:false,
-       
-            registrationFeePayed:800,//data if payment is already done
+
+            isModalVisible:false,
+            couponcode:'',
+            couponSelected:'',
+            
+
+            //if payment is done isPayed will become true
+            // values will come from backend
+            registrationFeePayed:0,
+
             accomodationFeePayed:1000,
             visibleAccomodationFeePayed:1000,
             discountAvailedPercentPayed:20,
@@ -113,6 +124,73 @@ export default class Payment extends Component{
         })
     }
     }
+
+    handleCancel = () =>{
+        document.getElementById("capayment-couponapply").innerHTML="Apply";
+        this.setState({
+            isModalVisible:false,
+            couponDiscountPercent:0,
+            isApplied:false
+        })
+    }
+    handleOk = ()=>{
+        //checking if entered value exists in keys
+        let {couponcode,possibleCoupons} = this.state
+        let index=''
+        // console.log(possibleCoupons["GFDS"])
+        
+        let sval=''
+        let nval=0
+        try{
+            try{
+                sval = document.querySelector('input[name="coupon"]:checked').value;
+                nval = parseInt(sval)
+            }
+            catch(err){
+                sval=''
+                nval=0  
+            }
+         
+         
+                // console.log(this.state.couponcode in this.state.possibleCoupons)
+         if((this.state.couponcode in this.state.possibleCoupons)){
+            index = couponcode
+            // console.log(index)    
+        }
+            else if(nval==0){
+                alert('Coupon code invalid')
+            }
+        }
+        catch(err){
+            alert("hi")   
+        }
+        if(index!=''&&nval==0){
+            this.setState({
+                couponDiscountPercent:possibleCoupons[index],
+                isModalVisible:false,
+                isApplied:true,
+            },()=>{})
+        }
+        else if(index==''&&nval!=0){
+        this.setState({
+            couponDiscountPercent:nval,
+            isModalVisible:false,
+            isApplied:true,
+        },()=>{})
+    }
+    else{
+        alert("Please select the coupon either way")
+        // document.querySelector('input:radio[name="coupon"]:checked').prop('checked', false).checkboxradio("refresh");
+        this.setState({
+            couponDiscountPercent:0,
+            isModalVisible:true,
+            couponcode:0,
+
+        },()=>{})
+    }
+        
+    }
+
     render()
    
     {   
