@@ -109,9 +109,15 @@
 #tasksButton{
     color: #333333;
 }
-#leaderboardButton{
-    color: rgba(189, 189, 189, 0.55);
+#leaderboardButton a{
+    color: rgba(189, 189, 189, 0.55) !important;
+
 }
+#leaderboardButton a:hover{
+    color: black !important;
+    text-decoration: none;
+}
+
 #submitButton{
     display: flex;
     flex-direction: row;
