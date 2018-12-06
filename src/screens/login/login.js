@@ -62,11 +62,10 @@ export default class ComingSoon extends Component {
         .getElementById("loader")
         .style
         .display = "none";
-      if (response.response.status === 401) {
-        alert("username or password incorrect");
-      } else {
+ 
+   
         alert(response);
-      }
+   
     });
   };
 
