@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
-import $ from 'jquery';
-import  'react-bootstrap';
-
+import { Modal, Button } from 'antd';
+import Coupon from './coupon'
 
 export default class Payment extends Component{
     constructor(){
         super()
         this.state={
             isPayed:false,
+            possibleCouponCodes:['GFDS'],
+            possibleCouponCashback:['50'],
             registrationFee:800,//data if payment not done
             accomodationFee:1000,
             visibleAccomodationFee:1000,
@@ -18,6 +19,9 @@ export default class Payment extends Component{
             isApplied:false,
             couponDiscountPercent:0,
             isBillingOpen:false,
+            isModalVisible:false,
+            couponcode:'',
+            couponSelected:'',
             
             registrationFeePayed:800,//data if payment is already done
             accomodationFeePayed:1000,
@@ -26,6 +30,7 @@ export default class Payment extends Component{
             couponDiscountPercentPayed:0,
         }
     }
+    
     toggleAccomodation = (e) =>{
         // e.preventDefault()
         if(this.state.isDiscarded){
@@ -52,33 +57,68 @@ export default class Payment extends Component{
     }
     toggleCoupon = (e)=>{
         e.preventDefault()
-        if(this.state.isApplied){
-            // document.getElementById("capayment-couponapply").style.borderColor="#E2574C";
-            document.getElementById("capayment-couponapply").innerHTML="Remove";
+        
             
+            // document.getElementById("capayment-couponapply").style.borderColor="#E2574C";
+            
+            if(this.state.couponDiscountPercent==0){
+                document.getElementById("capayment-couponapply").innerHTML="Remove";
+                this.setState({
+                    isApplied:true,
+                    isModalVisible:true, 
+                     
                 
+                    // visibleAccomodationFee:this.state.accomodationFee,
+                },()=>{
+                    // console.log(this.state.isModalVisible)
+                }
+            )
+            }
+                
+            
+            else{
+                document.getElementById("capayment-couponapply").innerHTML="Apply";
+                this.setState({
+                    isApplied:false,
+                    isModalVisible:false,   
+                    couponDiscountPercent:0, 
+                    // visibleAccomodationFee:this.state.accomodationFee,
+                },()=>{
+                    // console.log(this.state.isModalVisible)
+                }
+                )
+            }
             // $("#myModal").modal();
                 
             
-            this.setState({
-                isApplied:false,
-                // visibleAccomodationFee:this.state.accomodationFee,
-            },()=>{
-                // console.log(this.state.isDiscarded)
-            }
-            )
-        }
-        else{
+            // this.setState({
+            //     isApplied:false,
+            //     isModalVisible:false,   
+            
+            //     // visibleAccomodationFee:this.state.accomodationFee,
+            // },()=>{
+            //     // console.log(this.state.isModalVisible)
+            // }
+            // )
+        
+        
              
-            document.getElementById("capayment-couponapply").style.borderColor="#F39423";
-            document.getElementById("capayment-couponapply").innerHTML="Apply";
-            this.setState({
-                isApplied:true,
-                // visibleAccomodationFee:0,
-            },()=>{
-                // console.log(this.state.isDiscarded)
-            })
-        }
+        //     if(!this.state.isApplied){
+                
+        //     document.getElementById("capayment-couponapply").style.borderColor="#F39423";
+        //     document.getElementById("capayment-couponapply").innerHTML="Apply2";
+            
+        //     this.setState({
+                
+                
+        //         isModalVisible:true,
+
+                
+        //         // visibleAccomodationFee:0,
+        //     },()=>{
+        //         // console.log(this.state.isDiscarded)
+        //     })
+        // }
     }
     onPay = e =>{
 
@@ -99,6 +139,53 @@ export default class Payment extends Component{
             isBillingOpen:!this.state.isBillingOpen,
         })
     }
+    }
+    handleCancel = () =>{
+        document.getElementById("capayment-couponapply").innerHTML="Apply";
+        this.setState({
+            isModalVisible:false,
+            couponDiscountPercent:0,
+            isApplied:false
+        })
+    }
+    handleOk = ()=>{
+        let index = this.state.possibleCouponCodes.indexOf(this.state.couponcode)
+        let sval=''
+        let nval=0
+        try{
+        
+         sval = document.querySelector('input[name="coupon"]:checked').value;
+         nval = parseInt(sval)
+        }
+        catch(err){
+            sval=''
+            nval=0    
+        }
+        if(index!=-1&&nval==0){
+            this.setState({
+                couponDiscountPercent:this.state.possibleCouponCashback[index],
+                isModalVisible:false,
+                isApplied:true,
+            },()=>{})
+        }
+        else if(index==-1&&nval!=0){
+        this.setState({
+            couponDiscountPercent:nval,
+            isModalVisible:false,
+            isApplied:true,
+        },()=>{})
+    }
+    else{
+        alert("Only 1 way to select coupon is allowed")
+        // document.querySelector('input:radio[name="coupon"]:checked').prop('checked', false).checkboxradio("refresh");
+        this.setState({
+            couponDiscountPercent:0,
+            isModalVisible:true,
+            couponcode:0,
+
+        },()=>{})
+    }
+        
     }
     render()
     {   
@@ -141,7 +228,33 @@ export default class Payment extends Component{
                          <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
                      </div>
                      <div className="capayment-discountcoupon">
-                     <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" data-target="#myModal" data-toggle="modal" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
+                     <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
+                     <Modal
+                        className="capayment-couponmodal"
+                        title="APPLY COUPON"
+                        visible={this.state.isModalVisible}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        >
+                        <div className="capayment-modalheader">
+                        Enter Coupon Code
+                        </div>
+                        <input className="capayment-modalinputcode" value={this.state.couponcode} onChange={e=>{
+                            this.setState({
+                                couponcode:e.target.value,
+                            })
+                        }} type="text"/>
+                        <div className="capayment-modalmiddlerow">
+                            <hr className="capayment-modalline" /> OR <hr className="capayment-modalline" />
+                        </div>
+                        <div className="capayment-modallastrow">
+                            <div className="capayment-modallastrowheader">Choose a valid coupon</div>
+                            <div className="capayment-modalcouponlist">
+                                <Coupon />
+                            </div>
+                        </div>
+                        
+                    </Modal>
                      </div>
                      <div className="capayment-horizontalline"></div>
                      <div className="capayment-totalamt">

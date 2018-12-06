@@ -21,8 +21,8 @@ export default class CriteriaMapping extends Component{
     constructor(){
         super()
         this.state={
-            noOfCriterias:11,
-            criteria:['mdm','snkks','dg0','dg','sg','sgsg','sg','gf','fhhf','sfsf','sgsg'],
+            noOfCriterias:14,
+            criteria:['mdm','snkks','dg0','dg','sg','sgsg','sg','gf','fhhf','sfsf','sgsg','adnknad','akdnad','adkad'],
         }
     }
     render() {

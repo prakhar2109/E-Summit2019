@@ -4,6 +4,8 @@
     top: 0;
     left: 18vw;
     width: 82vw;
+    margin-left: 2vw;
+    
 }
 .capayment-headerrow {
 
@@ -21,11 +23,11 @@
     font-weight: 500;
 }
 .capayment-line1 {
-    flex-basis: 68vw;
-    height: 0.4vh;
+    flex-basis: 65vw;
+    height: 0.2vh;
     background-color: #E0E0E0;
     /* position:absolute; */
-    margin-top: 4vh;
+    margin-top: 3.4vh;
     width: 50%;
     margin-left: 1vw;
 }
@@ -35,7 +37,7 @@
     margin-left: 1vw;
     margin-top: 2vh;
     height: 40vh;
-    width: 60vw;
+    width: 70vw;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
     border-radius: 6px;
 }
@@ -125,24 +127,26 @@ svg{
     color: black;
 }
 .capayment-middlerow{
-    width: 60vw;
+    width: 70vw;
     margin-top: 1vh;
     margin-left: 1vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 8vh;
 
 }
 .capayment-tnc{
     border:1px solid #989898;
     border-radius: 8px;
-    width: 40vw;
+    width: 45vw;
     color: #8A8A8A;
 }
 .capayment-paymentbtn{
     background-color: #F39423;
-    width: 19.5vw;
+    width: 24.5vw;
     border: none;
+    font-size: 20px;
     margin-left: 0.5vw;
     border-radius: 8px;
     color: white;
@@ -160,8 +164,8 @@ svg{
     color: rgba(130, 130, 130, 0.93);   
 }
 .capayment-line2{
-    flex-basis: 70vw;
-    height: 0.4vh;
+    flex-basis: 67vw;
+    height: 0.2vh;
     background-color: #E0E0E0;
     /* position:absolute; */
     margin-top: 4vh;
@@ -173,11 +177,11 @@ svg{
     margin-left: 1vw;
     margin-top: 2vh;
     height: 35vh;
-    width: 60vw;
+    width: 70vw;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
     border-radius: 6px;
     padding-left: 1vw;
-    overflow: scroll;
+    overflow-y: auto;
 }
 .capayment-criterialistheader{
     color: black;
@@ -214,7 +218,7 @@ svg{
     margin-left: 1vw;
     margin-top: 2vh;
     height: 10vh;
-    width: 60vw;
+    width: 70vw;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
     border-radius: 6px;
 }
@@ -223,7 +227,7 @@ svg{
     margin-left: 1vw;
     margin-top: 2vh;
     height: 40vh;
-    width: 60vw;
+    width: 70vw;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
     border-radius: 6px;
     padding-left: 1vw;
@@ -236,7 +240,67 @@ svg{
     margin-left: 1vw;
     margin-top: 2vh;
     height: 40vh;
-    width: 60vw;
+    width: 70vw;
     box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
     border-radius: 6px;
+}
+.capayment-modalinputcode{
+    margin-top: 0.8vh;
+    width: 20vw;
+    border: none;
+    height: 4vh;
+    border-style: solid;
+    border: 1px solid #B2B2B2;
+    color: #70BF48;
+    font-size: 18px;
+}
+.ant-modal-content{
+    width: 25vw !important;
+    height: 55vh !important;
+    
+}
+.ant-modal-title{
+    font-size: 14px;
+    font-weight: 600;
+    color: #5A5A5A;
+}
+.ant-modal-body{
+    height:40vh; 
+    padding-top: 0.5vh;
+}
+.capayment-modalheader{
+    font-weight: 800 !important;
+    font-size: 13px;
+    color: black;
+}
+.ant-btn{
+    border: none;
+}
+.ant-btn-primary{
+    background-color:  #F39423;
+    width: 5vw;
+}
+.capayment-modalmiddlerow{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 13px;
+    padding-right: 6vw;
+    padding-left: 6vw;
+}
+.capayment-modalline{
+   width: 2vw;
+   background-color: black;
+   
+
+}
+.capayment-modallastrowheader{
+    color: black;
+    font-weight: 600;
+}
+.capayment-modalcouponlist{
+    height: 22vh;
+    overflow-y: auto ;
+
 }
