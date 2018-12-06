@@ -1,20 +1,26 @@
 import React,{ Component } from 'react'
 import './../css/coupon.css'
 
-// class Coupon extends Component {
-//     constructor(){
-//         super()
-//         this.state={
-
-//         }
-//     }
-//     render(){
-//         return(
-
-//         )
-//     }
-// }
-export default class SingleCoupon extends Component{
+export default class Coupon extends Component {
+    constructor(){
+        super()
+        this.state={
+            noOfCoupons:4,
+            cashback:['20','30','40','60'],
+        }
+    }
+    render(){
+        return(
+            <React.Fragment>
+                {this.state.noOfCoupons ? this.state.cashback.map((cashback) => {
+                    return <SingleCoupon cashback={cashback} ></SingleCoupon>
+                }) : null
+                }
+            </React.Fragment>
+        )
+    }
+}
+class SingleCoupon extends Component{
     constructor(){
         super()
         this.state={
@@ -26,7 +32,7 @@ export default class SingleCoupon extends Component{
         return(
             <div className="cacoupon-parent">
                 <div className="cacoupon-toprow">
-                    <input value={this.props.cashback} id="cacoupon-radiobtn" className="cacoupon-radiobtn" type="radio"></input>
+                    <input value={this.props.cashback} id="cacoupon-radiobtn" name="coupon" className="cacoupon-radiobtn" type="radio"></input>
                     <div className="cacoupon-couponcodewrapper">
                         {/* {this.props.couponId} */}GFDS
                     </div>
