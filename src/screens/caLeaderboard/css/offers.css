@@ -20,7 +20,7 @@
 
 }
 .caoffers-earnedcoupons-child{
-
+    position: relative;
     height: 24.90vh;
     width: 30.27%; 
     margin-left: 2.24%;  
@@ -38,7 +38,7 @@
     margin-top: 3.33vh;
     margin-left: 2.24%;
     line-height: normal;
-    font-size: 1.143rem;
+   
     color: rgba(130, 130, 130, 0.93);
 }
 
@@ -48,38 +48,38 @@
     margin-top: 3.33vh;
     margin-left: 2.24%;
     line-height: normal;
-    font-size: 1.143rem;
+   
     color: rgba(130, 130, 130, 0.93);
 }
 
 .caoffers-earnedcoupons-child-heading{
 
     color: #5A5A5A;
-    font-size: 18px;
-    font-weight: 600;
+    
 
 }
 
 .caoffers-earnedcoupons-child-description{
 
     line-height: normal;
-    font-size: 14px;
-    width: 16vw;
+    
     /* line-height: 1.4rem; */
     color: #4F4F4F;
     opacity: 0.58;
+	 width: 16vw;
 }
 
 .caoffers-earnedcoupons-child-button{
-
+position: absolute;
+bottom: 2.962vh;
 }
 .caoffers-earnedcoupons-child-button button{
-
+    font-size: 11.37px;
     background: #F39423;
     border-radius: 4.28px;
     text-align: center;
     color: #FFFFFF;
-    height: 4.70vh;
+    height: 3.70vh;
     width: 7.81vw;
     border: none;
 }
@@ -87,3 +87,72 @@
 #caofferb01{
     margin-left: 1vw;
 }
+
+.caoffersparent-font{
+    font-size: 14.22px;
+    font-family:"ProximaNova-Semibold" !important;
+}
+
+.caoffersheading-font{
+    font-size: 22px;
+    font-family:"ProximaNova-Semibold" !important;
+
+}
+
+.caoffersdecription-font{
+
+    font-size: 14.22px;
+   
+}
+
+.caoffers-earnedcoupons-invitelink{
+
+    color: #2EA2F8;
+    line-height: normal;
+    opacity: 0.58;
+    font-size: 17.04px;
+    margin-top: 1vh;
+}
+
+.caoffers-earnedcoupons-child-description-sucess{
+    line-height: normal;
+    
+    color: #4F4F4F;
+    opacity: 0.58;
+    width:100%;
+}
+@media (min-width: 1920px) and (max-width: 2560px){
+
+.caoffersparent-font{
+    font-size: 20px;
+    font-family:"ProximaNova-Semibold" !important;
+}
+
+.caoffersheading-font{
+    font-size: 31px;
+    font-family:"ProximaNova-Semibold" !important;
+
+}
+
+.caoffersdecription-font{
+
+    font-size: 20px;
+   
+}
+.caoffers-earnedcoupons-child-button button{
+    font-size: 16px;
+   
+}
+
+.caoffers-earnedcoupons-invitelink{
+
+    font-size: 24px;
+
+}
+
+
+}
+
+
+
+

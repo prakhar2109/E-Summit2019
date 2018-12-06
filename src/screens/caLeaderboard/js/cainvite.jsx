@@ -52,7 +52,7 @@ export default class Cainvite extends Component {
 
                     <div className="cainvite-linkparent-input">
                         <input type="text" id="camyinput"></input>
-                        <button id="camyinputbutton" onClick={this.copyLink}>Copy text</button>
+                        <button id="camyinputbutton" onClick={this.copyLink}>Copy link</button>
                     </div>
                 </div>
 
@@ -90,9 +90,9 @@ export default class Cainvite extends Component {
                 <div id="show" className="cainvite-register-parent-child2" >
                 <table id="cainvite01">
                         <tr>
-                            <th id="cainvitename">Name</th>
+                            <th id="cainvitename">NAME</th>
 
-                            <th id="cainvitestatus">Status</th>
+                            <th id="cainvitestatus">STATUS</th>
                         </tr>
                         <tr>
                             <td id="cainvitename-child">Prakhar Agarwal</td>

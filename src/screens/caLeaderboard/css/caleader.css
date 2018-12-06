@@ -14,6 +14,7 @@
     margin-top: 3.33vh;
     margin-left: 2.24%;
     color: rgba(130, 130, 130, 0.93);
+    font-size:14.22px;
 }
 
 .caleader-board-parent{
@@ -45,13 +46,14 @@ table#ca01 td{
  
     padding-top: 2.60vh;
     color: #000000;
-    font-size: 1rem;
+    font-size: 17.067px;
+    font-family:"ProximaNova-Semibold" !important; 
  
 }
 table#ca01 th{
     padding-bottom: 5vh;
     color: rgba(79, 79, 79, 0.44);
-    font-size: 1rem;
+    font-size: 11.37px;
 }
 th#carank{
 
@@ -170,3 +172,37 @@ th#cacollege{
         margin-top: 8vh;
         margin-left: 1vw;
   }
+
+
+
+
+
+@media (min-width: 1920px) and (max-width: 2560px){
+
+
+
+table#ca01 th{
+    padding-bottom: 5vh;
+    color: rgba(79, 79, 79, 0.44);
+    font-size: 16px;
+}
+
+.caleader-heading{
+
+    margin-top: 3.33vh;
+    margin-left: 2.24%;
+    color: rgba(130, 130, 130, 0.93);
+    font-size:20px;
+}
+table#ca01 td{
+
+    padding-bottom: 2.60vh;
+ 
+    padding-top: 2.60vh;
+    color: #000000;
+    font-size: 24px;
+    font-family:"ProximaNova-Semibold" !important; 
+ 
+}
+
+}

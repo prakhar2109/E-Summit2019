@@ -14,9 +14,15 @@ export default class caLeaderboard extends Component {
     this.state = {
       name: "",
       score: "0",
+      activeState:"",
     };
   }
-
+	
+  setActive = (state) => {
+        this.setState({
+            activeState: state
+        });
+    }
   handleLogout = () => {
     localStorage.removeItem("ca_token");
     window.location.href = "/login";
@@ -77,34 +83,44 @@ export default class caLeaderboard extends Component {
             </div>
             <div id="optionsToggle">
               <span>
-              <Link to="/dashboard/task">
-              Tasks
+              <Link to="/dashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("task");
+                                        }}>
+              TASKS
               </Link>
               <br />
               </span>
               <span>
-              <Link to="/dashboard/leader">
-              Leaderboard
+              <Link to="/dashboard/leader" className={(this.state.activeState === "leaderboard") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("leaderboard");
+                                        }}>
+              LEADERBOARD
+              </Link>
+              <br />
+              </span>
+		
+              <span>
+              <Link to="/dashboard/offers" className={(this.state.activeState === "offers") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("offers");
+                                        }}>
+              OFFERS
+              </Link>
+              <br />
+              </span>
+              <span>
+              <Link to="/dashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("payment");
+                                        }}>
+              PAYMENT
               </Link>
               <br />
               </span>
 
               <span>
-              <Link to="/dashboard/offers">
-              Offers
-              </Link>
-              <br />
-              </span>
-              <span>
-              <Link to="/dashboard/payment">
-              Payment
-              </Link>
-              <br />
-              </span>
-
-              <span>
-              <Link to="/dashboard/invite">
-              Invite
+              <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("invite");
+                                        }}>
+              INVITE
               </Link>
               <br />
               </span>

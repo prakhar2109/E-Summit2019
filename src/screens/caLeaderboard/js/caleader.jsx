@@ -12,6 +12,7 @@ export default class Caleader extends Component {
 
                 <div className="caleader-board-parent">
                     <table id="ca01">
+			<tbody>
                         <tr>
                             <th id="carank">Rank</th>
                             <th id="caname">Name</th>
@@ -36,7 +37,7 @@ export default class Caleader extends Component {
                             <td>IIT Roorkee</td>
                             <td id="capointstd">50</td>
                         </tr>
-
+			</tbody>
                     </table>
                 </div>
 
