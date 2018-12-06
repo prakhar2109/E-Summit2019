@@ -2,23 +2,28 @@
 import React, { Component } from 'react'
 import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
+
 import { Modal } from 'antd';
 import Coupon from './coupon'
+
 
 export default class Payment extends Component{
     constructor(){
         super()
         this.state={
+
             isPayed:false,//if payment is done, value will come from backend
             possibleCoupons:{"GFDS":"50"},//coupons which are to be entered
+
             registrationFee:800,//data if payment not done
             accomodationFee:1000,
             visibleAccomodationFee:1000,
             isDiscarded:false,
             discountAvailedPercent:20,
             isApplied:false,
-            couponDiscountPercent:0,
+            couponDiscountPercent:20,
             isBillingOpen:false,
+
             isModalVisible:false,
             couponcode:'',
             couponSelected:'',
@@ -27,13 +32,24 @@ export default class Payment extends Component{
             //if payment is done isPayed will become true
             // values will come from backend
             registrationFeePayed:0,
+
             accomodationFeePayed:1000,
             visibleAccomodationFeePayed:1000,
             discountAvailedPercentPayed:20,
             couponDiscountPercentPayed:0,
         }
     }
-    
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+    handleOk = () => {
+        this.setState({ loading: true });
+        setTimeout(() => {
+            this.setState({ loading: false, visible: false });
+        }, 300);
+    }
     toggleAccomodation = (e) =>{
         // e.preventDefault()
         if(this.state.isDiscarded){
@@ -60,68 +76,33 @@ export default class Payment extends Component{
     }
     toggleCoupon = (e)=>{
         e.preventDefault()
-        
-            
+        if(this.state.isApplied){
             // document.getElementById("capayment-couponapply").style.borderColor="#E2574C";
+            document.getElementById("capayment-couponapply").innerHTML="Remove";
             
-            if(this.state.couponDiscountPercent==0){
-                document.getElementById("capayment-couponapply").innerHTML="Remove";
-                this.setState({
-                    isApplied:true,
-                    isModalVisible:true, 
-                     
                 
-                    // visibleAccomodationFee:this.state.accomodationFee,
-                },()=>{
-                    // console.log(this.state.isModalVisible)
-                }
-            )
-            }
-                
-            
-            else{
-                document.getElementById("capayment-couponapply").innerHTML="Apply";
-                this.setState({
-                    isApplied:false,
-                    isModalVisible:false,   
-                    couponDiscountPercent:0, 
-                    // visibleAccomodationFee:this.state.accomodationFee,
-                },()=>{
-                    // console.log(this.state.isModalVisible)
-                }
-                )
-            }
             // $("#myModal").modal();
                 
             
-            // this.setState({
-            //     isApplied:false,
-            //     isModalVisible:false,   
-            
-            //     // visibleAccomodationFee:this.state.accomodationFee,
-            // },()=>{
-            //     // console.log(this.state.isModalVisible)
-            // }
-            // )
-        
-        
+            this.setState({
+                isApplied:false,
+                // visibleAccomodationFee:this.state.accomodationFee,
+            },()=>{
+                // console.log(this.state.isDiscarded)
+            }
+            ) 
+        }
+        else{
              
-        //     if(!this.state.isApplied){
-                
-        //     document.getElementById("capayment-couponapply").style.borderColor="#F39423";
-        //     document.getElementById("capayment-couponapply").innerHTML="Apply2";
-            
-        //     this.setState({
-                
-                
-        //         isModalVisible:true,
-
-                
-        //         // visibleAccomodationFee:0,
-        //     },()=>{
-        //         // console.log(this.state.isDiscarded)
-        //     })
-        // }
+            document.getElementById("capayment-couponapply").style.borderColor="#F39423";
+            document.getElementById("capayment-couponapply").innerHTML="Apply";
+            this.setState({
+                isApplied:true,
+                // visibleAccomodationFee:0,
+            },()=>{
+                // console.log(this.state.isDiscarded)
+            })
+        }
     }
     onPay = e =>{
 
@@ -143,6 +124,7 @@ export default class Payment extends Component{
         })
     }
     }
+
     handleCancel = () =>{
         document.getElementById("capayment-couponapply").innerHTML="Apply";
         this.setState({
@@ -208,8 +190,11 @@ export default class Payment extends Component{
     }
         
     }
+
     render()
+   
     {   
+        const { visible } = this.state;
         let {isPayed,registrationFee,visibleAccomodationFee,discountAvailedPercent,couponDiscountPercent} = this.state
         let discountAvailed = (visibleAccomodationFee+registrationFee)*discountAvailedPercent/100//formula has to be changed
         let couponDiscount = registrationFee*couponDiscountPercent/100
@@ -225,10 +210,14 @@ export default class Payment extends Component{
             if(!isPayed){
                 return(
             <div className="capayment-parent">
+
+                
                  <div className="capayment-headerrow">
                      <div className="capayment-header">Payment Information</div>
                      <div className="capayment-line1"></div>
                  </div>
+
+                 
                  <div className="capayment-paymentinfo">
                      <div className="capayment-paymentstatus">
                      <svg width="30" height="30" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,33 +238,7 @@ export default class Payment extends Component{
                          <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
                      </div>
                      <div className="capayment-discountcoupon">
-                     <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
-                     <Modal
-                        className="capayment-couponmodal"
-                        title="APPLY COUPON"
-                        visible={this.state.isModalVisible}
-                        onOk={this.handleOk}
-                        onCancel={this.handleCancel}
-                        >
-                        <div className="capayment-modalheader">
-                        Enter Coupon Code
-                        </div>
-                        <input className="capayment-modalinputcode" value={this.state.couponcode} onChange={e=>{
-                            this.setState({
-                                couponcode:e.target.value,
-                            })
-                        }} type="text"/>
-                        <div className="capayment-modalmiddlerow">
-                            <hr className="capayment-modalline" /> OR <hr className="capayment-modalline" />
-                        </div>
-                        <div className="capayment-modallastrow">
-                            <div className="capayment-modallastrowheader">Choose a valid coupon</div>
-                            <div className="capayment-modalcouponlist">
-                                <Coupon />
-                            </div>
-                        </div>
-                        
-                    </Modal>
+                     <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" data-target="#myModal" data-toggle="modal" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
                      </div>
                      <div className="capayment-horizontalline"></div>
                      <div className="capayment-totalamt">
@@ -284,8 +247,8 @@ export default class Payment extends Component{
                  </div>
                  <div className="capayment-middlerow">
                  <div className="capayment-tnc">
-                    &#x26B9; The criteria for discounts availed in fees have been discussed in the discount criterion below<br/>
-                    &#x26B9; Only one coupon applicable for discounts
+                    &#x26B9; The criteria for discountListiled in fees have been discussed in the discount criterion below<br/>
+                    &#x26B9; Only one coupon applicablList discounts
                 </div> 
                 <button onClick={e=>{this.onPay(e)}} className="capayment-paymentbtn">
                     PAY NOW
@@ -307,6 +270,8 @@ export default class Payment extends Component{
                         <CriteriaMapping/>
                     </div>
                 </div>
+
+                
             </div>
         )
                 }
@@ -319,7 +284,7 @@ export default class Payment extends Component{
                  </div>
                  <div className="capayment-paymentinfodoneu" id="capayment-paymentinfodoneu">
                      <div className="capayment-paymentstatusdone">
-                     <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg width="30" height="30" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M27.9224 12.6543L18.2446 22.5078L13.2885 17.5283L10.6172 20.1997L18.4321 28.0029L30.9921 15.8177L27.9224 12.6543Z" fill="#70BF48"/>
 <path d="M20.4258 0C9.37716 0 0.425781 8.95138 0.425781 20C0.425781 31.0486 9.37716 40 20.4258 40C31.4744 40 40.4258 31.0486 40.4258 20C40.4141 8.95138 31.4627 0 20.4258 0ZM20.4258 36.3679C11.3807 36.3679 4.04617 29.0334 4.04617 19.9883C4.04617 10.9432 11.3807 3.60867 20.4258 3.60867C29.4709 3.62039 36.7937 10.9432 36.8054 19.9883C36.7937 29.0451 29.4709 36.3679 20.4258 36.3679Z" fill="#70BF48"/>
 </svg>
@@ -380,7 +345,7 @@ export default class Payment extends Component{
 
 
 
-
+                             
 
                  <div className="capayment-bottomrow">
                     <div className="capayment-discountcriterion"> Discount Criterion</div>
@@ -397,7 +362,10 @@ export default class Payment extends Component{
                         <CriteriaMapping/>
                     </div>
                 </div>
+           
                         </div>
+
+                    
                     )
                 }
     }

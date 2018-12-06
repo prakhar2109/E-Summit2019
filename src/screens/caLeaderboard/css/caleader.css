@@ -77,3 +77,96 @@ th#cacollege{
     color: #1A4D66 !important;
 }
 
+
+/* .caupdatecontainer{
+
+    position: relative;
+    height: 13.33vh;
+    width: 2.77vw;
+    box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 82px 0px 0px 101px;
+    background: blue;
+
+}
+
+
+
+
+.caoverlay{
+
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color:green;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+
+
+.caupdatecontainer:hover .caoverlay {
+    width: 100%;
+    left: 0;
+  } */
+
+
+  .cacontainer-child{
+
+    display: flex;
+    flex-direction: row;
+    width: 34.72vw;
+    height: 40vh;
+    transition: .5s ease;
+    position: relative;
+    right: 0vw;
+   
+    
+  }
+
+
+  .caupdatecontainer{
+
+    margin-top: 13.33vh;
+    height: 13.33vh;
+    width: 2.77vw;
+    box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 82px 0px 0px 101px;
+    background: #007CB9;
+  }
+
+  .caoverlay{
+
+    height: 40vh;
+    background:#007CB9;
+    width: 34.72vw;
+    overflow: scroll;
+    padding: 7.03vh;
+    color:#fff;
+    font-size: 12px;
+
+  } 
+
+  .cacontainer{
+    position: fixed;
+    top: 27vh;
+    right: -32.2vw;
+  }
+
+  .cacontainer:hover .cacontainer-child{
+    right: 32vw;
+  } 
+
+  .ca{
+        transform: rotate(-90deg);
+        transform-origin: right, top;
+        -ms-transform: rotate(-90deg);
+        -ms-transform-origin:right, top;
+        -webkit-transform: rotate(-90deg);
+        -webkit-transform-origin:right, top;
+     
+        color:#fff;
+        margin-top: 8vh;
+        margin-left: 1vw;
+  }

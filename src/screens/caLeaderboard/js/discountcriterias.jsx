@@ -22,7 +22,7 @@ export default class CriteriaMapping extends Component{
         super()
         this.state={
             noOfCriterias:14,
-            criteria:['mdm','snkks','dg0','dg','sg','sgsg','sg','gf','fhhf','sfsf','sgsg','adnknad','akdnad','adkad'],
+            criteria:["20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee."],
         }
     }
     render() {

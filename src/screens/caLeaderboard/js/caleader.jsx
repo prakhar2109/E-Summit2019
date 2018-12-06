@@ -19,7 +19,7 @@ export default class Caleader extends Component {
                             <th id="capoints">Points</th>
                         </tr>
                         <tr>
-                            <td id="caranktd">1</td>         
+                            <td id="caranktd">1</td>
                             <td>Prakhar Agarwal</td>
                             <td>IIT Roorkee</td>
                             <td id="capointstd">50</td>
@@ -36,8 +36,26 @@ export default class Caleader extends Component {
                             <td>IIT Roorkee</td>
                             <td id="capointstd">50</td>
                         </tr>
-                        
+
                     </table>
+                </div>
+
+                <div className="cacontainer">
+
+                    <div className="cacontainer-child">
+                        <div className="caupdatecontainer">
+                            <div className="ca">
+                            UPDATES
+                            </div>
+                        </div>
+                        <div className="caoverlay">  
+                        'Rozgar Melas' organised by the National Skill Development 
+                        Corporation (NSDC) in various cities have been instrumental in
+                        connecting thousands of youth to employers, UP Deputy Chief 
+                        Minister Dinesh Sharma said.
+                        </div>
+                     </div>
+
                 </div>
             </div>
         )
