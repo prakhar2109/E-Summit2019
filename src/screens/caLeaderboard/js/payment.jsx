@@ -1,16 +1,16 @@
+/* eslint-disable */
 import React, { Component } from 'react'
 import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
-import { Modal, Button } from 'antd';
+import { Modal } from 'antd';
 import Coupon from './coupon'
 
 export default class Payment extends Component{
     constructor(){
         super()
         this.state={
-            isPayed:false,
-            possibleCouponCodes:['GFDS'],
-            possibleCouponCashback:['50'],
+            isPayed:false,//if payment is done, value will come from backend
+            possibleCoupons:{"GFDS":"50"},//coupons which are to be entered
             registrationFee:800,//data if payment not done
             accomodationFee:1000,
             visibleAccomodationFee:1000,
@@ -23,7 +23,10 @@ export default class Payment extends Component{
             couponcode:'',
             couponSelected:'',
             
-            registrationFeePayed:800,//data if payment is already done
+
+            //if payment is done isPayed will become true
+            // values will come from backend
+            registrationFeePayed:0,
             accomodationFeePayed:1000,
             visibleAccomodationFeePayed:1000,
             discountAvailedPercentPayed:20,
@@ -149,26 +152,44 @@ export default class Payment extends Component{
         })
     }
     handleOk = ()=>{
-        let index = this.state.possibleCouponCodes.indexOf(this.state.couponcode)
+        //checking if entered value exists in keys
+        let {couponcode,possibleCoupons} = this.state
+        let index=''
+        // console.log(possibleCoupons["GFDS"])
+        
         let sval=''
         let nval=0
         try{
-        
-         sval = document.querySelector('input[name="coupon"]:checked').value;
-         nval = parseInt(sval)
+            try{
+                sval = document.querySelector('input[name="coupon"]:checked').value;
+                nval = parseInt(sval)
+            }
+            catch(err){
+                sval=''
+                nval=0  
+            }
+         
+         
+                // console.log(this.state.couponcode in this.state.possibleCoupons)
+         if((this.state.couponcode in this.state.possibleCoupons)){
+            index = couponcode
+            // console.log(index)    
+        }
+            else if(nval==0){
+                alert('Coupon code invalid')
+            }
         }
         catch(err){
-            sval=''
-            nval=0    
+            alert("hi")   
         }
-        if(index!=-1&&nval==0){
+        if(index!=''&&nval==0){
             this.setState({
-                couponDiscountPercent:this.state.possibleCouponCashback[index],
+                couponDiscountPercent:possibleCoupons[index],
                 isModalVisible:false,
                 isApplied:true,
             },()=>{})
         }
-        else if(index==-1&&nval!=0){
+        else if(index==''&&nval!=0){
         this.setState({
             couponDiscountPercent:nval,
             isModalVisible:false,
@@ -176,7 +197,7 @@ export default class Payment extends Component{
         },()=>{})
     }
     else{
-        alert("Only 1 way to select coupon is allowed")
+        alert("Please select the coupon either way")
         // document.querySelector('input:radio[name="coupon"]:checked').prop('checked', false).checkboxradio("refresh");
         this.setState({
             couponDiscountPercent:0,
