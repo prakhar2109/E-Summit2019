@@ -89,6 +89,7 @@ export default class Cainvite extends Component {
                 </div>
                 <div id="show" className="cainvite-register-parent-child2" >
                 <table id="cainvite01">
+		<tbody>
                         <tr>
                             <th id="cainvitename">NAME</th>
 
@@ -124,7 +125,7 @@ export default class Cainvite extends Component {
                             <td id="cainvitename-child">Prakhar Agarwal</td>
                             <td>Done</td>
                         </tr>
-                        
+                     </tbody>
                     </table>
                 </div>
 

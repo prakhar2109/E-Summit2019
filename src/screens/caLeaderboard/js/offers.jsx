@@ -9,6 +9,7 @@ export default class Viewprofile extends Component {
                 <div className="ca-offers-parent-heading1 caoffersparent-font">
                     Earned Coupons
             </div>
+	    <div className="caoffers-line1"></div>
                 <div className="caoffers-earnedcoupons-rowparent1">
                     <div className="caoffers-earnedcoupons-child">
                         <div className="caoffers-earnedcoupons-child-heading caoffersheading-font">
@@ -36,6 +37,7 @@ export default class Viewprofile extends Component {
                 <div className="ca-offers-parent-heading2 caoffersparent-font">
                     Coupons Available
             </div>
+	    <div className="caoffers-line1"></div>
                 <div className="caoffers-earnedcoupons-rowparent1">
                     <div className="caoffers-earnedcoupons-child">
                         <div className="caoffers-earnedcoupons-child-heading caoffersheading-font">

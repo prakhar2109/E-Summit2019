@@ -1,5 +1,5 @@
 .caheader {
-    padding: 15px 1rem;
+    
 
 }
 
@@ -15,7 +15,8 @@
     color: #1a4d66;
 }
 .caheader-parent{
-   
+   box-shadow:0px 2px 8px rgba(0, 0, 0, 0.09);
+    padding: 15px;
 
 }
 .caheader .mob_menu {
@@ -88,4 +89,18 @@
     .caheader {
         display: none;
     }
+    
+}
+
+@media only screen and (max-width: 900px){
+#optionsToggle{
+display:none;
+}
+
+.linkEventson{
+color:#333333 !important;
+text-decoration:none !important;
+}
+
+
 }

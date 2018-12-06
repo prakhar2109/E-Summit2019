@@ -41,7 +41,15 @@
    
     color: rgba(130, 130, 130, 0.93);
 }
-
+.caoffers-line1 {
+    flex-basis: 65vw;
+    height: 0.3vh;
+    background-color: #E0E0E0;
+    /* position: absolute; */
+    margin-top: -1.4vh;
+    width: 83%;
+    margin-left: 12vw;
+}
 
 .ca-offers-parent-heading2{
 

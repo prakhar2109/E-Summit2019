@@ -4,17 +4,28 @@
     top: 0;
     left: 18%;
     width: 82%;
-    height: 100vh;
+    min-height: 100vh;
+padding-bottom: 2vh;
+background-color: #F7F8F9;
 
 
 }
-
+.caleader-line1 {
+    flex-basis: 65vw;
+    height: 0.3vh;
+    background-color: #E0E0E0;
+    /* position: absolute; */
+    margin-top: -1.9vh;
+    width: 90%;
+    margin-left: 6vw;
+}
 .caleader-heading{
 
     margin-top: 3.33vh;
     margin-left: 2.24%;
     color: rgba(130, 130, 130, 0.93);
     font-size:14.22px;
+    font-family:"ProximaNova-Semibold" !important; 
 }
 
 .caleader-board-parent{
@@ -203,6 +214,26 @@ table#ca01 td{
     font-size: 24px;
     font-family:"ProximaNova-Semibold" !important; 
  
+}
+
+}
+
+
+@media only screen and (max-width: 900px){
+.caleaderboard-parent {
+    color: black;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    padding-bottom: 2vh;
+    background-color: #F7F8F9;
+}
+
+.caleader-heading {
+    padding-top: 3.33vh;
+    margin-top:0;
 }
 
 }

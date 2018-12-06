@@ -68,7 +68,7 @@ class CATask extends Component {
             isfileUploaded: false,
             fileUploaded: null
         }
-    }
+    } 
     state = {
         visible: true,
     }

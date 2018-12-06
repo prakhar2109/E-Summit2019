@@ -16,7 +16,7 @@ export default class caLeaderboard extends Component {
       score: "0",
       activeState:"",
     };
-  }
+  } 
 	
   setActive = (state) => {
         this.setState({

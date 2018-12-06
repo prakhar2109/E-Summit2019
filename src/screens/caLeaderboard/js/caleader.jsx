@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import "../css/caleader.css";
-
+// import Header from '../../header/caheader'
 export default class Caleader extends Component {
 
     render() {
         return (
             <div className="caleaderboard-parent">
+            {/* <Header/> */}
                 <div className="caleader-heading">
                     Top10
                 </div>
+		<div className="caleader-line1"></div>
 
                 <div className="caleader-board-parent">
                     <table id="ca01">
