@@ -64,7 +64,7 @@ export default class ComingSoon extends Component {
         .display = "none";
  
    
-        alert(response);
+        alert("Check Username/ Password");
    
     });
   };
