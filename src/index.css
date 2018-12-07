@@ -6,6 +6,12 @@
         src:url('./fonts/ProximaNova-Regular.otf')  format('truetype');
     
         }
+@font-face {
+        font-family: "ProximaNova-Light";
+        
+        src:url('./fonts/ProximaNova-Light.otf')  format('truetype');
+    
+        }
 
 @font-face {
         font-family: "ProximaNova-Semibold";

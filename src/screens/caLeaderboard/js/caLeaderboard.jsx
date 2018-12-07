@@ -125,7 +125,7 @@ export default class caLeaderboard extends Component {
               <br />
               </span>
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton">Rulebook</div>
+              <div id="leaderboardButton"><a>CA RULEBOOK</a></div>
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>

@@ -10,6 +10,7 @@
 .caprofile-container-heading{
     margin-top: 3.33vh;
     margin-left: 1.875vw;
+    font-family:"ProximaNova-Semibold" !important;
 
 }
 .ant-modal-content{
@@ -128,7 +129,7 @@ margin-left:6%;
     font-size: 18px;
     margin-bottom: 4vh;
     color: #4F4F4F;
-    font-weight: 600;
+    font-family:"ProximaNova-Semibold" !important;
 }
 
 .caprofile-parent1-child3{
@@ -221,7 +222,7 @@ color: rgba(79, 79, 79, 0.44);
     color: #4F4F4F;
     line-height: normal;
     font-size: 18px;
-    font-weight: 600;
+    font-family:"ProximaNova-Semibold" !important;
 
 }
 .caprofile-parent3-child2-collegename-heading{
@@ -237,17 +238,16 @@ color: rgba(79, 79, 79, 0.44);
 
 .caprofile-heading{
     line-height: normal;
-    font-size:1.286rem;
+    font-size:19.88px;
     margin-top: 4.44vh;
-    font-weight: 600;
     color: #B2B2B2;
-
+    font-family:"ProximaNova-Semibold" !important;
 }
 
 .caprofile-data{
     word-break: break-all;
     line-height: normal;
-    font-size: 1rem;
+    font-size: 17.04px;
     margin-top: 1.22vh;
     color: #4F4F4F;
 
@@ -375,4 +375,201 @@ padding: 1.11vh;
     width: 23vw;
     display: flex;
     flex-direction: column;
+}
+@media only screen and (min-width: 900px){
+#caprofilemobile-b01 {
+
+display:none;
+}
+#caprofile-editprofilecontainter{
+display:none;}
+#caprofileeditprofile-parent2{
+display:none;}
+#caprofilemobile-b02{
+display:none}
+}
+@media (min-width: 1920px) and (max-width: 2560px){
+.caprofile-parent1-child1-heading{
+    font-size: 30px;
+}
+.caprofile-heading{
+    font-size: 28px;
+}
+.caprofile-data{
+    font-size:24px;
+}
+.caprofile-parent2-heading{
+font-size: 30px;
+}
+.caprofile-container-heading{
+font-size:20px;
+
+}
+}
+@media only screen and (max-width: 900px){
+
+.caprofile-container{
+	top: 0;
+    	left:0;
+   	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	padding-bottom: 2rem	;
+	background-color: #F7F8F9;
+	width: 100%;
+	position: relative; 
+}
+.caprofile-parent1{
+    margin-right: .857rem;
+    margin-left: .857rem;
+    display: flex;
+    flex-direction: column;
+    width:auto;
+    padding: 1.71rem;
+    height: fit-content;
+    min-height: 40rem;
+
+}
+.caprofile-parent1-child1 {
+    width: 100%;
+    height: 75.30%;
+}
+.caprofile-parent1-childline {
+    width: auto;
+    height: 2px;
+    background: #E0E0E0;
+    margin-top: 2.57rem;
+}
+.caprofile-parent1-child2-name-heading {
+    color: #B2B2B2;
+    margin-top: 3.21rem !important;
+    font-family:"ProximaNova-Semibold" !important;
+}
+.caprofile-containter-parent-child2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+.caprofile-heading {
+    line-height: normal;
+    font-size: 1.286rem;
+    margin-top: 1.42rem;
+    font-weight: 500;
+    color: #B2B2B2;
+    font-family:"ProximaNova-Semibold" !important;
+}
+.caprofile-data {
+    line-height: normal;
+    font-size: 1.14rem;
+    margin-top: .57rem;
+    color: #4F4F4F;
+    word-break: unset;
+}
+.caprofile-parent1-child1-heading {
+    text-align: center;
+    line-height: normal;
+    font-size: 18px;
+    margin-bottom: 1.71rem;
+    color: #4F4F4F;
+    font-weight: 500;
+    font-family:"ProximaNova-Semibold" !important;
+}
+.ca-profilescore {
+    margin-top: 1.14rem;
+}
+.caprofile-parent2{
+    margin-right: .857rem;
+    margin-left: .857rem;
+    margin-top: 1.71rem;
+    display: flex;
+    flex-direction: column;
+    width:auto;
+    padding: 1.71rem;
+    height: fit-content;
+    min-height: 28rem;
+
+}
+.caprofile-parent2-heading {
+    text-align: center;
+    color: #4F4F4F;
+    line-height: normal;
+    font-size: 18px;
+    font-weight: 500;
+    font-family:"ProximaNova-Semibold" !important;
+}
+.caprofile-parent2-child2-collegename-heading{
+
+margin-top:1.71rem;
+}
+.caprofile-parent2-innerchild {
+    display: flex;
+    flex-direction: column;
+}
+.caprofile-parent2-child2-programname {
+    width: auto;
+    overflow: hidden;
+}
+.caprofile-parent3-innerchild {
+    display: flex;
+    flex-direction: column;
+}
+.caprofile-container-heading {
+    padding-top: 1.78rem;
+    margin-left: .857rem;
+    margin-top:0;
+    
+}
+.caprofile-line1 {
+    flex-basis: 68vw;
+    height: 2px;
+    background-color: #E0E0E0;
+    margin-top: -.9rem;
+    width: 77%;
+    margin-left: 19vw;
+}
+#caprofilemobile-b01 {
+    height: 2.857rem;
+    width: 8.5rem;
+    margin-left: 16.35rem;
+    margin-top: 1.35rem;
+    margin-right: .875rem;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.09em;
+    color: #F39423;
+    border: 2px solid #F39423;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: transparent;
+    cursor: pointer;
+}
+#caprofile-b01{
+display:none;}
+.caprofile-dropshape {
+    margin-top: 6%;
+    margin-left: 22%;
+    background-color: #F39423;
+    color: white;
+    height: 11.28rem;
+    max-width: 11.28rem;
+    max-height: 11.28rem;
+    padding-left: 5rem;
+    padding-top: 3rem;
+    font-size: 3.42rem;
+    font-weight: 500;
+    border-top-left-radius: 6vh;
+    border-top-right-radius: 55vh;
+    border-bottom-left-radius: 50vh;
+    border-bottom-right-radius: 55vh;
+}
+.caprofile-containter-parent {
+   
+    width: auto;
+}
+#caprofile-editprofilecontainter{
+display:none;}
+#caprofileeditprofile-parent2{
+display:none;}
+#caprofilemobile-b02{
+display:none}
 }

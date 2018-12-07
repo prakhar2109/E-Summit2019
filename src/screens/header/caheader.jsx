@@ -83,6 +83,15 @@ export default class ComingSoon extends Component {
           <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
         </div>
         <div id="phone" className="mob_menu">
+           <div id="viewProfile">
+              <NavLink to="/dashboard/Viewprofile" className={(this.state.activeState === "profile") ? "linkEventson" : null} onClick={() => {
+              this.setActive("profile");
+            }}>
+                     VIEW PROFILE
+                    </NavLink>
+
+
+            </div>
           <div id="droperShape">{this.state.name[0]}</div>
           <div className="headerdata">
             <p id="nms">{this.state.name} </p>
@@ -149,7 +158,7 @@ export default class ComingSoon extends Component {
             <br />
           </span>
           {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-          <div id="leaderboardButton">Rulebook</div>
+          <div id="leaderboardButton"><a>CA RULEBOOK</a></div>
         </div>
       </div>
     );

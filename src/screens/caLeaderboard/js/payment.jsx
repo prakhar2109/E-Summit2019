@@ -14,7 +14,7 @@ export default class Payment extends Component{
             accomodationFee:1000,
             visibleAccomodationFee:1000,
             isDiscarded:false,
-            discountAvailedPercent:20,
+            discountAvailedPercent:0,
             isApplied:false,
             couponDiscountPercent:0,
             isBillingOpen:false,
@@ -244,7 +244,7 @@ export default class Payment extends Component{
                      <div className="capayment-accomodationfee">
                      <div className="capayment-spaceaboutcolon">Accomodation Fee <button id="capayment-toggleaccomodation" className="capayment-toggleaccomodation" onClick={(e)=>this.toggleAccomodation(e)}>Discard</button>   </div> :<div className="capayment-space"></div>Rs&nbsp;{visibleAccomodationFee}
                      </div>
-                     <div className="capayment-discountavailed">
+                     {/* <div className="capayment-discountavailed">
                          <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
                      </div>
                      <div className="capayment-discountcoupon">
@@ -276,7 +276,7 @@ export default class Payment extends Component{
                         </div>
                         </div>
                     </Modal>
-                     </div>
+                     </div> */}
                      <div className="capayment-horizontalline"></div>
                      <div className="capayment-totalamt">
                      <div className="capayment-spaceaboutcolon">Total Amount</div>:<div className="capayment-space"></div>Rs&nbsp;{totalamt}

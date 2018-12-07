@@ -184,6 +184,17 @@ th#cacollege{
         margin-left: 1vw;
   }
 
+#caranktd{
+border-right:1px solid #DDDDDD;
+}
+#canametd{
+border-right:1px solid #DDDDDD;
+}
+
+#cacollegenametd{
+
+border-right:1px solid #DDDDDD;
+}
 
 
 
@@ -217,7 +228,12 @@ table#ca01 td{
 }
 
 }
+@media only screen and (min-width: 900px){
+.caleader-board-mobileparent{
+display:none;
+}
 
+}
 
 @media only screen and (max-width: 900px){
 .caleaderboard-parent {
@@ -232,8 +248,62 @@ table#ca01 td{
 }
 
 .caleader-heading {
-    padding-top: 3.33vh;
+    padding-top: 1.84rem;
     margin-top:0;
+}
+table#ca01 th{
+font-size:10px;
+font-family:"ProximaNova-Semibold" !important; 
+}
+
+table#ca01 td{
+font-size:16px;
+font-family:"ProximaNova-Regular" !important; 
+}
+table#ca01 th {
+    padding-bottom: 1.14rem;
+}
+.caleader-board-mobileparent{
+ padding: 1.028rem 2vw;
+ margin-top: 2rem;
+ background: #fff;
+ width: 95.52%;
+ height: 100vh;
+ margin-left: 2.24%;
+    
+
+}
+
+table#ca01 td{
+padding-bottom: 0.8571rem;
+    padding-top: 0.8571rem;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.caleader-line1{
+    width: 78%;
+    margin-left: 17vw;
+    height: 2px;
+    background-color: #E0E0E0;
+    margin-top: -0.9rem;
+}
+.cacontainer{
+display:none;}
+th#caname{
+width:73.44%;
+}
+th#carank {
+    width: 12.77%;
+}
+#cacollegespan{
+font-size:12px;
+font-family: "ProximaNova-Light";
+word-break:break-all;
+
+}
+.caleader-board-parent{
+display:none;
 }
 
 }

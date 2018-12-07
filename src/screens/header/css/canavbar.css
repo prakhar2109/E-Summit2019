@@ -20,6 +20,7 @@
 
 }
 .caheader .mob_menu {
+    flex-wrap:wrap;
     display: none;
     margin-top: 5vh;
     -webkit-box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
@@ -94,12 +95,42 @@
 
 @media only screen and (max-width: 900px){
 #optionsToggle{
-display:none;
+	display:none;
+	border: 2px solid #F2F2F2;
+   	box-sizing: border-box;
+    	border-radius: 4px;
+	box-shadow:none;
+	margin-top:0;
+	font-size: 20px;
+	height: fit-content;
+    	max-height: fit-content;
+    	padding: 2.28rem;
 }
 
 .linkEventson{
 color:#333333 !important;
 text-decoration:none !important;
+}
+
+.caheader .mob_menu{
+    flex-wrap: wrap;
+    padding: 2.28rem;
+    padding-bottom:0;
+    box-shadow:none;
+    margin-top:0;
+}
+#viewProfile a{
+
+color: #F39423 !important;
+}
+#viewProfile{
+    margin-left:0;
+    width: 100%;
+    margin-right: 8%;
+    font-size: 12px;
+}
+.caheader #nms{
+ font-family:"ProximaNova-Semibold" !important;
 }
 
 

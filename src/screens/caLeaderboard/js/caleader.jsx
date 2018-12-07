@@ -23,20 +23,52 @@ export default class Caleader extends Component {
                         </tr>
                         <tr>
                             <td id="caranktd">1</td>
-                            <td>Prakhar Agarwal</td>
-                            <td>IIT Roorkee</td>
+                            <td id="canametd">Prakhar Agarwal</td>
+                            <td id="cacollegenametd">IIT Roorkee</td>
                             <td id="capointstd">50</td>
                         </tr>
                         <tr>
                             <td id="caranktd">2</td>
-                            <td>Prakhar Agarwal</td>
-                            <td>IIT Roorkee</td>
+                            <td id="canametd">Prakhar Agarwal</td>
+                            <td id="cacollegenametd">IIT Roorkee</td>
                             <td id="capointstd">50</td>
                         </tr>
                         <tr>
                             <td id="caranktd">3</td>
-                            <td>Prakhar Agarwal</td>
-                            <td>IIT Roorkee</td>
+                            <td id="canametd">Prakhar Agarwal</td>
+                            <td id="cacollegenametd">IIT Roorkee</td>
+                            <td id="capointstd">50</td>
+                        </tr>
+			</tbody>
+                    </table>
+                </div>
+
+
+	
+
+		<div className="caleader-board-mobileparent">
+                    <table id="ca01">
+			<tbody>
+                        <tr>
+                            <th id="carank">Rank</th>
+                            <th id="caname">Name & University</th>
+                            
+                            <th id="capoints">Points</th>
+                        </tr>
+                        <tr>
+                            <td id="caranktd">1</td>
+                            <td id="canametd">Prakhar Agarwal <br/><span id="cacollegespan">IIT Roorkee</span></td>
+                            
+                            <td id="capointstd">50</td>
+                        </tr>
+                        <tr>
+                            <td id="caranktd">2</td>
+                            <td id="canametd">Prakhar Agarwal <br/><span id="cacollegespan">IIT Roorkee</span></td>
+                            <td id="capointstd">50</td>
+                        </tr>
+                        <tr>
+                            <td id="caranktd">3</td>
+                            <td id="canametd">Prakhar Agarwal <br/><span id="cacollegespan">IIT Roorkee</span></td>
                             <td id="capointstd">50</td>
                         </tr>
 			</tbody>
