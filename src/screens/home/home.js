@@ -157,7 +157,7 @@ export default class ComingSoon extends Component {
                 </span>
 
                 <span className='phone_no'>
-                  <a href='tel:9992929203'>+91 9992929203</a>
+                  <a href='tel:7302200596'>+91 7302200596</a>
                 </span>
               </span>
 
@@ -237,7 +237,7 @@ export default class ComingSoon extends Component {
               </span>
 
               <span className='phone_no'>
-                <a href='tel:9992929203'>+91 9992929203</a>
+                <a href='tel:7302200596'>+91 7302200596</a>
               </span>
             </span>
 
