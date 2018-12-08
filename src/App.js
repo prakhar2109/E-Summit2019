@@ -4,7 +4,7 @@ import React, { Component } from "react";
 // import Login from "./screens/login/login";
 // import Register from "./screens/register/register";
 // import ignite from "./screens/ignite/ignite"
-// import Lfooter from "./screens/footer/landingpagefooter"
+import Lfooter from "./screens/footer/landingpagefooter"
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -85,7 +85,7 @@ class App extends Component {
             <Route exact path="/dashboard/" component={LeaderBoard} />
             <Route path="/ignite" component={ignite} />
             <Route path="/loader" component={Loader} />
-            {/* <Route path="/footer" component={Lfooter} /> */}
+            <Route path="/footer" component={Lfooter} />
             {/* <Route path="/Rselect" component={RSelect} /> */}
       
             {/* </div> */}
