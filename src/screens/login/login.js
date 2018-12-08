@@ -90,7 +90,7 @@ export default class ComingSoon extends Component {
                 it loads and loads of colossal opportunities for the participating students and
                 exciting perks for the Campus Ambassadors.
               </span>
-              <rohit>
+              <span id="perksexcite">
                 <p>
                   the exciting perks!
                 </p>
@@ -106,7 +106,7 @@ export default class ComingSoon extends Component {
                 <br/>
                 4. Other additional goodies and benefits will be awarded to the top performing
                 CAs.
-              </rohit>
+              </span>
               {/* <a href="./../../pdfs/perks.pdf" target="_blank">
                                                 <button>PERKS</button>
                                             </a> */}
