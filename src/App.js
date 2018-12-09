@@ -14,13 +14,13 @@ import Loader from './screens/common/loader';
 
  
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
-const Loading = ({ error }) => {
-  if (error) {
-    return <div>Error loading component</div>;
-  } else {
-    return <Loader />;
-  }
-};
+// const Loading = ({ error }) => {
+//   if (error) {
+//     return <div>Error loading component</div>;
+//   } else {
+//     return <Loader />;
+//   }
+// };
 
 const Login = Loadable({
   loader: () => import("./screens/login/login"),

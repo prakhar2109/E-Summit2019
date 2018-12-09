@@ -17,24 +17,24 @@ export default class FooterWithoutContactUs extends Component {
             <div>
                 <p>Social Media</p>
 
-                <p>
+                
                     <div className="footer_social">
                         <span>
-                            <a target="_blank" href="https://twitter.com/EDC_IITRoorkee">
+                            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/EDC_IITRoorkee">
                                 <i className="fab fa-twitter"></i>
                             </a>
-                            <a target="_blank" href="https://www.facebook.com/ecelliitr/">
+                            <a target="_blank"  rel="noopener noreferrer"href="https://www.facebook.com/ecelliitr/">
                                 <i className="fab fa-facebook-f"></i>
                             </a>
-                            <a target="_blank" href="https://www.instagram.com/ecelliitr/">
+                            <a target="_blank"  rel="noopener noreferrer"href="https://www.instagram.com/ecelliitr/">
                                 <i className="fab fa-instagram"></i>
                             </a>
-                            <a target='_blank' href='https://www.linkedin.com/company/esummit/'>
+                            <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/esummit/'>
                                 <i className='fab fa-linkedin'/>
                             </a>
                         </span>
                     </div>
-                </p>
+            
 
             </div>
 
@@ -86,13 +86,13 @@ export default class FooterWithoutContactUs extends Component {
             <span>
                 <div className="footer_social">
                     <span>
-                        <a target="_blank" href="https://twitter.com/EDC_IITRoorkee">
+                        <a target="_blank"  rel="noopener noreferrer" href="https://twitter.com/EDC_IITRoorkee">
                             <i className="fab fa-twitter"></i>
                         </a>
-                        <a target="_blank" href="https://www.facebook.com/ecelliitr/">
+                        <a target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/ecelliitr/">
                             <i className="fab fa-facebook-f"></i>
                         </a>
-                        <a target="_blank" href="https://www.instagram.com/ecelliitr/">
+                        <a target="_blank"  rel="noopener noreferrer" href="https://www.instagram.com/ecelliitr/">
                             <i className="fab fa-instagram"></i>
                         </a>
                     </span>
