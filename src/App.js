@@ -12,7 +12,7 @@ import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
 
 
- 
+
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 const Loading = ({ error }) => {
   if (error) {
@@ -28,6 +28,16 @@ const Login = Loadable({
   loading: () => <Loader />,
 
 });
+
+
+const Stepform = Loadable({
+  loader: () => import("./components/Stepform"),
+
+  loading: () => <Loader />,
+
+});
+
+
 
 const HomePage = Loadable({
   loader: () => import("./screens/home/home"),
@@ -54,6 +64,12 @@ const LeaderBoard = Loadable({
   loading: () => <Loader />,
 });
 
+const SocialLogin = Loadable({
+  loader: () => import("./components/Index"),
+  loading: () => <Loader />,
+});
+
+
 class App extends Component {
   constructor() {
     super();
@@ -67,30 +83,30 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-          <React.Fragment>
-            {/* <div id = "main_class" className ="main_class">  */}
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/login" component={Login} />
-
+            <React.Fragment>
+              {/* <div id = "main_class" className ="main_class">  */}
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/social" component={SocialLogin} />
               {/* <Route exact path="/register" component={Register} />
             {
               this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
                 <Route exact path="/login" component={Login} />
             } */}
 
-             <Route exact path="/register" component={Register} />
-            
+              <Route exact path="/register" component={Register} />
 
+              <Route exact path="/stepform" component={Stepform} />
 
-            <Route exact path="/dashboard/" component={LeaderBoard} />
-            <Route path="/ignite" component={ignite} />
-            <Route path="/loader" component={Loader} />
-            {/* <Route path="/footer" component={Lfooter} /> */}
-            {/* <Route path="/Rselect" component={RSelect} /> */}
-      
-            {/* </div> */}
-            
-          </React.Fragment>
+              <Route exact path="/dashboard/" component={LeaderBoard} />
+              <Route path="/ignite" component={ignite} />
+              <Route path="/loader" component={Loader} />
+              {/* <Route path="/footer" component={Lfooter} /> */}
+              {/* <Route path="/Rselect" component={RSelect} /> */}
+
+              {/* </div> */}
+
+            </React.Fragment>
           </Switch>
         </div>
       </Router>
