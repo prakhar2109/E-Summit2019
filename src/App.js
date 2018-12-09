@@ -37,6 +37,12 @@ const Stepform = Loadable({
 
 });
 
+const Timeline = Loadable({
+  loader: () => import("./components/timeline/Index"),
+
+  loading: () => <Loader />,
+
+});
 
 
 const HomePage = Loadable({
@@ -88,6 +94,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/social" component={SocialLogin} />
+              <Route exact path="/timeline" component={Timeline} />
               {/* <Route exact path="/register" component={Register} />
             {
               this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
