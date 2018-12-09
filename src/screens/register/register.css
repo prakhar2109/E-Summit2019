@@ -1,4 +1,4 @@
-rohit {
+#perksexcite {
   padding: 6vh 4rem 6vh 4rem;
   font-size: 1.5rem;
   line-height: normal;
@@ -8,7 +8,7 @@ rohit {
   color: #1A4D66;
 }
 
-rohit p {
+#perksexcite p {
   margin-top: 10vh;
   line-height: normal;
   font-size: 2rem;
@@ -215,11 +215,11 @@ rohit p {
     font-size: 16px;
     letter-spacing: 0.06em;
   }
-  rohit p{
+#perksexcite p{
     font-size: 1.5rem;
     text-transform: uppercase;
   }
-  rohit{
+  #perksexcite{
     margin: 2rem 1.375rem;
     font-size: 0.875rem;
     line-height: 1.1875rem;

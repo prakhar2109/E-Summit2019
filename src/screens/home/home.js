@@ -7,21 +7,21 @@ import $ from 'jquery'
 import phone from './static/Group.svg'
 import mail from './static/mail-icon.png'
 
-import Select from 'react-select';
+
 
 import 'form-serializer';
 
-const category_option = [
-  {
-    value :"Student", 
-    label :"Student"
-  },
+// const category_option = [
+//   {
+//     value :"Student", 
+//     label :"Student"
+//   },
 
-  {
-    value : "Professional",
-    label : "Professional"
-  }
-]
+//   {
+//     value : "Professional",
+//     label : "Professional"
+//   }
+// ]
 
 export default class ComingSoon extends Component {
   constructor() {
@@ -136,15 +136,15 @@ export default class ComingSoon extends Component {
 
             <div className='social'>
               <span>
-                <a target='_blank' href='https://www.linkedin.com/company/esummit/'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/esummit/'>
                   <i className='fab fa-linkedin' />
                 </a>
                 <br />
-                <a target='_blank' href='https://www.facebook.com/ecelliitr/'>
+                <a target='_blank'  rel="noopener noreferrer" href='https://www.facebook.com/ecelliitr/'>
                   <i className='fab fa-facebook-f' />
                 </a>
                 <br />
-                <a target='_blank' href='https://www.instagram.com/ecelliitr/'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/ecelliitr/'>
                   <i className='fab fa-instagram' />
                 </a>
               </span>
