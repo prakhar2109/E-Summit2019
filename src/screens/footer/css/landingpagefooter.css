@@ -199,7 +199,17 @@ font-family: "ProximaNova-Light";
     color: #F49D35;
 }
 
+@media (min-width: 900px){
+.landing-pagefooterbottom-mobile{
+display:none;
+}
+.landingpagefooter-mobile{
+display:none;
+}
 
+
+
+}
 @media (min-width: 1920px) and (max-width: 2560px){
 
 
@@ -244,4 +254,137 @@ font-size:44px;
 font-size:32px;
 
 }
+
+}
+
+@media (max-width: 900px){
+
+.landingpagefooter-mobile{
+    background:url('../img/landingfooter.png');
+    background-size: cover;
+        height: fit-content;
+
+    padding-top:8rem;
+}
+.landing-pagefooterbottom-mobile{
+    background:#242626;
+   padding: 32px;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 2.85rem;
+    display: inline-block;
+
+
+
+}
+.landing-pagefooterbottom{
+display:none;
+}
+.landingpagefooter{
+display:none;
+}
+#ladingpageinput{
+width: 100%;
+font-size:16px;
+   font-family: "ProximaNova-Semibold";
+margin-bottom:1.42rem;
+    height: 3.42rem;
+
+}
+
+#ladingpagetextinput{
+width: 100%;
+font-size:16px;
+   font-family: "ProximaNova-Semibold";
+margin-bottom:1.42rem;
+    height: 17.71rem;
+
+}
+#ladingpagebuttonb01{
+width: 100%;
+font-size:16px;
+   font-family: "ProximaNova-Semibold";
+    height: 3rem;
+
+}
+.footerparent{
+
+flex-direction:column;
+
+}
+.footer-logo{
+width: 100%;
+background-position: center;
+margin-top:7.92rem;
+    height: 5.71rem;
+}
+.footerform{
+padding: 32px;
+width:100%;
+    min-height: 45rem;
+
+}
+.footercontact{
+width:100%;
+padding-left:32px;
+padding-right:32px;
+display: inline-block;
+    min-height: 42rem;
+ 
+
+}
+.footerformfiels{
+padding-right:0;
+padding-top:1.71rem;
+}
+.footerform-heading{
+font-size:18px;
+}
+
+.landing-footer-heading{
+font-size:16px;
+}
+
+
+.landing-footer-details{
+font-size:14px;
+margin-top: .64rem;
+    margin-bottom: 2.28rem;
+}
+
+
+
+.landing-footer-inspiring{
+font-size:12px;
+    text-align: center;
+margin-left: 0;
+}
+.landing-footer-icons{
+text-align: center;
+margin-top: 1.71rem;
+    margin-bottom: 2.57rem;
+}
+
+
+.landing-footer-esummitteam{
+font-size:16px;
+    margin-left: 0;
+    text-align: center;
+margin-bottom: 0;
+}
+
+.landing-bottomfooter-heading{
+font-size:18px;
+}
+
+.landing-bottomfooter-mail{
+font-size:16px;
+margin-top: 1.71rem;
+}
+
+
+
+
+
+
 }
