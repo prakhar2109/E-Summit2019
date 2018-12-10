@@ -7,6 +7,7 @@ import React, { Component } from "react";
 // import Lfooter from "./screens/footer/landingpagefooter"
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm"
 
 import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
@@ -85,6 +86,8 @@ class App extends Component {
             <Route exact path="/dashboard/" component={LeaderBoard} />
             <Route path="/ignite" component={ignite} />
             <Route path="/loader" component={Loader} />
+
+            <Route path = "/ideastorm" component = {IdeaStorm} />
             {/* <Route path="/footer" component={Lfooter} /> */}
             {/* <Route path="/Rselect" component={RSelect} /> */}
       
