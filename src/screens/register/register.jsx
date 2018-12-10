@@ -265,7 +265,7 @@ export default class Register extends Component {
               exciting perks for the Campus Ambassadors.{" "}
             </span>
 
-            <rohit>
+            <span id="perksexcite">
               <p>the exciting perks!
               </p>
               <br/>
@@ -277,7 +277,7 @@ export default class Register extends Component {
               3. Endorsement of your LinkedIn profile by E-Summit IIT Roorkee.<br/>
               4. Other additional goodies and benefits will be awarded to the top performing
               CAs.
-            </rohit>
+            </span>
 
             {/* <center>
               <a href="./../../pdfs/perks.pdf" target="_blank">
@@ -406,7 +406,7 @@ export default class Register extends Component {
                 value={this.state.country}
                 onChange={this.handleCountryChange}
                 options={this.getCountries()}
-                placeholder="Enter your country name"/> {this.state.country.value == "India"
+                placeholder="Enter your country name"/> {this.state.country.value === "India"
                 ? <div>
 
                   <label>STATE
