@@ -37,6 +37,7 @@ display:none;
 
         .head_array {
             span {
+                font-family: "ProximaNova-Semibold";
                 font-size: 20px;
                 text-align: center;
                 letter-spacing: 0.06em;
@@ -70,7 +71,7 @@ display:none;
             letter-spacing: 0.1em;
             padding-bottom: calc(20px + 1vh);
             color: #FFFFFF;
-
+	    font-family: "ProximaNova-Bold";	
             @include mobile {
                 font-size: 16px;
                 padding-bottom: calc(10px + 1vh);
@@ -83,6 +84,7 @@ display:none;
             font-size: 24px;
             letter-spacing: 0.1em;
             color: #FFFFFF;
+            font-family: "ProximaNova-Light";
             padding-bottom: calc(30px + 3vh);
 
             @include mobile {
@@ -100,7 +102,7 @@ display:none;
             line-height: 46px;
             font-size: 24px;
             letter-spacing: 0.1em;
-
+            font-family: "Proxima-nova-regular";
             color: #FFFFFF;
             text-align: justify;
             margin-bottom: calc(10vh + 5rem);
@@ -126,7 +128,7 @@ display:none;
             box-sizing: border-box;
             border-radius: 2px;
             padding: 14px 16px;
-
+            font-family: "ProximaNova-Bold";
             line-height: normal;
             font-size: 20px;
             text-align: center;
@@ -159,10 +161,12 @@ display:none;
 
         .head1 {
             color: #1A4D66;
+            font-family: "ProximaNova-Bold";
         }
 
         ol {
             padding-top: 72px;
+            font-family: "Proxima-nova-regular";
 
             @include mobile {
                 padding-top: 24px;
@@ -172,7 +176,7 @@ display:none;
                 line-height: 41px;
                 font-size: 24px;
                 letter-spacing: 0.1em;
-
+                 font-family: "Proxima-nova-regular"; 
                 color: #000000;
 
                 @include mobile {
@@ -201,10 +205,11 @@ display:none;
 
         .register_now {
             font-size: 40px;
+            font-family: "ProximaNova-Semibold";
         }
 
         p {
-
+	    font-family: "Proxima-nova-regular";		
             text-align: center;
             color: #FFFFFF;
             margin-bottom: 48px;
@@ -219,7 +224,7 @@ display:none;
 
         span {
             padding: 14px 16px;
-
+               font-family: "ProximaNova-Bold";
             border: 2px solid #FFFFFF;
             box-sizing: border-box;
             border-radius: 2px;
@@ -292,6 +297,7 @@ display:none;
 
         .head1 {
             color: #1A4D66;
+            font-family: "ProximaNova-Bold";
         }
 
         .coordinator_grid {
@@ -362,7 +368,7 @@ display:none;
     .timeline {
         
         display: block;
-        height:100vh;
+        height:fit-content;
         background: #1A4D66;
     }
 
