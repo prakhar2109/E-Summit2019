@@ -16,7 +16,7 @@
 
 .header .ecell_logo {
   margin-left: 4.125rem;
-  padding-right: 16vw;
+  padding-right: 20vw;
 }
 
 .header .ecell_logo img {
@@ -33,7 +33,7 @@
 
 .header .links a {
   line-height: normal;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   letter-spacing: 0.06em;
   margin-right: 2vw;
   color: rgba(51, 51, 51, 0.8);

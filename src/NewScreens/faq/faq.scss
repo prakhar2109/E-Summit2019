@@ -1,0 +1,54 @@
+@mixin mobile {
+    @media(max-width: 1200px) {
+        @content;
+    }
+
+}
+
+
+.faq {
+    padding: 80px 250px;
+
+    .head1 {
+        color: #1A4D66 !important;
+    }
+
+    .text {
+        line-height: 41px;
+        font-size: 28px;
+        letter-spacing: 0.1em;
+        color: #000000;
+        padding-top: 44px;
+    }
+
+    .active {
+        color: red !important;
+    }
+
+
+}
+
+.cannot_find {
+
+    background: #F49D35;
+    padding: 128px 0;
+
+    p {
+        line-height: 41px;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0.1em;
+
+        color: #FFFFFF;
+    }
+
+    p:first-child {
+        line-height: normal;
+        font-size: 40px;
+        letter-spacing: 0.1em;
+        color: #FFFFFF;
+        margin-bottom: 56px;
+    }
+
+
+}
