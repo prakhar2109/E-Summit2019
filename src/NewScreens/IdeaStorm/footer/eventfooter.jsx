@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './eventfooter.css';
-
+import Back from "../static/top.png";
+import jump from "jump.js"
 export default class Lfooter extends Component {
-
+    top = () => {
+        jump(".ideastorm", {offset: -130});
+    };
     render() {
 
         return (
@@ -84,6 +87,7 @@ export default class Lfooter extends Component {
                 
                 <div className="landing-pagefooterbottom">
 
+                    <center><img onClick = {this.top} src= {Back} /> </center>
                     <div className="landing-bottomfooter-heading">
                         For Sporsorhip Opportunities or Collaborations
                     </div>
@@ -172,7 +176,7 @@ export default class Lfooter extends Component {
                 </div>
                 
                 <div className="landing-pagefooterbottom-mobile">
-
+                    <center><img onClick = {this.top} src= {Back} /> </center>
                     <div className="landing-bottomfooter-heading">
                         For Sporsorhip Opportunities or Collaborations
                     </div>

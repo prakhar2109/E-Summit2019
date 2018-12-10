@@ -151,6 +151,7 @@
     border-radius: 2px;
     color: #FFFFFF;
     font-size: 17.04px;
+    border:none;
 
 }
 
@@ -186,11 +187,14 @@
 
 .landing-pagefooterbottom {
     background: #242626;
-    padding-top: 8.148vh;
     padding-bottom: 8.148vh;
-
 }
 
+.landing-pagefooterbottom img{
+    margin-top:-30px;
+    padding-bottom: 6vh;
+    cursor: pointer;
+}
 .landing-bottomfooter-heading {
 
     font-family: "Proxima-nova-regular";
@@ -288,15 +292,22 @@
 
     .landing-pagefooterbottom-mobile {
         background: #242626;
-        padding: 32px;
+        
         text-align: center;
-        padding-top: 1rem;
+   
         padding-bottom: 2.85rem;
         display: inline-block;
         width: 100vw;
+        
 
 
 
+
+
+    }
+    .landing-pagefooterbottom-mobile img{
+        margin-top:-35px;
+        margin-bottom: 1rem;
 
     }
 

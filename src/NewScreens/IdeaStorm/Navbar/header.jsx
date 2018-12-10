@@ -26,36 +26,52 @@ export default class ComingSoon extends Component {
     }
 
     timeline = () => {
-        jump(".timeline", {
- 
-            offset: 1000
-          
-        });
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
+        jump(".timeline");
+        
+
     };
 
     Rules = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
         jump(".Rules");
     };
 
     erks = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
         jump(".erks");
     };
 
     faq_idea = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
         jump("#faq_idea");
     };
 
     coordinator = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
         jump(".coordinator");
     };
 
     eligiblity = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
         jump(".eligiblity");
     };
 
     render() {
         return (
-            <div className="Eventsheader">
+            <div id="nav" className="Eventsheader">
                 <div className="idealogo"/>
 
                 <span className="mobile_menu">

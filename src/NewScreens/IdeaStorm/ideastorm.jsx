@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-
 import "./ideastorm.scss";
 import Header from "../../components/header";
 import FAQ from "../landing/faqs";
@@ -10,21 +9,11 @@ import jump from "jump.js";
 import Eventsheader from './Navbar/header'
 import Vector from './static/headVector.png';
 import Timelineindex from './timeline/Index.js';
+import {NavLink } from "react-router-dom";
 
 import "../landing/css/landing.scss";
 export class IdeaStorm extends Component {
-    componentDidMount() {
-
-        var height = document
-            .getElementById("nav")
-            .offsetHeight;
-        height = height + "px";
-
-        document
-            .getElementById("body")
-            .style
-            .paddingTop = height;
-    }
+ 
     state = {
         faq: [
             {
@@ -72,6 +61,8 @@ export class IdeaStorm extends Component {
     register = () => {
         jump(".register", {offset: -130});
     };
+
+   
 
     render() {
 
@@ -268,14 +259,16 @@ export class IdeaStorm extends Component {
 
                 <div className="es">
                     <center>
-                        <a href="http://esummit.in">
-                            <img alt="Esummit Logo" src={esummit}/></a>
+                        <NavLink to ="/">
+                            <img alt="Esummit Logo" src={esummit}/>
+                        </NavLink>
                     </center>
 
                     <p>
-                        Go to
-                        <a href="http://esummit.in">
-                            esummit.in</a>
+                        Go to &nbsp;
+                        <NavLink to ="/"> 
+                            esummit.in
+                        </NavLink>
                     </p>
                 </div>
                 <Eventfooter/>
