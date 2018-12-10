@@ -1,0 +1,58 @@
+@mixin mobile {
+    @media(max-width: 1200px) {
+        @content;
+    }
+
+}
+
+.faq_unit {
+    border-bottom: 4px solid #F7F8F9;
+    margin-bottom: 1rem;
+
+    @include mobile {
+        border-bottom: 2px solid #F7F8F9;
+
+    }
+
+    .answer {
+        display: none;
+        padding: 20px 40px;
+        line-height: 35px;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+        color: #B2B2B2;
+        background: #F7F8F9;
+        cursor: pointer;
+        @include mobile{
+            line-height: normal;
+            font-size: 14px;
+            padding: 0px 10px 20px 10px ;
+
+        }
+
+
+
+    }
+
+    .question {
+        cursor: pointer;
+        line-height: normal;
+        font-size: 28px;
+        padding: 20px 40px;
+        color: #4F4F4F;
+
+        @include mobile {
+            line-height: normal;
+            font-size: 16px;
+            padding: 20px 10px;
+            color: #4F4F4F;
+
+        }
+
+        i {
+            float: right;
+        }
+
+    }
+
+}

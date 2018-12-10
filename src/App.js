@@ -7,6 +7,7 @@ import React, { Component } from "react";
 // import Lfooter from "./screens/footer/landingpagefooter"
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm"
 
 import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
@@ -14,13 +15,13 @@ import Loader from './screens/common/loader';
 
 
 // import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
-const Loading = ({ error }) => {
-  if (error) {
-    return <div>Error loading component</div>;
-  } else {
-    return <Loader />;
-  }
-};
+// const Loading = ({ error }) => {
+//   if (error) {
+//     return <div>Error loading component</div>;
+//   } else {
+//     return <Loader />;
+//   }
+// };
 
 const Login = Loadable({
   loader: () => import("./screens/login/login"),
@@ -113,7 +114,18 @@ class App extends Component {
 
               {/* </div> */}
 
-            </React.Fragment>
+
+            <Route exact path="/dashboard/" component={LeaderBoard} />
+            <Route path="/ignite" component={ignite} />
+            <Route path="/loader" component={Loader} />
+
+            <Route path = "/ideastorm" component = {IdeaStorm} />
+            {/* <Route path="/footer" component={Lfooter} /> */}
+            {/* <Route path="/Rselect" component={RSelect} /> */}
+      
+            {/* </div> */}
+            
+          </React.Fragment>
           </Switch>
         </div>
       </Router>

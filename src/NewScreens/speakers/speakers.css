@@ -1,0 +1,54 @@
+.speakers {
+  padding: 80px 220px;
+  background: #1A4D66;
+}
+
+.speakers .speak {
+  line-height: 47px;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+.speakers .text {
+  line-height: 41px;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  padding-top: 45px;
+  color: #E5E5E5;
+  padding-bottom: 96px;
+}
+
+.speakers .img_holder {
+  height: 236px !important;
+  width: 236px;
+  background: #242626;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.speakers .name {
+  line-height: 41px;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #138AD6;
+}
+
+.speakers .designation {
+  line-height: 29px;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+.speakers .speakers_array {
+  padding-top: 72px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  grid-column-gap: 5vw;
+  grid-row-gap: calc(5em + 5vh);
+}
+/*# sourceMappingURL=speakers.css.map */

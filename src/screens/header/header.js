@@ -31,7 +31,7 @@ export default class ComingSoon extends Component {
       <div className='header'>
 
         <span className='ecell_logo'>
-          <a href='http://ecelliitr.org' target='_blank'><img src={ecell} alt='Ecell Logo' /> </a>
+          <a href='http://ecelliitr.org' target='_blank' rel="noopener noreferrer"><img src={ecell} alt='Ecell Logo' /> </a>
         </span>
 
         <span className='esummit_logo'>
@@ -41,6 +41,7 @@ export default class ComingSoon extends Component {
         <span className='links'>
           <NavLink to = "/login"> Campus Ambassador</NavLink> 
           <NavLink to='/ignite'> Startup Ignite</NavLink>
+          <NavLink target = "_blank" to = "/ideastorm">Idea Storm </NavLink>
 
         </span>
 
