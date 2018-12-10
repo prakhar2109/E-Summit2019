@@ -5,6 +5,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import SocialLogin from "./Index"
 
 const styles = theme => ({
     root: {
@@ -22,16 +23,7 @@ const styles = theme => ({
         // color: "red"
     },
     step: {
-        color: "red",
-        "&$completed": {
-            color: "lightgreen"
-        },
-        "&$active": {
-            color: "pink"
-        },
-        "&$disabled": {
-            color: "blue"
-        }
+        color: "red"
     }
 });
 
@@ -44,7 +36,7 @@ function getSteps() {
 function getStepContent(stepIndex) {
     switch (stepIndex) {
         case 0:
-            return 'ACCOUNT SETUP';
+            return <div><SocialLogin /></div>;
         case 1:
             return 'PROFILE TYPE';
         case 2:

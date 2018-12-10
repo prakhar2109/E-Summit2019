@@ -7,7 +7,8 @@ export default class LoginIndex extends Component {
 
         super(props);
         this.state = {
-            fbres: false
+            fbres: false,
+            onClick: false
         }
     }
 
@@ -36,15 +37,16 @@ export default class LoginIndex extends Component {
                     callback={this.responseFacebook}
                 />
 
-
-                < GoogleLogin
-                    clientId="210798785897-bj54gjooglbsl1rrln9sdoplulbglt0d.apps.googleusercontent.com"
-                    buttonText="Signin with Google"
-                    autoLoad={true}
-                    icon={true}
-                    onSuccess={this.responseGoogle}
-                    onFailure={this.responseGoogle}
-                />
+                {this.state.onClick ?
+                    <GoogleLogin
+                        clientId="210798785897-bj54gjooglbsl1rrln9sdoplulbglt0d.apps.googleusercontent.com"
+                        autoLoad={true}
+                        icon={true}
+                        onSuccess={this.responseGoogle}
+                        onFailure={this.responseGoogle}
+                    />
+                    : null}
+                <button onClick={() => this.setState({ onClick: true })}>Click</button>
             </div>
         );
     }
