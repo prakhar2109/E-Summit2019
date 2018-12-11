@@ -21,7 +21,9 @@ export default class Lfooter extends Component {
     validate = () => {
         console.log("empty field")
         let isError = false;
+ 
         if(this.state.footername===''||this.state.footerPhoneno===''||this.state.footerEmailid===''||this.state.footerEmailid==='')
+ 
         isError=true;
         return isError;
     }
@@ -71,10 +73,12 @@ export default class Lfooter extends Component {
     }
 
     else{
+ 
         document
         .getElementById('footerinfo')
         .innerHTML = 'Either Name or Phone Number or Email or Message is Empty';
         
+ 
     }
 }   
     render() {
