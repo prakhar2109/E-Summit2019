@@ -425,7 +425,7 @@
                 letter-spacing: 0.1em;
 		  font-family: "Proxima-nova-regular";
                 color: #4F4F4F;
-
+               
                 @include mobile {
                     line-height: 21px;
                     font-size: 14px;
@@ -446,7 +446,7 @@
                     line-height: 44px;
                     font-size: 26px;
 
-                    text-align: left;
+      
                     letter-spacing: 0.1em;
                     padding: 20px 0;
                     color: #F49D35;
