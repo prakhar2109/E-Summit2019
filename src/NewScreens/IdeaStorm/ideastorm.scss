@@ -32,9 +32,13 @@
         right: 0;
         z-index: 100000000000000000;
 
-
+        height:100px;
         @include mobile {
             display: none;
+        }
+
+        img{
+            height:100px;
         }
 
         .head_array {
