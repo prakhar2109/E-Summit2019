@@ -22,11 +22,6 @@ export class IdeaStorm extends Component {
     state = {
         faq: [
             {
-                id: 1,
-                question: "I want to participate in Idea Storm 2019. How do I participate?",
-                answer:  "Firstly, you need to register for idea storm on esummit.in/ideastorm. Then you can submit your entries for the first round in subsequent links provided."
-
-            }, {
                 id: 2,
                 question: "What is the last date of submission?",
                 answer: "1st of January is the last date of submission of entries for the first round of the competition."
@@ -56,7 +51,7 @@ export class IdeaStorm extends Component {
             , {
                 id: 6,
                 question: " Is it compulsory to have a team to participate? ",
-                answer: "Yes,You should atleast have a team size of 3 members."
+                answer: "Yes, you should atleast have a team size of 3 members."
        
             }
 
