@@ -18,31 +18,36 @@ export default class Lfooter extends Component {
     top = () => {
         jump(".ideastorm", {offset: -130});
     };
-    validate = () => {
-        console.log("empty field")
-        let isError = false;
-        if(this.state.footername===''||this.state.footerPhoneno==='')
-        isError=true;
-        return isError;
-    }
+    // validate = () => {
+    //     console.log("empty field")
+    //     let isError = false;
+    //     if(this.state.footername===''||this.state.footerPhoneno==='')
+    //     isError=true;
+    //     return isError;
+    // }
     handleClick=(e)=>{
         e.preventDefault();
-        const err=this.validate();
-        let {footername, footerPhoneno, footerEmailid,footermessage} = this.state
+        // const err=this.validate();
+        // let {footername, footerPhoneno, footerEmailid,footermessage} = this.state
     
-        if (!err) {
-          // clear form
-          this.setState({
-            footername:'',
-            footerPhoneno:'',
-            footerEmailid:'',
-            footermessage:''
-        }); 
-    }
+        // if (!err) {
+        //   // clear form
+        //   this.setState({
+        //     footername:'',
+        //     footerPhoneno:'',
+        //     footerEmailid:'',
+        //     footermessage:''
+        // }); 
+    // }
     console.log(this.state.footername)
+    console.log(this.state.footerPhoneno)
+
+    console.log(this.state.footerEmailid)
+    console.log(this.state.footermessage)
+
 
     let $form = $('form')
-    let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
+    let url = 'https://script.google.com/macros/s/AKfycbxVolaDHR32PbqBc7X9aqCea34fWUaKObrBEv9F2LmfJNMWlVI/exec'
     $.ajax({
         url: url,
         method: "GET",
@@ -136,7 +141,7 @@ export default class Lfooter extends Component {
                                                         footerEmailid:event.target.value
                                                     })
                                                     }}  />
-                                    <textarea rows="8" name="Message" id="ladingpagetextinput" form="usrform" placeholder="Message" value={this.state.footermessage} required
+                                    <textarea rows="8" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage} required
                                     onChange={(event)=>{
                                                     this.setState({
                                                         footermessage:event.target.value
@@ -199,7 +204,7 @@ export default class Lfooter extends Component {
                                                         footerEmailid:event.target.value
                                                     })
                                                     }} />
-                                    <textarea rows="8" name="Message" id="ladingpagetextinput" form="usrform" placeholder="Message" value={this.state.footermessage}
+                                    <textarea rows="8" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage}
                                     onChange={(event)=>{
                                                     this.setState({
                                                         footermessage:event.target.value
