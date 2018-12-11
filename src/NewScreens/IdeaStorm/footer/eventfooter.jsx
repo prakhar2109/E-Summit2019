@@ -54,11 +54,15 @@ export default class Lfooter extends Component {
         dataType: "json",
         data: $form.serializeObject(),
         success:function(){
-            alert("form successfully submitted")
+             document
+        .getElementById('footerinfo')
+        .innerHTML = 'Form successfully Submitted';
                 
         }.bind(this),
         error:function(){
-          alert("form not submitted")
+             document
+        .getElementById('footerinfo')
+        .innerHTML = 'Form Not Submitted';
         }.bind(this)
        })
 }   
@@ -80,7 +84,7 @@ export default class Lfooter extends Component {
                             <div className="landing-footer-icons">
 					<a href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
 					<a href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
-					<a href="#"><i class="fab fa-youtube" target="_blank"></i></a>
+					<a href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i class="fab fa-youtube" target="_blank"></i></a>
 					<a href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
 					<a href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					
@@ -151,7 +155,7 @@ export default class Lfooter extends Component {
                                     <button id="ladingpagebuttonb01" onClick={this.handleClick}>SUBMIT</button>
  
                                 </form>
-
+				<div id="footerinfo"></div>
                             </div>
                         </div>
 
@@ -214,7 +218,7 @@ export default class Lfooter extends Component {
                                     <button id="ladingpagebuttonb01" onClick={this.handleClick}>SUBMIT</button>
  
                                 </form>
-
+				<div id="footerinfo"></div>
                             </div>
                         </div>
                         <div className="footercontact">
@@ -250,7 +254,7 @@ export default class Lfooter extends Component {
                             <div className="landing-footer-icons">
                                 <a href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i class="fab fa-youtube"></i></a>
                                 <a href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
                                 <a href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					

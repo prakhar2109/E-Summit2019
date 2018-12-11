@@ -22,18 +22,52 @@ export class IdeaStorm extends Component {
     state = {
         faq: [
             {
-                id: 1,
-                question: "How to  reach IIT Roorkee ?",
-                answer: "eSummit being the flagship event of ECell, is held annually brings together the " +
-                        "academic community, venture capitalists, new age entrepreneurs and all those pas" +
-                        "sionate about entrepreneurship to common grounds. It provides an avenue to exhib" +
-                        "it the entrepreneurial talent and creativity through many events like business v" +
-                        "entures, product design competition, and social entrepreneurial idea competition" +
-                        "."
-            }, {
                 id: 2,
-                question: "Questions",
-                answer: "answer"
+                question: "What is the last date of submission?",
+                answer: "1st of January is the last date of submission of entries for the first round of the competition."
+            }
+            , {
+                id: 3,
+                question: " Is there a participation fee for Idea Storm?",
+                answer: "No, there is no participation fee for participation in the first round of Idea Storm."
+            }
+
+            , {
+                id: 4,
+                question: " How will the mentors be allocated?",
+                answer: "Your idea will be judged by a panel of experts and then mentors will be allocated to you based on the area of their expertise."
+            }
+
+            , {
+                id: 5,
+                question: " How will our ideas be judged? ",
+                answer: [ "Your ideas will be judged on the basis of " ,
+                "innovation in your idea , "+
+                "real-world problem it mitigates, "+
+                "the market opportunity for the idea, "+
+                " & the competitive advantage that it possesses",]
+            }
+
+            , {
+                id: 6,
+                question: " Is it compulsory to have a team to participate? ",
+                answer: "Yes, you should atleast have a team size of 3 members."
+       
+            }
+
+
+            , {
+                id: 7,
+                question: " Does my business model have to be technology related? ",
+                answer: "No, we encourage all entries that can get mentorship,funding and be developed into a business venture."
+       
+            }
+            
+            , {
+                id: 8,
+                question: "  Can a team consists of people from different college/companies? ",
+                answer: "Yes, team size should be in between 3 to 5. Individuals in the team can be from any organization"
+       
             }
         ],
 
@@ -107,7 +141,7 @@ export class IdeaStorm extends Component {
 The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth 2.5 lakhs and the impressive ones even have opportunity to raise funding from the VCs. Gear up to compete with the best minds of the country to prove your business acumen. This would be a perfect stage for you, If you want to turn your ideas into an entrepreneurial ventures
                     </p>
                     <center>
-                        <span className="register_button">APPLY FOR IDEASTORM</span>
+                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank"> <span className="register_button">APPLY FOR IDEASTORM</span></a>
                     </center>
                 </div>
 
@@ -165,7 +199,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                 </div>
 
                 <div className="erks">
-                    <Header title="Perks"/>
+                    <Header title="PERKS"/>
                                 <div className = "perks_array"> 
                         <div className= "perks_unit"> 
                             <img src ={Cash} alt = "Cash Rewards"></img>
@@ -215,8 +249,8 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                     </p>
                     <center>
                         {" "}
-                        <span>APPLY FOR IDEASTORM</span>
-                        <span>APPLY FOR ROUND 1</span>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank"><span>APPLY FOR IDEASTORM</span></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform" target="_blank"><span>APPLY FOR ROUND 1</span></a>
                     </center>
                 </div>
 
