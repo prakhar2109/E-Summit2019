@@ -200,6 +200,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
 
                 <div className="erks">
                     <Header title="PERKS"/>
+                    <center> 
                                 <div className = "perks_array"> 
                         <div className= "perks_unit"> 
                             <img src ={Cash} alt = "Cash Rewards"></img>
@@ -238,7 +239,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                             Could get feature on many popular media platforms.
                       </div>
                       </div>
-            
+                    </center>
                 </div>
 
                 <div className="register">

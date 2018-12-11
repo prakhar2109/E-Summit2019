@@ -31,6 +31,12 @@ export default class ComingSoon extends Component {
         
 
     };
+    register = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
+        jump(".register");
+    };
 
     Rules = () => {
         this.setState({

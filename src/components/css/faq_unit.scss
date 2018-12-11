@@ -9,6 +9,7 @@
     border-bottom: 4px solid #F7F8F9;
     margin-bottom: 1rem;
 
+    font-family: Proxima-nova-regular !important;
     @include mobile {
         border-bottom: 2px solid #F7F8F9;
 
@@ -49,8 +50,11 @@
 
         }
 
-        i {
+        img {
             float: right;
+        }
+        .cross {
+            display: none;
         }
 
     }

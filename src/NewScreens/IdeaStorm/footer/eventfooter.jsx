@@ -105,10 +105,11 @@ export default class Lfooter extends Component {
 					
 					
                             </div>
+                            {/*
                             <div className="landing-footer-esummitteam">
                                 E-Summit’19 Team
 			                </div>
-
+                            */}
                             <div className="landing-footer-heading">
                                 Phone no.
                             </div>
