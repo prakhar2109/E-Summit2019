@@ -103,13 +103,8 @@ export class IdeaStorm extends Component {
 
                     <p>You make it happen.</p>
                     <p>
-                        The Idea Storm is the annual business model competition organized by
-                        Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. Every
-                        year, IIT Roorkee is a spectacle to over 400 startups showcasing their business,
-                        vision and novelty. The plans that are judged to be the best, get mentorship and
-                        a prize money as the funding. Gear up to compete with the best minds in the
-                        country to prove your business acumen . If you want to turn your idea into an
-                        entrepreneurial venture, we have got the perfect stage for you!
+                        Idea Storm is the annual business plan competition,conducted as a part of Entrepreneurship Summit, the flagship event of Entrepreneurship Cell IIT Roorkee.
+The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth 2.5 lakhs and the impressive ones even have opportunity to raise funding from the VCs. Gear up to compete with the best minds of the country to prove your business acumen. This would be a perfect stage for you, If you want to turn your ideas into an entrepreneurial ventures
                     </p>
                     <center>
                         <span className="register_button">APPLY FOR IDEASTORM</span>
@@ -139,16 +134,12 @@ export class IdeaStorm extends Component {
                         </li>
 
                         <li>
-                            The decision of the judges shall be final and binding. In the Combatant and
-                            Challenger rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
-                            and choose eligibility criteria.
+                            The decision of the judges shall be final and binding, though in all the rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
+                            and choose the eligibility criteria.
 
                         </li>
 
-                        <li>The decision of the judges shall be final and binding. In the Combatant and
-                            Challenger rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
-                            and choose eligibility criteria.
-                        </li>
+                      
                     </ol>
                 </div>
 
@@ -166,7 +157,7 @@ export class IdeaStorm extends Component {
                         </li>
                         <li>
                             Ventures that have acquired funding from external investor-networks (angels,
-                            VC's, etc) cannot participate. We believe in promoting startups that require
+                            VC's, etc) can not participate. We believe in promoting startups that require
                             assistance in the form of seed capital, mentoring and various types of
                             consultancies.
                         </li>
@@ -179,7 +170,7 @@ export class IdeaStorm extends Component {
                         <div className= "perks_unit"> 
                             <img src ={Cash} alt = "Cash Rewards"></img>
                             <span>Cash Rewards:</span>
-                            Cash Prizes of INR 2,00,000.
+                            Cash Prizes of INR 2,50,000.
                         </div>
 
                         <div className= "perks_unit"> 
@@ -254,7 +245,8 @@ export class IdeaStorm extends Component {
                             <p>Rachit Garg</p>
 
                             <p>+91 9992929203</p>
-                            <p>rachitgarg</p>
+                            <p>rgarg@me.iitr.ac.in</p>
+			   
                         </div>
 
                         <div className="coordinator_unit">
@@ -263,6 +255,7 @@ export class IdeaStorm extends Component {
                             </p>
 
                             <p>+91 7412883060</p>
+			    <p>hdubey@ee.iitr.ac.in</p>
                         </div>
 
                     </div>

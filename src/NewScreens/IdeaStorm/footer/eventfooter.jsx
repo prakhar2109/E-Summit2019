@@ -95,7 +95,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                7777777777777
+                               +91 9992929203
                             </div>
 
                             <div className="landing-footer-heading">
@@ -103,7 +103,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                esummit19@gmail.com
+                                esummit@iitr.ac.in
                             </div>
 
                             <div className="landing-footer-heading">
@@ -223,7 +223,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                7777777777777
+                                 +91 9992929203
                             </div>
 
                             <div className="landing-footer-heading">
@@ -231,7 +231,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                esummit19@gmail.com
+                                 esummit@iitr.ac.in
                             </div>
 
                             <div className="landing-footer-heading">
