@@ -21,7 +21,7 @@ export default class Lfooter extends Component {
     validate = () => {
         console.log("empty field")
         let isError = false;
-        if(this.state.footername===''||this.state.footerPhoneno==='')
+        if(this.state.footername===''||this.state.footerPhoneno==='' || footerEmailid==='' ||  footermessage==='')
         isError=true;
         return isError;
     }
@@ -62,7 +62,7 @@ export default class Lfooter extends Component {
     }
 
     else{
-        alert("Either Name or Phone Number is Empty")
+        alert("One of the fields is  Empty")
     }
 }   
     render() {
