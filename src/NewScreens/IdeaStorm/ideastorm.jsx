@@ -183,7 +183,7 @@ export class IdeaStorm extends Component {
                         </div>
 
                         <div className= "perks_unit"> 
-                        <img src = {Mentorship} alt = "Mentorship"/>
+                             <img src = {Mentorship} alt = "Mentorship"/>
                             <span>Mentorship:</span>
               
                             Mentorship opportunities from Venture Capitalists and Industry Leaders.

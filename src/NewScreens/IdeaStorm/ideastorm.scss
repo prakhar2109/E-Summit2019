@@ -375,6 +375,10 @@
 
         padding: 120px 220px;
 
+        @include mobile {
+            padding: 32px;
+        }
+
         .head1 {
             color: #1A4D66;
         }
@@ -384,7 +388,11 @@
             grid-template-columns: 30% 30% 30%;
             grid-row-gap: 40px;
             grid-column-gap: 90px;
-            padding-top:72px;
+            padding-top: 72px;
+
+            @include mobile {
+                grid-template-columns: 90%;
+            }
 
             .perks_unit {
                 line-height: 41px;
@@ -392,6 +400,16 @@
                 letter-spacing: 0.1em;
 
                 color: #4F4F4F;
+
+                @include mobile {
+                    line-height: 21px;
+                    font-size: 14px;
+                   
+                    letter-spacing: 0.1em;
+
+                    color: #4F4F4F;
+
+                }
 
                 img {
                     display: block;
@@ -404,8 +422,19 @@
                     font-size: 26px;
                     text-align: left;
                     letter-spacing: 0.1em;
-                    padding:20px 0;
+                    padding: 20px 0;
                     color: #F49D35;
+
+                    @include mobile {
+                        line-height: 24px;
+                        font-size: 16px;
+                        letter-spacing: 0.1em;
+
+                        color: #F39423;
+
+
+
+                    }
 
 
                 }
