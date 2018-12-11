@@ -103,13 +103,7 @@ export class IdeaStorm extends Component {
 
                     <p>You make it happen.</p>
                     <p>
-                        The Idea Storm is the annual business model competition organized by
-                        Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. Every
-                        year, IIT Roorkee is a spectacle to over 400 startups showcasing their business,
-                        vision and novelty. The plans that are judged to be the best, get mentorship and
-                        a prize money as the funding. Gear up to compete with the best minds in the
-                        country to prove your business acumen . If you want to turn your idea into an
-                        entrepreneurial venture, we have got the perfect stage for you!
+                    The Idea Storm is the annual business model competition organized by Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. The plans that are judged to be the best, get mentorship, prize money and an opportunity to get funded. Gear up to compete with the best minds in the country to prove your business acumen. If you want to turn your idea into an entrepreneurial venture, we have got the perfect stage for you!
                     </p>
                     <center>
                         <span className="register_button">APPLY FOR IDEASTORM</span>
@@ -174,7 +168,7 @@ export class IdeaStorm extends Component {
                 </div>
 
                 <div className="erks">
-                    <Header title="Perks"/>
+                    <Header title="PERKS"/>
                                 <div className = "perks_array"> 
                         <div className= "perks_unit"> 
                             <img src ={Cash} alt = "Cash Rewards"></img>
