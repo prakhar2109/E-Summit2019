@@ -57,7 +57,7 @@ Round 1 results will be announced in 1st week of January
                             <li data-date="20/03/2014">
                                 
                                 <p>
-                                  In round 2 all the shortlisted 40 teams are given the mentorship of 3 weeks beginning from 11th of January. Mentors will be allotted to teams on the basis of the problem your idea solves. You will be provided with mentors who are experts from the industry you target<br/>
+                                  In round 2 all the shortlisted 40 teams would be given the proper mentorship for 3 weeks starting from 11th of January. Mentors will be allotted to teams on the basis of the problem your idea solves. You will be provided with mentors who are experts from the industry you target<br/>
 <span id="ideastormevents-content-span">Round 2 starts on  :</span> 11 January, 2019 
 				                </p>
                             </li>
@@ -65,8 +65,8 @@ Round 1 results will be announced in 1st week of January
                             <li data-date="09/07/2014">
                              
                                 <p>
-                                   The shortlisted 40 teams would be called to E-Summit for successive rounds.<br/>
-     Each team will be given time slot of 2 minutes and they would have to make an elevator pitch in front of a panel consisting of Investors and Industry Leaders. In this round, the criteria for judging would be based on:<br/>
+                                   The shortlisted 40 teams would be called to E-Summit for the successive rounds.<br/>
+     Each team will be given a time slot of 2 minutes and they would have to make an elevator pitch in front of a panel consisting of Investors and Industry Leaders. In this round, the criteria for judging would be based on:<br/>
        &nbsp; &nbsp; &nbsp;&nbsp;1. The problem chosen by the team to solve<br/>
        &nbsp; &nbsp; &nbsp;&nbsp;2. The Market they target<br/>
        &nbsp; &nbsp; &nbsp;&nbsp;3. Feasibility of the solution proposed<br/>
@@ -82,7 +82,7 @@ Round 1 results will be announced in 1st week of January
                             <li data-date="15/09/2014">
                             
                                 <p>
-                                  Top 12 teams would be shortlisted on the basis of elevator pitch.<br/>
+                                  Top 12 teams would be shortlisted on the basis of the elevator pitch.<br/>
      On 3rd February 2019, each team would be given the opportunity to pitch their ideas before a panel of venture capitalists and angel investors. Each presentation would be for 6-minutes and may be accompanied by an idea document in the form of a 10-slide PPSX file which illustrates the following:<br/>
 
        &nbsp; &nbsp; &nbsp;&nbsp;1. The innovation/differentiability of your idea<br/>

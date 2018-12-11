@@ -59,7 +59,7 @@
     }
 
     .idea {
-        background: url("./static/leadership.png");
+        background: url("./static/1920*1080.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -70,8 +70,10 @@
 
         @include mobile {
             padding: 44px 32px;
-            padding-top: 112px;
-            background: #571210;
+            padding-top: 60px;
+            background: url("./static/mobileIS.png");
+            background-repeat: no-repeat;
+            background-size: cover;
             min-height: 90vh;
         }
 
@@ -83,7 +85,7 @@
 	    font-family: "ProximaNova-Bold";	
             @include mobile {
                 font-size: 16px;
-                padding-bottom: calc(10px + 1vh);
+                padding-bottom: calc(0px + 1vh);
 
             }
         }
@@ -101,7 +103,7 @@
                 font-size: 10px;
                 text-align: center;
                 letter-spacing: 0.1em;
-
+		    padding-bottom: calc(15px + 3vh);
                 color: #FFFFFF;
 
             }
@@ -121,7 +123,7 @@
                 font-size: 12px;
                 text-align: justify;
                 letter-spacing: 0.1em;
-                margin-bottom: calc(10vh + 2rem);
+                margin-bottom: calc(6vh + 2rem);
                 color: #FFFFFF;
 
             }
@@ -252,14 +254,14 @@
             display: block;
             background: #F49D35;
             padding: 44px 32px;
-
+	     	
             p {
 
                 line-height: 17px;
                 font-size: 14px;
                 text-align: center;
                 letter-spacing: 0.1em;
-
+		font-family: "ProximaNova-Semibold";
                 color: #FFFFFF;
             }
 
@@ -267,8 +269,12 @@
                 line-height: 15px;
                 font-size: 12px;
                 text-align: center;
+		width: 190px;
+    		height: 48px;
+                    font-family: "ProximaNova-Bold";
                 letter-spacing: 0.09em;
-                padding: 16px;
+               	padding:0;
+                padding-top: 15px;
                 border: 2px solid #E1E2E2;
                 box-sizing: border-box;
                 border-radius: 2px;
@@ -417,7 +423,7 @@
                 line-height: 41px;
                 font-size: 20px;
                 letter-spacing: 0.1em;
-
+		  font-family: "Proxima-nova-regular";
                 color: #4F4F4F;
 
                 @include mobile {
@@ -439,6 +445,7 @@
                     display: block;
                     line-height: 44px;
                     font-size: 26px;
+
                     text-align: left;
                     letter-spacing: 0.1em;
                     padding: 20px 0;
@@ -448,7 +455,7 @@
                         line-height: 24px;
                         font-size: 16px;
                         letter-spacing: 0.1em;
-
+			   font-family: "ProximaNova-Semibold";
                         color: #F39423;
 
 
@@ -472,7 +479,9 @@
 font-size: 14.2px;
 
 }
-
+.idea {
+    background: url("./static/1368*768.png");
+}
 .ideastorm .idea p:nth-child(2){
 padding-bottom: calc(21.3px + 3vh);
 font-size: 19.88px;

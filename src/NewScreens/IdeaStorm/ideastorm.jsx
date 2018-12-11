@@ -137,11 +137,11 @@ export class IdeaStorm extends Component {
 
                     <p>You make it happen.</p>
                     <p>
-                    Idea Storm is the annual business plan competition,conducted as a part of Entrepreneurship Summit, the flagship event of Entrepreneurship Cell IIT Roorkee.
-The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth 2.5 lakhs and the impressive ones even have opportunity to raise funding from the VCs. Gear up to compete with the best minds of the country to prove your business acumen. This would be a perfect stage for you, If you want to turn your ideas into an entrepreneurial ventures.
+                        Idea Storm is the annual business plan competition,conducted as a part of Entrepreneurship Summit, the flagship event of Entrepreneurship Cell IIT Roorkee.
+The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth 2.5 lakhs and the impressive ones even have opportunity to raise funding from the VCs. Gear up to compete with the best minds of the country to prove your business acumen. This would be a perfect stage for you, If you want to turn your ideas into an entrepreneurial ventures
                     </p>
                     <center>
-                        <span className="register_button">APPLY FOR IDEASTORM</span>
+                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank"> <span className="register_button">APPLY FOR IDEASTORM</span></a>
                     </center>
                 </div>
 
@@ -168,16 +168,12 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                         </li>
 
                         <li>
-                            The decision of the judges shall be final and binding. In the Combatant and
-                            Challenger rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
-                            and choose eligibility criteria.
+                            The decision of the judges shall be final and binding, though in all the rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
+                            and choose the eligibility criteria.
 
                         </li>
 
-                        <li>The decision of the judges shall be final and binding. In the Combatant and
-                            Challenger rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
-                            and choose eligibility criteria.
-                        </li>
+                      
                     </ol>
                 </div>
 
@@ -195,7 +191,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                         </li>
                         <li>
                             Ventures that have acquired funding from external investor-networks (angels,
-                            VC's, etc) cannot participate. We believe in promoting startups that require
+                            VC's, etc) can not participate. We believe in promoting startups that require
                             assistance in the form of seed capital, mentoring and various types of
                             consultancies.
                         </li>
@@ -208,7 +204,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                         <div className= "perks_unit"> 
                             <img src ={Cash} alt = "Cash Rewards"></img>
                             <span>Cash Rewards:</span>
-                            Cash Prizes of INR 2,00,000.
+                            Cash Prizes of INR 2,50,000.
                         </div>
 
                         <div className= "perks_unit"> 
@@ -253,8 +249,8 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                     </p>
                     <center>
                         {" "}
-                        <span>APPLY FOR IDEASTORM</span>
-                        <span>APPLY FOR ROUND 1</span>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank"><span>APPLY FOR IDEASTORM</span></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform" target="_blank"><span>APPLY FOR ROUND 1</span></a>
                     </center>
                 </div>
 
@@ -283,7 +279,8 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                             <p>Rachit Garg</p>
 
                             <p>+91 9992929203</p>
-                         
+                            <p>rgarg@me.iitr.ac.in</p>
+			   
                         </div>
 
                         <div className="coordinator_unit">
@@ -292,6 +289,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                             </p>
 
                             <p>+91 7412883060</p>
+			    <p>hdubey@ee.iitr.ac.in</p>
                         </div>
 
                     </div>

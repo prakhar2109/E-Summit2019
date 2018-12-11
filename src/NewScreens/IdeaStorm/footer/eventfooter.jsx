@@ -21,7 +21,9 @@ export default class Lfooter extends Component {
     validate = () => {
         console.log("empty field")
         let isError = false;
-        if(this.state.footername===''||this.state.footerPhoneno==='' || footerEmailid==='' ||  footermessage==='')
+ 
+        if(this.state.footername===''||this.state.footerPhoneno===''||this.state.footerEmailid===''||this.state.footerEmailid==='')
+ 
         isError=true;
         return isError;
     }
@@ -40,29 +42,43 @@ export default class Lfooter extends Component {
         }); 
    
     console.log(this.state.footername)
+    console.log(this.state.footerPhoneno)
+
+    console.log(this.state.footerEmailid)
+    console.log(this.state.footermessage)
+
 
 
 
     let $form = $('form')
-    let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
+    let url = 'https://script.google.com/macros/s/AKfycbxVolaDHR32PbqBc7X9aqCea34fWUaKObrBEv9F2LmfJNMWlVI/exec'
     $.ajax({
         url: url,
         method: "GET",
         dataType: "json",
         data: $form.serializeObject(),
         success:function(){
-            alert("form successfully submitted")
+             document
+        .getElementById('footerinfo')
+        .innerHTML = 'Form successfully Submitted';
                 
         }.bind(this),
         error:function(){
-          alert("form not submitted")
+             document
+        .getElementById('footerinfo')
+        .innerHTML = 'Form Not Submitted';
         }.bind(this)
        })
 
     }
 
     else{
-        alert("One of the fields is  Empty")
+ 
+        document
+        .getElementById('footerinfo')
+        .innerHTML = 'Either Name or Phone Number or Email or Message is Empty';
+        
+ 
     }
 }   
     render() {
@@ -83,7 +99,7 @@ export default class Lfooter extends Component {
                             <div className="landing-footer-icons">
 					<a href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
 					<a href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
-					<a href="#"><i class="fab fa-youtube" target="_blank"></i></a>
+					<a href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i class="fab fa-youtube" target="_blank"></i></a>
 					<a href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
 					<a href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					
@@ -98,7 +114,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                7777777777777
+                               +91 9992929203
                             </div>
 
                             <div className="landing-footer-heading">
@@ -106,7 +122,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                esummit19@gmail.com
+                                esummit@iitr.ac.in
                             </div>
 
                             <div className="landing-footer-heading">
@@ -144,7 +160,7 @@ export default class Lfooter extends Component {
                                                         footerEmailid:event.target.value
                                                     })
                                                     }}  />
-                                    <textarea rows="8" name="Message" id="ladingpagetextinput" form="usrform" placeholder="Message" value={this.state.footermessage} required
+                                    <textarea rows="8" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage} required
                                     onChange={(event)=>{
                                                     this.setState({
                                                         footermessage:event.target.value
@@ -154,7 +170,7 @@ export default class Lfooter extends Component {
                                     <button id="ladingpagebuttonb01" onClick={this.handleClick}>SUBMIT</button>
  
                                 </form>
-
+				<div id="footerinfo"></div>
                             </div>
                         </div>
 
@@ -207,7 +223,7 @@ export default class Lfooter extends Component {
                                                         footerEmailid:event.target.value
                                                     })
                                                     }} />
-                                    <textarea rows="8" name="Message" id="ladingpagetextinput" form="usrform" placeholder="Message" value={this.state.footermessage}
+                                    <textarea rows="8" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage}
                                     onChange={(event)=>{
                                                     this.setState({
                                                         footermessage:event.target.value
@@ -217,7 +233,7 @@ export default class Lfooter extends Component {
                                     <button id="ladingpagebuttonb01" onClick={this.handleClick}>SUBMIT</button>
  
                                 </form>
-
+				<div id="footerinfo"></div>
                             </div>
                         </div>
                         <div className="footercontact">
@@ -226,7 +242,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                7777777777777
+                                 +91 9992929203
                             </div>
 
                             <div className="landing-footer-heading">
@@ -234,7 +250,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                esummit19@gmail.com
+                                 esummit@iitr.ac.in
                             </div>
 
                             <div className="landing-footer-heading">
@@ -253,7 +269,7 @@ export default class Lfooter extends Component {
                             <div className="landing-footer-icons">
                                 <a href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i class="fab fa-youtube"></i></a>
                                 <a href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
                                 <a href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					
