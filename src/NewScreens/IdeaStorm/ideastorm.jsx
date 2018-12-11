@@ -254,7 +254,7 @@ export class IdeaStorm extends Component {
                             <p>Rachit Garg</p>
 
                             <p>+91 9992929203</p>
-                            <p>rachitgarg</p>
+                         
                         </div>
 
                         <div className="coordinator_unit">
