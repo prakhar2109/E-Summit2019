@@ -452,3 +452,49 @@
 
     }
 }
+
+
+
+@media (min-width: 900px) and (max-width: 1500px){
+
+.ideastorm .header .head_array span{
+font-size: 14.2px;
+
+}
+
+.ideastorm .idea p:nth-child(2){
+padding-bottom: calc(21.3px + 3vh);
+font-size: 19.88px;
+}
+
+
+.ideastorm .idea p:first-child{
+font-size: 34.08px;
+padding-bottom: calc(14.2px + 1vh);
+}
+
+.ideastorm .idea p:nth-child(3){
+font-size: 22.07px;
+
+}
+.ideastorm .erks .perks_array .perks_unit span{
+font-size: 19.88px;
+}
+.ideastorm .Rules ol li, .ideastorm .eligiblity ol li{
+font-size: 19.88px;
+}
+.ideastorm .register .register_now{
+font-size: 34.08px;
+}
+.ideastorm .register p{
+font-size: 19.88px;
+}
+.land_faq p{
+font-size: 19.88px;
+}
+.faq_unit .question {
+
+    font-size: 22.72px;
+
+}
+}
