@@ -38,8 +38,10 @@ export default class Lfooter extends Component {
             footerEmailid:'',
             footermessage:''
         }); 
-    }
+   
     console.log(this.state.footername)
+
+
 
     let $form = $('form')
     let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
@@ -56,6 +58,12 @@ export default class Lfooter extends Component {
           alert("form not submitted")
         }.bind(this)
        })
+
+    }
+
+    else{
+        alert("Either Name or Phone Number is Empty")
+    }
 }   
     render() {
 
