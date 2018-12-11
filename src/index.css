@@ -35,4 +35,7 @@ body ,html{
 .active{
     color:#F39423  !important;
 }
- 
+ input , td,tr,div,span,label{
+        font-family: Proxima-nova-regular;
+
+ }

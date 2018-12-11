@@ -324,6 +324,7 @@
             grid-column-gap: 20px;
             grid-template-columns: 30% 30% 30%;
             padding-top: 72px;
+            font-family: Proxima-nova-regular;
 
             @include mobile {
                 display: block;
@@ -343,6 +344,8 @@
                     margin: 0;
                     padding: 0;
                     color: #000000;
+                   
+
 
                     @include mobile {
                         line-height: 18px;
@@ -355,7 +358,7 @@
                 }
 
                 p:first-child {
-                    font-weight: bold;
+                    font-family: ProximaNova-Bold;
                 }
             }
         }
@@ -373,6 +376,7 @@
             text-align: center;
             color: #F39423;
             text-decoration: none;
+            font-family: Proxima-nova-regular !important;
 
             @include mobile {
 
