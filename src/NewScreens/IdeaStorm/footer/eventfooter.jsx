@@ -2,10 +2,61 @@ import React, { Component } from 'react';
 import './eventfooter.css';
 import Back from "../static/top.png";
 import jump from "jump.js"
+import $ from 'jquery';
+import 'form-serializer';
+import validator from 'react-validation';
 export default class Lfooter extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            footername:'',
+            footerPhoneno:'',
+            footerEmailid:'',
+            footermessage:''
+        }
+    }
     top = () => {
         jump(".ideastorm", {offset: -130});
     };
+    validate = () => {
+        console.log("empty field")
+        let isError = false;
+        if(this.state.footername===''||this.state.footerPhoneno==='')
+        isError=true;
+        return isError;
+    }
+    handleClick=(e)=>{
+        e.preventDefault();
+        const err=this.validate();
+        let {footername, footerPhoneno, footerEmailid,footermessage} = this.state
+    
+        if (!err) {
+          // clear form
+          this.setState({
+            footername:'',
+            footerPhoneno:'',
+            footerEmailid:'',
+            footermessage:''
+        }); 
+    }
+    console.log(this.state.footername)
+
+    let $form = $('form')
+    let url = 'https://script.google.com/macros/s/AKfycbz5J9fogQMFcasbcEpf7_IyyCu-_O3FmMzKcDpGJ7RNUuqwAbcr/exec'
+    $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form.serializeObject(),
+        success:function(){
+            alert("form successfully submitted")
+                
+        }.bind(this),
+        error:function(){
+          alert("form not submitted")
+        }.bind(this)
+       })
+}   
     render() {
 
         return (
@@ -22,11 +73,11 @@ export default class Lfooter extends Component {
 			                </div>
 
                             <div className="landing-footer-icons">
-					<a href="#"><i class="fab fa-facebook"></i></a>
-					<a href="#"><i class="fab fa-instagram"></i></a>
-					<a href="#"><i class="fab fa-youtube"></i></a>
-					<a href="#"><i class="fab fa-twitter"></i></a>
-					<a href="#"><i class="fab fa-linkedin"></i></a>
+					<a href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-youtube" target="_blank"></i></a>
+					<a href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					
 					
                             </div>
@@ -47,7 +98,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                esummit18@gmail.com
+                                esummit19@gmail.com
                             </div>
 
                             <div className="landing-footer-heading">
@@ -66,14 +117,34 @@ export default class Lfooter extends Component {
                             </div>
                             <div className="footerformfiels">
 
-                                <form>
-                                    <input type="text" id="ladingpageinput" placeholder="Name"></input>
-                                    <input type="text" id="ladingpageinput" placeholder="Phone no."></input>
-                                    <input type="text" id="ladingpageinput" placeholder="E-Mail ID"></input>
-                                    <textarea rows="8" id="ladingpagetextinput" form="usrform" placeholder="Message">
+                                <form name="submit-to-google-sheet">
+                                    <input type="text" name="Name" id="ladingpageinput" placeholder="Name" value={this.state.footername} 
+                                     onChange={(event)=>{
+                                    this.setState({
+                                        footername:event.target.value
+                                    })
+                                    }} required />
+                                    <input type="text" name="Phoneno" id="ladingpageinput" placeholder="Phone no." value={this.state.footerPhoneno} required
+                                    onChange={(event)=>{
+                                                    this.setState({
+                                                        footerPhoneno:event.target.value
+                                                    })
+                                                    }} />
+                                    <input type="text" name="EmailId" id="ladingpageinput" placeholder="E-Mail ID" value={this.state.footerEmailid} required
+                                    onChange={(event)=>{
+                                                    this.setState({
+                                                        footerEmailid:event.target.value
+                                                    })
+                                                    }}  />
+                                    <textarea rows="8" name="Message" id="ladingpagetextinput" form="usrform" placeholder="Message" value={this.state.footermessage} required
+                                    onChange={(event)=>{
+                                                    this.setState({
+                                                        footermessage:event.target.value
+                                                    })
+                                                    }} >
       	                              </textarea>
-                                    <button id="ladingpagebuttonb01">SUBMIT</button>
-
+                                    <button id="ladingpagebuttonb01" onClick={this.handleClick}>SUBMIT</button>
+ 
                                 </form>
 
                             </div>
@@ -93,7 +164,7 @@ export default class Lfooter extends Component {
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                        esummit18@gmail.com
+                        esummit19@gmail.com
                      </div>
 
                 </div>
@@ -109,14 +180,34 @@ export default class Lfooter extends Component {
                             </div>
                             <div className="footerformfiels">
 
-                                <form>
-                                    <input type="text" id="ladingpageinput" placeholder="Name"></input>
-                                    <input type="text" id="ladingpageinput" placeholder="Phone no."></input>
-                                    <input type="text" id="ladingpageinput" placeholder="E-Mail ID"></input>
-                                    <textarea rows="8" id="ladingpagetextinput" form="usrform" placeholder="Message">
+                                <form name="submit-to-google-sheet">
+                                    <input type="text" name="Name" id="ladingpageinput" placeholder="Name" value={this.state.footername}
+                                     onChange={(event)=>{
+                                    this.setState({
+                                        footername:event.target.value
+                                    })
+                                    }} />
+                                    <input type="text" name="Phoneno" id="ladingpageinput" placeholder="Phone no." value={this.state.footerPhoneno}
+                                    onChange={(event)=>{
+                                                    this.setState({
+                                                        footerPhoneno:event.target.value
+                                                    })
+                                                    }} />
+                                    <input type="text" name="EmailId" id="ladingpageinput" placeholder="E-Mail ID" value={this.state.footerEmailid}
+                                    onChange={(event)=>{
+                                                    this.setState({
+                                                        footerEmailid:event.target.value
+                                                    })
+                                                    }} />
+                                    <textarea rows="8" name="Message" id="ladingpagetextinput" form="usrform" placeholder="Message" value={this.state.footermessage}
+                                    onChange={(event)=>{
+                                                    this.setState({
+                                                        footermessage:event.target.value
+                                                    })
+                                                    }} >
       	                              </textarea>
-                                    <button id="ladingpagebuttonb01">SUBMIT</button>
-
+                                    <button id="ladingpagebuttonb01" onClick={this.handleClick}>SUBMIT</button>
+ 
                                 </form>
 
                             </div>
@@ -135,7 +226,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                esummit18@gmail.com
+                                esummit19@gmail.com
                             </div>
 
                             <div className="landing-footer-heading">
@@ -152,11 +243,11 @@ export default class Lfooter extends Component {
 			                </div>
 
                             <div className="landing-footer-icons">
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					
 					
                             </div>
