@@ -261,11 +261,11 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                         To participate in Idea-Storm 2019 register here.
                     </p>
                     <center>
-                        <span>APPLY FOR IDEASTORM</span>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank">  <span>APPLY FOR IDEASTORM</span></a>
                     </center>
                     <p>After registering, submit your enteries for stage 1.</p>
                     <center>
-                        <span>APPLY FOR ROUND 1</span>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform" target="_blank">  <span>APPLY FOR ROUND 1</span></a>
                     </center>
                 </div>
 
