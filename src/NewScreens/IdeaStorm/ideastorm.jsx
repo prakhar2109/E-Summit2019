@@ -23,17 +23,56 @@ export class IdeaStorm extends Component {
         faq: [
             {
                 id: 1,
-                question: "How to  reach IIT Roorkee ?",
-                answer: "eSummit being the flagship event of ECell, is held annually brings together the " +
-                        "academic community, venture capitalists, new age entrepreneurs and all those pas" +
-                        "sionate about entrepreneurship to common grounds. It provides an avenue to exhib" +
-                        "it the entrepreneurial talent and creativity through many events like business v" +
-                        "entures, product design competition, and social entrepreneurial idea competition" +
-                        "."
+                question: "I want to participate in Idea Storm 2019. How do I participate?",
+                answer:  "Firstly, you need to register for idea storm on esummit.in/ideastorm. Then you can submit your entries for the first round in subsequent links provided."
+
             }, {
                 id: 2,
-                question: "Questions",
-                answer: "answer"
+                question: "What is the last date of submission?",
+                answer: "1st of January is the last date of submission of entries for the first round of the competition."
+            }
+            , {
+                id: 3,
+                question: " Is there a participation fee for Idea Storm?",
+                answer: "No, there is no participation fee for participation in the first round of Idea Storm."
+            }
+
+            , {
+                id: 4,
+                question: " How will the mentors be allocated?",
+                answer: "Your idea will be judged by a panel of experts and then mentors will be allocated to you based on the area of their expertise."
+            }
+
+            , {
+                id: 5,
+                question: " How will our ideas be judged? ",
+                answer: [ "Your ideas will be judged on the basis of " ,
+                "innovation in your idea , "+
+                "real-world problem it mitigates, "+
+                "the market opportunity for the idea, "+
+                " & the competitive advantage that it possesses",]
+            }
+
+            , {
+                id: 6,
+                question: " Is it compulsory to have a team to participate? ",
+                answer: "Yes,You should atleast have a team size of 3 members."
+       
+            }
+
+
+            , {
+                id: 7,
+                question: " Does my business model have to be technology related? ",
+                answer: "No, we encourage all entries that can get mentorship,funding and be developed into a business venture."
+       
+            }
+            
+            , {
+                id: 8,
+                question: "  Can a team consists of people from different college/companies? ",
+                answer: "Yes, team size should be in between 3 to 5. Individuals in the team can be from any organization"
+       
             }
         ],
 
@@ -103,7 +142,8 @@ export class IdeaStorm extends Component {
 
                     <p>You make it happen.</p>
                     <p>
-                    The Idea Storm is the annual business model competition organized by Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. The plans that are judged to be the best, get mentorship, prize money and an opportunity to get funded. Gear up to compete with the best minds in the country to prove your business acumen. If you want to turn your idea into an entrepreneurial venture, we have got the perfect stage for you!
+                    Idea Storm is the annual business plan competition,conducted as a part of Entrepreneurship Summit, the flagship event of Entrepreneurship Cell IIT Roorkee.
+The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth 2.5 lakhs and the impressive ones even have opportunity to raise funding from the VCs. Gear up to compete with the best minds of the country to prove your business acumen. This would be a perfect stage for you, If you want to turn your ideas into an entrepreneurial ventures.
                     </p>
                     <center>
                         <span className="register_button">APPLY FOR IDEASTORM</span>
