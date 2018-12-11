@@ -34,7 +34,7 @@ Main Components .timeline
     position: relative;
     z-index: 2;
     margin-left: -1.5rem;
-    top: 116px;
+    top: 10vh;
     left: 220px;
 
 }
