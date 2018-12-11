@@ -61,7 +61,7 @@
     }
 
     .idea {
-        background: url("./static/1920*1080.png");
+        background: url("./static/1920.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -483,16 +483,16 @@
     .ideastorm .header .head_array span {
         font-size: 14.2px;
 
-    }
+}
+.idea {
+    background: url("./static/1366.png");
+}
+.ideastorm .idea p:nth-child(2){
+padding-bottom: calc(21.3px + 3vh);
+font-size: 19.88px;
+}
 
-    .idea {
-        background: url("./static/1368*768.png");
-    }
-
-    .ideastorm .idea p:nth-child(2) {
-        padding-bottom: calc(21.3px + 3vh);
-        font-size: 19.88px;
-    }
+   
 
 
     .ideastorm .idea p:first-child {
