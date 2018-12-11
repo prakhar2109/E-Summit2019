@@ -10,6 +10,11 @@ import Eventsheader from './Navbar/header'
 import Vector from './static/headVector.png';
 import Timelineindex from './timeline/Index.js';
 import {NavLink } from "react-router-dom";
+import Cash from "./static/1.png";
+import Mentorship from "./static/2.png";
+import Networking from "./static/3.png";
+import Funding from "./static/4.png";
+import Media from "./static/5.png";
 
 import "../landing/css/landing.scss";
 export class IdeaStorm extends Component {
@@ -170,40 +175,45 @@ export class IdeaStorm extends Component {
 
                 <div className="erks">
                     <Header title="Perks"/>
-
-                    <ol>
-                        <li>
+                                <div className = "perks_array"> 
+                        <div className= "perks_unit"> 
+                            <img src ={Cash} alt = "Cash Rewards"></img>
                             <span>Cash Rewards:</span>
-                            <br/>
                             Cash Prizes of INR 2,00,000.
-                        </li>
-                        <li>
-                            <span>Mentorship:</span>
-                            <br/>
-                            Mentorship opportunities from Venture Capitalists and Industry Leaders.
-                        </li>
+                        </div>
 
-                        <li>
+                        <div className= "perks_unit"> 
+                        <img src = {Mentorship} alt = "Mentorship"/>
+                            <span>Mentorship:</span>
+              
+                            Mentorship opportunities from Venture Capitalists and Industry Leaders.
+                            </div>
+                        
+                            <div className= "perks_unit"> 
+
+                            <img src = {Networking} alt ="networking" />
                             <span>
                                 Networking Session</span>
-                            <br/>
+                    
                             Networking session with CXOs, Angel Investors, Venture Capitalists and Industry
                             Leaders.
+                                </div>
+                       <div className= "perks_unit"> 
 
-                        </li>
-
-                        <li>
+                        <img src ={Funding} alt = "Funding"></img>
                             <span>Funding Opportunities</span>
-                            <br/>
+                     
                             An opportunity to raise real time funds.
-                        </li>
-
-                        <li>
+                            </div>
+                            <div className= "perks_unit"> 
+                    
+                                <img src ={Media} alt ="Media Coverage"/>
                             <span>Media Coverage</span>
-                            <br/>
+                         
                             Could get feature on many popular media platforms.
-                        </li>
-                    </ol>
+                      </div>
+                      </div>
+            
                 </div>
 
                 <div className="register">

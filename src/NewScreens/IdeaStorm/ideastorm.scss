@@ -5,17 +5,18 @@
 
 }
 
-.Eventsheader{
+.Eventsheader {
 
-display:none;
+    display: none;
 
- @include mobile {
-            display: block;
-        }
+    @include mobile {
+        display: block;
+    }
 
 }
+
 .ideastorm {
-    padding-top:50px;
+    padding-top: 50px;
 
     .header {
         background: #0D1313;
@@ -25,11 +26,11 @@ display:none;
         padding: 0 0 0 220px;
         justify-content: space-between;
         position: fixed;
-        top:0;
-        left:0;
-        right:0;
+        top: 0;
+        left: 0;
+        right: 0;
         z-index: 100000000000000000;
-        
+
 
         @include mobile {
             display: none;
@@ -60,7 +61,7 @@ display:none;
 
         @include mobile {
             padding: 44px 32px;
-            padding-top:112px;
+            padding-top: 112px;
             background: #571210;
             min-height: 90vh;
         }
@@ -148,7 +149,7 @@ display:none;
 
     .Rules,
     .eligiblity,
-    .erks {
+        {
         padding: 120px 220px;
         display: block;
         border-bottom: 1px solid #B2B2B2;
@@ -360,13 +361,57 @@ display:none;
     }
 
     .timeline {
-        
+
         display: block;
-        height:100vh;
+        height: 100vh;
         background: #1A4D66;
     }
 
     .ant-steps-item-finish>.ant-steps-item-content>.ant-steps-item-title {
         color: white;
+    }
+
+    .erks {
+
+        padding: 120px 220px;
+
+        .head1 {
+            color: #1A4D66;
+        }
+
+        .perks_array {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-row-gap: 40px;
+            grid-column-gap: 90px;
+            padding-top:72px;
+
+            .perks_unit {
+                line-height: 41px;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+
+                color: #4F4F4F;
+
+                img {
+                    display: block;
+                    height: 20vh;
+                }
+
+                span {
+                    display: block;
+                    line-height: 44px;
+                    font-size: 26px;
+                    text-align: left;
+                    letter-spacing: 0.1em;
+                    padding:20px 0;
+                    color: #F49D35;
+
+
+                }
+            }
+        }
+
+
     }
 }
