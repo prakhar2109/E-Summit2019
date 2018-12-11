@@ -18,32 +18,34 @@ export default class Lfooter extends Component {
     top = () => {
         jump(".ideastorm", {offset: -130});
     };
-    // validate = () => {
-    //     console.log("empty field")
-    //     let isError = false;
-    //     if(this.state.footername===''||this.state.footerPhoneno==='')
-    //     isError=true;
-    //     return isError;
-    // }
+    validate = () => {
+        console.log("empty field")
+        let isError = false;
+        if(this.state.footername===''||this.state.footerPhoneno===''||this.state.footerEmailid===''||this.state.footerEmailid==='')
+        isError=true;
+        return isError;
+    }
     handleClick=(e)=>{
         e.preventDefault();
-        // const err=this.validate();
-        // let {footername, footerPhoneno, footerEmailid,footermessage} = this.state
+        const err=this.validate();
+        let {footername, footerPhoneno, footerEmailid,footermessage} = this.state
     
-        // if (!err) {
-        //   // clear form
-        //   this.setState({
-        //     footername:'',
-        //     footerPhoneno:'',
-        //     footerEmailid:'',
-        //     footermessage:''
-        // }); 
-    // }
+        if (!err) {
+          // clear form
+          this.setState({
+            footername:'',
+            footerPhoneno:'',
+            footerEmailid:'',
+            footermessage:''
+        }); 
+   
     console.log(this.state.footername)
     console.log(this.state.footerPhoneno)
 
     console.log(this.state.footerEmailid)
     console.log(this.state.footermessage)
+
+
 
 
     let $form = $('form')
@@ -65,6 +67,15 @@ export default class Lfooter extends Component {
         .innerHTML = 'Form Not Submitted';
         }.bind(this)
        })
+
+    }
+
+    else{
+        document
+        .getElementById('footerinfo')
+        .innerHTML = 'Either Name or Phone Number or Email or Message is Empty';
+        
+    }
 }   
     render() {
 

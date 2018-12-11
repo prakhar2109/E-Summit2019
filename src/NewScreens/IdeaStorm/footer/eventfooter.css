@@ -6,6 +6,7 @@
 }
 #footerinfo{
 color:white;
+    margin-top: 12px;
 
 }
 .landingpagefooter {
@@ -392,12 +393,12 @@ color:white;
     }
 
     .landing-footer-heading {
-        font-size: 16px;
+        font-size: 18px;
     }
 
 
     .landing-footer-details {
-        font-size: 14px;
+        font-size: 15px;
         margin-top: .64rem;
         margin-bottom: 2.28rem;
     }
