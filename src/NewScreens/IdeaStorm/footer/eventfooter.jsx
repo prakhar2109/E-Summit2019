@@ -276,9 +276,9 @@ export default class Lfooter extends Component {
 					
 					
                             </div>
-                            <div className="landing-footer-esummitteam">
+                           {/* <div className="landing-footer-esummitteam">
                                 E-Summit’19 Team
-			                </div>
+			                </div>*/}
 
                            
                         </div>
