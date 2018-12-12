@@ -1,5 +1,30 @@
  
 
+@font-face {
+        font-family: "Proxima-nova-regular";
+        
+        src:url('./fonts/ProximaNova-Regular.otf')  format('truetype');
+    
+        }
+@font-face {
+        font-family: "ProximaNova-Light";
+        
+        src:url('./fonts/ProximaNova-Light.otf')  format('truetype');
+    
+        }
+
+@font-face {
+        font-family: "ProximaNova-Semibold";
+        
+        src:url('./fonts/ProximaNova-Semibold.otf')  format('truetype');
+    
+        }
+@font-face {
+        font-family: "ProximaNova-Bold";
+        
+        src:url('./fonts/ProximaNova-Bold.otf')  format('truetype');
+    
+        }
 
 body ,html{
     padding: 0;
@@ -7,12 +32,10 @@ body ,html{
 
   
 }
- 
 .active{
     color:#F39423  !important;
 }
+ input , td,tr,div,span,label{
+        font-family: Proxima-nova-regular;
 
-body , html ,p ,div, button , a , span,input,label ,rohit {
-    font-family: 'Montserrat'  !important;
-
-}
+ }

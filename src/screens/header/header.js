@@ -41,6 +41,7 @@ export default class ComingSoon extends Component {
         <span className='links'>
           <NavLink to = "/login"> Campus Ambassador</NavLink> 
           <NavLink to='/ignite'> Startup Ignite</NavLink>
+          <NavLink target = "_blank" to = "/ideastorm">Idea Storm </NavLink>
 
         </span>
 
@@ -70,6 +71,11 @@ export default class ComingSoon extends Component {
                             <Link to="/register" className="">
                                 <div className={this.state.displaynavbar ? "navbar-show" : "navbar-hide"}>
                                     <p className={this.state.isActive === 'register'? "esummit-navbar-cto-active":null}>Campus Ambassador</p>
+                                </div>
+                            </Link>
+                            <Link to="/ideastorm" className="">
+                                <div className={this.state.displaynavbar ? "navbar-show" : "navbar-hide"}>
+                                    <p className={this.state.isActive === 'footer'? "esummit-navbar-cto-active":null}>IdeaStorm</p>
                                 </div>
                             </Link>
                         </div>
