@@ -124,7 +124,7 @@ export class IdeaStorm extends Component {
                         <span onClick={this.eligiblity}>Eligiblity</span>
 
                         <span onClick={this.erks}>Perks</span>
-                        <span onClick={this.register}>Register</span>
+                        <span onClick={this.register}>Apply</span>
                         <span onClick={this.faq_idea}>FAQs</span>
 
                         <span onClick={this.coordinator}>Contact US</span>
@@ -163,7 +163,7 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                         </li>
 
                         <li>
-                            Multiple teams from the same organization are allowed to participate in the
+                            Multiple teams from the same  university / organization are allowed to participate in the
                             event.
                         </li>
 
@@ -236,17 +236,17 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                                 <img src ={Media} alt ="Media Coverage"/>
                             <span>Media Coverage</span>
                          
-                            Could get feature on many popular media platforms.
+                            Get featured on many popular media platforms.
                       </div>
                       </div>
                     </center>
                 </div>
 
                 <div className="register">
-                    <p className="register_now">Register Now</p>
+                    <p className="register_now">Apply Now</p>
                     <p>
                         To participate in Idea-Storm 2019 first apply for Ideastorm. After registering,
-                        submit your enteries for stage 1.
+                        submit your enteries for round 1.
                     </p>
                     <center>
                         {" "}
@@ -256,14 +256,14 @@ The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth
                 </div>
 
                 <div className="register_mobile">
-                    <p className="register_now">Register Now</p>
+                    <p className="register_now">Apply Now</p>
                     <p>
                         To participate in Idea-Storm 2019 register here.
                     </p>
                     <center>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank">  <span>APPLY FOR IDEASTORM</span></a>
                     </center>
-                    <p>After registering, submit your enteries for stage 1.</p>
+                    <p>After registering, submit your enteries for round 1.</p>
                     <center>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform" target="_blank">  <span>APPLY FOR ROUND 1</span></a>
                     </center>
