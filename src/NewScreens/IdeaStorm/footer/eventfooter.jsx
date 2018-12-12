@@ -185,11 +185,11 @@ export default class Lfooter extends Component {
 
                     <center><img onClick = {this.top} src= {Back} /> </center>
                     <div className="landing-bottomfooter-heading">
-                        For Sporsorhip Opportunities or Collaborations
+                        For Sponsorship Opportunities or Collaborations
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                        esummit19@gmail.com
+                        ecell@iitr.ac.in
                      </div>
 
                 </div>
@@ -294,11 +294,11 @@ export default class Lfooter extends Component {
                 <div className="landing-pagefooterbottom-mobile">
                     <center><img onClick = {this.top} src= {Back} /> </center>
                     <div className="landing-bottomfooter-heading">
-                        For Sporsorhip Opportunities or Collaborations
+                        For Sponsorship Opportunities or Collaborations
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                        esummit18@gmail.com
+                        ecell@iitr.ac.in
                      </div>
 
                 </div>

@@ -181,7 +181,7 @@ export default class ComingSoon extends Component {
                                         : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
                            isActive:"register"
                         })}>
-                                        Register
+                                        Apply
                                     </p>
                                 </div>
 
