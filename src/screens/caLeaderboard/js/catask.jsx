@@ -37,6 +37,9 @@ export default class CATaskBoard extends Component {
 
     render() {
         let {tasks} = this.state;
+        let today = new Date();
+        let dayToday = today.getDate();
+        console.log(dayToday)
         return (
 
             <div className="taskparent">
@@ -46,7 +49,7 @@ export default class CATaskBoard extends Component {
                     </div>
                     <div className="taskchild-line"></div>
                     <div className="taskchild-dates">
-                        8 Dec - 15 Dec 2018
+                        {dayToday ? '16 Dec - 23 Dec 2018' : '24 Dec - 31 Dec 2018'}
                     </div>
                 </div>
                 <div className="taskchildrow">
