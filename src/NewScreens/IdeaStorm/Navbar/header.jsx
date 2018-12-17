@@ -211,7 +211,7 @@ export default class ComingSoon extends Component {
                                         : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
                             isActive:"contact"
                         })}>
-                                        Contact US
+                                        Contact Us
                                     </p>
                                 </div>
 
