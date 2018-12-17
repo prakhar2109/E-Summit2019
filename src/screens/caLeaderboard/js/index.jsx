@@ -14,7 +14,7 @@ import CAOffers from './offers'
 import CAPayment from './payment'
 import CAInvite from './cainvite'
 import CALeader from './caleader'
-
+import CAcontigent from './cacontigent'
 
 
 
@@ -47,6 +47,7 @@ class App extends Component {
             <Route exact path="/dashboard/payment" component={CAPayment} />
             <Route exact path="/dashboard/invite" component={CAInvite} />
             <Route exact path="/dashboard/leader" component={CALeader} />
+            <Route exact path="/dashboard/contigent" component={CAcontigent} />
 
 
 

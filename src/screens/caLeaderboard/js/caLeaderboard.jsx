@@ -124,6 +124,17 @@ export default class caLeaderboard extends Component {
               </Link>
               <br />
               </span>
+              <span>
+              <Link to="/dashboard/contigent" className={(this.state.activeState === "contigent") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("contigent");
+                                        }}>
+              CONTIGENT
+              </Link>
+              <br />
+              </span>                          
+
+
+
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton"><a>CA RULEBOOK</a></div>
             </div>
