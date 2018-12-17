@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 
-import {NavLink} from "react-router-dom";
-
-import {Link} from "react-router-dom";
+ 
 
 import "./header.css";
 import jump from "jump.js";
@@ -29,32 +27,44 @@ export default class ComingSoon extends Component {
         this.setState({
             displaynavbar: !this.state.displaynavbar
         })
-        jump(".timeline");
+        jump(".timeline",{offset: -70});
         
 
+    };
+    register = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
+        jump(".register");
     };
 
     Rules = () => {
         this.setState({
             displaynavbar: !this.state.displaynavbar
         })
-        jump(".Rules");
+        jump(".Rules",{offset: -70});
     };
 
     erks = () => {
         this.setState({
             displaynavbar: !this.state.displaynavbar
         })
-        jump(".erks");
+        jump(".erks",{offset: -70});
     };
 
     faq_idea = () => {
         this.setState({
             displaynavbar: !this.state.displaynavbar
         })
-        jump("#faq_idea");
+        jump("#faq_idea",{offset: -70});
     };
-
+	
+    register = () => {
+        this.setState({
+            displaynavbar: !this.state.displaynavbar
+        })
+        jump(".register");
+    };
     coordinator = () => {
         this.setState({
             displaynavbar: !this.state.displaynavbar
@@ -106,9 +116,11 @@ export default class ComingSoon extends Component {
                                     ? "navbar-show ecell-mobile-menuback"
                                     : "navbar-hide ecell-mobile-menuback"}>
                                     <p
-                                        className={this.state.isActive === ""
+                                        className={this.state.isActive === "timeline"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                           isActive:"timeline"
+                        })}>
                                         Timeline
                                     </p>
                                 </div>
@@ -119,9 +131,11 @@ export default class ComingSoon extends Component {
                                     ? "navbar-show"
                                     : "navbar-hide"}>
                                     <p
-                                        className={this.state.isActive === "ignite"
+                                        className={this.state.isActive === "rules"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                           isActive:"rules"
+                        })}>
                                         Rules
                                     </p>
                                 </div>
@@ -132,9 +146,11 @@ export default class ComingSoon extends Component {
                                     ? "navbar-show"
                                     : "navbar-hide"}>
                                     <p
-                                        className={this.state.isActive === "register"
+                                        className={this.state.isActive === "eligible"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                            isActive:"eligible"
+                        })}>
                                         Eligiblity
                                     </p>
                                 </div>
@@ -145,9 +161,11 @@ export default class ComingSoon extends Component {
                                     ? "navbar-show"
                                     : "navbar-hide"}>
                                     <p
-                                        className={this.state.isActive === "register"
+                                        className={this.state.isActive === "perks"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                           isActive:"perks"
+                        })}>
                                         Perks
                                     </p>
                                 </div>
@@ -160,8 +178,10 @@ export default class ComingSoon extends Component {
                                     <p
                                         className={this.state.isActive === "register"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
-                                        Register
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                           isActive:"register"
+                        })}>
+                                        Apply
                                     </p>
                                 </div>
 
@@ -171,9 +191,11 @@ export default class ComingSoon extends Component {
                                     ? "navbar-show"
                                     : "navbar-hide"}>
                                     <p
-                                        className={this.state.isActive === "register"
+                                        className={this.state.isActive === "faq"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                             isActive:"faq"
+                        })}>
                                         FAQs
                                     </p>
                                 </div>
@@ -184,10 +206,12 @@ export default class ComingSoon extends Component {
                                     ? "navbar-show"
                                     : "navbar-hide"}>
                                     <p
-                                        className={this.state.isActive === "register"
+                                        className={this.state.isActive === "contact"
                                         ? "esummit-navbarevent-cto-active"
-                                        : "esummit-navbarevent-cto-inactive"}>
-                                        Contact US
+                                        : "esummit-navbarevent-cto-inactive"} onClick={() => this.setState({
+                            isActive:"contact"
+                        })}>
+                                        Contact Us
                                     </p>
                                 </div>
 

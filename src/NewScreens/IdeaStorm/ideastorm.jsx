@@ -10,6 +10,11 @@ import Eventsheader from './Navbar/header'
 import Vector from './static/headVector.png';
 import Timelineindex from './timeline/Index.js';
 import {NavLink } from "react-router-dom";
+import Cash from "./static/1.png";
+import Mentorship from "./static/2.png";
+import Networking from "./static/3.png";
+import Funding from "./static/4.png";
+import Media from "./static/5.png";
 
 import "../landing/css/landing.scss";
 export class IdeaStorm extends Component {
@@ -17,18 +22,52 @@ export class IdeaStorm extends Component {
     state = {
         faq: [
             {
-                id: 1,
-                question: "How to  reach IIT Roorkee ?",
-                answer: "eSummit being the flagship event of ECell, is held annually brings together the " +
-                        "academic community, venture capitalists, new age entrepreneurs and all those pas" +
-                        "sionate about entrepreneurship to common grounds. It provides an avenue to exhib" +
-                        "it the entrepreneurial talent and creativity through many events like business v" +
-                        "entures, product design competition, and social entrepreneurial idea competition" +
-                        "."
-            }, {
                 id: 2,
-                question: "Questions",
-                answer: "answer"
+                question: "What is the last date of submission?",
+                answer: "1st of January is the last date of submission of entries for the first round of the competition."
+            }
+            , {
+                id: 3,
+                question: " Is there a participation fee for Idea Storm?",
+                answer: "No, there is no participation fee for participation in the first round of Idea Storm."
+            }
+
+            , {
+                id: 4,
+                question: " How will the mentors be allocated?",
+                answer: "Your idea will be judged by a panel of experts and then mentors will be allocated to you based on the area of their expertise."
+            }
+
+            , {
+                id: 5,
+                question: " How will our ideas be judged? ",
+                answer: [ "Your ideas will be judged on the basis of " ,
+                "innovation in your idea , "+
+                "real-world problem it mitigates, "+
+                "the market opportunity for the idea, "+
+                " & the competitive advantage that it possesses",]
+            }
+
+            , {
+                id: 6,
+                question: " Is it compulsory to have a team to participate? ",
+                answer: "Yes, you should atleast have a team size of 3 members."
+       
+            }
+
+
+            , {
+                id: 7,
+                question: " Does my business model have to be technology related? ",
+                answer: "No, we encourage all entries that can get mentorship,funding and be developed into a business venture."
+       
+            }
+            
+            , {
+                id: 8,
+                question: "  Can a team consists of people from different college/companies? ",
+                answer: "Yes, team size should be in between 3 to 5. Individuals in the team can be from any organization"
+       
             }
         ],
 
@@ -85,7 +124,7 @@ export class IdeaStorm extends Component {
                         <span onClick={this.eligiblity}>Eligiblity</span>
 
                         <span onClick={this.erks}>Perks</span>
-                        <span onClick={this.register}>Register</span>
+                        <span onClick={this.register}>Apply</span>
                         <span onClick={this.faq_idea}>FAQs</span>
 
                         <span onClick={this.coordinator}>Contact US</span>
@@ -97,17 +136,13 @@ export class IdeaStorm extends Component {
                     <p>IDEA STORM</p>
 
                     <p>You make it happen.</p>
+		    <p>CASH PRIZE WORTH  INR 2,50,000</p>
                     <p>
-                        The Idea Storm is the annual business model competition organized by
-                        Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. Every
-                        year, IIT Roorkee is a spectacle to over 400 startups showcasing their business,
-                        vision and novelty. The plans that are judged to be the best, get mentorship and
-                        a prize money as the funding. Gear up to compete with the best minds in the
-                        country to prove your business acumen . If you want to turn your idea into an
-                        entrepreneurial venture, we have got the perfect stage for you!
+                        Idea Storm is the annual business plan competition,conducted as a part of Entrepreneurship Summit, the flagship event of Entrepreneurship Cell IIT Roorkee.
+The best Ideas get mentorship from experienced entrepreneurs, cash rewards worth 2.5 lakhs and the impressive ones even have opportunity to raise funding from the VCs. Gear up to compete with the best minds of the country to prove your business acumen. This would be a perfect stage for you, If you want to turn your ideas into an entrepreneurial ventures
                     </p>
                     <center>
-                        <span className="register_button">APPLY FOR IDEASTORM</span>
+                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank"> <span className="register_button">APPLY FOR IDEASTORM</span></a>
                     </center>
                 </div>
 
@@ -129,21 +164,17 @@ export class IdeaStorm extends Component {
                         </li>
 
                         <li>
-                            Multiple teams from the same organization are allowed to participate in the
+                            Multiple teams from the same  university / organization are allowed to participate in the
                             event.
                         </li>
 
                         <li>
-                            The decision of the judges shall be final and binding. In the Combatant and
-                            Challenger rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
-                            and choose eligibility criteria.
+                            The decision of the judges shall be final and binding, though in all the rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
+                            and choose the eligibility criteria.
 
                         </li>
 
-                        <li>The decision of the judges shall be final and binding. In the Combatant and
-                            Challenger rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas
-                            and choose eligibility criteria.
-                        </li>
+                      
                     </ol>
                 </div>
 
@@ -161,7 +192,7 @@ export class IdeaStorm extends Component {
                         </li>
                         <li>
                             Ventures that have acquired funding from external investor-networks (angels,
-                            VC's, etc) cannot participate. We believe in promoting startups that require
+                            VC's, etc) can not participate. We believe in promoting startups that require
                             assistance in the form of seed capital, mentoring and various types of
                             consultancies.
                         </li>
@@ -169,67 +200,73 @@ export class IdeaStorm extends Component {
                 </div>
 
                 <div className="erks">
-                    <Header title="Perks"/>
-
-                    <ol>
-                        <li>
+                    <Header title="PERKS"/>
+                    <center> 
+                                <div className = "perks_array"> 
+                        <div className= "perks_unit"> 
+                            <img src ={Cash} alt = "Cash Rewards"></img>
                             <span>Cash Rewards:</span>
-                            <br/>
-                            Cash Prizes of INR 2,00,000.
-                        </li>
-                        <li>
-                            <span>Mentorship:</span>
-                            <br/>
-                            Mentorship opportunities from Venture Capitalists and Industry Leaders.
-                        </li>
+                            Cash Prizes of INR 2,50,000.
+                        </div>
 
-                        <li>
+                        <div className= "perks_unit"> 
+                             <img src = {Mentorship} alt = "Mentorship"/>
+                            <span>Mentorship:</span>
+              
+                            Mentorship opportunities from Venture Capitalists and Industry Leaders.
+                            </div>
+                        
+                            <div className= "perks_unit"> 
+
+                            <img src = {Networking} alt ="networking" />
                             <span>
                                 Networking Session</span>
-                            <br/>
+                    
                             Networking session with CXOs, Angel Investors, Venture Capitalists and Industry
                             Leaders.
+                                </div>
+                       <div className= "perks_unit"> 
 
-                        </li>
-
-                        <li>
+                        <img src ={Funding} alt = "Funding"></img>
                             <span>Funding Opportunities</span>
-                            <br/>
+                     
                             An opportunity to raise real time funds.
-                        </li>
-
-                        <li>
+                            </div>
+                            <div className= "perks_unit"> 
+                    
+                                <img src ={Media} alt ="Media Coverage"/>
                             <span>Media Coverage</span>
-                            <br/>
-                            Could get feature on many popular media platforms.
-                        </li>
-                    </ol>
+                         
+                            Get featured on many popular media platforms.
+                      </div>
+                      </div>
+                    </center>
                 </div>
 
                 <div className="register">
-                    <p className="register_now">Register Now</p>
+                    <p className="register_now">Apply Now</p>
                     <p>
                         To participate in Idea-Storm 2019 first apply for Ideastorm. After registering,
-                        submit your enteries for stage 1.
+                        submit your enteries for round 1.
                     </p>
                     <center>
                         {" "}
-                        <span>APPLY FOR IDEASTORM</span>
-                        <span>APPLY FOR ROUND 1</span>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank"><span>APPLY FOR IDEASTORM</span></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform" target="_blank"><span>APPLY FOR ROUND 1</span></a>
                     </center>
                 </div>
 
                 <div className="register_mobile">
-                    <p className="register_now">Register Now</p>
+                    <p className="register_now">Apply Now</p>
                     <p>
                         To participate in Idea-Storm 2019 register here.
                     </p>
                     <center>
-                        <span>APPLY FOR IDEASTORM</span>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform" target="_blank">  <span>APPLY FOR IDEASTORM</span></a>
                     </center>
-                    <p>After registering, submit your enteries for stage 1.</p>
+                    <p>After registering, submit your enteries for round 1.</p>
                     <center>
-                        <span>APPLY FOR ROUND 1</span>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform" target="_blank">  <span>APPLY FOR ROUND 1</span></a>
                     </center>
                 </div>
 
@@ -244,7 +281,8 @@ export class IdeaStorm extends Component {
                             <p>Rachit Garg</p>
 
                             <p>+91 9992929203</p>
-                            <p>rachitgarg</p>
+                            <p>rgarg@me.iitr.ac.in</p>
+			   
                         </div>
 
                         <div className="coordinator_unit">
@@ -253,6 +291,7 @@ export class IdeaStorm extends Component {
                             </p>
 
                             <p>+91 7412883060</p>
+			    <p>hdubey@ee.iitr.ac.in</p>
                         </div>
 
                     </div>

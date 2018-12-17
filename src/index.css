@@ -35,6 +35,7 @@ body ,html{
 .active{
     color:#F39423  !important;
 }
-body , html ,p ,div, button , a , span,input,label ,tr ,td,rohit {
-    font-family: 'Montserrat';
-}
+ input , td,tr,div,span,label{
+        font-family: Proxima-nova-regular;
+
+ }

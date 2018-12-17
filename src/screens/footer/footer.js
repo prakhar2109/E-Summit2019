@@ -42,7 +42,7 @@ export default class FooterWithoutContactUs extends Component {
                 <p>
                     Phone Number</p>
                 <p>
-                    <a href="tel:9992929203">+91 9992929203</a>
+                    <a href="tel:7302200596">+91 7302200596</a>
                 </p>
             </div>
 
@@ -67,7 +67,7 @@ export default class FooterWithoutContactUs extends Component {
                     <p>
                         Phone Number</p>
                     <p>
-                        <a href="tel:9992929203">+91 9992929203</a>
+                        <a href="tel:7302200596">+91 7302200596</a>
                     </p>
                 </div>
 
