@@ -1,7 +1,20 @@
+@mixin mobile {
+    @media(max-width: 1000px) {
+        @content;
+    }
+
+}
+
+
+
 .sponsors {
 
-    padding: 80px 220px;
+    padding: 80px 10vw;
     background: #1A4D66;
+
+    @include mobile {
+        padding: 36px;
+    }
 
     .text {
         line-height: 41px;
@@ -9,6 +22,14 @@
         letter-spacing: 0.1em;
         padding-top: 45px;
         color: #E5E5E5;
+
+        @include mobile {
+            line-height: 21px;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+
+            color: #D8D8D8;
+        }
     }
 
     .title_sponsor {
@@ -20,33 +41,50 @@
 
     }
 
-    .title_sponsor_img{
+    .title_sponsor_img {
         margin-top: 100px;
+
+        @include mobile{
+            margin-top: 36px;
+        }
     }
 
 
 
     .sponsors_array {
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-column-gap: 5vw;
+        grid-template-columns: 23% 23% 23% 23%;
+        grid-column-gap: 3vw;
         padding-top: 100px;
+        grid-row-gap: 5vh;
+
+        @include mobile{
+            grid-template-columns:100%;
+            padding: 36px 20vw;
+          
+        }
+
+
 
         .sonsors_logo {
 
-            height: calc(8rem + 12vh);
+            height:18.4vw;
             width: 100%;
             display: grid;
             align-items: center;
             justify-items: center;
             padding: 30px 20px;
-
             border: 2px solid #2E86B2;
             box-sizing: border-box;
             border-radius: 4px;
 
-            img{
-                width:90%;
+            @include mobile{
+                height: 162px;
+                
+            }
+
+            img {
+                width: 90%;
             }
         }
 

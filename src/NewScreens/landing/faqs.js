@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SingleFAQ from "./../../components/singleFaq";
 import Header from "../../components/header";
+import {Element} from "react-scroll";
 class FAQBoard extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +31,7 @@ class FAQBoard extends Component {
   render() {
     console.log(this.props.faqList);
     return (
-      <div>
+      <Element name ="faq">
         <section id="faq">
           <div className="land_faq">
             <Header title="FAQs" />
@@ -44,7 +45,7 @@ class FAQBoard extends Component {
             </center>
           </div>
         </section>
-      </div>
+      </Element>
     );
   }
 }

@@ -1,88 +1,104 @@
-import React, {Component} from "react";
-import {NavLink} from "react-router-dom";
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import esummit from "./static/es.png";
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom";
 import "./css/nav.scss";
+import { Link } from "react-scroll";
 
 class Nav extends Component {
-    componentDidMount() {
+  componentDidMount() {
+    var height = document.getElementById("nav").offsetHeight;
+    height = height + "px";
 
-        var height = document
-            .getElementById("nav")
-            .offsetHeight;
-        height = height + "px";
+    document.getElementById("body").style.paddingTop = height;
+  }
+  render() {
+    return (
+      <>
+        <section id="nav" className="nav_pc">
+          <span>
+            <Link
+              activeClass="active"
+              to="events"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              Events
+            </Link>
+          </span>
 
-        document
-            .getElementById("body")
-            .style
-            .paddingTop = height;
-    }
-    render() {
-        return (
-            <>
- 
-            <section id="nav" className="nav_pc">
+          <span>
+            <Link
+              activeClass="active"
+              to="speakers"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              Speakers
+            </Link>
+          </span>
+          <span>
+            <Link
+              activeClass="active"
+              to="sponsors"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              Sponsors
+            </Link>
+          </span>
+          <span>
+            <Link
+              activeClass="active"
+              to="faq"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              FAQs
+            </Link>
+          </span>
 
-                <span>
-
-                    <NavLink to="/events">Events</NavLink>
-                </span>
-                <span>
-                    <NavLink to="/speakers">
-                        Speaker
-                    </NavLink>
-                </span>
-                <span>
-                    <NavLink to="/sponsors">
-                        Sponsors
-                    </NavLink>
-                </span>
-                <span>
-                    <NavLink to="/team">
-                        Team
-                    </NavLink>
-                </span>
-                <span>
-                    <NavLink to="/faq">
-                        FAQ
-                    </NavLink>
-                </span>
-                <span>
-                    <NavLink to="/">
-
-                        <img alt="ESummit Logo" src={esummit}/>
-                    </NavLink>
-                </span>
-                <span>
-                    <NavLink to="/login">
-                        Campus Ambassador
-                    </NavLink>
-                </span>
-                <span>
-
-                    <NavLink to="/ignite">
-                        Startup Ignite
-                    </NavLink>
-                </span>
-                <NavLink to="/login">
-
-                    <span className="login">
-                        Log in
-                    </span>
-                </NavLink>
-                <NavLink to="/register">
-
-                    <span className="register">
-                        Register
-                    </span>
-                </NavLink>
-            </section>
-
-     
- 
-            </>
-        );
-    }
+         <span>
+            <Link
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              Contact Us
+            </Link>
+          </span>
+          <span className = "eslogo">
+            <NavLink to="/">
+              <img alt="ESummit Logo" src={esummit} />
+            </NavLink>
+          </span>
+          <span>
+            <NavLink to="/login">Campus Ambassador</NavLink>
+          </span>
+          <span>
+            <NavLink to="/ignite">Startup Ignite</NavLink>
+          </span>
+          <NavLink to="/login">
+            <span className="login">Log in</span>
+          </NavLink>
+          <NavLink to="/register">
+            <span className="register">Register</span>
+          </NavLink>
+        </section>
+      </>
+    );
+  }
 }
 
 export default withRouter(Nav);

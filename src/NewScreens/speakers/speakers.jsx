@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./speakers.scss";
 import Header from "../../components/header";
-import Nav from "../landing/nav/nav.jsx";
+ 
 
 import Testimonial from "../landing/testimonials";
 
@@ -34,7 +34,7 @@ export default class speakers extends Component {
   render() {
     return (
       <>
-        <Nav />
+         
         <div className="speakers">
           <Header title="SPEAKERS" />
 

@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import "./css/landing.scss";
 import jump from "jump.js";
+import {Element} from "react-scroll";
 import Testimonials from "./testimonials";
 import FAQBoard from "./faqs";
 import About from "./about";
 import Events from "./events";
 import Team from "./team";
- 
+import Speakers from "./speakers";
+import Sponsors from "./sponsors";
+import Footer from "../IdeaStorm/footer/eventfooter";
 
 import Nav from "./nav/nav.jsx";
 
@@ -75,9 +78,15 @@ export default class LandingPage extends Component {
         </section>
         <About />
         <Events />
-        <Team />
+        <Speakers />
+        <Sponsors />
+
         <Testimonials />
         <FAQBoard faqList={this.state.faq} />
+
+        <Element name="contact">
+          <Footer />
+        </Element>
       </div>
     );
   }

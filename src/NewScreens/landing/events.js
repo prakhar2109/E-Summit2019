@@ -1,46 +1,17 @@
 import React, {Component} from 'react';
-import Slider from "react-slick";
 import Header from '../../components/header';
+import {Element} from "react-scroll";
 
 class Events extends Component {
-    state = {
-        speakers: [
-            {
-                id: 1,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 2,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 3,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 4,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 5,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }
-        ]
-    }
-    render() {
-        let settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1
-        }
-        return (
-            <section id="events">
 
+    render() {
+       
+        return (
+            <>
+            <Element name = "events" >
+ 
                 <div className="land_events">
-                    <Header title="EVENTS"/>
+                    <Header title="HIGHLIGHT EVENTS"/>
                     <p className="text">
                         Expert investor or an emerging entrepreneur or a quiz master, you think you know
                         it all ? Put that test to claim, battle it out in the field for the ultimate
@@ -94,72 +65,32 @@ class Events extends Component {
 
                 </div>
                 <div className="land_events">
-                    <center>
-                        <button className="all_events_button">VIEW ALL EVENTS</button>
-                    </center>
-                    <Header title="SPEAKERS"/>
-                    <p className="text">Meet the awesome companies who make this all possible.</p>
-                    <div className="speaker_slidder">
-                        <Slider {...settings}>
+    
 
-                            {this
-                                .state
-                                .speakers
-                                .map((update) => {
+                    <Header title = "Events " />
 
-                                    return (
-                                        <div key={update.id}>
-                                            <div className="img_holder"></div>
-
-                                            <p className="name">{update.name}</p>
-                                            <p className="designation">{update.designation}
-                                            </p>
-
-                                        </div>
-                                    );
-                                })}
-
-                        </Slider>
-
-                    </div>
-                    <center>
-                        <button className="all_events_button">VIEW ALL SPEAKERS</button>
-                    </center>
-                    <Header title="SPONSORS"/>
-                    <p className="text">
-                        Meet the awesome companies who make this all possible.
+                    <p className ="text" >
+                        Expert investor or an emerging entrepreneur or a quiz master, you think you know it all? Put that test to claim, battle it out in the field for the ultimate glory.
                     </p>
 
-                    <div className="speaker_slidder">
-                        <Slider {...settings}>
+                    <div className = "land_events_array2">
+                        <div className = "events_production">
 
-                            {this
-                                .state
-                                .speakers
-                                .map((update) => {
-
-                                    return (
-                                        <div key ={update.id}>
-                                            <div className="img_holder"></div>
-                                            <p className="name">{update.name}</p>
-                                            <p className="designation">
-                                                {update.designation
-}
-                                            </p>
-
-                                        </div>
-                                    );
-                                })
-}
-                        </Slider>
-
+                            <span> 
+                            <p className = "t1">PRODUCTATHON</p>
+                            <p className = "t2">Tagline</p>
+                            </span>
+                            <p className = "t3">COMING SOON</p>
+                        </div>
                     </div>
-                    <center>
-                        <button className="all_sponsors">VIEW ALL SPONSORS</button>
-                    </center>
+
                 </div>
 
-            </section>
+                </Element>
+
+         
+                    
+            </>
 
         );
     }

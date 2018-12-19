@@ -1,5 +1,5 @@
 @mixin mobile {
-    @media(max-width: 1200px) {
+    @media(max-width: 1000px) {
         @content;
     }
 
@@ -41,15 +41,17 @@
 
 .land_screen2 {
     background: url("../static/1.jpg");
-    padding: 0.625rem 13.75rem;
+    padding: 0.625rem 10vw;
     padding-top: 9.375rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding-bottom: 5.9375rem;
 
     @include mobile {
 
         padding: 64px 32px 32px 32px;
+        padding-bottom: 36px;
     }
 
 
@@ -59,19 +61,21 @@
         letter-spacing: 0.1em;
         margin-top: 2.75rem;
         color: #FEFFFF;
-        margin-bottom: 5.9375rem;
+
 
         @include mobile {
             line-height: 18px;
             font-size: 14px;
             letter-spacing: 0.1em;
-            margin-bottom: 36px;
+
         }
     }
 }
 
-.land_events {
-    padding: 8.75rem 13.75rem;
+.land_events,
+.land_speakers,
+.land_sponsors {
+
     background: #1A4D66;
     ;
 
@@ -79,8 +83,16 @@
         line-height: 2.5625rem;
         font-size: 1.5rem;
         letter-spacing: 0.1em;
-        margin: 2.75rem 0 0 0;
+        padding: 2.75rem 0 2.75rem 0;
         color: #D8D8D8;
+
+        @include mobile {
+            line-height: 18px;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            color: #D8D8D8;
+
+        }
 
     }
 
@@ -93,9 +105,18 @@
         font-size: 1rem;
         text-align: center;
         letter-spacing: 0.09em;
-
+        cursor: pointer;
         margin-bottom: 19rem;
         color: #FFFFFF;
+
+        @include mobile {
+            margin-bottom: 0;
+            line-height: 15px;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 0.09em;
+            padding: 1rem;
+        }
     }
 
     .slick-list {
@@ -108,6 +129,10 @@
     .speaker_slidder {
         padding-top: 7.375rem;
         padding-bottom: 6.75rem;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     .img_holder {
@@ -117,6 +142,8 @@
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
+
+
     }
 
     .name {
@@ -124,7 +151,18 @@
         font-size: 1.5rem;
         letter-spacing: 0.1em;
 
+
+
         color: #138AD6;
+
+        @include mobile {
+            line-height: 35px;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+
+            color: #138AD6;
+
+        }
 
     }
 
@@ -134,27 +172,132 @@
         letter-spacing: 0.1em;
 
         color: #FFFFFF;
+
+        @include mobile {
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+
+            color: #FFFFFF;
+            padding-bottom: 32px;
+        }
     }
 
 }
 
 
-.all_sponsors {
-    border: 2px solid white;
-    background: none;
-    padding: 20px;
-    line-height: 20px;
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 0.09em;
+.speaker_mobile{
+    display: none;
 
-    margin-bottom: 100px;
-    color: #FFFFFF;
+    @include mobile{
+        display: block;
+    }
 }
+.land_speakers,
+.land_sponsors {
+    padding: 110px 10vw;
+
+    @include mobile {
+        padding: 32px;
+    }
+}
+
+.land_events {
+    padding: 8.75rem 10vw 110px 10vw;
+
+    @include mobile {
+        padding: 36px;
+    }
+
+    .land_events_array2 {
+        padding: 0 0 140px 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        @include mobile {
+            display: block;
+        }
+
+        .events_production {
+            background: url("../static/6.png");
+            padding: 60px 0;
+            height: 456px;
+            display: grid;
+
+            @include mobile {
+                height: 300px;
+            }
+
+            p {
+                text-align: center;
+                color: #FFFFFF;
+
+            }
+
+            span {
+                align-self: start;
+            }
+
+            .t1 {
+                font-size: 28px;
+                letter-spacing: 0.1em;
+
+                @include mobile {
+                    line-height: normal;
+                    font-size: 16px;
+                    letter-spacing: 0.1em;
+                }
+
+            }
+
+            .t2 {
+
+                font-size: 24px;
+                letter-spacing: 0.1em;
+
+                @include mobile {
+                    line-height: 18px;
+                    font-size: 12px;
+                    text-align: center;
+                    letter-spacing: 0.1em;
+
+                    color: #FFFFFF;
+
+                }
+
+
+            }
+
+            .t3 {
+
+                font-size: 24px;
+                text-align: center;
+                letter-spacing: 0.09em;
+                align-self: end;
+
+                @include mobile {
+                    line-height: 15px;
+                    font-size: 12px;
+                    text-align: center;
+                    letter-spacing: 0.09em;
+
+                    color: #FFFFFF;
+                }
+
+            }
+        }
+    }
+}
+
+
 
 .land_events_array {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
+
+    @include mobile {
+        grid-template-columns: 50% 50%;
+    }
 
     .conclave {
         background: url("../static/2.png");
@@ -183,12 +326,28 @@
         color: white;
         padding-bottom: 200px;
 
+        @include mobile {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
+
         p:first-child {
             font-size: 32px;
             letter-spacing: 0.1em;
             font-weight: bold;
             color: #FFFFFF;
             margin-top: 200px;
+
+            @include mobile {
+
+                font-size: 16px;
+                text-align: center;
+                letter-spacing: 0.1em;
+
+                color: #FFFFFF;
+                margin-top: 16px;
+
+            }
         }
 
         p:nth-child(2) {
@@ -198,6 +357,15 @@
             text-align: left;
             color: #FFFFFF;
             margin-top: 98px;
+
+            @include mobile {
+                line-height: 18px;
+                font-size: 12px;
+                text-align: center;
+                letter-spacing: 0.1em;
+                margin-top: 16px;
+                color: #FFFFFF;
+            }
 
         }
 
@@ -209,12 +377,27 @@
             font-weight: 800 !important;
             color: #FFFFFF;
 
+            @include mobile {
+                line-height: 15px;
+                font-size: 12px;
+                text-align: center;
+                letter-spacing: 0.09em;
+                margin-top: 16px;
+                color: #FFFFFF;
+
+            }
+
         }
 
         i {
             font-size: 32px;
             margin-top: 240px;
             margin-bottom: 30px;
+
+            @include mobile {
+                margin-top: 80px;
+                font-size: 16px;
+            }
         }
     }
 }
@@ -222,7 +405,7 @@
 
 
 .land_team {
-    padding: 9.5rem 15rem;
+    padding: 9.5rem 10vw;
     background: #242626;
     color: white;
 
@@ -306,7 +489,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 220px;
+    padding: 10vw;
 
     @include mobile {
         padding: 128px 0;
@@ -393,15 +576,15 @@
 
 .land_faq {
 
-    padding: 140px 230px;
+    padding: 140px 10vw;
 
     @include mobile {
         padding: 32px;
     }
 
     .head1 {
-        color: #1A4D66 !important;   
-        font-family: "ProximaNova-Bold";  
+        color: #1A4D66 !important;
+        font-family: "ProximaNova-Bold";
     }
 
     p {
@@ -411,7 +594,8 @@
         letter-spacing: 0.1em;
         margin-bottom: 72px;
         color: #000000;
-        font-family: "Proxima-nova-regular";          
+        font-family: "Proxima-nova-regular";
+
         @include mobile {
             line-height: 18px;
             font-size: 14px;
@@ -441,114 +625,6 @@
     }
 }
 
+ 
 
-#contact {
-
-    background: #242626;
-    color: white;
-    padding: 152px 260px;
-
-    .contact_grid {
-        display: grid;
-        grid-template-columns: 40% auto;
-        grid-column-gap: 130px;
-        padding-top: 44px;
-
-
-        form {
-
-            input,
-            textarea {
-                width: 90%;
-                background: #4A4B4B;
-                border-radius: 4px;
-                border: none;
-                padding: 12px 24px;
-                margin-bottom: 44px;
-            }
-
-            button {
-                padding: 12px;
-                border: none;
-                background: #F49D35;
-                border-radius: 4px;
-                color: white;
-                width: 90%;
-            }
-        }
-
-        .title {
-            font-size: 24px;
-
-            letter-spacing: 0.04em;
-
-            color: #F49D35;
-        }
-
-        .value {
-
-            font-size: 28px;
-            letter-spacing: 0.04em;
-
-            color: #FFFFFF;
-            margin-bottom: 60px;
-
-        }
-
-
-
-
-    }
-
-
-}
-
-
-#foot {
-
-    background: #242626;
-    color: white;
-    padding: 0 00px;
-    padding-bottom: 96px;
-
-    i {
-        font-size: 72px;
-        margin-right: 85px;
-    }
-
-    .fa-angle-up {
-        color: #F49D35;
-        margin-right: 0px;
-    }
-
-    .back {
-
-        font-size: 28px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        color: #F49D35;
-
-    }
-
-    .org {
-        font-size: 24px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        margin: 72px 0;
-        color: #FFFFFF;
-
-    }
-
-    .inspire {
-
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        font-size: 24px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        margin-top: 40px;
-        color: #FFFFFF;
-    }
-}
+ 

@@ -11,6 +11,12 @@ import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm"
 
 import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
+import LandingPage from "./NewScreens/landing/landing";
+import Speakers from "./NewScreens/speakers/speakers";
+import Sponsors from "./NewScreens/sponsors/sponsors";
+import FAQBoard from "./NewScreens/faq/faq";
+import CampusAmbasder from "./NewScreens/ambasder/ambasder"
+import LoginComponent from "./components/login/login";
 
 
  
@@ -88,10 +94,13 @@ class App extends Component {
             <Route path="/loader" component={Loader} />
 
             <Route path = "/ideastorm" component = {IdeaStorm} />
-            {/* <Route path="/footer" component={Lfooter} /> */}
-            {/* <Route path="/Rselect" component={RSelect} /> */}
-      
-            {/* </div> */}
+            <Route path = "/home" component = {LandingPage} />
+            <Route path = "/speakers" component = {Speakers} />
+            <Route path  = "/sponsors" component = {Sponsors} />
+            <Route path = "/faq" component = {FAQBoard} />
+            <Route path = "/campusambasder" component = {CampusAmbasder} />
+
+            <Route path = "/test" component = {LoginComponent} />
             
           </React.Fragment>
           </Switch>

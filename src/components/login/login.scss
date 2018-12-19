@@ -1,0 +1,193 @@
+.andhera {
+    background: rgba(79, 79, 79, 0.37);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    z-index: 200;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.login_outer {
+    position: fixed;
+    z-index: 200;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    .login_inner {
+        background: white;
+
+        min-width: 40vw;
+
+        .top {
+            padding: 36px;
+            background: rgba(49, 99, 123, 0.08);
+
+            p:first-child {
+                font-size: 24px;
+                text-align: center;
+                letter-spacing: 0.04em;
+                color: #1A4D66;
+            }
+
+            p:nth-child(2) {
+                font-size: 20px;
+                color: #1A4D66;
+                text-align: center;
+
+            }
+        }
+    }
+
+
+
+    .google {
+
+        font-size: 20px;
+        cursor: pointer;
+        color: #FFFFFF;
+        padding-right: 2rem;
+
+        span:first-child {
+            padding: 12px 24px;
+            border-right: 1px solid #C8341A;
+            display: inline-block;
+            background: #E0492F;
+        }
+
+        span:nth-child(2) {
+            padding: 17px 64px;
+            background: #E0492F;
+        }
+    }
+
+    .facebook {
+
+        font-size: 20px;
+        cursor: pointer;
+        color: #FFFFFF;
+
+        span:first-child {
+            padding: 12px 24px;
+            border-right: 1px solid #193776;
+            display: inline-block;
+            background: #3B5999;
+        }
+
+        span:nth-child(2) {
+            padding: 17px 64px;
+            background: #3B5999;
+        }
+    }
+
+
+
+    .login_bottom {
+        padding: 54px;
+    }
+
+
+    form {
+        padding-top: 3rem;
+        label {
+            display: block;
+            font-size: 20px;
+            letter-spacing: 0.02em;
+
+            color: #B2B2B2;
+
+        }
+
+        .input {
+            background: none;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            border: none;
+            color: #B2B2B2;
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid #B2B2B2;
+            margin-bottom:3rem;
+        }
+
+        .submit {
+
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 0.06em;
+
+            color: #FFFFFF;
+            padding: 14px 32px;
+            background: rgba(243, 148, 35, 0.75);
+            border-radius: 4px;
+            border: none;
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hr-text {
+    line-height: 1em;
+    margin-top: 40px;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: 1;
+
+    &:before {
+        content: '';
+        // use the linear-gradient for the fading effect
+        // use a solid background color for a solid bar
+        background: #4F4F4F;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+    }
+
+    &:after {
+        content: attr(data-content);
+        position: relative;
+        display: inline-block;
+        color: black;
+
+        padding: 0 .5em;
+        line-height: 1.5em;
+        // this is really the only tricky part, you need to specify the background color of the container element...
+
+
+
+        color: #4F4F4F;
+
+        background-color: #fcfcfa;
+    }
+}

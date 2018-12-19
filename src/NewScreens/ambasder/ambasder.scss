@@ -1,0 +1,52 @@
+.ambasder {
+    padding: 96px 10vw;
+    background: url("./static//back.png");
+
+
+    p:first-child {
+        line-height: normal;
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+    }
+
+    p:nth-child(2) {
+        line-height: 39px;
+        font-size: 26px;
+        text-align: center;
+        letter-spacing: 0.06em;
+
+        color: #FFFFFF;
+
+        padding-top: calc(3rem + 5vh);
+        padding-bottom: calc(3rem + 5vh);
+
+    }
+
+    .login {
+        line-height: 20px;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0.09em;
+        color: #FFFFFF;
+        padding: 20px 55px;
+        border: 2px solid white;
+        cursor: pointer;
+
+    }
+
+    .register {
+        line-height: 20px;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0.09em;
+        background: white;
+        color: #240202;
+        padding: 20px 55px;
+        border: 2px solid white;
+        cursor: pointer;
+        margin-left: 2rem;
+
+    }
+}
