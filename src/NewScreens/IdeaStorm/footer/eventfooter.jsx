@@ -4,7 +4,7 @@ import Back from "../static/top.png";
 import jump from "jump.js"
 import $ from 'jquery';
 import 'form-serializer';
-import validator from 'react-validation';
+ 
 export default class Lfooter extends Component {
     constructor(props){
         super(props);

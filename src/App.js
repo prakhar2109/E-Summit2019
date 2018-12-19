@@ -75,33 +75,15 @@ class App extends Component {
         <div>
           <Switch>
           <React.Fragment>
-            {/* <div id = "main_class" className ="main_class">  */}
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/login" component={Login} />
-
-              {/* <Route exact path="/register" component={Register} />
-            {
-              this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
-                <Route exact path="/login" component={Login} />
-            } */}
-
-             <Route exact path="/register" component={Register} />
-            
-
-
-            <Route exact path="/dashboard/" component={LeaderBoard} />
-            <Route path="/ignite" component={ignite} />
-            <Route path="/loader" component={Loader} />
+          
 
             <Route path = "/ideastorm" component = {IdeaStorm} />
-            <Route path = "/home" component = {LandingPage} />
+            <Route path = "/" component = {LandingPage} exact/>
             <Route path = "/speakers" component = {Speakers} />
             <Route path  = "/sponsors" component = {Sponsors} />
             <Route path = "/faq" component = {FAQBoard} />
             <Route path = "/campusambasder" component = {CampusAmbasder} />
-
-            <Route path = "/test" component = {LoginComponent} />
-            
+ 
           </React.Fragment>
           </Switch>
         </div>

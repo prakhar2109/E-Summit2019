@@ -212,7 +212,12 @@
     .land_events_array2 {
         padding: 0 0 140px 0;
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 30% 30% 30%;
+
+        @media (min-width: 1000px) and (max-width: 1300px) {
+
+            grid-template-columns: 50% 50%;
+        }
 
         @include mobile {
             display: block;

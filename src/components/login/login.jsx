@@ -1,16 +1,24 @@
 import React, { Component } from "react";
 import Google from "../static/google.png";
 import Facebook from "../static/facebook.png";
+import Cross from "../static/cross.png"
 
 import "./login.scss";
 
+
 export default class LoginComponent extends Component {
+
+  hide = () =>{
+    document.getElementById("log").style.display = "none";
+  }
   render() {
     return (
-      <>
+      <div id = "log">
         
-        <div className="andhera" />
-        <div className="login_outer">
+        <div className="andhera"  onClick = {this.hide} />
+        <div   className="login_outer">
+
+        <img onClick =  {this.hide} className = "cross" src = {Cross} />
           
           <div className="login_inner">
             <div className="top">
@@ -61,7 +69,7 @@ export default class LoginComponent extends Component {
             </div>
           </div>
         </div>
-      </>
+      </ div>
     );
   }
 }
