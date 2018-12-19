@@ -8,7 +8,7 @@ class Events extends Component {
        
         return (
             <>
-            <Element name = "events" >
+            <Element id = "events" name = "events" >
  
                 <div className="land_events">
                     <Header title="HIGHLIGHT EVENTS"/>

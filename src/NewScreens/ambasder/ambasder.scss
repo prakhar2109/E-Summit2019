@@ -1,8 +1,11 @@
 .ambasder {
-    padding: 96px 10vw;
+    padding: 108px 10vw;
     background: url("./static//back.png");
 
-
+    @media (max-height:800px){
+        padding:72px 10vw;
+    }
+   
     p:first-child {
         line-height: normal;
         font-size: 40px;
@@ -10,17 +13,20 @@
         letter-spacing: 0.06em;
         color: #FFFFFF;
     }
-
     p:nth-child(2) {
         line-height: 39px;
         font-size: 26px;
         text-align: center;
         letter-spacing: 0.06em;
-
+        padding-top:  calc(2rem + 15vh);
+        padding-bottom:  calc(2rem + 15vh);
         color: #FFFFFF;
 
-        padding-top: calc(3rem + 5vh);
-        padding-bottom: calc(3rem + 5vh);
+        @media (max-width:1500px) {
+            padding-top:  calc(1rem + 5vh);
+            padding-bottom:  calc(1rem + 5vh);
+        }
+
 
     }
 
@@ -48,5 +54,30 @@
         cursor: pointer;
         margin-left: 2rem;
 
+    }
+}
+
+.about_ambasder,
+.perks_ambasder {
+
+    padding: 72px 10vw;
+    border-bottom: 1px solid #B2B2B2;
+    .head1 {
+        color: #1A4D66;
+    }
+
+    p ,ol{
+        line-height: 35px;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        padding-top: 72px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    
+    li{
+        padding-top:16px;
+    }
+    ol{
+        list-style-type: decimal; 
     }
 }

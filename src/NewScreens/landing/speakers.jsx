@@ -43,7 +43,7 @@ export default class Speakers extends Component {
     };
     return (
       <div>
-        <Element name="speakers">
+        <Element id = "speakers" name="speakers">
           <div className="land_speakers">
             <Header title="SPEAKERS" />
             <p className="text">

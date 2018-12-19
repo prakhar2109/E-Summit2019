@@ -84,7 +84,7 @@ export default class LandingPage extends Component {
         <Testimonials />
         <FAQBoard faqList={this.state.faq} />
 
-        <Element name="contact">
+        <Element id ="talk" name="contact">
           <Footer />
         </Element>
       </div>

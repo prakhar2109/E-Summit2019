@@ -44,7 +44,7 @@ export default class Sponsors extends Component {
     };
     return (
       <div>
-        <Element name="sponsors">
+        <Element id = "sponsors" name="sponsors">
           <div className="land_sponsors">
             <Header title="SPONSORS" />
             <p className="text">

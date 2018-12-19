@@ -31,7 +31,7 @@ class FAQBoard extends Component {
   render() {
     console.log(this.props.faqList);
     return (
-      <Element name ="faq">
+      <Element id = "faq" name ="faq">
         <section id="faq">
           <div className="land_faq">
             <Header title="FAQs" />

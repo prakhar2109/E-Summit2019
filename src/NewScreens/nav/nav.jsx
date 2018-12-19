@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import esummit from "./static/es.png";
 import { withRouter } from "react-router-dom";
 import "./css/nav.scss";
-import { Link } from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 
 class Nav extends Component {
   componentDidMount() {
     var height = document.getElementById("nav").offsetHeight;
+    height = height - 5;
     height = height + "px";
 
     document.getElementById("body").style.paddingTop = height;
@@ -16,69 +17,29 @@ class Nav extends Component {
     return (
       <>
         <section id="nav" className="nav_pc">
-          <span>
-            <Link
-              activeClass="active"
-              to="events"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-            >
-              Events
-            </Link>
+
+          <span> 
+          <HashLink  to="/#events">Events</HashLink>
           </span>
 
-          <span>
-            <Link
-              activeClass="active"
-              to="speakers"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-            >
-              Speakers
-            </Link>
-          </span>
-          <span>
-            <Link
-              activeClass="active"
-              to="sponsors"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-            >
-              Sponsors
-            </Link>
-          </span>
-          <span>
-            <Link
-              activeClass="active"
-              to="faq"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-            >
-              FAQs
-            </Link>
+
+          <span> 
+          <HashLink  to="/#speakers">Speakers</HashLink>
           </span>
 
-         <span>
-            <Link
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-            >
-              Contact Us
-            </Link>
+
+          <span> 
+          <HashLink  to="/#sponsors">Sponsors</HashLink>
           </span>
-          <span className = "eslogo">
+
+            <span> 
+          <HashLink  to="/#faq">FAQs</HashLink>
+          </span>
+
+            <span> 
+          <HashLink  to="/#talk">Contact Us</HashLink>
+          </span>
+          <span className="eslogo">
             <NavLink to="/">
               <img alt="ESummit Logo" src={esummit} />
             </NavLink>
