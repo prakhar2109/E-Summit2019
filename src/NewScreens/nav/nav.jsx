@@ -8,7 +8,7 @@ import { HashLink } from "react-router-hash-link";
 class Nav extends Component {
   componentDidMount() {
     var height = document.getElementById("nav").offsetHeight;
-    height = height - 5;
+    c
     height = height + "px";
 
     document.getElementById("body").style.paddingTop = height;

@@ -8,6 +8,7 @@ import { Link } from "react-scroll";
 class Nav extends Component {
   componentDidMount() {
     var height = document.getElementById("nav").offsetHeight;
+    height = height - 5;
     height = height + "px";
 
     document.getElementById("body").style.paddingTop = height;
