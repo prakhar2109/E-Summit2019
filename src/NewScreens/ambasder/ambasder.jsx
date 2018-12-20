@@ -4,7 +4,8 @@ import Login from "../../components/login/login";
 import Nav from "../nav/nav";
 import Header from "../../components/header";
 import Bullets from "../../components/bullets/bullets";
-import Coordinator from "../../components/contact/contact"
+import Coordinator from "../../components/contact/contact";
+import Footer from "../IdeaStorm/Foot/eventfooter";
 
 export default class CampusAmbasder extends Component {
   show = () => {
@@ -98,6 +99,7 @@ export default class CampusAmbasder extends Component {
         <Coordinator data = {contact} title = "FOR QUERIES" />
 
         <Login />
+        <Footer />
       </>
     );
   }

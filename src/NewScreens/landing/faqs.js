@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SingleFAQ from "./../../components/singleFaq";
 import Header from "../../components/header";
 import {Element} from "react-scroll";
+import {NavLink } from "react-router-dom";
 class FAQBoard extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +42,7 @@ class FAQBoard extends Component {
             })}
 
             <center>
-              <button className="view_all"> VIEW ALL </button>{" "}
+              <NavLink to = "/faq" > <button className="view_all"> VIEW ALL </button></NavLink>
             </center>
           </div>
         </section>

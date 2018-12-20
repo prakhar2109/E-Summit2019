@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import "./sponsors.scss";
 import img1 from "./1.png";
+import Nav from "../nav/nav";
+import Footer from "../IdeaStorm/Foot/eventfooter";
 export default class Sponsors extends Component {
   state = {
     sponsors: [
@@ -29,6 +31,7 @@ export default class Sponsors extends Component {
   render() {
     return (
       <>
+        <Nav />
         <div className="sponsors">
           <Header title="SPONSORS" />
           <p className="text">
@@ -52,6 +55,8 @@ export default class Sponsors extends Component {
           </div>
           
         </div>
+
+        <Footer></Footer>
       </>
     );
   }

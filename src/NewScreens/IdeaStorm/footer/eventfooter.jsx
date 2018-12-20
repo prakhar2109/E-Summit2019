@@ -16,7 +16,7 @@ export default class Lfooter extends Component {
         }
     }
     top = () => {
-        jump(".ideastorm", {offset: -130});
+        jump("#body",);
     };
     validate = () => {
         console.log("empty field")

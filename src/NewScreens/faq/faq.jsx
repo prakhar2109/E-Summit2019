@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Nav from "./../landing/nav/nav.jsx";
 import Header from "../../components/header";
 import { Tabs } from "antd";
 import "./faq.scss";
 import 'antd/dist/antd.css';
-
+import Nav from "../nav/nav"
+import Footer from "../IdeaStorm/Foot/eventfooter"
 const TabPane = Tabs.TabPane;
 
 export default class FAQPage extends Component {
@@ -32,6 +32,7 @@ export default class FAQPage extends Component {
     console.log("faqList", this.state.faqList);
     return (
       <React.Fragment>
+        <Nav />
  
         <div className="faq">
           <Header title="FAQs" />
@@ -56,6 +57,7 @@ export default class FAQPage extends Component {
             E-Mail your query to esummit18@gmail.com or Get in touch with us
           </p>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }
