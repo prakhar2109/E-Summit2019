@@ -143,7 +143,7 @@ export default class Lfooter extends Component {
                 </div>
 
                 <div />
-                <div>
+                <div className = "Address">
                   <div className="landing-footer-heading">Our Address</div>
 
                   <div className="landing-footer-details landing-footer-adddetails">

@@ -24,7 +24,7 @@
         background: url('../static/landingfooter.png');
         background-size: cover;
         height: fit-content;
-        padding:  14.07vh 0;
+        padding:  14.07vh 20%;
 
         @include mobile {
             padding-top: 1vh;
@@ -43,7 +43,7 @@
         grid-template-columns: auto auto auto;
         width: 100vw;
 
-        padding:0 5rem;
+        
 
 
         @media (max-width: 900px) {
@@ -121,6 +121,10 @@
         padding-top: 2.8vh;
     }
 
+    .Address{
+        grid-column-start: 2;
+        grid-column-end: 6;
+    }
 
     #ladingpageinput {
         display: flex;
