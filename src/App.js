@@ -1,11 +1,4 @@
 import React, { Component } from "react";
-// import HomePage from "./screens/home/home";
-// import Header from "./screens/header/header";
-// import Login from "./screens/login/login";
-// import Register from "./screens/register/register";
-// import ignite from "./screens/ignite/ignite"
- 
-// import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm"
 
@@ -15,19 +8,10 @@ import LandingPage from "./NewScreens/landing/landing";
 import Speakers from "./NewScreens/speakers/speakers";
 import Sponsors from "./NewScreens/sponsors/sponsors";
 import FAQBoard from "./NewScreens/faq/faq";
-import CampusAmbasder from "./NewScreens/ambasder/ambasder"
-import LoginComponent from "./components/login/login";
-
-
+import CampusAmbasder from "./NewScreens/ambasder/ambasder";
+import Registration from "./components/RegistrationPortal/Index";
  
-// import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
-// const Loading = ({ error }) => {
-//   if (error) {
-//     return <div>Error loading component</div>;
-//   } else {
-//     return <Loader />;
-//   }
-// };
+ 
 
 const Login = Loadable({
   loader: () => import("./screens/login/login"),
@@ -35,6 +19,22 @@ const Login = Loadable({
   loading: () => <Loader />,
 
 });
+
+
+const Stepform = Loadable({
+  loader: () => import("./components/Stepform"),
+
+  loading: () => <Loader />,
+
+});
+
+const Timeline = Loadable({
+  loader: () => import("./components/timeline/Index"),
+
+  loading: () => <Loader />,
+
+});
+
 
 const HomePage = Loadable({
   loader: () => import("./screens/home/home"),
@@ -51,15 +51,24 @@ const Register = Loadable({
   loading: () => <Loader />,
 });
 
-// const Lfooter = Loadable({
-//   loader: () => import("./screens/footer/landingpagefooter"),
-//   loading: () => Loading
-// });
+const RegisterPortalIndex = Loadable({
+  loader: () => import("./components/RegistrationPortal/Index"),
+  loading: () => <Loader />,
+});
 
+
+
+ 
 const LeaderBoard = Loadable({
   loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
   loading: () => <Loader />,
 });
+
+const SocialLogin = Loadable({
+  loader: () => import("./components/Index"),
+  loading: () => <Loader />,
+});
+
 
 class App extends Component {
   constructor() {
@@ -83,7 +92,7 @@ class App extends Component {
             <Route path  = "/sponsors" component = {Sponsors} />
             <Route path = "/faq" component = {FAQBoard} />
             <Route path = "/campusambasder" component = {CampusAmbasder} />
- 
+            <Route path = "/registration_portal" component = {Registration} />
           </React.Fragment>
           </Switch>
         </div>

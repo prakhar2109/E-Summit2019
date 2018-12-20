@@ -81,9 +81,10 @@
         }
 
         p:first-child {
-            font-size: 32px;
+            font-size: 48px;
             letter-spacing: 0.1em;
-            padding-bottom: calc(20px + 1vh);
+            padding-bottom: 0;
+	    margin-bottom:0;
             color: #FFFFFF;
             font-family: "ProximaNova-Bold";
 
@@ -100,20 +101,34 @@
             letter-spacing: 0.1em;
             color: #FFFFFF;
             font-family: "ProximaNova-Light";
-            padding-bottom: calc(30px + 3vh);
+            padding-bottom: calc(0px + 3vh);
 
             @include mobile {
                 line-height: 15px;
                 font-size: 10px;
                 text-align: center;
                 letter-spacing: 0.1em;
-                padding-bottom: calc(15px + 3vh);
+                padding-bottom: 0;
                 color: #FFFFFF;
 
             }
         }
+	 p:nth-child(3) {
 
-        p:nth-child(3) {
+	font-size: 28px;
+        font-family: "ProximaNova-Semibold";
+	color: #FFFFFF;
+	padding-bottom:4.62vh;
+		@include mobile {
+                line-height: 14px;
+                font-size: 10px;
+                text-align: center;
+                letter-spacing: 0.1em;
+                padding-bottom: calc(15px + 3vh);
+                
+		}
+	}
+        p:nth-child(4) {
             line-height: 46px;
             font-size: 24px;
             letter-spacing: 0.1em;
@@ -500,11 +515,16 @@
     padding: 100px 10vw;
 }
 .ideastorm .idea p:nth-child(2){
-padding-bottom: calc(21.3px + 3vh);
+padding-bottom: 0;
 font-size: 19.88px;
 }
 
-   
+.ideastorm .idea p:nth-child(3) {
+
+	font-size: 19.88px;
+        font-family: "ProximaNova-Semibold";
+	color: #FFFFFF;
+}
 
 
     .ideastorm .idea p:first-child {
@@ -513,7 +533,7 @@ font-size: 19.88px;
     margin-bottom: 0px;
     }
 
-    .ideastorm .idea p:nth-child(3) {
+    .ideastorm .idea p:nth-child(4) {
         font-size: 22.07px;
 
     }
