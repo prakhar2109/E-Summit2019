@@ -400,7 +400,8 @@
     }
 
     .head1 {
-        color: #1A4D66 !important;
+        color: #1A4D66 !important;   
+        font-family: "ProximaNova-Bold";  
     }
 
     p {
@@ -410,7 +411,7 @@
         letter-spacing: 0.1em;
         margin-bottom: 72px;
         color: #000000;
-
+        font-family: "Proxima-nova-regular";          
         @include mobile {
             line-height: 18px;
             font-size: 14px;

@@ -73,6 +73,11 @@ export default class ComingSoon extends Component {
                                     <p className={this.state.isActive === 'register'? "esummit-navbar-cto-active":null}>Campus Ambassador</p>
                                 </div>
                             </Link>
+                            <Link to="/ideastorm" className="">
+                                <div className={this.state.displaynavbar ? "navbar-show" : "navbar-hide"}>
+                                    <p className={this.state.isActive === 'footer'? "esummit-navbar-cto-active":null}>IdeaStorm</p>
+                                </div>
+                            </Link>
                         </div>
                         : null}
 

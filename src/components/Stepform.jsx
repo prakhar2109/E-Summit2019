@@ -5,7 +5,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import SocialLogin from "./Index"
+// import SocialLogin from "./Index"
 
 const styles = theme => ({
     root: {
@@ -19,11 +19,26 @@ const styles = theme => ({
         marginBottom: theme.spacing.unit,
     },
     iconContainer: {
-        // backgroundColor: "red",
-        // color: "red"
+        color: "red !important"
     },
     step: {
-        color: "red"
+        color: "red !important"
+    },
+    active: {
+        color: "red !important"
+    },
+    completed: {
+        color: "red !important"
+    },
+    steproot: {
+        color: "red !important"
+    },
+    icon: {
+        //color of all icons
+        color: "red !important"
+    },
+    iconactive: {
+        color: "blue !important"
     }
 });
 
@@ -36,11 +51,11 @@ function getSteps() {
 function getStepContent(stepIndex) {
     switch (stepIndex) {
         case 0:
-            return <div><SocialLogin /></div>;
+            return <div></div>;
         case 1:
-            return 'PROFILE TYPE';
+            return <div><input /></div>;
         case 2:
-            return 'PERSONAL DETAILS';
+            return <div></div>;
         default:
             return 'Uknown stepIndex';
     }
@@ -83,7 +98,18 @@ class Stepform extends React.Component {
                                 completed: classes.completed,
                                 active: classes.active
                             }} key={label}>
-                                <StepLabel classes={{ iconContainer: classes.iconContainer }}>{label}</StepLabel>
+                                <StepLabel
+                                    StepIconProps={{
+                                        classes: {
+                                            root: classes.icon,
+                                            active: classes.iconactive
+                                        }
+                                    }}
+                                    classes={{
+                                        root: classes.steproot,
+                                    }}>
+                                    {label}
+                                </StepLabel>
                             </Step>
                         );
                     })}

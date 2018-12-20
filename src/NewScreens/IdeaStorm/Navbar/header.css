@@ -260,6 +260,7 @@
     .esummit-navbarevent-cto-active {
         color: #F39423;
         font-family: Montserrat;
+        font-size:16px;
         padding: 10px 20px 10px 56px;
         background: rgba(243, 148, 35, 0.09);
     }
@@ -267,6 +268,7 @@
     .esummit-navbarevent-cto-inactive {
         color: #F39423;
         font-family: Montserrat;
+        font-size:16px;
         padding: 10px 20px 10px 56px;
     }
 

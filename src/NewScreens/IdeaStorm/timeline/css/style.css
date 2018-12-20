@@ -25,7 +25,7 @@ a {
 
 /* -------------------------------- 
 
-Main Components 
+Main Components .timeline
 
 -------------------------------- */
 .ideastorm-vector{
@@ -34,21 +34,21 @@ Main Components
     position: relative;
     z-index: 2;
     margin-left: -1.5rem;
-    top: 116px;
+    top: 11.5vh;
     left: 220px;
 
 }
 
 .ideastorm-head1{
 
-    font-size: 2rem !important;
+    font-size: 2rem;
     letter-spacing: 0.1em;
     color: #FEFFFF;
-    font-weight: bold !important;
+    font-family: "ProximaNova-Bold";
     display: inline;
     margin-left: -2rem;
     left: 220px;
-    top: 106px;
+    top: 12vh;
     z-index: 3;
     position: relative;
 
@@ -88,6 +88,22 @@ Main Components
   .cd-horizontal-timeline .timeline {
     width: 90%;
   }
+.cd-horizontal-timeline.loaded{
+margin-top: 50px;
+}
+  .ideastorm-head1{
+	left:0;
+top:30px;
+font-size: 18px !important;
+    letter-spacing: 0.1em;
+    margin-left: -1.5rem;
+   }
+.ideastorm-vector{
+ left:0;
+top:30px;
+    width: 2.5rem;
+    margin-left: 1rem;
+}
 }
 .cd-horizontal-timeline .ideastormevents-wrapper {
   position: relative;
@@ -151,11 +167,13 @@ Main Components
   transition: transform 0.3s;
 }
 .cd-horizontal-timeline .ideastormevents a {
+  
   position: absolute;
   bottom: 0;
   z-index: 2;
   text-align: center;
-  font-size: 1rem;
+  font-size: 22.72px;
+  font-family: "ProximaNova-Semibold";
   padding-bottom: 15px;
   color: white;
   line-height: normal;
@@ -353,8 +371,15 @@ Main Components
   content: '- ';
 }
 .cd-horizontal-timeline .ideastormevents-content p {
-  font-size: 1.4rem;
-  color: #959595;
+ font-family: "Proxima-nova-regular";
+  background: #fff;
+  color: #656565;
+  font-size: 12px;
+  overflow: hidden;
+  height: fit-content;
+  width: 296px;
+  padding: 44px;
+  
 }
 .cd-horizontal-timeline .ideastormevents-content em, .cd-horizontal-timeline .ideastormevents-content p {
   line-height: 1.6;
@@ -367,14 +392,18 @@ Main Components
     font-size: 2rem;
   }
   .cd-horizontal-timeline .ideastormevents-content p {
+     font-family: "Proxima-nova-regular";
     background: #fff;
     color: #656565;
     font-size: 16px;
     overflow: hidden;
-    height: 36.75vh;
+    height: fit-content;
     width: 711px;
     padding: 44px;
   }
+  #ideastormevents-content-span{
+ font-family: "ProximaNova-Semibold";
+}
 }
 
 @-webkit-keyframes cd-enter-right {

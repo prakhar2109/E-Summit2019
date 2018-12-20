@@ -1,3 +1,4 @@
+
 @mixin mobile {
     @media(max-width: 1200px) {
         @content;
@@ -5,38 +6,49 @@
 
 }
 
-.Eventsheader{
+.Eventsheader {
 
-display:none;
+    display: none;
 
- @include mobile {
-            display: block;
-        }
+    @include mobile {
+        display: block;
+    }
 
 }
+
 .ideastorm {
-    padding-top:50px;
+    padding-top: 50px;
 
     .header {
         background: #0D1313;
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
-        display: flex;
+        display: grid;
         align-items: center;
-        padding: 0 0 0 220px;
-        justify-content: space-between;
+        grid-template-columns: 20% 80%;
+        padding: 0 10vw;
+
         position: fixed;
-        top:0;
-        left:0;
-        right:0;
+        top: 0;
+        left: 0;
+        right: 0;
         z-index: 100000000000000000;
-        
+
+        height: 100px;
 
         @include mobile {
             display: none;
         }
 
+        img {
+            height: 100px;
+        }
+
         .head_array {
+
+            justify-self: end;
+
             span {
+                font-family: "ProximaNova-Semibold";
                 font-size: 20px;
                 text-align: center;
                 letter-spacing: 0.06em;
@@ -50,18 +62,21 @@ display:none;
     }
 
     .idea {
-        background: url("./static/leadership.png");
+        background: url("./static/1920.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         width: 100vw;
         min-height: 65rem;
         height: auto;
-        padding: 100px 220px;
+        padding: 100px 10vw;
 
         @include mobile {
             padding: 44px 32px;
-            padding-top:112px;
-            background: #571210;
+            padding-top: 60px;
+            background: url("./static/mobileIS.png");
+            background-repeat: no-repeat;
+            background-size: cover;
             min-height: 90vh;
         }
 
@@ -70,10 +85,11 @@ display:none;
             letter-spacing: 0.1em;
             padding-bottom: calc(20px + 1vh);
             color: #FFFFFF;
+            font-family: "ProximaNova-Bold";
 
             @include mobile {
                 font-size: 16px;
-                padding-bottom: calc(10px + 1vh);
+                padding-bottom: calc(0px + 1vh);
 
             }
         }
@@ -83,6 +99,7 @@ display:none;
             font-size: 24px;
             letter-spacing: 0.1em;
             color: #FFFFFF;
+            font-family: "ProximaNova-Light";
             padding-bottom: calc(30px + 3vh);
 
             @include mobile {
@@ -90,7 +107,7 @@ display:none;
                 font-size: 10px;
                 text-align: center;
                 letter-spacing: 0.1em;
-
+                padding-bottom: calc(15px + 3vh);
                 color: #FFFFFF;
 
             }
@@ -100,7 +117,7 @@ display:none;
             line-height: 46px;
             font-size: 24px;
             letter-spacing: 0.1em;
-
+            font-family: "Proxima-nova-regular";
             color: #FFFFFF;
             text-align: justify;
             margin-bottom: calc(10vh + 5rem);
@@ -110,7 +127,7 @@ display:none;
                 font-size: 12px;
                 text-align: justify;
                 letter-spacing: 0.1em;
-                margin-bottom: calc(10vh + 2rem);
+                margin-bottom: calc(6vh + 2rem);
                 color: #FFFFFF;
 
             }
@@ -126,7 +143,7 @@ display:none;
             box-sizing: border-box;
             border-radius: 2px;
             padding: 14px 16px;
-
+            font-family: "ProximaNova-Bold";
             line-height: normal;
             font-size: 20px;
             text-align: center;
@@ -148,8 +165,8 @@ display:none;
 
     .Rules,
     .eligiblity,
-    .erks {
-        padding: 120px 220px;
+        {
+        padding: 120px 10vw;
         display: block;
         border-bottom: 1px solid #B2B2B2;
 
@@ -159,10 +176,13 @@ display:none;
 
         .head1 {
             color: #1A4D66;
+            font-family: "ProximaNova-Bold";
         }
 
         ol {
             padding-top: 72px;
+            font-family: "Proxima-nova-regular";
+            list-style-type: decimal;
 
             @include mobile {
                 padding-top: 24px;
@@ -172,7 +192,7 @@ display:none;
                 line-height: 41px;
                 font-size: 24px;
                 letter-spacing: 0.1em;
-
+                font-family: "Proxima-nova-regular";
                 color: #000000;
 
                 @include mobile {
@@ -193,7 +213,7 @@ display:none;
     .register {
 
         background: #F49D35;
-        padding: 96px 220px;
+        padding: 96px 10vw;
 
         @include mobile {
             display: none;
@@ -201,10 +221,11 @@ display:none;
 
         .register_now {
             font-size: 40px;
+            font-family: "ProximaNova-Semibold";
         }
 
         p {
-
+            font-family: "Proxima-nova-regular";
             text-align: center;
             color: #FFFFFF;
             margin-bottom: 48px;
@@ -219,7 +240,7 @@ display:none;
 
         span {
             padding: 14px 16px;
-
+            font-family: "ProximaNova-Bold";
             border: 2px solid #FFFFFF;
             box-sizing: border-box;
             border-radius: 2px;
@@ -245,7 +266,7 @@ display:none;
                 font-size: 14px;
                 text-align: center;
                 letter-spacing: 0.1em;
-
+                font-family: "ProximaNova-Semibold";
                 color: #FFFFFF;
             }
 
@@ -253,8 +274,12 @@ display:none;
                 line-height: 15px;
                 font-size: 12px;
                 text-align: center;
+                width: 190px;
+                height: 48px;
+                font-family: "ProximaNova-Bold";
                 letter-spacing: 0.09em;
-                padding: 16px;
+                padding: 0;
+                padding-top: 15px;
                 border: 2px solid #E1E2E2;
                 box-sizing: border-box;
                 border-radius: 2px;
@@ -282,7 +307,7 @@ display:none;
     }
 
     .coordinator {
-        padding: 120px 220px;
+        padding: 120px 10vw;
         display: block;
         border-bottom: 1px solid #B2B2B2;
 
@@ -292,6 +317,7 @@ display:none;
 
         .head1 {
             color: #1A4D66;
+            font-family: "ProximaNova-Bold";
         }
 
         .coordinator_grid {
@@ -299,6 +325,7 @@ display:none;
             grid-column-gap: 20px;
             grid-template-columns: 30% 30% 30%;
             padding-top: 72px;
+            font-family: Proxima-nova-regular;
 
             @include mobile {
                 display: block;
@@ -318,6 +345,8 @@ display:none;
                     margin: 0;
                     padding: 0;
                     color: #000000;
+                   
+
 
                     @include mobile {
                         line-height: 18px;
@@ -330,7 +359,7 @@ display:none;
                 }
 
                 p:first-child {
-                    font-weight: bold;
+                    font-family: ProximaNova-Bold;
                 }
             }
         }
@@ -348,6 +377,7 @@ display:none;
             text-align: center;
             color: #F39423;
             text-decoration: none;
+            font-family: Proxima-nova-regular !important;
 
             @include mobile {
 
@@ -360,13 +390,158 @@ display:none;
     }
 
     .timeline {
-        
+
         display: block;
-        height:100vh;
+
+        height: fit-content;
+
         background: #1A4D66;
+
+       
     }
 
     .ant-steps-item-finish>.ant-steps-item-content>.ant-steps-item-title {
         color: white;
+    }
+
+    .erks {
+
+        padding: 120px 10vw;
+
+        @include mobile {
+            padding: 32px;
+        }
+
+        .head1 {
+            color: #1A4D66;
+            
+        }
+
+        .perks_array {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-row-gap: 40px;
+            grid-column-gap: 90px;
+            padding-top: 72px;
+
+            @include mobile {
+                grid-template-columns: 90%;
+            }
+
+            .perks_unit {
+                line-height: 41px;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+                font-family: "Proxima-nova-regular";
+                color: #4F4F4F;
+
+                @include mobile {
+                    line-height: 21px;
+                    font-size: 14px;
+
+                    letter-spacing: 0.1em;
+
+                    color: #4F4F4F;
+
+                }
+
+                img {
+                    display: block;
+                    height: 20vh;
+                }
+
+                span {
+                    display: block;
+                    line-height: 44px;
+                    font-size: 26px;
+
+
+                    letter-spacing: 0.1em;
+                    padding: 20px 0;
+                    color: #F49D35;
+                    font-weight: 600;
+
+                    @include mobile {
+                        line-height: 24px;
+                        font-size: 16px;
+                        letter-spacing: 0.1em;
+                        font-family: "ProximaNova-Semibold";
+                        color: #F39423;
+
+
+
+                    }
+
+
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+    .ideastorm .header .head_array span {
+        font-size: 14.2px;
+
+}
+.idea {
+    background: url("./static/1366.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    min-height: 65rem;
+    height: auto;
+    padding: 100px 10vw;
+}
+.ideastorm .idea p:nth-child(2){
+padding-bottom: calc(21.3px + 3vh);
+font-size: 19.88px;
+}
+
+   
+
+
+    .ideastorm .idea p:first-child {
+        font-size: 34.08px;
+        padding-bottom: 0px;
+    margin-bottom: 0px;
+    }
+
+    .ideastorm .idea p:nth-child(3) {
+        font-size: 22.07px;
+
+    }
+
+    .ideastorm .erks .perks_array .perks_unit span {
+        font-size: 19.88px;
+    }
+
+    .ideastorm .Rules ol li,
+    .ideastorm .eligiblity ol li {
+        font-size: 19.88px;
+    }
+
+    .ideastorm .register .register_now {
+        font-size: 34.08px;
+    }
+
+    .ideastorm .register p {
+        font-size: 19.88px;
+    }
+
+    .land_faq p {
+        font-size: 19.88px;
+    }
+
+    .faq_unit .question {
+
+        font-size: 22.72px;
+
     }
 }

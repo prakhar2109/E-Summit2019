@@ -4,7 +4,7 @@ import React, { Component } from "react";
 // import Login from "./screens/login/login";
 // import Register from "./screens/register/register";
 // import ignite from "./screens/ignite/ignite"
-// import Lfooter from "./screens/footer/landingpagefooter"
+
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm"
@@ -61,6 +61,13 @@ const Register = Loadable({
   loading: () => <Loader />,
 });
 
+const RegisterPortalIndex = Loadable({
+  loader: () => import("./components/RegistrationPortal/Index"),
+  loading: () => <Loader />,
+});
+
+
+
 // const Lfooter = Loadable({
 //   loader: () => import("./screens/footer/landingpagefooter"),
 //   loading: () => Loading
@@ -107,6 +114,11 @@ class App extends Component {
               <Route exact path="/stepform" component={Stepform} />
 
               <Route exact path="/dashboard/" component={LeaderBoard} />
+
+
+              <Route path="/registration_portal/" component={RegisterPortalIndex} />
+
+
               <Route path="/ignite" component={ignite} />
               <Route path="/loader" component={Loader} />
               {/* <Route path="/footer" component={Lfooter} /> */}
@@ -115,17 +127,17 @@ class App extends Component {
               {/* </div> */}
 
 
-            <Route exact path="/dashboard/" component={LeaderBoard} />
-            <Route path="/ignite" component={ignite} />
-            <Route path="/loader" component={Loader} />
+              <Route exact path="/dashboard/" component={LeaderBoard} />
+              <Route path="/ignite" component={ignite} />
+              <Route path="/loader" component={Loader} />
 
-            <Route path = "/ideastorm" component = {IdeaStorm} />
-            {/* <Route path="/footer" component={Lfooter} /> */}
-            {/* <Route path="/Rselect" component={RSelect} /> */}
-      
-            {/* </div> */}
-            
-          </React.Fragment>
+              <Route path="/ideastorm" component={IdeaStorm} />
+              {/* <Route path="/footer" component={Lfooter} /> */}
+              {/* <Route path="/Rselect" component={RSelect} /> */}
+
+              {/* </div> */}
+
+            </React.Fragment>
           </Switch>
         </div>
       </Router>
