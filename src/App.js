@@ -42,7 +42,7 @@ const HomePage = Loadable({
 });
 
 const ignite = Loadable({
-  loader: () => import("./screens/ignite/ignite"),
+  loader: () => import("./NewScreens/startupignite/ignite"),
   loading: () => <Loader />,
 });
 
@@ -92,7 +92,12 @@ class App extends Component {
             <Route path  = "/sponsors" component = {Sponsors} />
             <Route path = "/faq" component = {FAQBoard} />
             <Route path = "/campusambasder" component = {CampusAmbasder} />
+
+	    <Route path = "/ignite" component = {ignite} />
+ 
+
             <Route path = "/registration_portal" component = {Registration} />
+
           </React.Fragment>
           </Switch>
         </div>
