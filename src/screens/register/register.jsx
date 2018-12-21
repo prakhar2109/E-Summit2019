@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./register.css";
 import Footer from "../footer/footer";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Header from "../header/header";
 import axios from "axios";
 import Select from "react-select";
@@ -9,7 +9,7 @@ import colleges from './colleges.json';
 import citys from './citys.json';
 import countries from './countries.json';
 
-import {BASE_URL} from "../../utils/urls";
+import { BASE_URL } from "../../utils/urls";
 import CreatableSelect from 'react-select/lib/Creatable';
 
 import Loader from "../loader/loader"
@@ -70,7 +70,7 @@ const options = [
   "Uttar Pradesh",
   "Uttarakhand",
   "West Bengal"
-].map(state => ({value: state, label: state}));
+].map(state => ({ value: state, label: state }));
 
 const defaultState = {
   name: "",
@@ -88,7 +88,7 @@ export default class Register extends Component {
 
   state = defaultState;
 
-  constructor(props){
+  constructor(props) {
     super(props);
     if (token !== null && token !== undefined) {
       window.location.href = "/dashboard";
@@ -96,12 +96,12 @@ export default class Register extends Component {
   }
 
   getCountries = () => {
-    return countries.map(country => ({value: country.name, label: country.name}))
+    return countries.map(country => ({ value: country.name, label: country.name }))
   }
 
   getCities = (state) => {
     let cities = citys[state];
-    cities = cities.map(city => ({value: city, label: city}))
+    cities = cities.map(city => ({ value: city, label: city }))
     return cities;
   }
 
@@ -113,18 +113,18 @@ export default class Register extends Component {
     });
   };
   handleCountryChange = (selectedOption) => {
-    this.setState({country: selectedOption});
+    this.setState({ country: selectedOption });
   };
 
   handleCityChange = (selectedOption) => {
-    this.setState({city: selectedOption});
+    this.setState({ city: selectedOption });
   };
   handleStateChange = states => {
-    this.setState({states: states});
+    this.setState({ states: states });
   };
 
   handleGenderChange = gendr => {
-    this.setState({gender: gendr});
+    this.setState({ gender: gendr });
   };
 
   validate = () => {
@@ -243,12 +243,12 @@ export default class Register extends Component {
   };
 
   render() {
-    const {gender} = this.state;
+    const { gender } = this.state;
 
     return (
       <div>
-        <Loader/>
-        <Header/>
+        <Loader />
+        <Header />
 
         <div className="register_main">
           <div className="register_text">
@@ -268,13 +268,13 @@ export default class Register extends Component {
             <span id="perksexcite">
               <p>the exciting perks!
               </p>
-              <br/>
+              <br />
               1. For every successful payment from the participants who have registered from
               the referral link, the CA would be awarded Rs. 150 off on the registration plus
-              accommodation fees for E-Summit 2019.<br/>
+              accommodation fees for E-Summit 2019.<br />
               2. An official certificate from E-Summit IIT Roorkee will be provided as an
-              acknowledgment of your work as a CA for the same.<br/>
-              3. Endorsement of your LinkedIn profile by E-Summit IIT Roorkee.<br/>
+              acknowledgment of your work as a CA for the same.<br />
+              3. Endorsement of your LinkedIn profile by E-Summit IIT Roorkee.<br />
               4. Other additional goodies and benefits will be awarded to the top performing
               CAs.
             </span>
@@ -309,12 +309,12 @@ export default class Register extends Component {
                 type="text"
                 value={this.state.name}
                 onChange={event => {
-                this.setState({name: event.target.value});
-                {
-                  this.validate()
-                }
-              }}
-                placeholder="Enter your full name"/>
+                  this.setState({ name: event.target.value });
+                  {
+                    this.validate()
+                  }
+                }}
+                placeholder="Enter your full name" />
 
               <div className="error" id="name_error"></div>
 
@@ -325,12 +325,12 @@ export default class Register extends Component {
                 value={this.state.contact}
                 parse={value => Number(value)}
                 onChange={event => {
-                this.setState({contact: event.target.value});
-                {
-                  this.validate()
-                }
-              }}
-                placeholder="Enter your phone number"/>
+                  this.setState({ contact: event.target.value });
+                  {
+                    this.validate()
+                  }
+                }}
+                placeholder="Enter your phone number" />
 
               <div className="error" id="phone_error"></div>
 
@@ -340,12 +340,12 @@ export default class Register extends Component {
                 type="email"
                 value={this.state.email}
                 onChange={event => {
-                this.setState({email: event.target.value});
-                {
-                  this.validate()
-                }
-              }}
-                placeholder="Enter your Email ID"/>
+                  this.setState({ email: event.target.value });
+                  {
+                    this.validate()
+                  }
+                }}
+                placeholder="Enter your Email ID" />
               <div className="error" id="email_check"></div>
 
               <label>PASSWORD
@@ -355,12 +355,12 @@ export default class Register extends Component {
                 type="password"
                 value={this.state.passowrd}
                 onChange={event => {
-                this.setState({password: event.target.value});
-                {
-                  this.validate()
-                }
-              }}
-                placeholder="******"/>
+                  this.setState({ password: event.target.value });
+                  {
+                    this.validate()
+                  }
+                }}
+                placeholder="******" />
 
               <div className="error" id="pass_error"></div>
 
@@ -371,7 +371,7 @@ export default class Register extends Component {
                 placeholder="Enter your gender"
                 value={gender}
                 onChange={this.handleGenderChange}
-                options={gender_option}/> {/*
+                options={gender_option} /> {/*
                         <label>PROGRAMME </label>
 
                         <input type="text"
@@ -406,69 +406,72 @@ export default class Register extends Component {
                 value={this.state.country}
                 onChange={this.handleCountryChange}
                 options={this.getCountries()}
-                placeholder="Enter your country name"/> {this.state.country.value === "India"
+                placeholder="Enter your country name" />
+
+
+              {this.state.country.value === "India"
                 ? <div>
 
                   <label>STATE
                   </label>
 
                   <Select value={this.state.states} // onChange={event => {} //   this.setState({} //     states: event.target.value,}}
-              onChange={this.handleStateChange}
-              options={options}
-              placeholder="Enter your state name"/>
+                    onChange={this.handleStateChange}
+                    options={options}
+                    placeholder="Enter your state name" />
 
-              <label>COLLEGE
+                  <label>COLLEGE
               </label>
 
-              <CreatableSelect
-                placeholder="Enter your college name"
-                searchable={true}
-                required={true}
-                onChange={this.handleChange}
-                options={colleges[this.state.states.value]}
-                clearable={false}
-                value={this.state.college}/>
+                  <CreatableSelect
+                    placeholder="Enter your college name"
+                    searchable={true}
+                    required={true}
+                    onChange={this.handleChange}
+                    options={colleges[this.state.states.value]}
+                    clearable={false}
+                    value={this.state.college} />
 
-              <label>CITY
+                  <label>CITY
               </label>
 
-              <CreatableSelect
-                placeholder="Enter your city"
-                searchable={true}
-                required={true}
-                onChange={this.handleCityChange}
-                options={this.state.states === ""
-                ? []
-                : this.getCities(this.state.states.value)}
-                clearable={false}
-                value={this.state.city}/>
+                  <CreatableSelect
+                    placeholder="Enter your city"
+                    searchable={true}
+                    required={true}
+                    onChange={this.handleCityChange}
+                    options={this.state.states === ""
+                      ? []
+                      : this.getCities(this.state.states.value)}
+                    clearable={false}
+                    value={this.state.city} />
 
-            </div>
-            :
-            <div>
-              <label>COLLEGE
+                </div>
+                :
+                <div>
+                  <label>COLLEGE
               </label>
-              <input
-                type="text"
-                value={this.state.college}
-                onChange={event => {
-                this.setState({college: event.target.value})
-              }}></input>
+                  <input
+                    type="text"
+                    value={this.state.college}
+                    onChange={event => {
+                      this.setState({ college: event.target.value })
+                    }}></input>
 
-            </div>
-            }
+                </div>
+              }
 
-          </form>
+            </form>
 
-          <br/>
+            <br />
 
-          <button onClick={this.handleClick}>
-            SIGN UP
+            <button onClick={this.handleClick}>
+              SIGN UP
           </button>
+          </div>
+          <Footer />
         </div>
-        <Footer/>
       </div>
-    </div>
     )
   }
 }

@@ -8,9 +8,15 @@ import { Link } from "react-scroll";
 class Nav extends Component {
   componentDidMount() {
     var height = document.getElementById("nav").offsetHeight;
+    height = height - 5;
     height = height + "px";
 
     document.getElementById("body").style.paddingTop = height;
+  }
+
+  componentWillUnmount(){
+    document.getElementById("body").style.paddingTop = 0;
+
   }
   render() {
     return (
@@ -92,7 +98,7 @@ class Nav extends Component {
           <NavLink to="/login">
             <span className="login">Log in</span>
           </NavLink>
-          <NavLink to="/register">
+          <NavLink to="/registration_portal/register">
             <span className="register">Register</span>
           </NavLink>
         </section>

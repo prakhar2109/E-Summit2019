@@ -1,0 +1,236 @@
+.esummit-common-parent{
+    background:  #1A4D66;
+    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+}
+.esummit-register-parent{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+.MuiPaper-root-17{
+    background-color: #153D50 !important;
+}
+.MuiStepConnector-line-118{
+    border-color: #153D50 !important;
+}
+.MuiStepIcon-text-61{
+    font-family: Montserrat !important;
+}
+.MuiStepIcon-root-60.MuiStepIcon-completed-63{
+    border-radius: 50% !important;
+    background: white !important;
+}
+.esummit-register-form-parent{
+    width: 80%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+.esummit-register-form-heading{
+    width: 100%;
+    background-color:#eef3f4;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.esummit-regsiter-form-heading-child{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: normal;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #1A4D66;
+}
+.esummit-regsiter-form-heading-child-second{
+    margin-top: 5px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: normal;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #1A4D66;
+}
+.tushar{
+    border-radius: 0px !important;
+    padding: 0px 40px 0px 5px !important;
+}
+.tushar span{
+    padding: 0px 15px 0px 0px !important;
+    font-size:calc(.27548vw + 12.71074px) !important;
+    font-weight: 600 !important;
+    font-family: Montserrat !important;
+}
+.tushar:hover{
+    opacity: 1 !important;
+}
+.tushar div{
+    margin-right:  calc(2.34435vw + 3.38843px) !important;
+    padding: 10px 10px 10px 10px !important;
+}
+.kep-login-facebook{
+    /* color: rebeccapurple !important; */
+    /* display: none !important; */
+    text-transform: capitalize !important;
+    font-family: Montserrat !important;
+    padding: 10px 40px 10px 20px !important;
+    font-weight: 600 !important;
+}
+.kep-login-facebook i::before{
+    height: 10px !important;
+    width: 10px !important;
+}
+.kep-login-facebook .fa {
+    margin-right: calc(2.34435vw + 8.38843px) !important;
+}
+.esummit-register-form-body-parent{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+.esummit-register-form-orsection{
+    display: flex;
+    width: 100%;
+    margin-top: 8%;
+}
+.esummit-register-form-orsection hr{
+    background-color: #B2B2B2;
+    height: 0px;
+    margin: 0;
+}
+.esummit-register-form-orsection-hr{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 45%;
+    margin-left: auto;
+}
+.esummit-register-form-orsection-hr-s{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 45%;
+    margin-right: auto;
+}
+.esummit-register-form-orsection span{
+    font-family: Montserrat;
+    line-height: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #4F4F4F;
+    padding: 0px 10px;
+}
+.esummit-register-form-body-social{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.esummit-register-form-input-section{
+    margin: 5% 0%;
+}
+.esummit-register-form-input-specific{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.esummit-register-form-input-specific label{
+    color:  #4F4F4F;
+}
+.esummit-register-form-input-specific input{
+    border: none;
+    border-bottom: 1px solid #B2B2B2;
+    padding: 0px 0px 5px 0px;
+    outline: none;
+    color: #B2B2B2;
+    width: 100%;
+    
+}
+.esummit-register-form-field-error-text{
+    border-bottom: 1px solid #E2574C !important;
+}
+.esummit-register-form-field-error{
+    font-size: 12px;
+    color: #E2574C;
+    height: 12px;
+}
+.esummit-register-form-field-error-svg img{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    right: -15px;
+    top: 2px;
+}
+.esummit-register-form-input-specific-inner{
+    display: flex;
+    position: relative;
+}
+.esummit-register-form-input-specific-eye{
+    display: flex;
+    position: relative;
+}
+.esummit-register-form-input-specific-eye input{
+    width: 100%;
+}
+.esummit-register-form-input-specific-eye-svg{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    right: 10px;
+    top: 2px;
+}
+.esummit-register-form-input-specific-eye img:hover{
+    cursor: pointer;
+}
+.esummit-register-form-input-specific input:focus{
+    border: none;
+    border-bottom: 1px solid #4F4F4F;
+    padding: 0px 0px 5px 0px;
+    outline: none;
+    color: #4F4F4F;
+}
+
+.esummit-register-form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.esummit-register-form-button-back{
+    background-color: #F39423;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+.esummit-register-form-button button{
+    background-color: #F39423;
+    border-radius: 2px;
+    padding: 8px 35px;
+    cursor: pointer;
+    border: 1px solid #F39423;
+    color :white;
+    font-weight: 500;
+}
+#inputOTP{
+    padding-left: 15px;
+    letter-spacing: 42px;
+    border: 0;
+    background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 50px 1px;
+    background-repeat: repeat-x;
+    background-position-x: 35px;
+    width: 220px;
+}
