@@ -10,7 +10,7 @@ import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
 import "./css/canavbar.css";
 
-import Ca from "../caLeaderboard/js/caLeaderboard";
+// import Ca from "../caLeaderboard/js/caLeaderboard";
 
 export default class ComingSoon extends Component {
   state = {

@@ -9,15 +9,18 @@ import 'antd/dist/antd.css'
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 // import Viewprofile from './screens/caLeaderboard/js/Viewprofile'
-import Caindex from './screens/caLeaderboard/js/index'
-import Payment from './screens/caLeaderboard/js/payment';
+import Caindex from './screens/cadashboard/js/index'
+import Iitrindex from './screens/iitrdashboard/js/index'
+import Noniitrindex from './screens/noniitrdashboard/js/index'
+import Professionalindex from './screens/professionalcadashboard/js/index'
+import Payment from './screens/cadashboard/js/payment';
 
 import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
 
 // import Coupon from './screens/caLeaderboard/js/coupon'
 
-import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
+// import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
 
 
 const Loading = ({ error }) => {
@@ -97,6 +100,9 @@ class App extends Component {
 
              {/* <Route exact path="/dashboard/" component={LeaderBoard} /> */}
             <Route path="/dashboard/" component={Caindex} />
+	    <Route path="/iitrdashboard/" component={Iitrindex} />
+	    <Route path="/noniitrdashboard/" component={Noniitrindex} />
+	    <Route path="/prodashboard/" component={Professionalindex} />
 
             <Route path="/ignite" component={ignite} />
      
