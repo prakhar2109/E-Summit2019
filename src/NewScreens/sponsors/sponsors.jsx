@@ -3,7 +3,7 @@ import Header from "../../components/header";
 import "./sponsors.scss";
 import img1 from "./1.png";
 import Nav from "../nav/nav";
-import Footer from "../IdeaStorm/Foot/eventfooter";
+import Footer from "../IdeaStorm/footer/eventfooter";
 export default class Sponsors extends Component {
   state = {
     sponsors: [

@@ -4,7 +4,7 @@ import { Tabs } from "antd";
 import "./faq.scss";
 import 'antd/dist/antd.css';
 import Nav from "../nav/nav"
-import Footer from "../IdeaStorm/Foot/eventfooter"
+import Footer from "../IdeaStorm/footer/eventfooter";
 const TabPane = Tabs.TabPane;
 
 export default class FAQPage extends Component {

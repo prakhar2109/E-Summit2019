@@ -5,7 +5,7 @@ import Nav from "../nav/nav";
 import Header from "../../components/header";
 import Bullets from "../../components/bullets/bullets";
 import Coordinator from "../../components/contact/contact";
-import Footer from "../IdeaStorm/Foot/eventfooter";
+import Footer from "../IdeaStorm/footer/eventfooter";
 
 export default class CampusAmbasder extends Component {
   show = () => {

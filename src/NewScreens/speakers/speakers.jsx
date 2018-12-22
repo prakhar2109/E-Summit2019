@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./speakers.scss";
 import Header from "../../components/header";
 import Nav from "../nav/nav";
-import Footer from "../IdeaStorm/Foot/eventfooter";
+import Footer from "../IdeaStorm/footer/eventfooter";
 import Testimonial from "../landing/testimonials";
 
 export default class speakers extends Component {
