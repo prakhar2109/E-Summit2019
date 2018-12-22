@@ -67,7 +67,7 @@ class SingleFAQ extends Component {
                 <div className="question" id={'q' + update.id}>
                     {update.question}
                     <img className = "plus" src = {Plus}  id={'p' + update.id} /> 
-                    <img className = "cross" src = {cross}  id={'c' + update.id} /> 
+                    <img className = "crox" src = {cross}  id={'c' + update.id} /> 
                 </div>
                 <div className="answer" id={update.id}>
                     {update.answer}

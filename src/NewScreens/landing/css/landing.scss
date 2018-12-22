@@ -126,7 +126,7 @@
         text-align: center;
         letter-spacing: 0.09em;
         cursor: pointer;
-        margin-bottom: 19rem;
+         
         color: #FFFFFF;
 
         @include mobile {
@@ -225,13 +225,25 @@
 }
 .land_speakers,
 .land_sponsors {
-    padding: 110px 10vw;
+    padding: 110px 10vw 0 10vw ;
+    background: #0E425B;
 
     @include mobile {
         padding: 32px;
     }
+
+    @include fhd{
+        padding: 80px 10vw 0 10vw ;
+    }
 }
 
+.land_sponsors{
+    padding-bottom: 110px;
+
+    @include fhd{
+        padding-bottom: 80px;
+    }
+}
 .land_events {
     padding: 8.75rem 10vw 110px 10vw;
 
