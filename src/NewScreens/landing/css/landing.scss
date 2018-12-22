@@ -43,7 +43,7 @@
         }
 
         @include fhd{
-            font-size: 1rem;
+            font-size: 16px;
             
         }
 
@@ -69,8 +69,8 @@
 
     .p {
         line-height: 36px;
-        font-size: 1.5rem;
-        letter-spacing: 0.1em;
+        font-size: 24px;
+        letter-spacing: 0.04em;
         margin:  2.75rem 0;
         
         color: #FEFFFF;
@@ -84,7 +84,7 @@
         }
 
         @include fhd{
-            font-size: 1.125rem;
+            font-size: 18px;
         }
     }
 }
@@ -97,10 +97,10 @@
     ;
 
     .text {
-        line-height: 2.5625rem;
-        font-size: 1.5rem;
-        letter-spacing: 0.1em;
-        padding: 2.75rem 0 -0 0;
+        line-height:35px;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        padding: 2.75rem 0 0 0;
         color: #D8D8D8;
 
         @include mobile {
@@ -112,7 +112,7 @@
         }
 
         @include fhd{
-                font-size: 1.25rem;
+                font-size: 20px;
         }
 
     }
@@ -125,7 +125,7 @@
         line-height: 1.25rem;
         font-size: 1rem;
         text-align: center;
-        letter-spacing: 0.09em;
+        letter-spacing: 0.06em;
         cursor: pointer;
          
         color: #FFFFFF;
@@ -135,7 +135,7 @@
             line-height: 15px;
             font-size: 12px;
             text-align: center;
-            letter-spacing: 0.09em;
+            letter-spacing: 0.06em;
             padding: 1rem;
         }
 
@@ -159,8 +159,8 @@
     }
 
     .img_holder {
-        height: 14.75rem !important;
-        width: 14.75rem;
+        height: 11.6vw !important;
+        width: 11.6vw;
         background: #242626;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
@@ -170,9 +170,10 @@
     }
 
     .name {
-        line-height: 2.5625rem;
+        line-height:35px;
         font-size: 1.5rem;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.02em;
+        padding-top: 1rem;
 
 
 
@@ -196,7 +197,7 @@
     .designation {
         line-height: 1.8125rem;
         font-size: 1.25rem;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.02em;
 
         color: #FFFFFF;
 
@@ -298,7 +299,7 @@
                     letter-spacing: 0.1em;
                 }
 
-                @include mobile{
+                @include fhd{
                     font-size: 1.5rem;
                 }
 
@@ -319,7 +320,7 @@
 
                 }
 
-                @include mobile{
+                @include fhd{
                     font-size: 1.25rem;
                 }
 
@@ -342,8 +343,8 @@
                     color: #FFFFFF;
                 }
 
-                @include mobile{
-                    font-size: 1.25rem;
+                @include fhd{
+                    font-size: 1.125rem;
                 }
 
             }
@@ -404,7 +405,7 @@
 
         p:first-child {
             font-size: 2rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.06em;
             font-weight: bold;
             color: #FFFFFF;
             margin-top: 12.5rem;
@@ -413,7 +414,7 @@
 
                 font-size: 16px;
                 text-align: center;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.06em;
 
                 color: #FFFFFF;
                 margin-top: 16px;
@@ -532,10 +533,10 @@
         }
 
         p {
-            line-height: 2.75rem;
+            line-height: 39px;
             font-size: 1.75rem;
             text-align: center;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.04em;
             margin-top: 6rem;
             color: #FFFFFF;
 
@@ -559,13 +560,13 @@
         .name {
             line-height: 47px;
             font-size: 2rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.06em;
             color: #FFFFFF;
 
             @include mobile {
                 line-height: 26px;
                 font-size: 18px;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.06em;
             }
 
             @include fhd{
@@ -576,14 +577,14 @@
         .designation {
             line-height: 2.1875rem;
             font-size: 1.5rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.06em;
             margin-top: 11px;
             color: #E5E5E5;
 
             @include mobile {
                 line-height: 21px;
                 font-size: 14px;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.06em;
                 color: #E5E5E5;
             }
 
@@ -616,9 +617,9 @@
 
     p {
         padding-top: 2.75rem;
-        line-height: 2.5625rem;
+        line-height:35px;
         font-size: 1.75rem;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.04em;
         margin-bottom: 4.5rem;
         color: #000000;
         font-family: "Proxima-nova-regular";
