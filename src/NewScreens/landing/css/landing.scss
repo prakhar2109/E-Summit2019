@@ -100,7 +100,7 @@
         line-height: 2.5625rem;
         font-size: 1.5rem;
         letter-spacing: 0.1em;
-        padding: 2.75rem 0 2.75rem 0;
+        padding: 2.75rem 0 -0 0;
         color: #D8D8D8;
 
         @include mobile {
@@ -226,7 +226,7 @@
 }
 .land_speakers,
 .land_sponsors {
-    padding: 152px 13.6vw;
+    padding: 152px 13.6vw 0 13.6vw;
     background: #0E425B;
 
     @include mobile {
@@ -239,21 +239,21 @@
 }
 
 .land_sponsors{
-    padding-bottom: 110px;
+    padding-bottom: 152px;
 
     @include fhd{
         padding-bottom: 80px;
     }
 }
 .land_events {
-    padding: 8.75rem 13.6vw 110px 13.6vw;
+    padding: 8.75rem 13.6vw 152px 13.6vw;
 
     @include mobile {
         padding: 36px;
     }
 
     .land_events_array2 {
-        padding: 0 0 140px 0;
+        padding: 116px 0 0 0;
         display: grid;
         grid-template-columns: 30% 30% 30%;
 
@@ -359,6 +359,7 @@
     background: #1A4D66;
 
     padding: 0 8.5vw;
+    margin-top:-30px;
 
     @include mobile {
         grid-template-columns: 50% 50%;
