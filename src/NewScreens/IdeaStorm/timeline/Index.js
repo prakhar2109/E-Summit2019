@@ -44,7 +44,8 @@ export default class Timeline extends Component {
                                   In this round all the teams are required to submit an abstract of their idea along with the answers to some basic questions which will be evaluated by Industry Leaders on the basis of :<br/>
        &nbsp; &nbsp; &nbsp;&nbsp;1. The innovation in your idea<br/>
        &nbsp; &nbsp; &nbsp;&nbsp;2. The real-world problem it mitigates<br/>
-       &nbsp; &nbsp; &nbsp;&nbsp;3. The innovation in your idea<br/>
+       &nbsp; &nbsp; &nbsp;&nbsp;3. The market opportunity for the idea<br/>
+       &nbsp; &nbsp; &nbsp;&nbsp;4. The competitive advantage that it possesses<br/>
 The teams with the ideas which qualify the minimum eligibility criteria would be allowed to progress to the next round.<br/>
 <span id="ideastormevents-content-span">Registration starts on            :</span> 12 December, 2018<br/>
 <span id="ideastormevents-content-span">Round 1 submission deadline :</span> 1 January, 2019<br/>
