@@ -215,16 +215,6 @@
     font-size: 16px;
     letter-spacing: 0.06em;
   }
-#perksexcite p{
-    font-size: 1.5rem;
-    text-transform: uppercase;
-  }
-  #perksexcite{
-    margin: 2rem 1.375rem;
-    font-size: 0.875rem;
-    line-height: 1.1875rem;
-    padding: 0;
-  }
 }
 
 .register_main .register_form form input {
@@ -264,7 +254,3 @@
   color: black;
 }
 /*# sourceMappingURL=register.css.map */
-
-.error{
-  color:white !important;
-}

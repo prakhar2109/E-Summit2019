@@ -18,12 +18,10 @@
   z-index: 100;
 }
 
-.nav_pc .active {
-  line-height: normal;
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0.06em;
-  color: #F39423;
+@media (max-width: 1200px) {
+  .nav_pc {
+    display: none;
+  }
 }
 
 .nav_pc span {
@@ -39,7 +37,18 @@
 .nav_pc a, .nav_pc a:hover {
   font-size: 16px;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  cursor: pointer;
+}
+
+@media (max-width: 1600px) and (min-width: 1000px) {
+  .nav_pc a, .nav_pc a:hover {
+    font-size: 1px;
+  }
+}
+
+.nav_pc .active {
+  color: #F39423 !important;
 }
 
 .nav_pc .login {

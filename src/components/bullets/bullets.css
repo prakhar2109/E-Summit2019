@@ -1,0 +1,22 @@
+.bullets {
+  padding: 72px 10vw;
+  border-bottom: 1px solid #B2B2B2;
+}
+
+.bullets .head1 {
+  color: #1A4D66;
+}
+
+.bullets ol {
+  line-height: 35px;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  padding-top: 72px;
+  color: rgba(0, 0, 0, 0.87);
+  list-style-type: decimal;
+}
+
+.bullets li {
+  padding-top: 16px;
+}
+/*# sourceMappingURL=bullets.css.map */

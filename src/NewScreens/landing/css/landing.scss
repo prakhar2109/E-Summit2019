@@ -6,7 +6,7 @@
 }
 
 @mixin fhd {
-    @media(max-width: 1600px) and (min-width:1000px) {
+    @media (min-width:1000px) and (max-width: 1600px) {
         @content;
     }
 
@@ -43,7 +43,8 @@
         }
 
         @include fhd{
-            font-size: 1.125rem
+            font-size: 1rem;
+            padding: 1.125rem;
         }
 
     }
@@ -82,7 +83,7 @@
         }
 
         @include fhd{
-            font-size: 1.125;
+            font-size: 1.125rem;
         }
     }
 }
@@ -110,7 +111,7 @@
         }
 
         @include fhd{
-                font-size: 1.25rem
+                font-size: 1.25rem;
         }
 
     }
@@ -582,6 +583,10 @@
         font-family: "ProximaNova-Bold";
     }
 
+    @include fhd{
+        padding: 100px 10vw;
+    }
+
     p {
         padding-top: 2.75rem;
         line-height: 2.5625rem;
@@ -599,8 +604,10 @@
             margin-bottom: 20px;
         }
 
-        @include mobile{
+        @include fhd{
             font-size: 1.5rem;
+            padding-top: 2rem;
+            margin-bottom: 3.5rem;
         }
     }
 

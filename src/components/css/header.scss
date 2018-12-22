@@ -5,10 +5,16 @@
 
 }
 
+@mixin fhd {
+    @media  (min-width:1000px) and (max-width: 1600px) {
+        @content ;
+    }
+
+}
 
 .head1 {
 
-    font-size: 2rem !important;
+    font-size: 2rem !important ;
     letter-spacing: 0.1em;
     color: #FEFFFF;
     font-weight: bold !important;
@@ -23,6 +29,10 @@
         font-size: 18px !important;
         letter-spacing: 0.1em;
         margin-left: -1.5rem;
+    }
+
+    @include fhd{
+        font-size: 1.625rem !important;
     }
 }
 

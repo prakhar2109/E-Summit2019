@@ -1,6 +1,12 @@
 .speakers {
-  padding: 80px 220px;
+  padding: 80px 10vw;
   background: #1A4D66;
+}
+
+@media (max-width: 1000px) {
+  .speakers {
+    padding: 36px;
+  }
 }
 
 .speakers .speak {
@@ -8,6 +14,15 @@
   font-size: 24px;
   letter-spacing: 0.1em;
   color: #FFFFFF;
+}
+
+@media (max-width: 1000px) {
+  .speakers .speak {
+    line-height: 24px;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+  }
 }
 
 .speakers .text {
@@ -19,36 +34,82 @@
   padding-bottom: 96px;
 }
 
+@media (max-width: 1000px) {
+  .speakers .text {
+    line-height: 21px;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    color: #D8D8D8;
+  }
+}
+
 .speakers .img_holder {
-  height: 236px !important;
-  width: 236px;
+  height: 18.4vw;
+  width: 100%;
   background: #242626;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 
+@media (max-width: 1000px) {
+  .speakers .img_holder {
+    height: 230px;
+    width: 230px;
+  }
+}
+
 .speakers .name {
   line-height: 41px;
   font-size: 24px;
   letter-spacing: 0.1em;
+  text-align: center;
   color: #138AD6;
+}
+
+@media (max-width: 1000px) {
+  .speakers .name {
+    line-height: 35px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: #138AD6;
+  }
 }
 
 .speakers .designation {
   line-height: 29px;
   font-size: 20px;
   letter-spacing: 0.1em;
+  text-align: center;
   color: #FFFFFF;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .speakers .designation {
+    line-height: 24px;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
 }
 
 .speakers .speakers_array {
   padding-top: 72px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-  grid-column-gap: 5vw;
+  -ms-grid-columns: 23% 23% 23% 23%;
+      grid-template-columns: 23% 23% 23% 23%;
+  grid-column-gap: 3vw;
   grid-row-gap: calc(5em + 5vh);
+}
+
+@media (max-width: 1000px) {
+  .speakers .speakers_array {
+    -ms-grid-columns: 90%;
+        grid-template-columns: 90%;
+    justify-items: center;
+  }
 }
 /*# sourceMappingURL=speakers.css.map */
