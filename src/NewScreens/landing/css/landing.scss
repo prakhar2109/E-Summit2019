@@ -378,12 +378,16 @@
             padding-bottom: 64px;
         }
 
+        @include fhd{
+            padding-bottom: 100px;
+        }
+
         p:first-child {
             font-size: 2rem;
             letter-spacing: 0.1em;
             font-weight: bold;
             color: #FFFFFF;
-            margin-top: 200px;
+            margin-top: 12.5rem;
 
             @include mobile {
 
@@ -396,8 +400,9 @@
 
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.75rem;
+                margin-top:6rem;
             }
         }
 
@@ -407,7 +412,7 @@
             letter-spacing: 0.1em;
             text-align: left;
             color: #FFFFFF;
-            margin-top: 98px;
+            margin-top: 6.125rem;
 
             @include mobile {
                 line-height: 18px;
@@ -418,8 +423,9 @@
                 color: #FFFFFF;
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.25rem;
+                margin-top:4rem;
             }
 
         }
@@ -442,7 +448,7 @@
 
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.25rem;
             }
 
@@ -458,8 +464,9 @@
                 font-size: 1rem;
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.75rem;
+                margin-top: 8rem;
             }
         }
     }
@@ -523,7 +530,7 @@
                 margin-top: 48px;
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.5rem;
             }
 
@@ -541,7 +548,7 @@
                 letter-spacing: 0.1em;
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.75rem;
             }
         }
@@ -560,7 +567,7 @@
                 color: #E5E5E5;
             }
 
-            @include mobile{
+            @include fhd{
                 font-size: 1.125rem;
             }
 
