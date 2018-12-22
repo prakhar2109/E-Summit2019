@@ -102,6 +102,7 @@ export default class AccountSetup extends Component {
                                 .getElementById("loader")
                                 .style
                                 .display = "none";
+                            alert("Network error")
                         });
                         // })
                         // request.then(function () {

@@ -6,49 +6,14 @@ import StepLabel from '@material-ui/core/StepLabel';
 import AccountSetup from "./AccountSetup"
 import CommonIndex from "../common/Index"
 import Loader from "../../../screens/loader/loader"
-import CreatableSelect from 'react-select/lib/Creatable';
-import Select from "react-select";
-import colleges from '../../../screens/register/colleges.json';
-import citys from '../../../screens/register/citys.json';
-import countries from '../../../screens/register/countries.json';
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import "./css/stepform.css"
 import EmailVerification from './EmailVerification';
+import ProfileType from "./ProfileType"
+import PersonalDetails from './PersonalDetails';
 
 
-const options = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chattisgarh",
-    "Delhi",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jammu and Kashmir",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal"
-].map(state => ({ value: state, label: state }));
 const styles = theme => ({
     root: {
         width: '90%',
@@ -95,6 +60,7 @@ const styles = theme => ({
     },
     stepper: {
         padding: "0px !important",
+        background:"#1A4D66 !important"
     },
     connroot: {
         color: "#153D50 !important",
@@ -120,6 +86,7 @@ class RegisterIndex extends React.Component {
             confirm_password: "",
             otp: "",
             confirm_otp: "",
+            resend_email: "",
             email_verified: false,
             profile_type: "",
             country: "",
@@ -133,11 +100,6 @@ class RegisterIndex extends React.Component {
         }
     }
 
-    getCities = (state) => {
-        let cities = citys[state];
-        cities = cities.map(city => ({ value: city, label: city }))
-        return cities;
-    }
     handleAccountSetup = (data) => {
         this.setState({
             otp: data.otp,
@@ -153,6 +115,13 @@ class RegisterIndex extends React.Component {
             password: data.password,
             confirm_password: data.confirm_password,
             otp: data.otp,
+            resend_email: data.resend_email,
+            activeStep: this.state.activeStep + 1
+        })
+    }
+    handleProfile = (data) => {
+        this.setState({
+            profile_type: data.profile_type,
             activeStep: this.state.activeStep + 1
         })
     }
@@ -222,27 +191,7 @@ class RegisterIndex extends React.Component {
         let value = e.target.value;
         this.setState({ [name]: value });
     }
-    onProfileChange = (e) => {
-        this.setState({
-            profile_type: e.target.value
-        })
-    }
-    handleCollegeChange = (selectedOption) => {
-        this.setState({ college: selectedOption });
-    };
-    handleStateChange = states => {
-        this.setState({ states: states });
-    };
-    handleCityChange = (selectedOption) => {
-        this.setState({ city: selectedOption });
-    };
 
-    getCountries = () => {
-        return countries.map(country => ({ value: country.name, label: country.name }))
-    }
-    handleCountryChange = (selectedOption) => {
-        this.setState({ country: selectedOption });
-    };
 
 
     render() {
@@ -309,194 +258,13 @@ class RegisterIndex extends React.Component {
                                     />
                                     : null}
                                 {activeStep === 2 ?
-                                    <div>
-                                        <div>
-                                            You need to select one of these
-                                        </div>
-                                        <div>
-                                            <input type="radio" name="profile_type" value="iitr_student" onChange={this.onProfileChange} /><span>IITR STUDENT</span>
-                                            <input type="radio" name="profile_type" value="non_iitr_student" onChange={this.onProfileChange} /><span>NON-IITR STUDENT</span>
-                                            <input type="radio" name="profile_type" value="ca" onChange={this.onProfileChange} /><span>CAMPUS AMBASSADOR</span>
-                                            <input type="radio" name="profile_type" value="professional" onChange={this.onProfileChange} /><span>PROFESSIONAL</span>
-                                            <input type="radio" name="profile_type" value="professor" onChange={this.onProfileChange} /><span>PROFESSOR</span>
-                                            <input type="radio" name="profile_type" value="contingent" onChange={this.onProfileChange} /><span>CONTINGENT</span>
-                                        </div>
-                                        <div className="esummit-register-form-button">
-                                            <div className="esummit-register-form-button-back" onClick={this.handleNext}>
-                                                NEXT
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <ProfileType
+                                        handleProfile={this.handleProfile}
+                                        profile_type={this.state.profile_type}
+                                    />
                                     : null}
                                 {activeStep === 3 ?
-                                    <div>
-                                        {profile_type === "iitr_student" ?
-                                            <div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputPhone">PHONE NO</label>
-                                                    <input
-                                                        id="inputPhone"
-                                                        type="number"
-                                                        placeholder="Enter your phone number"
-                                                        name="phone_no"
-                                                        autoCorrect="off"
-                                                        autoComplete="off"
-                                                        autoCapitalize="off"
-                                                        value={phone_no}
-                                                        onChange={this.onChange}
-                                                        spellCheck="false"
-                                                        required
-                                                    /></div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputGender">Gender</label>
-                                                    <select
-                                                        id="inputGender"
-                                                        name="gender"
-                                                        value={gender}
-                                                        onChange={this.onChange}
-                                                        required
-                                                    >
-                                                        <option value="" disabled="true"> Gender </option>
-                                                        <option value="male"> Male </option>
-                                                        <option value="female"> Female </option>
-                                                        <option value="other"> Other </option>
-                                                    </select>
-                                                </div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputEnrollment">ENROLLMENT NO</label>
-                                                    <input
-                                                        id="inputEnrollment"
-                                                        type="number"
-                                                        placeholder="Enter your enrollment number"
-                                                        name="enrollment_no"
-                                                        autoCorrect="off"
-                                                        autoComplete="off"
-                                                        autoCapitalize="off"
-                                                        value={enrollment_no}
-                                                        onChange={this.onChange}
-                                                        spellCheck="false"
-                                                        required
-                                                    /></div>
-                                            </div>
-                                            :
-                                            <div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputPhone">PHONE NO</label>
-                                                    <input
-                                                        id="inputPhone"
-                                                        type="number"
-                                                        placeholder="Enter your phone number"
-                                                        name="phone_no"
-                                                        autoCorrect="off"
-                                                        autoComplete="off"
-                                                        autoCapitalize="off"
-                                                        value={phone_no}
-                                                        onChange={this.onChange}
-                                                        spellCheck="false"
-                                                        required
-                                                    /></div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputGender">GENDER</label>
-                                                    <select
-                                                        id="inputGender"
-                                                        name="gender"
-                                                        value={gender}
-                                                        onChange={this.onChange}
-                                                        required
-                                                    >
-                                                        <option value="" disabled={true}> Gender </option>
-                                                        <option value="male"> Male </option>
-                                                        <option value="female"> Female </option>
-                                                        <option value="other"> Other </option>
-                                                    </select>
-                                                </div>
-                                                <div>
-                                                    <div className="esummit-register-form-input-specific">
-                                                        <label htmlFor="inputCountry">COUNTRY</label>
-
-                                                        <Select
-                                                            value={country}
-                                                            onChange={this.handleCountryChange}
-                                                            options={this.getCountries()}
-                                                            placeholder="Enter your country name" />
-                                                    </div>
-
-
-                                                    {this.state.country.value === "India"
-                                                        ? <div>
-                                                            <div className="esummit-register-form-input-specific">
-                                                                <label htmlFor="inputState">STATE</label>
-
-                                                                <Select value={states} // onChange={event => {} //   this.setState({} //     states: event.target.value,}}
-                                                                    onChange={this.handleStateChange}
-                                                                    options={options}
-                                                                    placeholder="Enter your state name" />
-                                                            </div>
-                                                            <div className="esummit-register-form-input-specific">
-                                                                <label htmlFor="inputCollege">COLLEGE</label>
-                                                                <CreatableSelect
-                                                                    placeholder="Enter your college name"
-                                                                    searchable={true}
-                                                                    required={true}
-                                                                    onChange={this.handleCollegeChange}
-                                                                    options={colleges[states.value]}
-                                                                    clearable={false}
-                                                                    value={college} />
-                                                            </div>
-                                                            <div className="esummit-register-form-input-specific">
-                                                                <label htmlFor="inputCity">CITY</label>
-
-                                                                <CreatableSelect
-                                                                    placeholder="Enter your city"
-                                                                    searchable={true}
-                                                                    required={true}
-                                                                    onChange={this.handleCityChange}
-                                                                    options={states === ""
-                                                                        ? []
-                                                                        : this.getCities(states.value)}
-                                                                    clearable={false}
-                                                                    value={city} />
-                                                            </div>
-                                                        </div>
-                                                        :
-                                                        <div className="esummit-register-form-input-specific">
-                                                            <label htmlFor="inputCollege">COLLEGE</label>
-                                                            <input
-                                                                type="text"
-                                                                name="college"
-                                                                value={college}
-                                                                onChange={this.onChange}></input>
-                                                        </div>
-                                                    }
-                                                </div>
-                                            </div>}
-
-                                        {
-                                            profile_type === "non_iitr_student" ?
-                                                <div>
-
-                                                </div>
-                                                :
-                                                profile_type === "ca" ?
-                                                    <div>
-
-                                                    </div>
-                                                    :
-                                                    profile_type === "professional" ?
-                                                        <div>
-
-                                                        </div>
-                                                        :
-                                                        profile_type === "professor" ?
-                                                            <div>
-
-                                                            </div>
-                                                            : profile_type === "contingent" ?
-                                                                <div>
-
-                                                                </div> : null
-                                        }
-                                    </div>
+                                    <PersonalDetails profile_type={profile_type} />
                                     : null}
                                 {activeStep === 4 ?
                                     <div>
@@ -506,18 +274,18 @@ class RegisterIndex extends React.Component {
                                 }
                                 <div>
                                     <div className="esummit-register-form-button">
-                                        {activeStep === 0 || activeStep === 1 ?
+                                        {activeStep === 0 || activeStep === 2 ?
                                             null :
                                             <div
                                                 className="esummit-register-form-button-back"
                                                 onClick={this.handleBack}
                                             >BACK</div>
                                         }
-                                        {activeStep === 3 ?
+                                        {/* {activeStep === 3 ?
                                             <button type="submit">
                                                 SUBMIT
                                             </button>
-                                            : null}
+                                            : null} */}
                                     </div>
 
                                 </div>
