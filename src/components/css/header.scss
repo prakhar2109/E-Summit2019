@@ -15,7 +15,7 @@
 .head1 {
 
     font-size: 2rem !important ;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.04em;
     color: #FEFFFF;
     font-weight: bold !important;
     display: inline-block;
@@ -25,15 +25,18 @@
     font-family: ProximaNova-Bold;
  
 
-    @include mobile {
-        font-size: 18px !important;
-        letter-spacing: 0.1em;
-        margin-left: -1.5rem;
-    }
 
     @include fhd{
         font-size: 1.625rem !important;
     }
+
+    
+    @include mobile {
+        font-size: 18px !important;
+        letter-spacing: 0.04em;
+        margin-left: -1.5rem;
+    }
+
 }
 
 .vector {
