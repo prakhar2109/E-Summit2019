@@ -1,3 +1,13 @@
+
+@mixin fhd {
+    @media  (min-width:1000px) and (max-width: 1600px) {
+        @content ;
+    }
+
+}
+
+
+
 .andhera {
     background: rgba(79, 79, 79, 0.37);
     backdrop-filter: blur(6px);
@@ -40,7 +50,7 @@
         min-width: 40vw;
 
         .top {
-            padding: 36px;
+            padding: 24px 0;
             background: rgba(49, 99, 123, 0.08);
 
             p:first-child {
@@ -48,12 +58,20 @@
                 text-align: center;
                 letter-spacing: 0.04em;
                 color: #1A4D66;
+
+                @include fhd{
+                    font-size: 18px;
+                }
             }
 
             p:nth-child(2) {
                 font-size: 20px;
                 color: #1A4D66;
                 text-align: center;
+
+                @include fhd{
+                    font-size:16px;
+                }
 
             }
         }
@@ -68,16 +86,23 @@
         color: #FFFFFF;
         padding-right: 2rem;
 
+        @include fhd{
+            font-size: 16px;
+        }
+
         span:first-child {
-            padding: 12px 24px;
+            padding: 2.1% 24px;
             border-right: 1px solid #C8341A;
             display: inline-block;
             background: #E0492F;
         }
 
         span:nth-child(2) {
-            padding: 17px 64px;
+            padding: 3% 64px;
             background: #E0492F;
+            @include fhd{
+                padding: 2.8% 64px;
+            }
         }
     }
 
@@ -87,16 +112,24 @@
         cursor: pointer;
         color: #FFFFFF;
 
+        @include fhd{
+            font-size: 16px;
+        }
+
         span:first-child {
-            padding: 12px 24px;
+            padding: 2.1% 24px;
             border-right: 1px solid #193776;
             display: inline-block;
             background: #3B5999;
         }
 
         span:nth-child(2) {
-            padding: 17px 64px;
+            padding: 3% 64px;
             background: #3B5999;
+
+            @include fhd{
+                padding: 2.8% 64px;
+            }
         }
     }
 
@@ -104,17 +137,30 @@
 
     .login_bottom {
         padding: 54px;
+
+        @include fhd{
+            padding: 32px;
+        }
     }
 
 
     form {
         padding-top: 3rem;
+
+        @include fhd{
+            padding-top: 1rem;
+        }
         label {
             display: block;
             font-size: 20px;
             letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
 
             color: #B2B2B2;
+
+            @include fhd{
+                font-size: 16px;
+            }
 
         }
 
@@ -128,6 +174,11 @@
             display: block;
             border-bottom: 1px solid #B2B2B2;
             margin-bottom:3rem;
+
+            @include fhd{
+                font-size: 14px;
+                margin-bottom: 1rem;
+            }
         }
 
         .submit {
@@ -141,6 +192,12 @@
             background: rgba(243, 148, 35, 0.75);
             border-radius: 4px;
             border: none;
+
+            @include fhd{
+                padding: 10px 24px;
+                font-size: 16px;
+
+            }
 
         }
     }
@@ -165,7 +222,7 @@
 
 .hr-text {
     line-height: 1em;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     position: relative;
     outline: 0;
     border: 0;
@@ -173,6 +230,10 @@
     text-align: center;
     height: 1.5em;
     opacity: 1;
+
+    @include fhd{
+        margin-top: 1rem;
+    }
 
     &:before {
         content: '';

@@ -6,6 +6,13 @@
 
 }
 
+@mixin fhd {
+    @media  (min-width:1000px) and (max-width: 1600px) {
+        @content ;
+    }
+
+}
+
 
 .bullets{
     padding: 72px 10vw;
@@ -16,15 +23,24 @@
     }
 
     ol{
-        line-height: 35px;
-        font-size: 24px;
+        line-height: 2.1875rem;
+        font-size: 1.5rem;
         letter-spacing: 0.02em;
-        padding-top: 72px;
+        padding-top: 4.5rem;
         color: rgba(0, 0, 0, 0.87);
         list-style-type: decimal; 
+
+        @include fhd{
+            font-size: 1.25rem;
+            padding-top: 3.5rem;
+        }
     }
     
     li{
-        padding-top:16px;
+        padding-top:1rem;
+
+        @include fhd{
+            padding-top: 0.7rem;
+        }
     }
 }
