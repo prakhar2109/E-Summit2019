@@ -53,7 +53,7 @@
 
 .land_screen2 {
     background: url("../static/1.jpg");
-    padding: 152px 13.6vw 40px 13.6vw;
+    padding: 7.6% 13.6vw 40px 13.6vw;
  
     background-repeat: no-repeat;
     background-size: cover;
@@ -71,7 +71,7 @@
         line-height: 128%;
         font-size: 24px;
         letter-spacing: 0.04em;
-        padding: 44px 0 108px 0;
+        padding: 44px 0 6% 0;
         
         color: #FEFFFF;
 
@@ -100,7 +100,7 @@
         line-height:124%;
         font-size: 26px;
         letter-spacing: 0.02em;
-        padding: 2.75rem 0 0 0;
+        padding: 2% 0 0 0;
         color: #D8D8D8;
 
         @include mobile {
@@ -227,7 +227,7 @@
 }
 .land_speakers,
 .land_sponsors {
-    padding: 152px 13.6vw 0 13.6vw;
+    padding: 7.6% 13.6vw 0 13.6vw;
     background: #0E425B;
 
     @include mobile {
@@ -240,18 +240,18 @@
 }
 
 .land_sponsors{
-    padding-bottom: 152px;
+    padding-bottom: 7.6%;
  
 }
 .land_events {
-    padding: 8.75rem 13.6vw 152px 13.6vw;
+    padding: 7.6% 13.6vw 7.6% 13.6vw;
 
     @include mobile {
         padding: 36px;
     }
 
     .land_events_array2 {
-        padding: 116px 0 0 0;
+        padding: 6% 0 0 0;
         display: grid;
         grid-template-columns: 30% 30% 30%;
 
@@ -286,7 +286,7 @@
             }
 
             .t1 {
-                font-size: 1.65rem;
+                font-size: 26.4px;
                 letter-spacing: 0.1em;
                 font-weight: bold;
 
@@ -297,7 +297,7 @@
                 }
 
                 @include fhd{
-                    font-size: 1.4rem;
+                    font-size: 22.4px;
                 }
 
             }
@@ -359,7 +359,7 @@
     background: #1A4D66;
 
     padding: 0 8.5vw;
-    margin-top:-30px;
+    margin-top:-3%;
 
     @include mobile {
         grid-template-columns: 50% 50%;
@@ -428,9 +428,9 @@
 
         p:nth-child(2) {
             line-height: 41px;
-            font-size: 1.375rem;
+            font-size: 22px;
             letter-spacing: 0.1em;
-            text-align: left;
+            text-align: center;
             color: #FFFFFF;
             margin-top: 6.125rem;
 
@@ -444,7 +444,7 @@
             }
 
             @include fhd{
-                font-size: 1.25rem;
+                font-size: 20px;
                 margin-top:4rem;
             }
 
@@ -476,7 +476,7 @@
 
         img {
      
-            margin-top: 15rem;
+            margin-top: 95%;
             margin-bottom: 1.875rem;
 
             @include mobile {
@@ -501,7 +501,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 152px 13.6vw;
+    padding: 7.6% 13.6vw;
 
     @include mobile {
         padding: 128px 0;
@@ -525,7 +525,7 @@
         img {
             border-radius: 50%;
             margin-top: -10%;
-
+            
             @include mobile {
                 margin-top: -20%;
             }
@@ -536,7 +536,7 @@
             font-size: 24px;
             text-align: center;
             letter-spacing: 0.04em;
-            margin-top:50px;
+            margin-top:6%;
             color: #FFFFFF;
 
 
@@ -563,7 +563,8 @@
             font-size: 2rem;
             letter-spacing: 0.06em;
             color: #FFFFFF;
-            margin-top:40px;
+            margin-top:1%;
+            margin-bottom: 0;
 
             @include mobile {
                 line-height: 26px;
@@ -580,7 +581,7 @@
             line-height: 2.1875rem;
             font-size: 1.5rem;
             letter-spacing: 0.06em;
-            margin-top: 11px;
+            margin-top:0;
             color: #E5E5E5;
 
             @include mobile {
@@ -602,7 +603,7 @@
 
 .land_faq {
 
-    padding: 152px 13.6vw;
+    padding: 7.6% 13.6vw;
 
     @include mobile {
         padding: 32px;
@@ -618,7 +619,7 @@
     }
 
     p {
-        padding-top: 2.75rem;
+        
         line-height:35px;
         font-size: 1.75rem;
         letter-spacing: 0.04em;
