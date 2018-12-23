@@ -61,7 +61,6 @@
 .caprofile-parent1{
     padding-top: 4.44vh;
     padding-left: 1.67vw;
-padding-bottom: 4vh;
 margin-top: 2.22vh;
 margin-left: 1.875vw;
 height: 45.74vh;
@@ -363,7 +362,7 @@ padding: 1.11vh;
 
     display: flex;
     flex-direction: row;
-    margin-top: 0 !important;
+    margin-top: 4.17vh;
 }
 
 .caprofile-containter-parent-child2-child1{
@@ -377,37 +376,14 @@ padding: 1.11vh;
     display: flex;
     flex-direction: column;
 }
-.caprofile-socialaccounts-child{
-    display: flex;
-    flex-direction: row;
-    margin-top:4.44vh;
-
-}
-.caprofile-socialaccounts-child-heading {
-    line-height: normal;
-    font-size: 19.88px;
-    width:20vw;
-    color: #B2B2B2;
-    font-family: "ProximaNova-Semibold" !important;
-
-}
-
-.caprofile-socialaccounts-child-data{
-    word-break: break-all;
-    line-height: normal;
-    font-size: 17.04px;
-    color: #4F4F4F;
-}
 @media only screen and (min-width: 900px){
 #caprofilemobile-b01 {
 
 display:none;
 }
-#caprofile-mobile-editprofilecontainter{
+#caprofile-editprofilecontainter{
 display:none;}
-#caprofile-mobile-editprofile-parent2{
-display:none;}
-#caprofile-mobile-editprofile-parent3{
+#caprofileeditprofile-parent2{
 display:none;}
 #caprofilemobile-b02{
 display:none}
@@ -428,13 +404,6 @@ font-size: 30px;
 .caprofile-container-heading{
 font-size:20px;
 
-}
-.caprofile-socialaccounts-child-heading{
- font-size: 28px;
-}
-
-.caprofile-socialaccounts-child-data{
-font-size:24px;
 }
 }
 @media only screen and (max-width: 900px){
@@ -494,7 +463,6 @@ font-size:24px;
     font-size: 1.14rem;
     margin-top: .57rem;
     color: #4F4F4F;
-    width: 100%;
     word-break: unset;
 }
 .caprofile-parent1-child1-heading {
@@ -598,70 +566,10 @@ display:none;}
    
     width: auto;
 }
-#caprofile-mobile-editprofilecontainter{
+#caprofile-editprofilecontainter{
 display:none;}
-#caprofile-mobile-editprofile-parent2{
-display:none;}
-#caprofile-mobile-editprofile-parent3{
+#caprofileeditprofile-parent2{
 display:none;}
 #caprofilemobile-b02{
-display:none;
-background: #F39423;
-color: #F7F8F9;
-height:2.57rem;
-padding:.857rem;
-margin: auto;
-font-size: .857rem;
-border: none;
-font-family: "ProximaNova-Semibold" !important;
-}
-.caprofile-socialaccounts-child{
-    display: flex;
-    flex-direction: column;
-    margin-top:1.71rem;
-
-}
-.caprofile-socialaccounts-child-heading {
-    line-height: normal;
-    width: 100%;
-    word-break: break-word;
-    font-size: 1.286rem;
-    font-weight: 500;
-    color: #B2B2B2;
-    font-family: "ProximaNova-Semibold" !important;
-}
-
-.caprofile-socialaccounts-child-data{
-    line-height: normal;
-    font-size: 1.14rem;
-    margin-top: .57rem;
-    color: #4F4F4F;
-    word-break: unset;
-}
-.caprofile-containter-parent-child2-child1 {
-    width: 100% !important;
-    }
-.caprofile-containter-parent-child2-child2{
-   width: 100% !important;
-}
-.caprofile-parent2-child2-year{
-  width: 100% !important;
-}
-.caprofile-parent3-child2-city{
-  width: 100% !important;
-}
-.caprofile-parent3-child2-State{
-  width: 100% !important;
-}
-
-
-#editprofile-input-mobile{
-    width: 100%;
-    height: 2.28rem;
-    padding: 4px;
-    border: 1px solid #808080;
-    border-radius: 2px;
-    font-size: 16px;
-    color: #4F4F4F;
-}
+display:none}
 }

@@ -82,23 +82,9 @@ export default class caLeaderboard extends Component {
               /> 
             </div>
             <div id="optionsToggle">
-              <span>
-              <Link to="/noniitrdashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : null} onClick={() => {
-                                            this.setActive("task");
-                                        }}>
-              TASKS
-              </Link>
-              <br />
-              </span>
-              <span>
-              <Link to="/noniitrdashboard/leader" className={(this.state.activeState === "leaderboard") ? "linkEventson" : null} onClick={() => {
-                                            this.setActive("leaderboard");
-                                        }}>
-              LEADERBOARD
-              </Link>
-              <br />
-              </span>
-		
+              
+              
+	      {/*
               <span>
               <Link to="/noniitrdashboard/offers" className={(this.state.activeState === "offers") ? "linkEventson" : null} onClick={() => {
                                             this.setActive("offers");
@@ -106,7 +92,7 @@ export default class caLeaderboard extends Component {
               OFFERS
               </Link>
               <br />
-              </span>
+              </span>*/}
               <span>
               <Link to="/noniitrdashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : null} onClick={() => {
                                             this.setActive("payment");
@@ -115,7 +101,7 @@ export default class caLeaderboard extends Component {
               </Link>
               <br />
               </span>
-
+              {/*
               <span>
               <Link to="/noniitrdashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
                                             this.setActive("invite");
@@ -123,7 +109,7 @@ export default class caLeaderboard extends Component {
               INVITE
               </Link>
               <br />
-              </span>
+              </span>*/}
               <span>
               <Link to="/noniitrdashboard/contigent" className={(this.state.activeState === "contigent") ? "linkEventson" : null} onClick={() => {
                                             this.setActive("contigent");
@@ -136,7 +122,7 @@ export default class caLeaderboard extends Component {
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton"><a>CA RULEBOOK</a></div>
+             
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>

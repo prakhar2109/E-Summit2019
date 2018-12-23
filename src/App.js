@@ -13,6 +13,7 @@ import Caindex from './screens/cadashboard/js/index'
 import Iitrindex from './screens/iitrdashboard/js/index'
 import Noniitrindex from './screens/noniitrdashboard/js/index'
 import Professionalindex from './screens/professionalcadashboard/js/index'
+import Professorindex from './screens/professordashboard/js/index'
 import Payment from './screens/cadashboard/js/payment';
 
 import Loadable from 'react-loadable';
@@ -103,6 +104,7 @@ class App extends Component {
 	    <Route path="/iitrdashboard/" component={Iitrindex} />
 	    <Route path="/noniitrdashboard/" component={Noniitrindex} />
 	    <Route path="/prodashboard/" component={Professionalindex} />
+            <Route path="/professordashboard/" component={Professorindex} />
 
             <Route path="/ignite" component={ignite} />
      

@@ -131,7 +131,7 @@ export default class ComingSoon extends Component {
               </Link>
             <br />
           </span>
-
+	{/*
           <span>
             <Link to="/dashboard/offers" className={(this.state.activeState === "offers") ? "linkEventson" : null} onClick={() => {
               this.setActive("offers");
@@ -140,6 +140,7 @@ export default class ComingSoon extends Component {
               </Link>
             <br />
           </span>
+	*/}
           <span>
             <Link to="/dashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : null} onClick={() => {
               this.setActive("payment");
@@ -148,7 +149,7 @@ export default class ComingSoon extends Component {
               </Link>
             <br />
           </span>
-
+	{/*
           <span>
             <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
               this.setActive("invite");
@@ -157,6 +158,7 @@ export default class ComingSoon extends Component {
               </Link>
             <br />
           </span>
+	*/}
           {/*<span id="leaderboardButton">LeaderBoard</span>*/}
           <div id="leaderboardButton"><a>CA RULEBOOK</a></div>
         </div>

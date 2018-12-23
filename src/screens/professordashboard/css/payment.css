@@ -148,12 +148,9 @@ svg{
 
 }
 .capayment-tnc{
-    border: 1px solid #989898;
+    border:1px solid #989898;
     border-radius: 8px;
-    padding: 1.11vh;
-    line-height: 2.52vh;
     width: 45vw;
-    height: fit-content;
     color: #8A8A8A;
 }
 .capayment-paymentbtn{

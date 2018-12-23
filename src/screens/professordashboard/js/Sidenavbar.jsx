@@ -61,7 +61,7 @@ export default class caLeaderboard extends Component {
             </div>
             <hr id="line1" />
             <div id="viewProfile">
-              <NavLink to="/iitrdashboard/Viewprofile">
+              <NavLink to="/professordashboard/Viewprofile">
                      VIEW PROFILE
                     </NavLink>
 
@@ -83,25 +83,47 @@ export default class caLeaderboard extends Component {
             </div>
             <div id="optionsToggle">
               
-             
-		
-             
+              
+	      {/*
               <span>
-              <Link to="/iitrdashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : null} onClick={() => {
+              <Link to="/professordashboard/offers" className={(this.state.activeState === "offers") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("offers");
+                                        }}>
+              OFFERS
+              </Link>
+              <br />
+              </span>*/}
+
+              <span>
+              <Link to="/professordashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : null} onClick={() => {
                                             this.setActive("payment");
                                         }}>
               PAYMENT
               </Link>
               <br />
               </span>
-
-             
-                                    
+	      {/*
+              <span>
+              <Link to="/professordashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("invite");
+                                        }}>
+              INVITE
+              </Link>
+              <br />
+              </span>*/}
+              <span>
+              <Link to="/professordashboard/contigent" className={(this.state.activeState === "contigent") ? "linkEventson" : null} onClick={() => {
+                                            this.setActive("contigent");
+                                        }}>
+              CONTIGENT
+              </Link>
+              <br />
+              </span>                          
 
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-            
+              
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>
