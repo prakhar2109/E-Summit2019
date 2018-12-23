@@ -59,7 +59,11 @@ class PersonalDetails extends Component {
             programme_error_bool: "",
             programme_error: "",
             year_error_bool: "",
-            year_error: ""
+            year_error: "",
+            organisation_error_bool: "",
+            organisation_error: "",
+            industry_error_bool: "",
+            industry_error: ""
         }
     }
     EmptyValidation = (data) => {
@@ -110,6 +114,9 @@ class PersonalDetails extends Component {
         console.log(this.state.country, "country")
         if (this.state.phone_no === "") {
             return this.EmptyValidation("phone_no")
+        }
+        if (this.state.phone_no.length !== 10) {
+            return this.phonevalidate()
         }
         if (this.state.gender === "") {
             return this.EmptyValidation("gender")
@@ -176,7 +183,6 @@ class PersonalDetails extends Component {
             organisation_name: organisation_name,
             industry: industry,
         }
-        console.log("dashdghjagsdjk")
         this.props.handleDetails(data)
     }
     getStates = () => {
@@ -197,14 +203,102 @@ class PersonalDetails extends Component {
     getYear = () => {
         return year_option.map(year => ({ value: year.name, label: year.name }))
     }
+    handleBack = () => {
+        const {
+            phone_no,
+            gender,
+            enrollment_no,
+            country,
+            states,
+            city,
+            college,
+            programme,
+            year,
+            about_esummit,
+            tshirt_size,
+            organisation_name,
+            industry } = this.state
+        let data = {
+            phone_no: phone_no,
+            gender: gender,
+            enrollment_no: enrollment_no,
+            country: country,
+            states: states,
+            city: city,
+            college: college,
+            programme: programme,
+            year: year,
+            about_esummit: about_esummit,
+            tshirt_size: tshirt_size,
+            organisation_name: organisation_name,
+            industry: industry,
+        }
+        console.log(data, "data")
+        this.props.handleBack(data)
+    }
     componentDidMount() {
         this.setState({
-            profile_type: this.props.profile_type
+            profile_type: this.props.profile_type,
+            phone_no: this.props.handleState.phone_no,
+            gender: this.props.handleState.gender,
+            enrollment_no: this.props.handleState.enrollment_no,
+            country: this.props.handleState.country,
+            states: this.props.handleState.states,
+            city: this.props.handleState.city,
+            college: this.props.handleState.college,
+            programme: this.props.handleState.programme,
+            year: this.props.handleState.year,
+            about_esummit: this.props.handleState.about_esummit,
+            tshirt_size: this.props.handleState.tshirt_size,
+            organisation_name: this.props.handleState.organisation_name,
+            industry: this.props.handleState.industry,
         })
+        const height = window.innerHeight
+        let push = 0 * height
+        window.scroll({ top: push, behavior: "auto" });
+        if (this.props.handleState.phone_no !== "") {
+            this.phonevalidate()
+        }
+        if (this.props.handleState.gender !== "") {
+            this.gender_validate()
+        }
+        if (this.props.handleState.enrollment_no !== "") {
+            this.enrollvalidate()
+        }
+        if (this.props.handleState.country !== "") {
+            this.country_validate()
+        }
+        if (this.props.handleState.states !== "") {
+            this.state_validate()
+        }
+        if (this.props.handleState.city !== "") {
+            this.city_validate()
+        }
+        if (this.props.handleState.college !== "") {
+            this.college_validate()
+        }
+        if (this.props.handleState.programme !== "") {
+            this.programme_validate()
+        }
+        if (this.props.handleState.year !== "") {
+            this.year_validate()
+        }
+        if (this.props.handleState.about_esummit !== "") {
+            this.about_esummit_validate()
+        }
+        if (this.props.handleState.tshirt_size !== "") {
+            this.tshirt_validate()
+        }
+        if (this.props.handleState.organisation_name !== "") {
+            this.organisation_validate()
+        }
+        if (this.state.industry !== "") {
+            this.industry_validate()
+        }
     }
     phonevalidate = () => {
         setTimeout(function () {
-            if (this.state.phone_no.length < 10) {
+            if (this.state.phone_no.length < 10 || this.state.phone_no.length > 10) {
                 this.setState({
                     phone_error_bool: "true",
                     phone_error: "Phone number must contain 10 numbers"
@@ -213,6 +307,22 @@ class PersonalDetails extends Component {
                 this.setState({
                     phone_error_bool: "false",
                     phone_error: ""
+                })
+            }
+        }.bind(this), 1000)
+
+    }
+    enrollvalidate = () => {
+        setTimeout(function () {
+            if (this.state.enrollment_no.length < 8 || this.state.enrollment_no.length > 8) {
+                this.setState({
+                    enroll_error_bool: "true",
+                    enroll_error: "Enrollment number must contain 8 numbers"
+                })
+            } else {
+                this.setState({
+                    enroll_error_bool: "false",
+                    enroll_error: ""
                 })
             }
         }.bind(this), 1000)
@@ -292,7 +402,7 @@ class PersonalDetails extends Component {
                     about_esummit_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     tshirt_validate = () => {
         setTimeout(function () {
@@ -303,7 +413,7 @@ class PersonalDetails extends Component {
                     tshirt_esummit_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     country_validate = () => {
         setTimeout(function () {
@@ -314,7 +424,7 @@ class PersonalDetails extends Component {
                     country_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     city_validate = () => {
         setTimeout(function () {
@@ -325,7 +435,7 @@ class PersonalDetails extends Component {
                     city_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     year_validate = () => {
         setTimeout(function () {
@@ -336,7 +446,7 @@ class PersonalDetails extends Component {
                     year_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     college_validate = () => {
         setTimeout(function () {
@@ -347,7 +457,7 @@ class PersonalDetails extends Component {
                     college_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     programme_validate = () => {
         setTimeout(function () {
@@ -358,30 +468,51 @@ class PersonalDetails extends Component {
                     programme_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     gender_validate = () => {
         setTimeout(function () {
             if (this.state.gender !== "") {
-
                 this.setState({
                     gender_error_bool: "false",
                     gender_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
-    enroll_validate = () => {
+    organisation_validate = () => {
         setTimeout(function () {
-            if (this.state.enrollment_no !== "") {
+            if (this.state.organisation_name !== "") {
 
                 this.setState({
-                    enroll_error_bool: "false",
-                    enroll_error: ""
+                    organisation_error_bool: "false",
+                    organisation_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
+    industry_validate = () => {
+        setTimeout(function () {
+            if (this.state.industry !== "") {
+
+                this.setState({
+                    industry_error_bool: "false",
+                    industry_error: ""
+                })
+            }
+        }.bind(this), 1000)
+    }
+    // enroll_validate = () => {
+    //     setTimeout(function () {
+    //         if (this.state.enrollment_no !== "") {
+
+    //             this.setState({
+    //                 enroll_error_bool: "false",
+    //                 enroll_error: ""
+    //             })
+    //         }
+    //     }.bind(this), 1000)
+    // }
     state_validate = () => {
         setTimeout(function () {
             if (this.state.states !== "") {
@@ -391,7 +522,7 @@ class PersonalDetails extends Component {
                     state_error: ""
                 })
             }
-        }.bind(this), 2000)
+        }.bind(this), 1000)
     }
     render() {
         const {
@@ -437,6 +568,16 @@ class PersonalDetails extends Component {
             profile_type } = this.state
         return (
             <div className="esummit-register-form-body-parent">
+                <div className="esummit-register-form-body-parent-heading-first">
+                    {this.state.profile_type === "iitr_student" ? "IITR STUDENT" :
+                        this.state.profile_type === "non_iitr_student" ?
+                            "NON IITR STUDENT" : this.state.profile_type === "ca" ? "CAMPUS AMBASSADOR" :
+                                this.state.profile_type === "professional" ? "PROFESSIONAL" :
+                                    this.state.profile_type === "professor" ? "PROFESSOR" : null}
+                </div>
+                <div className="esummit-register-form-body-parent-heading-second">
+                    Please fill all the fields as mentioned below
+                </div>
                 <div className="esummit-register-form-input-specific">
                     <label htmlFor="inputPhone">PHONE NO</label>
                     <div className="esummit-register-form-input-specific-inner">
@@ -504,7 +645,7 @@ class PersonalDetails extends Component {
                                 onChange={event => {
                                     this.onChange(event)
                                     {
-                                        this.enroll_validate()
+                                        this.enrollvalidate()
                                     }
                                 }}
                                 spellCheck="false"
@@ -765,7 +906,12 @@ class PersonalDetails extends Component {
                                             autoComplete="off"
                                             autoCapitalize="off"
                                             value={organisation_name}
-                                            onChange={event => { this.onChange(event) }
+                                            onChange={event => {
+                                                this.handleTshirtChange(event)
+                                                {
+                                                    this.organisation_validate()
+                                                }
+                                            }
                                             }
                                             spellCheck="false"
                                             required
@@ -790,7 +936,12 @@ class PersonalDetails extends Component {
                                             autoComplete="off"
                                             autoCapitalize="off"
                                             value={industry}
-                                            onChange={event => { this.onChange(event) }}
+                                            onChange={event => {
+                                                this.handleTshirtChange(event)
+                                                {
+                                                    this.industry_validate()
+                                                }
+                                            }}
                                             spellCheck="false"
                                             required
                                         />
@@ -806,6 +957,9 @@ class PersonalDetails extends Component {
                     </div>
                 </div>
                 <div className="esummit-register-form-button">
+                    <div className="esummit-register-form-button-back" onClick={this.handleBack}>
+                        BACK
+                    </div>
                     <div className="esummit-register-form-button-back" onClick={this.handleSubmit}>
                         SUBMIT
                     </div>

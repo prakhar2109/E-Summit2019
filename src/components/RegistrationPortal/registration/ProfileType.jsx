@@ -13,7 +13,7 @@ export default class ProfileType extends Component {
         })
     }
     handleNext = () => {
-        if (this.state.profile_type !== "") {
+        if (this.state.profile_type !== "" && this.state.profile_type !== "contingent") {
             let { profile_type } = this.state
             let data = {
                 profile_type: profile_type
@@ -27,6 +27,9 @@ export default class ProfileType extends Component {
         }
     }
     componentDidMount() {
+        const height = window.innerHeight
+        let push = 0 * height
+        window.scroll({ top: push, behavior: "auto" });
         this.setState({
             profile_type: this.props.profile_type
         })
@@ -71,7 +74,18 @@ export default class ProfileType extends Component {
                         </label>
                     </div>
                 </div>
+                {this.state.profile_type === "contingent" ?
+                    <div className="esummit-register-form-arrow-box">
+                        To make a contingent, first each member has to do individual registration.<br />
+                        After individual registration, contingent leader creates a contingent from his dashboard submitting details of each member.<br />
+                        A unique ID will be generated using which other contingent member can join their respective contingents
+                    </div>
+                    : null}
+                <div></div>
                 <div className="esummit-register-form-button">
+                    <div className="esummit-register-form-button-back" onClick={this.props.handleBack}>
+                        BACK
+                    </div>
                     <div className="esummit-register-form-button-back" onClick={this.handleNext}>
                         NEXT
                     </div>

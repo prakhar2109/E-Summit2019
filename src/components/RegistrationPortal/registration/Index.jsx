@@ -6,13 +6,15 @@ import StepLabel from '@material-ui/core/StepLabel';
 import AccountSetup from "./AccountSetup"
 import CommonIndex from "../common/Index"
 import Loader from "../../../screens/loader/loader"
+import { Link } from "react-router-dom"
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import "./css/stepform.css"
 import EmailVerification from './EmailVerification';
 import ProfileType from "./ProfileType"
 import PersonalDetails from './PersonalDetails';
-
+import axios from "axios"
+import sample_image from "./sample_image.jpg"
 
 const styles = theme => ({
     root: {
@@ -60,7 +62,7 @@ const styles = theme => ({
     },
     stepper: {
         padding: "0px !important",
-        background:"#1A4D66 !important"
+        background: "#1A4D66 !important"
     },
     connroot: {
         color: "#153D50 !important",
@@ -70,7 +72,7 @@ const styles = theme => ({
 
 
 function getSteps() {
-    return ['ACCOUNT SETUP', 'EMAIL VERIFICATION', 'PROFILE TYPE', 'PERSONAL DETAILS'];
+    return ['ACCOUNT SETUP', 'PROFILE TYPE', 'PERSONAL DETAILS'];
 }
 class RegisterIndex extends React.Component {
     constructor() {
@@ -96,24 +98,27 @@ class RegisterIndex extends React.Component {
             college: "",
             city: "",
             states: "",
-            country: ""
+            country: "",
+            social_signup: false
         }
     }
 
     handleAccountSetup = (data) => {
         this.setState({
-            otp: data.otp,
-            confirm_otp: data.confirm_otp,
-            email_verified: data.email_verified,
+            // otp: data.otp,
+            // confirm_otp: data.confirm_otp,
+            // email_verified: data.email_verified,
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            confirm_password: data.confirm_password,
+            social_signup: data.social_signup,
             activeStep: this.state.activeStep + 1
         })
     }
     handleEmailVerification = (data) => {
         this.setState({
-            name: data.name,
             email: data.email,
-            password: data.password,
-            confirm_password: data.confirm_password,
             otp: data.otp,
             resend_email: data.resend_email,
             activeStep: this.state.activeStep + 1
@@ -140,17 +145,63 @@ class RegisterIndex extends React.Component {
 
     responseFacebook = (response) => {
         this.setState({
-            response
+            name: response.name,
+            email: response.email,
+            image_url: response.image_url,
+            social_signup: response.social_signup
         })
     }
 
 
     responseGoogle = (response) => {
         this.setState({
-            response
+            name: response.name,
+            email: response.email,
+            image_url: response.image_url,
+            social_signup: response.social_signup
         })
     }
+    handleDetails = (data) => {
+        this.setState({
+            data
+        })
+        if (!this.state.social_signup) {
+            let data_details = {
+                email: this.state.email,
+                name: this.state.name
+            }
+            document
+                .getElementById("loader")
+                .style
+                .display = "flex";
+            axios({
+                method: "post",
+                url: "http://localhost:8000/edc/email",
+                data: data_details
+            }).then((r) => {
+                this.setState({
+                    otp: r.data.one_time_pass,
+                    activeStep: this.state.activeStep + 1
+                })
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "none";
 
+            }).catch((response) => {
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "none";
+                alert("Network error")
+            });
+        }
+        else {
+            this.setState({
+                activeStep: this.state.activeStep + 2
+            })
+        }
+    }
     handleNext = () => {
         document
             .getElementById("loader")
@@ -165,7 +216,24 @@ class RegisterIndex extends React.Component {
             .display = "none";
     };
 
-    handleBack = () => {
+    handleBack = (data) => {
+        if (this.state.activeStep === 2) {
+            this.setState({
+                phone_no: data.phone_no,
+                gender: data.gender,
+                enrollment_no: data.enrollment_no,
+                country: data.country,
+                states: data.states,
+                city: data.city,
+                college: data.college,
+                programme: data.programme,
+                year: data.year,
+                about_esummit: data.about_esummit,
+                tshirt_size: data.tshirt_size,
+                organisation_name: data.organisation_name,
+                industry: data.industry,
+            })
+        }
         document
             .getElementById("loader")
             .style
@@ -197,7 +265,7 @@ class RegisterIndex extends React.Component {
     render() {
         const { classes } = this.props;
         const steps = getSteps();
-        const { activeStep, email, image_url, profile_type, gender, enrollment_no, phone_no, college, country, city, states } = this.state;
+        const { otp, social_signup, activeStep, email, image_url, profile_type } = this.state;
         return (
             <div className="esummit-common-parent" >
                 <CommonIndex />
@@ -231,68 +299,95 @@ class RegisterIndex extends React.Component {
                         <div className="esummit-register-form-heading">
                             <div className="esummit-regsiter-form-heading-child">
                                 {activeStep === 0 ? "ACCOUNT SETUP" :
-                                    activeStep === 1 ? "EMAIL VERIFICATION" :
-                                        activeStep === 2 ? "PROFILE TYPE" :
-                                            activeStep === 3 ? "PERSONAL DETAILS" :
-                                                null
+                                    activeStep === 1 ? "PROFILE TYPE" :
+                                        activeStep === 2 ? "PERSONAL DETAILS" :
+                                            activeStep === 3 ? "EMAIL VERIFICATION" :
+                                                activeStep === 4 ? "SUCCESSFULLY REGISTERED" : null
                                 }
                             </div>
-                            <div className="esummit-regsiter-form-heading-child-second">
-                                Let’s begin with setting up your account
-                        </div>
+                            {activeStep !== 4 ?
+                                <div className="esummit-regsiter-form-heading-child-second">
+                                    Let’s begin with setting up your account
+                            </div> : <div className="esummit-regsiter-form-heading-child-second">
+                                    Congrats!You have successfully registered for E-Summit’19
+                            </div>}
                         </div>
                         <div>
                             <form onSubmit={this.handleSubmit}>
                                 <Loader />
                                 {activeStep === 0 ?
                                     <AccountSetup
+                                        data={this.state}
                                         handleGoogle={this.responseGoogle}
                                         handleFacebook={this.responseFacebook}
                                         handleSubmit={this.handleAccountSetup}
                                     /> : null}
+
                                 {activeStep === 1 ?
-                                    <EmailVerification
-                                        email={email}
-                                        otp={this.state.otp}
-                                        handleSubmit={this.handleEmailVerification}
-                                    />
-                                    : null}
-                                {activeStep === 2 ?
                                     <ProfileType
                                         handleProfile={this.handleProfile}
+                                        handleBack={this.handleBack}
                                         profile_type={this.state.profile_type}
                                     />
                                     : null}
+                                {activeStep === 2 ?
+                                    <PersonalDetails
+                                        handleState={this.state}
+                                        handleBack={this.handleBack}
+                                        profile_type={profile_type}
+                                        handleDetails={this.handleDetails}
+                                    />
+                                    : null}
                                 {activeStep === 3 ?
-                                    <PersonalDetails profile_type={profile_type} />
+                                    <EmailVerification
+                                        email={email}
+                                        handleOTP={otp}
+                                        handleSubmit={this.handleEmailVerification}
+                                    />
                                     : null}
                                 {activeStep === 4 ?
-                                    <div>
-                                        <img src={image_url} />
+                                    <div className="esummit-register-form-successfull-grand-parent">
+                                        <div className="esummit-register-form-successfull-parent">
+                                            {!social_signup ?
+                                                <div style={{
+                                                    backgroundImage: `url(${sample_image})`,
+                                                    backgroundPosition: "center",
+                                                    backgroundSize: "cover",
+                                                    width: "200px",
+                                                    height: "200px",
+                                                    borderRadius: "2px",
+                                                    padding: "20px"
+                                                }}></div>
+                                                :
+                                                <div style={{
+                                                    backgroundImage: `url(${image_url})`,
+                                                    backgroundPosition: "center",
+                                                    backgroundSize: "cover",
+                                                    width: "200px",
+                                                    height: "200px",
+                                                    borderRadius: "2px",
+                                                    padding: "20px"
+                                                }}></div>
+                                            }
+
+                                        </div>
+                                        <div className="esummit-register-form-go-to-name">
+                                            {this.state.name}
+                                        </div>
+                                        <div className="esummit-register-form-button">
+                                            <div className="esummit-register-form-button-back">GO TO DASHBOARD</div>
+                                        </div>
                                     </div>
                                     : null
                                 }
-                                <div>
-                                    <div className="esummit-register-form-button">
-                                        {activeStep === 0 || activeStep === 2 ?
-                                            null :
-                                            <div
-                                                className="esummit-register-form-button-back"
-                                                onClick={this.handleBack}
-                                            >BACK</div>
-                                        }
-                                        {/* {activeStep === 3 ?
-                                            <button type="submit">
-                                                SUBMIT
-                                            </button>
-                                            : null} */}
-                                    </div>
-
-                                </div>
                             </form>
                         </div>
                     </div>
                 </div >
+                <div className="esummit-register-form-footer">
+                    <span>Already have an account?</span>
+                    <span><Link to="/registration_portal/login">Log in</Link></span>
+                </div>
             </div >
         );
     }

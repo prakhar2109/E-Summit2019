@@ -213,8 +213,8 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 5%;
-    margin-top: 5%;
+    margin-bottom: 8%;
+    margin-top: 8%;
 }
 .esummit-register-form-button-back{
     background-color: #F39423;
@@ -345,3 +345,94 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .css-15k3avv{
   }
+  .esummit-register-form-body-parent-heading-first{
+    line-height: normal;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    font-weight:600;
+    color: #1A4D66;
+    padding: 0px 0px 20px 0px;
+  }
+  .esummit-register-form-body-parent-heading-second{
+    line-height: normal;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #4F4F4F;
+    padding: 20px;
+  }
+  .esummit-register-form-footer{
+      text-align: center;
+      margin-bottom: 40px;
+  }
+  .esummit-register-form-footer span{
+    line-height: normal;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    padding: 2px;
+    color: #FFFFFF;
+  }
+  .esummit-register-form-footer span:nth-child(2){
+      color:#F6AF5A;
+  }
+  .esummit-register-form-footer a{
+      text-decoration: none;
+      color:#F6AF5A;
+      font-weight: 600;
+}
+.esummit-register-form-successfull-parent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.esummit-register-form-successfull-grand-parent{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+.esummit-register-form-resend-otp-field{
+    line-height: normal;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: #F39423;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+.esummit-register-form-message-verification{
+    color:green;
+    font-size: 13px;
+}
+.esummit-register-form-arrow-box {
+	position: relative;
+    border: 1px solid #4F4F4F;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    color:#4F4F4F;
+}
+.esummit-register-form-arrow-box:after, .esummit-register-form-arrow-box:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.esummit-register-form-arrow-box:after {
+	border-bottom-color: white;
+	border-width: 10px;
+	margin-left: -30px;
+}
+.esummit-register-form-arrow-box:before {
+	border-bottom-color: #4F4F4F;
+	border-width: 13px;
+	margin-left: -33px;
+}

@@ -3,13 +3,14 @@ import axios from "axios"
 import correct from "./svg/correct.svg"
 import wrong from "./svg/wrong.svg"
 
+let time_out;
 export default class EmailVerification extends Component {
     constructor(props) {
         super(props);
         this.state = {
             confirm_otp: "",
-            email: this.props.email,
-            otp: this.props.email,
+            email: "",
+            otp: "",
             otp_error: "",
             otp_error_bool: "",
             email_verified: false,
@@ -17,7 +18,9 @@ export default class EmailVerification extends Component {
             resend_otp: false,
             email_error: "",
             email_error_bool: "",
-            confirmation_otp_message: ""
+            confirmation_otp_message: "",
+            time: 60,
+            otp_expired: false
         }
     }
     onChange = (e) => {
@@ -27,7 +30,7 @@ export default class EmailVerification extends Component {
     }
     handleResendOTP = () => {
         let data = {
-            email: this.state.resend_email
+            email: this.state.resend_email,
         }
         document
             .getElementById("loader")
@@ -42,21 +45,25 @@ export default class EmailVerification extends Component {
                 otp: r.data.one_time_pass,
                 confirmation_otp_message: "OTP is successfully send.",
                 resend_otp: false,
-                confirm_otp: ""
+                confirm_otp: "",
+                time: 60,
+                otp_expired: false
             })
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
+            clearTimeout(time_out)
+            this.another_timer()
         }).catch((response) => {
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
-
         });
     }
     handleVerify = () => {
+        console.log(this.state.otp, "otp")
         if (parseInt(this.state.confirm_otp) === this.state.otp) {
             this.setState({
                 email_verified: true
@@ -96,23 +103,65 @@ export default class EmailVerification extends Component {
     }
     handleResend = () => {
         this.setState({
-            resend_otp: true
+            resend_otp: true,
+            otp_expired: true
         })
     }
+
+    another_timer = () => {
+        if (this.state.time > 0) {
+            this.setState({
+                time: this.state.time - 1
+            })
+            time_out = setTimeout(this.another_timer, 1000)
+            return time_out
+        }
+        else {
+            clearTimeout(time_out)
+            return this.setState({
+                otp_expired: true
+            })
+        }
+
+    }
+
     componentDidMount() {
+        const height = window.innerHeight
+        let push = 0 * height
+        window.scroll({ top: push, behavior: "auto" });
         this.setState({
             email: this.props.email,
-            otp: this.props.otp
+            otp: this.props.handleOTP
         })
+        const timer = () => {
+            if (this.state.time > 0) {
+                console.log("inside")
+                this.setState({
+                    time: this.state.time - 1
+                })
+            }
+            else {
+                clearTimeout(time_out)
+                this.setState({
+                    otp_expired: true
+                })
+            }
+            time_out = setTimeout(timer, 1000)
+            return time_out
+        }
+        timer()
+
     }
     render() {
-        const { confirm_otp, otp_error, otp_error_bool, resend_otp, resend_email, email_error, email_error_bool, confirmation_otp_message } = this.state
+        const { otp_expired, confirm_otp, otp_error, otp_error_bool, resend_otp, resend_email, email_error, email_error_bool, confirmation_otp_message } = this.state
         return (
             <div className="esummit-register-form-body-parent">
-                <div>
-                    {confirmation_otp_message}
-                </div>
                 {resend_otp ? null :
+                    <div>
+                        {!otp_expired ? <div className="esummit-register-form-message-verification">OTP has been successfully sent to your registered email <b>{this.state.email}</b></div> : <div className="esummit-register-form-message-verification"><span style={{ color: "red", fontSize: "13px" }}>OTP is expired.</span> Click on resend otp to resend the one time password</div>}
+                    </div>
+                }
+                {resend_otp && otp_expired ? null :
                     <div>
                         <div className="esummit-register-form-input-specific">
                             <label htmlFor="inputOTP">Enter OTP</label>
@@ -141,11 +190,15 @@ export default class EmailVerification extends Component {
                                 </span>
                             </div>
                             <div className="esummit-register-form-field-error">{otp_error}</div>
+                            {!otp_expired ?
+                                <div className="esummit-register-form-timer">
+                                    00:{this.state.time < 10 ? "0" : null}{this.state.time}
+                                </div> : null}
                         </div>
-                        <div onClick={this.handleResend}>Resend OTP</div>
+                        <div className="esummit-register-form-resend-otp-field" onClick={this.handleResend}>Resend OTP</div>
                     </div>
                 }
-                {resend_otp ?
+                {resend_otp && otp_expired ?
                     <div className="esummit-register-form-input-specific">
                         <label htmlFor="inputEmail">CONFIRMATION E-MAIL ID</label>
                         <div className="esummit-register-form-input-specific-inner">
