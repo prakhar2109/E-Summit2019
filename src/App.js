@@ -16,8 +16,11 @@ import Professionalindex from './screens/professionalcadashboard/js/index'
 import Professorindex from './screens/professordashboard/js/index'
 import Payment from './screens/cadashboard/js/payment';
 
+
+
 import Loadable from 'react-loadable';
 import Loader from './screens/common/loader';
+import Cacontigent from "./screens/professionalcadashboard/js/cacontigent";
 
 // import Coupon from './screens/caLeaderboard/js/coupon'
 
@@ -101,12 +104,13 @@ class App extends Component {
 
              {/* <Route exact path="/dashboard/" component={LeaderBoard} /> */}
             <Route path="/dashboard/" component={Caindex} />
-	    <Route path="/iitrdashboard/" component={Iitrindex} />
-	    <Route path="/noniitrdashboard/" component={Noniitrindex} />
-	    <Route path="/prodashboard/" component={Professionalindex} />
+            <Route path="/iitrdashboard/" component={Iitrindex} />
+            <Route path="/noniitrdashboard/" component={Noniitrindex} />
+            <Route path="/prodashboard/" component={Professionalindex} />
             <Route path="/professordashboard/" component={Professorindex} />
 
             <Route path="/ignite" component={ignite} />
+ 
      
              {/* <Route path="/Viewprofile" component={Viewprofile} />  */}
              
