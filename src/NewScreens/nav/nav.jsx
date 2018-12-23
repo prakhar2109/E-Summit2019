@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import esummit from "./static/es.png";
 import { withRouter } from "react-router-dom";
-import "./css/nav.scss";
+ 
 import { HashLink } from "react-router-hash-link";
 
 class Nav extends Component {
@@ -56,12 +56,15 @@ class Nav extends Component {
           <span>
             <NavLink to="/ignite">Startup Ignite</NavLink>
           </span>
+
+          <span> 
           <NavLink to="/login">
             <span className="login">Log in</span>
           </NavLink>
           <NavLink to="/registration_portal/register">
             <span className="register">Register</span>
           </NavLink>
+          </span>
         </section>
       </>
     );

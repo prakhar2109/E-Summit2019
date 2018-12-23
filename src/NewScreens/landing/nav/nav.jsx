@@ -95,12 +95,15 @@ class Nav extends Component {
           <span>
             <NavLink to="/ignite">Startup Ignite</NavLink>
           </span>
-          <NavLink to="/login">
-            <span className="login">Log in</span>
-          </NavLink>
-          <NavLink to="/registration_portal/register">
-            <span className="register">Register</span>
-          </NavLink>
+
+          <span> 
+            <NavLink to="/login">
+              <span className="login">Log in</span>
+            </NavLink>
+            <NavLink to="/registration_portal/register">
+              <span className="register">Register</span>
+            </NavLink>
+          </span>
         </section>
       </>
     );

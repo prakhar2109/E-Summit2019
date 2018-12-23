@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../../components/header';
 import {Element} from "react-scroll";
-
+import ViewMore from "./static/view_more.png"
 class Events extends Component {
 
     render() {
@@ -26,8 +26,8 @@ class Events extends Component {
 
                             <p>CONCLAVE</p>
                             <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
+                            <i> <img src = {ViewMore} alt = "view more" ></img></i>
+                            <p  className = "viewmore" >VIEW MORE</p>
 
                         </center>
                     </div>
@@ -37,8 +37,8 @@ class Events extends Component {
 
                             <p>CONCLAVE</p>
                             <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
+                            <i> <img src = {ViewMore} alt = "view more" ></img></i>
+                            <p className = "viewmore" >VIEW MORE</p>
 
                         </center>
                     </div>
@@ -47,8 +47,8 @@ class Events extends Component {
 
                             <p>CONCLAVE</p>
                             <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
+                            <i> <img src = {ViewMore} alt = "view more" ></img></i>
+                            <p className = "viewmore" >VIEW MORE</p>
 
                         </center>
                     </div>
@@ -57,8 +57,8 @@ class Events extends Component {
 
                             <p>CONCLAVE</p>
                             <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
+                            <i> <img src = {ViewMore} alt = "view more" ></img></i>
+                            <p className = "viewmore">VIEW MORE</p>
 
                         </center>
                     </div>
@@ -67,7 +67,7 @@ class Events extends Component {
                 <div className="land_events">
     
 
-                    <Header title = "Events " />
+                    <Header title = "EVENTS " />
 
                     <p className ="text" >
                         Expert investor or an emerging entrepreneur or a quiz master, you think you know it all? Put that test to claim, battle it out in the field for the ultimate glory.

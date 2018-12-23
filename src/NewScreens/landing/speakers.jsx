@@ -46,9 +46,7 @@ export default class Speakers extends Component {
         <Element id = "speakers" name="speakers">
           <div className="land_speakers">
             <Header title="SPEAKERS" />
-            <p className="text">
-              Meet the awesome companies who make this all possible.
-            </p>
+          
             <div className="speaker_slidder">
               <Slider {...settings}>
                 {this.state.speakers.map(update => {

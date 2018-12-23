@@ -11,6 +11,7 @@ import FAQBoard from "./NewScreens/faq/faq";
 import CampusAmbasder from "./NewScreens/ambasder/ambasder";
 import Registration from "./components/RegistrationPortal/Index";
  
+import ScrollToTop from "./screens/common/scrolltotop"
  
 
 const Login = Loadable({
@@ -83,7 +84,7 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-          <React.Fragment>
+          <ScrollToTop>
           
 
             <Route path = "/ideastorm" component = {IdeaStorm} />
@@ -93,12 +94,12 @@ class App extends Component {
             <Route path = "/faq" component = {FAQBoard} />
             <Route path = "/campusambasder" component = {CampusAmbasder} />
 
-	    <Route path = "/ignite" component = {ignite} />
+      	    <Route path = "/ignite" component = {ignite} />
  
 
             <Route path = "/registration_portal" component = {Registration} />
 
-          </React.Fragment>
+          </ScrollToTop>
           </Switch>
         </div>
       </Router>

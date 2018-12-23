@@ -47,9 +47,7 @@ export default class Sponsors extends Component {
         <Element id = "sponsors" name="sponsors">
           <div className="land_sponsors">
             <Header title="SPONSORS" />
-            <p className="text">
-              Meet the awesome companies who make this all possible.
-            </p>
+      
 
             <div className="speaker_slidder">
               <Slider {...settings}>

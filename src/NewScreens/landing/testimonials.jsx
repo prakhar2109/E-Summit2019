@@ -8,7 +8,7 @@ class Testimonials extends Component {
             <div className="land_testinomial">
                 <div>
                     <img src={Richard} alt="Richard"/>
-                    <p>Entrepreneurship is about turning what excites you in life into capital, so
+                    <p className = "testimonial">Entrepreneurship is about turning what excites you in life into capital, so
                         that you can do more of it and move forward with it.</p>
                     <p className="name">
                         RICHARD BRANSON</p>

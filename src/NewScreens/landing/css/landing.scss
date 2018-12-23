@@ -34,7 +34,7 @@
         font-size: 1.25rem;
         text-align: center;
         letter-spacing: 0.09em;
-        padding: 24px;
+        padding: 20px 24px ;
         color: #FFFFFF;
 
         @include mobile {
@@ -53,7 +53,7 @@
 
 .land_screen2 {
     background: url("../static/1.jpg");
-    padding: 152px 13.6vw;
+    padding: 152px 13.6vw 40px 13.6vw;
  
     background-repeat: no-repeat;
     background-size: cover;
@@ -68,10 +68,10 @@
 
 
     .p {
-        line-height: 36px;
+        line-height: 128%;
         font-size: 24px;
         letter-spacing: 0.04em;
-        margin:  2.75rem 0;
+        padding: 44px 0 108px 0;
         
         color: #FEFFFF;
 
@@ -97,7 +97,7 @@
     ;
 
     .text {
-        line-height:35px;
+        line-height:124%;
         font-size: 24px;
         letter-spacing: 0.02em;
         padding: 2.75rem 0 0 0;
@@ -122,7 +122,7 @@
         border: 0.125rem solid white;
         background: none;
         padding: 20px;
-        line-height: 1.25rem;
+       
         font-size: 1rem;
         text-align: center;
         letter-spacing: 0.06em;
@@ -150,7 +150,7 @@
 
 
     .speaker_slidder {
-        padding-top: 7.375rem;
+        padding-top: 6.75rem;
         padding-bottom: 6.75rem;
 
         @include mobile {
@@ -170,7 +170,7 @@
     }
 
     .name {
-        line-height:35px;
+        
         font-size: 1.5rem;
         letter-spacing: 0.02em;
         padding-top: 1rem;
@@ -195,7 +195,7 @@
     }
 
     .designation {
-        line-height: 1.8125rem;
+ 
         font-size: 1.25rem;
         letter-spacing: 0.02em;
 
@@ -241,10 +241,7 @@
 
 .land_sponsors{
     padding-bottom: 152px;
-
-    @include fhd{
-        padding-bottom: 80px;
-    }
+ 
 }
 .land_events {
     padding: 8.75rem 13.6vw 152px 13.6vw;
@@ -270,7 +267,7 @@
         .events_production {
             background: url("../static/6.png");
             padding: 60px 0;
-            height: 42.42vh;
+            height: 46.42vh;
             display: grid;
             border : 2px solid white;
 
@@ -289,7 +286,7 @@
             }
 
             .t1 {
-                font-size: 1.75rem;
+                font-size: 1.65rem;
                 letter-spacing: 0.1em;
                 font-weight: bold;
 
@@ -300,7 +297,7 @@
                 }
 
                 @include fhd{
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                 }
 
             }
@@ -309,6 +306,7 @@
 
                 font-size: 1.5rem;
                 letter-spacing: 0.1em;
+                font-weight: 100;
 
                 @include mobile {
                     line-height: 18px;
@@ -329,10 +327,11 @@
 
             .t3 {
 
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 text-align: center;
                 letter-spacing: 0.09em;
                 align-self: end;
+                font-weight: bold;
 
                 @include mobile {
                     line-height: 15px;
@@ -451,13 +450,13 @@
 
         }
 
-        p:nth-child(3) {
+        .viewmore {
             line-height: 30px;
-            font-size: 1.5rem;
+            font-size: 20px;
             text-align: center;
             letter-spacing: 0.09em;
-            font-weight: 800 !important;
             color: #FFFFFF;
+            font-weight: bold ; 
 
             @include mobile {
                 line-height: 15px;
@@ -475,18 +474,18 @@
 
         }
 
-        i {
-            font-size: 2rem;
+        img {
+     
             margin-top: 15rem;
             margin-bottom: 1.875rem;
 
             @include mobile {
                 margin-top: 5rem;
-                font-size: 1rem;
+             
             }
 
             @include fhd{
-                font-size: 1.75rem;
+                
                 margin-top: 8rem;
             }
         }
@@ -532,19 +531,19 @@
             }
         }
 
-        p {
-            line-height: 39px;
-            font-size: 1.75rem;
+        .testimonial {
+            line-height: 140%;
+            font-size: 24px;
             text-align: center;
             letter-spacing: 0.04em;
-            margin-top: 6rem;
+            margin-top:50px;
             color: #FFFFFF;
 
 
 
             @include mobile {
 
-                line-height: 23px;
+ 
                 font-size: 18px;
                 text-align: center;
                 letter-spacing: 0.1em;
@@ -557,11 +556,14 @@
 
         }
 
+        p{padding: 0;}
+
         .name {
-            line-height: 47px;
+         
             font-size: 2rem;
             letter-spacing: 0.06em;
             color: #FFFFFF;
+            margin-top:40px;
 
             @include mobile {
                 line-height: 26px;

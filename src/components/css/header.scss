@@ -15,11 +15,11 @@
 .head1 {
 
     font-size: 2rem !important ;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     color: #FEFFFF;
     font-weight: bold !important;
     display: inline-block;
-    margin-left: -2rem;
+    margin-left: -1.8rem;
     z-index: 3;
     position: relative;
     font-family: ProximaNova-Bold;
@@ -27,7 +27,7 @@
 
 
     @include fhd{
-        font-size: 1.625rem !important;
+        font-size: 1.5rem !important;
     }
 
     
@@ -40,7 +40,7 @@
 }
 
 .vector {
-    width: 3.5rem;
+    width: 3rem;
     margin-top: -1.25rem !important;
     position: relative;
     z-index: 2;
