@@ -95,7 +95,7 @@ export default class Viewprofile extends Component {
     };
 
     const width = 900;
-    let { score , name ,data} = this.state;
+    let { score, name, data } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
     return (
       <div className="caprofile-container">
@@ -151,7 +151,7 @@ export default class Viewprofile extends Component {
                 Full name
               </div>
               <div className="caprofile-parent1-child2-name caprofile-data">
-               {name}
+                {name}
               </div>
             </div>
 
@@ -160,7 +160,7 @@ export default class Viewprofile extends Component {
                 <div className="caprofile-heading">E-mail ID</div>
 
                 <div className="caprofile-parent1-child2-email caprofile-data">
-                {data.email}
+                  {data.email}
                 </div>
               </div>
               <div className="caprofile-containter-parent-child2-child2">
@@ -323,7 +323,7 @@ export default class Viewprofile extends Component {
             Country
           </div>
           <div className="caprofile-parent2-child2-name caprofile-data">
-            India
+            {data.country}
           </div>
         </div>
         <div className="caprofile-parent2" id="caprofile-parent3">
@@ -508,7 +508,7 @@ export default class Viewprofile extends Component {
                   Full name
                 </div>
                 <div className="caprofile-parent1-child2-name caprofile-data">
-                  <input type="text" placeholder="Prakhar" id="caprofile02" />
+                  <input type="text" placeholder={data.name} id="caprofile02" />
                 </div>
               </div>
 
@@ -519,7 +519,7 @@ export default class Viewprofile extends Component {
                   <div className="caprofile-parent1-child2-email caprofile-data">
                     <input
                       type="text"
-                      value=" prakhar@prakhar.com"
+                      placeholder={data.email}
                       id="caprofile01"
                     />
                   </div>
@@ -530,7 +530,18 @@ export default class Viewprofile extends Component {
                   </div>
 
                   <div className="caprofile-parent1-child3-phone caprofile-data">
-                    <input type="text" value="888888888888" id="caprofile01" />
+                    <input
+                      type="text"
+                      placeholder={data.phone}
+                      id="caprofile01"
+                      required
+                      onChange={event => {
+                        
+                        data.phone = event.target.value;
+
+                        console.log(this.state.data);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
