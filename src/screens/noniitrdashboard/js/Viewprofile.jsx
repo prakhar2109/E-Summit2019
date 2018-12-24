@@ -119,18 +119,18 @@ export default class Viewprofile extends Component {
 
                             P
                         </div>
-                        <div className="ca-profilescore">
-                            <span id="caprofile-scoreWritten">Score</span>
-                            <span id="caprofile-scoreValue">{this.state.score}/360</span>
+                         <div className="profile-dashboard-type">
+                            NON-IITR STUDENT
                         </div>
-                        <div className="progressline">
-                            <div
-                                className="progress-bar bg-custom"
-                                style={{
-                                    width: scorePercentage + "%",
-                                }}
-                            />
+                        <div className="profile-dashboard-esummit">
+                            <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
+                            <span id="profile-dashboard-esummitId-value">ES172292</span>
                         </div>
+                        <div className="profile-dashboard-esummit">
+                            <span id="profile-dashboard-esummitId">Contingent No (Leader)</span>
+                            <span id="profile-dashboard-esummitId-value">CN 2</span>
+                        </div>
+                       
                     </div>
 
                     <div className="caprofile-parent1-childline"></div>
@@ -307,7 +307,12 @@ export default class Viewprofile extends Component {
 
                     </div>
 
-
+                     <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
+                        Country
+                        </div>
+                    	<div className="caprofile-parent2-child2-name caprofile-data">
+                        India
+                        </div>
                 </div>
                 <div className="caprofile-parent2" id="caprofile-parent3">
                     <div className="caprofile-parent2-heading">
@@ -396,7 +401,12 @@ export default class Viewprofile extends Component {
 
                     </div>
 
-
+                   <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
+                        Country
+                        </div>
+                    <div className="caprofile-parent2-child2-name caprofile-data">
+                    <input type="text" placeholder="India" id="editprofile-input-mobile"></input> 
+                        </div>
                 </div>
                 
                 <div className="caprofile-parent2" id="caprofile-mobile-editprofile-parent3">
@@ -440,23 +450,22 @@ export default class Viewprofile extends Component {
                         <div className="caprofile-parent1-child1">
                             <div className="caprofile-parent1-child1-heading">
                                 BASIC INFORMATION
-                        </div>
+                            </div>
                             <div className="caprofile-dropshape">
 
                                 P
-                        </div>
-                            <div className="ca-profilescore">
-                                <span id="caprofile-scoreWritten">Score</span>
-                                <span id="caprofile-scoreValue">{this.state.score}/360</span>
                             </div>
-                            <div className="progressline">
-                                <div
-                                    className="progress-bar bg-custom"
-                                    style={{
-                                        width: scorePercentage + "%",
-                                    }}
-                                />
-                            </div>
+		                <div className="profile-dashboard-type">
+		                NON-IITR STUDENT
+		                </div>
+		                <div className="profile-dashboard-esummit">
+		                    <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
+		                    <span id="profile-dashboard-esummitId-value">ES172292</span>
+		                </div>
+		                <div className="profile-dashboard-esummit">
+		                    <span id="profile-dashboard-esummitId">Contingent No (Leader)</span>
+		                    <span id="profile-dashboard-esummitId-value">CN 2</span>
+		                </div>
                         </div>
                         <div className="caprofile-parent1-childline"></div>
 
@@ -581,7 +590,12 @@ export default class Viewprofile extends Component {
 
 
                         </div>
-
+                        <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
+                            Country
+                            </div>
+		            <div className="caprofile-parent2-child2-name caprofile-data">
+		                    <input type="text" value="India" id="caprofile03"></input>
+		            </div>
 
                     </div>
                     <div className="caprofile-grandparent">

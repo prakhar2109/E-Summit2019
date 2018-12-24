@@ -3,7 +3,7 @@ import './view.css'
 import '../../header/css/main.css'
 import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
-import { Modal} from 'antd';
+import { Modal } from 'antd';
 
 export default class Viewprofile extends Component {
     constructor() {
@@ -49,11 +49,13 @@ export default class Viewprofile extends Component {
             this.setState({ loading: false, visible: false });
         }, 300);
     }
-     changeProfile= () => {
+    changeProfile = () => {
         document.getElementById("caprofile-containter").style.display = "none";
         document.getElementById("caprofile-parent2").style.display = "none";
-        document.getElementById("caprofile-editprofilecontainter").style.display = "block";
-        document.getElementById("caprofileeditprofile-parent2").style.display = "block";
+        document.getElementById("caprofile-parent3").style.display = "none";
+        document.getElementById("caprofile-mobile-editprofilecontainter").style.display = "block";
+        document.getElementById("caprofile-mobile-editprofile-parent2").style.display = "block";
+         document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "block";
         document.getElementById("caprofilemobile-b01").style.display = "none";
         document.getElementById("caprofilemobile-b02").style.display = "block";
 
@@ -62,11 +64,13 @@ export default class Viewprofile extends Component {
 
 
     }
-    saveProfile= () => {
+    saveProfile = () => {
         document.getElementById("caprofile-containter").style.display = "block";
         document.getElementById("caprofile-parent2").style.display = "block";
-        document.getElementById("caprofile-editprofilecontainter").style.display = "none";
-        document.getElementById("caprofileeditprofile-parent2").style.display = "none";
+        document.getElementById("caprofile-parent3").style.display = "block";
+        document.getElementById("caprofile-mobile-editprofilecontainter").style.display = "none";
+        document.getElementById("caprofile-mobile-editprofile-parent2").style.display = "none";
+        document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "none";
         document.getElementById("caprofilemobile-b01").style.display = "block";
         document.getElementById("caprofilemobile-b02").style.display = "none";
 
@@ -103,7 +107,7 @@ export default class Viewprofile extends Component {
 
                 <div className="caprofile-line1"></div>
                 <button id="caprofile-b01" onClick={this.showModal}>Edit Profile</button>
-		        <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>
+                <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>
                 <div className="caprofile-parent1">
 
                     <div className="caprofile-parent1-child1">
@@ -115,51 +119,22 @@ export default class Viewprofile extends Component {
 
                             P
                         </div>
-                        <div className="ca-profilescore">
-                            <span id="caprofile-scoreWritten">Score</span>
-                            <span id="caprofile-scoreValue">{this.state.score}/360</span>
+                         <div className="profile-dashboard-type">
+                            NON-IITR STUDENT
                         </div>
-                        <div className="progressline">
-                            <div
-                                className="progress-bar bg-custom"
-                                style={{
-                                    width: scorePercentage + "%",
-                                }}
-                            />
+                        <div className="profile-dashboard-esummit">
+                            <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
+                            <span id="profile-dashboard-esummitId-value">ES172292</span>
                         </div>
+                        <div className="profile-dashboard-esummit">
+                            <span id="profile-dashboard-esummitId">Contingent No (Leader)</span>
+                            <span id="profile-dashboard-esummitId-value">CN 2</span>
+                        </div>
+                       
                     </div>
 
                     <div className="caprofile-parent1-childline"></div>
-                    {/* <div className="caprofile-parent1-child2">
-                        <div className="caprofile-parent1-child2-name-heading caprofile-heading">
-                            Full name
-                        </div>
-                        <div className="caprofile-parent1-child2-name caprofile-data">
-                            Prakhar Agarwal
-                        </div>
 
-
-                        <div className="caprofile-heading">
-                            E-mail ID
-                        </div>
-
-                        <div className="caprofile-parent1-child2-email caprofile-data">
-                            prakhar@prakhar.com88888888888888888
-                        </div>
-
-                    </div>
-
-                    <div className="caprofile-parent1-child3">
-                        <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
-                            Phone no
-                        </div>
-
-                        <div className="caprofile-parent1-child3-phone caprofile-data">
-                            888888888888footer
-                        </div>
-
-
-                    </div> */}
                     <div className="caprofile-containter-parent" id="caprofile-containter">
                         <div className="caprofile-containter-parent-child1">
                             <div className="caprofile-parent1-child2-name-heading caprofile-heading">
@@ -187,20 +162,41 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    888888888888footer
+                                    888888888888
+                                </div>
                             </div>
+                        </div>
+                        <div className="caprofile-containter-parent-child2">
+                            <div className="caprofile-containter-parent-child2-child1">
+                                <div className="caprofile-heading">
+                                    T Shirt size
+                                </div>
+
+                                <div className="caprofile-parent1-child2-email caprofile-data">
+                                    XL
+                                </div>
+
+                            </div>
+                            <div className="caprofile-containter-parent-child2-child2">
+                                <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
+                                    Gender
+                                </div>
+
+                                <div className="caprofile-parent1-child3-phone caprofile-data">
+                                    Male
+                                </div>
                             </div>
                         </div>
                     </div>
 
 
-                    <div className="caprofile-containter-parent" id="caprofile-editprofilecontainter">
+                    <div className="caprofile-containter-parent" id="caprofile-mobile-editprofilecontainter">
                         <div className="caprofile-containter-parent-child1">
                             <div className="caprofile-parent1-child2-name-heading caprofile-heading">
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                Prakhar Agarwalaaaaaaaaaaaaaaa
+                                <input type="text" placeholder="Prakhar Agarwal" id="editprofile-input-mobile"></input>
                             </div>
                         </div>
 
@@ -211,7 +207,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                    prakhar@prakhar.comaaaaaaaaaaaaaa
+                                <input type="text" placeholder="prakhar@prakhar.com" id="editprofile-input-mobile" ></input>
                                 </div>
 
                             </div>
@@ -221,10 +217,32 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    888888888888footeraaaaaaaaaaaaaaaaa
-                            </div>
+                                <input type="text" placeholder="888888888888" id="editprofile-input-mobile"></input> 
+                                </div>
                             </div>
                         </div>
+                        <div className="caprofile-containter-parent-child2">
+                            <div className="caprofile-containter-parent-child2-child1">
+                                <div className="caprofile-heading">
+                                    T Shirt size
+                                </div>
+
+                                <div className="caprofile-parent1-child2-email caprofile-data">
+                                <input type="text" placeholder="XL" id="editprofile-input-mobile"></input>
+                                </div>
+
+                            </div>
+                            <div className="caprofile-containter-parent-child2-child2">
+                                <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
+                                    Gender
+                                </div>
+
+                                <div className="caprofile-parent1-child3-phone caprofile-data">
+                                <input type="text" placeholder="Male" id="editprofile-input-mobile"></input> 
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
 
                 </div>
@@ -285,13 +303,47 @@ export default class Viewprofile extends Component {
                                 UP
                             </div>
                         </div>
+                        
+
 
 
                     </div>
-
+                  	<div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
+                        Country
+                        </div>
+                    	<div className="caprofile-parent2-child2-name caprofile-data">
+                        India
+                        </div>
 
                 </div>
-                <div className="caprofile-parent2" id="caprofileeditprofile-parent2">
+                <div className="caprofile-parent2" id="caprofile-parent3">
+                    <div className="caprofile-parent2-heading">
+                    SOCIAL ACCOUNTS
+                    </div>
+                    <div className="caprofile-socialaccounts-child">
+                                <div className="caprofile-socialaccounts-child-heading">
+                                Facebook
+                                </div>
+                                <div className="caprofile-socialaccounts-child-data ">
+                                https://www.facebook.com/profile.php?id=100006245897944
+                                </div>
+                    </div>
+                    <div className="caprofile-socialaccounts-child">
+                                <div className="caprofile-socialaccounts-child-heading ">
+                                Linked in
+                                </div>
+                                <div className="caprofile-socialaccounts-child-data ">
+                                https://www.facebook.com/profile.php?id=100006245897944
+                                </div>
+                    </div>
+                   
+
+                   
+
+                </div>                
+
+                
+                <div className="caprofile-parent2" id="caprofile-mobile-editprofile-parent2">
                     <div className="caprofile-parent2-heading">
                         COLLEGE INFORMATION
                     </div>
@@ -300,7 +352,7 @@ export default class Viewprofile extends Component {
                         College name
                         </div>
                     <div className="caprofile-parent2-child2-name caprofile-data">
-                        IIT ROORKEEfootersssssssssss
+                    <input type="text" placeholder="IIT ROORKEE" id="editprofile-input-mobile"></input> 
                         </div>
 
                     <div className="caprofile-parent2-innerchild">
@@ -310,7 +362,7 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent2-child2-programname caprofile-data">
-                                B.Tech, Mechanical Engineeringssssssssssssss
+                            <input type="text" placeholder="B.Tech, Mechanical Engineering" id="editprofile-input-mobile"></input>   
                             </div>
                         </div>
 
@@ -320,7 +372,7 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent2-child2-year caprofile-data">
-                                2019sssssssssss
+                            <input type="text" placeholder="2019" id="editprofile-input-mobile"></input> 
                             </div>
                         </div>
 
@@ -334,7 +386,7 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent3-child2-city caprofile-data">
-                                Bareilly
+                            <input type="text" placeholder="Bareilly" id="editprofile-input-mobile"></input> 
                             </div>
                         </div>
 
@@ -344,16 +396,44 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent3-child2-State caprofile-data">
-                                UP
+                            <input type="text" placeholder="UP" id="editprofile-input-mobile"></input> 
                             </div>
                         </div>
 
 
                     </div>
-
+                   <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
+                        Country
+                        </div>
+                    <div className="caprofile-parent2-child2-name caprofile-data">
+                    <input type="text" placeholder="India" id="editprofile-input-mobile"></input> 
+                        </div>
 
                 </div>
-                <button id="caprofilemobile-b02" onClick={this.saveProfile}>Save Changes</button>
+                
+                <div className="caprofile-parent2" id="caprofile-mobile-editprofile-parent3">
+                    <div className="caprofile-parent2-heading">
+                    SOCIAL ACCOUNTS
+                    </div>
+                    <div className="caprofile-socialaccounts-child">
+                                <div className="caprofile-socialaccounts-child-heading">
+                                Facebookdddddddddddddddddddd
+                                </div>
+                                <div className="caprofile-socialaccounts-child-data ">
+                                <input type="text" placeholder="https://www.facebook.com/profile.php?id=100006245897944" id="editprofile-input-mobile"></input> 
+                                </div>
+                    </div>
+                    <div className="caprofile-socialaccounts-child">
+                                <div className="caprofile-socialaccounts-child-heading ">
+                                Linked in
+                                </div>
+                                <div className="caprofile-socialaccounts-child-data ">
+                                <input type="text" placeholder="https://www.facebook.com/profile.php?id=100006245897944" id="editprofile-input-mobile"></input> 
+                                </div>
+                    </div>
+                
+                </div>
+                <button id="caprofilemobile-b02" onClick={this.saveProfile}>SAVE CHANGES</button>
 
 
                 <Modal
@@ -372,56 +452,25 @@ export default class Viewprofile extends Component {
                         <div className="caprofile-parent1-child1">
                             <div className="caprofile-parent1-child1-heading">
                                 BASIC INFORMATION
-                        </div>
+                            </div>
                             <div className="caprofile-dropshape">
 
                                 P
-                        </div>
-                            <div className="ca-profilescore">
-                                <span id="caprofile-scoreWritten">Score</span>
-                                <span id="caprofile-scoreValue">{this.state.score}/360</span>
                             </div>
-                            <div className="progressline">
-                                <div
-                                    className="progress-bar bg-custom"
-                                    style={{
-                                        width: scorePercentage + "%",
-                                    }}
-                                />
-                            </div>
+		                <div className="profile-dashboard-type">
+		                NON-IITR STUDENT
+		                </div>
+		                <div className="profile-dashboard-esummit">
+		                    <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
+		                    <span id="profile-dashboard-esummitId-value">ES172292</span>
+		                </div>
+		                <div className="profile-dashboard-esummit">
+		                    <span id="profile-dashboard-esummitId">Contingent No (Leader)</span>
+		                    <span id="profile-dashboard-esummitId-value">CN 2</span>
+		                </div>
                         </div>
                         <div className="caprofile-parent1-childline"></div>
-                        {/* <div className="caprofile-parent1-child2">
-                            <div className="caprofile-parent1-child2-name-heading caprofile-heading">
-                                Full name
-                        </div>
-                            <div className="caprofile-parent1-child2-name caprofile-data">
-                                <input type="text" placeholder="Prakhar" id="caprofile02"></input>
 
-                            </div>
-
-
-                            <div className="caprofile-heading">
-                                E-mail ID
-                        </div>
-
-                            <div className="caprofile-parent1-child2-email caprofile-data">
-                                <input type="text" value=" prakhar@prakhar.com" id="caprofile01"></input>
-                            </div>
-
-                        </div>
-
-                        <div className="caprofile-parent1-child3">
-                            <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
-                                Phone no
-                        </div>
-
-                            <div className="caprofile-parent1-child3-phone caprofile-data">
-                                <input type="text" value="888888888888" id="caprofile01"></input>
-                            </div>
-
-
-                        </div> */}
 
                         <div className="caprofile-containter-parent">
                             <div className="caprofile-containter-parent-child1">
@@ -452,6 +501,27 @@ export default class Viewprofile extends Component {
 
                                     <div className="caprofile-parent1-child3-phone caprofile-data">
                                         <input type="text" value="888888888888" id="caprofile01"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="caprofile-containter-parent-child2">
+                                <div className="caprofile-containter-parent-child2-child1">
+                                    <div className="caprofile-heading">
+                                        T Shirt size
+                                </div>
+
+                                    <div className="caprofile-parent1-child2-email caprofile-data">
+                                        <input type="text" value=" XL" id="caprofile01"></input>
+                                    </div>
+
+                                </div>
+                                <div className="caprofile-containter-parent-child2-child2">
+                                    <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
+                                        Gender
+                                </div>
+
+                                    <div className="caprofile-parent1-child3-phone caprofile-data">
+                                        <input type="text" value="Male" id="caprofile01"></input>
                                     </div>
                                 </div>
                             </div>
@@ -494,14 +564,14 @@ export default class Viewprofile extends Component {
                                 </div>
                             </div>
 
-
+                            
                         </div>
 
                         <div className="caprofile-parent3-innerchild">
                             <div className="caprofile-parent3-innerchild1-parent">
                                 <div className="caprofile-parent3-child2-cityheading caprofile-heading">
                                     City
-                            </div>
+                                </div>
 
                                 <div className="caprofile-parent3-child2-city caprofile-data">
                                     <input type="text" value="Bareilly" id="caprofile01"></input>
@@ -511,20 +581,50 @@ export default class Viewprofile extends Component {
                             <div className="caprofile-parent3-innerchild2-parent">
                                 <div className="caprofile-parent3-child2-Stateheading caprofile-heading">
                                     State
-                            </div>
+                                </div>
 
                                 <div className="caprofile-parent3-child2-State caprofile-data">
                                     <input type="text" value="UP" id="caprofile01"></input>
-
-
                                 </div>
                             </div>
 
 
                         </div>
-
+                        <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
+                            Country
+                            </div>
+		            <div className="caprofile-parent2-child2-name caprofile-data">
+		                    <input type="text" value="India" id="caprofile03"></input>
+		            </div>
 
                     </div>
+                    <div className="caprofile-grandparent">
+                    </div>
+                    <div className="caprofile-parent2 ca-profile-modalparent2" id="caprofile-parent3" >
+		            <div className="caprofile-parent2-heading">
+		            SOCIAL ACCOUNTS
+		            </div>
+		            <div className="caprofile-socialaccounts-child">
+		                        <div className="caprofile-socialaccounts-child-heading">
+		                        Facebook
+		                        </div>
+		                        <div className="caprofile-socialaccounts-child-data ">
+		                        https://www.facebook.com/profile.php?id=100006245897944
+		                        </div>
+		            </div>
+		            <div className="caprofile-socialaccounts-child">
+		                        <div className="caprofile-socialaccounts-child-heading ">
+		                        Linked in
+		                        </div>
+		                        <div className="caprofile-socialaccounts-child-data ">
+		                        https://www.facebook.com/profile.php?id=100006245897944
+		                        </div>
+		            </div>
+                   
+
+                   
+
+                </div>
                 </Modal>
 
             </div>

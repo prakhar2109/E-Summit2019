@@ -39,7 +39,7 @@ class App extends Component {
            
             
           <Route path="/professordashboard" component={LeaderBoard} />
-          <Route path="/professordashboard" component={Viewprofile} />
+          
             
           
             <Route exact path="/professordashboard/Viewprofile" component={Viewprofile} />
