@@ -6,49 +6,16 @@ import StepLabel from '@material-ui/core/StepLabel';
 import AccountSetup from "./AccountSetup"
 import CommonIndex from "../common/Index"
 import Loader from "../../../screens/loader/loader"
-import CreatableSelect from 'react-select/lib/Creatable';
-import Select from "react-select";
-import colleges from '../../../screens/register/colleges.json';
-import citys from '../../../screens/register/citys.json';
-import countries from '../../../screens/register/countries.json';
+import { Link } from "react-router-dom"
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import "./css/stepform.css"
 import EmailVerification from './EmailVerification';
+import ProfileType from "./ProfileType"
+import PersonalDetails from './PersonalDetails';
+import axios from "axios"
+import sample_image from "./sample_image.jpg"
 
-
-const options = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chattisgarh",
-    "Delhi",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jammu and Kashmir",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal"
-].map(state => ({ value: state, label: state }));
 const styles = theme => ({
     root: {
         width: '90%',
@@ -95,6 +62,7 @@ const styles = theme => ({
     },
     stepper: {
         padding: "0px !important",
+        background: "#1A4D66 !important"
     },
     connroot: {
         color: "#153D50 !important",
@@ -104,7 +72,7 @@ const styles = theme => ({
 
 
 function getSteps() {
-    return ['ACCOUNT SETUP', 'EMAIL VERIFICATION', 'PROFILE TYPE', 'PERSONAL DETAILS'];
+    return ['ACCOUNT SETUP', 'PROFILE TYPE', 'PERSONAL DETAILS'];
 }
 class RegisterIndex extends React.Component {
     constructor() {
@@ -120,6 +88,7 @@ class RegisterIndex extends React.Component {
             confirm_password: "",
             otp: "",
             confirm_otp: "",
+            resend_email: "",
             email_verified: false,
             profile_type: "",
             country: "",
@@ -129,30 +98,35 @@ class RegisterIndex extends React.Component {
             college: "",
             city: "",
             states: "",
-            country: ""
+            country: "",
+            social_signup: false
         }
     }
 
-    getCities = (state) => {
-        let cities = citys[state];
-        cities = cities.map(city => ({ value: city, label: city }))
-        return cities;
-    }
     handleAccountSetup = (data) => {
         this.setState({
-            otp: data.otp,
-            confirm_otp: data.confirm_otp,
-            email_verified: data.email_verified,
+            // otp: data.otp,
+            // confirm_otp: data.confirm_otp,
+            // email_verified: data.email_verified,
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            confirm_password: data.confirm_password,
+            social_signup: data.social_signup,
             activeStep: this.state.activeStep + 1
         })
     }
     handleEmailVerification = (data) => {
         this.setState({
-            name: data.name,
             email: data.email,
-            password: data.password,
-            confirm_password: data.confirm_password,
             otp: data.otp,
+            resend_email: data.resend_email,
+            activeStep: this.state.activeStep + 1
+        })
+    }
+    handleProfile = (data) => {
+        this.setState({
+            profile_type: data.profile_type,
             activeStep: this.state.activeStep + 1
         })
     }
@@ -171,17 +145,63 @@ class RegisterIndex extends React.Component {
 
     responseFacebook = (response) => {
         this.setState({
-            response
+            name: response.name,
+            email: response.email,
+            image_url: response.image_url,
+            social_signup: response.social_signup
         })
     }
 
 
     responseGoogle = (response) => {
         this.setState({
-            response
+            name: response.name,
+            email: response.email,
+            image_url: response.image_url,
+            social_signup: response.social_signup
         })
     }
+    handleDetails = (data) => {
+        this.setState({
+            data
+        })
+        if (!this.state.social_signup) {
+            let data_details = {
+                email: this.state.email,
+                name: this.state.name
+            }
+            document
+                .getElementById("loader")
+                .style
+                .display = "flex";
+            axios({
+                method: "post",
+                url: "http://localhost:8000/edc/email",
+                data: data_details
+            }).then((r) => {
+                this.setState({
+                    otp: r.data.one_time_pass,
+                    activeStep: this.state.activeStep + 1
+                })
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "none";
 
+            }).catch((response) => {
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "none";
+                alert("Network error")
+            });
+        }
+        else {
+            this.setState({
+                activeStep: this.state.activeStep + 2
+            })
+        }
+    }
     handleNext = () => {
         document
             .getElementById("loader")
@@ -196,7 +216,24 @@ class RegisterIndex extends React.Component {
             .display = "none";
     };
 
-    handleBack = () => {
+    handleBack = (data) => {
+        if (this.state.activeStep === 2) {
+            this.setState({
+                phone_no: data.phone_no,
+                gender: data.gender,
+                enrollment_no: data.enrollment_no,
+                country: data.country,
+                states: data.states,
+                city: data.city,
+                college: data.college,
+                programme: data.programme,
+                year: data.year,
+                about_esummit: data.about_esummit,
+                tshirt_size: data.tshirt_size,
+                organisation_name: data.organisation_name,
+                industry: data.industry,
+            })
+        }
         document
             .getElementById("loader")
             .style
@@ -222,33 +259,13 @@ class RegisterIndex extends React.Component {
         let value = e.target.value;
         this.setState({ [name]: value });
     }
-    onProfileChange = (e) => {
-        this.setState({
-            profile_type: e.target.value
-        })
-    }
-    handleCollegeChange = (selectedOption) => {
-        this.setState({ college: selectedOption });
-    };
-    handleStateChange = states => {
-        this.setState({ states: states });
-    };
-    handleCityChange = (selectedOption) => {
-        this.setState({ city: selectedOption });
-    };
 
-    getCountries = () => {
-        return countries.map(country => ({ value: country.name, label: country.name }))
-    }
-    handleCountryChange = (selectedOption) => {
-        this.setState({ country: selectedOption });
-    };
 
 
     render() {
         const { classes } = this.props;
         const steps = getSteps();
-        const { activeStep, email, image_url, profile_type, gender, enrollment_no, phone_no, college, country, city, states } = this.state;
+        const { otp, social_signup, activeStep, email, image_url, profile_type } = this.state;
         return (
             <div className="esummit-common-parent" >
                 <CommonIndex />
@@ -282,249 +299,95 @@ class RegisterIndex extends React.Component {
                         <div className="esummit-register-form-heading">
                             <div className="esummit-regsiter-form-heading-child">
                                 {activeStep === 0 ? "ACCOUNT SETUP" :
-                                    activeStep === 1 ? "EMAIL VERIFICATION" :
-                                        activeStep === 2 ? "PROFILE TYPE" :
-                                            activeStep === 3 ? "PERSONAL DETAILS" :
-                                                null
+                                    activeStep === 1 ? "PROFILE TYPE" :
+                                        activeStep === 2 ? "PERSONAL DETAILS" :
+                                            activeStep === 3 ? "EMAIL VERIFICATION" :
+                                                activeStep === 4 ? "SUCCESSFULLY REGISTERED" : null
                                 }
                             </div>
-                            <div className="esummit-regsiter-form-heading-child-second">
-                                Let’s begin with setting up your account
-                        </div>
+                            {activeStep !== 4 ?
+                                <div className="esummit-regsiter-form-heading-child-second">
+                                    Let’s begin with setting up your account
+                            </div> : <div className="esummit-regsiter-form-heading-child-second">
+                                    Congrats!You have successfully registered for E-Summit’19
+                            </div>}
                         </div>
                         <div>
                             <form onSubmit={this.handleSubmit}>
                                 <Loader />
                                 {activeStep === 0 ?
                                     <AccountSetup
+                                        data={this.state}
                                         handleGoogle={this.responseGoogle}
                                         handleFacebook={this.responseFacebook}
                                         handleSubmit={this.handleAccountSetup}
                                     /> : null}
+
                                 {activeStep === 1 ?
-                                    <EmailVerification
-                                        email={email}
-                                        otp={this.state.otp}
-                                        handleSubmit={this.handleEmailVerification}
+                                    <ProfileType
+                                        handleProfile={this.handleProfile}
+                                        handleBack={this.handleBack}
+                                        profile_type={this.state.profile_type}
                                     />
                                     : null}
                                 {activeStep === 2 ?
-                                    <div>
-                                        <div>
-                                            You need to select one of these
-                                        </div>
-                                        <div>
-                                            <input type="radio" name="profile_type" value="iitr_student" onChange={this.onProfileChange} /><span>IITR STUDENT</span>
-                                            <input type="radio" name="profile_type" value="non_iitr_student" onChange={this.onProfileChange} /><span>NON-IITR STUDENT</span>
-                                            <input type="radio" name="profile_type" value="ca" onChange={this.onProfileChange} /><span>CAMPUS AMBASSADOR</span>
-                                            <input type="radio" name="profile_type" value="professional" onChange={this.onProfileChange} /><span>PROFESSIONAL</span>
-                                            <input type="radio" name="profile_type" value="professor" onChange={this.onProfileChange} /><span>PROFESSOR</span>
-                                            <input type="radio" name="profile_type" value="contingent" onChange={this.onProfileChange} /><span>CONTINGENT</span>
-                                        </div>
-                                        <div className="esummit-register-form-button">
-                                            <div className="esummit-register-form-button-back" onClick={this.handleNext}>
-                                                NEXT
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <PersonalDetails
+                                        handleState={this.state}
+                                        handleBack={this.handleBack}
+                                        profile_type={profile_type}
+                                        handleDetails={this.handleDetails}
+                                    />
                                     : null}
                                 {activeStep === 3 ?
-                                    <div>
-                                        {profile_type === "iitr_student" ?
-                                            <div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputPhone">PHONE NO</label>
-                                                    <input
-                                                        id="inputPhone"
-                                                        type="number"
-                                                        placeholder="Enter your phone number"
-                                                        name="phone_no"
-                                                        autoCorrect="off"
-                                                        autoComplete="off"
-                                                        autoCapitalize="off"
-                                                        value={phone_no}
-                                                        onChange={this.onChange}
-                                                        spellCheck="false"
-                                                        required
-                                                    /></div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputGender">Gender</label>
-                                                    <select
-                                                        id="inputGender"
-                                                        name="gender"
-                                                        value={gender}
-                                                        onChange={this.onChange}
-                                                        required
-                                                    >
-                                                        <option value="" disabled="true"> Gender </option>
-                                                        <option value="male"> Male </option>
-                                                        <option value="female"> Female </option>
-                                                        <option value="other"> Other </option>
-                                                    </select>
-                                                </div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputEnrollment">ENROLLMENT NO</label>
-                                                    <input
-                                                        id="inputEnrollment"
-                                                        type="number"
-                                                        placeholder="Enter your enrollment number"
-                                                        name="enrollment_no"
-                                                        autoCorrect="off"
-                                                        autoComplete="off"
-                                                        autoCapitalize="off"
-                                                        value={enrollment_no}
-                                                        onChange={this.onChange}
-                                                        spellCheck="false"
-                                                        required
-                                                    /></div>
-                                            </div>
-                                            :
-                                            <div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputPhone">PHONE NO</label>
-                                                    <input
-                                                        id="inputPhone"
-                                                        type="number"
-                                                        placeholder="Enter your phone number"
-                                                        name="phone_no"
-                                                        autoCorrect="off"
-                                                        autoComplete="off"
-                                                        autoCapitalize="off"
-                                                        value={phone_no}
-                                                        onChange={this.onChange}
-                                                        spellCheck="false"
-                                                        required
-                                                    /></div>
-                                                <div className="esummit-register-form-input-specific">
-                                                    <label htmlFor="inputGender">GENDER</label>
-                                                    <select
-                                                        id="inputGender"
-                                                        name="gender"
-                                                        value={gender}
-                                                        onChange={this.onChange}
-                                                        required
-                                                    >
-                                                        <option value="" disabled={true}> Gender </option>
-                                                        <option value="male"> Male </option>
-                                                        <option value="female"> Female </option>
-                                                        <option value="other"> Other </option>
-                                                    </select>
-                                                </div>
-                                                <div>
-                                                    <div className="esummit-register-form-input-specific">
-                                                        <label htmlFor="inputCountry">COUNTRY</label>
-
-                                                        <Select
-                                                            value={country}
-                                                            onChange={this.handleCountryChange}
-                                                            options={this.getCountries()}
-                                                            placeholder="Enter your country name" />
-                                                    </div>
-
-
-                                                    {this.state.country.value === "India"
-                                                        ? <div>
-                                                            <div className="esummit-register-form-input-specific">
-                                                                <label htmlFor="inputState">STATE</label>
-
-                                                                <Select value={states} // onChange={event => {} //   this.setState({} //     states: event.target.value,}}
-                                                                    onChange={this.handleStateChange}
-                                                                    options={options}
-                                                                    placeholder="Enter your state name" />
-                                                            </div>
-                                                            <div className="esummit-register-form-input-specific">
-                                                                <label htmlFor="inputCollege">COLLEGE</label>
-                                                                <CreatableSelect
-                                                                    placeholder="Enter your college name"
-                                                                    searchable={true}
-                                                                    required={true}
-                                                                    onChange={this.handleCollegeChange}
-                                                                    options={colleges[states.value]}
-                                                                    clearable={false}
-                                                                    value={college} />
-                                                            </div>
-                                                            <div className="esummit-register-form-input-specific">
-                                                                <label htmlFor="inputCity">CITY</label>
-
-                                                                <CreatableSelect
-                                                                    placeholder="Enter your city"
-                                                                    searchable={true}
-                                                                    required={true}
-                                                                    onChange={this.handleCityChange}
-                                                                    options={states === ""
-                                                                        ? []
-                                                                        : this.getCities(states.value)}
-                                                                    clearable={false}
-                                                                    value={city} />
-                                                            </div>
-                                                        </div>
-                                                        :
-                                                        <div className="esummit-register-form-input-specific">
-                                                            <label htmlFor="inputCollege">COLLEGE</label>
-                                                            <input
-                                                                type="text"
-                                                                name="college"
-                                                                value={college}
-                                                                onChange={this.onChange}></input>
-                                                        </div>
-                                                    }
-                                                </div>
-                                            </div>}
-
-                                        {
-                                            profile_type === "non_iitr_student" ?
-                                                <div>
-
-                                                </div>
-                                                :
-                                                profile_type === "ca" ?
-                                                    <div>
-
-                                                    </div>
-                                                    :
-                                                    profile_type === "professional" ?
-                                                        <div>
-
-                                                        </div>
-                                                        :
-                                                        profile_type === "professor" ?
-                                                            <div>
-
-                                                            </div>
-                                                            : profile_type === "contingent" ?
-                                                                <div>
-
-                                                                </div> : null
-                                        }
-                                    </div>
+                                    <EmailVerification
+                                        email={email}
+                                        handleOTP={otp}
+                                        handleSubmit={this.handleEmailVerification}
+                                    />
                                     : null}
                                 {activeStep === 4 ?
-                                    <div>
-                                        <img src={image_url} />
+                                    <div className="esummit-register-form-successfull-grand-parent">
+                                        <div className="esummit-register-form-successfull-parent">
+                                            {!social_signup ?
+                                                <div style={{
+                                                    backgroundImage: `url(${sample_image})`,
+                                                    backgroundPosition: "center",
+                                                    backgroundSize: "cover",
+                                                    width: "200px",
+                                                    height: "200px",
+                                                    borderRadius: "2px",
+                                                    padding: "20px"
+                                                }}></div>
+                                                :
+                                                <div style={{
+                                                    backgroundImage: `url(${image_url})`,
+                                                    backgroundPosition: "center",
+                                                    backgroundSize: "cover",
+                                                    width: "200px",
+                                                    height: "200px",
+                                                    borderRadius: "2px",
+                                                    padding: "20px"
+                                                }}></div>
+                                            }
+
+                                        </div>
+                                        <div className="esummit-register-form-go-to-name">
+                                            {this.state.name}
+                                        </div>
+                                        <div className="esummit-register-form-button">
+                                            <div className="esummit-register-form-button-back">GO TO DASHBOARD</div>
+                                        </div>
                                     </div>
                                     : null
                                 }
-                                <div>
-                                    <div className="esummit-register-form-button">
-                                        {activeStep === 0 || activeStep === 1 ?
-                                            null :
-                                            <div
-                                                className="esummit-register-form-button-back"
-                                                onClick={this.handleBack}
-                                            >BACK</div>
-                                        }
-                                        {activeStep === 3 ?
-                                            <button type="submit">
-                                                SUBMIT
-                                            </button>
-                                            : null}
-                                    </div>
-
-                                </div>
                             </form>
                         </div>
                     </div>
                 </div >
+                <div className="esummit-register-form-footer">
+                    <span>Already have an account?</span>
+                    <span><Link to="/registration_portal/login">Log in</Link></span>
+                </div>
             </div >
         );
     }
