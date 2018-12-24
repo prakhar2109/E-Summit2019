@@ -4,7 +4,7 @@ import "./../css/caLeaderboard.css";
 import { Route } from "react-router-dom";
 import axios from "axios";
 import {Link} from "react-router-dom"
-import Header from "../../header/caheader";
+import Header from "./caheader";
 import { BASE_URL } from "../../../utils/urls";
 import { NavLink } from "react-router-dom";
 

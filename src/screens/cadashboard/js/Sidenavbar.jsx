@@ -52,7 +52,7 @@ export default class caLeaderboard extends Component {
     return (
       <div>
         <Header />
-        <div id="container">
+        <div id="container"> 
           <div id="leftPane">
             <div id="header">
               <NavLink to="/">

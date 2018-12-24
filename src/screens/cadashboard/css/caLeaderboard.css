@@ -87,7 +87,7 @@
 
 }
 #optionsToggle{
-    display: block;
+  
     text-align: left;
     margin-top: 20%;
     margin-left: 5%;
@@ -99,7 +99,8 @@
     max-height: 41vh;
     height: 41vh;    
     background: #FFFFFF;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: none !important;
+    border: 2px solid #F2F2F2;
     font-family:"ProximaNova-Semibold" !important; 
     
 
@@ -156,6 +157,9 @@ font-family:"ProximaNova-Semibold" !important;
 
 
     #container {
+        display: none;
+    }
+    #optionsToggle{
         display: none;
     }
 }
