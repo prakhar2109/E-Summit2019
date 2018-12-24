@@ -16,7 +16,7 @@
     };
 
     componentDidMount = () => {
-      let token = localStorage.getItem('ca_token');
+      let token = localStorage.getItem('user_token');
       // document.getElementById("main_class").style.marginTop = '0px';
 
 

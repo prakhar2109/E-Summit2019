@@ -7,7 +7,7 @@ import React, { Component } from "react";
 // import Lfooter from "./screens/footer/landingpagefooter"
 // import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Viewprofile from './Viewprofile'
+import Viewprofile from './Profile/CA_Profile/Viewprofile'
 import LeaderBoard from "./Sidenavbar"
 import CATaskBoard from "./catask"
 import CAOffers from './offers'
@@ -36,11 +36,7 @@ class App extends Component {
         <div>
           <Switch>
           <React.Fragment>
-           
-            
-          <Route path="/dashboard" component={LeaderBoard} />
-            
-          
+            <Route path="/dashboard" component={LeaderBoard} /> 
             <Route exact path="/dashboard/Viewprofile" component={Viewprofile} />
             <Route exact path="/dashboard/task" component={CATaskBoard} />
             <Route exact path="/dashboard/offers" component={CAOffers} />
@@ -48,11 +44,6 @@ class App extends Component {
             <Route exact path="/dashboard/invite" component={CAInvite} />
             <Route exact path="/dashboard/leader" component={CALeader} />
             <Route exact path="/dashboard/contigent" component={CAcontigent} />
-
-
-
-          
-            
           </React.Fragment>
           </Switch>
         </div>

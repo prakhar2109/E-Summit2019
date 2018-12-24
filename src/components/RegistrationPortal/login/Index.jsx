@@ -37,12 +37,16 @@ export default class RegisterIndex extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+
+        
         let data = {
             email: this.state.email,
             password: this.state.password
         }
+        console.log(data);
 
-        document
+  
+       document
             .getElementById("loader")
             .style
             .display = "flex";
@@ -57,15 +61,15 @@ export default class RegisterIndex extends React.Component {
             }
         }).then(function (res) {
 
-            if (res && res.data) {
+            console.log(res);
+
+            if (res !== undefined  && res.data !== undefined ) {
                 if (res.data) {
-                    this.setState({ email: "", password: "" });
-                    var d = new Date();
-                    d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+                 
                     if (res.data.token) {
                         localStorage.setItem("user_token", res.data.token);
                     }
-                    window.location.href = "/dashboard";
+                    window.location.href = "/dashboard/task";
                     document
                         .getElementById("loader")
                         .style
@@ -73,7 +77,11 @@ export default class RegisterIndex extends React.Component {
                     data = "";
                 }
             }
-        }).catch(response => {
+        })
+        
+        .catch(response => {
+
+            console.log(response);
             document
                 .getElementById("loader")
                 .style
@@ -89,6 +97,7 @@ export default class RegisterIndex extends React.Component {
         });
 
     }
+ 
 
 
     // responseFacebook = (response) => {
