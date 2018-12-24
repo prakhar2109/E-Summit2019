@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
 import "../css/cacontigent.css";
 import { Modal} from 'antd';
+
+
+
+
 export default class Cacontigent extends Component {
     constructor() {
         super();
         this.state = {
-            loading: false,
+			loading: false,
+			
+			no_contingent: [
+				{"esummit_id" : "A"},
+			
+			]
         }
     }
     createContigent=()=> {
@@ -17,6 +26,17 @@ export default class Cacontigent extends Component {
 	
     } 
   
+	addContingent = (e) => {
+
+ 
+		this.setState((prevState) => ({
+			no_contingent: [...prevState.no_contingent,{"esummit_id" : ""}],
+		}));
+
+	 
+	  }
+
+
     handleCancel = () => {
         this.setState({ visible: false });
     }
@@ -125,9 +145,32 @@ export default class Cacontigent extends Component {
 						Create Contingent
 						</div>
 					</div>
-				<div className="cacontigent-aboutparent-para">
-					If you create a contingent you become leader of the contingent.
-				</div>
+
+					<div className = "createcontigent-body"> 
+						<div className="cacontigent-aboutparent-para">
+							If you create a contingent you become leader of the contingent.
+						</div>
+
+						<div className = "cacontigent-aboutparent-head">
+							Leader
+						</div>
+
+						{this.state.no_contingent.map((id, e) => {
+							
+							 
+							id.esummit_id = "test";
+							console.log(this.state)
+							return <AddUserForm form = {id}/>
+
+
+						})} 
+
+						{console.log(this.state)}
+
+
+						<p onClick  = {this.addContingent}> Add Contingent</p>
+						
+					</div>
 			</div>
 			</Modal>
 			
@@ -135,3 +178,26 @@ export default class Cacontigent extends Component {
         )
     }
 } 
+
+
+class AddUserForm extends Component {
+  render() {
+	return (
+	  <div>
+
+		  <form>
+			  <label>E-Summit ID</label>
+			  <input type = "text" required /> 
+
+				<span> vnhvdzgvskz</span>
+
+				{this.props.form.esummit_id = "tesghn"}
+
+	 
+			  <input type = "submit" />
+		  </form>
+		
+	  </div>
+	)
+  }
+}
