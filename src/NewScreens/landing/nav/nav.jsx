@@ -97,7 +97,7 @@ class Nav extends Component {
           </span>
 
           <span> 
-            <NavLink to="/login">
+            <NavLink to="/registration_portal/login">
               <span className="login">Log in</span>
             </NavLink>
             <NavLink to="/registration_portal/register">
