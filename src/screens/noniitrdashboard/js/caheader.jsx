@@ -54,7 +54,7 @@ export default class ComingSoon extends Component {
     window.location.href = "/login";
   };
   handle_menu() {
-    document.getElementById("phone").style.display = "flex";
+    document.getElementById("phone").style.display = "block";
     document.getElementById("close_button").style.display = "block";
     document.getElementById("menu_button").style.display = "none";
     document.getElementById("optionsToggle").style.display = "block";
@@ -82,7 +82,7 @@ export default class ComingSoon extends Component {
           <i id="menu_button" class="fas fa-bars" onClick={this.handle_menu} />
           <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
         </div>
-        <div id="phone" className="mob_menu">
+         <div id="phone" className="mob_menu">
            <div id="viewProfile">
               <NavLink to="/noniitrdashboard/Viewprofile" className={(this.state.activeState === "profile") ? "linkEventson" : null} onClick={() => {
               this.setActive("profile");
@@ -92,27 +92,28 @@ export default class ComingSoon extends Component {
 
 
             </div>
+          <div className="dashboard-mobile-navbar">
           <div id="droperShape">{this.state.name[0]}</div>
           <div className="headerdata">
             <p id="nms">{this.state.name} </p>
-            <div className="scor">
-              <span id="scoresWritten">{this.state.score}</span>
-              <span id="scoresValue">{this.state.score}/360</span>
-            </div>
-            <div className="progress">
-              <div
-                className="progress-bar bg-custom"
-                style={{
-                  width: scorePercentage + "%",
-                }}
-              />
-            </div>
-            <div id="submitButton">
-              <button type="submit" onClick={this.handleLogout}>
-                Log Out
-            </button>
-            </div>
+	    
+		    
+            
+		    <div id="submitButton">
+		      <button type="submit" onClick={this.handleLogout}>
+		        Log Outs
+		      </button>
+		    </div>
           </div>
+         </div>
+         		<div className="mobile-profile-dashboard-esummit1">
+                            <span id="mobileprofile-dashboard-esummitId">E-Summit’19 ID</span>
+                            <span id="mobileprofile-dashboard-esummitId-value">ES172292</span>
+                        </div>
+                        <div className="mobile-profile-dashboard-esummit2">
+                            <span id="mobileprofile-dashboard-esummitId">Contingent No (Leader)</span>
+                            <span id="mobileprofile-dashboard-esummitId-value">CN 2</span>
+                        </div>
         </div>
         <div id="optionsToggle">
        
