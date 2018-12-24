@@ -1,17 +1,19 @@
+.esummit-common-parent-common{
+    background-color:  #0E425B;
+}
 .esummit-common-first-child{
     width: 100%;
-    padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 15px;
 }
 .esummit-common-grand-child-first{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    width: 38.63%;
+    top: 0px;
+    left: 10px;
+    position: absolute;
 }
 .esummit-common-grand-child-first div{
     background-image: url("../svg/esummit_logo.png");
@@ -30,7 +32,7 @@
     width: 30.5%;
 }
 .esummit-common-second-child{
-    width: 57%;
+    width: 51%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -39,15 +41,15 @@
 .esummit-common-dotted-line{
     border-top:2px dashed #ffffff;
     height: 1px;
-    width: 7.5%;
+    width: 11.5%;
 }
 .esummit-common-second-child span{
     font-family: Montserrat;
     line-height: normal;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     text-align: center;
     letter-spacing: 0.03em;
     color: #FFFFFF;
-    width: 85%;
+    width: fit-content;
 }

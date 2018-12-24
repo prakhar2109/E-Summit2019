@@ -6,7 +6,7 @@ import eye from "./svg/eye.svg"
 import correct from "./svg/correct.svg"
 import wrong from "./svg/wrong.svg"
 import "./css/stepform.css"
-import axios from "axios"
+// import axios from "axios"
 
 export default class AccountSetup extends Component {
     constructor(props) {
@@ -16,10 +16,10 @@ export default class AccountSetup extends Component {
             email: "",
             password: "",
             confirm_password: "",
+            social_signup: false,
             toggleEye: "",
             toggleConfirmEye: "",
             image_url: "",
-            otp: "",
             name_error: "",
             name_error_bool: "",
             email_error: "",
@@ -55,54 +55,52 @@ export default class AccountSetup extends Component {
         }
     }
     handleSubmit = () => {
-        if (this.state.name_error_bool === "false" && this.state.name !== "") {
+        if (this.state.name !== "") {
 
-            if (this.state.email_error_bool === "false" && this.state.email !== "") {
+            if (this.state.email !== "") {
 
-                if (this.state.pass_error_bool === "false" && this.state.pass !== "") {
+                if (this.state.pass !== "") {
                     if (this.state.password === this.state.confirm_password) {
-                        let { name, email, password, confirm_password, otp } = this.state
+                        let { name, email, password, confirm_password, social_signup } = this.state
                         if (name) name = name.trim()
                         if (email) email = email.trim()
                         if (password) password = password.trim()
                         if (confirm_password) confirm_password = confirm_password.trim()
 
-
-                        let data_email = {
-                            email: email
+                        let data = {
+                            name: name,
+                            email: email,
+                            password: password,
+                            confirm_password: confirm_password,
+                            social_signup: social_signup
+                            // otp: r.data.one_time_pass
                         }
-
+                        this.props.handleSubmit(data)
                         // let request = new Promise(function (resolve, reject) {
-                        document
-                            .getElementById("loader")
-                            .style
-                            .display = "flex";
-                        axios({
-                            method: "post",
-                            url: "http://localhost:8000/edc/email",
-                            data: data_email
-                        }).then((r) => {
-                            this.setState({
-                                otp: r.data.one_time_pass
-                            })
-                            document
-                                .getElementById("loader")
-                                .style
-                                .display = "none";
-                            let data = {
-                                name: name,
-                                email: email,
-                                password: password,
-                                confirm_password: confirm_password,
-                                otp: r.data.one_time_pass
-                            }
-                            this.props.handleSubmit(data)
-                        }).catch((response) => {
-                            document
-                                .getElementById("loader")
-                                .style
-                                .display = "none";
-                        });
+                        // document
+                        //     .getElementById("loader")
+                        //     .style
+                        //     .display = "flex";
+                        // axios({
+                        //     method: "post",
+                        //     url: "http://localhost:8000/edc/email",
+                        //     data: data_email
+                        // }).then((r) => {
+                        //     this.setState({
+                        //         otp: r.data.one_time_pass
+                        //     })
+                        //     document
+                        //         .getElementById("loader")
+                        //         .style
+                        //         .display = "none";
+
+                        // }).catch((response) => {
+                        //     document
+                        //         .getElementById("loader")
+                        //         .style
+                        //         .display = "none";
+                        //     alert("Network error")
+                        // });
                         // })
                         // request.then(function () {
                         //     let data = {
@@ -217,13 +215,15 @@ export default class AccountSetup extends Component {
         this.setState({
             name: response.name,
             email: response.email,
-            image_url: response.picture.data.url
+            image_url: response.picture.data.url,
+            social_signup: true
         })
-        let { name, email, image_url } = this.state
+        let { name, email, image_url, social_signup } = this.state
         let data = {
             name: name,
             email: email,
-            image_url: image_url
+            image_url: image_url,
+            social_signup: social_signup
         }
         this.props.handleFacebook(data)
         this.namevalidate()
@@ -235,19 +235,43 @@ export default class AccountSetup extends Component {
         this.setState({
             name: response.profileObj.name,
             email: response.profileObj.email,
-            image_url: response.profileObj.image_Url,
+            image_url: response.profileObj.imageUrl,
+            social_signup: true
         })
-        let { name, email, image_url } = this.state
+        let { name, email, image_url, social_signup } = this.state
         let data = {
             name: name,
             email: email,
-            image_url: image_url
+            image_url: image_url,
+            social_signup: social_signup
         }
         this.props.handleGoogle(data)
         this.namevalidate()
         this.emailvalidate()
     }
-
+    componentDidMount() {
+        const height = window.innerHeight
+        let push = 0 * height
+        window.scroll({ top: push, behavior: "auto" });
+        this.setState({
+            name: this.props.data.name,
+            email: this.props.data.email,
+            password: this.props.data.password,
+            confirm_password: this.props.data.confirm_password
+        })
+        if (this.props.data.name !== "") {
+            this.namevalidate()
+        }
+        if (this.props.data.email !== "") {
+            this.emailvalidate()
+        }
+        if (this.props.data.password !== "") {
+            this.passvalidate()
+        }
+        if (this.props.data.confirm_password !== "") {
+            this.confirmpassvalidate()
+        }
+    }
     render() {
         const { email, name, password, confirm_password, toggleConfirmEye, toggleEye, name_error, name_error_bool, email_error, email_error_bool, pass_error, pass_error_bool, confirmpass_error, confirmpass_error_bool, } = this.state
         return (
