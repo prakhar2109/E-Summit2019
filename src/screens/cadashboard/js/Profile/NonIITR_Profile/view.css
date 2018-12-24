@@ -133,7 +133,7 @@ color: #4F4F4F;
 
     width: 2px;
     margin-left: 1%;
-    height: 38vh;
+    height: 30vh;
     background: #E0E0E0;
     margin-top: 7vh;
 }
@@ -593,9 +593,9 @@ margin-top:1.71rem;
 #caprofilemobile-b01 {
     height: 2.857rem;
     width: 8.5rem;
-    margin-left: 55vw;
+    margin-left: 16.35rem;
     margin-top: 1.35rem;
-     
+    margin-right: .875rem;
     text-align: center;
     font-size: 12px;
     letter-spacing: 0.09em;
