@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "../css/cacontigent.css";
+import "../css/cacontigent.scss";
 import { Modal} from 'antd';
 
 
@@ -168,7 +168,7 @@ export default class Cacontigent extends Component {
 						{console.log(this.state)}
 
 
-						<p onClick  = {this.addContingent}> Add Contingent</p>
+						<div onClick  = {this.addContingent}> Add Contingent</div>
 						
 					</div>
 			</div>
@@ -185,17 +185,31 @@ class AddUserForm extends Component {
 	return (
 	  <div>
 
-		  <form>
+		  <form className = "AddUserForm">
+
+		  	<div> 
 			  <label>E-Summit ID</label>
-			  <input type = "text" required /> 
+			</div>
+ 
+		  	<div> 
+			  <label>Name</label>
+			</div>
 
-				<span> vnhvdzgvskz</span>
+			<div>
+			  <input className  = "AddUserForm_input" type = "text" required /> 
+			</div>
 
-				{this.props.form.esummit_id = "tesghn"}
+			<div> 
+				 
+				<input className  = "AddUserForm_input" type = "text" required /> 
+				<input className = "AddUserForm_submit" type = "submit" />
 
-	 
-			  <input type = "submit" />
+			</div>
+
+		
 		  </form>
+
+		  <div className ="AddUserForm_error">Incorrect ID</div>
 		
 	  </div>
 	)

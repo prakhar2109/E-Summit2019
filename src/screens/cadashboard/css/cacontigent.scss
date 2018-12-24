@@ -137,7 +137,7 @@
 }
 
 .cacontigent-aboutparent-para {
-	font-size: 14.2px;
+	font-size: 18px;
 	color: #000000;
 	opacity: 0.58;
 	margin-top: 1.11vh;
@@ -179,6 +179,58 @@
 }
 
 
-.createcontigent-body{
+.createcontigent-body {
 	padding: 32px;
+}
+
+.cacontigent-aboutparent-head {
+	font-size: 24px;
+	padding: 1% 0;
+	color: #000000;
+}
+
+
+.AddUserForm {
+	display: grid;
+	grid-template-columns: 30% auto;
+	padding-top: 1.5%;
+
+	label {
+		font-size: 20px;
+		color: #B2B2B2;
+	}
+
+	.AddUserForm_input {
+		border: 1px solid #B2B2B2;
+		box-sizing: border-box;
+		border-radius: 4px;
+		font-size: 20px;
+		width: 14vw;
+		color: #4F4F4F;
+
+	}
+
+	.AddUserForm_submit {
+
+		font-size: 14px;
+		letter-spacing: 0.09em;
+		color: #F39423;
+		background: none;
+		padding: 8px 20px;
+		border: 2px solid #F39423;
+		box-sizing: border-box;
+		border-radius: 4px;
+		margin-left: 28px;
+		text-transform: uppercase;
+	}
+
+
+
+}
+
+.AddUserForm_error {
+	letter-spacing: 0.02em;
+
+	color: #E2574C;
+
 }
