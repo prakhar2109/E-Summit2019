@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "../css/payment.css";
 import CriteriaMapping from './discountcriterias';
-import { Modal } from 'antd';
-import Coupon from './coupon'
+// import { Modal } from 'antd';
+// import Coupon from './coupon'
 
 export default class Payment extends Component{
     constructor(){
@@ -63,7 +63,7 @@ export default class Payment extends Component{
             
             // document.getElementById("capayment-couponapply").style.borderColor="#E2574C";
             
-            if(this.state.couponDiscountPercent==0){
+            if(this.state.couponDiscountPercent===0){
                 document.getElementById("capayment-couponapply").innerHTML="Remove";
                 this.setState({
                     isApplied:true,
@@ -174,21 +174,21 @@ export default class Payment extends Component{
             index = couponcode
             // console.log(index)    
         }
-            else if(nval==0){
+            else if(nval===0){
                 alert('Coupon code invalid')
             }
         }
         catch(err){
             alert("hi")   
         }
-        if(index!=''&&nval==0){
+        if(index!==''&&nval===0){
             this.setState({
                 couponDiscountPercent:possibleCoupons[index],
                 isModalVisible:false,
                 isApplied:true,
             },()=>{})
         }
-        else if(index==''&&nval!=0){
+        else if(index===''&&nval!==0){
         this.setState({
             couponDiscountPercent:nval,
             isModalVisible:false,

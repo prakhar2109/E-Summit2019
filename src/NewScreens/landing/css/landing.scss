@@ -161,10 +161,20 @@
     .img_holder {
         height: 11.6vw !important;
         width: 11.6vw;
-        background: #242626;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
+        
+         
+
+        @include mobile{
+            height:300px !important;
+            width:300px;
+        }
+
+
+        img{
+     
+            width:100%;
+            height: 100%;
+        }
 
 
     }
@@ -174,6 +184,8 @@
         font-size: 24px;
         letter-spacing: 0.02em;
         padding-top: 1rem;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
 
 
 
@@ -254,6 +266,8 @@
         padding: 6% 0 0 0;
         display: grid;
         grid-template-columns: 30% 30% 30%;
+        grid-column-gap: 1vw;
+        grid-row-gap: 1vw;
 
         @media (min-width: 1000px) and (max-width: 1300px) {
 
@@ -267,9 +281,10 @@
         .events_production {
             background: url("../static/6.png");
             padding: 60px 0;
-            height: 46.42vh;
+            height: 37vh;
             display: grid;
             border : 2px solid white;
+           
 
             @include mobile {
                 height: 300px;
@@ -355,14 +370,17 @@
 
 .land_events_array {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(4,23.5%);
     background: #1A4D66;
 
     padding: 0 8.5vw;
     margin-top:-3%;
 
+
+
     @include mobile {
         grid-template-columns: 50% 50%;
+        padding: 0;
     }
 
     .conclave {
@@ -392,22 +410,34 @@
         color: white;
         padding-bottom: 200px;
         border : 2px solid #c7d2ce;
+        height:80vh;
+        display: grid;
+        justify-items: center;
+        background-repeat: no-repeat;
+        background-position: center;
+
+
 
         @include mobile {
             padding-top: 64px;
             padding-bottom: 64px;
+
+            padding-left:0;
+            padding-right: 0;
+            height:50vh;
         }
 
         @include fhd{
             padding-bottom: 100px;
         }
 
-        p:first-child {
+        .title{
             font-size: 2rem;
             letter-spacing: 0.06em;
             font-weight: bold;
             color: #FFFFFF;
             margin-top: 12.5rem;
+            text-align: center;
 
             @include mobile {
 
@@ -426,7 +456,7 @@
             }
         }
 
-        p:nth-child(2) {
+        .tagline {
             line-height: 41px;
             font-size: 22px;
             letter-spacing: 0.1em;
@@ -457,6 +487,7 @@
             letter-spacing: 0.09em;
             color: #FFFFFF;
             font-weight: bold ; 
+            padding-top: 16px;
 
             @include mobile {
                 line-height: 15px;
@@ -474,20 +505,11 @@
 
         }
 
-        img {
-     
-            margin-top: 95%;
-            margin-bottom: 1.875rem;
+      
 
-            @include mobile {
-                margin-top: 5rem;
-             
-            }
-
-            @include fhd{
-                
-                margin-top: 8rem;
-            }
+        span:nth-child(2)
+        {
+            align-self: end;
         }
     }
 }
@@ -658,10 +680,6 @@
         background: none;
         margin-top: 80px;
         cursor: pointer;
-
-        
-
-      
     }
 }
 

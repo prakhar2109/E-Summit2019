@@ -34,6 +34,13 @@
             font-size: 1.25rem;
             padding-top: 3.5rem;
         }
+
+        @include mobile {
+            line-height: 21px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            padding-top: 3vh;
+        }
     }
     
     li{
@@ -41,6 +48,10 @@
 
         @include fhd{
             padding-top: 0.7rem;
+        }
+
+        @include mobile{
+            padding-top: 8px;
         }
     }
 }

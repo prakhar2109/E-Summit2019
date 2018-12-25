@@ -45,10 +45,4 @@ body ,html{
         font-family: Proxima-nova-regular;
  }
 
-body , html ,p ,div, button , a , span,input,label ,rohit {
-   
-	font-family:"Proxima-nova-regular";
-	
-
-
-}
+ p{}

@@ -8,18 +8,18 @@ import "./login.scss";
 
 export default class LoginComponent extends Component {
 
-  hide = () =>{
+  hide = () => {
     document.getElementById("log").style.display = "none";
   }
   render() {
     return (
-      <div id = "log">
-        
-        <div className="andhera"  onClick = {this.hide} />
-        <div   className="login_outer">
+      <div id="log">
 
-        <img onClick =  {this.hide} className = "cross" src = {Cross} />
-          
+        <div className="andhera" onClick={this.hide} />
+        <div className="login_outer">
+
+          <img alt="" onClick={this.hide} className="cross" src={Cross} />
+
           <div className="login_inner">
             <div className="top">
               <p>LOG IN</p>
@@ -64,7 +64,7 @@ export default class LoginComponent extends Component {
                   required
                 />
 
-                <input className = "submit" value="Login" type="submit" />
+                <input className="submit" value="Login" type="submit" />
               </form>
             </div>
           </div>

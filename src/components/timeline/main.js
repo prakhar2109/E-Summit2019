@@ -53,42 +53,42 @@ const timelinejs = () => {
 			//on swipe, show next/prev event content
 			timelineComponents['eventsContent'].on('swipeleft', function () {
 				var mq = checkMQ();
-				(mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
+				(mq === 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
 			});
 			timelineComponents['eventsContent'].on('swiperight', function () {
 				var mq = checkMQ();
-				(mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+				(mq === 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
 			});
 
 			//keyboard navigation
 			$(document).keyup(function (event) {
-				if (event.which == '37' && elementInViewport(timeline.get(0))) {
+				if (event.which === '37' && elementInViewport(timeline.get(0))) {
 					showNewContent(timelineComponents, timelineTotWidth, 'prev');
-				} else if (event.which == '39' && elementInViewport(timeline.get(0))) {
+				} else if (event.which === '39' && elementInViewport(timeline.get(0))) {
 					showNewContent(timelineComponents, timelineTotWidth, 'next');
 				}
 			});
 		});
 	}
 
-	function updateSlide(timelineComponents, timelineTotWidth, string) {
-		//retrieve translateX value of timelineComponents['eventsWrapper']
-		var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
-			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
-		//translate the timeline to the left('next')/right('prev') 
-		(string == 'next')
-			? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
-			: translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
-	}
+	// function updateSlide(timelineComponents, timelineTotWidth, string) {
+	// 	//retrieve translateX value of timelineComponents['eventsWrapper']
+	// 	var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
+	// 		wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+	// 	//translate the timeline to the left('next')/right('prev') 
+	// 	(string === 'next')
+	// 		? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
+	// 		: translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
+	// }
 
 	function showNewContent(timelineComponents, timelineTotWidth, string) {
 		//go from one event to the next/previous one
 		var visibleContent = timelineComponents['eventsContent'].find('.selected'),
-			newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
+			newContent = (string === 'next') ? visibleContent.next() : visibleContent.prev();
 
 		if (newContent.length > 0) { //if there's a next/prev event - show it
 			var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
-				newEvent = (string == 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
+				newEvent = (string === 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
 
 			updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
 			updateVisibleContent(newEvent, timelineComponents['eventsContent']);
@@ -107,7 +107,7 @@ const timelinejs = () => {
 			timelineTotWidth = Number(timelineComponents['eventsWrapper'].css('width').replace('px', ''));
 		var timelineTranslate = getTranslateValue(timelineComponents['eventsWrapper']);
 
-		if ((string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate)) {
+		if ((string === 'next' && eventLeft > timelineWidth - timelineTranslate) || (string === 'prev' && eventLeft < - timelineTranslate)) {
 			translateTimeline(timelineComponents, - eventLeft + timelineWidth / 2, timelineWidth - timelineTotWidth);
 		}
 	}
