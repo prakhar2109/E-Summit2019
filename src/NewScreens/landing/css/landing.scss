@@ -392,7 +392,7 @@
 
 .land_events_array {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(4,23.5%);
     background: #1A4D66;
 
     padding: 0 8.5vw;
@@ -432,9 +432,11 @@
         color: white;
         padding-bottom: 200px;
         border : 2px solid #c7d2ce;
-        height:90vh;
+        height:80vh;
         display: grid;
         justify-items: center;
+        background-repeat: no-repeat;
+        background-position: center;
 
 
 
@@ -700,10 +702,6 @@
         background: none;
         margin-top: 80px;
         cursor: pointer;
-
-        
-
-      
     }
 }
 

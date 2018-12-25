@@ -6,10 +6,14 @@ import Testimonials from "./testimonials";
 import FAQBoard from "./faqs";
 import About from "./about";
 import Events from "./events";
-import Team from "./team";
 import Speakers from "./speakers";
 import Sponsors from "./sponsors";
 import Footer from "../IdeaStorm/footer/eventfooter";
+import axios from "axios";
+import {BASE_URL} from "../../utils/urls";
+import {NavLink } from "react-router-dom";
+
+
 
 import Nav from "./nav/nav.jsx";
 
@@ -47,25 +51,21 @@ export default class LandingPage extends Component {
       },
     ],
 
-    faq: [
-      {
-        id: 1,
-        question: "How to  reach IIT Roorkee ?",
-        answer:
-          "eSummit being the flagship event of ECell, is held annually brings together the " +
-          "academic community, venture capitalists, new age entrepreneurs and all those pas" +
-          "sionate about entrepreneurship to common grounds. It provides an avenue to exhib" +
-          "it the entrepreneurial talent and creativity through many events like business v" +
-          "entures, product design competition, and social entrepreneurial idea competition" +
-          ".",
-      },
-      {
-        id: 2,
-        question: "Questions",
-        answer: "answer",
-      },
-    ],
+    faq: [],
   };
+
+
+  componentDidMount(){
+    axios
+    .get(BASE_URL + "/v1/api/faqs/")
+    .then(res => {
+      this.setState({
+        faq:res.data.slice(0, 5),
+
+        
+      });
+    })
+  }
 
   render() {
     return (
@@ -73,7 +73,7 @@ export default class LandingPage extends Component {
         <Nav />
         <section id="screen1">
           <div className="land_screen1">
-            <a href="/registration_portal/register"><button>REGISTER NOW</button></a>
+            <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
           </div>
         </section>
         <About />

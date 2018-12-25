@@ -30,7 +30,8 @@ class FAQBoard extends Component {
     }
   };
   render() {
-    console.log(this.props.faqList);
+
+    
     return (
       <Element id = "faq" name ="faq">
         <section id="faq">
