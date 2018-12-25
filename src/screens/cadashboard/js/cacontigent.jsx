@@ -10,6 +10,7 @@ export default class Cacontigent extends Component {
         super();
         this.state = {
 			contigent:true,
+
 			loading: false,
 			
 			no_contingent: [
@@ -142,6 +143,23 @@ export default class Cacontigent extends Component {
 					To make a contingent, first everybody has to do individual registration.
 					</div>
 				</div>
+				 <div className="cacontigent-parent-heading2">
+                   		 Perks
+               			 </div>
+				 <div className="cacontigent-line1"></div>
+				 <div className="cacontigent-Aboutcontigent-parent">
+					<div className="cacontigent-heading">
+					Benefits of Contingent model
+					</div>
+					<div className="cacontigent-aboutparent-para">
+					The following criteria were used to decide the waiver in fees for all the participants.
+					</div>
+					
+					<div className="cacontigent-aboutparent-para">
+					20 % Off on getting 10 invites successfully who paid the fee.
+					20 % Off on getting 10 invites successfully who paid the fee.
+					</div>
+				</div>
 			</div>
 
 
@@ -222,7 +240,11 @@ export default class Cacontigent extends Component {
 				
 					<div className="cacontigent-congratsparent">
 						<div className="cacontigent-congratsparent-child1">
-						Congrats! Contingent succesfully created
+						<div><svg width="25" height="25" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.9224 12.6543L18.2446 22.5078L13.2885 17.5283L10.6172 20.1997L18.4321 28.0029L30.9921 15.8177L27.9224 12.6543Z" fill="#70BF48"/>
+                        <path d="M20.4258 0C9.37716 0 0.425781 8.95138 0.425781 20C0.425781 31.0486 9.37716 40 20.4258 40C31.4744 40 40.4258 31.0486 40.4258 20C40.4141 8.95138 31.4627 0 20.4258 0ZM20.4258 36.3679C11.3807 36.3679 4.04617 29.0334 4.04617 19.9883C4.04617 10.9432 11.3807 3.60867 20.4258 3.60867C29.4709 3.62039 36.7937 10.9432 36.8054 19.9883C36.7937 29.0451 29.4709 36.3679 20.4258 36.3679Z" fill="#70BF48"/>
+                        </svg></div>
+						<div>Congrats! Contingent succesfully created</div>
 						</div>
 						<div className="cacontigent-congratsparent-child2">
 						Your contingent has been succesfully created Contingent No. CN 2 . A mail with the contingent no and unique password has been send to all members. Their names will be shown here as soon as they join the contingent. If you want to edit the members an edit option
@@ -242,7 +264,7 @@ export default class Cacontigent extends Component {
 				
 					<div className="cacontigent-congratsparent">
 						<div className="cacontigent-congratsparent-child1">
-						Your Contingent
+						<div>Your Contingent</div>
 						<div className="cacontigent-congratsparent-editcontigent" onClick={this.editContigent}>
 						Edit
 						</div>

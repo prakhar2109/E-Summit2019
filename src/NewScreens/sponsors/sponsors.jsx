@@ -26,6 +26,18 @@ export default class Sponsors extends Component {
         name: "Rohit Jha",
         id: 2,
       },
+
+
+      {
+        name: "Rohit Jha",
+        id: 5,
+      },
+      
+
+      {
+        name: "Rohit Jha",
+        id: 6,
+      },
     ],
   };
   render() {
