@@ -17,7 +17,7 @@ export default class Speakers extends Component {
         
       });
 
-      console.log(this.state);
+  
 
       
     })
