@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './view.css'
+import '../view.css'
 import '../../header/css/main.css'
 import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
@@ -17,11 +17,7 @@ export default class Viewprofile extends Component {
     }
 
     componentDidMount = () => {
-        let token = localStorage.getItem('ca_token');
-        // document.getElementById("main_class").style.marginTop = '0px';
-
-
-
+        let token = localStorage.getItem('ca_token')
         axios
             .get(BASE_URL + "/v1/api/user/profile", {
                 headers: {

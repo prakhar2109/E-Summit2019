@@ -1,25 +1,23 @@
-import React, { Component } from 'react'
-import './view.css'
-import '../../header/css/main.css'
+import React, { Component } from "react";
+import "../view.css";
 import axios from "axios";
-import { BASE_URL } from "../../../utils/urls";
-import { Modal } from 'antd';
+import { BASE_URL } from "../../../../../utils/urls";
+import { Modal } from "antd";
 
 export default class Viewprofile extends Component {
     constructor() {
         super();
         this.state = {
             loading: false,
-            name: "A",
-            score: "300",
+            score :"",
+            name:"",
+            data:[],
 
         }
     }
 
     componentDidMount = () => {
-        let token = localStorage.getItem('ca_token');
-        // document.getElementById("main_class").style.marginTop = '0px';
-
+        let token = localStorage.getItem('user_token'); 
 
 
         axios
@@ -29,11 +27,13 @@ export default class Viewprofile extends Component {
                 },
             })
             .then(res => {
-                this.setState({ score: res.data.score, name: res.data.name });
+                this.setState({ 
+                    score: res.data.score, 
+                    name: res.data.name ,
+                    data : res.data,
+                });
             })
-            .catch(response => {
-                alert(response);
-            });
+          
     };
     showModal = () => {
         this.setState({
@@ -93,7 +93,8 @@ export default class Viewprofile extends Component {
         }
 
         const width = 900;
-        let { score } = this.state;
+        let { score, data, name} = this.state;
+        console.log(data);
         let scorePercentage = (score / 360) * 100 + "";
         return (
 
@@ -115,7 +116,7 @@ export default class Viewprofile extends Component {
 
                         <div className="caprofile-dropshape">
 
-                            P
+                            {name[0]}
                         </div>
                        		<div className="profile-dashboard-type">
 		                IITR STUDENT
@@ -135,7 +136,7 @@ export default class Viewprofile extends Component {
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                Prakhar Agarwal
+                                {name}
                             </div>
                         </div>
 
@@ -146,7 +147,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                    prakhar@prakhar.com
+                                    {data.email}
                                 </div>
 
                             </div>
@@ -156,7 +157,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    888888888888
+                                    {data.phone}
                                 </div>
                             </div>
                         </div>
@@ -177,20 +178,21 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    Male
+                                    {data.gender}
                                 </div>
                             </div>
                         </div>
                     </div>
 
 
+            
                     <div className="caprofile-containter-parent" id="caprofile-mobile-editprofilecontainter">
                         <div className="caprofile-containter-parent-child1">
                             <div className="caprofile-parent1-child2-name-heading caprofile-heading">
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                <input type="text" placeholder="Prakhar Agarwal" id="editprofile-input-mobile"></input>
+                                <input type="text" defaultValue = {data.name} onChange = {e=>{data.name = e.target.value}} required id="editprofile-input-mobile"></input>
                             </div>
                         </div>
 
@@ -201,7 +203,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                <input type="text" placeholder="prakhar@prakhar.com" id="editprofile-input-mobile" ></input>
+                                <input type="text" defaultValue = {data.email} onChange = {e=>{data.email = e.target.value}} required id="editprofile-input-mobile" ></input>
                                 </div>
 
                             </div>
@@ -211,7 +213,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                <input type="text" placeholder="888888888888" id="editprofile-input-mobile"></input> 
+                                <input type="text" defaultValue = {data.phone} onChange = {e=>{data.phone = e.target.value}} id="editprofile-input-mobile"></input> 
                                 </div>
                             </div>
                         </div>
@@ -226,19 +228,11 @@ export default class Viewprofile extends Component {
                                 </div>
 
                             </div>
-                            <div className="caprofile-containter-parent-child2-child2">
-                                <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
-                                    Gender
-                                </div>
-
-                                <div className="caprofile-parent1-child3-phone caprofile-data">
-                                <input type="text" placeholder="Male" id="editprofile-input-mobile"></input> 
-                                </div>
-                            </div>
+                         
                         </div>
                         
                     </div>
-
+             
                 </div>
 
                 
@@ -306,7 +300,9 @@ export default class Viewprofile extends Component {
                     footer={null}
 
                 >
-                    <button id="caprofile-b02" onClick={this.handleOk}>Save Changes</button>
+
+                <form> 
+                    <input type = "submit" value = "Save Changes" id="caprofile-b02" />
 
                     <div className="caprofile-parent1 ca-profile-modalparent1">
                         <div className="caprofile-parent1-child1">
@@ -315,7 +311,7 @@ export default class Viewprofile extends Component {
                         </div>
                             <div className="caprofile-dropshape">
 
-                                P
+                                {name[0]}
                         </div>
                                 <div className="profile-dashboard-type">
 		                IITR STUDENT
@@ -334,7 +330,8 @@ export default class Viewprofile extends Component {
                                     Full name
                             </div>
                                 <div className="caprofile-parent1-child2-name caprofile-data">
-                                    <input type="text" placeholder="Prakhar" id="caprofile02"></input>
+                                
+                                    <input type="text" defaultValue = {data.name} onChange = {e=>{data.name = e.target.value}} required id="caprofile02"></input>
 
                                 </div>
                             </div>
@@ -346,7 +343,8 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                     <div className="caprofile-parent1-child2-email caprofile-data">
-                                        <input type="text" value=" prakhar@prakhar.com" id="caprofile01"></input>
+                                        
+                                        <input type="email" defaultValue = {data.email} onChange = {e=>{data.email = e.target.value}} required id="caprofile01" ></input>
                                     </div>
 
                                 </div>
@@ -356,7 +354,9 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                     <div className="caprofile-parent1-child3-phone caprofile-data">
-                                        <input type="text" value="888888888888" id="caprofile01"></input>
+                            
+
+                                        <input type="text" defaultValue = {data.phone} onChange = {e=>{data.phone = e.target.value}} id="caprofile01"></input> 
                                     </div>
                                 </div>
                             </div>
@@ -371,15 +371,7 @@ export default class Viewprofile extends Component {
                                     </div>
 
                                 </div>
-                                <div className="caprofile-containter-parent-child2-child2">
-                                    <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
-                                        Gender
-                                </div>
-
-                                    <div className="caprofile-parent1-child3-phone caprofile-data">
-                                        <input type="text" value="Male" id="caprofile01"></input>
-                                    </div>
-                                </div>
+                  
                             </div>
                         </div>
 
@@ -413,6 +405,7 @@ export default class Viewprofile extends Component {
                    
 
                 </div>
+                </form>
                 </Modal>
 
             </div>

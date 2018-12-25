@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './view.css'
+import "../view.css";
 import '../../header/css/main.css'
 import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
@@ -10,15 +10,15 @@ export default class Viewprofile extends Component {
         super();
         this.state = {
             loading: false,
-            name: "A",
-            score: "300",
+            name: "",
+            score: "",
+            data:[],
 
         }
     }
 
     componentDidMount = () => {
-        let token = localStorage.getItem('ca_token');
-        // document.getElementById("main_class").style.marginTop = '0px';
+        let token = localStorage.getItem('user_token'); 
 
 
 
@@ -29,11 +29,12 @@ export default class Viewprofile extends Component {
                 },
             })
             .then(res => {
-                this.setState({ score: res.data.score, name: res.data.name });
+                this.setState({ 
+                    score: res.data.score, 
+                    name: res.data.name 
+                });
             })
-            .catch(response => {
-                alert(response);
-            });
+          
     };
     showModal = () => {
         this.setState({
@@ -98,9 +99,7 @@ export default class Viewprofile extends Component {
         return (
 
             <div className="caprofile-container">
-                {/* <Button type="primary" onClick={this.showModal}>
-                    Open Modal with customized footer
-                </Button> */}
+          
                 <div className="caprofile-container-heading">
                     PROFILE
                 </div>

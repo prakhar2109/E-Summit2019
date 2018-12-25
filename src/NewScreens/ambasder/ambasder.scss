@@ -1,5 +1,12 @@
 @mixin fhd {
-    @media  (min-width:1000px) and (max-width: 1600px) {
+    @media (min-width: 1000px) and (max-width: 1600px) {
+        @content ;
+    }
+
+}
+
+@mixin mobile {
+    @media (max-width: 1000px) {
         @content ;
     }
 
@@ -9,10 +16,14 @@
     padding: 6.75rem 10vw;
     background: url("./static//back.png");
 
-    @media (max-height:50rem){
-        padding:4.5rem 10vw;
+    @media (max-height: 50rem) {
+        padding: 4.5rem 10vw;
     }
-   
+
+    @include mobile {
+        padding: 36px;
+    }
+
     p:first-child {
         line-height: normal;
         font-size: 2.5rem;
@@ -20,23 +31,39 @@
         letter-spacing: 0.06em;
         color: #FFFFFF;
 
-        @include fhd{
+        @include fhd {
             font-size: 2rem;
         }
+
+        @include mobile {
+            font-size: 24px;
+            letter-spacing: 0.06em;
+        }
     }
+
     p:nth-child(2) {
         line-height: 39px;
         font-size: 1.625rem;
         text-align: center;
         letter-spacing: 0.06em;
-        padding-top:  calc(2rem + 15vh);
-        padding-bottom:  calc(2rem + 15vh);
+        padding-top: calc(2rem + 15vh);
+        padding-bottom: calc(2rem + 15vh);
         color: #FFFFFF;
 
-        @media (max-width:1600px) and (min-width:1000px){
-            padding-top:  calc(2rem + 7vh);
-            padding-bottom:  calc(2rem + 7vh);
+        @media (max-width: 1600px) and (min-width:1000px) {
+            padding-top: calc(2rem + 7vh);
+            padding-bottom: calc(2rem + 7vh);
             font-size: 1.25rem;
+        }
+
+        @include mobile {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+
+            line-height: 20px;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 0.02em;
         }
     }
 
@@ -50,8 +77,16 @@
         border: 2px solid white;
         cursor: pointer;
 
-        @include fhd{
+        @include fhd {
             padding: 15px 40px;
+        }
+
+        @include mobile {
+            line-height: 15px;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 0.09em;
+            padding: 12px 28px;
         }
 
     }
@@ -68,8 +103,16 @@
         cursor: pointer;
         margin-left: 2rem;
 
-        @include fhd{
+        @include fhd {
             padding: 15px 40px;
+        }
+
+        @include mobile {
+            line-height: 15px;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 0.09em;
+            padding: 12px 28px;
         }
 
     }
@@ -79,27 +122,42 @@
 .perks_ambasder {
 
     padding: 72px 10vw;
+
     border-bottom: 1px solid #B2B2B2;
+
+    @include mobile {
+        padding: 36px;
+    }
+
     .head1 {
         color: #1A4D66;
     }
 
-    p ,ol{
+    p,
+    ol {
         line-height: 2.1875rem;
         font-size: 1.5rem;
         letter-spacing: 0.02em;
         padding-top: 72px;
         color: rgba(0, 0, 0, 0.87);
 
-        @include fhd{
+        @include fhd {
             font-size: 1.25rem;
         }
+
+        @include mobile {
+            line-height: 21px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            padding-top: 3vh;
+        }
     }
-    
-    li{
-        padding-top:16px;
+
+    li {
+        padding-top: 16px;
     }
-    ol{
-        list-style-type: decimal; 
+
+    ol {
+        list-style-type: decimal;
     }
 }

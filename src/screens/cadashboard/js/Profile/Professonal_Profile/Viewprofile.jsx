@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './view.css'
+import '../view.css'
 import '../../header/css/main.css'
 import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
