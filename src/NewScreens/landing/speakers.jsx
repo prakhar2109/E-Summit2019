@@ -46,7 +46,7 @@ export default class Speakers extends Component {
                 {this.state.speakers.map(update => {
                   return (
                     <div key={update.id}>
-                      <div className="img_holder" /s>
+                      <div className="img_holder" />
 
                       <p className="name">{update.name}</p>
                       <p className="designation">{update.designation}</p>
