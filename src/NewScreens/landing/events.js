@@ -96,50 +96,49 @@ class Events extends Component {
             </p>
 
             <div className="land_events_array2">
-              <div className="events_production">
+              <div className="events_production" id="events_production1">
                 <span>
                   <p className="t1">PRODUCTATHON</p>
-                  <p className="t2">Tagline</p>
+                  
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
 
-              <div className="events_production">
+              <div className="events_production" id="events_production2">
                 <span>
-                  <p className="t1">PRODUCTATHON</p>
-                  <p className="t2">Tagline</p>
+                  <p className="t1">COMPETITIONS</p>
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
 
-              <div className="events_production">
+              <div className="events_production" id="events_production3">
                 <span>
-                  <p className="t1">PRODUCTATHON</p>
-                  <p className="t2">Tagline</p>
+                  <p className="t1">STARTUP EXPO</p>
+                 
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
 
-              <div className="events_production">
+              <div className="events_production" id="events_production4">
                 <span>
-                  <p className="t1">PRODUCTATHON</p>
-                  <p className="t2">Tagline</p>
+                  <p className="t1">CASE STUDY CHALLENEGE</p>
+                  
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
 
-              <div className="events_production">
+              <div className="events_production" id="events_production5">
                 <span>
-                  <p className="t1">PRODUCTATHON</p>
-                  <p className="t2">Tagline</p>
+                  <p className="t1">ONLINE EVENTS</p>
+                  
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
 
-              <div className="events_production">
+              <div className="events_production" id="events_production6">
                 <span>
-                  <p className="t1">PRODUCTATHON</p>
-                  <p className="t2">Tagline</p>
+                  <p className="t1">CORPORATE SPEED DATING</p>
+                  
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>

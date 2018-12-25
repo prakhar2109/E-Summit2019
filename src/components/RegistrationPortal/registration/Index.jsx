@@ -111,9 +111,7 @@ class RegisterIndex extends React.Component {
 
     handleAccountSetup = (data) => {
         this.setState({
-            // otp: data.otp,
-            // confirm_otp: data.confirm_otp,
-            // email_verified: data.email_verified,
+           
             name: data.name,
             email: data.email,
             password: data.password,
@@ -223,7 +221,6 @@ class RegisterIndex extends React.Component {
             about_esummit: about_esummit,
             year: year
         }
-        console.log(data, "dahgdajdjkagdj")
         document
             .getElementById("loader")
             .style
@@ -467,7 +464,7 @@ class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
                                         </div>
-                                        <div className="esummit-register-form-button">
+                                        <div className="esummit-register-form-button"
                                             <div className="esummit-register-form-button-back" onClick={this.handleFullSubmit}>GO TO DASHBOARD</div>
                                         </div>
                                     </div>

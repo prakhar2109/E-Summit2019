@@ -278,6 +278,33 @@
             display: block;
         }
 
+        #events_production1{
+
+            background: url("../static/Mask\ Group\ \(2\)\ \(1\).png");
+        }
+        #events_production2{
+
+            background: url("../static/Mask\ Group\ \(2\).png");
+        }
+        #events_production3{
+
+            background: url("../static/Group\ 55.png");
+        }
+        #events_production4{
+
+            background: url("../static/Group\ 27.1.png");
+        }
+        #events_production5{
+
+            background: url("../static/Group\ 54.png");
+        }
+
+        #events_production6{
+
+            background: url("../static/Group\ 29.1.png");
+        }
+
+
         .events_production {
             background: url("../static/6.png");
             padding: 60px 0;
@@ -370,7 +397,7 @@
 
 .land_events_array {
     display: grid;
-    grid-template-columns: repeat(4,23.5%);
+    grid-template-columns: repeat(4,25%);
     background: #1A4D66;
 
     padding: 0 8.5vw;
@@ -410,7 +437,7 @@
         color: white;
         padding-bottom: 200px;
         border : 2px solid #c7d2ce;
-        height:80vh;
+        height:110vh;
         display: grid;
         justify-items: center;
         background-repeat: no-repeat;

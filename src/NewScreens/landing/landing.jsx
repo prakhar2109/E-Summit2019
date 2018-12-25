@@ -10,7 +10,9 @@ import Speakers from "./speakers";
 import Sponsors from "./sponsors";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import axios from "axios";
-import {BASE_URL} from "../../utils/urls"
+import {BASE_URL} from "../../utils/urls";
+import {NavLink } from "react-router-dom";
+
 
 
 import Nav from "./nav/nav.jsx";
@@ -43,7 +45,7 @@ export default class LandingPage extends Component {
         <Nav />
         <section id="screen1">
           <div className="land_screen1">
-            <button>REGISTER NOW</button>
+            <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
           </div>
         </section>
         <About />
