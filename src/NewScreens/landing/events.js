@@ -13,9 +13,8 @@ class Events extends Component {
                 <div className="land_events">
                     <Header title="HIGHLIGHT EVENTS"/>
                     <p className="text">
-                        Expert investor or an emerging entrepreneur or a quiz master, you think you know
-                        it all ? Put that test to claim, battle it out in the field for the ultimate
-                        glory.
+                    Presenting to you the showstoppers of E-Summit 2019! 
+Participate in these grand events and gain an opportunity to learn, network, and how to forget the hefty cash prizes.
                     </p>
 
                 </div>
@@ -24,8 +23,8 @@ class Events extends Component {
                     <div className="conclave">
                         <center>
 
-                            <p>CONCLAVE</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
+                            <p>IDEASTORM</p>
+                            <p>The Annual B-Plan competition</p>
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
                             <p  className = "viewmore" >VIEW MORE</p>
 
@@ -35,8 +34,8 @@ class Events extends Component {
                     <div className="workshop">
                         <center>
 
-                            <p>CONCLAVE</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
+                            <p>CONCLAVES</p>
+                            <p>Blockchain<br></br> Social Impact Entrepreneurship Consultancy <br></br> Smart Tech</p>
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
                             <p className = "viewmore" >VIEW MORE</p>
 
@@ -45,7 +44,7 @@ class Events extends Component {
                     <div className="leadership">
                         <center>
 
-                            <p>CONCLAVE</p>
+                            <p>LEADERSHIP SERIES</p>
                             <p>Tagline for the event or minimal discription of event.</p>
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
                             <p className = "viewmore" >VIEW MORE</p>
@@ -55,7 +54,7 @@ class Events extends Component {
                     <div className="competition">
                         <center>
 
-                            <p>CONCLAVE</p>
+                            <p>WORKSHOPS</p>
                             <p>Tagline for the event or minimal discription of event.</p>
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
                             <p className = "viewmore">VIEW MORE</p>
@@ -84,6 +83,7 @@ class Events extends Component {
                         </div>
                     </div>
 
+            
                 </div>
 
                 </Element>
