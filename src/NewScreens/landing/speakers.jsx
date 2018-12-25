@@ -3,35 +3,29 @@ import Slider from "react-slick";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import {BASE_URL} from "../../utils/urls"
 export default class Speakers extends Component {
+
+  componentDidMount(){
+    axios
+    .get(BASE_URL + "/v1/api/speakers/")
+    .then(res => {
+      this.setState({
+        speakers:res.data,
+
+        
+      });
+
+      
+    })
+  }
+
+
+
   state = {
-    speakers: [
-      {
-        id: 1,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 2,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 3,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 4,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 5,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-    ],
+    speakers: []
+  
   };
   render() {
     let settings = {
@@ -52,7 +46,7 @@ export default class Speakers extends Component {
                 {this.state.speakers.map(update => {
                   return (
                     <div key={update.id}>
-                      <div className="img_holder" />
+                      <div className="img_holder" /s>
 
                       <p className="name">{update.name}</p>
                       <p className="designation">{update.designation}</p>
