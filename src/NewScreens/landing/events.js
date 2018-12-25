@@ -21,45 +21,64 @@ Participate in these grand events and gain an opportunity to learn, network, and
                 <div className="land_events_array">
 
                     <div className="conclave">
-                        <center>
-
-                            <p>IDEASTORM</p>
-                            <p>The Annual B-Plan competition</p>
+                      
+                            <span> 
+                            <p className = "title">IDEASTORM</p>
+                            <p className = "tagline">The Annual B-Plan competition</p>
+                            </span>
+                            <span> 
+                            
+                            <center> 
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
                             <p  className = "viewmore" >VIEW MORE</p>
-
-                        </center>
+                            </center>
+                            </span>
                     </div>
 
                     <div className="workshop">
-                        <center>
-
-                            <p>CONCLAVES</p>
-                            <p>Blockchain<br></br> Social Impact Entrepreneurship Consultancy <br></br> Smart Tech</p>
+                        
+                            <span> 
+                            <p className = "title" >CONCLAVES</p>
+                            <p className = "tagline">Blockchain<br></br> Social Impact Entrepreneurship Consultancy <br></br> Smart Tech</p>
+                            </span>
+                            <span> 
+                            
+                            <center> 
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
-                            <p className = "viewmore" >VIEW MORE</p>
-
-                        </center>
+                            <p  className = "viewmore" >VIEW MORE</p>
+                            </center>
+                            </span>
+                       
                     </div>
                     <div className="leadership">
-                        <center>
-
-                            <p>LEADERSHIP SERIES</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
+                    
+                            <span> 
+                            <p className = "title">LEADERSHIP SERIES</p>
+                            <p className = "tagline">Tagline for the event or minimal discription of event.</p>
+                            </span> 
+                            <span>
+                            <center> 
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
-                            <p className = "viewmore" >VIEW MORE</p>
-
-                        </center>
+                            <p  className = "viewmore" >VIEW MORE</p>
+                            </center>
+                            </span>
+ 
                     </div>
                     <div className="competition">
-                        <center>
-
-                            <p>WORKSHOPS</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
+                        
+                            <span> 
+                            <p className = "title" >WORKSHOPS</p>
+                            <p className = "tagline">Tagline for the event or minimal discription of event.</p>
+                            </span>
+                            
+                            <span> 
+                            <center> 
                             <i> <img src = {ViewMore} alt = "view more" ></img></i>
-                            <p className = "viewmore">VIEW MORE</p>
+                            <p  className = "viewmore" >VIEW MORE</p>
+                            </center>
+                            </span>
 
-                        </center>
+                        
                     </div>
 
                 </div>

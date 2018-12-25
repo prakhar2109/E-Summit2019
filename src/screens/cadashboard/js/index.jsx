@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-// import HomePage from "./screens/home/home";
-// import Header from "./screens/header/header";
-// import Login from "./screens/login/login";
-// import Register from "./screens/register/register";
-// import ignite from "./screens/ignite/ignite"
-// import Lfooter from "./screens/footer/landingpagefooter"
-// import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Viewprofile from './Profile/CA_Profile/Viewprofile'
+import Viewprofile from './Profile/IITR_Profile/Viewprofile'
 import LeaderBoard from "./Sidenavbar"
 import CATaskBoard from "./catask"
 import CAOffers from './offers'
