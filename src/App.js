@@ -19,7 +19,7 @@ import Noniitrindex from "./screens/noniitrdashboard/js/index";
 import Professionalindex from "./screens/professionalcadashboard/js/index";
 import Professorindex from "./screens/professordashboard/js/index";
 import Payment from "./screens/cadashboard/js/payment";
-
+import Contingent from "./screens/cadashboard/js/cacontigent"
 import Loadable from "react-loadable";
 import Loader from "./screens/common/loader";
 
@@ -104,6 +104,7 @@ class App extends Component {
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
                 <Route path="/professordashboard/" component={Professorindex} />
+                <Route exact path="/cont" component={Contingent} />
               </ScrollToTop>
             </Switch>
           </div>

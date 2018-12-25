@@ -309,7 +309,7 @@ class RegisterIndex extends React.Component {
                                 <div className="esummit-regsiter-form-heading-child-second">
                                     Let’s begin with setting up your account
                             </div> : <div className="esummit-regsiter-form-heading-child-second">
-                                    Congrats!You have successfully registered for E-Summit’19
+                                    Congrats! You have successfully registered for E-Summit’19
                             </div>}
                         </div>
                         <div>
