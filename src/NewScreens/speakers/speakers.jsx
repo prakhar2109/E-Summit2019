@@ -4,6 +4,7 @@ import Header from "../../components/header";
 import Nav from "../nav/nav";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import Testimonial from "../landing/testimonials";
+import MobileNav from "../mobile_nav/header"
 
 export default class speakers extends Component {
   state = {
@@ -39,6 +40,7 @@ export default class speakers extends Component {
     return (
       <>
         <Nav />
+        <MobileNav />
 
         <div className="speakers">
           <Header title="SPEAKERS" />
