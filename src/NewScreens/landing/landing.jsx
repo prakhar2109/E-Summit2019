@@ -73,7 +73,7 @@ export default class LandingPage extends Component {
         <Nav />
         <section id="screen1">
           <div className="land_screen1">
-            <button>REGISTER NOW</button>
+            <a href="/registration_portal/register"><button>REGISTER NOW</button></a>
           </div>
         </section>
         <About />

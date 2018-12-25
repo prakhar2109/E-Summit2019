@@ -92,64 +92,64 @@ Participate in these grand events and gain an opportunity to learn, network, and
                     </p>
 
                     <div className = "land_events_array2">
-                        <div className = "events_production">
+                        <div className = "events_production" id="events_production1">
 
                             <span> 
                             <p className = "t1">PRODUCTATHON</p>
-                            <p className = "t2">Tagline</p>
+                          
                             </span>
                             <p className = "t3">COMING SOON</p>
                         </div>
 
 
-                           <div className = "events_production">
+                           <div className = "events_production" id="events_production2">
 
 <span> 
-<p className = "t1">PRODUCTATHON</p>
-<p className = "t2">Tagline</p>
+<p className = "t1">COMPETITION</p>
+
 </span>
 <p className = "t3">COMING SOON</p>
 </div>
 
 
 
-   <div className = "events_production">
+   <div className = "events_production" id="events_production3">
 
 <span> 
-<p className = "t1">PRODUCTATHON</p>
-<p className = "t2">Tagline</p>
+<p className = "t1">STARTUP EXPO</p>
+
 </span>
 <p className = "t3">COMING SOON</p>
 </div>
 
 
-   <div className = "events_production">
+   <div className = "events_production" id="events_production4">
 
 <span> 
-<p className = "t1">PRODUCTATHON</p>
-<p className = "t2">Tagline</p>
-</span>
-<p className = "t3">COMING SOON</p>
-</div>
+<p className = "t1">CASE STUDY CHALLENGE</p>
 
-
-
-   <div className = "events_production">
-
-<span> 
-<p className = "t1">PRODUCTATHON</p>
-<p className = "t2">Tagline</p>
 </span>
 <p className = "t3">COMING SOON</p>
 </div>
 
 
 
-   <div className = "events_production">
+   <div className = "events_production" id="events_production5">
 
 <span> 
-<p className = "t1">PRODUCTATHON</p>
-<p className = "t2">Tagline</p>
+<p className = "t1">ONLINE EVENTS</p>
+
+</span>
+<p className = "t3">COMING SOON</p>
+</div>
+
+
+
+   <div className = "events_production" id="events_production6">
+
+<span> 
+<p className = "t1">CORPORATE SPEED DATING</p>
+
 </span>
 <p className = "t3">COMING SOON</p>
 </div>
