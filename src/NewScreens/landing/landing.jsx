@@ -21,34 +21,6 @@ export default class LandingPage extends Component {
   };
 
   state = {
-    speakers: [
-      {
-        id: 1,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 2,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 3,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 4,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 5,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-    ],
-
     faq: [],
   };
 
