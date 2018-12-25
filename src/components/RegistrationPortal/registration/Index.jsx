@@ -105,9 +105,7 @@ class RegisterIndex extends React.Component {
 
     handleAccountSetup = (data) => {
         this.setState({
-            // otp: data.otp,
-            // confirm_otp: data.confirm_otp,
-            // email_verified: data.email_verified,
+           
             name: data.name,
             email: data.email,
             password: data.password,
@@ -131,15 +129,7 @@ class RegisterIndex extends React.Component {
         })
     }
     handleSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.activeStep === 3) {
-        }
-        else if (this.state.activeStep === 0) {
-
-        }
-        else {
-            console.log("else")
-        }
+       console.log(this.state);
     }
 
 
@@ -375,7 +365,7 @@ class RegisterIndex extends React.Component {
                                             {this.state.name}
                                         </div>
                                         <div className="esummit-register-form-button">
-                                            <div className="esummit-register-form-button-back">GO TO DASHBOARD</div>
+                                            <div  onclick = {this.handleSubmit} className="esummit-register-form-button-back">GO TO DASHBOARD</div>
                                         </div>
                                     </div>
                                     : null
