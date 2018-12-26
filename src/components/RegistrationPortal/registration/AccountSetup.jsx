@@ -279,7 +279,7 @@ export default class AccountSetup extends Component {
                 <div className="esummit-register-form-body-parent">
                     <div className="esummit-register-form-body-social">
                         <GoogleLogin
-                            clientId="210798785897-bj54gjooglbsl1rrln9sdoplulbglt0d.apps.googleusercontent.com"
+                            clientId="828155572030-fugqa14to0jm8mkl2969lsc7ej49slhj.apps.googleusercontent.com"
                             buttonText="Google"
                             onSuccess={this.responseGoogle}
                             onFailure={this.responseGoogle}
@@ -287,7 +287,7 @@ export default class AccountSetup extends Component {
                             theme="dark"
                         />
                         <FacebookLogin
-                            appId="1397396677058151"
+                            appId="1971509613151179"
                             size="medium"
                             autoLoad={true}
                             textButton="Facebook"
@@ -396,7 +396,7 @@ export default class AccountSetup extends Component {
                                         id="inputConfirmPassword"
                                         type="password"
                                         className={confirmpass_error === "" ? null : "esummit-register-form-field-error-text"}
-                                        placeholder="Enter your password again for confirmation"
+                                        placeholder="Enter your password again"
                                         name="confirm_password"
                                         autoCorrect="off"
                                         autoComplete="off"

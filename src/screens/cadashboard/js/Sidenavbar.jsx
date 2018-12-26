@@ -14,6 +14,7 @@ export default class caLeaderboard extends Component {
       name: "",
       score: "0",
       activeState: "",
+      data:[]
     };
   }
 
@@ -24,7 +25,7 @@ export default class caLeaderboard extends Component {
   };
   handleLogout = () => {
     localStorage.removeItem("user_token");
-    window.location.href = "/login";
+    window.location.href = "/";
   };
   componentDidMount = () => {
     let token = localStorage.getItem("user_token");
@@ -39,7 +40,7 @@ export default class caLeaderboard extends Component {
         })
         .then(res => {
           console.log(res);
-          this.setState({ score: res.data.score, name: res.data.name });
+          this.setState({ score: res.data.score, name: res.data.name , data:res.data});
         })
         .catch(response => {
           console.log(response);
@@ -52,36 +53,14 @@ export default class caLeaderboard extends Component {
   render() {
     let { name, score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
-    return (
-      <div>
-        <Header />
-        <div id="container">
-          <div id="leftPane">
+    let  options;
 
-            <NavLink to="/">
-              <img id="logo" src={logo} alt="" />
-            </NavLink>
+    if(this.state.data.user_type === "AMB"){
+      console.log("AMB")
 
-            <hr id="line1" />
-
-            <NavLink to="/dashboard/Viewprofile">
-              <div id="dropShape">{name[0]}</div>
-              <p id="name">{name}</p>
-            </NavLink>
-            <div className="score">
-              <span id="scoreWritten">SCORE</span>
-              <span id="scoreValue">{score}/360</span>
-            </div>
-            <div className="progress">
-              <div
-                className="progress-bar bg-custom"
-                style={{
-                  width: scorePercentage + "%",
-                }}
-              />
-            </div>
-            <div id="optionsToggle">
-              <span>
+     options =(
+        <>
+        <span>
                 <Link
                   to="/dashboard/task"
                   className={
@@ -95,22 +74,64 @@ export default class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
-              <span>
-                <Link
-                  to="/dashboard/leader"
-                  className={
-                    this.state.activeState === "leaderboard"
-                      ? "linkEventson"
-                      : null
-                  }
-                  onClick={() => {
-                    this.setActive("leaderboard");
-                  }}
-                >
-                  LEADERBOARD
-                </Link>
-                <br />
-              </span>
+
+<span>
+<Link
+  to="/dashboard/leader"
+  className={
+    this.state.activeState === "leaderboard"
+      ? "linkEventson"
+      : null
+  }
+  onClick={() => {
+    this.setActive("leaderboard");
+  }}
+>
+  LEADERBOARD
+</Link>
+<br />
+</span>
+
+</>
+      )
+    }
+
+
+
+    else{
+      options = null;
+    }
+    return (
+      <div>
+        <Header />
+        <div id="container">
+          <div id="leftPane">
+
+            <NavLink to="/">
+              <img id="logo" src={logo} alt="" />
+            </NavLink>
+
+            <hr id="line1" />
+
+          
+              <div id="dropShape">{name[0]}</div>
+              <p id="name">{name}</p>
+         
+            <div className="score">
+              <span id="scoreWritten">SCORE</span>
+              <span id="scoreValue">{score}/360</span>
+            </div>
+            <div className="progress">
+              <div
+                className="progress-bar bg-custom"
+                style={{
+                  width: scorePercentage + "%",
+                }}
+              />
+            </div>
+            <div id="optionsToggle">
+              
+            {options}
 
               <span>
                 <Link

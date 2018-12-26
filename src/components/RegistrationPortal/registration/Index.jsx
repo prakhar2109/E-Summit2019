@@ -111,7 +111,7 @@ class RegisterIndex extends React.Component {
 
     handleAccountSetup = (data) => {
         this.setState({
-           
+
             name: data.name,
             email: data.email,
             password: data.password,
@@ -209,7 +209,7 @@ class RegisterIndex extends React.Component {
             resend_email: resend_email,
             user_type: profile_type,
             country: country,
-            phone_no: phone_no,
+            phone: phone_no,
             gender: gender,
             enrollment_no: enrollment_no,
             college: college,
@@ -227,7 +227,7 @@ class RegisterIndex extends React.Component {
             .display = "flex";
         axios({
             method: "post",
-            url: BASE_URL + "v1/api/user/signup",
+            url: BASE_URL + "/v1/api/user/signup/",
             data: data
         }).then((r) => {
             var d = new Date();
@@ -247,6 +247,7 @@ class RegisterIndex extends React.Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
+            console.log(response)
             alert("Network error")
         });
 
@@ -464,7 +465,7 @@ class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
                                         </div>
-                                        <div className="esummit-register-form-button"
+                                        <div className="esummit-register-form-button">
                                             <div className="esummit-register-form-button-back" onClick={this.handleFullSubmit}>GO TO DASHBOARD</div>
                                         </div>
                                     </div>

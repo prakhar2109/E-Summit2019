@@ -38,9 +38,17 @@ class FAQBoard extends Component {
           <div className="land_faq">
             <Header title="FAQs" />
             <p>Stuck somewhere ? We’ re here to help you! </p>
+        
+
             {this.props.faqList.map(update => {
-              return <SingleFAQ key = {update.id}update={update} />;
-            })}
+                   if(update.faq_type.type_name ==="Homepage" ){
+                  return <SingleFAQ key = {update.id}update={update} />;
+                   }
+
+                   else{
+                     return null;
+                   }
+                })}
 
             <center>
               <NavLink to = "/faq" > <button className="view_all"> VIEW ALL </button></NavLink>

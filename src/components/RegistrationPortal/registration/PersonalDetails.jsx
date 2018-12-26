@@ -597,7 +597,7 @@ class PersonalDetails extends Component {
                             value={phone_no}
                             onChange={event => {
                                 this.onChange(event)
-                                this.phonevalidat()
+                                this.phonevalidate()
                             }}
                             spellCheck="false"
                             required

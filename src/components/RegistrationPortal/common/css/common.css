@@ -37,6 +37,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
+
 }
 .esummit-common-dotted-line{
     border-top:2px dashed #ffffff;
@@ -52,4 +53,27 @@
     letter-spacing: 0.03em;
     color: #FFFFFF;
     width: fit-content;
+}
+@media (max-width:768px){
+    .esummit-common-grand-child-first{
+        position: relative;
+        display: flex;
+        left: 0px;
+    }
+    .esummit-common-first-child{
+        justify-content: space-around;
+        padding-bottom: 0px;
+    }
+    .esummit-common-second-child{
+        width: 100%;
+        margin-top: 85px;
+    }
+    .esummit-common-grand-child-first img{
+        height: 60px;
+    }
+    .esummit-common-second-child{
+        position: absolute;
+        width: 100%;
+    }
+    
 }
