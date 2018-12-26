@@ -6,6 +6,8 @@ import Header from "../../components/header";
 import Bullets from "../../components/bullets/bullets";
 import Coordinator from "../../components/contact/contact";
 import Footer from "../IdeaStorm/footer/eventfooter";
+import MobileNav from "../mobile_nav/header";
+
 
 export default class CampusAmbasder extends Component {
   show = () => {
@@ -62,6 +64,7 @@ export default class CampusAmbasder extends Component {
     return (
       <>
         <Nav />
+        <MobileNav />
         <div className="ambasder">
           <p>CAMPUS AMBASSADOR</p>
 

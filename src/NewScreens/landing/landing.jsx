@@ -12,6 +12,7 @@ import Footer from "../IdeaStorm/footer/eventfooter";
 import axios from "axios";
 import {BASE_URL} from "../../utils/urls";
 import {NavLink } from "react-router-dom";
+import MobileNav from "./mobile_nav/header"
 
 
 
@@ -43,6 +44,7 @@ export default class LandingPage extends Component {
     return (
       <div>
         <Nav />
+        <MobileNav />
         <section id="screen1">
 
           <div className="land_screen1">

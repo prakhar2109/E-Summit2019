@@ -189,7 +189,7 @@ export default class Lfooter extends Component {
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                        ecell@iitr.ac.in
+                        sgarg2@ce.iit.ac.in
                      </div>
 
                 </div>
@@ -298,7 +298,7 @@ export default class Lfooter extends Component {
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                        ecell@iitr.ac.in
+                    sgarg2@ce.iit.ac.in
                      </div>
 
                 </div>

@@ -4,7 +4,7 @@ import Header from "../../components/header";
 import Nav from "../nav/nav";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import Testimonial from "../landing/testimonials";
-import MobileNav from "../mobile_nav/header"
+import MobileNav from "../mobile_nav/header";
 import axios from "axios";
 import { BASE_URL } from "../../utils/urls"
 

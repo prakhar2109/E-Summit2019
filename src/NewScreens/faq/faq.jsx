@@ -8,7 +8,10 @@ import Footer from "../IdeaStorm/footer/eventfooter";
 import SingleFAQ from "./../../components/singleFaq";
 import axios from "axios" ;
 import { BASE_URL } from "../../utils/urls";
+import MobileNav from "../mobile_nav/header";
+
 const TabPane = Tabs.TabPane;
+
 
 export default class FAQPage extends Component {
   state = {
@@ -37,6 +40,7 @@ export default class FAQPage extends Component {
     return (
       <React.Fragment>
         <Nav />
+        <MobileNav />
  
         <div className="faq">
           <Header title="FAQs" />

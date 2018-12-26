@@ -4,6 +4,7 @@ import "./sponsors.scss";
 import img1 from "./1.png";
 import Nav from "../nav/nav";
 import Footer from "../IdeaStorm/footer/eventfooter";
+import MobileNav from "../mobile_nav/header";
 export default class Sponsors extends Component {
   state = {
     sponsors: [
@@ -44,6 +45,7 @@ export default class Sponsors extends Component {
     return (
       <>
         <Nav />
+        <MobileNav />
         <div className="sponsors">
           <Header title="SPONSORS" />
           <p className="text">
