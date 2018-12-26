@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import esummit from "./static/es.png";
+import esummit from "../../../components/RegistrationPortal/common/svg/esummit_logo.svg";
 import { withRouter } from "react-router-dom";
 import "./css/nav.scss";
 import { Link } from "react-scroll";
