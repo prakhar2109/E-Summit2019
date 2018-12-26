@@ -14,6 +14,7 @@ export default class caLeaderboard extends Component {
       name: "",
       score: "0",
       activeState: "",
+      data:[]
     };
   }
 
@@ -39,7 +40,7 @@ export default class caLeaderboard extends Component {
         })
         .then(res => {
           console.log(res);
-          this.setState({ score: res.data.score, name: res.data.name });
+          this.setState({ score: res.data.score, name: res.data.name , data:res.data});
         })
         .catch(response => {
           console.log(response);
@@ -52,6 +53,54 @@ export default class caLeaderboard extends Component {
   render() {
     let { name, score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
+    let  options;
+
+    if(this.state.data.user_type === "AMB"){
+      console.log("AMB")
+
+     options =(
+        <>
+        <span>
+                <Link
+                  to="/dashboard/task"
+                  className={
+                    this.state.activeState === "task" ? "linkEventson" : null
+                  }
+                  onClick={() => {
+                    this.setActive("task");
+                  }}
+                >
+                  TASKS
+                </Link>
+                <br />
+              </span>
+
+<span>
+<Link
+  to="/dashboard/leader"
+  className={
+    this.state.activeState === "leaderboard"
+      ? "linkEventson"
+      : null
+  }
+  onClick={() => {
+    this.setActive("leaderboard");
+  }}
+>
+  LEADERBOARD
+</Link>
+<br />
+</span>
+
+</>
+      )
+    }
+
+
+
+    else{
+      options = null;
+    }
     return (
       <div>
         <Header />
@@ -81,36 +130,8 @@ export default class caLeaderboard extends Component {
               />
             </div>
             <div id="optionsToggle">
-              <span>
-                <Link
-                  to="/dashboard/task"
-                  className={
-                    this.state.activeState === "task" ? "linkEventson" : null
-                  }
-                  onClick={() => {
-                    this.setActive("task");
-                  }}
-                >
-                  TASKS
-                </Link>
-                <br />
-              </span>
-              <span>
-                <Link
-                  to="/dashboard/leader"
-                  className={
-                    this.state.activeState === "leaderboard"
-                      ? "linkEventson"
-                      : null
-                  }
-                  onClick={() => {
-                    this.setActive("leaderboard");
-                  }}
-                >
-                  LEADERBOARD
-                </Link>
-                <br />
-              </span>
+              
+            {options}
 
               <span>
                 <Link
