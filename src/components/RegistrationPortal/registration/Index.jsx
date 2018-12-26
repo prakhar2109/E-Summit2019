@@ -267,7 +267,7 @@ class RegisterIndex extends React.Component {
                 .display = "flex";
             axios({
                 method: "post",
-                url: BASE_URL + "v1/api/user/verification",
+                url: BASE_URL + "v1/api/verification",
                 data: data_details
             }).then((r) => {
                 this.setState({
