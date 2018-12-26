@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios"
 import correct from "./svg/correct.svg"
 import wrong from "./svg/wrong.svg"
+import { BASE_URL } from '../../../utils/urls';
 
 let time_out;
 export default class EmailVerification extends Component {
@@ -38,7 +39,7 @@ export default class EmailVerification extends Component {
             .display = "flex";
         axios({
             method: "post",
-            url: "http://localhost:8000/edc/email",
+            url: BASE_URL + "/v1/api/verification/",
             data: data
         }).then((r) => {
             this.setState({
@@ -63,7 +64,6 @@ export default class EmailVerification extends Component {
         });
     }
     handleVerify = () => {
-        console.log(this.state.otp, "otp")
         if (parseInt(this.state.confirm_otp) === this.state.otp) {
             this.setState({
                 email_verified: true
@@ -135,7 +135,6 @@ export default class EmailVerification extends Component {
         })
         const timer = () => {
             if (this.state.time > 0) {
-                console.log("inside")
                 this.setState({
                     time: this.state.time - 1
                 })
