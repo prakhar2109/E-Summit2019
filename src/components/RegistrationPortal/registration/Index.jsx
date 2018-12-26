@@ -111,7 +111,7 @@ class RegisterIndex extends React.Component {
 
     handleAccountSetup = (data) => {
         this.setState({
-           
+
             name: data.name,
             email: data.email,
             password: data.password,
@@ -227,7 +227,7 @@ class RegisterIndex extends React.Component {
             .display = "flex";
         axios({
             method: "post",
-            url: BASE_URL + "v1/api/user/signup",
+            url: BASE_URL + "/v1/api/user/signup/",
             data: data
         }).then((r) => {
             var d = new Date();
@@ -247,6 +247,7 @@ class RegisterIndex extends React.Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
+            console.log(response)
             alert("Network error")
         });
 

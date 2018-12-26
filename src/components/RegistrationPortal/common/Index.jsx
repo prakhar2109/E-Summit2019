@@ -4,7 +4,18 @@ import esummit_logo from "./svg/esummit_logo.svg"
 export default class CommonIndex extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            dot_display: false
+        }
+    }
+    componentDidMount() {
+        if (window.innerWidth >= 768) {
+            this.setState(
+                {
+                    dot_display: true
+                }
+            )
+        }
     }
     render() {
         return (
@@ -17,9 +28,13 @@ export default class CommonIndex extends Component {
                         <img src={ecell_logo} />
                     </div> */}
                     <div className="esummit-common-second-child">
-                        <hr className="esummit-common-dotted-line" />
+                        {this.state.dot_display ?
+                            <hr className="esummit-common-dotted-line" />
+                            : null}
                         <span>E-SUMMIT’19 REGISTRATION PORTAL</span>
-                        <hr className="esummit-common-dotted-line" />
+                        {this.state.dot_display ?
+                            <hr className="esummit-common-dotted-line" />
+                            : null}
                     </div>
                 </div>
             </div>
