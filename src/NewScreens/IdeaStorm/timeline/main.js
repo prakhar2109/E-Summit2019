@@ -53,42 +53,42 @@ const timelinejs = () => {
 			//on swipe, show next/prev event content
 			timelineComponents['ideastormeventsContent'].on('swipeleft', function () {
 				var mq = checkMQ();
-				(mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
+				(mq === 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'next');
 			});
 			timelineComponents['ideastormeventsContent'].on('swiperight', function () {
 				var mq = checkMQ();
-				(mq == 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+				(mq === 'mobile') && showNewContent(timelineComponents, timelineTotWidth, 'prev');
 			});
 
 			//keyboard navigation
 			$(document).keyup(function (event) {
-				if (event.which == '37' && elementInViewport(timeline.get(0))) {
+				if (event.which === '37' && elementInViewport(timeline.get(0))) {
 					showNewContent(timelineComponents, timelineTotWidth, 'prev');
-				} else if (event.which == '39' && elementInViewport(timeline.get(0))) {
+				} else if (event.which === '39' && elementInViewport(timeline.get(0))) {
 					showNewContent(timelineComponents, timelineTotWidth, 'next');
 				}
 			});
 		});
 	}
 
-	function updateSlide(timelineComponents, timelineTotWidth, string) {
-		//retrieve translateX value of timelineComponents['ideastormeventsWrapper']
-		var translateValue = getTranslateValue(timelineComponents['ideastormeventsWrapper']),
-			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
-		//translate the timeline to the left('next')/right('prev') 
-		(string == 'next')
-			? translateTimeline(timelineComponents, translateValue - wrapperWidth + ideastormeventsMinDistance, wrapperWidth - timelineTotWidth)
-			: translateTimeline(timelineComponents, translateValue + wrapperWidth - ideastormeventsMinDistance);
-	}
+	// function updateSlide(timelineComponents, timelineTotWidth, string) {
+	// 	//retrieve translateX value of timelineComponents['ideastormeventsWrapper']
+	// 	var translateValue = getTranslateValue(timelineComponents['ideastormeventsWrapper']),
+	// 		wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+	// 	//translate the timeline to the left('next')/right('prev') 
+	// 	(string === 'next')
+	// 		? translateTimeline(timelineComponents, translateValue - wrapperWidth + ideastormeventsMinDistance, wrapperWidth - timelineTotWidth)
+	// 		: translateTimeline(timelineComponents, translateValue + wrapperWidth - ideastormeventsMinDistance);
+	// }
 
 	function showNewContent(timelineComponents, timelineTotWidth, string) {
 		//go from one event to the next/previous one
 		var visibleContent = timelineComponents['ideastormeventsContent'].find('.selected'),
-			newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
+			newContent = (string === 'next') ? visibleContent.next() : visibleContent.prev();
 
 		if (newContent.length > 0) { //if there's a next/prev event - show it
 			var selectedDate = timelineComponents['ideastormeventsWrapper'].find('.selected'),
-				newEvent = (string == 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
+				newEvent = (string === 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
 
 			updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
 			updateVisibleContent(newEvent, timelineComponents['ideastormeventsContent']);
@@ -107,7 +107,7 @@ const timelinejs = () => {
 			timelineTotWidth = Number(timelineComponents['ideastormeventsWrapper'].css('width').replace('px', ''));
 		var timelineTranslate = getTranslateValue(timelineComponents['ideastormeventsWrapper']);
 
-		if ((string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate)) {
+		if ((string === 'next' && eventLeft > timelineWidth - timelineTranslate) || (string === 'prev' && eventLeft < - timelineTranslate)) {
 			translateTimeline(timelineComponents, - eventLeft + timelineWidth / 2, timelineWidth - timelineTotWidth);
 		}
 	}
@@ -118,8 +118,8 @@ const timelinejs = () => {
 		value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value; //do not translate more than timeline width
 		setTransformValue(ideastormeventsWrapper, 'translateX', value + 'px');
 		//update navigation arrows visibility
-		(value == 0) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
-		(value == totWidth) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
+		(value === 0) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
+		(value === totWidth) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
 	}
 
 	function updateFilling(selectedEvent, filling, totWidth) {

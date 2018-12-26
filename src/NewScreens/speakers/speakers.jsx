@@ -6,27 +6,27 @@ import Footer from "../IdeaStorm/footer/eventfooter";
 import Testimonial from "../landing/testimonials";
 import MobileNav from "../mobile_nav/header"
 import axios from "axios";
-import {BASE_URL} from "../../utils/urls"
+import { BASE_URL } from "../../utils/urls"
 
 export default class speakers extends Component {
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(BASE_URL + "/v1/api/speakers/")
-    .then(res => {
-      this.setState({
-        speakers:res.data,
+      .get(BASE_URL + "/v1/api/speakers/")
+      .then(res => {
+        this.setState({
+          speakers: res.data,
 
-        
-      });
 
-  
+        });
 
-      
-    })
+
+
+
+      })
   }
   state = {
     speakers: [
-      
+
     ],
   };
   render() {
@@ -47,9 +47,9 @@ export default class speakers extends Component {
             {this.state.speakers.map(update => {
               return (
                 <div key={update.id}>
-                     <div className="img_holder">
-                          <img src = {BASE_URL + update.profile_image} />
-                      </div>
+                  <div className="img_holder">
+                    <img alt="profile" src={BASE_URL + update.profile_image} />
+                  </div>
 
                   <p className="name">{update.name}</p>
                   <p className="designation">{update.designation}</p>

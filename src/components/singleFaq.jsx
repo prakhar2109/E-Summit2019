@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import "./css/faq_unit.scss";
 import Plus from "./static/plus.svg";
-import  cross from "./static/cross.svg";
+import cross from "./static/cross.svg";
 class SingleFAQ extends Component {
     constructor(props) {
         super(props);
@@ -25,13 +25,13 @@ class SingleFAQ extends Component {
                 .background = '#F7F8F9';
             document
                 .getElementById(pid)
-                .style.display ="none";
+                .style.display = "none";
 
-                document
+            document
                 .getElementById(cid)
-                .style.display ="inline-block";
+                .style.display = "inline-block";
 
-            this.setState({show: 0});
+            this.setState({ show: 0 });
         } else {
             document
                 .getElementById(id)
@@ -44,17 +44,17 @@ class SingleFAQ extends Component {
                 .getElementById(qid)
                 .style
                 .background = 'white';
-    
+
 
             document
                 .getElementById(pid)
-                .style.display ="inline-block";
+                .style.display = "inline-block";
 
-             document
+            document
                 .getElementById(cid)
-                .style.display ="none";
+                .style.display = "none";
 
-            this.setState({show: 1});
+            this.setState({ show: 1 });
         }
     };
     render() {
@@ -66,8 +66,8 @@ class SingleFAQ extends Component {
                 className="faq_unit">
                 <div className="question" id={'q' + update.id}>
                     {update.question}
-                    <img className = "plus" src = {Plus}  id={'p' + update.id} /> 
-                    <img className = "crox" src = {cross}  id={'c' + update.id} /> 
+                    <img alt="images" className="plus" src={Plus} id={'p' + update.id} />
+                    <img alt="images" className="crox" src={cross} id={'c' + update.id} />
                 </div>
                 <div className="answer" id={update.id}>
                     {update.answer}

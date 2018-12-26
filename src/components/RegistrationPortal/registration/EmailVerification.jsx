@@ -153,12 +153,12 @@ export default class EmailVerification extends Component {
 
     }
     render() {
-        const { otp_expired, confirm_otp, otp_error, otp_error_bool, resend_otp, resend_email, email_error, email_error_bool, confirmation_otp_message } = this.state
+        const { otp_expired, confirm_otp, otp_error, otp_error_bool, resend_otp, resend_email, email_error, email_error_bool } = this.state
         return (
             <div className="esummit-register-form-body-parent">
                 {resend_otp ? null :
                     <div>
-                        {!otp_expired ? <div className="esummit-register-form-message-verification">OTP has been successfully sent to your registered email <b>{this.state.email}</b></div> : <div className="esummit-register-form-message-verification"><span style={{ color: "red", fontSize: "13px" }}>OTP is expired.</span> Click on resend otp to resend the one time password</div>}
+                        {!otp_expired ? <div className="esummit-register-form-message-verification">OTP has been successfully sent to your email.</div> : <div className="esummit-register-form-message-verification"><span style={{ color: "red", fontSize: "13px" }}>OTP is expired.</span> Click on resend otp to resend the one time password</div>}
                     </div>
                 }
                 {resend_otp && otp_expired ? null :
@@ -185,7 +185,7 @@ export default class EmailVerification extends Component {
                                 />
                                 <span className="esummit-register-form-field-error-svg">
                                     {otp_error_bool === "" ? null :
-                                        <img src={otp_error_bool === "true" ? wrong : otp_error_bool === "false" ? correct : null} />
+                                        <img src={otp_error_bool === "true" ? wrong : otp_error_bool === "false" ? correct : null} alt="correc/wrong" />
                                     }
                                 </span>
                             </div>
@@ -214,16 +214,14 @@ export default class EmailVerification extends Component {
                                 value={resend_email}
                                 onChange={event => {
                                     this.onChange(event)
-                                    {
-                                        this.emailvalidate()
-                                    }
+                                    this.emailvalidate()
                                 }}
                                 spellCheck="false"
                                 required
                             />
                             <span className="esummit-register-form-field-error-svg">
                                 {email_error_bool === "" ? null :
-                                    <img src={email_error_bool === "true" ? wrong : email_error_bool === "false" ? correct : null} />
+                                    <img src={email_error_bool === "true" ? wrong : email_error_bool === "false" ? correct : null} alt="correc/wrong" />
                                 }
                             </span>
                         </div>

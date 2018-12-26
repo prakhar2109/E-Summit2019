@@ -14,63 +14,63 @@ import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
 
 import Caindex from "./screens/cadashboard/js/index";
- 
-import Payment from "./screens/cadashboard/js/payment";
 
+import Payment from "./screens/cadashboard/js/payment";
+// import Contingent from "./screens/cadashboard/js/cacontigent"
 import Loadable from "react-loadable";
 import Loader from "./screens/common/loader";
 
-const Loading = ({ error }) => {
-  if (error) {
-    return <div> Error loading component </div>;
-  } else {
-    return <Loader />;
-  }
-};
+// const Loading = ({ error }) => {
+//   if (error) {
+//     return <div> Error loading component </div>;
+//   } else {
+//     return <Loader />;
+//   }
+// };
 
-const Login = Loadable({
-  loader: () => import("./screens/login/login"),
+// const Login = Loadable({
+//   loader: () => import("./screens/login/login"),
 
-  loading: () => <Loader />,
-});
+//   loading: () => <Loader />,
+// });
 
-const Stepform = Loadable({
-  loader: () => import("./components/Stepform"),
+// const Stepform = Loadable({
+//   loader: () => import("./components/Stepform"),
 
-  loading: () => <Loader />,
-});
+//   loading: () => <Loader />,
+// });
 
-const Timeline = Loadable({
-  loader: () => import("./components/timeline/Index"),
+// const Timeline = Loadable({
+//   loader: () => import("./components/timeline/Index"),
 
-  loading: () => <Loader />,
-});
+//   loading: () => <Loader />,
+// });
 
-const HomePage = Loadable({
-  loader: () => import("./screens/home/home"),
-  loading: () => <Loader />,
-});
+// const HomePage = Loadable({
+//   loader: () => import("./screens/home/home"),
+//   loading: () => <Loader />,
+// });
 
 const ignite = Loadable({
   loader: () => import("./NewScreens/startupignite/ignite"),
   loading: () => <Loader />,
 });
 
-const Register = Loadable({
-  loader: () => import("./screens/register/register"),
-  loading: () => <Loader />,
-});
+// const Register = Loadable({
+//   loader: () => import("./screens/register/register"),
+//   loading: () => <Loader />,
+// });
 
-const RegisterPortalIndex = Loadable({
-  loader: () => import("./components/RegistrationPortal/Index"),
-  loading: () => <Loader />,
-});
- 
+// const RegisterPortalIndex = Loadable({
+//   loader: () => import("./components/RegistrationPortal/Index"),
+//   loading: () => <Loader />,
+// });
 
-const SocialLogin = Loadable({
-  loader: () => import("./components/Index"),
-  loading: () => <Loader />,
-});
+
+// const SocialLogin = Loadable({
+//   loader: () => import("./components/Index"),
+//   loading: () => <Loader />,
+// });
 
 class App extends Component {
   constructor() {
@@ -97,7 +97,12 @@ class App extends Component {
                 <Route path="/registration_portal" component={Registration} />
                 <Route exact path="/payment" component={Payment} />
                 <Route path="/dashboard/" component={Caindex} />
-       
+                {/* <Route path="/iitrdashboard/" component={Iitrindex} />
+                <Route path="/noniitrdashboard/" component={Noniitrindex} />
+                <Route path="/prodashboard/" component={Professionalindex} />
+                <Route path="/professordashboard/" component={Professorindex} />
+                <Route exact path="/cont" component={Contingent} /> */}
+
               </ScrollToTop>
             </Switch>
           </div>

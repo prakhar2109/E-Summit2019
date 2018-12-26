@@ -46,9 +46,9 @@ export class IdeaStorm extends Component {
         answer: [
           "Your ideas will be judged on the basis of ",
           "innovation in your idea , " +
-            "real-world problem it mitigates, " +
-            "the market opportunity for the idea, " +
-            " & the competitive advantage that it possesses",
+          "real-world problem it mitigates, " +
+          "the market opportunity for the idea, " +
+          " & the competitive advantage that it possesses",
         ],
       },
 
@@ -146,6 +146,7 @@ export class IdeaStorm extends Component {
           </p>
           <center>
             <a
+              without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
               target="_blank"
             >
@@ -254,12 +255,14 @@ export class IdeaStorm extends Component {
           <center>
             {" "}
             <a
+              without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
               target="_blank"
             >
               <span>APPLY FOR IDEASTORM</span>
             </a>
             <a
+              without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform"
               target="_blank"
             >
@@ -273,6 +276,7 @@ export class IdeaStorm extends Component {
           <p>To participate in Idea-Storm 2019 register here.</p>
           <center>
             <a
+              without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
               target="_blank"
             >
@@ -283,6 +287,7 @@ export class IdeaStorm extends Component {
           <p>After registering, submit your enteries for round 1.</p>
           <center>
             <a
+              without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform"
               target="_blank"
             >

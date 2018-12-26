@@ -57,14 +57,14 @@ export default class caLeaderboard extends Component {
         <Header />
         <div id="container">
           <div id="leftPane">
-           
-              <NavLink to="/">
-                <img id="logo" src={logo} alt="" />
-              </NavLink>
-             
+
+            <NavLink to="/">
+              <img id="logo" src={logo} alt="" />
+            </NavLink>
+
             <hr id="line1" />
-            
-            <NavLink to="/dashboard/Viewprofile"> 
+
+            <NavLink to="/dashboard/Viewprofile">
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
             </NavLink>
@@ -174,7 +174,7 @@ export default class caLeaderboard extends Component {
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton">
-                <a>CA RULEBOOK</a>
+                <a href="/">CA RULEBOOK</a>
               </div>
             </div>
             <div id="submitButton">

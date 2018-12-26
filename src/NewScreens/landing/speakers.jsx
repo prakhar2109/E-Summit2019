@@ -4,30 +4,30 @@ import Header from "../../components/header";
 import { Element } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import {BASE_URL} from "../../utils/urls"
+import { BASE_URL } from "../../utils/urls"
 export default class Speakers extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(BASE_URL + "/v1/api/speakers/")
-    .then(res => {
-      this.setState({
-        speakers:res.data,
+      .get(BASE_URL + "/v1/api/speakers/")
+      .then(res => {
+        this.setState({
+          speakers: res.data,
 
-        
-      });
 
-  
+        });
 
-      
-    })
+
+
+
+      })
   }
 
 
 
   state = {
     speakers: []
-  
+
   };
   render() {
     let settings = {
@@ -39,17 +39,17 @@ export default class Speakers extends Component {
     };
     return (
       <div>
-        <Element id = "speakers" name="speakers">
+        <Element id="speakers" name="speakers">
           <div className="land_speakers">
             <Header title="SPEAKERS" />
-          
+
             <div className="speaker_slidder">
               <Slider {...settings}>
                 {this.state.speakers.map(update => {
                   return (
                     <div key={update.id}>
                       <div className="img_holder">
-                          <img src = {BASE_URL + update.profile_image} />
+                        <img alt="profile" src={BASE_URL + update.profile_image} />
                       </div>
 
                       <p className="name">{update.name}</p>

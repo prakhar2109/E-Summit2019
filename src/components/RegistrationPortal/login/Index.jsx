@@ -1,5 +1,5 @@
 import React from 'react';
-import Common_Index from "./common/Index"
+import CommonIndex from "./common/Index"
 import Loader from "../../../screens/loader/loader"
 import { Link } from "react-router-dom"
 import color_eye from "../registration/svg/color-eye.svg"
@@ -38,15 +38,14 @@ export default class RegisterIndex extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
 
-        
+
         let data = {
             email: this.state.email,
             password: this.state.password
         }
-        console.log(data);
 
-  
-       document
+
+        document
             .getElementById("loader")
             .style
             .display = "flex";
@@ -63,9 +62,9 @@ export default class RegisterIndex extends React.Component {
 
             console.log(res);
 
-            if (res !== undefined  && res.data !== undefined ) {
+            if (res !== undefined && res.data !== undefined) {
                 if (res.data) {
-                 
+
                     if (res.data.token) {
                         localStorage.setItem("user_token", res.data.token);
                     }
@@ -78,26 +77,26 @@ export default class RegisterIndex extends React.Component {
                 }
             }
         })
-        
-        .catch(response => {
 
-            console.log(response);
-            document
-                .getElementById("loader")
-                .style
-                .display = "none";
-            this.setState({
-                error_message: "Email/Password is invalid",
-                email: "",
-                password: "",
-                email_error_bool: "",
-                pass_error_bool: ""
-            })
+            .catch(response => {
 
-        });
+                console.log(response);
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "none";
+                this.setState({
+                    error_message: "Email/Password is invalid",
+                    email: "",
+                    password: "",
+                    email_error_bool: "",
+                    pass_error_bool: ""
+                })
+
+            });
 
     }
- 
+
 
 
     // responseFacebook = (response) => {
@@ -169,7 +168,7 @@ export default class RegisterIndex extends React.Component {
         const { email, password, toggleEye, email_error, email_error_bool, pass_error, pass_error_bool } = this.state
         return (
             <div className="esummit-common-parent" >
-                <Common_Index />
+                <CommonIndex />
                 <div className="esummit-register-parent">
                     <div className="esummit-register-form-parent">
                         <div className="esummit-register-form-heading">
@@ -199,16 +198,14 @@ export default class RegisterIndex extends React.Component {
                                                 value={email}
                                                 onChange={event => {
                                                     this.onChange(event)
-                                                    {
-                                                        this.emailvalidate()
-                                                    }
+                                                    this.emailvalidate()
                                                 }}
                                                 spellCheck="false"
                                                 required
                                             />
                                             <span className="esummit-register-form-field-error-svg">
                                                 {email_error_bool === "" ? null :
-                                                    <img src={email_error_bool === "true" ? wrong : email_error_bool === "false" ? correct : null} />
+                                                    <img alt="correc/wrong" src={email_error_bool === "true" ? wrong : email_error_bool === "false" ? correct : null} />
                                                 }
                                             </span>
                                         </div>
@@ -229,17 +226,15 @@ export default class RegisterIndex extends React.Component {
                                                 value={password}
                                                 onChange={event => {
                                                     this.onChange(event)
-                                                    {
-                                                        this.passvalidate()
-                                                    }
+                                                    this.passvalidate()
                                                 }}
                                                 spellCheck="false"
                                                 required
                                             />
-                                            <span onClick={this.handleToggle}><img className="esummit-register-form-input-specific-eye-svg" src={!toggleEye ? eye : color_eye} /></span>
+                                            <span onClick={this.handleToggle}><img alt="" className="esummit-register-form-input-specific-eye-svg" src={!toggleEye ? eye : color_eye} /></span>
                                             <span className="esummit-register-form-field-error-svg">
                                                 {pass_error_bool === "" ? null :
-                                                    <img src={pass_error_bool === "true" ? wrong : pass_error_bool === "false" ? correct : null} />
+                                                    <img alt="correc/wrong" src={pass_error_bool === "true" ? wrong : pass_error_bool === "false" ? correct : null} />
                                                 }
                                             </span>
                                         </div>
