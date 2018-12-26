@@ -254,7 +254,6 @@ class PersonalDetails extends Component {
         const height = window.innerHeight
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
-        console.log(this.props.handleState)
         if (this.props.handleState.phone_no !== "") {
             this.phonevalidate()
         }
