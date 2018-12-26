@@ -182,11 +182,26 @@ class RegisterIndex extends React.Component {
         if (image_url) image_url = image_url.trim()
         if (email) email = email.trim()
         if (profile_type) profile_type = profile_type.trim()
-        if (gender) gender = gender.trim()
+
+        if (gender) {
+            gender = gender.trim()
+            if (gender === "Male") {
+                gender = "M"
+            }
+            if (gender === "Female") {
+                gender = "F"
+            }
+            if (gender === "Other") {
+                gender = "O"
+            }
+        }
         if (states) states = states.trim()
         if (college) college = college.trim()
         if (country) {
             country = country.value.trim()
+        }
+        else {
+            country = "India"
         }
         if (about_esummit) about_esummit = about_esummit.trim()
         if (tshirt_size) tshirt_size = tshirt_size.trim()
@@ -247,19 +262,30 @@ class RegisterIndex extends React.Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
-            console.log(response)
             alert("Network error")
         });
 
     }
     handleDetails = (data) => {
         this.setState({
-            data
+            phone_no: data.phone_no,
+            gender: data.gender.value,
+            enrollment_no: data.enrollment_no,
+            country: data.country,
+            states: data.states,
+            city: data.city,
+            college: data.college,
+            programme: data.programme,
+            year: data.year,
+            about_esummit: data.about_esummit,
+            tshirt_size: data.tshirt_size,
+            organisation_name: data.organisation_name,
+            industry: data.industry,
         })
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-                 
+
             }
             document
                 .getElementById("loader")

@@ -231,7 +231,6 @@ class PersonalDetails extends Component {
             organisation_name: organisation_name,
             industry: industry,
         }
-        console.log(data, "data")
         this.props.handleBack(data)
     }
     componentDidMount() {
