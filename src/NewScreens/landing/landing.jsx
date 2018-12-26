@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./css/landing.scss";
 import jump from "jump.js";
-import {Element} from "react-scroll";
+import { Element } from "react-scroll";
 import Testimonials from "./testimonials";
 import FAQBoard from "./faqs";
 import About from "./about";
@@ -31,16 +31,16 @@ export default class LandingPage extends Component {
   };
 
 
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(BASE_URL + "/v1/api/faqs/")
-    .then(res => {
-      this.setState({
-        faq:res.data,
+      .get(BASE_URL + "/v1/api/faqs/")
+      .then(res => {
+        this.setState({
+          faq: res.data,
 
-        
-      });
-    })
+
+        });
+      })
   }
 
   render() {
@@ -51,6 +51,7 @@ export default class LandingPage extends Component {
         <section id="screen1">
 
           <div className="land_screen1">
+
 
           <div className ="PcVid" > 
           <video  playsinline  muted autoplay="autoplay">
@@ -64,6 +65,7 @@ export default class LandingPage extends Component {
 
           
             <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
+
           </div>
         </section>
         <About />
@@ -74,7 +76,7 @@ export default class LandingPage extends Component {
         <Testimonials />
         <FAQBoard faqList={this.state.faq} />
 
-        <Element id ="talk" name="contact">
+        <Element id="talk" name="contact">
           <Footer />
         </Element>
       </div>

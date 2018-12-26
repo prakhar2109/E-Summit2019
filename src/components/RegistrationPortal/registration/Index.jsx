@@ -285,6 +285,7 @@ class RegisterIndex extends React.Component {
                     .style
                     .display = "none";
                 alert(response)
+
             });
         }
         else {
