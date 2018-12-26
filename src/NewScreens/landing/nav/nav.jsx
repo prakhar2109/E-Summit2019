@@ -14,7 +14,7 @@ class Nav extends Component {
     document.getElementById("body").style.paddingTop = height;
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     document.getElementById("body").style.paddingTop = 0;
 
   }
@@ -72,7 +72,7 @@ class Nav extends Component {
             </Link>
           </span>
 
-         <span>
+          <span>
             <Link
               activeClass="active"
               to="contact"
@@ -84,7 +84,7 @@ class Nav extends Component {
               Contact Us
             </Link>
           </span>
-          <span className = "eslogo">
+          <span className="eslogo">
             <NavLink to="/">
               <img alt="ESummit Logo" src={esummit} />
             </NavLink>
@@ -96,7 +96,7 @@ class Nav extends Component {
             <NavLink to="/ignite">Startup Ignite</NavLink>
           </span>
 
-          <span> 
+          <span>
             <NavLink to="/registration_portal/login">
               <span className="login">Log in</span>
             </NavLink>
