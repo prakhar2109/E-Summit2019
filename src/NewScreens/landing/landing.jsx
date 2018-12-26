@@ -44,7 +44,13 @@ export default class LandingPage extends Component {
       <div>
         <Nav />
         <section id="screen1">
+
           <div className="land_screen1">
+
+          <div id="player"></div>
+
+          
+          
             <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
           </div>
         </section>
