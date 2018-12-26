@@ -771,7 +771,7 @@ class PersonalDetails extends Component {
                                             value={college}
                                             onChange={event => {
                                                 this.onChange(event)
-                                                this.college_valiate()
+                                                this.college_validate()
                                             }}
                                             spellCheck="false"
                                             required
