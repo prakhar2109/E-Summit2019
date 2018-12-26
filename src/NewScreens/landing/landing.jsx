@@ -32,7 +32,7 @@ export default class LandingPage extends Component {
     .get(BASE_URL + "/v1/api/faqs/")
     .then(res => {
       this.setState({
-        faq:res.data.slice(0, 5),
+        faq:res.data,
 
         
       });

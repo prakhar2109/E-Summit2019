@@ -464,7 +464,7 @@ class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
                                         </div>
-                                        <div className="esummit-register-form-button"
+                                        <div className="esummit-register-form-button">
                                             <div className="esummit-register-form-button-back" onClick={this.handleFullSubmit}>GO TO DASHBOARD</div>
                                         </div>
                                     </div>
