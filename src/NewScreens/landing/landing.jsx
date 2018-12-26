@@ -49,7 +49,7 @@ export default class LandingPage extends Component {
         <section id="screen1">
 
           <div className="land_screen1">
-          <video id=""  src={Video} autoplay="autoplay"></video>
+          <video id="vid" autoplay  src={Video} autoplay="autoplay"></video>
           
             <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
           </div>

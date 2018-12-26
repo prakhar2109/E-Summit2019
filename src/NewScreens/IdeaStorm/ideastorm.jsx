@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./ideastorm.scss";
 import Header from "../../components/header";
-import FAQ from "../landing/faqs";
+import FAQ from "../../components/faqs";
 import esummit from "./static/es.png";
 import Eventfooter from "./footer/eventfooter.jsx";
 import Idea from "./static/idea.png";
