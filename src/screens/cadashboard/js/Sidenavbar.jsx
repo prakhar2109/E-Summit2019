@@ -25,7 +25,7 @@ export default class caLeaderboard extends Component {
   };
   handleLogout = () => {
     localStorage.removeItem("user_token");
-    window.location.href = "/login";
+    window.location.href = "/";
   };
   componentDidMount = () => {
     let token = localStorage.getItem("user_token");
@@ -113,10 +113,10 @@ export default class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-            <NavLink to="/dashboard/Viewprofile">
+          
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
-            </NavLink>
+         
             <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
