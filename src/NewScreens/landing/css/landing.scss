@@ -11,11 +11,16 @@
     }
 
 }
-
+a:hover {
+    text-decoration: none !important;
+}
 .land_screen1 {
-    height: 90vh;
+    
     width: 100vw;
+    padding: 3rem  0;
+    height:91vh;
  
+    background: #0D1313;
     padding: 5rem;
     display: grid;
     align-items: end;
@@ -24,7 +29,6 @@
     @include mobile {
         height: 80vh;
     }
-
     button {
         border: 2.5px solid #FFFFFF;
         box-sizing: border-box;
@@ -49,14 +53,26 @@
 
     }
 
-    #vid{
-        position: fixed;
-        top:0;
-        left:0;
-        bottom: 0;
-        right: 0;
-        z-index: -100;
-     
+     .PcVid{
+
+        video{
+            height:50vh !important;
+        }
+
+        @include mobile{
+            display: none;
+        }
+
+    }
+
+    .MobVid{
+        display: none;
+       
+        
+
+        @include mobile{
+            display:block;
+        }
     }
 
   
@@ -477,6 +493,7 @@
             color: #FFFFFF;
             margin-top: 12.5rem;
             text-align: center;
+            text-decoration: none ;
 
             @include mobile {
 
@@ -527,6 +544,7 @@
             color: #FFFFFF;
             font-weight: bold ; 
             padding-top: 16px;
+            text-decoration: none;
 
             @include mobile {
                 line-height: 15px;

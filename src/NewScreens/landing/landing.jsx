@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./css/landing.scss";
 import jump from "jump.js";
-import {Element} from "react-scroll";
+import { Element } from "react-scroll";
 import Testimonials from "./testimonials";
 import FAQBoard from "./faqs";
 import About from "./about";
@@ -13,7 +13,9 @@ import axios from "axios";
 import {BASE_URL} from "../../utils/urls";
 import {NavLink } from "react-router-dom";
 import MobileNav from "./mobile_nav/header";
-import Video from "./static/1.mp4";
+import VideoMP from "./static/WebsiteVideo.mp4";
+import VideoWebm from "./static/WebsiteVideo.webm";
+import VideoOGV from "./static/WebsiteVideo.ogv";
 
 
 
@@ -29,16 +31,16 @@ export default class LandingPage extends Component {
   };
 
 
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(BASE_URL + "/v1/api/faqs/")
-    .then(res => {
-      this.setState({
-        faq:res.data,
+      .get(BASE_URL + "/v1/api/faqs/")
+      .then(res => {
+        this.setState({
+          faq: res.data,
 
-        
-      });
-    })
+
+        });
+      })
   }
 
   render() {
@@ -49,9 +51,21 @@ export default class LandingPage extends Component {
         <section id="screen1">
 
           <div className="land_screen1">
-          <video id="vid"   src={Video} autoplay="autoplay"></video>
+
+
+          <div className ="PcVid" > 
+          <video  playsinline  muted autoplay="autoplay">
+              <source src = {VideoWebm} type ="video/webm"/> 
+              <source src={VideoMP} type="video/mp4" />
+              <source src={VideoOGV} type="video/ogg" />
+          </video>
+          </div>
+ 
+
+
           
             <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
+
           </div>
         </section>
         <About />
@@ -62,7 +76,7 @@ export default class LandingPage extends Component {
         <Testimonials />
         <FAQBoard faqList={this.state.faq} />
 
-        <Element id ="talk" name="contact">
+        <Element id="talk" name="contact">
           <Footer />
         </Element>
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
 import ViewMore from "./static/view_more.png";
+import {NavLink } from "react-router-dom"
 class Events extends Component {
   render() {
     return (
@@ -17,20 +18,26 @@ class Events extends Component {
             </p>
           </div>
           <div className="land_events_array">
-            <div className="conclave">
+          <div> 
+            <a href = "/ideastorm" target = "_blank">
+            <div className="conclave" >
               <span>
                 <p className="title">IDEASTORM</p>
                 <p className="tagline"></p>
               </span>
               <span>
                 <center>
+                   
                   <i>
                     
                     <img src={ViewMore} alt="view more" />
                   </i>
                   <p className="viewmore">VIEW MORE</p>
+                
                 </center>
               </span>
+            </div>
+</a>
             </div>
 
             <div className="workshop">
