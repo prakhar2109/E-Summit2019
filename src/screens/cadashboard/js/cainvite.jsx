@@ -1,12 +1,42 @@
 import React, { Component } from 'react'
 import "../css/cainvite.css";
+import { BASE_URL } from "../../../utils/urls";
+import axios from "axios";
+
 
 
 export default class Cainvite extends Component {
     state = {
         loading: false,
         visible: false,
+        invite_link : ""
       }
+
+
+      componentDidMount = () => {
+        let token = localStorage.getItem("user_token");
+        console.log(token);
+    
+        if (token !== undefined) {
+          axios
+            .get(BASE_URL + "/v1/api/user/profile", {
+              headers: {
+                Authorization: `Token ${token}`,
+              },
+            })
+            .then(res => {
+                console.log(res);
+             
+              this.setState({  
+                  invite_link : BASE_URL + "/v1/api/user/signup/?ref="+ res.data.esummit_id , 
+                  
+              });
+            })
+            .catch(response => {
+              console.log(response);
+            });
+        }
+      };
 
       
     viewMore() {
@@ -55,6 +85,7 @@ export default class Cainvite extends Component {
                         <button id="camyinputbutton" onClick={this.copyLink}>Copy link</button>
                     </div>
                 </div>
+{/*
 
                 <div id="show1" className="cainvite-register-parent">
 
@@ -128,6 +159,8 @@ export default class Cainvite extends Component {
                      </tbody>
                     </table>
                 </div>
+
+*/}
 
                 <div className="cainviteparent-heading">
                     Perks

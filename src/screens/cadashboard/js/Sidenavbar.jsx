@@ -132,7 +132,7 @@ export default class caLeaderboard extends Component {
             <div id="optionsToggle">
               
             {options}
-
+{/*
               <span>
                 <Link
                   to="/dashboard/offers"
@@ -147,6 +147,8 @@ export default class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
+
+                */}
               <span>
                 <Link
                   to="/dashboard/payment"
