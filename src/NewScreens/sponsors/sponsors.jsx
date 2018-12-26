@@ -17,9 +17,9 @@ export default class Sponsors extends Component {
         sponsors:res.data,
       });
 
-      console.log(this.state)
+      
     })
-  }
+  };
 
 
 
@@ -48,7 +48,9 @@ export default class Sponsors extends Component {
             {this.state.sponsors.map(update => {
               return (
                 <div className="sponsors_unit " key={update.id}>
-                  <div className="sonsors_logo" />
+                  <div className="sonsors_logo">
+                  <img src = {update.image} alt= {update.name} />
+                  </div>
                   <div className="sponsors_name">{update.name}</div>
                 </div>
               );

@@ -15,7 +15,7 @@
 .land_screen1 {
     height: 90vh;
     width: 100vw;
-    background: #0D1313;
+ 
     padding: 5rem;
     display: grid;
     align-items: end;
@@ -47,6 +47,16 @@
             
         }
 
+    }
+
+    #vid{
+        position: fixed;
+        top:0;
+        left:0;
+        bottom: 0;
+        right: 0;
+        z-index: -100;
+     
     }
 
   
