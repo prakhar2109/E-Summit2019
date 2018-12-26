@@ -1,5 +1,5 @@
 .suignite-parent{
-height:86vh;
+height:93vh;
 width:100vw;
 padding: 3.24vh 19.63vw;
 background:black;
@@ -76,7 +76,10 @@ width:48.54%;
 
 .suignite-parent-child2-img{
 height:49.07vh;
-background:red;
+
+text-align: center;
+font-size: 3rem;
+
 
 }
 .suignite-parent-child2-panel{
