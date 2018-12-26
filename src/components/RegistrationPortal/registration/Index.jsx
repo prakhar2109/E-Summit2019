@@ -209,7 +209,7 @@ class RegisterIndex extends React.Component {
             resend_email: resend_email,
             user_type: profile_type,
             country: country,
-            phone_no: phone_no,
+            phone: phone_no,
             gender: gender,
             enrollment_no: enrollment_no,
             college: college,
