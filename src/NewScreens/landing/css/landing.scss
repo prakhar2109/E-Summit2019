@@ -665,6 +665,8 @@
 .land_faq {
 
     padding: 7.6% 13.6vw;
+    z-index: 2;
+    background: white;
 
     @include mobile {
         padding: 32px;
