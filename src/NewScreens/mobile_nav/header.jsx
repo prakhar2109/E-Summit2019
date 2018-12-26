@@ -142,7 +142,7 @@ export default class ComingSoon extends Component {
                                         ? "esummit-navbarevent-cto-active"
                                         : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({isActive: "Events"})}>
-                                        <HashLink to="/#events">Events</HashLink>
+                                        <NavLink to="/registration_portal/register"> Register </NavLink>
                                     </p>
                                 </div>
 
@@ -155,7 +155,7 @@ export default class ComingSoon extends Component {
                                         ? "esummit-navbarevent-cto-active"
                                         : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({isActive: "Events"})}>
-                                        <HashLink to="/#events">Events</HashLink>
+                                           <NavLink to="/registration_portal/login"> Login </NavLink>
                                     </p>
                                 </div>
 

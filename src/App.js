@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm";
-
 import LandingPage from "./NewScreens/landing/landing";
 import Speakers from "./NewScreens/speakers/speakers";
 import Sponsors from "./NewScreens/sponsors/sponsors";
 import FAQBoard from "./NewScreens/faq/faq";
 import CampusAmbasder from "./NewScreens/ambasder/ambasder";
 import Registration from "./components/RegistrationPortal/Index";
-
 import ScrollToTop from "./screens/common/scrolltotop";
-
 import "antd/dist/antd.css";
-
 import Caindex from "./screens/cadashboard/js/index";
-
 import Payment from "./screens/cadashboard/js/payment";
-// import Contingent from "./screens/cadashboard/js/cacontigent"
 import Loadable from "react-loadable";
 import Loader from "./screens/common/loader";
 
@@ -27,56 +21,19 @@ import Loader from "./screens/common/loader";
 //     return <Loader />;
 //   }
 // };
-
-// const Login = Loadable({
-//   loader: () => import("./screens/login/login"),
-
-//   loading: () => <Loader />,
-// });
-
-// const Stepform = Loadable({
-//   loader: () => import("./components/Stepform"),
-
-//   loading: () => <Loader />,
-// });
-
-// const Timeline = Loadable({
-//   loader: () => import("./components/timeline/Index"),
-
-//   loading: () => <Loader />,
-// });
-
-// const HomePage = Loadable({
-//   loader: () => import("./screens/home/home"),
-//   loading: () => <Loader />,
-// });
+ 
 
 const ignite = Loadable({
-  loader: () => import("./NewScreens/startupignite/ignite"),
+  loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
-
-// const Register = Loadable({
-//   loader: () => import("./screens/register/register"),
-//   loading: () => <Loader />,
-// });
-
-// const RegisterPortalIndex = Loadable({
-//   loader: () => import("./components/RegistrationPortal/Index"),
-//   loading: () => <Loader />,
-// });
-
-
-// const SocialLogin = Loadable({
-//   loader: () => import("./components/Index"),
-//   loading: () => <Loader />,
-// });
+ 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      auth: localStorage.getItem("ca_token"),
+      auth: localStorage.getItem("user_token"),
     };
   }
 

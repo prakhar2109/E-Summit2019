@@ -259,7 +259,7 @@ class RegisterIndex extends React.Component {
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-                name: this.state.name
+                 
             }
             document
                 .getElementById("loader")
@@ -284,8 +284,8 @@ class RegisterIndex extends React.Component {
                     .getElementById("loader")
                     .style
                     .display = "none";
-                alert("Network error")
-                console.log(response)
+                alert(response)
+
             });
         }
         else {

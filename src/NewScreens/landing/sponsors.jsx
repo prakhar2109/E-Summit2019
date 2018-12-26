@@ -3,37 +3,25 @@ import Slider from "react-slick";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../../utils/urls"
 
 export default class Sponsors extends Component {
-  state = {
-    speakers: [
-      {
-        id: 1,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 2,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 3,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 4,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-      {
-        id: 5,
-        name: "Rohit Jha",
-        designation: "Founder ",
-      },
-    ],
+  componentDidMount(){
+    axios
+    .get(BASE_URL + "/v1/api/sponsors/")
+    .then(res => {
+      this.setState({
+        sponsors:res.data,
+      });
+
+      
+    })
   };
+
+  state = {
+    sponsors :[],
+  }
   render() {
     let settings = {
       dots: false,
@@ -51,10 +39,12 @@ export default class Sponsors extends Component {
 
             <div className="speaker_slidder">
               <Slider {...settings}>
-                {this.state.speakers.map(update => {
+                {this.state.sponsors.map(update => {
                   return (
                     <div key={update.id}>
-                      <div className="img_holder" />
+                      <div className="img_holder" >
+                          <img src = {update.image} alt = {update.name} />
+                      </div>
                       <p className="name">{update.name}</p>
                       <p className="designation">{update.designation}</p>
                     </div>
