@@ -5,40 +5,27 @@ import img1 from "./1.png";
 import Nav from "../nav/nav";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import MobileNav from "../mobile_nav/header";
+import axios from "axios";
+import { BASE_URL } from "../../utils/urls"
 export default class Sponsors extends Component {
+
+  componentDidMount(){
+    axios
+    .get(BASE_URL + "/v1/api/sponsors/")
+    .then(res => {
+      this.setState({
+        sponsors:res.data,
+      });
+
+      console.log(this.state)
+    })
+  }
+
+
+
+
   state = {
     sponsors: [
-      {
-        name: "Rohit Jha",
-        id: 1,
-      },
-
-      {
-        name: "Rohit Jha",
-        id: 4,
-      },
-
-      {
-        name: "Rohit Jha",
-        id: 3,
-      },
-
-      {
-        name: "Rohit Jha",
-        id: 2,
-      },
-
-
-      {
-        name: "Rohit Jha",
-        id: 5,
-      },
-      
-
-      {
-        name: "Rohit Jha",
-        id: 6,
-      },
     ],
   };
   render() {

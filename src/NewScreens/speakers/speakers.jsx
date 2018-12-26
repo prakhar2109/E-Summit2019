@@ -15,13 +15,7 @@ export default class speakers extends Component {
       .then(res => {
         this.setState({
           speakers: res.data,
-
-
         });
-
-
-
-
       })
   }
   state = {

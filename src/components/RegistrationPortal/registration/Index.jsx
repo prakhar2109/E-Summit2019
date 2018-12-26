@@ -259,7 +259,7 @@ class RegisterIndex extends React.Component {
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-                name: this.state.name
+                 
             }
             document
                 .getElementById("loader")
@@ -267,7 +267,7 @@ class RegisterIndex extends React.Component {
                 .display = "flex";
             axios({
                 method: "post",
-                url: BASE_URL + "v1/api/verification",
+                url: BASE_URL + "/v1/api/verification",
                 data: data_details
             }).then((r) => {
                 this.setState({
@@ -284,7 +284,7 @@ class RegisterIndex extends React.Component {
                     .getElementById("loader")
                     .style
                     .display = "none";
-                alert("Network error")
+                alert(response)
             });
         }
         else {

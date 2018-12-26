@@ -73,7 +73,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "Events" })}
+                  onClick={() => this.setState({ isActive: "Events",displaynavbar: !this.state.displaynavbar, })}
                 >
                   <Link
                     activeClass="active"
@@ -101,7 +101,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "speakers" })}
+                  onClick={() => this.setState({ isActive: "speakers",displaynavbar: !this.state.displaynavbar, })}
                 >
                   <Link
                     activeClass="active"
@@ -129,7 +129,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "Sponsors" })}
+                  onClick={() => this.setState({ isActive: "Sponsors",displaynavbar: !this.state.displaynavbar,})}
                 >
                   <Link
                     activeClass="active"
@@ -157,7 +157,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "FAQs" })}
+                  onClick={() => this.setState({ isActive: "FAQs" ,displaynavbar: !this.state.displaynavbar,})}
                 >
                   <Link
                     activeClass="active"
@@ -185,7 +185,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "Contact" })}
+                  onClick={() => this.setState({ isActive: "Contact",displaynavbar: !this.state.displaynavbar, })}
                 >
                   <Link
                     activeClass="active"
@@ -213,7 +213,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "Ambassador" })}
+                  onClick={() => this.setState({ isActive: "Ambassador" ,displaynavbar: !this.state.displaynavbar,})}
                 >
                   <NavLink to="/campusambasder">Campus Ambassador</NavLink>
                 </p>
@@ -232,7 +232,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "Events" })}
+                  onClick={() => this.setState({ isActive: "Events" ,displaynavbar: !this.state.displaynavbar,})}
                 >
                   <NavLink to="/registration_portal/register">
                     {" "}
@@ -254,7 +254,7 @@ export default class ComingSoon extends Component {
                       ? "esummit-navbarevent-cto-active"
                       : "esummit-navbarevent-cto-inactive"
                   }
-                  onClick={() => this.setState({ isActive: "Events" })}
+                  onClick={() => this.setState({ isActive: "Events" ,displaynavbar: !this.state.displaynavbar,})}
                 >
                   <NavLink to="/registration_portal/login"> Login </NavLink>
                 </p>
