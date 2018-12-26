@@ -13,7 +13,9 @@ import axios from "axios";
 import {BASE_URL} from "../../utils/urls";
 import {NavLink } from "react-router-dom";
 import MobileNav from "./mobile_nav/header";
-import Video from "./static/1.mp4";
+import VideoMP from "./static/WebsiteVideo.mp4";
+import VideoWebm from "./static/WebsiteVideo.webm";
+import VideoOGV from "./static/WebsiteVideo.ogv";
 
 
 
@@ -49,7 +51,17 @@ export default class LandingPage extends Component {
         <section id="screen1">
 
           <div className="land_screen1">
-          <video id="vid"   src={Video} autoplay="autoplay"></video>
+
+          <div className ="PcVid" > 
+          <video  loop autoplay="autoplay">
+              <source src = {VideoWebm} type ="video/webm"/> 
+              <source src={VideoMP} type="video/mp4" />
+              <source src={VideoOGV} type="video/ogg" />
+          </video>
+          </div>
+ 
+
+
           
             <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
           </div>
