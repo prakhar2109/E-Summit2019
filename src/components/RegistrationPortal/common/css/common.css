@@ -32,12 +32,12 @@
     width: 30.5%;
 }
 .esummit-common-second-child{
-    width: 80%;
+    width: 51%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     margin-top: 20px;
-    position: absolute;
+
 }
 .esummit-common-dotted-line{
     border-top:2px dashed #ffffff;
@@ -71,4 +71,9 @@
     .esummit-common-grand-child-first img{
         height: 60px;
     }
+    .esummit-common-second-child{
+        position: absolute;
+        width: 100%;
+    }
+    
 }
