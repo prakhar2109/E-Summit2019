@@ -1,0 +1,68 @@
+
+@mixin mobile {
+    @media(max-width: 1000px) {
+        @content;
+    }
+
+}
+
+
+.coordinator {
+    padding: 120px 10vw;
+    display: block;
+    border-bottom: 1px solid #B2B2B2;
+
+    @include mobile {
+        padding: 44px 32px;
+    }
+
+    .head1 {
+        color: #1A4D66;
+        font-family: "ProximaNova-Bold";
+    }
+
+    .coordinator_grid {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        grid-template-columns: 30% 30% 30%;
+        padding-top: 72px;
+        font-family: Proxima-nova-regular;
+
+        @include mobile {
+            display: block;
+            padding-top: 24px;
+        }
+
+        .coordinator_unit {
+
+            @include mobile {
+                margin: 16px 0;
+            }
+
+            p {
+                line-height: 41px;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+                margin: 0;
+                padding: 0;
+                color: #000000;
+               
+
+
+                @include mobile {
+                    line-height: 18px;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+
+                    color: #000000;
+
+                }
+            }
+
+            p:first-child {
+                font-family: ProximaNova-Bold;
+            }
+        }
+    }
+}

@@ -1,88 +1,76 @@
 import React, { Component } from "react";
-// import HomePage from "./screens/home/home";
-// import Header from "./screens/header/header";
-// import Login from "./screens/login/login";
-// import Register from "./screens/register/register";
-// import ignite from "./screens/ignite/ignite"
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm";
 
-// import LeaderBoard from "./screens/caLeaderboard/js/caLeaderboard"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm"
+import LandingPage from "./NewScreens/landing/landing";
+import Speakers from "./NewScreens/speakers/speakers";
+import Sponsors from "./NewScreens/sponsors/sponsors";
+import FAQBoard from "./NewScreens/faq/faq";
+import CampusAmbasder from "./NewScreens/ambasder/ambasder";
+import Registration from "./components/RegistrationPortal/Index";
 
-import Loadable from 'react-loadable';
-import Loader from './screens/common/loader';
+import ScrollToTop from "./screens/common/scrolltotop";
 
+import "antd/dist/antd.css";
 
+import Caindex from "./screens/cadashboard/js/index";
 
-// import CaLeaderboard from './screens/caLeaderboard/js/caLeaderboard';
+import Payment from "./screens/cadashboard/js/payment";
+// import Contingent from "./screens/cadashboard/js/cacontigent"
+import Loadable from "react-loadable";
+import Loader from "./screens/common/loader";
+
 // const Loading = ({ error }) => {
 //   if (error) {
-//     return <div>Error loading component</div>;
+//     return <div> Error loading component </div>;
 //   } else {
 //     return <Loader />;
 //   }
 // };
 
-const Login = Loadable({
-  loader: () => import("./screens/login/login"),
+// const Login = Loadable({
+//   loader: () => import("./screens/login/login"),
 
-  loading: () => <Loader />,
-
-});
-
-
-const Stepform = Loadable({
-  loader: () => import("./components/Stepform"),
-
-  loading: () => <Loader />,
-
-});
-
-const Timeline = Loadable({
-  loader: () => import("./components/timeline/Index"),
-
-  loading: () => <Loader />,
-
-});
-
-
-const HomePage = Loadable({
-  loader: () => import("./screens/home/home"),
-  loading: () => <Loader />,
-});
-
-const ignite = Loadable({
-  loader: () => import("./screens/ignite/ignite"),
-  loading: () => <Loader />,
-});
-
-const Register = Loadable({
-  loader: () => import("./screens/register/register"),
-  loading: () => <Loader />,
-});
-
-const RegisterPortalIndex = Loadable({
-  loader: () => import("./components/RegistrationPortal/Index"),
-  loading: () => <Loader />,
-});
-
-
-
-// const Lfooter = Loadable({
-//   loader: () => import("./screens/footer/landingpagefooter"),
-//   loading: () => Loading
+//   loading: () => <Loader />,
 // });
 
-const LeaderBoard = Loadable({
-  loader: () => import("./screens/caLeaderboard/js/caLeaderboard"),
+// const Stepform = Loadable({
+//   loader: () => import("./components/Stepform"),
+
+//   loading: () => <Loader />,
+// });
+
+// const Timeline = Loadable({
+//   loader: () => import("./components/timeline/Index"),
+
+//   loading: () => <Loader />,
+// });
+
+// const HomePage = Loadable({
+//   loader: () => import("./screens/home/home"),
+//   loading: () => <Loader />,
+// });
+
+const ignite = Loadable({
+  loader: () => import("./NewScreens/startupignite/ignite"),
   loading: () => <Loader />,
 });
 
-const SocialLogin = Loadable({
-  loader: () => import("./components/Index"),
-  loading: () => <Loader />,
-});
+// const Register = Loadable({
+//   loader: () => import("./screens/register/register"),
+//   loading: () => <Loader />,
+// });
 
+// const RegisterPortalIndex = Loadable({
+//   loader: () => import("./components/RegistrationPortal/Index"),
+//   loading: () => <Loader />,
+// });
+
+
+// const SocialLogin = Loadable({
+//   loader: () => import("./components/Index"),
+//   loading: () => <Loader />,
+// });
 
 class App extends Component {
   constructor() {
@@ -94,53 +82,32 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <Switch>
-            <React.Fragment>
-              {/* <div id = "main_class" className ="main_class">  */}
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/social" component={SocialLogin} />
-              <Route exact path="/timeline" component={Timeline} />
-              {/* <Route exact path="/register" component={Register} />
-            {
-              this.state.auth ? <Route exact path="/dashboard" component={LeaderBoard} /> :
-                <Route exact path="/login" component={Login} />
-            } */}
+      <BrowserRouter>
+        <React.Fragment>
+          <div>
+            <Switch>
+              <ScrollToTop>
+                <Route path="/ideastorm" component={IdeaStorm} />
+                <Route path="/" component={LandingPage} exact />
+                <Route path="/speakers" component={Speakers} />
+                <Route path="/sponsors" component={Sponsors} />
+                <Route path="/faq" component={FAQBoard} />
+                <Route path="/campusambasder" component={CampusAmbasder} />
+                <Route path="/ignite" component={ignite} />
+                <Route path="/registration_portal" component={Registration} />
+                <Route exact path="/payment" component={Payment} />
+                <Route path="/dashboard/" component={Caindex} />
+                {/* <Route path="/iitrdashboard/" component={Iitrindex} />
+                <Route path="/noniitrdashboard/" component={Noniitrindex} />
+                <Route path="/prodashboard/" component={Professionalindex} />
+                <Route path="/professordashboard/" component={Professorindex} />
+                <Route exact path="/cont" component={Contingent} /> */}
 
-              <Route exact path="/register" component={Register} />
-
-              <Route exact path="/stepform" component={Stepform} />
-
-              <Route exact path="/dashboard/" component={LeaderBoard} />
-
-
-              <Route path="/registration_portal/" component={RegisterPortalIndex} />
-
-
-              <Route path="/ignite" component={ignite} />
-              <Route path="/loader" component={Loader} />
-              {/* <Route path="/footer" component={Lfooter} /> */}
-              {/* <Route path="/Rselect" component={RSelect} /> */}
-
-              {/* </div> */}
-
-
-              <Route exact path="/dashboard/" component={LeaderBoard} />
-              <Route path="/ignite" component={ignite} />
-              <Route path="/loader" component={Loader} />
-
-              <Route path="/ideastorm" component={IdeaStorm} />
-              {/* <Route path="/footer" component={Lfooter} /> */}
-              {/* <Route path="/Rselect" component={RSelect} /> */}
-
-              {/* </div> */}
-
-            </React.Fragment>
-          </Switch>
-        </div>
-      </Router>
+              </ScrollToTop>
+            </Switch>
+          </div>
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }

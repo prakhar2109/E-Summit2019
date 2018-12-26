@@ -15,6 +15,7 @@ import ProfileType from "./ProfileType"
 import PersonalDetails from './PersonalDetails';
 import axios from "axios"
 import sample_image from "./sample_image.jpg"
+import { BASE_URL } from '../../../utils/urls';
 
 const styles = theme => ({
     root: {
@@ -89,6 +90,10 @@ class RegisterIndex extends React.Component {
             otp: "",
             confirm_otp: "",
             resend_email: "",
+            year: "",
+            tshirt_size: "",
+            programme: "",
+            about_esummit: "",
             email_verified: false,
             profile_type: "",
             country: "",
@@ -98,16 +103,15 @@ class RegisterIndex extends React.Component {
             college: "",
             city: "",
             states: "",
-            country: "",
+            organisation_name: "",
+            industry: "",
             social_signup: false
         }
     }
 
     handleAccountSetup = (data) => {
         this.setState({
-            // otp: data.otp,
-            // confirm_otp: data.confirm_otp,
-            // email_verified: data.email_verified,
+           
             name: data.name,
             email: data.email,
             password: data.password,
@@ -130,17 +134,6 @@ class RegisterIndex extends React.Component {
             activeStep: this.state.activeStep + 1
         })
     }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.activeStep === 3) {
-        }
-        else if (this.state.activeStep === 0) {
-
-        }
-        else {
-            console.log("else")
-        }
-    }
 
 
     responseFacebook = (response) => {
@@ -161,6 +154,103 @@ class RegisterIndex extends React.Component {
             social_signup: response.social_signup
         })
     }
+    handleFullSubmit = () => {
+        let {
+            name,
+            email,
+            image_url,
+            password,
+            confirm_password,
+            resend_email,
+            year,
+            tshirt_size,
+            programme,
+            about_esummit,
+            profile_type,
+            country,
+            phone_no,
+            gender,
+            enrollment_no,
+            college,
+            city,
+            states,
+            organisation_name,
+            industry, } = this.state
+
+        if (name) name = name.trim()
+        if (phone_no) phone_no = phone_no.trim()
+        if (image_url) image_url = image_url.trim()
+        if (email) email = email.trim()
+        if (profile_type) profile_type = profile_type.trim()
+        if (gender) gender = gender.trim()
+        if (states) states = states.trim()
+        if (college) college = college.trim()
+        if (country) {
+            country = country.value.trim()
+        }
+        if (about_esummit) about_esummit = about_esummit.trim()
+        if (tshirt_size) tshirt_size = tshirt_size.trim()
+        if (password) password = password.trim()
+        if (confirm_password) confirm_password = confirm_password.trim()
+        if (year) year = year.trim()
+        if (programme) programme = programme.trim()
+        if (enrollment_no) enrollment_no = enrollment_no.trim()
+        if (resend_email) resend_email = resend_email.trim()
+        if (industry) industry = industry.trim()
+        if (organisation_name) organisation_name = organisation_name.trim()
+
+
+        let data = {
+            name: name,
+            email: email,
+            image_url: image_url,
+            password: password,
+            confirm_password: confirm_password,
+            resend_email: resend_email,
+            user_type: profile_type,
+            country: country,
+            phone_no: phone_no,
+            gender: gender,
+            enrollment_no: enrollment_no,
+            college: college,
+            city: city,
+            states: states,
+            organisation_name: organisation_name,
+            industry: industry,
+            tshirt_size: tshirt_size,
+            about_esummit: about_esummit,
+            year: year
+        }
+        document
+            .getElementById("loader")
+            .style
+            .display = "flex";
+        axios({
+            method: "post",
+            url: BASE_URL + "v1/api/user/signup",
+            data: data
+        }).then((r) => {
+            var d = new Date();
+            d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+
+            if (r.data.token) {
+                localStorage.setItem("user_token", r.data.token);
+            }
+            window.location.href = "/dashboard/task";
+            document
+                .getElementById("loader")
+                .style
+                .display = "none";
+
+        }).catch((response) => {
+            document
+                .getElementById("loader")
+                .style
+                .display = "none";
+            alert("Network error")
+        });
+
+    }
     handleDetails = (data) => {
         this.setState({
             data
@@ -176,7 +266,7 @@ class RegisterIndex extends React.Component {
                 .display = "flex";
             axios({
                 method: "post",
-                url: "http://localhost:8000/edc/email",
+                url: BASE_URL + "v1/api/user/verification",
                 data: data_details
             }).then((r) => {
                 this.setState({
@@ -309,7 +399,7 @@ class RegisterIndex extends React.Component {
                                 <div className="esummit-regsiter-form-heading-child-second">
                                     Let’s begin with setting up your account
                             </div> : <div className="esummit-regsiter-form-heading-child-second">
-                                    Congrats!You have successfully registered for E-Summit’19
+                                    Congrats! You have successfully registered for E-Summit’19
                             </div>}
                         </div>
                         <div>
@@ -374,8 +464,8 @@ class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
                                         </div>
-                                        <div className="esummit-register-form-button">
-                                            <div className="esummit-register-form-button-back">GO TO DASHBOARD</div>
+                                        <div className="esummit-register-form-button"
+                                            <div className="esummit-register-form-button-back" onClick={this.handleFullSubmit}>GO TO DASHBOARD</div>
                                         </div>
                                     </div>
                                     : null

@@ -67,7 +67,6 @@ class PersonalDetails extends Component {
         }
     }
     EmptyValidation = (data) => {
-        console.log(data, "dahjdvhagj")
         let variable
         if (data === "phone_no") {
             variable = data.substring(0, 5)
@@ -111,7 +110,6 @@ class PersonalDetails extends Component {
 
 
     handleSubmit = () => {
-        console.log(this.state.country, "country")
         if (this.state.phone_no === "") {
             return this.EmptyValidation("phone_no")
         }
@@ -256,6 +254,7 @@ class PersonalDetails extends Component {
         const height = window.innerHeight
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
+        console.log(this.props.handleState)
         if (this.props.handleState.phone_no !== "") {
             this.phonevalidate()
         }
@@ -367,6 +366,12 @@ class PersonalDetails extends Component {
     }
     handleCountryChange = (selectedOption) => {
         this.setState({ country: selectedOption });
+    };
+    handleOrganisationChange = (selectedOption) => {
+        this.setState({ organisation_name: selectedOption });
+    };
+    handleIndustryChange = (selectedOption) => {
+        this.setState({ industry: selectedOption });
     };
     // custom_validate = (data) => {
     //     const [custom, setData] = useState(data)
@@ -592,16 +597,14 @@ class PersonalDetails extends Component {
                             value={phone_no}
                             onChange={event => {
                                 this.onChange(event)
-                                {
-                                    this.phonevalidate()
-                                }
+                                this.phonevalidat()
                             }}
                             spellCheck="false"
                             required
                         />
                         <span className="esummit-register-form-field-error-svg">
                             {phone_error_bool === "" ? null :
-                                <img src={phone_error_bool === "true" ? wrong : phone_error_bool === "false" ? correct : null} />
+                                <img alt="correc/wrong" src={phone_error_bool === "true" ? wrong : phone_error_bool === "false" ? correct : null} />
                             }
                         </span>
                     </div>
@@ -615,15 +618,13 @@ class PersonalDetails extends Component {
                             value={gender}
                             onChange={event => {
                                 this.handleGenderChange(event)
-                                {
-                                    this.gender_validate()
-                                }
+                                this.gender_validate()
                             }}
                             options={this.getGender()}
                             placeholder="Gender" />
                         <span className="esummit-register-form-field-error-svg">
                             {gender_error_bool === "" ? null :
-                                <img src={gender_error_bool === "true" ? wrong : gender_error_bool === "false" ? correct : null} />
+                                <img alt="correc/wrong" src={gender_error_bool === "true" ? wrong : gender_error_bool === "false" ? correct : null} />
                             }
                         </span>
                     </div>
@@ -644,16 +645,14 @@ class PersonalDetails extends Component {
                                 value={enrollment_no}
                                 onChange={event => {
                                     this.onChange(event)
-                                    {
-                                        this.enrollvalidate()
-                                    }
+                                    this.enrollvalidate()
                                 }}
                                 spellCheck="false"
                                 required
                             />
                             <span className="esummit-register-form-field-error-svg">
                                 {enroll_error_bool === "" ? null :
-                                    <img src={enroll_error_bool === "true" ? wrong : enroll_error_bool === "false" ? correct : null} />
+                                    <img alt="correc/wrong" src={enroll_error_bool === "true" ? wrong : enroll_error_bool === "false" ? correct : null} />
                                 }
                             </span>
                         </div>
@@ -671,16 +670,14 @@ class PersonalDetails extends Component {
                                         value={country}
                                         onChange={event => {
                                             this.handleCountryChange(event)
-                                            {
-                                                this.country_validate()
-                                            }
+                                            this.country_validate()
 
                                         }}
                                         options={this.getCountries()}
                                         placeholder="Enter your country name" />
                                     <span className="esummit-register-form-field-error-svg">
                                         {country_error_bool === "" ? null :
-                                            <img src={country_error_bool === "true" ? wrong : country_error_bool === "false" ? correct : null} />
+                                            <img alt="correc/wrong" src={country_error_bool === "true" ? wrong : country_error_bool === "false" ? correct : null} />
                                         }
                                     </span>
                                 </div>
@@ -698,15 +695,13 @@ class PersonalDetails extends Component {
                                                 value={states}
                                                 onChange={event => {
                                                     this.handleStateChange(event)
-                                                    {
-                                                        this.state_validate()
-                                                    }
+                                                    this.state_validate()
                                                 }}
                                                 options={this.getStates()}
                                                 placeholder="Enter your state name" />
                                             <span className="esummit-register-form-field-error-svg">
                                                 {state_error_bool === "" ? null :
-                                                    <img src={state_error_bool === "true" ? wrong : state_error_bool === "false" ? correct : null} />
+                                                    <img alt="correc/wrong" src={state_error_bool === "true" ? wrong : state_error_bool === "false" ? correct : null} />
                                                 }
                                             </span>
                                         </div>
@@ -722,9 +717,7 @@ class PersonalDetails extends Component {
                                                 required={true}
                                                 onChange={event => {
                                                     this.handleCityChange(event)
-                                                    {
-                                                        this.city_validate()
-                                                    }
+                                                    this.city_validate()
                                                 }}
                                                 options={states === ""
                                                     ? []
@@ -733,7 +726,7 @@ class PersonalDetails extends Component {
                                                 value={city} />
                                             <span className="esummit-register-form-field-error-svg">
                                                 {city_error_bool === "" ? null :
-                                                    <img src={city_error_bool === "true" ? wrong : city_error_bool === "false" ? correct : null} />
+                                                    <img alt="correc/wrong" src={city_error_bool === "true" ? wrong : city_error_bool === "false" ? correct : null} />
                                                 }
                                             </span>
                                         </div>
@@ -749,16 +742,14 @@ class PersonalDetails extends Component {
                                                 required={true}
                                                 onChange={event => {
                                                     this.handleCollegeChange(event)
-                                                    {
-                                                        this.college_validate()
-                                                    }
+                                                    this.college_validate()
                                                 }}
                                                 options={colleges[states.value]}
                                                 clearable={false}
                                                 value={college} />
                                             <span className="esummit-register-form-field-error-svg">
                                                 {college_error_bool === "" ? null :
-                                                    <img src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
+                                                    <img alt="correc/wrong" src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
                                                 }
                                             </span>
                                         </div>
@@ -780,16 +771,14 @@ class PersonalDetails extends Component {
                                             value={college}
                                             onChange={event => {
                                                 this.onChange(event)
-                                                {
-                                                    this.college_validate()
-                                                }
+                                                this.college_valiate()
                                             }}
                                             spellCheck="false"
                                             required
                                         />
                                         <span className="esummit-register-form-field-error-svg">
                                             {college_error_bool === "" ? null :
-                                                <img src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
+                                                <img alt="correc/wrong" src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>
@@ -806,15 +795,13 @@ class PersonalDetails extends Component {
                                             value={programme}
                                             onChange={event => {
                                                 this.handleProgrammeChange(event)
-                                                {
-                                                    this.programme_validate()
-                                                }
+                                                this.programme_validate()
                                             }}
                                             options={this.getProgrammes()}
                                             placeholder="Select your programme" />
                                         <span className="esummit-register-form-field-error-svg">
                                             {programme_error_bool === "" ? null :
-                                                <img src={programme_error_bool === "true" ? wrong : programme_error_bool === "false" ? correct : null} />
+                                                <img alt="correc/wrong" src={programme_error_bool === "true" ? wrong : programme_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>
@@ -828,15 +815,13 @@ class PersonalDetails extends Component {
                                             value={year}
                                             onChange={event => {
                                                 this.handleYearChange(event)
-                                                {
-                                                    this.year_validate()
-                                                }
+                                                this.year_validate()
                                             }}
                                             options={this.getYear()}
                                             placeholder="Select your year" />
                                         <span className="esummit-register-form-field-error-svg">
                                             {year_error_bool === "" ? null :
-                                                <img src={year_error_bool === "true" ? wrong : year_error_bool === "false" ? correct : null} />
+                                                <img alt="correc/wrong" src={year_error_bool === "true" ? wrong : year_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>
@@ -854,15 +839,13 @@ class PersonalDetails extends Component {
                                             value={about_esummit}
                                             onChange={event => {
                                                 this.handleAboutEsummitChange(event)
-                                                {
-                                                    this.about_esummit_validate()
-                                                }
+                                                this.about_esummit_validate()
                                             }}
                                             options={this.getAbout()}
                                             placeholder="Select your programme" />
                                         <span className="esummit-register-form-field-error-svg">
                                             {about_esummit_error_bool === "" ? null :
-                                                <img src={about_esummit_error_bool === "true" ? wrong : about_esummit_error_bool === "false" ? correct : null} />
+                                                <img alt="correc/wrong" src={about_esummit_error_bool === "true" ? wrong : about_esummit_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>
@@ -876,15 +859,13 @@ class PersonalDetails extends Component {
                                             value={tshirt_size}
                                             onChange={event => {
                                                 this.handleTshirtChange(event)
-                                                {
-                                                    this.tshirt_validate()
-                                                }
+                                                this.tshirt_validate()
                                             }}
                                             options={this.getTshirt()}
                                             placeholder="Select your t-shirt size" />
                                         <span className="esummit-register-form-field-error-svg">
                                             {tshirt_error_bool === "" ? null :
-                                                <img src={tshirt_error_bool === "true" ? wrong : tshirt_error_bool === "false" ? correct : null} />
+                                                <img alt="correc/wrong" src={tshirt_error_bool === "true" ? wrong : tshirt_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>
@@ -907,10 +888,8 @@ class PersonalDetails extends Component {
                                             autoCapitalize="off"
                                             value={organisation_name}
                                             onChange={event => {
-                                                this.handleTshirtChange(event)
-                                                {
-                                                    this.organisation_validate()
-                                                }
+                                                this.handleOrganisationChange(event)
+                                                this.organisation_validate()
                                             }
                                             }
                                             spellCheck="false"
@@ -918,7 +897,7 @@ class PersonalDetails extends Component {
                                         />
                                         <span className="esummit-register-form-field-error-svg">
                                             {organisation_error_bool === "" ? null :
-                                                <img src={organisation_error_bool === "true" ? wrong : organisation_error_bool === "false" ? correct : null} />
+                                                <img alt="correc/wrong" src={organisation_error_bool === "true" ? wrong : organisation_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>
@@ -937,17 +916,15 @@ class PersonalDetails extends Component {
                                             autoCapitalize="off"
                                             value={industry}
                                             onChange={event => {
-                                                this.handleTshirtChange(event)
-                                                {
-                                                    this.industry_validate()
-                                                }
+                                                this.handleIndustryChange(event)
+                                                this.industry_validate()
                                             }}
                                             spellCheck="false"
                                             required
                                         />
                                         <span className="esummit-register-form-field-error-svg">
                                             {industry_error_bool === "" ? null :
-                                                <img src={industry_error_bool === "true" ? wrong : industry_error_bool === "false" ? correct : null} />
+                                                <img alt="correct/wrong" src={industry_error_bool === "true" ? wrong : industry_error_bool === "false" ? correct : null} />
                                             }
                                         </span>
                                     </div>

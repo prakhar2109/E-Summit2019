@@ -8,7 +8,7 @@ class Footer extends Component {
     }
     render() {
         return (
-            <section id="foot">
+            <section id="foot" name="test1"  >
 
                     <center>
 

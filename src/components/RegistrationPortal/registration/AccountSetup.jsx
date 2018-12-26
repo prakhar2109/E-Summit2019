@@ -318,16 +318,14 @@ export default class AccountSetup extends Component {
                                     value={name}
                                     onChange={event => {
                                         this.onChange(event)
-                                        {
-                                            this.namevalidate()
-                                        }
+                                        this.namevalidate()
                                     }}
                                     spellCheck="false"
                                     required
                                 />
                                 <span className="esummit-register-form-field-error-svg">
                                     {name_error_bool === "" ? null :
-                                        <img src={name_error_bool === "true" ? wrong : name_error_bool === "false" ? correct : null} />
+                                        <img alt="correc/wrong" src={name_error_bool === "true" ? wrong : name_error_bool === "false" ? correct : null} />
                                     }
                                 </span>
                             </div>
@@ -348,16 +346,14 @@ export default class AccountSetup extends Component {
                                     value={email}
                                     onChange={event => {
                                         this.onChange(event)
-                                        {
-                                            this.emailvalidate()
-                                        }
+                                        this.emailvalidate()
                                     }}
                                     spellCheck="false"
                                     required
                                 />
                                 <span className="esummit-register-form-field-error-svg">
                                     {email_error_bool === "" ? null :
-                                        <img src={email_error_bool === "true" ? wrong : email_error_bool === "false" ? correct : null} />
+                                        <img alt="correc/wrong" src={email_error_bool === "true" ? wrong : email_error_bool === "false" ? correct : null} />
                                     }
                                 </span>
                             </div>
@@ -378,17 +374,15 @@ export default class AccountSetup extends Component {
                                     value={password}
                                     onChange={event => {
                                         this.onChange(event)
-                                        {
-                                            this.passvalidate()
-                                        }
+                                        this.passvalidate()
                                     }}
                                     spellCheck="false"
                                     required
                                 />
-                                <span onClick={this.handleToggle}><img className="esummit-register-form-input-specific-eye-svg" src={!toggleEye ? eye : color_eye} /></span>
+                                <span onClick={this.handleToggle}><img alt="images" className="esummit-register-form-input-specific-eye-svg" src={!toggleEye ? eye : color_eye} /></span>
                                 <span className="esummit-register-form-field-error-svg">
                                     {pass_error_bool === "" ? null :
-                                        <img src={pass_error_bool === "true" ? wrong : pass_error_bool === "false" ? correct : null} />
+                                        <img alt="correc/wrong" src={pass_error_bool === "true" ? wrong : pass_error_bool === "false" ? correct : null} />
                                     }
                                 </span>
                             </div>
@@ -402,7 +396,7 @@ export default class AccountSetup extends Component {
                                         id="inputConfirmPassword"
                                         type="password"
                                         className={confirmpass_error === "" ? null : "esummit-register-form-field-error-text"}
-                                        placeholder="Enter your password again for conformation"
+                                        placeholder="Enter your password again for confirmation"
                                         name="confirm_password"
                                         autoCorrect="off"
                                         autoComplete="off"
@@ -410,17 +404,15 @@ export default class AccountSetup extends Component {
                                         value={confirm_password}
                                         onChange={event => {
                                             this.onChange(event)
-                                            {
-                                                this.confirmpassvalidate()
-                                            }
+                                            this.confirmpassvalidate()
                                         }}
                                         spellCheck="false"
                                         required
                                     />
-                                    <span onClick={this.handleConfirmToggle}><img className="esummit-register-form-input-specific-eye-svg" src={!toggleConfirmEye ? eye : color_eye} /></span>
+                                    <span onClick={this.handleConfirmToggle}><img alt="images" className="esummit-register-form-input-specific-eye-svg" src={!toggleConfirmEye ? eye : color_eye} /></span>
                                     <span className="esummit-register-form-field-error-svg">
                                         {confirmpass_error_bool === "" ? null :
-                                            <img src={confirmpass_error_bool === "true" ? wrong : confirmpass_error_bool === "false" ? correct : null} />
+                                            <img alt="correc/wrong" src={confirmpass_error_bool === "true" ? wrong : confirmpass_error_bool === "false" ? correct : null} />
                                         }
                                     </span>
                                 </div>

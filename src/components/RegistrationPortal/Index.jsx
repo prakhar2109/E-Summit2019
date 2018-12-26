@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
 // import AuthService from "../../handlers/main/AuthService";
 import Loader from "../../screens/common/loader"
@@ -23,10 +23,10 @@ const LoginIndex = Loadable({
     loading: Loading
 });
 
-const CommonIndex = Loadable({
-    loader: () => import("./common/Index"),
-    loading: Loading
-});
+// const CommonIndex = Loadable({
+//     loader: () => import("./common/Index"),
+//     loading: Loading
+// });
 
 const ResetPasswordEmailIndex = Loadable({
     loader: () => import("./resetPasswordEmail/Index"),

@@ -1,14 +1,37 @@
-.speakers{
-    padding: 80px 220px;
+@mixin mobile {
+    @media(max-width: 1000px) {
+        @content;
+    }
+
+}
+
+
+
+.speakers {
+    padding: 80px 10vw;
     background: #1A4D66;
 
-  
-    .speak{
-        line-height: 47px;
-        font-size:24px;
-        letter-spacing: 0.1em;
+    @include mobile {
+        padding: 36px;
+    }
 
+
+
+
+    .speak {
+        line-height: 47px;
+        font-size: 24px;
+        letter-spacing: 0.1em;
         color: #FFFFFF;
+
+        @include mobile {
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+
+            color: #FFFFFF;
+
+        }
 
     }
 
@@ -18,38 +41,81 @@
         letter-spacing: 0.1em;
         padding-top: 45px;
         color: #E5E5E5;
-        padding-bottom: 96px;        
+        padding-bottom: 96px;
+
+        @include mobile {
+
+            line-height: 21px;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+            padding-bottom: 18px;
+            padding-top: 18px;
+            color: #D8D8D8;
+
+        }
     }
 
-    .img_holder{
-        height:236px !important;
-        width:236px;
-        background: #242626;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
+    .img_holder {
+        height:12.4vw;
+        width: 100%;
+ 
+     
+
+        img{
+            width:100%;
+        }
+
+        @include mobile{
+            height:230px;
+            width:230px;
+        }
     }
-    .name{
+
+    .name {
         line-height: 41px;
         font-size: 24px;
         letter-spacing: 0.1em;
+        text-align: center;
 
         color: #138AD6;
 
+        @include mobile {
+            line-height: 35px;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+
+            color: #138AD6;
+
+        }
+
     }
-    .designation{
+
+    .designation {
         line-height: 29px;
         font-size: 20px;
         letter-spacing: 0.1em;
-
+        text-align: center;
         color: #FFFFFF;
+        width:100%;
+
+        @include mobile {
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+
+        }
     }
 
-    .speakers_array{
+    .speakers_array {
         padding-top: 72px;
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-column-gap: 5vw;
+        grid-template-columns: repeat(5,17%);
+        grid-column-gap: 3vw;
         grid-row-gap: calc(5em + 5vh);
+
+        @include mobile {
+            grid-template-columns: 90%;
+            justify-items: center;
+        }
     }
 }

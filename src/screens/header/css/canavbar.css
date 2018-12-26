@@ -1,5 +1,5 @@
 .caheader {
-    padding: 15px 1rem;
+    
 
 }
 
@@ -15,10 +15,12 @@
     color: #1a4d66;
 }
 .caheader-parent{
-   
+   box-shadow:0px 2px 8px rgba(0, 0, 0, 0.09);
+    padding: 15px;
 
 }
 .caheader .mob_menu {
+    flex-wrap:wrap;
     display: none;
     margin-top: 5vh;
     -webkit-box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.08);
@@ -88,4 +90,70 @@
     .caheader {
         display: none;
     }
+    
+}
+
+@media only screen and (max-width: 900px){
+#optionsToggle{
+	
+	border: 2px solid #F2F2F2;
+   	box-sizing: border-box;
+    	border-radius: 4px;
+	box-shadow:none;
+	margin-top:0;
+	font-size: 20px;
+	height: fit-content;
+    	max-height: fit-content;
+    	padding: 2.28rem;
+}
+
+.linkEventson{
+color:#333333 !important;
+text-decoration:none !important;
+}
+
+.caheader .mob_menu{
+    flex-wrap: wrap;
+    padding: 2.28rem;
+    padding-bottom:0;
+    box-shadow:none;
+    margin-top:0;
+}
+#viewProfile a{
+
+color: #F39423 !important;
+}
+#viewProfile{
+    margin-left:0 !important;
+    width: 100%;
+    margin-right: 8%;
+    font-size: 12px;
+}
+.caheader #nms{
+ font-family:"ProximaNova-Semibold" !important;
+}
+.dashboard-mobile-navbar{
+display:flex;
+}
+.mobile-profile-dashboard-esummit1{
+    font-size: 9.94px;
+        border-top: 2px solid #F2F2F2; 
+       padding-top:12px;
+}
+
+.mobile-profile-dashboard-esummit2{
+    font-size: 9.94px;
+    border-bottom: 2px solid #F2F2F2; 
+    padding-top:8px;
+    padding-bottom:12px;
+}
+#mobileprofile-dashboard-esummitId{
+    color: #4F4F4F;
+}
+#mobileprofile-dashboard-esummitId-value{
+    float: right;
+    color: #1A4D66;
+}
+
+
 }
