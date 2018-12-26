@@ -169,7 +169,7 @@ export default class RegisterIndex extends React.Component {
         return (
             <div className="esummit-common-parent" >
                 <CommonIndex />
-                <div className="esummit-register-parent">
+                <div className="esummit-register-parent-login">
                     <div className="esummit-register-form-parent">
                         <div className="esummit-register-form-heading">
                             <div className="esummit-regsiter-form-heading-child">

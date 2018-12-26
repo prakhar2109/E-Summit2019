@@ -396,7 +396,7 @@ export default class AccountSetup extends Component {
                                         id="inputConfirmPassword"
                                         type="password"
                                         className={confirmpass_error === "" ? null : "esummit-register-form-field-error-text"}
-                                        placeholder="Enter your password again for confirmation"
+                                        placeholder="Enter your password again"
                                         name="confirm_password"
                                         autoCorrect="off"
                                         autoComplete="off"

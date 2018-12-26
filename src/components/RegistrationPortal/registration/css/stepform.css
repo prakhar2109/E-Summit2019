@@ -18,6 +18,12 @@ input[type=number]::-webkit-outer-spin-button {
     margin-right: auto;
     margin-top: 3%;
 }
+.esummit-register-parent-login{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
 .MuiPaper-root-17{
     background-color: #153D50 !important;
 }
@@ -460,4 +466,40 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 16px;
     font-weight: 600;
     opacity: 0.75;
+}
+@media (max-width:768px){
+    .esummit-register-form-body-social{
+        display: flex;
+        flex-direction: column;
+    }
+    .esummit-register-parent{
+        width: 100%;
+        margin-top: 33%;
+    }
+    .esummit-register-parent-login{
+        width: 100%;
+        margin-top: 10%;
+    }
+    .esummit-register-form-parent{
+        width: 100%;
+    }
+    .kep-login-facebook.medium{
+        width: 100% !important;
+    }
+    .tushar{
+        margin: 10px 0px !important;
+    }
+    .tushar div{
+        margin-left: 17vw;
+    }
+    .esummit-resgiter-form-profile-type-body{
+        width: 83%;
+    }
+    .esummit-regsiter-form-heading-child-second{
+        text-align: center;
+        line-height: 1.2em;
+    }
+    .esummit-common-second-child span{
+        padding: 5px;
+    }
 }
