@@ -224,12 +224,13 @@ export default class Payment extends Component{
             if(!isPayed){
                 return(
             <div className="capayment-parent">
-                 <div className="capayment-headerrow">
+                 {/* <div className="capayment-headerrow">
                      <div className="capayment-header">Payment Information</div>
                      <div className="capayment-line1"></div>
-                 </div>
+                 </div> */}
                  <div className="capayment-paymentinfo">
-                     <div className="capayment-paymentstatus">
+                    <div class="coming_soon">coming soon</div>
+                     {/* <div className="capayment-paymentstatus">
                      <svg width="30" height="30" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.6771 2C11.3047 2 2 11.3083 2 22.6852C2 34.062 11.3047 43.3704 22.6771 43.3704C34.0495 43.3704 43.3542 34.062 43.3542 22.6852C43.3542 11.3083 34.0495 2 22.6771 2Z" stroke="#E2574C" stroke-width="3.5" stroke-miterlimit="10"/>
                     <path d="M24.7438 10.0156H20.6084V12.3427H24.7438V10.0156Z" fill="#E2574C"/>
@@ -243,11 +244,12 @@ export default class Payment extends Component{
                      </div>
                      <div className="capayment-accomodationfee">
                      <div className="capayment-spaceaboutcolon">Accomodation Fee <button id="capayment-toggleaccomodation" className="capayment-toggleaccomodation" onClick={(e)=>this.toggleAccomodation(e)}>Discard</button>   </div> :<div className="capayment-space"></div>Rs&nbsp;{visibleAccomodationFee}
-                     </div>
+                     </div> */}
                      {/* <div className="capayment-discountavailed">
                          <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
                      </div>
                      <div className="capayment-discountcoupon">
+                     
                      <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>Apply</button> </div> :<div className="capayment-space"></div>Rs&nbsp;{couponDiscount}
                      <Modal
                         className="capayment-couponmodal"
@@ -277,12 +279,12 @@ export default class Payment extends Component{
                         </div>
                     </Modal>
                      </div> */}
-                     <div className="capayment-horizontalline"></div>
-                     <div className="capayment-totalamt">
-                     <div className="capayment-spaceaboutcolon">Total Amount</div>:<div className="capayment-space"></div>Rs&nbsp;{totalamt}
-                     </div>                                                            
+                        {/* <div className="capayment-horizontalline"></div>
+                        <div className="capayment-totalamt">
+                        <div className="capayment-spaceaboutcolon">Total Amount</div>:<div className="capayment-space"></div>Rs&nbsp;{totalamt}
+                        </div>                                                             */}
                  </div>
-                 <div className="capayment-middlerow">
+                 {/* <div className="capayment-middlerow">
                  <div className="capayment-tnc">
                     &#x26B9; The criteria for discounts availed in fees have been discussed in the discount criterion below<br/>
                     &#x26B9; Only one coupon applicable for discounts
@@ -291,12 +293,12 @@ export default class Payment extends Component{
                     PAY NOW
                 </button> 
 
-                </div>
-                <div className="capayment-bottomrow">
+                </div> */}
+                {/* <div className="capayment-bottomrow">
                     <div className="capayment-discountcriterion"> Discount Criterion</div>
                     <div className="capayment-line2"></div>
-                </div>
-                <div className="capayment-criterialistparent">
+                </div> */}
+                {/* <div className="capayment-criterialistparent">
                     <div className="capayment-criterialistheader">
                     Criterias used for discounts
                     </div>
@@ -306,7 +308,7 @@ export default class Payment extends Component{
                     <div className="capayment-criterialist">
                         <CriteriaMapping/>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
                 }

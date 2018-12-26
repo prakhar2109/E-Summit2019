@@ -328,3 +328,11 @@ height:40vh;
 padding-left: 24px;
     padding-right: 24px;
 }
+
+.coming_soon{
+padding: 2rem;
+font-size: 2rem;
+font-family:"ProximaNova-Semibold" !important;
+
+
+}
