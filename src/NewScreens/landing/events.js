@@ -19,7 +19,7 @@ class Events extends Component {
           </div>
           <div className="land_events_array">
           <div> 
-            <NavLink to = "/ideastorm">
+            <a href = "/ideastorm" target = "_blank">
             <div className="conclave" >
               <span>
                 <p className="title">IDEASTORM</p>
@@ -37,7 +37,7 @@ class Events extends Component {
                 </center>
               </span>
             </div>
-</NavLink>
+</a>
             </div>
 
             <div className="workshop">

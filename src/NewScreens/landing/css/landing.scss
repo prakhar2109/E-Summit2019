@@ -56,6 +56,10 @@ a:hover {
 
      .PcVid{
 
+        video{
+            height:50vh !important;
+        }
+
         @include mobile{
             display: none;
         }
@@ -64,6 +68,8 @@ a:hover {
 
     .MobVid{
         display: none;
+       
+        
 
         @include mobile{
             display:block;
