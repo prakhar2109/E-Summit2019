@@ -515,7 +515,6 @@ class RegisterIndex extends React.Component {
                                 {activeStep === 4 ?
                                     <div className="esummit-register-form-successfull-grand-parent">
                                         <div className="esummit-register-form-successfull-parent">
-                                            {!social_signup ?
                                                 <div style={{
                                                     backgroundImage: `url(${sample_image})`,
                                                     backgroundPosition: "center",
@@ -525,9 +524,6 @@ class RegisterIndex extends React.Component {
                                                     borderRadius: "2px",
                                                     padding: "20px"
                                                 }}></div>
-                                                : null
-                                            }
-
                                         </div>
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
