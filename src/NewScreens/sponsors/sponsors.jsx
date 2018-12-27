@@ -39,10 +39,7 @@ export default class Sponsors extends Component {
             Meet the awesome companies who make this all possible.
           </p>
 
-          <center>
-            <img className="title_sponsor_img" alt="" src={img1} />
-            <span className="title_sponsor">Rohit Jha </span>
-          </center>
+         
 
           <div className="sponsors_array">
             {this.state.sponsors.map(update => {
