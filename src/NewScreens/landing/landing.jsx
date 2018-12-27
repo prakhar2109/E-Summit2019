@@ -16,6 +16,7 @@ import MobileNav from "./mobile_nav/header";
 import VideoMP from "./static/WebsiteVideo.mp4";
 import VideoWebm from "./static/WebsiteVideo.webm";
 import VideoOGV from "./static/WebsiteVideo.ogv";
+import MobileVid from "./static/Mobile.gif"
 
 
 
@@ -59,6 +60,12 @@ export default class LandingPage extends Component {
               <source src={VideoMP} type="video/mp4" />
               <source src={VideoOGV} type="video/ogg" />
           </video>
+          </div>
+
+
+          <div className = "MobVid">
+          
+          <img src = {MobileVid} />
           </div>
  
 

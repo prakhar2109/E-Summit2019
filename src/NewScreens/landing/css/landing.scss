@@ -26,6 +26,10 @@ a:hover {
     align-items: end;
     justify-items: center;
 
+    @include mobile{
+        padding: 0;
+    }
+
     @include mobile {
         height: 80vh;
     }
@@ -44,6 +48,7 @@ a:hover {
         @include mobile {
             font-size: 12px;
             padding: 16px;
+            margin-bottom: 4vh;
         }
 
         @include fhd{
@@ -67,6 +72,13 @@ a:hover {
 
     .MobVid{
         display: none;
+        padding-bottom: 5vh;
+
+         img{
+        
+             height: 40vh;
+         }
+        
        
         
 

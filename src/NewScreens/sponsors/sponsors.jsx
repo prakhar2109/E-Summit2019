@@ -34,7 +34,7 @@ export default class Sponsors extends Component {
         <Nav />
         <MobileNav />
         <div className="sponsors">
-          <Header title="SPONSORS" />
+          <Header title="PARTNERS" />
           <p className="text">
             Meet the awesome companies who make this all possible.
           </p>

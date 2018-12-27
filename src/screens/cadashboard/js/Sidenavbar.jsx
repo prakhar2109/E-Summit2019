@@ -41,7 +41,7 @@ export default class caLeaderboard extends Component {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
         })
         .catch(response => {
-          // console.log(response);
+          window.location.href = "/registration_portal/login";
         });
     }
   };
