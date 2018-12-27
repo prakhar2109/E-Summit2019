@@ -174,7 +174,6 @@ class RegisterIndex extends React.Component {
             states,
             organisation_name,
             industry, } = this.state
-        console.log(this.state)
         if (name) name = name.trim()
         if (phone_no) phone_no = phone_no.trim()
         if (image_url) image_url = image_url.trim()
@@ -254,7 +253,6 @@ class RegisterIndex extends React.Component {
             about_esummit: about_esummit,
             year: year
         }
-        console.log(data)
         document
             .getElementById("loader")
             .style
