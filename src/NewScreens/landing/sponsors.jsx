@@ -30,11 +30,19 @@ export default class Sponsors extends Component {
       slidesToShow: 4,
       slidesToScroll: 1,
     };
+
+    let settings2 = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
     return (
       <div>
         <Element id = "sponsors" name="sponsors">
           <div className="land_sponsors">
-            <Header title="SPONSORS" />
+            <Header title="PARTNERS" />
       
 
             <div className="speaker_slidder">
@@ -46,7 +54,25 @@ export default class Sponsors extends Component {
                           <img src = {update.image} alt = {update.name} />
                       </div>
                       <p className="name">{update.name}</p>
-                      <p className="designation">{update.designation}</p>
+                   
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
+
+
+            <div className="speaker_mobile">
+              <Slider {...settings2}>
+                {this.state.sponsors.map(update => {
+                  return (
+                    <div key={update.id}>
+                      <div className="img_holder">
+                      <img src = {update.image} alt = {update.name} />
+                      </div>
+
+                      <p className="name">{update.name}</p>
+  
                     </div>
                   );
                 })}
