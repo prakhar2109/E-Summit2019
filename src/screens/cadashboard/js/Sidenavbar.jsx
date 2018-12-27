@@ -200,12 +200,12 @@ class caLeaderboard extends Component {
                 <Link
                   to="/dashboard/Events"
                   className={
-                    this.state.activeState === "contigent"
+                    this.state.activeState === "Events"
                       ? "linkEventson"
                       : null
                   }
                   onClick={() => {
-                    this.setActive("contigent");
+                    this.setActive("Events");
                   }}
                 >
                   Events
