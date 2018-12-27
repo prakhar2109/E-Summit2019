@@ -83,7 +83,7 @@ export default class Sponsors extends Component {
      
             <center>
               <NavLink to="/sponsors">
-                <button className="all_events_button">VIEW ALL SPONSORS</button>
+                <button className="all_events_button">VIEW ALL PARTNERS</button>
               </NavLink>
             </center>
           </div>
