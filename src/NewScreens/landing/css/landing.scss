@@ -11,6 +11,11 @@
     }
 
 }
+#body{
+    @include mobile{
+    padding-top: 9vh;
+    }
+}
 a:hover {
     text-decoration: none !important;
 }
@@ -20,7 +25,7 @@ a:hover {
     padding: 3rem  0;
     height:91vh;
  
-    background: #0D1313;
+    background:#15181A;
     padding: 5rem;
     display: grid;
     align-items: end;

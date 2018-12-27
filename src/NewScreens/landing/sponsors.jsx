@@ -50,11 +50,12 @@ export default class Sponsors extends Component {
                 {this.state.sponsors.map(update => {
                   return (
                     <div key={update.id}>
+                    <a href = {update.url}> 
                       <div className="img_holder" >
                           <img src = {update.image} alt = {update.name} />
                       </div>
                       <p className="name">{update.name}</p>
-                   
+                   </a>
                     </div>
                   );
                 })}
