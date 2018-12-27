@@ -145,14 +145,10 @@ export class IdeaStorm extends Component {
             to turn your ideas into an entrepreneurial ventures
           </p>
           <center>
-            <a
-              without rel="noopener noreferrer"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
-              target="_blank"
-            >
-              {" "}
+          <NavLink to = "registration_portal/login"> 
+        
               <span className="register_button">APPLY FOR IDEASTORM</span>
-            </a>
+            </NavLink>
           </center>
         </div>
 

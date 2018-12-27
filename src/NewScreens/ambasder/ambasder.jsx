@@ -7,6 +7,7 @@ import Bullets from "../../components/bullets/bullets";
 import Coordinator from "../../components/contact/contact";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import MobileNav from "../mobile_nav/header";
+import {NavLink} from "react-router-dom"
 
 
 export default class CampusAmbasder extends Component {
@@ -61,9 +62,12 @@ export default class CampusAmbasder extends Component {
             and exciting perks for the Campus Ambassadors.
           </p>
           <center>
-            <span onClick={this.show} className="login">
+          <NavLink to = "registration_portal/login"> 
+            <span  className="login">
+            
               Login
             </span>
+          </NavLink>
             <span className="register">Register</span>
           </center>
         </div>
