@@ -195,7 +195,7 @@ export default class caLeaderboard extends Component {
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton">
-                <a href="/">CA RULEBOOK</a>
+                <a  target = "_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
               </div>
             </div>
             <div id="submitButton">
