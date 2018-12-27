@@ -263,7 +263,10 @@ class RegisterIndex extends React.Component {
             organisation_name = null
         }
 
-
+        let url_q = window.location.href;
+        let url = new URL(url_q);
+        let ref = url.searchParams.get("ref");
+        let endpoint = ref === "" ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
         let data = {
             name: name,
             email: email,
@@ -289,7 +292,7 @@ class RegisterIndex extends React.Component {
             .display = "flex";
         axios({
             method: "post",
-            url: BASE_URL + "/v1/api/user/signup/",
+            url: BASE_URL + endpoint,
             data: data
         }).then((r) => {
             var d = new Date();

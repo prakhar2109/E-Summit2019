@@ -28,7 +28,7 @@ export default class Cainvite extends Component {
                 console.log(res);
              
               this.setState({  
-                  invite_link : BASE_URL + "/v1/api/user/signup/?ref="+ res.data.esummit_id , 
+                  invite_link : "https://esummit.in/register/?ref="+ res.data.esummit_id , 
                   
               });
             })
