@@ -320,7 +320,10 @@ a:hover {
         }
 
         @include mobile {
-            display: block;
+            grid-template-columns: 100%;
+            grid-row-gap: 5vw;
+             
+            
         }
 
         #events_production1{
