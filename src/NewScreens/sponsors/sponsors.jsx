@@ -35,10 +35,7 @@ export default class Sponsors extends Component {
         <MobileNav />
         <div className="sponsors">
           <Header title="PARTNERS" />
-          <p className="text">
-            Meet the awesome companies who make this all possible.
-          </p>
-
+      
          
 
           <div className="sponsors_array">
