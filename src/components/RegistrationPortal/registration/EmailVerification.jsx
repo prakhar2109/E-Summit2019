@@ -39,29 +39,55 @@ export default class EmailVerification extends Component {
             .display = "flex";
         axios({
             method: "post",
-            url: BASE_URL + "/v1/api/verification/",
+            url: BASE_URL + "/v1/api/user/check-email/",
             data: data
         }).then((r) => {
-            this.setState({
-                otp: r.data.one_time_pass,
-                confirmation_otp_message: "OTP is successfully send.",
-                resend_otp: false,
-                confirm_otp: "",
-                time: 60,
-                otp_expired: false
-            })
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
-            clearTimeout(time_out)
-            this.another_timer()
+            if (r.status === 200) {
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "flex";
+                axios({
+                    method: "post",
+                    url: BASE_URL + "/v1/api/verification/",
+                    data: data
+                }).then((r) => {
+                    this.setState({
+                        otp: r.data.one_time_pass,
+                        confirmation_otp_message: "OTP is successfully send.",
+                        resend_otp: false,
+                        confirm_otp: "",
+                        time: 60,
+                        otp_expired: false
+                    })
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                    clearTimeout(time_out)
+                    this.another_timer()
+                }).catch((response) => {
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                });
+            }
         }).catch((response) => {
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
+            this.setState({
+                email_error_bool: "true",
+                email_error: "This email is already registered"
+            })
         });
+
     }
     handleVerify = () => {
         if (parseInt(this.state.confirm_otp) === this.state.otp) {
@@ -119,7 +145,8 @@ export default class EmailVerification extends Component {
         else {
             clearTimeout(time_out)
             return this.setState({
-                otp_expired: true
+                otp_expired: true,
+                otp: ""
             })
         }
 
@@ -142,7 +169,8 @@ export default class EmailVerification extends Component {
             else {
                 clearTimeout(time_out)
                 this.setState({
-                    otp_expired: true
+                    otp_expired: true,
+                    otp: ""
                 })
             }
             time_out = setTimeout(timer, 1000)

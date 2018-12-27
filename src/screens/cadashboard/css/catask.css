@@ -137,14 +137,14 @@
     }
  
     .taskparent {
-        background: #F7F8F9;
-        min-height: 100vh;
-        width: 100%;
-
-        padding-bottom: 10vh;
-
-
-        height: min-content;
+        color: black;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    padding-bottom: 2vh;
+    background-color: #F7F8F9;
     }
 
     .taskchild {

@@ -111,7 +111,6 @@ class RegisterIndex extends React.Component {
 
     handleAccountSetup = (data) => {
         this.setState({
-
             name: data.name,
             email: data.email,
             password: data.password,
@@ -122,11 +121,15 @@ class RegisterIndex extends React.Component {
     }
     handleEmailVerification = (data) => {
         this.setState({
-            email: data.email,
             otp: data.otp,
             resend_email: data.resend_email,
             activeStep: this.state.activeStep + 1
         })
+        if (data.resend_email !== "") {
+            this.setState({
+                email: data.resend_email
+            })
+        }
     }
     handleProfile = (data) => {
         this.setState({
@@ -176,28 +179,91 @@ class RegisterIndex extends React.Component {
             states,
             organisation_name,
             industry, } = this.state
-
         if (name) name = name.trim()
         if (phone_no) phone_no = phone_no.trim()
-        if (image_url) image_url = image_url.trim()
+        if (image_url) { image_url = image_url.trim() }
+        else {
+            image_url = null
+        }
         if (email) email = email.trim()
-        if (profile_type) profile_type = profile_type.trim()
-        if (gender) gender = gender.trim()
+        if (profile_type) {
+            profile_type = profile_type.trim()
+            if (profile_type === "iitr_student") {
+                profile_type = "IIT"
+                city = "Roorkee"
+                states = "Uttrakhand"
+                college = "IITR"
+            }
+            if (profile_type === "non_iitr_student") {
+                profile_type = "NONIIT"
+            }
+            if (profile_type === "ca") {
+                profile_type = "CA"
+            }
+            if (profile_type === "professional") {
+                profile_type = "PROFE"
+            }
+            if (profile_type === "professor") {
+                profile_type = "PROF"
+            }
+        }
+
+        if (gender) {
+            gender = gender.trim()
+            if (gender === "Male") {
+                gender = "M"
+            }
+            if (gender === "Female") {
+                gender = "F"
+            }
+            if (gender === "Other") {
+                gender = "O"
+            }
+        }
         if (states) states = states.trim()
+        else {
+            states = null
+        }
         if (college) college = college.trim()
+        else {
+            college = null
+        }
         if (country) {
             country = country.value.trim()
         }
+        else {
+            country = "India"
+        }
         if (about_esummit) about_esummit = about_esummit.trim()
+        else {
+            about_esummit = null
+        }
         if (tshirt_size) tshirt_size = tshirt_size.trim()
+        else {
+            tshirt_size = null
+        }
         if (password) password = password.trim()
         if (confirm_password) confirm_password = confirm_password.trim()
         if (year) year = year.trim()
+        else {
+            year = null
+        }
         if (programme) programme = programme.trim()
+        else {
+            programme = null
+        }
         if (enrollment_no) enrollment_no = enrollment_no.trim()
-        if (resend_email) resend_email = resend_email.trim()
+        else {
+            enrollment_no = null
+        }
         if (industry) industry = industry.trim()
+        else {
+            industry = null
+        }
         if (organisation_name) organisation_name = organisation_name.trim()
+        else {
+            organisation_name = null
+        }
 
 
         let data = {
@@ -205,8 +271,6 @@ class RegisterIndex extends React.Component {
             email: email,
             image_url: image_url,
             password: password,
-            confirm_password: confirm_password,
-            resend_email: resend_email,
             user_type: profile_type,
             country: country,
             phone: phone_no,
@@ -214,7 +278,7 @@ class RegisterIndex extends React.Component {
             enrollment_no: enrollment_no,
             college: college,
             city: city,
-            states: states,
+            state: states,
             organisation_name: organisation_name,
             industry: industry,
             tshirt_size: tshirt_size,
@@ -236,7 +300,7 @@ class RegisterIndex extends React.Component {
             if (r.data.token) {
                 localStorage.setItem("user_token", r.data.token);
             }
-            window.location.href = "/dashboard/task";
+            window.location.href = "/dashboard";
             document
                 .getElementById("loader")
                 .style
@@ -247,19 +311,30 @@ class RegisterIndex extends React.Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
-            console.log(response)
-            alert("Network error")
+            alert(response)
         });
 
     }
     handleDetails = (data) => {
         this.setState({
-            data
+            phone_no: data.phone_no,
+            gender: data.gender.value,
+            enrollment_no: data.enrollment_no,
+            country: data.country,
+            states: data.states,
+            city: data.city,
+            college: data.college,
+            programme: data.programme,
+            year: data.year,
+            about_esummit: data.about_esummit,
+            tshirt_size: data.tshirt_size,
+            organisation_name: data.organisation_name,
+            industry: data.industry,
         })
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-                 
+
             }
             document
                 .getElementById("loader")
@@ -487,3 +562,6 @@ class RegisterIndex extends React.Component {
 
 
 export default withStyles(styles)(RegisterIndex);
+
+
+
