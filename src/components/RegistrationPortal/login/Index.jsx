@@ -68,7 +68,7 @@ export default class RegisterIndex extends React.Component {
                     if (res.data.token) {
                         localStorage.setItem("user_token", res.data.token);
                     }
-                    window.location.href = "/dashboard/task";
+                    window.location.href = "/dashboard/invite";
                     document
                         .getElementById("loader")
                         .style
