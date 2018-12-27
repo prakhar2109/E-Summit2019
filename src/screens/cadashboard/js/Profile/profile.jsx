@@ -6,6 +6,8 @@ import ProfProfile from "./Proffesors_Profile/Viewprofile";
 import ProfessProfile from "./Professonal_Profile/Viewprofile";
 
 export default class Profile extends Component {
+
+
     render() {
         let profile = localStorage.getItem("profile");
         profile = profile.user_type;
