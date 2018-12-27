@@ -544,7 +544,7 @@ class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Already have an account?</span>
-                    <span><Link to="/registration_portal/login">Log in</Link></span>
+                    <span><Link to="/login">Log in</Link></span>
                 </div>
             </div >
         );

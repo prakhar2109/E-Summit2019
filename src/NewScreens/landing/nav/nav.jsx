@@ -41,10 +41,10 @@ class Nav extends Component {
     else{
       tabs = (
         <span> 
-        <NavLink to="/registration_portal/login">
+        <NavLink to="/login">
           <span className="login">Log in</span>
         </NavLink>
-        <NavLink to="/registration_portal/register">
+        <NavLink to="/register">
           <span className="register">Register</span>
         </NavLink>
         </span>
