@@ -22,9 +22,10 @@ class Nav extends Component {
   render() {
 
     let token = localStorage.getItem("user_token");
+
     let tabs;
 
-    if(token !== undefined){
+    if(token !== undefined && token !== null && token !== ""){
       tabs = (
 
         <span> 

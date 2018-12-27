@@ -23,7 +23,9 @@ class Nav extends Component {
     let token = localStorage.getItem("user_token");
     let tabs;
 
-    if(token !== undefined){
+    console.log(token);
+
+    if(token !== undefined && token !== null && token !== ""){
       tabs = (
 
         <span> 
