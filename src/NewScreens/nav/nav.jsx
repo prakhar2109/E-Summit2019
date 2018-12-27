@@ -83,7 +83,7 @@ class Nav extends Component {
             </NavLink>
           </span>
           <span>
-            <NavLink to="/campusambasder">Campus Ambassador</NavLink>
+            <NavLink to="/campusambassador">Campus Ambassador</NavLink>
           </span>
           <span>
             <NavLink to="/ignite">Startup Ignite</NavLink>
