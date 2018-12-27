@@ -13,7 +13,7 @@ export default class ComingSoon extends Component {
     name: "",
     score: "0",
     activeState: "",
-    data:[]
+    data: []
   };
 
   componentDidMount = () => {
@@ -29,10 +29,10 @@ export default class ComingSoon extends Component {
         },
       })
       .then(res => {
-        this.setState({ score: res.data.score, name: res.data.name, data:res.data});
+        this.setState({ score: res.data.score, name: res.data.name, data: res.data });
       })
       .catch(response => {
-        window.location.href = "/registration_portal/login";
+        window.location.href = "/login";
       });
   };
 
@@ -67,17 +67,17 @@ export default class ComingSoon extends Component {
   render() {
     let { score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
-    let options ;
+    let options;
 
-   
+
 
     if (this.state.data.user_type === "AMB") {
       console.log("AMB")
 
       options = (
         <>
-         
-         <span>
+
+          <span>
             <Link to="/dashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : null} onClick={() => {
               this.setActive("task");
             }}>
@@ -115,11 +115,11 @@ export default class ComingSoon extends Component {
           <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
         </div>
         <div id="phone" className="mob_menu">
-        
-            
 
 
-        
+
+
+
           <div className="dashboard-mobile-navbar">
             <div id="droperShape">{this.state.name[0]}</div>
             <div className="headerdata">
@@ -156,20 +156,20 @@ export default class ComingSoon extends Component {
         </div>
         <div id="optionsToggle">
 
-        {options}
-      
-        
-         
-            <span>
-              <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
-                this.setActive("invite");
-              }}>
-                INVITE
+          {options}
+
+
+
+          <span>
+            <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
+              this.setActive("invite");
+            }}>
+              INVITE
                 </Link>
-              <br />
-            </span>
-    
-          
+            <br />
+          </span>
+
+
           <div id="leaderboardButton"><a href="/">CA RULEBOOK</a></div>
         </div>
       </div>

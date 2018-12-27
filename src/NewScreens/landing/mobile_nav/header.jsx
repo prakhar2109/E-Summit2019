@@ -259,7 +259,7 @@ export default class ComingSoon extends Component {
                   }
                   onClick={() => this.setState({ isActive: "Events" ,displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <NavLink to="/registration_portal/register">
+                  <NavLink to="/register">
                     {" "}
                     Register{" "}
                   </NavLink>
@@ -281,7 +281,7 @@ export default class ComingSoon extends Component {
                   }
                   onClick={() => this.setState({ isActive: "Events" ,displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <NavLink to="/registration_portal/login"> Login </NavLink>
+                  <NavLink to="/login"> Login </NavLink>
                 </p>
               </div>
             </div>

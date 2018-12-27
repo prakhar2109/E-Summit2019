@@ -14,7 +14,7 @@ import EmailVerification from './EmailVerification';
 import ProfileType from "./ProfileType"
 import PersonalDetails from './PersonalDetails';
 import axios from "axios"
-import sample_image from "./sample_image.jpg"
+import sample_image from "./sample_image.jpeg"
 import { BASE_URL } from '../../../utils/urls';
 
 const styles = theme => ({
@@ -300,7 +300,7 @@ class RegisterIndex extends React.Component {
             if (r.data.token) {
                 localStorage.setItem("user_token", r.data.token);
             }
-            window.location.href = "/dashboard";
+            window.location.href = "/dashboard/invite";
             document
                 .getElementById("loader")
                 .style
@@ -432,7 +432,7 @@ class RegisterIndex extends React.Component {
     render() {
         const { classes } = this.props;
         const steps = getSteps();
-        const { otp, social_signup, activeStep, email, image_url, profile_type } = this.state;
+        const { otp, social_signup, activeStep, email, profile_type } = this.state;
         return (
             <div className="esummit-common-parent" >
                 <CommonIndex />
@@ -469,7 +469,7 @@ class RegisterIndex extends React.Component {
                                     activeStep === 1 ? "PROFILE TYPE" :
                                         activeStep === 2 ? "PERSONAL DETAILS" :
                                             activeStep === 3 ? "EMAIL VERIFICATION" :
-                                                activeStep === 4 ? "SUCCESSFULLY REGISTERED" : null
+                                                activeStep === 4 ? "REGISTRATION COMPLETED" : null
                                 }
                             </div>
                             {activeStep !== 4 ?
@@ -520,21 +520,12 @@ class RegisterIndex extends React.Component {
                                                     backgroundImage: `url(${sample_image})`,
                                                     backgroundPosition: "center",
                                                     backgroundSize: "cover",
-                                                    width: "200px",
+                                                    width: "100%",
                                                     height: "200px",
                                                     borderRadius: "2px",
                                                     padding: "20px"
                                                 }}></div>
-                                                :
-                                                <div style={{
-                                                    backgroundImage: `url(${image_url})`,
-                                                    backgroundPosition: "center",
-                                                    backgroundSize: "cover",
-                                                    width: "200px",
-                                                    height: "200px",
-                                                    borderRadius: "2px",
-                                                    padding: "20px"
-                                                }}></div>
+                                                : null
                                             }
 
                                         </div>
@@ -553,7 +544,7 @@ class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Already have an account?</span>
-                    <span><Link to="/registration_portal/login">Log in</Link></span>
+                    <span><Link to="/login">Log in</Link></span>
                 </div>
             </div >
         );

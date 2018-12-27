@@ -253,7 +253,7 @@ export default class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Don't have an account?</span>
-                    <span><Link to="/registration_portal/register">Register</Link></span>
+                    <span><Link to="/register">Register</Link></span>
                 </div>
             </div >
         );

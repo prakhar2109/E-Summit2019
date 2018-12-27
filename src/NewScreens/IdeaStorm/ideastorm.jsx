@@ -145,7 +145,7 @@ export class IdeaStorm extends Component {
             to turn your ideas into an entrepreneurial ventures
           </p>
           <center>
-          <NavLink to = "registration_portal/login"> 
+          <NavLink to = "/login"> 
         
               <span className="register_button">APPLY FOR IDEASTORM</span>
             </NavLink>

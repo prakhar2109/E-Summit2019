@@ -101,10 +101,10 @@ export default class RegistrationIndex extends React.Component {
                     :
                     <React.Fragment>
                         {/* <Route path="/registration_portal" component={CommonIndex} /> */}
-                        <Route exact path="/registration_portal/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} />)} />
+                        {/* <Route exact path="/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} />)} />
                         <Route exact path="/registration_portal/resetPassword" component={ResetPasswordIndex} />
                         <Route exact path="/registration_portal/resetPasswordEmail" component={ResetPasswordEmailIndex} />
-                        <Route exact path="/registration_portal/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} />)} />
+                        <Route exact path="/registration_portal/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} />)} /> */}
                     </React.Fragment>
                 }
 

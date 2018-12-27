@@ -42,7 +42,7 @@ class caLeaderboard extends Component {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
         })
         .catch(response => {
-          window.location.href = "/registration_portal/login";
+          window.location.href = "/login";
         });
     }
   };
@@ -106,7 +106,7 @@ class caLeaderboard extends Component {
         <div id="container">
           <div id="leftPane">
 
-            <a href = "/">
+            <a href="/">
               <img id="logo" src={logo} alt="" />
             </a>
 
@@ -200,7 +200,7 @@ class caLeaderboard extends Component {
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton">
-                <a  target = "_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
+                <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
               </div>
             </div>
             <div id="submitButton">
@@ -216,4 +216,4 @@ class caLeaderboard extends Component {
 }
 
 
-export default withRouter (caLeaderboard);
+export default withRouter(caLeaderboard);
