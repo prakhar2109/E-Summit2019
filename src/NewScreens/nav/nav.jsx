@@ -20,6 +20,37 @@ class Nav extends Component {
 
   }
   render() {
+
+    let token = localStorage.getItem("user_token");
+    let tabs;
+
+    if(token !== undefined){
+      tabs = (
+
+        <span> 
+        <NavLink to="/dashboard/invite">
+          <span style = {{marginLeft : "3vw"}}className="login">Dashboard</span>
+        </NavLink>
+
+        
+        
+        </span>
+
+      )
+    }
+
+    else{
+      tabs = (
+        <span> 
+        <NavLink to="/registration_portal/login">
+          <span className="login">Log in</span>
+        </NavLink>
+        <NavLink to="/registration_portal/register">
+          <span className="register">Register</span>
+        </NavLink>
+        </span>
+      )
+    }
     return (
       <>
         <section id="nav" className="nav_pc">
@@ -47,7 +78,7 @@ class Nav extends Component {
           </span>
           <span className="eslogo">
             <NavLink to="/">
-              <img alt="ESummit Logo" src={esummit} />
+              <img style = {{height : "7vh"}} alt="ESummit Logo" src={esummit} />
             </NavLink>
           </span>
           <span>
@@ -58,12 +89,7 @@ class Nav extends Component {
           </span>
 
           <span> 
-          <NavLink to="/registration_portal/login">
-            <span className="login">Log in</span>
-          </NavLink>
-          <NavLink to="/registration_portal/register">
-            <span className="register">Register</span>
-          </NavLink>
+            {tabs}
           </span>
         </section>
       </>
