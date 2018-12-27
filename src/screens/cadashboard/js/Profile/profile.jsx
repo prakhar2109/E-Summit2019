@@ -10,8 +10,6 @@ export default class Profile extends Component {
 
     render() {
         let profile = localStorage.getItem("profile");
-        profile = profile.user_type;
-        console.log(profile);
 
         if (profile === "AMB") {
             console.log("inside");
