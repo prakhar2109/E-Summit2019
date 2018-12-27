@@ -39,7 +39,7 @@ export default class CampusAmbasder extends Component {
     let contact = [
       {
         "name" :"Aman Kumar",
-        "email":"akumar@mt.iit.ac.in",
+        "email":"akumar@mt.iitr.ac.in",
         "number" :'7302200596'
 
       }
