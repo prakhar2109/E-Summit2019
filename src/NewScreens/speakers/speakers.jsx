@@ -31,10 +31,7 @@ export default class speakers extends Component {
 
         <div className="speakers">
           <Header title="SPEAKERS" />
-
-          <p className="text">
-            Meet the awesome companies who make this all possible.
-          </p>
+ 
           <p className="speak"> E-Summit’19 Speakers</p>
 
           <div className="speakers_array">
