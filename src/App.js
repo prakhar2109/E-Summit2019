@@ -13,7 +13,7 @@ import "antd/dist/antd.css";
 import Caindex from "./screens/cadashboard/js/index";
 import Payment from "./screens/cadashboard/js/payment";
 import Loadable from "react-loadable";
-import Loader from "./screens/common/loader";
+import Loader from "./screens/loader/loader";
 
 // const Loading = ({ error }) => {
 //   if (error) {
