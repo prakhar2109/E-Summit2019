@@ -62,14 +62,14 @@ export default class CampusAmbasder extends Component {
             and exciting perks for the Campus Ambassadors.
           </p>
           <center>
-          <NavLink to = "registration_portal/login"> 
+          <NavLink to = "/login"> 
             <span  className="login">
             
               Login
             </span>
           </NavLink>
 
-          <NavLink to = "registration_portal/register"> 
+          <NavLink to = "/register"> 
             <span className="register">Register</span>
             </NavLink>
           </center>

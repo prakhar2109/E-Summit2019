@@ -10,8 +10,8 @@ import Speakers from "./speakers";
 import Sponsors from "./sponsors";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import axios from "axios";
-import {BASE_URL} from "../../utils/urls";
-import {NavLink } from "react-router-dom";
+import { BASE_URL } from "../../utils/urls";
+import { NavLink } from "react-router-dom";
 import MobileNav from "./mobile_nav/header";
 import VideoMP from "./static/WebsiteVideo.mp4";
 import VideoWebm from "./static/WebsiteVideo.webm";
@@ -54,20 +54,20 @@ export default class LandingPage extends Component {
           <div className="land_screen1">
 
 
-          <div className ="PcVid" > 
-            <img src = {MobileVid} />
-          </div>
+            <div className="PcVid" >
+              <img src={MobileVid} />
+            </div>
 
 
-          <div className = "MobVid">
-          
-          <img src = {MobileVid} />
-          </div>
- 
+            <div className="MobVid">
+
+              <img src={MobileVid} />
+            </div>
 
 
-          
-            <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
+
+
+            <NavLink to="/register"><button>REGISTER NOW</button></NavLink>
 
           </div>
         </section>
