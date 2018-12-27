@@ -396,10 +396,10 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: space-around;
 }
 .esummit-register-form-successfull-grand-parent{
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8%;
+    /* margin-top: 8%; */
 }
 .esummit-register-form-resend-otp-field{
     line-height: normal;
