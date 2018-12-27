@@ -11,11 +11,6 @@
     }
 
 }
-#body{
-    @include mobile{
-    padding-top: 9vh;
-    }
-}
 a:hover {
     text-decoration: none !important;
 }
