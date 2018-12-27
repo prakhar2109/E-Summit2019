@@ -129,7 +129,7 @@ export default class ComingSoon extends Component {
                                         ? "esummit-navbarevent-cto-active"
                                         : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({isActive: "Ambassador"})}>
-                                        <NavLink to="/campusambasder">Campus Ambassador</NavLink>
+                                        <NavLink to="/campusambassador">Campus Ambassador</NavLink>
                                     </p>
                                 </div>
 

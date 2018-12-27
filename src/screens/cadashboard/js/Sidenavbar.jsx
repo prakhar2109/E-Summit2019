@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import Header from "../../header/caheader";
 import { BASE_URL } from "../../../utils/urls";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export default class caLeaderboard extends Component {
+class caLeaderboard extends Component {
   constructor() {
     super();
     this.state = {
@@ -105,9 +106,9 @@ export default class caLeaderboard extends Component {
         <div id="container">
           <div id="leftPane">
 
-            <NavLink to="/">
+            <a href = "/">
               <img id="logo" src={logo} alt="" />
-            </NavLink>
+            </a>
 
             <hr id="line1" />
 
@@ -176,6 +177,8 @@ export default class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
+
+              {/*
               <span>
                 <Link
                   to="/dashboard/contigent"
@@ -193,6 +196,8 @@ export default class caLeaderboard extends Component {
                 <br />
               </span>
 
+                */}
+
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton">
                 <a  target = "_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
@@ -209,3 +214,6 @@ export default class caLeaderboard extends Component {
     );
   }
 }
+
+
+export default withRouter (caLeaderboard);

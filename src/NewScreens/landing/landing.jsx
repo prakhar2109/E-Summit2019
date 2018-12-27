@@ -55,11 +55,7 @@ export default class LandingPage extends Component {
 
 
           <div className ="PcVid" > 
-          <video  playsinline  muted autoplay="autoplay">
-              <source src = {VideoWebm} type ="video/webm"/> 
-              <source src={VideoMP} type="video/mp4" />
-              <source src={VideoOGV} type="video/ogg" />
-          </video>
+            <img src = {MobileVid} />
           </div>
 
 
