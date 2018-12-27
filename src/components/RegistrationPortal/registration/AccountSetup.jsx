@@ -72,12 +72,12 @@ export default class AccountSetup extends Component {
                     url: BASE_URL + "/v1/api/user/check-email/",
                     data: data_email
                 }).then((r) => {
+                    console.log(r)
                     document
                         .getElementById("loader")
                         .style
                         .display = "none";
                     if (r.status === 200) {
-
                         if (this.state.pass !== "") {
                             if (this.state.password === this.state.confirm_password) {
                                 let { name, email, password, confirm_password, social_signup } = this.state
@@ -147,17 +147,15 @@ export default class AccountSetup extends Component {
                             })
                         }
                     }
-                    else {
-                        this.setState({
-                            email_error_bool: "true",
-                            email_error: "This email is already registered"
-                        })
-                    }
                 }).catch((response) => {
                     document
                         .getElementById("loader")
                         .style
                         .display = "none";
+                    this.setState({
+                        email_error_bool: "true",
+                        email_error: "This email is already registered"
+                    })
                 });
 
             }

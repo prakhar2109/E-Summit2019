@@ -14,7 +14,7 @@ export default class caLeaderboard extends Component {
       name: "",
       score: "0",
       activeState: "",
-      data:[]
+      data: []
     };
   }
 
@@ -29,7 +29,6 @@ export default class caLeaderboard extends Component {
   };
   componentDidMount = () => {
     let token = localStorage.getItem("user_token");
-    console.log(token);
 
     if (token !== undefined) {
       axios
@@ -39,11 +38,10 @@ export default class caLeaderboard extends Component {
           },
         })
         .then(res => {
-          console.log(res);
-          this.setState({ score: res.data.score, name: res.data.name , data:res.data});
+          this.setState({ score: res.data.score, name: res.data.name, data: res.data });
         })
         .catch(response => {
-          console.log(response);
+          // console.log(response);
         });
     }
   };
@@ -53,52 +51,52 @@ export default class caLeaderboard extends Component {
   render() {
     let { name, score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
-    let  options;
+    let options;
 
-    if(this.state.data.user_type === "AMB"){
+    if (this.state.data.user_type === "AMB") {
       console.log("AMB")
 
-     options =(
+      options = (
         <>
-        <span>
-                <Link
-                  to="/dashboard/task"
-                  className={
-                    this.state.activeState === "task" ? "linkEventson" : null
-                  }
-                  onClick={() => {
-                    this.setActive("task");
-                  }}
-                >
-                  TASKS
+          <span>
+            <Link
+              to="/dashboard/task"
+              className={
+                this.state.activeState === "task" ? "linkEventson" : null
+              }
+              onClick={() => {
+                this.setActive("task");
+              }}
+            >
+              TASKS
                 </Link>
-                <br />
-              </span>
+            <br />
+          </span>
 
-<span>
-<Link
-  to="/dashboard/leader"
-  className={
-    this.state.activeState === "leaderboard"
-      ? "linkEventson"
-      : null
-  }
-  onClick={() => {
-    this.setActive("leaderboard");
-  }}
->
-  LEADERBOARD
+          <span>
+            <Link
+              to="/dashboard/leader"
+              className={
+                this.state.activeState === "leaderboard"
+                  ? "linkEventson"
+                  : null
+              }
+              onClick={() => {
+                this.setActive("leaderboard");
+              }}
+            >
+              LEADERBOARD
 </Link>
-<br />
-</span>
+            <br />
+          </span>
 
-</>
+        </>
       )
     }
 
 
 
-    else{
+    else {
       options = null;
     }
     return (
@@ -113,10 +111,10 @@ export default class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-          
-              <div id="dropShape">{name[0]}</div>
-              <p id="name">{name}</p>
-         
+
+            <div id="dropShape">{name[0]}</div>
+            <p id="name">{name}</p>
+
             <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
@@ -130,9 +128,9 @@ export default class caLeaderboard extends Component {
               />
             </div>
             <div id="optionsToggle">
-              
-            {options}
-{/*
+
+              {options}
+              {/*
               <span>
                 <Link
                   to="/dashboard/offers"
