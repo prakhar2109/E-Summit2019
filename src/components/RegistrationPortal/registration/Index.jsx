@@ -216,62 +216,57 @@ class RegisterIndex extends React.Component {
 
         if (gender) {
             gender = gender.trim()
-            if (gender === "Male") {
-                gender = "M"
-            }
-            if (gender === "Female") {
-                gender = "F"
-            }
-            if (gender === "Other") {
-                gender = "O"
-            }
+            gender=gender[0]
         }
         if (states) states = states.trim()
         else {
             states = null
         }
-        if (college) college = college.trim()
+        if (college) college = college
         else {
             college = null
         }
         if (country) {
-            country = country.value.trim()
+            country = country.trim()
         }
         else {
             country = "India"
         }
-        if (about_esummit) about_esummit = about_esummit.trim()
+        if (about_esummit) about_esummit = about_esummit
         else {
             about_esummit = null
         }
-        if (tshirt_size) tshirt_size = tshirt_size.trim()
+        if (tshirt_size) tshirt_size = tshirt_size
         else {
             tshirt_size = null
         }
         if (password) password = password.trim()
         if (confirm_password) confirm_password = confirm_password.trim()
-        if (year) year = year.trim()
+        if (year) year = year
         else {
             year = null
         }
-        if (programme) programme = programme.trim()
+        if (programme) programme = programme
         else {
             programme = null
         }
-        if (enrollment_no) enrollment_no = enrollment_no.trim()
+        if (enrollment_no) enrollment_no = enrollment_no
         else {
             enrollment_no = null
         }
-        if (industry) industry = industry.trim()
+        if (industry) industry = industry
         else {
             industry = null
         }
-        if (organisation_name) organisation_name = organisation_name.trim()
+        if (organisation_name) organisation_name = organisation_name
         else {
             organisation_name = null
         }
 
-
+        let url_q = window.location.href;
+        let url = new URL(url_q);
+        let ref = url.searchParams.get("ref");
+        let endpoint = ref === "" ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
         let data = {
             name: name,
             email: email,
@@ -297,7 +292,7 @@ class RegisterIndex extends React.Component {
             .display = "flex";
         axios({
             method: "post",
-            url: BASE_URL + "/v1/api/user/signup/",
+            url: BASE_URL + endpoint,
             data: data
         }).then((r) => {
             var d = new Date();

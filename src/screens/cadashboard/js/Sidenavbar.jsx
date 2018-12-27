@@ -76,7 +76,7 @@ class caLeaderboard extends Component {
             <br />
           </span>
 
-          <span>
+          {<span>
             <Link
               to="/dashboard/leader"
               className={
@@ -91,7 +91,7 @@ class caLeaderboard extends Component {
               LEADERBOARD
 </Link>
             <br />
-          </span>
+          </span>}
 
         </>
       )
@@ -118,18 +118,18 @@ class caLeaderboard extends Component {
             <div id="dropShape">{name[0]}</div>
             <p id="name">{name}</p>
             </NavLink>
-            <div className="score">
+            {this.state.data.user_type === "AMB" && <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
-            </div>
-            <div className="progress">
+            </div>}
+            {this.state.data.user_type === "AMB" && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
                   width: scorePercentage + "%",
                 }}
               />
-            </div>
+            </div>}
             <div id="optionsToggle">
 
               {options}
@@ -193,7 +193,7 @@ class caLeaderboard extends Component {
                     this.setActive("contigent");
                   }}
                 >
-                  CONTIGENT
+                  CONTINGENT
                 </Link>
                 <br />
               </span>
@@ -210,16 +210,16 @@ class caLeaderboard extends Component {
                     this.setActive("Events");
                   }}
                 >
-                  Events
+                  EVENTS
                 </Link>
                 <br />
               </span>
                  
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton">
+              {this.state.data.user_type === "AMB" && <div id="leaderboardButton">
                 <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
-              </div>
+              </div>}
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>
