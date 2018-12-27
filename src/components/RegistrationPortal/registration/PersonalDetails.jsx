@@ -110,6 +110,7 @@ class PersonalDetails extends Component {
 
 
     handleSubmit = () => {
+        console.log(this.state)
         if (this.state.phone_no === "") {
             return this.EmptyValidation("phone_no")
         }
@@ -131,7 +132,7 @@ class PersonalDetails extends Component {
         if (this.state.city === "" && this.state.country.value === "India" && this.state.profile_type !== "iitr_student") {
             return this.EmptyValidation("city")
         }
-        if (this.state.college === "" && this.state.profile_type !== "iitr_student") {
+        if (this.state.college === "" && (this.state.profile_type !== "iitr_student" && this.state.profile_type !== "professional")) {
             return this.EmptyValidation("college")
         }
         if (this.state.programme === "" && (this.state.profile_type === "non_iitr_student" || this.state.profile_type === "ca")) {
@@ -181,6 +182,7 @@ class PersonalDetails extends Component {
             organisation_name: organisation_name,
             industry: industry,
         }
+        console.log(data, "data")
         this.props.handleDetails(data)
     }
     getStates = () => {
@@ -366,10 +368,10 @@ class PersonalDetails extends Component {
         this.setState({ country: selectedOption });
     };
     handleOrganisationChange = (selectedOption) => {
-        this.setState({ organisation_name: selectedOption });
+        this.setState({ organisation_name: selectedOption.target.value });
     };
     handleIndustryChange = (selectedOption) => {
-        this.setState({ industry: selectedOption });
+        this.setState({ industry: selectedOption.target.value });
     };
     // custom_validate = (data) => {
     //     const [custom, setData] = useState(data)
@@ -845,7 +847,7 @@ class PersonalDetails extends Component {
                                             autoCorrect="off"
                                             autoComplete="off"
                                             autoCapitalize="off"
-                                            value={organisation_name.value}
+                                            value={organisation_name}
                                             onChange={event => {
                                                 this.handleOrganisationChange(event)
                                                 this.organisation_validate()
@@ -873,7 +875,7 @@ class PersonalDetails extends Component {
                                             autoCorrect="off"
                                             autoComplete="off"
                                             autoCapitalize="off"
-                                            value={industry.value}
+                                            value={industry}
                                             onChange={event => {
                                                 this.handleIndustryChange(event)
                                                 this.industry_validate()

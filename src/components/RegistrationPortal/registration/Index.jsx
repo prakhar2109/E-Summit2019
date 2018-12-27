@@ -216,15 +216,7 @@ class RegisterIndex extends React.Component {
 
         if (gender) {
             gender = gender.trim()
-            if (gender === "Male") {
-                gender = "M"
-            }
-            if (gender === "Female") {
-                gender = "F"
-            }
-            if (gender === "Other") {
-                gender = "O"
-            }
+            gender=gender[0]
         }
         if (states) states = states.trim()
         else {
