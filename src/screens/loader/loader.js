@@ -10,7 +10,7 @@ export default class LoaderIndex extends React.Component {
     }
     render() {
         return (
-            <div className="loader">
+            <div id  ="loader" className="loader">
 
 
                 <div className = "pc_loader"> 

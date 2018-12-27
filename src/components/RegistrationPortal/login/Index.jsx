@@ -48,7 +48,7 @@ export default class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         axios({
             method: "post",
             url: BASE_URL + "/v1/api/user/login",
@@ -162,6 +162,10 @@ export default class RegisterIndex extends React.Component {
         const height = window.innerHeight
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
+        document
+            .getElementById("loader")
+            .style
+            .display = "none";
     }
 
     render() {
