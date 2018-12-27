@@ -90,7 +90,7 @@ export default class ComingSoon extends Component {
                                         ? "esummit-navbarevent-cto-active"
                                         : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({isActive: "Sponsors"})}>
-                                        <HashLink  to="/#sponsors">Sponsors</HashLink>
+                                        <HashLink  to="/#sponsors">Partners</HashLink>
                                     </p>
                                 </div>
 

@@ -87,7 +87,7 @@ class Nav extends Component {
               offset={-100}
               duration={500}
             >
-              Sponsors
+              Partners
             </Link>
           </span>
           <span>

@@ -67,7 +67,7 @@ class Nav extends Component {
 
 
           <span> 
-          <HashLink  to="/#sponsors">Sponsors</HashLink>
+          <HashLink  to="/#sponsors">Partners </HashLink>
           </span>
 
             <span> 

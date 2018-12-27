@@ -68,7 +68,10 @@ export default class CampusAmbasder extends Component {
               Login
             </span>
           </NavLink>
+
+          <NavLink to = "registration_portal/register"> 
             <span className="register">Register</span>
+            </NavLink>
           </center>
         </div>
 
@@ -84,7 +87,7 @@ export default class CampusAmbasder extends Component {
           </p>
         </div>
 
-        <Bullets data={data} title="THE EXITING PERKS" />
+        <Bullets data={data} title="THE EXCITING PERKS" />
         <Coordinator data = {contact} title = "FOR QUERIES" />
 
         <Login />

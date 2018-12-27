@@ -139,7 +139,7 @@ export default class ComingSoon extends Component {
                     offset={-100}
                     duration={500}
                   >
-                    Sponsors
+                    Partners
                   </Link>
                 </p>
               </div>
