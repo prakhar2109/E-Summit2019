@@ -40,6 +40,8 @@ class caLeaderboard extends Component {
         })
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
+          localStorage.setItem("profile" , res.data);
+
         })
         .catch(response => {
           window.location.href = "/login";

@@ -116,12 +116,14 @@ export default class Viewprofile extends Component {
               <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
               <span id="profile-dashboard-esummitId-value">{data.esummit_idgit }</span>
             </div>
+            {/*}
             <div className="profile-dashboard-esummit">
               <span id="profile-dashboard-esummitId">
                 Contingent No (Leader)
               </span>
               <span id="profile-dashboard-esummitId-value">CN 2</span>
             </div>
+    */}
             <div className="ca-profilescore">
               <span id="caprofile-scoreWritten">Score</span>
               <span id="caprofile-scoreValue">{this.state.score}/360</span>
@@ -436,45 +438,7 @@ export default class Viewprofile extends Component {
             </div>
           </div>
           
-          <div className="caprofile-grandparent" />
-          <div
-            className="caprofile-parent2 ca-profile-modalparent2"
-            id="caprofile-parent3"
-          >
-            <div className="caprofile-parent2-heading">SOCIAL ACCOUNTS</div>
-            <div className="caprofile-socialaccounts-child">
-              <div className="caprofile-socialaccounts-child-heading">
-                Facebook
-              </div>
-              <div className="caprofile-socialaccounts-child-data ">
-                
-                <input
-                      type="text"
-                      id="caprofile02"
-                      required
-                    />
-              </div>
-            </div>
-            <div className="caprofile-socialaccounts-child">
-              <div className="caprofile-socialaccounts-child-heading ">
-                Linked in
-              </div>
-              <div className="caprofile-socialaccounts-child-data ">
-                
-              <input
-                      type="text"
-                    
-                      id="caprofile02"
-
-                      required
-
-                    />
-
-
-              </div>
-            </div>
-          </div>
-
+          
           </form>
         </Modal>
       </div>

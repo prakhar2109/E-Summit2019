@@ -105,8 +105,9 @@ export default class Viewprofile extends Component {
                 </div>
 
                 <div className="caprofile-line1"></div>
+                {/*}
                 <button id="caprofile-b01" onClick={this.showModal}>Edit Profile</button>
-                <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>
+        <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>*/}
                 <div className="caprofile-parent1">
 
                     <div className="caprofile-parent1-child1">
@@ -168,7 +169,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                    17117009
+                                    {data.enrollment_no}
                                 </div>
 
                             </div>
@@ -217,77 +218,16 @@ export default class Viewprofile extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="caprofile-containter-parent-child2">
-                            <div className="caprofile-containter-parent-child2-child1">
-                                <div className="caprofile-heading">
-                                    Enrollment No.
-                                </div>
-
-                                <div className="caprofile-parent1-child2-email caprofile-data">
-                                    <input type="text" placeholder="17118050" id="editprofile-input-mobile"></input>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                       
                     </div>
 
                 </div>
 
 
-                <div className="caprofile-parent2" id="caprofile-parent3">
-                    <div className="caprofile-parent2-heading">
-                        SOCIAL ACCOUNTS
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                        <div className="caprofile-socialaccounts-child-heading">
-                            Facebook
-                                </div>
-                        <div className="caprofile-socialaccounts-child-data ">
-                            https://www.facebook.com/profile.php?id=100006245897944
-                                </div>
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                        <div className="caprofile-socialaccounts-child-heading ">
-                            Linked in
-                                </div>
-                        <div className="caprofile-socialaccounts-child-data ">
-                            https://www.facebook.com/profile.php?id=100006245897944
-                                </div>
-                    </div>
+             
 
 
-
-
-                </div>
-
-
-
-
-                <div className="caprofile-parent2" id="caprofile-mobile-editprofile-parent3">
-                    <div className="caprofile-parent2-heading">
-                        SOCIAL ACCOUNTS
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                        <div className="caprofile-socialaccounts-child-heading">
-                            Facebook
-                                </div>
-                        <div className="caprofile-socialaccounts-child-data ">
-                            <input type="text" placeholder="https://www.facebook.com/profile.php?id=100006245897944" id="editprofile-input-mobile"></input>
-                        </div>
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                        <div className="caprofile-socialaccounts-child-heading ">
-                            Linked in
-                                </div>
-                        <div className="caprofile-socialaccounts-child-data ">
-                            <input type="text" placeholder="https://www.facebook.com/profile.php?id=100006245897944" id="editprofile-input-mobile"></input>
-                        </div>
-                    </div>
-
-                </div>
-                <button id="caprofilemobile-b02" onClick={this.saveProfile}>SAVE CHANGES</button>
+               <button id="caprofilemobile-b02" onClick={this.saveProfile}>SAVE CHANGES</button>
 
 
                 <Modal
@@ -360,52 +300,12 @@ export default class Viewprofile extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="caprofile-containter-parent-child2">
-                                    <div className="caprofile-containter-parent-child2-child1">
-                                        <div className="caprofile-heading">
-                                            Enrollment No.
-                                </div>
-
-                                        <div className="caprofile-parent1-child2-email caprofile-data">
-                                            <input type="text" value=" 17117009" id="caprofile01"></input>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
+                                 </div>
 
 
                         </div>
 
-                        <div className="caprofile-grandparent">
-                        </div>
-                        <div className="caprofile-parent2 ca-profile-modalparent2" id="caprofile-parent3" >
-                            <div className="caprofile-parent2-heading">
-                                SOCIAL ACCOUNTS
-		            </div>
-                            <div className="caprofile-socialaccounts-child">
-                                <div className="caprofile-socialaccounts-child-heading">
-                                    Facebook
-		                        </div>
-                                <div className="caprofile-socialaccounts-child-data ">
-                                    https://www.facebook.com/profile.php?id=100006245897944
-		                        </div>
-                            </div>
-                            <div className="caprofile-socialaccounts-child">
-                                <div className="caprofile-socialaccounts-child-heading ">
-                                    Linked in
-		                        </div>
-                                <div className="caprofile-socialaccounts-child-data ">
-                                    https://www.facebook.com/profile.php?id=100006245897944
-		                        </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </form>
+                        </form>
                 </Modal>
 
             </div>
