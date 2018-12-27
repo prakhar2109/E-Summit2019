@@ -1,0 +1,16 @@
+.cs-loader{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height:100vw;
+  width:100vw;
+  img{
+    max-height:100vh;
+    max-width:100vw;
+    
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+  }
+}

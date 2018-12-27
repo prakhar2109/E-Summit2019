@@ -145,10 +145,7 @@ export class IdeaStorm extends Component {
             to turn your ideas into an entrepreneurial ventures
           </p>
           <center>
-          <NavLink to = "/login"> 
-        
-              <span className="register_button">APPLY FOR IDEASTORM</span>
-            </NavLink>
+           
           </center>
         </div>
 
@@ -244,12 +241,9 @@ export class IdeaStorm extends Component {
 
         <div className="register">
           <p className="register_now">Apply Now</p>
-          <p>
-            To participate in Idea-Storm 2019 first apply for Ideastorm. After
-            registering, submit your enteries for round 1.
-          </p>
+        
           <center>
-            {" "}
+            
             <a
               without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
@@ -257,13 +251,7 @@ export class IdeaStorm extends Component {
             >
               <span>APPLY FOR IDEASTORM</span>
             </a>
-            <a
-              without rel="noopener noreferrer"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform"
-              target="_blank"
-            >
-              <span>APPLY FOR ROUND 1</span>
-            </a>
+          
           </center>
         </div>
 
@@ -280,17 +268,7 @@ export class IdeaStorm extends Component {
               <span>APPLY FOR IDEASTORM</span>
             </a>
           </center>
-          <p>After registering, submit your enteries for round 1.</p>
-          <center>
-            <a
-              without rel="noopener noreferrer"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform"
-              target="_blank"
-            >
-              {" "}
-              <span>APPLY FOR ROUND 1</span>
-            </a>
-          </center>
+          
         </div>
 
         <div id="faq_idea">

@@ -23,9 +23,10 @@ a:hover {
     
     width: 100vw;
     padding: 3rem  0;
-    height:91vh;
+    min-height:91vh;
+    height: auto;
  
-    background:#15181A;
+    background:rgb(12,17,19);
     padding: 5rem;
     display: grid;
     align-items: end;
@@ -49,6 +50,7 @@ a:hover {
         letter-spacing: 0.09em;
         padding: 20px 24px ;
         color: #FFFFFF;
+        cursor: pointer;
 
         @include mobile {
             font-size: 12px;

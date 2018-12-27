@@ -56,6 +56,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route exact path="/payment" component={Payment} />
                 <Route path="/dashboard/" component={Caindex} />
+                <Route path ="/loader" component = {Loader} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
