@@ -18,7 +18,7 @@ export default class CampusAmbasder extends Component {
     let data = [
       {
         value:
-          "For every successful payment from the participants who have             registered from the referral link, the CA would be awarded Rs.150               off on the registration plus accommodation fees for E - Summit               2019.",
+          "For every successful payment from the participants who have             registered from the referral link, the CA would be awarded 10%               off on each payment on the registration plus accommodation fees for E - Summit               2019.",
       },
 
       {

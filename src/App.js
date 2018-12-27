@@ -13,7 +13,7 @@ import "antd/dist/antd.css";
 import Caindex from "./screens/cadashboard/js/index";
 import Payment from "./screens/cadashboard/js/payment";
 import Loadable from "react-loadable";
-import Loader from "./screens/common/loader";
+import Loader from "./screens/loader/loader";
 
 // const Loading = ({ error }) => {
 //   if (error) {
@@ -56,6 +56,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route exact path="/payment" component={Payment} />
                 <Route path="/dashboard/" component={Caindex} />
+                <Route path ="/loader" component = {Loader} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
