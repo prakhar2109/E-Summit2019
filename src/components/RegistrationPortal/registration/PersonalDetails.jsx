@@ -175,9 +175,9 @@ class PersonalDetails extends Component {
             city: city,
             college: college,
             programme: programme,
-            year: year,
-            about_esummit: about_esummit,
-            tshirt_size: tshirt_size,
+            year: year.value,
+            about_esummit: about_esummit.value,
+            tshirt_size: tshirt_size.value,
             organisation_name: organisation_name,
             industry: industry,
         }
@@ -772,7 +772,7 @@ class PersonalDetails extends Component {
                                                 value={college}
                                                 onChange={event => {
                                                     this.onChange(event)
-                                                    this.college_valiate()
+                                                    this.college_validate()
                                                 }}
                                                 spellCheck="false"
                                                 required
