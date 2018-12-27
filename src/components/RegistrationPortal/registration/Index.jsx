@@ -111,7 +111,6 @@ class RegisterIndex extends React.Component {
 
     handleAccountSetup = (data) => {
         this.setState({
-
             name: data.name,
             email: data.email,
             password: data.password,
@@ -122,7 +121,6 @@ class RegisterIndex extends React.Component {
     }
     handleEmailVerification = (data) => {
         this.setState({
-            email: data.email,
             otp: data.otp,
             resend_email: data.resend_email,
             activeStep: this.state.activeStep + 1
@@ -176,12 +174,32 @@ class RegisterIndex extends React.Component {
             states,
             organisation_name,
             industry, } = this.state
-
+        console.log(this.state)
         if (name) name = name.trim()
         if (phone_no) phone_no = phone_no.trim()
         if (image_url) image_url = image_url.trim()
         if (email) email = email.trim()
-        if (profile_type) profile_type = profile_type.trim()
+        if (profile_type) {
+            profile_type = profile_type.trim()
+            if (profile_type === "iitr_student") {
+                profile_type = "IIT"
+                city = "Roorkee"
+                states = "Uttrakhand"
+                college = "IITR"
+            }
+            if (profile_type === "non_iitr_student") {
+                profile_type = "NONIIT"
+            }
+            if (profile_type === "ca") {
+                profile_type = "CA"
+            }
+            if (profile_type === "professional") {
+                profile_type = "PROFE"
+            }
+            if (profile_type === "professor") {
+                profile_type = "PROF"
+            }
+        }
 
         if (gender) {
             gender = gender.trim()
@@ -229,13 +247,14 @@ class RegisterIndex extends React.Component {
             enrollment_no: enrollment_no,
             college: college,
             city: city,
-            states: states,
+            state: states,
             organisation_name: organisation_name,
             industry: industry,
             tshirt_size: tshirt_size,
             about_esummit: about_esummit,
             year: year
         }
+        console.log(data)
         document
             .getElementById("loader")
             .style
@@ -262,7 +281,7 @@ class RegisterIndex extends React.Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
-            alert("Network error")
+            alert(response)
         });
 
     }

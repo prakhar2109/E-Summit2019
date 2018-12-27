@@ -119,7 +119,8 @@ export default class EmailVerification extends Component {
         else {
             clearTimeout(time_out)
             return this.setState({
-                otp_expired: true
+                otp_expired: true,
+                otp: ""
             })
         }
 
@@ -142,7 +143,8 @@ export default class EmailVerification extends Component {
             else {
                 clearTimeout(time_out)
                 this.setState({
-                    otp_expired: true
+                    otp_expired: true,
+                    otp: ""
                 })
             }
             time_out = setTimeout(timer, 1000)
