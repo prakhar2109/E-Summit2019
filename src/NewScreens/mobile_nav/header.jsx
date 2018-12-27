@@ -133,6 +133,28 @@ export default class ComingSoon extends Component {
                                     </p>
                                 </div>
 
+
+                                <div
+                                    className={
+                                    this.state.displaynavbar
+                                        ? "navbar-show ecell-mobile-menuback"
+                                        : "navbar-hide ecell-mobile-menuback"
+                                    }
+                                >
+                                    <p
+                                    className={
+                                        this.state.isActive === "ignite"
+                                        ? "esummit-navbarevent-cto-active"
+                                        : "esummit-navbarevent-cto-inactive"
+                                    }
+                                    onClick={() => this.setState({ isActive: "ignite" ,displaynavbar: !this.state.displaynavbar,})}
+                                    >
+                                    <NavLink to="/ignite">Startup Ignite</NavLink>
+                                    </p>
+                                </div>
+
+
+
                                 <div
                                     className={this.state.displaynavbar
                                     ? "navbar-show ecell-mobile-menuback"
