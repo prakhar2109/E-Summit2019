@@ -195,6 +195,11 @@ font-family:"ProximaNova-Semibold" !important;
     padding-right: 20%;
 }
 
+.cainvite-linkparent-input{
+
+display:flex;
+}
+
 
 @media (min-width: 1920px) and (max-width: 2560px){
 
@@ -246,6 +251,43 @@ font-family:"ProximaNova-Semibold" !important;
 
     font-size: 24px;
 }
+}
+
+@media only screen and (max-width: 900px){
+.cainvite-parent {
+    color: black;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    padding-bottom: 2vh;
+    background-color: #F7F8F9;
+}
+.cainviteparent-heading{
+    margin-top:0;
+    padding-top:3.33vh;
+
+}
+#camyinput {
+    border: 2px solid #C4C4C4;
+    width: 68%;
+    height: 5.92vh;
+}
+#camyinputbutton {
+    height: 5.92vh;
+    background: #F39423;
+    color: #fff;
+    border: 0px;
+    font-size: 12px;
+	font-family:"ProximaNova-Semibold" !important; 
+    width: 25.23%;
+}
+.cainvite-linkparent-heading{
+font-size: 18px;
+}
+.cainviteparent-perks-heading{
+font-size: 18px;}
 }
 
 
