@@ -112,10 +112,10 @@ class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-
+            <NavLink to  = "/dashboard/Viewprofile">
             <div id="dropShape">{name[0]}</div>
             <p id="name">{name}</p>
-
+            </NavLink>
             <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>

@@ -108,6 +108,12 @@ class RegisterIndex extends React.Component {
             social_signup: false
         }
     }
+    componentDidMount(){
+        document
+        .getElementById("loader")
+        .style
+        .display = "none";
+    }
 
     handleAccountSetup = (data) => {
         this.setState({
