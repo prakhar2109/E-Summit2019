@@ -174,7 +174,7 @@ class PersonalDetails extends Component {
             country: country.value,
             states: states.value,
             city: city.value,
-            college: college.value,
+            college: country.value === "India" ? college.value : college,
             programme: programme,
             year: year.value,
             about_esummit: about_esummit.value,
