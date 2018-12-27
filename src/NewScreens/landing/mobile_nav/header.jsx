@@ -215,7 +215,7 @@ export default class ComingSoon extends Component {
                   }
                   onClick={() => this.setState({ isActive: "Ambassador" ,displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <NavLink to="/campusambasder">Campus Ambassador</NavLink>
+                  <NavLink to="/campusambassador">Campus Ambassador</NavLink>
                 </p>
               </div>
 
