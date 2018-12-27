@@ -37,6 +37,17 @@ export default class Speakers extends Component {
       slidesToShow: 4,
       slidesToScroll: 1,
     };
+
+    let settings2 = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+
+
     return (
       <div>
         <Element id="speakers" name="speakers">
@@ -59,17 +70,30 @@ export default class Speakers extends Component {
                 })}
               </Slider>
             </div>
+ 
+
 
             <div className="speaker_mobile">
-              <center>
-                <div>
-                  <div className="img_holder" />
-                  <p className="name">Rohit</p>
-                  <p className="designation">test</p>
-                </div>
-              </center>
+              <Slider {...settings2}>
+                {this.state.speakers.map(update => {
+                  return (
+                    <div key={update.id}>
+                      <div className="img_holder">
+                        <img alt="profile" src={BASE_URL + update.profile_image} />
+                      </div>
+
+                      <p className="name">{update.name}</p>
+                      <p className="designation">{update.designation}</p>
+                    </div>
+                  );
+                })}
+              </Slider>
             </div>
             <center>
+
+
+
+
               <NavLink to="/speakers">
                 <button className="all_events_button">VIEW ALL SPEAKERS</button>
               </NavLink>
