@@ -171,9 +171,9 @@ class PersonalDetails extends Component {
             gender: gender,
             enrollment_no: enrollment_no,
             country: country.value,
-            states: states,
-            city: city,
-            college: college,
+            states: states.value,
+            city: city.value,
+            college: college.value,
             programme: programme,
             year: year.value,
             about_esummit: about_esummit.value,
@@ -845,7 +845,7 @@ class PersonalDetails extends Component {
                                             autoCorrect="off"
                                             autoComplete="off"
                                             autoCapitalize="off"
-                                            value={organisation_name}
+                                            value={organisation_name.value}
                                             onChange={event => {
                                                 this.handleOrganisationChange(event)
                                                 this.organisation_validate()
@@ -873,7 +873,7 @@ class PersonalDetails extends Component {
                                             autoCorrect="off"
                                             autoComplete="off"
                                             autoCapitalize="off"
-                                            value={industry}
+                                            value={industry.value}
                                             onChange={event => {
                                                 this.handleIndustryChange(event)
                                                 this.industry_validate()
