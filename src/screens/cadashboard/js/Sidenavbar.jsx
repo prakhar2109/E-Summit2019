@@ -178,7 +178,7 @@ class caLeaderboard extends Component {
                 <br />
               </span>
 
-              {/*
+             
               <span>
                 <Link
                   to="/dashboard/contigent"
@@ -196,7 +196,23 @@ class caLeaderboard extends Component {
                 <br />
               </span>
 
-                */}
+              <span>
+                <Link
+                  to="/dashboard/Events"
+                  className={
+                    this.state.activeState === "contigent"
+                      ? "linkEventson"
+                      : null
+                  }
+                  onClick={() => {
+                    this.setActive("contigent");
+                  }}
+                >
+                  Events
+                </Link>
+                <br />
+              </span>
+                 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               <div id="leaderboardButton">
