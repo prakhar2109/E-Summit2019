@@ -1,168 +1,154 @@
-import React, {Component} from 'react';
-import Slider from "react-slick";
-import Header from '../../components/header';
-
+import React, { Component } from "react";
+import Header from "../../components/header";
+import { Element } from "react-scroll";
+import ViewMore from "./static/view_more.png";
+import {NavLink } from "react-router-dom"
 class Events extends Component {
-    state = {
-        speakers: [
-            {
-                id: 1,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 2,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 3,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 4,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 5,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }
-        ]
-    }
-    render() {
-        let settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1
-        }
-        return (
-            <section id="events">
+  render() {
+    return (
+      <>
+      
+        <Element id="events" name="events">
+          <div className="land_events">
+            <Header title="HIGHLIGHT EVENTS" />
+            <p className="text">
+              Presenting to you the showstoppers of E-Summit 2019! Participate
+              in these grand events and gain an opportunity to learn, network,
+              and how to forget the hefty cash prizes.
+            </p>
+          </div>
+          <div className="land_events_array">
+          <div> 
+            <a href = "/ideastorm" target = "_blank">
+            <div className="conclave" >
+              <span>
+                <p className="title">IDEASTORM</p>
+                <p className="tagline"></p>
+              </span>
+              <span>
+                <center>
+                   
+                  <i>
+                    
+                    <img src={ViewMore} alt="view more" />
+                  </i>
+                  <p className="viewmore">VIEW MORE</p>
+                
+                </center>
+              </span>
+            </div>
+</a>
+            </div>
 
-                <div className="land_events">
-                    <Header title="EVENTS"/>
-                    <p className="text">
-                        Expert investor or an emerging entrepreneur or a quiz master, you think you know
-                        it all ? Put that test to claim, battle it out in the field for the ultimate
-                        glory.
-                    </p>
+            <div className="workshop">
+              <span>
+                <p className="title">CONCLAVES</p>
+                <p className="tagline"></p>
+              </span>
+               <span>
+                <center>
+                  {/* <i>
+                  
+                    <img src={ViewMore} alt="view more" />
+                  </i> */}
+                  <p className="viewmore">COMING SOON</p>
+                </center>
+              </span> 
+            </div>
+            <div className="leadership">
+              <span>
+                <p className="title">LEADERSHIP SERIES</p>
+                <p className="tagline"></p>
+              </span>
+               <span>
+                <center>
+                  {/* <i>
+                
+                    <img src={ViewMore} alt="view more" />
+                  </i> */}
+                  <p className="viewmore">COMING SOON</p>
+                </center>
+              </span> 
+            </div>
+            <div className="competition">
+              <span>
+                <p className="title">WORKSHOPS</p>
+                <p className="tagline"></p>
+              </span>
 
-                </div>
-                <div className="land_events_array">
+              <span>
+                <center>
+                  {/* <i>
+                    
+                    <img src={ViewMore} alt="view more" />
+                  </i> */}
+                  <p className="viewmore">COMING SOON</p>
+                </center>
+              </span>
+            </div>
+          </div>
+          <div className="land_events">
+            <Header title="EVENTS " />
 
-                    <div className="conclave">
-                        <center>
+            <p className="text">
+              Expert investor or an emerging entrepreneur or a quiz master, you
+              think you know it all? Put that test to claim, battle it out in
+              the field for the ultimate glory.
+            </p>
 
-                            <p>CONCLAVE</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
+            <div className="land_events_array2">
+              <div className="events_production" id="events_production1">
+                <span>
+                  <p className="t1">PRODUCTATHON</p>
+                  
+                </span>
+                <p className="t3">COMING SOON</p>
+              </div>
 
-                        </center>
-                    </div>
+              <div className="events_production" id="events_production2">
+                <span>
+                  <p className="t1">COMPETITIONS</p>
+                </span>
+                <p className="t3">COMING SOON</p>
+              </div>
 
-                    <div className="workshop">
-                        <center>
+              <div className="events_production" id="events_production3">
+                <span>
+                  <p className="t1">STARTUP EXPO</p>
+                 
+                </span>
+                <p className="t3">COMING SOON</p>
+              </div>
 
-                            <p>CONCLAVE</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
+              <div className="events_production" id="events_production4">
+                <span>
+                  <p className="t1">CASE STUDY CHALLENEGE</p>
+                  
+                </span>
+                <p className="t3">COMING SOON</p>
+              </div>
 
-                        </center>
-                    </div>
-                    <div className="leadership">
-                        <center>
+              <div className="events_production" id="events_production5">
+                <span>
+                  <p className="t1">ONLINE EVENTS</p>
+                  
+                </span>
+                <p className="t3">COMING SOON</p>
+              </div>
 
-                            <p>CONCLAVE</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
-
-                        </center>
-                    </div>
-                    <div className="competition">
-                        <center>
-
-                            <p>CONCLAVE</p>
-                            <p>Tagline for the event or minimal discription of event.</p>
-                            <i className="fa fa-plus" aria-hidden="true"></i>
-                            <p>VIEW MORE</p>
-
-                        </center>
-                    </div>
-
-                </div>
-                <div className="land_events">
-                    <center>
-                        <button className="all_events_button">VIEW ALL EVENTS</button>
-                    </center>
-                    <Header title="SPEAKERS"/>
-                    <p className="text">Meet the awesome companies who make this all possible.</p>
-                    <div className="speaker_slidder">
-                        <Slider {...settings}>
-
-                            {this
-                                .state
-                                .speakers
-                                .map((update) => {
-
-                                    return (
-                                        <div key={update.id}>
-                                            <div className="img_holder"></div>
-
-                                            <p className="name">{update.name}</p>
-                                            <p className="designation">{update.designation}
-                                            </p>
-
-                                        </div>
-                                    );
-                                })}
-
-                        </Slider>
-
-                    </div>
-                    <center>
-                        <button className="all_events_button">VIEW ALL SPEAKERS</button>
-                    </center>
-                    <Header title="SPONSORS"/>
-                    <p className="text">
-                        Meet the awesome companies who make this all possible.
-                    </p>
-
-                    <div className="speaker_slidder">
-                        <Slider {...settings}>
-
-                            {this
-                                .state
-                                .speakers
-                                .map((update) => {
-
-                                    return (
-                                        <div key ={update.id}>
-                                            <div className="img_holder"></div>
-                                            <p className="name">{update.name}</p>
-                                            <p className="designation">
-                                                {update.designation
-}
-                                            </p>
-
-                                        </div>
-                                    );
-                                })
-}
-                        </Slider>
-
-                    </div>
-                    <center>
-                        <button className="all_sponsors">VIEW ALL SPONSORS</button>
-                    </center>
-                </div>
-
-            </section>
-
-        );
-    }
+              <div className="events_production" id="events_production6">
+                <span>
+                  <p className="t1">CORPORATE SPEED DATING</p>
+                  
+                </span>
+                <p className="t3">COMING SOON</p>
+              </div>
+            </div>
+          </div>
+        </Element>
+      </>
+    );
+  }
 }
 
 export default Events;

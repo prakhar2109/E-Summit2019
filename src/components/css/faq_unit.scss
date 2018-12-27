@@ -1,6 +1,13 @@
 @mixin mobile {
-    @media(max-width: 1200px) {
+    @media(max-width: 1000px) {
         @content;
+    }
+}
+
+
+@mixin fhd {
+    @media  (min-width:1000px) and (max-width: 1600px) {
+        @content ;
     }
 
 }
@@ -17,18 +24,23 @@
 
     .answer {
         display: none;
-        padding: 20px 40px;
-        line-height: 35px;
-        font-size: 24px;
-        letter-spacing: 0.1em;
+        padding: 1.25rem 2.5rem;
+        line-height: 128%;
+        font-size: 22px;
+        letter-spacing: 0.02em;
+
         color: #B2B2B2;
         background: #F7F8F9;
         cursor: pointer;
         @include mobile{
             line-height: normal;
-            font-size: 14px;
-            padding: 0px 10px 20px 10px ;
+            font-size: 0.875rem;
+            padding: 0rem 0.625rem 1.25rem 0.625rem ;
 
+        }
+
+        @include fhd{
+            font-size: 1.125rem;
         }
 
 
@@ -38,8 +50,8 @@
     .question {
         cursor: pointer;
         line-height: normal;
-        font-size: 28px;
-        padding: 20px 40px;
+        font-size: 24px;
+        padding: 1.25rem 2.5rem;
         color: #4F4F4F;
 
         @include mobile {
@@ -50,6 +62,10 @@
 
         }
 
+        @include fhd{
+            font-size: 1.5rem;
+        }
+
         img {
             float: right;
 
@@ -57,7 +73,7 @@
                 height:20px;
             }
         }
-        .cross {
+        .crox {
             display: none;
         }
 

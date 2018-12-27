@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Richard from "./static/richard.jpg";
+import Richard from "./static/varun.jpg";
 
 class Testimonials extends Component {
     render() {
@@ -8,11 +8,10 @@ class Testimonials extends Component {
             <div className="land_testinomial">
                 <div>
                     <img src={Richard} alt="Richard"/>
-                    <p>Entrepreneurship is about turning what excites you in life into capital, so
-                        that you can do more of it and move forward with it.</p>
+                    <p className = "testimonial">For me the E-Summit’18 was a great success. It was my honour to be invited and to be a part of the event which promotes the spirit of entrepreneurship. The young enthusiastic and highly energetic team did a spectacular job. Absolutely delighted to be a speaker at this inspiring event and I wish all the very best to all the IIT Roorkee team members for the upcoming events and conferences.”</p>
                     <p className="name">
-                        RICHARD BRANSON</p>
-                    <p className="designation">Founder, Virgin group</p>
+                    Varun Sheth</p>
+                    <p className="designation">CEO and Founder Ketto</p>
                 </div>
             </div>
         </section>

@@ -1,0 +1,181 @@
+.taskparent {
+    background: #F7F8F9;
+    height: 100vh;
+    width: 82%;
+    position: absolute;
+    top:0;
+    left: 18%;
+}
+
+.taskchildrow {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5vh;
+}
+
+
+.taskchild {
+
+    background: #FFFFFF;
+    height: 42.57vh;
+
+    width: 30.83%;
+    margin-left: 1.875%;
+    margin-bottom: 1.875%;
+    box-shadow: 1.5px 2px 15px rgba(51, 51, 51, 0.08);
+}
+
+.taskchild-body {
+
+    margin: 5%;
+}
+
+.taskchild-heading {
+
+    font-family: proxima-nova, sans-serif;
+    font-size: 28px;
+    line-height: 32px;
+    color: #3A667B;
+    font-weight: 500;
+
+}
+
+.taskchild-description {
+
+    height: 10vh;
+    width: 100%;
+    overflow: hidden;
+    /* background: blue; */
+    margin-top: 4%;
+    opacity: 0.58;
+    color: #4F4F4F;
+    font-size: 12px;
+}
+
+.taskchild-fileupload {
+    cursor: pointer;
+    margin-top: 4%;
+    border-color: #B2B2B2;
+    border-style: dashed;
+    border-width: 2px;
+    height: 21vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: url('../svg/Group\ 16.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8vh;
+
+}
+
+.taskchildheaderrow {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.taskchild-line {
+    width: 200vh;
+    height: 0.4vh;
+    background-color: #E0E0E0;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 50%;
+    margin-left: 1vh;
+}
+
+.taskchild-weeklyuploads {
+    margin-top: 2vh;
+    margin-left: 3vh;
+    margin-right: 2vh;
+    color: rgba(130, 130, 130, 0.93);
+    font-size: 20px;
+
+}
+
+.taskchild-dates {
+    margin-top: 2vh;
+    font-size: 20px;
+    color: rgba(130, 130, 130, 0.93);
+    margin-left: 3vh;
+}
+
+.taskchild-fileupload input {
+    cursor: pointer;
+    background-color: black;
+    height: 18vh;
+    opacity: 0;
+
+}
+
+.Selectfilesvg {
+    display: flex;
+    flex-direction: column;
+    top: -2vh;
+    position: relative;
+    font-size: 12px;
+    text-align: center
+}
+
+
+.taskName {
+    margin-top: -4px;
+    line-height: 1vh;
+    color: #4F4F4F;
+}
+
+@media only screen and (max-width: 900px) {
+    .taskchildrow {
+        flex-direction: column;
+        justify-items: center;
+
+    }
+ 
+    .taskparent {
+        color: black;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    padding-bottom: 2vh;
+    background-color: #F7F8F9;
+    }
+
+    .taskchild {
+
+        background: #FFFFFF;
+        height: auto;
+
+        align-self: center;
+        width: 80%;
+        margin-left: 1.875%;
+        margin-bottom: 5.875%;
+        box-shadow: 1.5px 2px 15px rgba(51, 51, 51, 0.08);
+    }
+
+    #leftPane {
+        display: none;
+    }
+
+
+    .taskchild-weeklyuploads {
+        font-size: 13px;
+
+    }
+
+    .taskchild-line {
+        width: 25%;
+    }
+
+    .taskchild-dates {
+        font-size: 13px;
+    }
+
+}
+

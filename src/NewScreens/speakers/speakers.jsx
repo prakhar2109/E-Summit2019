@@ -1,73 +1,60 @@
 import React, { Component } from "react";
 import "./speakers.scss";
 import Header from "../../components/header";
-import Nav from "../landing/nav/nav.jsx";
-
+import Nav from "../nav/nav";
+import Footer from "../IdeaStorm/footer/eventfooter";
 import Testimonial from "../landing/testimonials";
+import MobileNav from "../mobile_nav/header";
+import axios from "axios";
+import { BASE_URL } from "../../utils/urls"
 
 export default class speakers extends Component {
-    state = {
-        speakers: [
-            {
-                id: 1,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 2,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 3,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 4,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }, {
-                id: 5,
-                name: "Rohit Jha",
-                designation: "Founder "
-            }
-        ]
-    }
+  componentDidMount() {
+    axios
+      .get(BASE_URL + "/v1/api/speakers/")
+      .then(res => {
+        this.setState({
+          speakers: res.data,
+        });
+      })
+  }
+  state = {
+    speakers: [
+
+    ],
+  };
   render() {
     return (
       <>
         <Nav />
+        <MobileNav />
+
         <div className="speakers">
           <Header title="SPEAKERS" />
 
-          <p className = "text">Meet the awesome companies who make this all possible.</p>
+          <p className="text">
+            Meet the awesome companies who make this all possible.
+          </p>
           <p className="speak"> E-Summit’19 Speakers</p>
 
-          <div className ="speakers_array">
-          
-          {this
-                                .state
-                                .speakers
-                                .map((update) => {
+          <div className="speakers_array">
+            {this.state.speakers.map(update => {
+              return (
+                <div key={update.id}>
+                  <div className="img_holder">
+                    <img alt="profile" src={BASE_URL + update.profile_image} />
+                  </div>
 
-                                    return (
-                                        <div key={update.id}>
-                                            <div className="img_holder"></div>
-
-                                            <p className="name">{update.name}</p>
-                                            <p className="designation">{update.designation}
-                                            </p>
-
-                                        </div>
-                                    );
-                                })}
-
-          
-          
-          
-          
+                  <p className="name">{update.name}</p>
+                  <p className="designation">{update.designation}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         <Testimonial />
+        <Footer />
       </>
     );
   }

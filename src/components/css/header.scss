@@ -5,29 +5,42 @@
 
 }
 
+@mixin fhd {
+    @media  (min-width:1000px) and (max-width: 1600px) {
+        @content ;
+    }
+
+}
 
 .head1 {
 
-    font-size: 2rem !important;
-    letter-spacing: 0.1em;
+    font-size: 2rem !important ;
+    letter-spacing: 0.05em;
     color: #FEFFFF;
     font-weight: bold !important;
     display: inline-block;
-    margin-left: -2rem;
+    margin-left: -1.8rem;
     z-index: 3;
     position: relative;
     font-family: ProximaNova-Bold;
  
 
+
+    @include fhd{
+        font-size: 1.5rem !important;
+    }
+
+    
     @include mobile {
         font-size: 18px !important;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.04em;
         margin-left: -1.5rem;
     }
+
 }
 
 .vector {
-    width: 3.5rem;
+    width: 3rem;
     margin-top: -1.25rem !important;
     position: relative;
     z-index: 2;
@@ -38,6 +51,7 @@
     @include mobile {
         width: 2.5rem;
         margin-left: -1rem;
+        margin-top:-0.25rem;
 
 
     }
