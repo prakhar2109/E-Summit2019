@@ -6,7 +6,8 @@ import Speakers from "./NewScreens/speakers/speakers";
 import Sponsors from "./NewScreens/sponsors/sponsors";
 import FAQBoard from "./NewScreens/faq/faq";
 import CampusAmbasder from "./NewScreens/ambasder/ambasder";
-import Registration from "./components/RegistrationPortal/Index";
+import Registration from "./components/RegistrationPortal/registration/Index";
+import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
 import Caindex from "./screens/cadashboard/js/index";
@@ -21,13 +22,13 @@ import Loader from "./screens/common/loader";
 //     return <Loader />;
 //   }
 // };
- 
+
 
 const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
- 
+
 
 class App extends Component {
   constructor() {
@@ -51,7 +52,8 @@ class App extends Component {
                 <Route path="/faq" component={FAQBoard} />
                 <Route path="/campusambasder" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
-                <Route path="/registration_portal" component={Registration} />
+                <Route path="/register" component={Registration} />
+                <Route path="/login" component={Login} />
                 <Route exact path="/payment" component={Payment} />
                 <Route path="/dashboard/" component={Caindex} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
