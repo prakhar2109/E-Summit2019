@@ -17,6 +17,9 @@ import Funding from "./static/4.png";
 import Media from "./static/5.png";
 
 import "../landing/css/landing.scss";
+import "../../screens/ignite/css/ignite.scss";
+import "../../screens/ignite/css/scrollanimation.css";
+
 export class IdeaStorm extends Component {
   state = {
     faq: [
@@ -131,7 +134,7 @@ export class IdeaStorm extends Component {
           <span />
         </div>
         <div className="idea">
-          <p>IDEA STORM</p>
+          <p className  = "header_idea">IDEA STORM</p>
 
           <p>You make it happen.</p>
           <p>
@@ -144,6 +147,12 @@ export class IdeaStorm extends Component {
             business acumen. This would be a perfect stage for you, If you want
             to turn your ideas into an entrepreneurial ventures
           </p>
+
+          <div className="ignite-first-page-scroll">
+                <div onClick={this.timeline} className='icon-scroll'></div> <br />
+                
+                <div id="ignite-first-page-scroll-child"> <span> SCROLL DOWN</span></div>
+              </div>
           <center>
            
           </center>
