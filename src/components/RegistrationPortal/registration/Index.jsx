@@ -229,7 +229,9 @@ class RegisterIndex extends React.Component {
         else {
             states = null
         }
-        if (college) college = college
+        if (college) {
+            college = college.value
+        }
         else {
             college = "null"
         }
