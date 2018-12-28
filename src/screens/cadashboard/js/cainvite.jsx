@@ -10,35 +10,7 @@ export default class Cainvite extends Component {
         loading: false,
         visible: false,
         invite_link : ""
-      }
-
-
-      componentDidMount = () => {
-        let token = localStorage.getItem("user_token");
-        console.log(token);
-    
-        if (token !== undefined) {
-          axios
-            .get(BASE_URL + "/v1/api/user/profile", {
-              headers: {
-                Authorization: `Token ${token}`,
-              },
-            })
-            .then(res => {
-                console.log(res);
-             
-              this.setState({  
-                  invite_link : BASE_URL + "/v1/api/user/signup/?ref="+ res.data.esummit_id , 
-                  
-              });
-            })
-            .catch(response => {
-              console.log(response);
-            });
-        }
-      };
-
-      
+      }      
     viewMore() {
         document.getElementById("viewmore").style.display = "none";
         document.getElementById("viewless").style.display = "block";
@@ -67,6 +39,7 @@ export default class Cainvite extends Component {
     render() {
         let status="Done";
         let stat="Notdone"
+        let invite = localStorage.getItem("invite");
         return (
             <div className="cainvite-parent">
 
@@ -81,7 +54,7 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainvite-linkparent-input">
-                        <input value = {this.state.invite_link} type="text" id="camyinput"></input>
+                        <input value = {invite} type="text" id="camyinput"></input>
                         <button id="camyinputbutton" onClick={this.copyLink}>Copy link</button>
                     </div>
                 </div>

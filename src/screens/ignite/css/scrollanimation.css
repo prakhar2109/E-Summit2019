@@ -1,16 +1,16 @@
 .ignite-first-page-scroll{
   position: relative;
   height: 100px;
-  margin-top: 10px;
+  margin-top: 40px;
 }
-#ignite-first-page-scroll-child{
-  font-size: 0.6rem;
+#ignite-first-page-scroll-child p{
+  font-size: 0.5rem;
   padding: 7px;
   width: 100%;
   height: fit-content;
   bottom: 0px;
   position: absolute;
-
+  font-family: Montserrat;
 }
 .icon-scroll{
   position: absolute;

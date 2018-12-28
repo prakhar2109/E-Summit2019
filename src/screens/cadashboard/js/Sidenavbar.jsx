@@ -40,6 +40,10 @@ class caLeaderboard extends Component {
         })
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
+          console.log(res.data)
+          localStorage.setItem("profile" , res.data.user_type);
+          localStorage.setItem("invite" , res.data.invite_url);
+
         })
         .catch(response => {
           window.location.href = "/login";
@@ -53,9 +57,8 @@ class caLeaderboard extends Component {
     let { name, score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
     let options;
-
-    if (this.state.data.user_type === "AMB") {
-      console.log("AMB")
+    let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
+    if (is_ca) {
 
       options = (
         <>
@@ -74,7 +77,7 @@ class caLeaderboard extends Component {
             <br />
           </span>
 
-          <span>
+          {<span>
             <Link
               to="/dashboard/leader"
               className={
@@ -89,7 +92,7 @@ class caLeaderboard extends Component {
               LEADERBOARD
 </Link>
             <br />
-          </span>
+          </span>}
 
         </>
       )
@@ -112,22 +115,22 @@ class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-
+            <NavLink to  = "/dashboard/Viewprofile">
             <div id="dropShape">{name[0]}</div>
             <p id="name">{name}</p>
-
-            <div className="score">
+            </NavLink>
+            {is_ca && <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
-            </div>
-            <div className="progress">
+            </div>}
+            {is_ca && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
                   width: scorePercentage + "%",
                 }}
               />
-            </div>
+            </div>}
             <div id="optionsToggle">
 
               {options}
@@ -191,7 +194,7 @@ class caLeaderboard extends Component {
                     this.setActive("contigent");
                   }}
                 >
-                  CONTIGENT
+                  CONTINGENT
                 </Link>
                 <br />
               </span>
@@ -208,16 +211,16 @@ class caLeaderboard extends Component {
                     this.setActive("Events");
                   }}
                 >
-                  Events
+                  EVENTS
                 </Link>
                 <br />
               </span>
                  
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton">
+              {is_ca && <div id="leaderboardButton">
                 <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
-              </div>
+              </div>}
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>

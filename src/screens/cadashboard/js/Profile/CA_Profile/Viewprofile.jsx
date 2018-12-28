@@ -114,14 +114,16 @@ export default class Viewprofile extends Component {
             <div className="profile-dashboard-type">NON-IITR STUDENT</div>
             <div className="profile-dashboard-esummit">
               <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-              <span id="profile-dashboard-esummitId-value">ES172292</span>
+              <span id="profile-dashboard-esummitId-value">{data.esummit_idgit }</span>
             </div>
+            {/*}
             <div className="profile-dashboard-esummit">
               <span id="profile-dashboard-esummitId">
                 Contingent No (Leader)
               </span>
               <span id="profile-dashboard-esummitId-value">CN 2</span>
             </div>
+    */}
             <div className="ca-profilescore">
               <span id="caprofile-scoreWritten">Score</span>
               <span id="caprofile-scoreValue">{this.state.score}/360</span>
@@ -174,7 +176,7 @@ export default class Viewprofile extends Component {
                 <div className="caprofile-heading">T Shirt size</div>
 
                 <div className="caprofile-parent1-child2-email caprofile-data">
-                  XL
+                {data.tshirt_size}
                 </div>
               </div>
               <div className="caprofile-containter-parent-child2-child2">
@@ -280,7 +282,7 @@ export default class Viewprofile extends Component {
               </div>
 
               <div className="caprofile-parent2-child2-programname caprofile-data">
-                B.Tech, Mechanical Engineering
+               {data.programme}
               </div>
             </div>
 
@@ -290,7 +292,7 @@ export default class Viewprofile extends Component {
               </div>
 
               <div className="caprofile-parent2-child2-year caprofile-data">
-                2019
+                {data.year}
               </div>
             </div>
           </div>
@@ -312,7 +314,7 @@ export default class Viewprofile extends Component {
               </div>
 
               <div className="caprofile-parent3-child2-State caprofile-data">
-                UP
+              {data.state}
               </div>
             </div>
           </div>
@@ -324,59 +326,10 @@ export default class Viewprofile extends Component {
             {data.country}
           </div>
         </div>
-        <div className="caprofile-parent2" id="caprofile-parent3">
-          <div className="caprofile-parent2-heading">SOCIAL ACCOUNTS</div>
-          <div className="caprofile-socialaccounts-child">
-            <div className="caprofile-socialaccounts-child-heading">
-              Facebook
-            </div>
-            <div className="caprofile-socialaccounts-child-data ">
-              https://www.facebook.com/profile.php?id=100006245897944
-            </div>
-          </div>
-          <div className="caprofile-socialaccounts-child">
-            <div className="caprofile-socialaccounts-child-heading ">
-              Linked in
-            </div>
-            <div className="caprofile-socialaccounts-child-data ">
-              https://www.facebook.com/profile.php?id=100006245897944
-            </div>
-          </div>
-        </div>
-
+        
         {/* PC Profile ends   */}
 
-       
-        <div
-          className="caprofile-parent2"
-          id="caprofile-mobile-editprofile-parent3"
-        >
-          <div className="caprofile-parent2-heading">SOCIAL ACCOUNTS</div>
-          <div className="caprofile-socialaccounts-child">
-            <div className="caprofile-socialaccounts-child-heading">
-              Facebook
-            </div>
-            <div className="caprofile-socialaccounts-child-data ">
-              <input
-                type="text"
-                placeholder="https://www.facebook.com/profile.php?id=100006245897944"
-                id="editprofile-input-mobile"
-              />
-            </div>
-          </div>
-          <div className="caprofile-socialaccounts-child">
-            <div className="caprofile-socialaccounts-child-heading ">
-              Linked in
-            </div>
-            <div className="caprofile-socialaccounts-child-data ">
-              <input
-                type="text"
-                placeholder="https://www.facebook.com/profile.php?id=100006245897944"
-                id="editprofile-input-mobile"
-              />
-            </div>
-          </div>
-        </div>
+        
         <button id="caprofilemobile-b02" onClick={this.saveProfile}>
           SAVE CHANGES
         </button>
@@ -485,45 +438,7 @@ export default class Viewprofile extends Component {
             </div>
           </div>
           
-          <div className="caprofile-grandparent" />
-          <div
-            className="caprofile-parent2 ca-profile-modalparent2"
-            id="caprofile-parent3"
-          >
-            <div className="caprofile-parent2-heading">SOCIAL ACCOUNTS</div>
-            <div className="caprofile-socialaccounts-child">
-              <div className="caprofile-socialaccounts-child-heading">
-                Facebook
-              </div>
-              <div className="caprofile-socialaccounts-child-data ">
-                
-                <input
-                      type="text"
-                      id="caprofile02"
-                      required
-                    />
-              </div>
-            </div>
-            <div className="caprofile-socialaccounts-child">
-              <div className="caprofile-socialaccounts-child-heading ">
-                Linked in
-              </div>
-              <div className="caprofile-socialaccounts-child-data ">
-                
-              <input
-                      type="text"
-                    
-                      id="caprofile02"
-
-                      required
-
-                    />
-
-
-              </div>
-            </div>
-          </div>
-
+          
           </form>
         </Modal>
       </div>

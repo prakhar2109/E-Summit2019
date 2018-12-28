@@ -11,11 +11,6 @@
     }
 
 }
-#body{
-    @include mobile{
-    padding-top: 9vh;
-    }
-}
 a:hover {
     text-decoration: none !important;
 }
@@ -714,7 +709,7 @@ a:hover {
 
     .head1 {
         color: #1A4D66 !important;
-        font-family: "ProximaNova-Bold";
+        font-family: "ProximaNova-Bold,sans-serif";
     }
 
     @include fhd{
@@ -728,7 +723,7 @@ a:hover {
         letter-spacing: 0.04em;
         margin-bottom: 4.5rem;
         color: #000000;
-        font-family: "Proxima-nova-regular";
+        font-family: "Proxima-nova-regular,sans-serif";
 
         @include mobile {
             line-height: 18px;

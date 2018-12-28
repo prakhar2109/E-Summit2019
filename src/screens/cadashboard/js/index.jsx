@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Viewprofile from './Profile/IITR_Profile/Viewprofile'
+import Viewprofile from './Profile/profile';
 import LeaderBoard from "./Sidenavbar"
 import CATaskBoard from "./catask"
 import CAOffers from './payment'
 import CAPayment from './payment'
-import CAInvite from './payment'
+import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAcontigent from './payment'
 
