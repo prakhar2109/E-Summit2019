@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
 import ViewMore from "./static/view_more.png";
-import {NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 class Events extends Component {
   render() {
     return (
       <>
-      
+
         <Element id="events" name="events">
           <div className="land_events">
             <Header title="HIGHLIGHT EVENTS" />
@@ -18,26 +18,26 @@ class Events extends Component {
             </p>
           </div>
           <div className="land_events_array">
-          <div> 
-            <a href = "/ideastorm" target = "_blank">
-            <div className="conclave" >
-              <span>
-                <p className="title">IDEASTORM</p>
-                <p className="tagline"></p>
-              </span>
-              <span>
-                <center>
-                   
-                  <i>
-                    
-                    <img src={ViewMore} alt="view more" />
-                  </i>
-                  <p className="viewmore">VIEW MORE</p>
-                
-                </center>
-              </span>
-            </div>
-</a>
+            <div>
+              <a href="/ideastorm" target="_blank">
+                <div className="conclave" >
+                  <span>
+                    <p className="title">IDEASTORM</p>
+                    <p className="tagline"></p>
+                  </span>
+                  <span>
+                    <center>
+
+                      <i>
+
+                        <img src={ViewMore} alt="view more" />
+                      </i>
+                      <p className="viewmore">VIEW MORE</p>
+
+                    </center>
+                  </span>
+                </div>
+              </a>
             </div>
 
             <div className="workshop">
@@ -45,7 +45,7 @@ class Events extends Component {
                 <p className="title">CONCLAVES</p>
                 <p className="tagline"></p>
               </span>
-               <span>
+              <span>
                 <center>
                   {/* <i>
                   
@@ -53,14 +53,14 @@ class Events extends Component {
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
                 </center>
-              </span> 
+              </span>
             </div>
             <div className="leadership">
               <span>
                 <p className="title">LEADERSHIP SERIES</p>
                 <p className="tagline"></p>
               </span>
-               <span>
+              <span>
                 <center>
                   {/* <i>
                 
@@ -68,7 +68,7 @@ class Events extends Component {
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
                 </center>
-              </span> 
+              </span>
             </div>
             <div className="competition">
               <span>
@@ -100,7 +100,7 @@ class Events extends Component {
               <div className="events_production" id="events_production1">
                 <span>
                   <p className="t1">PRODUCTATHON</p>
-                  
+
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
@@ -115,15 +115,15 @@ class Events extends Component {
               <div className="events_production" id="events_production3">
                 <span>
                   <p className="t1">STARTUP EXPO</p>
-                 
+
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
 
               <div className="events_production" id="events_production4">
                 <span>
-                  <p className="t1">CASE STUDY CHALLENEGE</p>
-                  
+                  <p className="t1">CASE STUDY CHALLENGE</p>
+
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
@@ -131,7 +131,7 @@ class Events extends Component {
               <div className="events_production" id="events_production5">
                 <span>
                   <p className="t1">ONLINE EVENTS</p>
-                  
+
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
@@ -139,7 +139,7 @@ class Events extends Component {
               <div className="events_production" id="events_production6">
                 <span>
                   <p className="t1">CORPORATE SPEED DATING</p>
-                  
+
                 </span>
                 <p className="t3">COMING SOON</p>
               </div>
