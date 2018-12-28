@@ -1,33 +1,33 @@
  
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900');
 @font-face {
-        font-family: "Proxima-nova-regular,sans-serif";
+        font-family: "Proxima-nova-regular";
         
         src:url('./fonts/ProximaNova-Regular.otf')  format('truetype');
     
         }
 @font-face {
-        font-family: "ProximaNova-Light,sans-serif";
+        font-family: "ProximaNova-Light";
         
         src:url('./fonts/ProximaNova-Light.otf')  format('truetype');
     
         }
 
 @font-face {
-        font-family: "Proxima-nova-regular,sans-serif";
+        font-family: "Proxima-nova-regular";
         
         src:url('./fonts/ProximaNova-Regular.otf')  format('truetype');
     
         }
 @font-face {
-        font-family: "ProximaNova-Light,sans-serif";
+        font-family: "ProximaNova-Light";
         
         src:url('./fonts/ProximaNova-Light.otf')  format('truetype');
     
         }
 
 @font-face {
-        font-family: "ProximaNova-Semibold,sans-serif";
+        font-family: "ProximaNova-Semibold";
         
         src:url('./fonts/ProximaNova-Semibold.otf')  format('truetype');
     

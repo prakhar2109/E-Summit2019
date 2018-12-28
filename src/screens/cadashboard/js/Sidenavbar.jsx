@@ -41,8 +41,8 @@ class caLeaderboard extends Component {
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
           console.log(res.data)
-          localStorage.setItem("profile" , res.data.user_type);
-          localStorage.setItem("invite" , res.data.invite_url);
+          localStorage.setItem("profile", res.data.user_type);
+          localStorage.setItem("invite", res.data.invite_url);
 
         })
         .catch(response => {
@@ -115,9 +115,9 @@ class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-            <NavLink to  = "/dashboard/Viewprofile">
-            <div id="dropShape">{name[0]}</div>
-            <p id="name">{name}</p>
+            <NavLink to="/dashboard/Viewprofile">
+              <div id="dropShape">{name[0]}</div>
+              <p id="name">{name}</p>
             </NavLink>
             {is_ca && <div className="score">
               <span id="scoreWritten">SCORE</span>
@@ -181,7 +181,7 @@ class caLeaderboard extends Component {
                 <br />
               </span>
 
-             
+
               <span>
                 <Link
                   to="/dashboard/contigent"
@@ -215,11 +215,11 @@ class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
-                 
+
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
               {is_ca && <div id="leaderboardButton">
-                <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
+                <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a>
               </div>}
             </div>
             <div id="submitButton">
