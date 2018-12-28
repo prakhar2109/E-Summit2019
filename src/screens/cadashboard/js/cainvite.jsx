@@ -39,6 +39,7 @@ export default class Cainvite extends Component {
     render() {
         let status="Done";
         let stat="Notdone"
+        let invite = localStorage.getItem("invite");
         return (
             <div className="cainvite-parent">
 
@@ -53,7 +54,7 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainvite-linkparent-input">
-                        <input value = {this.state.invite_link} type="text" id="camyinput"></input>
+                        <input value = {invite} type="text" id="camyinput"></input>
                         <button id="camyinputbutton" onClick={this.copyLink}>Copy link</button>
                     </div>
                 </div>
