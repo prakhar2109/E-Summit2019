@@ -170,7 +170,7 @@ export default class ComingSoon extends Component {
           </span>
 
 
-          <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a></div>
+          <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a></div>
         </div>
       </div>
     );
