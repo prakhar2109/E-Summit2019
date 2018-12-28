@@ -27,7 +27,7 @@
         grid-row-gap: 20px;
         grid-template-columns: 30% 30% 30%;
         padding-top: 72px;
-        font-family: Proxima-nova-regular;
+        font-family: Proxima-nova-regular, sans-serif;
 
         @include mobile {
             display: block;
@@ -61,7 +61,7 @@
             }
 
             p:first-child {
-                font-family: ProximaNova-Bold;
+                font-family: ProximaNova-Bold, sans-serif;
             }
         }
     }
