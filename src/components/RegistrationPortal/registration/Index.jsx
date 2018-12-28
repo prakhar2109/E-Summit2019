@@ -273,7 +273,7 @@ class RegisterIndex extends React.Component {
         let url_q = window.location.href;
         let url = new URL(url_q);
         let ref = url.searchParams.get("ref");
-        let endpoint = ref === "" ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
+        let endpoint = ref === null ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
         let data = {
             name: name,
             email: email,

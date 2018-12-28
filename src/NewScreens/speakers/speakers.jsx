@@ -32,7 +32,7 @@ export default class speakers extends Component {
         <div className="speakers">
           <Header title="SPEAKERS" />
  
-          <p className="speak"> E-Summit’19 Speakers</p>
+          <p className="speak"> E-Summit’18 Speakers</p>
 
           <div className="speakers_array">
             {this.state.speakers.map(update => {
