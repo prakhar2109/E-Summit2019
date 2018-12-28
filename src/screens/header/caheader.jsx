@@ -5,6 +5,7 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
 import "./css/canavbar.css";
+import ca_rulebook from "../../pdfs/ca_rulebook.pdf"
 
 // import Ca from "../caLeaderboard/js/caLeaderboard";
 
@@ -170,7 +171,7 @@ export default class ComingSoon extends Component {
           </span>
 
 
-          <div id="leaderboardButton"><a href="/">CA RULEBOOK</a></div>
+          <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href={ca_rulebook}>CA RULEBOOK</a></div>
         </div>
       </div>
     );
