@@ -156,7 +156,6 @@ export default class ComingSoon extends Component {
           </div>
         </div>
         <div id="optionsToggle">
-
           {options}
 
 
