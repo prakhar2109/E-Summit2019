@@ -72,7 +72,6 @@ export default class AccountSetup extends Component {
                     url: BASE_URL + "/v1/api/user/check-email/",
                     data: data_email
                 }).then((r) => {
-                    console.log(r)
                     document
                         .getElementById("loader")
                         .style
@@ -279,6 +278,7 @@ export default class AccountSetup extends Component {
         this.namevalidate()
         this.emailvalidate()
     }
+
     componentDidMount() {
         const height = window.innerHeight
         let push = 0 * height
@@ -347,6 +347,7 @@ export default class AccountSetup extends Component {
                                     autoCapitalize="off"
                                     value={name}
                                     onChange={event => {
+
                                         this.onChange(event)
                                         this.namevalidate()
                                     }}
@@ -375,8 +376,14 @@ export default class AccountSetup extends Component {
                                     autoCapitalize="off"
                                     value={email}
                                     onChange={event => {
-                                        this.onChange(event)
-                                        this.emailvalidate()
+                                        if (this.state.social_signup) {
+
+                                            return this.emailvalidate()
+                                        }
+                                        else {
+                                            this.onChange(event)
+                                            this.emailvalidate()
+                                        }
                                     }}
                                     spellCheck="false"
                                     required

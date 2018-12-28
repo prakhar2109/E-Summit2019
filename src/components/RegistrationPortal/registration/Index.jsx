@@ -108,11 +108,11 @@ class RegisterIndex extends React.Component {
             social_signup: false
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         document
-        .getElementById("loader")
-        .style
-        .display = "none";
+            .getElementById("loader")
+            .style
+            .display = "none";
     }
 
     handleAccountSetup = (data) => {
@@ -129,13 +129,13 @@ class RegisterIndex extends React.Component {
         this.setState({
             otp: data.otp,
             resend_email: data.resend_email,
-            activeStep: this.state.activeStep + 1
         })
         if (data.resend_email !== "") {
             this.setState({
                 email: data.resend_email
             })
         }
+        this.handleFullSubmit()
     }
     handleProfile = (data) => {
         this.setState({
@@ -163,6 +163,14 @@ class RegisterIndex extends React.Component {
             social_signup: response.social_signup
         })
     }
+    goToDashboard = () => {
+        window.location.href = "/dashboard/invite";
+        document
+            .getElementById("loader")
+            .style
+            .display = "none";
+    }
+
     handleFullSubmit = () => {
         let {
             name,
@@ -170,7 +178,6 @@ class RegisterIndex extends React.Component {
             image_url,
             password,
             confirm_password,
-            resend_email,
             year,
             tshirt_size,
             programme,
@@ -216,7 +223,7 @@ class RegisterIndex extends React.Component {
 
         if (gender) {
             gender = gender.trim()
-            gender=gender[0]
+            gender = gender[0]
         }
         if (states) states = states.trim()
         else {
@@ -224,7 +231,7 @@ class RegisterIndex extends React.Component {
         }
         if (college) college = college
         else {
-            college = null
+            college = "null"
         }
         if (country) {
             country = country.trim()
@@ -286,6 +293,7 @@ class RegisterIndex extends React.Component {
             about_esummit: about_esummit,
             year: year
         }
+
         document
             .getElementById("loader")
             .style
@@ -297,16 +305,17 @@ class RegisterIndex extends React.Component {
         }).then((r) => {
             var d = new Date();
             d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
-
             if (r.data.token) {
                 localStorage.setItem("user_token", r.data.token);
+
+                this.setState({
+                    activeStep: this.state.activeStep + 1
+                })
             }
-            window.location.href = "/dashboard/invite";
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
-
         }).catch((response) => {
             document
                 .getElementById("loader")
@@ -335,7 +344,6 @@ class RegisterIndex extends React.Component {
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-
             }
             document
                 .getElementById("loader")
@@ -365,9 +373,7 @@ class RegisterIndex extends React.Component {
             });
         }
         else {
-            this.setState({
-                activeStep: this.state.activeStep + 2
-            })
+            this.handleFullSubmit()
         }
     }
     handleNext = () => {
@@ -516,21 +522,21 @@ class RegisterIndex extends React.Component {
                                 {activeStep === 4 ?
                                     <div className="esummit-register-form-successfull-grand-parent">
                                         <div className="esummit-register-form-successfull-parent">
-                                                <div style={{
-                                                    backgroundImage: `url(${sample_image})`,
-                                                    backgroundPosition: "center",
-                                                    backgroundSize: "cover",
-                                                    width: "100%",
-                                                    height: "200px",
-                                                    borderRadius: "2px",
-                                                    padding: "20px"
-                                                }}></div>
+                                            <div style={{
+                                                backgroundImage: `url(${sample_image})`,
+                                                backgroundPosition: "center",
+                                                backgroundSize: "cover",
+                                                width: "100%",
+                                                height: "200px",
+                                                borderRadius: "2px",
+                                                padding: "20px"
+                                            }}></div>
                                         </div>
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
                                         </div>
                                         <div className="esummit-register-form-button">
-                                            <div className="esummit-register-form-button-back" onClick={this.handleFullSubmit}>GO TO DASHBOARD</div>
+                                            <div className="esummit-register-form-button-back" onClick={this.goToDashboard}>GO TO DASHBOARD</div>
                                         </div>
                                     </div>
                                     : null
