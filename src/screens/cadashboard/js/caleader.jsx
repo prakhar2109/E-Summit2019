@@ -82,7 +82,7 @@ export default class Caleader extends Component {
           </table>
         </div>
 
-        <div className="cacontainer">
+        {/* <div className="cacontainer">
           <div className="cacontainer-child">
             <div className="caupdatecontainer">
               <div className="ca">UPDATES</div>
@@ -94,7 +94,7 @@ export default class Caleader extends Component {
               Minister Dinesh Sharma said.
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
