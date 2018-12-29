@@ -90,7 +90,6 @@ export default class Viewprofile extends Component {
 
         const width = 900;
         let { score , data ,name } = this.state;
-        let scorePercentage = (score / 360) * 100 + "";
         return (
 
             <div className="caprofile-container">
