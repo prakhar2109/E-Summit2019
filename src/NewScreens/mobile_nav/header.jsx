@@ -8,7 +8,7 @@ export default class ComingSoon extends Component {
         super();
         this.state = {
             displaynavbar: false,
-            navdisplay: true,
+            navdisplay: false,
             isActive: window
                 .location
                 .pathname
@@ -16,7 +16,7 @@ export default class ComingSoon extends Component {
         };
     }
     componentDidMount() {
-        if (window.innerWidth >= 1250) {
+        if (window.innerWidth >= 1200) {
             this.setState({ navdisplay: false });
         }
     }
