@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./header.css";
+import "./header.scss";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-scroll";
 
@@ -14,7 +14,7 @@ export default class ComingSoon extends Component {
     };
   }
   componentDidMount() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1200 ) {
       this.setState({ navdisplay: false });
     }
   }

@@ -58,7 +58,7 @@ class caLeaderboard extends Component {
     let scorePercentage = (score / 360) * 100 + "";
     let options;
     let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
-    if (is_ca) {
+    if (true) {
 
       options = (
         <>
@@ -66,7 +66,7 @@ class caLeaderboard extends Component {
             <Link
               to="/dashboard/task"
               className={
-                this.state.activeState === "task" ? "linkEventson" : null
+                this.state.activeState === "task" ? "linkEventson" : "linkEventson-inactive"
               }
               onClick={() => {
                 this.setActive("task");
@@ -83,7 +83,7 @@ class caLeaderboard extends Component {
               className={
                 this.state.activeState === "leaderboard"
                   ? "linkEventson"
-                  : null
+                  : "linkEventson-inactive"
               }
               onClick={() => {
                 this.setActive("leaderboard");
@@ -116,9 +116,22 @@ class caLeaderboard extends Component {
             <hr id="line1" />
 
             <NavLink to="/dashboard/Viewprofile">
-              <div id="dropShape">{name[0]}</div>
-              <p id="name">{name}</p>
+              <div id="dropShape">P</div>
+              <p id="name">Prakhar agarwal</p>
             </NavLink>
+            <p id="dashboard-typename">CAMPUS AMBASSADOR</p>
+            <div className="sidebar-dashboard-box">
+              <div className="sidebar-dashboard-esummit">
+                <span id="sidebar-dashboard-esummitId">E-Summit’19 ID</span>
+                <span id="sidebar-dashboard-esummitId-value">ES172292</span>
+              </div>
+              <div className="sidebar-dashboard-esummit">
+                <span id="sidebar-dashboard-esummitId">
+                  Contingent No (Leader)
+                </span>
+                <span id="sidebar-dashboard-esummitId-value">CN 2</span>
+              </div>
+            </div>
             {is_ca && <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
@@ -131,6 +144,7 @@ class caLeaderboard extends Component {
                 }}
               />
             </div>}
+
             <div id="optionsToggle">
 
               {options}
@@ -155,7 +169,7 @@ class caLeaderboard extends Component {
                 <Link
                   to="/dashboard/payment"
                   className={
-                    this.state.activeState === "payment" ? "linkEventson" : null
+                    this.state.activeState === "payment" ? "linkEventson" : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("payment");
@@ -170,7 +184,7 @@ class caLeaderboard extends Component {
                 <Link
                   to="/dashboard/invite"
                   className={
-                    this.state.activeState === "invite" ? "linkEventson" : null
+                    this.state.activeState === "invite" ? "linkEventson" : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("invite");
@@ -188,7 +202,7 @@ class caLeaderboard extends Component {
                   className={
                     this.state.activeState === "contigent"
                       ? "linkEventson"
-                      : null
+                      : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("contigent");
@@ -205,7 +219,7 @@ class caLeaderboard extends Component {
                   className={
                     this.state.activeState === "Events"
                       ? "linkEventson"
-                      : null
+                      : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("Events");

@@ -33,14 +33,14 @@
         right: 0;
         z-index: 100000000000000000;
 
-        height: 100px;
+        height: 10vh !important;
 
         @include mobile {
             display: none;
         }
 
         img {
-            height: 100px;
+            height: 10vh;
         }
 
         .head_array {
@@ -71,6 +71,7 @@
         height: auto;
         padding: 100px 10vw;
 
+
         @include mobile {
             padding: 44px 32px;
             padding-top: 60px;
@@ -80,7 +81,9 @@
             min-height: 90vh;
         }
 
-        p:first-child {
+       
+
+        .header_idea {
             font-size: 48px;
             letter-spacing: 0.1em;
             padding-bottom: 0;
@@ -92,6 +95,13 @@
                 font-size: 16px;
                 padding-bottom: calc(0px + 1vh);
 
+            }
+        }
+
+        .ignite-first-page-scroll-child {
+            p{
+                font-size: 15px !important;
+                color:white !important;
             }
         }
 

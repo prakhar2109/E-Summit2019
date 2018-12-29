@@ -107,7 +107,7 @@
     min-width: 100px;
     z-index: 1;
     background: white;
-    border: 1px solid rgb(151, 151, 151, 0.4);
+    border: 1px solid rgba(151, 151, 151, 0.4);
 }
 
 .ecell-special-navbar-dropdown-content a {
@@ -228,7 +228,7 @@
     position: relative;
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 1200px) {
     .ecell-special-navbar-toggle {
         display: flex;
         flex-direction: row;
@@ -403,5 +403,12 @@
         color: #FFFFFF;
         padding: 10px 18px;
         border: 1.5px solid #F39423;
+    }
+}
+
+
+@media (min-width:1200px){
+    .Eventsheader{
+    display: none;
     }
 }
