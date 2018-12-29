@@ -133,7 +133,7 @@ export default class Cainvite extends Component {
                     </table>
                 </div>
 
-*/}
+
 
                 <div className="cainviteparent-heading">
                     Perks
@@ -158,7 +158,7 @@ export default class Cainvite extends Component {
                     20 % Off on getting 10 invites successfully who paid the fee.
                     </div>
                 </div>
-
+*/}
 
                 
             </div>

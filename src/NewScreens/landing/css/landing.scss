@@ -111,7 +111,7 @@ a:hover {
 
     .p {
         line-height: 128%;
-        font-size: 24px;
+        font-size: 26px;
         letter-spacing: 0.04em;
         padding: 44px 0 6% 0;
         
@@ -185,7 +185,7 @@ a:hover {
     }
 
     .slick-list {
-        margin: 1.25rem;
+        // margin: 1.25rem;
     }
 
 
@@ -230,7 +230,6 @@ a:hover {
         margin-bottom: 0 !important;
 
 
-
         color: #138AD6;
 
         @include fhd{
@@ -241,7 +240,7 @@ a:hover {
             line-height: 35px;
             font-size: 24px;
             letter-spacing: 0.1em;
-
+            text-align: center;
             color: #138AD6;
 
         }
@@ -259,7 +258,7 @@ a:hover {
             line-height: 24px;
             font-size: 16px;
             letter-spacing: 0.1em;
-
+            text-align: center;
             color: #FFFFFF;
             padding-bottom: 32px;
         }

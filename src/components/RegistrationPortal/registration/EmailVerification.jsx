@@ -91,6 +91,7 @@ export default class EmailVerification extends Component {
     }
     handleVerify = () => {
         if (parseInt(this.state.confirm_otp) === this.state.otp) {
+        // if(true){
             this.setState({
                 email_verified: true
             })
