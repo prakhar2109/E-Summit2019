@@ -229,7 +229,9 @@ class RegisterIndex extends React.Component {
         else {
             states = null
         }
-        if (college) college = college
+        if (college) {
+            college = college.value.trim()
+        }
         else {
             college = "null"
         }
@@ -293,7 +295,6 @@ class RegisterIndex extends React.Component {
             about_esummit: about_esummit,
             year: year
         }
-
         document
             .getElementById("loader")
             .style
