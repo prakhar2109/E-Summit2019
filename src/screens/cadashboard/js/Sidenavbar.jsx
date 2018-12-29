@@ -55,9 +55,42 @@ class caLeaderboard extends Component {
 
   render() {
     let { name, score , data } = this.state;
+    let profile = this.state.data.user_type;
+    let profile_display;
     let scorePercentage = (score / 360) * 100 + "";
     let options;
     let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
+
+    if (profile === "AMB") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+    else  if (profile === "IIT") {
+      profile_display = "IITR Student ";
+      }
+
+    else if (profile === "NONIIT") {
+      profile_display = "Non IITR Student ";
+      }
+
+      else if (profile === "PROF") {
+        profile_display = "Professor";
+      }
+
+
+    else   if (profile === "CA") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+
+    else  if (profile === "PROFE") {
+      profile_display = "Professional";
+      }
+
+      else{
+        profile_display ="";
+
+      }
     if (true) {
 
       options = (
@@ -119,7 +152,7 @@ class caLeaderboard extends Component {
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
             </NavLink>
-            <p id="dashboard-typename">CAMPUS AMBASSADOR</p>
+            <p id="dashboard-typename">{profile_display}</p>
             <div className="sidebar-dashboard-box">
               <div className="sidebar-dashboard-esummit">
                 <span id="sidebar-dashboard-esummitId">E-Summit’19 ID</span>
