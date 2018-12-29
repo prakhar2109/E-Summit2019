@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./header.css";
+import "../landing/mobile_nav/header.scss";
 import { HashLink } from "react-router-hash-link";
 
 export default class ComingSoon extends Component {
@@ -16,7 +16,7 @@ export default class ComingSoon extends Component {
         };
     }
     componentDidMount() {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1250) {
             this.setState({ navdisplay: false });
         }
     }
@@ -25,7 +25,7 @@ export default class ComingSoon extends Component {
         return (
             <div id="nav" className="Eventsheader">
                 <NavLink to="/">
-                    {" "}
+                    
                     <div className="idealogo" />
                 </NavLink>
 

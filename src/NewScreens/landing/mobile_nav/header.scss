@@ -107,7 +107,7 @@
     min-width: 100px;
     z-index: 1;
     background: white;
-    border: 1px solid rgb(151, 151, 151, 0.4);
+    border: 1px solid rgba(151, 151, 151, 0.4);
 }
 
 .ecell-special-navbar-dropdown-content a {
@@ -378,5 +378,12 @@
     .navbar-hide {
         visibility: hidden;
         transition: visibility 0.2s;
+    }
+}
+
+
+@media (min-width:1200px){
+    .Eventsheader{
+    display: none;
     }
 }

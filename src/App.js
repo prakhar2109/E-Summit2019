@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm";
-import LandingPage from "./NewScreens/landing/landing";
-import Speakers from "./NewScreens/speakers/speakers";
-import Sponsors from "./NewScreens/sponsors/sponsors";
+import { BrowserRouter, Route, Switch } from "react-router-dom";  
 import FAQBoard from "./NewScreens/faq/faq";
 import CampusAmbasder from "./NewScreens/ambasder/ambasder";
 import Registration from "./components/RegistrationPortal/registration/Index";
@@ -28,6 +24,30 @@ const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
+
+const LandingPage = Loadable({
+  loader: () => import("./NewScreens/landing/landing"),
+  loading: () => <Loader />,
+});
+
+const IdeaStorm = Loadable({
+  loader: () => import("./NewScreens/IdeaStorm/ideastorm"),
+  loading: () => <Loader />,
+});
+
+
+const Speakers = Loadable({
+  loader: () => import("./NewScreens/speakers/speakers"),
+  loading: () => <Loader />,
+});
+
+
+const Sponsors = Loadable({
+  loader: () => import("./NewScreens/sponsors/sponsors"),
+  loading: () => <Loader />,
+});
+
+ 
 
 
 class App extends Component {
