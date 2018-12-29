@@ -65,6 +65,9 @@
     padding-top: 10%;
     text-align: center;
     font-weight: 500;
+    color: #4F4F4F;
+    font-size:14.2px;
+    font-family:"ProximaNova-Semibold" !important; 
     text-decoration: none !important;
 }
 #scoreWritten{
@@ -98,7 +101,7 @@
     font-size: 16.2px;
     max-width: 92%;
     line-height: 250%;
-    padding-left: 10%;
+   
     max-height: 41vh;
     height: 41vh;    
     background: #FFFFFF;
@@ -106,6 +109,12 @@
     border: 2px solid #F2F2F2;
     font-family:"ProximaNova-Semibold" !important; 
     
+
+}
+
+.linkEventson-inactive{
+
+    padding-left: 10%;
 
 }
 #optionsToggle a{
@@ -141,7 +150,7 @@ text-decoration:none !important;
     cursor: pointer;
     color: #E24F3B;
     font-weight: 500;
-    font-size: 2vh;
+    font-size: 14.2px;
     margin-left: auto;
     margin-right: auto;
     border: none;
@@ -150,11 +159,37 @@ text-decoration:none !important;
 }
 
 .linkEventson{
+    padding-left: 10%;
+    border-left: 2px solid #F39423;
+    color:#333333 !important;
+    text-decoration:none !important;
+    font-family:"ProximaNova-Semibold" !important; 
 
-color:#333333 !important;
-text-decoration:none !important;
-font-family:"ProximaNova-Semibold" !important; 
+}
+#sidebar-dashboard-esummitId {
+    color: #4F4F4F;
+}
+#sidebar-dashboard-esummitId-value{
+    float: right;
+    color: #1A4D66;
 
+}
+.sidebar-dashboard-esummit {
+    font-size: 9.94px;
+   
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.sidebar-dashboard-box{
+    border-bottom: 1px solid #F2F2F2;
+    border-top: 1px solid #F2F2F2;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-top: 5vh;
+}
+#dashboard-typename{
+    font-size: 10px;
+    text-align:center;
 }
 @media only screen and (max-width: 900px){
 
@@ -167,10 +202,28 @@ font-family:"ProximaNova-Semibold" !important;
     }
 }
 
-@media (min-width: 1920px) and (max-width: 2560px){
+@media (min-width: 1820px) and (max-width: 2560px){
 #optionsToggle{
 font-size: 20px;
 
 }
-
+#submitButton button{
+    cursor: pointer;
+    color: #E24F3B;
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding-top: 10px;
+    background: none;
+}
+#name{
+    padding-top: 10%;
+    text-align: center;
+    font-weight: 500;
+    color: #4F4F4F;
+    font-size:24px;
+    text-decoration: none !important;
+}
 }

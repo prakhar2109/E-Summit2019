@@ -199,9 +199,25 @@ font-family:"ProximaNova-Semibold" !important;
 
 display:flex;
 }
-
-
-@media (min-width: 1920px) and (max-width: 2560px){
+.cainvite-line1 {
+    flex-basis: 65vw;
+    height: 0.3vh;
+    background-color: #E0E0E0;
+    /* position: absolute; */
+    margin-top: -1.4vh;
+    width: 83%;
+    margin-left: 8vw;
+}
+.cainvite-line2 {
+    flex-basis: 65vw;
+    height: 0.3vh;
+    background-color: #E0E0E0;
+    /* position: absolute; */
+    margin-top: -1.4vh;
+    width: 86%;
+    margin-left: 6vw;
+}
+@media (min-width: 1820px) and (max-width: 2560px){
 
 .cainviteparent-heading{
     font-size:20px;

@@ -122,9 +122,9 @@ export default class ComingSoon extends Component {
 
 
           <div className="dashboard-mobile-navbar">
-            <div id="droperShape">{this.state.name[0]}</div>
+            <div id="droperShape">P</div>
             <div className="headerdata">
-              <p id="nms">{this.state.name} </p>
+              <p id="nms">Prakhar agarwal </p>
 
               <div className="scor">
                 <span id="scoresWritten">{this.state.score}</span>
