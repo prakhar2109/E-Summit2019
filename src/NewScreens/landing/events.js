@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
 import ViewMore from "./static/view_more.png";
-import { NavLink } from "react-router-dom"
+// import { NavLink } from "react-router-dom"
 class Events extends Component {
   render() {
     return (
@@ -91,7 +91,7 @@ class Events extends Component {
             <Header title="EVENTS " />
 
             <p className="text">
-            B-Plan, Case Studies, Productathon, Networking Events and a lot more to explore! Register for the events and compete among the best minds of the country.
+              B-Plan, Case Studies, Productathon, Networking Events and a lot more to explore! Register for the events and compete among the best minds of the country.
             </p>
 
             <div className="land_events_array2">
