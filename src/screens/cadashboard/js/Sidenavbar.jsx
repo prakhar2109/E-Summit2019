@@ -91,7 +91,7 @@ class caLeaderboard extends Component {
         profile_display ="";
 
       }
-    if (true) {
+    if (is_ca) {
 
       options = (
         <>
@@ -172,7 +172,7 @@ class caLeaderboard extends Component {
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
             </div>}
-            {is_ca && <div className="progress">
+            {is_ca  && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
@@ -268,7 +268,7 @@ class caLeaderboard extends Component {
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              {is_ca && <div id="leaderboardButton">
+              {is_ca  && <div id="leaderboardButton">
                 <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a>
               </div>}
             </div>
