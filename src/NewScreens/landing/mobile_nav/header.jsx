@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./header.scss";
+import "./header.css";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-scroll";
 

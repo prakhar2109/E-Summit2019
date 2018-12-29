@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "../landing/mobile_nav/header.scss";
+import "../landing/mobile_nav/header.css";
 import { HashLink } from "react-router-hash-link";
 
 export default class ComingSoon extends Component {
