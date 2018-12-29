@@ -286,6 +286,7 @@ class RegisterIndex extends React.Component {
             phone: phone_no,
             gender: gender,
             enrollment_no: enrollment_no,
+            programme: programme,
             college: college,
             city: city,
             state: states,
