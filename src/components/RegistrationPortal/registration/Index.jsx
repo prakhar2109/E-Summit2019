@@ -255,7 +255,7 @@ class RegisterIndex extends React.Component {
         else {
             year = null
         }
-        if (programme) programme = programme
+        if (programme) programme = programme.value
         else {
             programme = null
         }
