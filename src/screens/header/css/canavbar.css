@@ -51,10 +51,9 @@
     font-weight: 500;
     height: 2em;
     width: 2em;
-    border-top-left-radius: 6vh;
-    border-top-right-radius: 55vh;
-    border-bottom-left-radius: 50vh;
-    border-bottom-right-radius: 55vh;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 
 .caheader .progress {

@@ -32,9 +32,9 @@ export default class ComingSoon extends Component {
       .then(res => {
         this.setState({ score: res.data.score, name: res.data.name, data: res.data });
       })
-      .catch(response => {
-        window.location.href = "/login";
-      });
+      // .catch(response => {
+      //   window.location.href = "/login";
+      // });
   };
 
   // componentWillUnmount(){
@@ -139,11 +139,7 @@ export default class ComingSoon extends Component {
                 />
               </div>
 
-              <div id="submitButton">
-                <button type="submit" onClick={this.handleLogout}>
-                  Log Out
-            </button>
-              </div>
+             
             </div>
           </div>
           <div className="mobile-profile-dashboard-esummit1">
