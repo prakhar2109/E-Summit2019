@@ -91,9 +91,7 @@ class Events extends Component {
             <Header title="EVENTS " />
 
             <p className="text">
-              Expert investor or an emerging entrepreneur or a quiz master, you
-              think you know it all? Put that test to claim, battle it out in
-              the field for the ultimate glory.
+            B-Plan, Case Studies, Productathon, Networking Events and a lot more to explore! Register for the events and compete among the best minds of the country.
             </p>
 
             <div className="land_events_array2">

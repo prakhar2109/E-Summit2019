@@ -98,12 +98,14 @@ export default class Viewprofile extends Component {
         <div className="caprofile-container-heading">PROFILE</div>
 
         <div className="caprofile-line1" />
+        {/*}
         <button id="caprofile-b01" onClick={this.showModal}>
           Edit Profile
         </button>
         <button id="caprofilemobile-b01" onClick={this.changeProfile}>
           Edit Profile
         </button>
+    */}
         <div className="caprofile-parent1">
           <div className="caprofile-parent1-child1">
             <div className="caprofile-parent1-child1-heading">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./header.css";
+import "../landing/mobile_nav/header.css";
 import { HashLink } from "react-router-hash-link";
 
 export default class ComingSoon extends Component {
@@ -8,7 +8,7 @@ export default class ComingSoon extends Component {
         super();
         this.state = {
             displaynavbar: false,
-            navdisplay: true,
+            navdisplay: false,
             isActive: window
                 .location
                 .pathname
@@ -16,7 +16,7 @@ export default class ComingSoon extends Component {
         };
     }
     componentDidMount() {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1200) {
             this.setState({ navdisplay: false });
         }
     }
@@ -25,7 +25,7 @@ export default class ComingSoon extends Component {
         return (
             <div id="nav" className="Eventsheader">
                 <NavLink to="/">
-                    {" "}
+                    
                     <div className="idealogo" />
                 </NavLink>
 
@@ -154,33 +154,33 @@ export default class ComingSoon extends Component {
                                 </div>
 
 
+                                <div className="ecell-mobile-nav-register-login-button">
+                                    <div
+                                        className={this.state.displaynavbar
+                                            ? "navbar-show ecell-mobile-menuback"
+                                            : "navbar-hide ecell-mobile-menuback"}>
+                                        <p
+                                            className={this.state.isActive === "Events"
+                                                ? "esummit-navbarevent-cto-active"
+                                                : "esummit-navbarevent-cto-inactive"}
+                                            onClick={() => this.setState({ isActive: "Events" })}>
+                                            <NavLink to="/register"> Registsdader </NavLink>
+                                        </p>
+                                    </div>
 
-                                <div
-                                    className={this.state.displaynavbar
-                                        ? "navbar-show ecell-mobile-menuback"
-                                        : "navbar-hide ecell-mobile-menuback"}>
-                                    <p
-                                        className={this.state.isActive === "Events"
-                                            ? "esummit-navbarevent-cto-active"
-                                            : "esummit-navbarevent-cto-inactive"}
-                                        onClick={() => this.setState({ isActive: "Events" })}>
-                                        <NavLink to="/register"> Register </NavLink>
-                                    </p>
+                                    <div
+                                        className={this.state.displaynavbar
+                                            ? "navbar-show ecell-mobile-menuback"
+                                            : "navbar-hide ecell-mobile-menuback"}>
+                                        <p
+                                            className={this.state.isActive === "Events"
+                                                ? "esummit-navbarevent-cto-active"
+                                                : "esummit-navbarevent-cto-inactive"}
+                                            onClick={() => this.setState({ isActive: "Events" })}>
+                                            <NavLink to="/login"> Login </NavLink>
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <div
-                                    className={this.state.displaynavbar
-                                        ? "navbar-show ecell-mobile-menuback"
-                                        : "navbar-hide ecell-mobile-menuback"}>
-                                    <p
-                                        className={this.state.isActive === "Events"
-                                            ? "esummit-navbarevent-cto-active"
-                                            : "esummit-navbarevent-cto-inactive"}
-                                        onClick={() => this.setState({ isActive: "Events" })}>
-                                        <NavLink to="/login"> Login </NavLink>
-                                    </p>
-                                </div>
-
 
 
                             </div>

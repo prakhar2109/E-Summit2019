@@ -99,13 +99,37 @@
    	box-sizing: border-box;
     	border-radius: 4px;
 	box-shadow:none;
-	margin-top:0;
+	margin-top:36px;
 	font-size: 20px;
 	height: fit-content;
     	max-height: fit-content;
-    	padding: 2.28rem;
+    	padding: 2.28rem 0;
 }
-
+#mobile-navbar-dashboard-logout{
+    display: none;
+    color: #E2574C;
+    font-size: 24px ;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+#mobile-navbar-submitButton button {
+    cursor: pointer;
+    color: #E24F3B;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding-top: 10px;
+    background: none;
+}
+#mobile-navbar-submitButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#leaderboardButton {
+    color: rgba(189, 189, 189, 0.55);
+   
+}
 .linkEventson{
 color:#333333 !important;
 text-decoration:none !important;
@@ -130,18 +154,26 @@ color: #F39423 !important;
 }
 .caheader #nms{
  font-family:"ProximaNova-Semibold" !important;
+ font-size: 18px;
+ letter-spacing: .02em;
+ margin-bottom: 0;
 }
 .dashboard-mobile-navbar{
 display:flex;
 }
 .mobile-profile-dashboard-esummit1{
-    font-size: 9.94px;
+    font-size: 14px;
         border-top: 2px solid #F2F2F2; 
        padding-top:12px;
 }
-
+#typeofdashboard{
+    color: #4F4F4F;
+    font-size: 10px;
+    letter-spacing: .02em;
+    font-family: "ProximaNova-Light";
+}
 .mobile-profile-dashboard-esummit2{
-    font-size: 9.94px;
+    font-size: 14px;
     border-bottom: 2px solid #F2F2F2; 
     padding-top:8px;
     padding-bottom:12px;

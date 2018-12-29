@@ -290,6 +290,14 @@ font-family:"ProximaNova-Semibold" !important;
     width: 68%;
     height: 5.92vh;
 }
+.cainvite-linkparent{
+    margin-left: auto;
+    margin-right: auto;
+}
+.cainviteparent-perks{
+    margin-left: auto;
+    margin-right: auto;
+}
 #camyinputbutton {
     height: 5.92vh;
     background: #F39423;
@@ -304,6 +312,17 @@ font-size: 18px;
 }
 .cainviteparent-perks-heading{
 font-size: 18px;}
+.cainvite-line1{
+    width: 70%;
+    margin-left: 25%;
+
+
+}
+.cainvite-line2 {
+  
+    width: 78%;
+    margin-left: 17%;
+}
 }
 
 

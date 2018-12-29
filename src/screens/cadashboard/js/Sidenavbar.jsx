@@ -45,20 +45,53 @@ class caLeaderboard extends Component {
           localStorage.setItem("invite", res.data.invite_url);
 
         })
-        // .catch(response => {
-        //   window.location.href = "/login";
-        // });
+        .catch(response => {
+          window.location.href = "/login";
+        });
     }
   };
 
 
 
   render() {
-    let { name, score } = this.state;
+    let { name, score , data } = this.state;
+    let profile = this.state.data.user_type;
+    let profile_display;
     let scorePercentage = (score / 360) * 100 + "";
     let options;
     let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
-    if (true) {
+
+    if (profile === "AMB") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+    else  if (profile === "IIT") {
+      profile_display = "IITR Student ";
+      }
+
+    else if (profile === "NONIIT") {
+      profile_display = "Non IITR Student ";
+      }
+
+      else if (profile === "PROF") {
+        profile_display = "Professor";
+      }
+
+
+    else   if (profile === "CA") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+
+    else  if (profile === "PROFE") {
+      profile_display = "Professional";
+      }
+
+      else{
+        profile_display ="";
+
+      }
+    if (is_ca) {
 
       options = (
         <>
@@ -116,15 +149,17 @@ class caLeaderboard extends Component {
             <hr id="line1" />
 
             <NavLink to="/dashboard/Viewprofile">
-              <div id="dropShape">P</div>
-              <p id="name">Prakhar agarwal</p>
+              <div id="dropShape">{name[0]}</div>
+              <p id="name">{name}</p>
             </NavLink>
-            <p id="dashboard-typename">CAMPUS AMBASSADOR</p>
+            <p id="dashboard-typename">{profile_display}</p>
             <div className="sidebar-dashboard-box">
               <div className="sidebar-dashboard-esummit">
                 <span id="sidebar-dashboard-esummitId">E-Summit’19 ID</span>
-                <span id="sidebar-dashboard-esummitId-value">ES172292</span>
+                <span id="sidebar-dashboard-esummitId-value">{data.esummit_id}</span>
               </div>
+              </div>
+              {/*
               <div className="sidebar-dashboard-esummit">
                 <span id="sidebar-dashboard-esummitId">
                   Contingent No (Leader)
@@ -132,11 +167,12 @@ class caLeaderboard extends Component {
                 <span id="sidebar-dashboard-esummitId-value">CN 2</span>
               </div>
             </div>
-            {true && <div className="score">
+              */}
+            {is_ca && <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
             </div>}
-            {true && <div className="progress">
+            {is_ca  && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
@@ -232,7 +268,7 @@ class caLeaderboard extends Component {
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              {true && <div id="leaderboardButton">
+              {is_ca  && <div id="leaderboardButton">
                 <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a>
               </div>}
             </div>
