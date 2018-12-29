@@ -8,7 +8,7 @@ export default class ComingSoon extends Component {
         super();
         this.state = {
             displaynavbar: false,
-            navdisplay: false,
+            navdisplay: true,
             isActive: window
                 .location
                 .pathname
@@ -22,10 +22,40 @@ export default class ComingSoon extends Component {
     }
 
     render() {
+        let token = localStorage.getItem("user_token");
+        let tabs;
+
+        console.log(token);
+
+        if (token !== undefined && token !== null && token !== "") {
+            tabs = (
+
+                <span style={{ paddingLeft: "56px" }}>
+                    <NavLink to="/dashboard/invite">
+                        <span style={{ marginLeft: "3vw" }} className="login">Dashboard</span>
+                    </NavLink>
+
+                </span>
+
+            )
+        }
+
+        else {
+            tabs = (
+                <span style={{ paddingLeft: "56px" }}>
+                    <NavLink to="/login">
+                        <span className="login">Log in</span>
+                    </NavLink>
+                    <NavLink to="/register">
+                        <span className="register">Register</span>
+                    </NavLink>
+                </span>
+            )
+        }
         return (
             <div id="nav" className="Eventsheader">
                 <NavLink to="/">
-                    
+
                     <div className="idealogo" />
                 </NavLink>
 
@@ -152,37 +182,9 @@ export default class ComingSoon extends Component {
                                         <NavLink to="/ignite">Startup Ignite</NavLink>
                                     </p>
                                 </div>
-
-
-                                <div className="ecell-mobile-nav-register-login-button">
-                                    <div
-                                        className={this.state.displaynavbar
-                                            ? "navbar-show ecell-mobile-menuback"
-                                            : "navbar-hide ecell-mobile-menuback"}>
-                                        <p
-                                            className={this.state.isActive === "Events"
-                                                ? "esummit-navbarevent-cto-active"
-                                                : "esummit-navbarevent-cto-inactive"}
-                                            onClick={() => this.setState({ isActive: "Events" })}>
-                                            <NavLink to="/register"> Registsdader </NavLink>
-                                        </p>
-                                    </div>
-
-                                    <div
-                                        className={this.state.displaynavbar
-                                            ? "navbar-show ecell-mobile-menuback"
-                                            : "navbar-hide ecell-mobile-menuback"}>
-                                        <p
-                                            className={this.state.isActive === "Events"
-                                                ? "esummit-navbarevent-cto-active"
-                                                : "esummit-navbarevent-cto-inactive"}
-                                            onClick={() => this.setState({ isActive: "Events" })}>
-                                            <NavLink to="/login"> Login </NavLink>
-                                        </p>
-                                    </div>
+                                <div className="esummit-mobile-navbar-register-login">
+                                    {tabs}
                                 </div>
-
-
                             </div>
                         )
                         : null}

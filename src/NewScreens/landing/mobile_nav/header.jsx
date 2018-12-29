@@ -14,7 +14,7 @@ export default class ComingSoon extends Component {
     };
   }
   componentDidMount() {
-    if (window.innerWidth >= 1200 ) {
+    if (window.innerWidth >= 1200) {
       this.setState({ navdisplay: false });
     }
   }

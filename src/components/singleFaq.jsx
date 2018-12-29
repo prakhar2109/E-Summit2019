@@ -65,7 +65,7 @@ class SingleFAQ extends Component {
                 key={update.id}
                 className="faq_unit">
                 <div className="question" id={'q' + update.id}>
-                    {update.question}
+                    <span className="esummit-landing-faq-update-question">{update.question}</span>
                     <img alt="images" className="plus" src={Plus} id={'p' + update.id} />
                     <img alt="images" className="crox" src={cross} id={'c' + update.id} />
                 </div>
