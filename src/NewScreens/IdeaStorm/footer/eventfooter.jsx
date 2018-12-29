@@ -22,7 +22,7 @@ export default class Lfooter extends Component {
         console.log("empty field")
         let isError = false;
 
-        if (this.state.footername === '' || this.state.footerPhoneno === '' || this.state.footerEmailid === '' || this.state.footerEmailid === '')
+        if (this.state.footername === '' || this.state.footerPhoneno === '' || this.state.footerEmailid === '' || this.state.footermessage === '')
 
             isError = true;
         return isError;
@@ -161,7 +161,7 @@ export default class Lfooter extends Component {
                                                 footerEmailid: event.target.value
                                             })
                                         }} />
-                                    <textarea rows="8" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage} required
+                                    <textarea rows="8" type="text" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage} required
                                         onChange={(event) => {
                                             this.setState({
                                                 footermessage: event.target.value

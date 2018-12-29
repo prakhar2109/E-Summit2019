@@ -15,6 +15,7 @@ import Mentorship from "./static/2.png";
 import Networking from "./static/3.png";
 import Funding from "./static/4.png";
 import Media from "./static/5.png";
+import "../../screens/ignite/css/scrollanimation.css"
 
 import "../landing/css/landing.scss";
 import "../../screens/ignite/css/ignite.scss";
@@ -106,6 +107,9 @@ export class IdeaStorm extends Component {
   register = () => {
     jump(".register", { offset: -130 });
   };
+  jum = () => {
+    jump('#timeline')
+  }
 
   render() {
     return (
@@ -154,8 +158,12 @@ export class IdeaStorm extends Component {
                 <div id="ignite-first-page-scroll-child"> <span> SCROLL DOWN</span></div>
               </div>
           <center>
-           
+
           </center>
+          <div className="ignite-first-page-scroll">
+            <div onClick={this.jum} className='icon-scroll'></div> <br />
+            <div id="ignite-first-page-scroll-child"><p> SCROLL DOWN</p></div>
+          </div>
         </div>
 
         <div name="timeline" id="timeline" className="timeline">
@@ -250,9 +258,9 @@ export class IdeaStorm extends Component {
 
         <div className="register">
           <p className="register_now">Apply Now</p>
-        
+
           <center>
-            
+
             <a
               without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
@@ -260,7 +268,7 @@ export class IdeaStorm extends Component {
             >
               <span>APPLY FOR IDEASTORM</span>
             </a>
-          
+
           </center>
         </div>
 
@@ -277,7 +285,7 @@ export class IdeaStorm extends Component {
               <span>APPLY FOR IDEASTORM</span>
             </a>
           </center>
-          
+
         </div>
 
         <div id="faq_idea">

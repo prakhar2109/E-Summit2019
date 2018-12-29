@@ -12,14 +12,14 @@ import chandi from '../../images/chandigarh.jpg'
 
 import guru from '../../images/gurugram.jpg'
 
-import case1 from '../../images/case1.png'
-import case2 from '../../images/Workshops.jpg'
+// import case1 from '../../images/case1.png'
+// import case2 from '../../images/Workshops.jpg'
 
-import comp from '../../images/competetions.jpg'
+// import comp from '../../images/competetions.jpg'
 
-import lec from '../../images/guestlecture.png'
+// import lec from '../../images/guestlecture.png'
 
-import panal from '../../images/paneldiscussions.jpeg'
+// import panal from '../../images/paneldiscussions.jpeg'
 
 import nodia from '../../images/noida.jpg'
 
@@ -51,13 +51,13 @@ export default class ComingSoon extends Component {
               </div>
             </div>
 
-            
+
 
           </div>
 
           <div className='ignite'>
 
-            
+
             <div className='ignite_head'>VENUES</div>
 
             <div className='ignite_venus'>
