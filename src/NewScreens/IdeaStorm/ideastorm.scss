@@ -33,14 +33,14 @@
         right: 0;
         z-index: 100000000000000000;
 
-        height: 100px;
+        height: 10vh !important;
 
         @include mobile {
             display: none;
         }
 
         img {
-            height: 100px;
+            height: 10vh;
         }
 
         .head_array {

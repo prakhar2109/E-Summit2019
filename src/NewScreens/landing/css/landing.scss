@@ -111,7 +111,7 @@ a:hover {
 
     .p {
         line-height: 128%;
-        font-size: 26px;
+        font-size: 28px;
         letter-spacing: 0.04em;
         padding: 44px 0 6% 0;
         
@@ -125,9 +125,10 @@ a:hover {
 
         }
 
-        @include fhd{
-            font-size: 18px;
-        }
+   @media (max-width: 1400px) and (min-width : 1000px) {
+       font-size: 21px; 
+       
+   }
     }
 }
 
@@ -140,7 +141,7 @@ a:hover {
 
     .text {
         line-height:124%;
-        font-size: 26px;
+        font-size: 24px;
         letter-spacing: 0.02em;
         padding: 2% 0 0 0;
         color: #D8D8D8;
@@ -193,7 +194,7 @@ a:hover {
 
     .speaker_slidder {
         padding-top: 6.75rem;
-        padding-bottom: 6.75rem;
+        padding-bottom: 5rem;
 
         @include mobile {
             display: none;
@@ -223,7 +224,7 @@ a:hover {
 
     .name {
         
-        font-size: 24px;
+        font-size: 26px;
         letter-spacing: 0.02em;
         padding-top: 1rem;
         padding-bottom: 0 !important;
@@ -624,6 +625,7 @@ a:hover {
             
             @include mobile {
                 margin-top: -20%;
+                height:120px;
             }
         }
 

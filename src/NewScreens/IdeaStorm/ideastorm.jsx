@@ -160,10 +160,7 @@ export class IdeaStorm extends Component {
           <center>
 
           </center>
-          <div className="ignite-first-page-scroll">
-            <div onClick={this.jum} className='icon-scroll'></div> <br />
-            <div id="ignite-first-page-scroll-child"><p> SCROLL DOWN</p></div>
-          </div>
+           
         </div>
 
         <div name="timeline" id="timeline" className="timeline">
