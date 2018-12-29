@@ -1,17 +1,29 @@
-import React, { Component } from 'react';
-import "./loader.css";
+import React from 'react';
+import "./loader.scss";
+import Loader from "./loader.gif";
+import Mobile from "./mobile.gif";
 
-export default class Loader extends Component {
-  render() {
-    return (
-        <div id ="loader" className="contaier">
-        <div className="flex">
-        <div className="loader">
+export default class LoaderIndex extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
+    render() {
+        return (
+            <div id  ="loader" className="loader">
+
+
+                <div className = "pc_loader"> 
+                    <img src = {Loader} />
+                </div>
+
+                <div className = "mobile">
+                    <img src = {Mobile} ></img>
+                
+                </div>
+          
         </div>
-        
-        </div>
-    
-        </div>
-    )
-  }
+
+        )
+    }
 }

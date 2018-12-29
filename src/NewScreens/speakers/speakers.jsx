@@ -4,7 +4,7 @@ import Header from "../../components/header";
 import Nav from "../nav/nav";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import Testimonial from "../landing/testimonials";
-import MobileNav from "../mobile_nav/header"
+import MobileNav from "../mobile_nav/header";
 import axios from "axios";
 import { BASE_URL } from "../../utils/urls"
 
@@ -15,13 +15,7 @@ export default class speakers extends Component {
       .then(res => {
         this.setState({
           speakers: res.data,
-
-
         });
-
-
-
-
       })
   }
   state = {
@@ -37,11 +31,8 @@ export default class speakers extends Component {
 
         <div className="speakers">
           <Header title="SPEAKERS" />
-
-          <p className="text">
-            Meet the awesome companies who make this all possible.
-          </p>
-          <p className="speak"> E-Summit’19 Speakers</p>
+ 
+          <p className="speak"> E-Summit’18 Speakers</p>
 
           <div className="speakers_array">
             {this.state.speakers.map(update => {

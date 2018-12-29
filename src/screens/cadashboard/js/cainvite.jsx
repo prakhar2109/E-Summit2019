@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import "../css/cainvite.css";
+import { BASE_URL } from "../../../utils/urls";
+import axios from "axios";
+
 
 
 export default class Cainvite extends Component {
     state = {
         loading: false,
         visible: false,
-      }
-
-      
+        invite_link : ""
+      }      
     viewMore() {
         document.getElementById("viewmore").style.display = "none";
         document.getElementById("viewless").style.display = "block";
@@ -37,6 +39,7 @@ export default class Cainvite extends Component {
     render() {
         let status="Done";
         let stat="Notdone"
+        let invite = localStorage.getItem("invite");
         return (
             <div className="cainvite-parent">
 
@@ -51,10 +54,11 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainvite-linkparent-input">
-                        <input type="text" id="camyinput"></input>
+                        <input value = {invite} type="text" id="camyinput"></input>
                         <button id="camyinputbutton" onClick={this.copyLink}>Copy link</button>
                     </div>
                 </div>
+{/*
 
                 <div id="show1" className="cainvite-register-parent">
 
@@ -128,6 +132,8 @@ export default class Cainvite extends Component {
                      </tbody>
                     </table>
                 </div>
+
+*/}
 
                 <div className="cainviteparent-heading">
                     Perks

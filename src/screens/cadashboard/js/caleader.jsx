@@ -9,25 +9,21 @@ export default class Caleader extends Component {
   };
 
   componentDidMount = () => {
-    let token = localStorage.getItem("user_token");
-    console.log(token);
-
-    if (token !== undefined) {
-      axios
-        .get(BASE_URL + "/v1/api/leaderboard", {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
+    let token = localStorage.getItem('user_token')
+    axios
+        .get(BASE_URL + "/v1/api/leaderboard/", {
+            headers: {
+                Authorization: `Token ${token}`,
+            },
         })
         .then(res => {
-          this.setState({
-            leaderboard: res.data,
-          });
-
-          console.log(this.state);
+            this.setState({leaderboard: res.data});
+ 
+        })
+        .catch(response => {
+            alert(response);
         });
-    }
-  };
+};
 
   render() {
     return (
@@ -62,21 +58,26 @@ export default class Caleader extends Component {
         <div className="caleader-board-mobileparent">
           <table id="ca01">
             <tbody>
+
               <tr>
                 <th id="carank">Rank</th>
                 <th id="caname">Name & University</th>
 
                 <th id="capoints">Points</th>
               </tr>
+
+              {this.state.leaderboard.map(data => {
+                return(
               <tr>
-                <td id="caranktd">1</td>
+                <td id="caranktd">{data.ranking}</td>
                 <td id="canametd">
-                  Prakhar Agarwal <br />
-                  <span id="cacollegespan">IIT Roorkee</span>
+                {data.name} <br />
+                  <span id="cacollegespan">{data.college}</span>
                 </td>
 
-                <td id="capointstd">50</td>
+                <td id="capointstd">{data.tot_score}</td>
               </tr>
+              )})}
             </tbody>
           </table>
         </div>

@@ -6,6 +6,8 @@ import eye from "./svg/eye.svg"
 import correct from "./svg/correct.svg"
 import wrong from "./svg/wrong.svg"
 import "./css/stepform.css"
+import axios from "axios"
+import { BASE_URL } from '../../../utils/urls';
 // import axios from "axios"
 
 export default class AccountSetup extends Component {
@@ -58,75 +60,103 @@ export default class AccountSetup extends Component {
         if (this.state.name !== "") {
 
             if (this.state.email !== "") {
+                let data_email = {
+                    email: this.state.email
+                }
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "flex";
+                axios({
+                    method: "post",
+                    url: BASE_URL + "/v1/api/user/check-email/",
+                    data: data_email
+                }).then((r) => {
+                    console.log(r)
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                    if (r.status === 200) {
+                        if (this.state.pass !== "") {
+                            if (this.state.password === this.state.confirm_password) {
+                                let { name, email, password, confirm_password, social_signup } = this.state
+                                if (name) name = name.trim()
+                                if (email) email = email.trim()
+                                if (password) password = password.trim()
+                                if (confirm_password) confirm_password = confirm_password.trim()
 
-                if (this.state.pass !== "") {
-                    if (this.state.password === this.state.confirm_password) {
-                        let { name, email, password, confirm_password, social_signup } = this.state
-                        if (name) name = name.trim()
-                        if (email) email = email.trim()
-                        if (password) password = password.trim()
-                        if (confirm_password) confirm_password = confirm_password.trim()
+                                let data = {
+                                    name: name,
+                                    email: email,
+                                    password: password,
+                                    confirm_password: confirm_password,
+                                    social_signup: social_signup
+                                    // otp: r.data.one_time_pass
+                                }
+                                this.props.handleSubmit(data)
+                                // let request = new Promise(function (resolve, reject) {
+                                // document
+                                //     .getElementById("loader")
+                                //     .style
+                                //     .display = "flex";
+                                // axios({
+                                //     method: "post",
+                                //     url: "http://localhost:8000/edc/email",
+                                //     data: data_email
+                                // }).then((r) => {
+                                //     this.setState({
+                                //         otp: r.data.one_time_pass
+                                //     })
+                                //     document
+                                //         .getElementById("loader")
+                                //         .style
+                                //         .display = "none";
 
-                        let data = {
-                            name: name,
-                            email: email,
-                            password: password,
-                            confirm_password: confirm_password,
-                            social_signup: social_signup
-                            // otp: r.data.one_time_pass
+                                // }).catch((response) => {
+                                //     document
+                                //         .getElementById("loader")
+                                //         .style
+                                //         .display = "none";
+                                //     alert("Network error")
+                                // });
+                                // })
+                                // request.then(function () {
+                                //     let data = {
+                                //         name: name,
+                                //         email: email,
+                                //         password: password,
+                                //         confirm_password: confirm_password,
+                                //         otp: otp
+                                //     }
+                                //     return console.log(data, "dashdghajkasghdkj")
+                                //     // this.props.handleSubmit(data)
+                                // })
+                            }
+                            else {
+                                this.setState({
+                                    confirmpass_error_bool: "true",
+                                    confirmpass_error: "Password cannot be empty"
+                                })
+                            }
                         }
-                        this.props.handleSubmit(data)
-                        // let request = new Promise(function (resolve, reject) {
-                        // document
-                        //     .getElementById("loader")
-                        //     .style
-                        //     .display = "flex";
-                        // axios({
-                        //     method: "post",
-                        //     url: "http://localhost:8000/edc/email",
-                        //     data: data_email
-                        // }).then((r) => {
-                        //     this.setState({
-                        //         otp: r.data.one_time_pass
-                        //     })
-                        //     document
-                        //         .getElementById("loader")
-                        //         .style
-                        //         .display = "none";
-
-                        // }).catch((response) => {
-                        //     document
-                        //         .getElementById("loader")
-                        //         .style
-                        //         .display = "none";
-                        //     alert("Network error")
-                        // });
-                        // })
-                        // request.then(function () {
-                        //     let data = {
-                        //         name: name,
-                        //         email: email,
-                        //         password: password,
-                        //         confirm_password: confirm_password,
-                        //         otp: otp
-                        //     }
-                        //     return console.log(data, "dashdghajkasghdkj")
-                        //     // this.props.handleSubmit(data)
-                        // })
+                        else {
+                            this.setState({
+                                pass_error_bool: "true",
+                                pass_error: "Password cannot be empty"
+                            })
+                        }
                     }
-                    else {
-                        this.setState({
-                            confirmpass_error_bool: "true",
-                            confirmpass_error: "Password cannot be empty"
-                        })
-                    }
-                }
-                else {
+                }).catch((response) => {
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
                     this.setState({
-                        pass_error_bool: "true",
-                        pass_error: "Password cannot be empty"
+                        email_error_bool: "true",
+                        email_error: "This email is already registered"
                     })
-                }
+                });
 
             }
             else {

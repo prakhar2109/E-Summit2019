@@ -14,7 +14,7 @@ import EmailVerification from './EmailVerification';
 import ProfileType from "./ProfileType"
 import PersonalDetails from './PersonalDetails';
 import axios from "axios"
-import sample_image from "./sample_image.jpg"
+import sample_image from "./sample_image.jpeg"
 import { BASE_URL } from '../../../utils/urls';
 
 const styles = theme => ({
@@ -108,10 +108,15 @@ class RegisterIndex extends React.Component {
             social_signup: false
         }
     }
+    componentDidMount(){
+        document
+        .getElementById("loader")
+        .style
+        .display = "none";
+    }
 
     handleAccountSetup = (data) => {
         this.setState({
-
             name: data.name,
             email: data.email,
             password: data.password,
@@ -122,11 +127,15 @@ class RegisterIndex extends React.Component {
     }
     handleEmailVerification = (data) => {
         this.setState({
-            email: data.email,
             otp: data.otp,
             resend_email: data.resend_email,
             activeStep: this.state.activeStep + 1
         })
+        if (data.resend_email !== "") {
+            this.setState({
+                email: data.resend_email
+            })
+        }
     }
     handleProfile = (data) => {
         this.setState({
@@ -176,37 +185,93 @@ class RegisterIndex extends React.Component {
             states,
             organisation_name,
             industry, } = this.state
-
         if (name) name = name.trim()
         if (phone_no) phone_no = phone_no.trim()
-        if (image_url) image_url = image_url.trim()
-        if (email) email = email.trim()
-        if (profile_type) profile_type = profile_type.trim()
-        if (gender) gender = gender.trim()
-        if (states) states = states.trim()
-        if (college) college = college.trim()
-        if (country) {
-            country = country.value.trim()
+        if (image_url) { image_url = image_url.trim() }
+        else {
+            image_url = null
         }
-        if (about_esummit) about_esummit = about_esummit.trim()
-        if (tshirt_size) tshirt_size = tshirt_size.trim()
+        if (email) email = email.trim()
+        if (profile_type) {
+            profile_type = profile_type.trim()
+            if (profile_type === "iitr_student") {
+                profile_type = "IIT"
+                city = "Roorkee"
+                states = "Uttrakhand"
+                college = "IITR"
+            }
+            if (profile_type === "non_iitr_student") {
+                profile_type = "NONIIT"
+            }
+            if (profile_type === "ca") {
+                profile_type = "CA"
+            }
+            if (profile_type === "professional") {
+                profile_type = "PROFE"
+            }
+            if (profile_type === "professor") {
+                profile_type = "PROF"
+            }
+        }
+
+        if (gender) {
+            gender = gender.trim()
+            gender=gender[0]
+        }
+        if (states) states = states.trim()
+        else {
+            states = null
+        }
+        if (college) college = college
+        else {
+            college = null
+        }
+        if (country) {
+            country = country.trim()
+        }
+        else {
+            country = "India"
+        }
+        if (about_esummit) about_esummit = about_esummit
+        else {
+            about_esummit = null
+        }
+        if (tshirt_size) tshirt_size = tshirt_size
+        else {
+            tshirt_size = null
+        }
         if (password) password = password.trim()
         if (confirm_password) confirm_password = confirm_password.trim()
-        if (year) year = year.trim()
-        if (programme) programme = programme.trim()
-        if (enrollment_no) enrollment_no = enrollment_no.trim()
-        if (resend_email) resend_email = resend_email.trim()
-        if (industry) industry = industry.trim()
-        if (organisation_name) organisation_name = organisation_name.trim()
+        if (year) year = year
+        else {
+            year = null
+        }
+        if (programme) programme = programme
+        else {
+            programme = null
+        }
+        if (enrollment_no) enrollment_no = enrollment_no
+        else {
+            enrollment_no = null
+        }
+        if (industry) industry = industry
+        else {
+            industry = null
+        }
+        if (organisation_name) organisation_name = organisation_name
+        else {
+            organisation_name = null
+        }
 
-
+        let url_q = window.location.href;
+        let url = new URL(url_q);
+        let ref = url.searchParams.get("ref");
+        let endpoint = ref === "" ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
         let data = {
             name: name,
             email: email,
             image_url: image_url,
             password: password,
-            confirm_password: confirm_password,
-            resend_email: resend_email,
             user_type: profile_type,
             country: country,
             phone: phone_no,
@@ -214,7 +279,7 @@ class RegisterIndex extends React.Component {
             enrollment_no: enrollment_no,
             college: college,
             city: city,
-            states: states,
+            state: states,
             organisation_name: organisation_name,
             industry: industry,
             tshirt_size: tshirt_size,
@@ -227,7 +292,7 @@ class RegisterIndex extends React.Component {
             .display = "flex";
         axios({
             method: "post",
-            url: BASE_URL + "/v1/api/user/signup/",
+            url: BASE_URL + endpoint,
             data: data
         }).then((r) => {
             var d = new Date();
@@ -236,7 +301,7 @@ class RegisterIndex extends React.Component {
             if (r.data.token) {
                 localStorage.setItem("user_token", r.data.token);
             }
-            window.location.href = "/dashboard/task";
+            window.location.href = "/dashboard/invite";
             document
                 .getElementById("loader")
                 .style
@@ -247,19 +312,30 @@ class RegisterIndex extends React.Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
-            console.log(response)
-            alert("Network error")
+            alert(response)
         });
 
     }
     handleDetails = (data) => {
         this.setState({
-            data
+            phone_no: data.phone_no,
+            gender: data.gender.value,
+            enrollment_no: data.enrollment_no,
+            country: data.country,
+            states: data.states,
+            city: data.city,
+            college: data.college,
+            programme: data.programme,
+            year: data.year,
+            about_esummit: data.about_esummit,
+            tshirt_size: data.tshirt_size,
+            organisation_name: data.organisation_name,
+            industry: data.industry,
         })
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-                name: this.state.name
+
             }
             document
                 .getElementById("loader")
@@ -267,7 +343,7 @@ class RegisterIndex extends React.Component {
                 .display = "flex";
             axios({
                 method: "post",
-                url: BASE_URL + "v1/api/user/verification",
+                url: BASE_URL + "/v1/api/verification/",
                 data: data_details
             }).then((r) => {
                 this.setState({
@@ -284,7 +360,8 @@ class RegisterIndex extends React.Component {
                     .getElementById("loader")
                     .style
                     .display = "none";
-                alert("Network error")
+                alert(response)
+
             });
         }
         else {
@@ -356,7 +433,7 @@ class RegisterIndex extends React.Component {
     render() {
         const { classes } = this.props;
         const steps = getSteps();
-        const { otp, social_signup, activeStep, email, image_url, profile_type } = this.state;
+        const { otp, social_signup, activeStep, email, profile_type } = this.state;
         return (
             <div className="esummit-common-parent" >
                 <CommonIndex />
@@ -393,7 +470,7 @@ class RegisterIndex extends React.Component {
                                     activeStep === 1 ? "PROFILE TYPE" :
                                         activeStep === 2 ? "PERSONAL DETAILS" :
                                             activeStep === 3 ? "EMAIL VERIFICATION" :
-                                                activeStep === 4 ? "SUCCESSFULLY REGISTERED" : null
+                                                activeStep === 4 ? "REGISTRATION COMPLETED" : null
                                 }
                             </div>
                             {activeStep !== 4 ?
@@ -439,28 +516,15 @@ class RegisterIndex extends React.Component {
                                 {activeStep === 4 ?
                                     <div className="esummit-register-form-successfull-grand-parent">
                                         <div className="esummit-register-form-successfull-parent">
-                                            {!social_signup ?
                                                 <div style={{
                                                     backgroundImage: `url(${sample_image})`,
                                                     backgroundPosition: "center",
                                                     backgroundSize: "cover",
-                                                    width: "200px",
+                                                    width: "100%",
                                                     height: "200px",
                                                     borderRadius: "2px",
                                                     padding: "20px"
                                                 }}></div>
-                                                :
-                                                <div style={{
-                                                    backgroundImage: `url(${image_url})`,
-                                                    backgroundPosition: "center",
-                                                    backgroundSize: "cover",
-                                                    width: "200px",
-                                                    height: "200px",
-                                                    borderRadius: "2px",
-                                                    padding: "20px"
-                                                }}></div>
-                                            }
-
                                         </div>
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
@@ -477,7 +541,7 @@ class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Already have an account?</span>
-                    <span><Link to="/registration_portal/login">Log in</Link></span>
+                    <span><Link to="/login">Log in</Link></span>
                 </div>
             </div >
         );
@@ -486,3 +550,6 @@ class RegisterIndex extends React.Component {
 
 
 export default withStyles(styles)(RegisterIndex);
+
+
+

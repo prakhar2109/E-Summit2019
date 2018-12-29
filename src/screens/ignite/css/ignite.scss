@@ -31,7 +31,7 @@
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background: #1A4D66;
+    
 
     @include desktop{
         min-height: 0px;
@@ -156,6 +156,7 @@
     align-items: center;
     justify-items: center;
     width:100vw;
+    padding: 5% 0;
  
     
   
@@ -165,7 +166,7 @@
  
 
 .ignite_events , .ignite_venus{
-    margin-bottom: 10rem;
+    
 
     @include desktop{
         margin-bottom: 2.125rem;
@@ -306,3 +307,15 @@
 
 
  
+.ignite_main{
+    background: url("../static/pc.png");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    @include hd{
+        background: url("../static/mobile.png");
+    }
+}

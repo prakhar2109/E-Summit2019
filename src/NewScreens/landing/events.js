@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
 import ViewMore from "./static/view_more.png";
+import {NavLink } from "react-router-dom"
 class Events extends Component {
   render() {
     return (
       <>
+      
         <Element id="events" name="events">
           <div className="land_events">
             <Header title="HIGHLIGHT EVENTS" />
@@ -16,72 +18,71 @@ class Events extends Component {
             </p>
           </div>
           <div className="land_events_array">
-            <div className="conclave">
+          <div> 
+            <a href = "/ideastorm" target = "_blank">
+            <div className="conclave" >
               <span>
                 <p className="title">IDEASTORM</p>
-                <p className="tagline">The Annual B-Plan competition</p>
+                <p className="tagline"></p>
               </span>
               <span>
                 <center>
+                   
                   <i>
                     
                     <img src={ViewMore} alt="view more" />
                   </i>
                   <p className="viewmore">VIEW MORE</p>
+                
                 </center>
               </span>
+            </div>
+</a>
             </div>
 
             <div className="workshop">
               <span>
                 <p className="title">CONCLAVES</p>
-                <p className="tagline">
-                  Blockchain<br /> Social Impact Entrepreneurship Consultancy 
-                  <br /> Smart Tech
-                </p>
+                <p className="tagline"></p>
               </span>
-              <span>
+               <span>
                 <center>
-                  <i>
+                  {/* <i>
                   
                     <img src={ViewMore} alt="view more" />
-                  </i>
-                  <p className="viewmore">VIEW MORE</p>
+                  </i> */}
+                  <p className="viewmore">COMING SOON</p>
                 </center>
-              </span>
+              </span> 
             </div>
             <div className="leadership">
               <span>
                 <p className="title">LEADERSHIP SERIES</p>
-                <p className="tagline">
-                  Tagline for the event or minimal discription of event.
-                </p>
+                <p className="tagline"></p>
               </span>
-              <span>
+               <span>
                 <center>
-                  <i>
+                  {/* <i>
                 
                     <img src={ViewMore} alt="view more" />
-                  </i>
-                  <p className="viewmore">VIEW MORE</p>
+                  </i> */}
+                  <p className="viewmore">COMING SOON</p>
                 </center>
-              </span>
+              </span> 
             </div>
             <div className="competition">
               <span>
                 <p className="title">WORKSHOPS</p>
-                <p className="tagline">
-                  Tagline for the event or minimal discription of event.
-                </p>
+                <p className="tagline"></p>
               </span>
 
               <span>
                 <center>
-                  <i>
+                  {/* <i>
                     
                     <img src={ViewMore} alt="view more" />
-                  </i>
-                  <p className="viewmore">VIEW MORE</p>
+                  </i> */}
+                  <p className="viewmore">COMING SOON</p>
                 </center>
               </span>
             </div>

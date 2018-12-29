@@ -6,6 +6,9 @@ import Header from "../../components/header";
 import Bullets from "../../components/bullets/bullets";
 import Coordinator from "../../components/contact/contact";
 import Footer from "../IdeaStorm/footer/eventfooter";
+import MobileNav from "../mobile_nav/header";
+import {NavLink} from "react-router-dom"
+
 
 export default class CampusAmbasder extends Component {
   show = () => {
@@ -15,7 +18,7 @@ export default class CampusAmbasder extends Component {
     let data = [
       {
         value:
-          "For every successful payment from the participants who have             registered from the referral link, the CA would be awarded Rs.150               off on the registration plus accommodation fees for E - Summit               2019.",
+          "For every successful payment from the participants who have             registered from the referral link, the CA would be awarded 10%               off on each payment on the registration plus accommodation fees for E - Summit               2019.",
       },
 
       {
@@ -35,33 +38,16 @@ export default class CampusAmbasder extends Component {
 
     let contact = [
       {
-        "name" :"Rohit",
-        "email":"email@email.com",
-        "number" :'6787678778'
+        "name" :"Aman Kumar",
+        "email":"akumar@mt.iitr.ac.in",
+        "number" :'7302200596'
 
-      },
-
- 
-
-
-      {
-        "name" :"Rohit",
-        "email":"email@email.com",
-        "number" :'6787678778'
-
-      },
-
- 
-      {
-        "name" :"Rohit",
-        "email":"email@email.com",
-        "number" :'6787678778'
-
-      },
+      }
     ]
     return (
       <>
         <Nav />
+        <MobileNav />
         <div className="ambasder">
           <p>CAMPUS AMBASSADOR</p>
 
@@ -76,10 +62,16 @@ export default class CampusAmbasder extends Component {
             and exciting perks for the Campus Ambassadors.
           </p>
           <center>
-            <span onClick={this.show} className="login">
+          <NavLink to = "/login"> 
+            <span  className="login">
+            
               Login
             </span>
+          </NavLink>
+
+          <NavLink to = "/register"> 
             <span className="register">Register</span>
+            </NavLink>
           </center>
         </div>
 
@@ -95,7 +87,7 @@ export default class CampusAmbasder extends Component {
           </p>
         </div>
 
-        <Bullets data={data} title="THE EXITING PERKS" />
+        <Bullets data={data} title="THE EXCITING PERKS" />
         <Coordinator data = {contact} title = "FOR QUERIES" />
 
         <Login />

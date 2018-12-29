@@ -6,15 +6,16 @@ import { Link } from "react-router-dom";
 import Header from "../../header/caheader";
 import { BASE_URL } from "../../../utils/urls";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export default class caLeaderboard extends Component {
+class caLeaderboard extends Component {
   constructor() {
     super();
     this.state = {
       name: "",
       score: "0",
       activeState: "",
-      data:[]
+      data: []
     };
   }
 
@@ -29,7 +30,6 @@ export default class caLeaderboard extends Component {
   };
   componentDidMount = () => {
     let token = localStorage.getItem("user_token");
-    console.log(token);
 
     if (token !== undefined) {
       axios
@@ -39,11 +39,14 @@ export default class caLeaderboard extends Component {
           },
         })
         .then(res => {
-          console.log(res);
-          this.setState({ score: res.data.score, name: res.data.name , data:res.data});
+          this.setState({ score: res.data.score, name: res.data.name, data: res.data });
+          console.log(res.data)
+          localStorage.setItem("profile" , res.data.user_type);
+          localStorage.setItem("invite" , res.data.invite_url);
+
         })
         .catch(response => {
-          console.log(response);
+          window.location.href = "/login";
         });
     }
   };
@@ -53,52 +56,51 @@ export default class caLeaderboard extends Component {
   render() {
     let { name, score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
-    let  options;
+    let options;
+    let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
+    if (is_ca) {
 
-    if(this.state.data.user_type === "AMB"){
-      console.log("AMB")
-
-     options =(
+      options = (
         <>
-        <span>
-                <Link
-                  to="/dashboard/task"
-                  className={
-                    this.state.activeState === "task" ? "linkEventson" : null
-                  }
-                  onClick={() => {
-                    this.setActive("task");
-                  }}
-                >
-                  TASKS
+          <span>
+            <Link
+              to="/dashboard/task"
+              className={
+                this.state.activeState === "task" ? "linkEventson" : null
+              }
+              onClick={() => {
+                this.setActive("task");
+              }}
+            >
+              TASKS
                 </Link>
-                <br />
-              </span>
+            <br />
+          </span>
 
-<span>
-<Link
-  to="/dashboard/leader"
-  className={
-    this.state.activeState === "leaderboard"
-      ? "linkEventson"
-      : null
-  }
-  onClick={() => {
-    this.setActive("leaderboard");
-  }}
->
-  LEADERBOARD
+          {<span>
+            <Link
+              to="/dashboard/leader"
+              className={
+                this.state.activeState === "leaderboard"
+                  ? "linkEventson"
+                  : null
+              }
+              onClick={() => {
+                this.setActive("leaderboard");
+              }}
+            >
+              LEADERBOARD
 </Link>
-<br />
-</span>
+            <br />
+          </span>}
 
-</>
+        </>
       )
     }
 
 
 
-    else{
+    else {
       options = null;
     }
     return (
@@ -107,32 +109,32 @@ export default class caLeaderboard extends Component {
         <div id="container">
           <div id="leftPane">
 
-            <NavLink to="/">
+            <a href="/">
               <img id="logo" src={logo} alt="" />
-            </NavLink>
+            </a>
 
             <hr id="line1" />
 
-          
-              <div id="dropShape">{name[0]}</div>
-              <p id="name">{name}</p>
-         
-            <div className="score">
+            <NavLink to  = "/dashboard/Viewprofile">
+            <div id="dropShape">{name[0]}</div>
+            <p id="name">{name}</p>
+            </NavLink>
+            {is_ca && <div className="score">
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
-            </div>
-            <div className="progress">
+            </div>}
+            {is_ca && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
                   width: scorePercentage + "%",
                 }}
               />
-            </div>
+            </div>}
             <div id="optionsToggle">
-              
-            {options}
 
+              {options}
+              {/*
               <span>
                 <Link
                   to="/dashboard/offers"
@@ -147,6 +149,8 @@ export default class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
+
+                */}
               <span>
                 <Link
                   to="/dashboard/payment"
@@ -176,6 +180,8 @@ export default class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
+
+             
               <span>
                 <Link
                   to="/dashboard/contigent"
@@ -188,15 +194,33 @@ export default class caLeaderboard extends Component {
                     this.setActive("contigent");
                   }}
                 >
-                  CONTIGENT
+                  CONTINGENT
                 </Link>
                 <br />
               </span>
 
+              <span>
+                <Link
+                  to="/dashboard/Events"
+                  className={
+                    this.state.activeState === "Events"
+                      ? "linkEventson"
+                      : null
+                  }
+                  onClick={() => {
+                    this.setActive("Events");
+                  }}
+                >
+                  EVENTS
+                </Link>
+                <br />
+              </span>
+                 
+
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton">
-                <a href="/">CA RULEBOOK</a>
-              </div>
+              {is_ca && <div id="leaderboardButton">
+                <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
+              </div>}
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>
@@ -209,3 +233,6 @@ export default class caLeaderboard extends Component {
     );
   }
 }
+
+
+export default withRouter(caLeaderboard);

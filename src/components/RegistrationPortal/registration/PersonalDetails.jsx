@@ -110,6 +110,7 @@ class PersonalDetails extends Component {
 
 
     handleSubmit = () => {
+        console.log(this.state)
         if (this.state.phone_no === "") {
             return this.EmptyValidation("phone_no")
         }
@@ -131,7 +132,7 @@ class PersonalDetails extends Component {
         if (this.state.city === "" && this.state.country.value === "India" && this.state.profile_type !== "iitr_student") {
             return this.EmptyValidation("city")
         }
-        if (this.state.college === "" && this.state.profile_type !== "iitr_student") {
+        if (this.state.college === "" && (this.state.profile_type !== "iitr_student" && this.state.profile_type !== "professional")) {
             return this.EmptyValidation("college")
         }
         if (this.state.programme === "" && (this.state.profile_type === "non_iitr_student" || this.state.profile_type === "ca")) {
@@ -171,16 +172,17 @@ class PersonalDetails extends Component {
             gender: gender,
             enrollment_no: enrollment_no,
             country: country.value,
-            states: states,
-            city: city,
-            college: college,
+            states: states.value,
+            city: city.value,
+            college: country.value === "India" ? college.value : college,
             programme: programme,
-            year: year,
-            about_esummit: about_esummit,
-            tshirt_size: tshirt_size,
+            year: year.value,
+            about_esummit: about_esummit.value,
+            tshirt_size: tshirt_size.value,
             organisation_name: organisation_name,
             industry: industry,
         }
+        console.log(data, "data")
         this.props.handleDetails(data)
     }
     getStates = () => {
@@ -231,7 +233,6 @@ class PersonalDetails extends Component {
             organisation_name: organisation_name,
             industry: industry,
         }
-        console.log(data, "data")
         this.props.handleBack(data)
     }
     componentDidMount() {
@@ -254,7 +255,6 @@ class PersonalDetails extends Component {
         const height = window.innerHeight
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
-        console.log(this.props.handleState)
         if (this.props.handleState.phone_no !== "") {
             this.phonevalidate()
         }
@@ -368,10 +368,10 @@ class PersonalDetails extends Component {
         this.setState({ country: selectedOption });
     };
     handleOrganisationChange = (selectedOption) => {
-        this.setState({ organisation_name: selectedOption });
+        this.setState({ organisation_name: selectedOption.target.value });
     };
     handleIndustryChange = (selectedOption) => {
-        this.setState({ industry: selectedOption });
+        this.setState({ industry: selectedOption.target.value });
     };
     // custom_validate = (data) => {
     //     const [custom, setData] = useState(data)
@@ -661,7 +661,7 @@ class PersonalDetails extends Component {
                     : null}
                 <div>
                     <div>
-                        {profile_type === "non_iitr_student" || profile_type === "ca" || profile_type === "professor" ?
+                        {profile_type === "non_iitr_student" || profile_type === "ca" || profile_type === "professor" || profile_type === "professional" ?
                             <div className="esummit-register-form-input-specific">
                                 <label htmlFor="inputCountry">COUNTRY</label>
                                 <div className="esummit-register-form-input-specific-inner">
@@ -732,21 +732,53 @@ class PersonalDetails extends Component {
                                         </div>
                                         <div className="esummit-register-form-field-error">{city_error}</div>
                                     </div>
-                                    <div className="esummit-register-form-input-specific">
+                                    {profile_type !== "professional" ?
+                                        <div className="esummit-register-form-input-specific">
+                                            <label htmlFor="inputCollege">COLLEGE</label>
+                                            <div className="esummit-register-form-input-specific-inner">
+                                                <CreatableSelect
+                                                    styles={custom_styles}
+                                                    placeholder="Enter your college name"
+                                                    searchable={true}
+                                                    required={true}
+                                                    onChange={event => {
+                                                        this.handleCollegeChange(event)
+                                                        this.college_validate()
+                                                    }}
+                                                    options={colleges[states.value]}
+                                                    clearable={false}
+                                                    value={college} />
+                                                <span className="esummit-register-form-field-error-svg">
+                                                    {college_error_bool === "" ? null :
+                                                        <img alt="correc/wrong" src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
+                                                    }
+                                                </span>
+                                            </div>
+                                            <div className="esummit-register-form-field-error">{college_error}</div>
+                                        </div>
+                                        : null}
+                                </div>
+                                :
+                                profile_type !== "professional" ?
+                                    < div className="esummit-register-form-input-specific">
                                         <label htmlFor="inputCollege">COLLEGE</label>
                                         <div className="esummit-register-form-input-specific-inner">
-                                            <CreatableSelect
-                                                styles={custom_styles}
-                                                placeholder="Enter your college name"
-                                                searchable={true}
-                                                required={true}
+                                            <input
+                                                id="inputCollege"
+                                                type="text"
+                                                placeholder="Enter your college"
+                                                name="college"
+                                                autoCorrect="off"
+                                                autoComplete="off"
+                                                autoCapitalize="off"
+                                                value={college}
                                                 onChange={event => {
-                                                    this.handleCollegeChange(event)
+                                                    this.onChange(event)
                                                     this.college_validate()
                                                 }}
-                                                options={colleges[states.value]}
-                                                clearable={false}
-                                                value={college} />
+                                                spellCheck="false"
+                                                required
+                                            />
                                             <span className="esummit-register-form-field-error-svg">
                                                 {college_error_bool === "" ? null :
                                                     <img alt="correc/wrong" src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
@@ -755,36 +787,9 @@ class PersonalDetails extends Component {
                                         </div>
                                         <div className="esummit-register-form-field-error">{college_error}</div>
                                     </div>
-                                </div>
-                                :
-                                <div className="esummit-register-form-input-specific">
-                                    <label htmlFor="inputCollege">COLLEGE</label>
-                                    <div className="esummit-register-form-input-specific-inner">
-                                        <input
-                                            id="inputCollege"
-                                            type="text"
-                                            placeholder="Enter your college"
-                                            name="college"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="off"
-                                            value={college}
-                                            onChange={event => {
-                                                this.onChange(event)
-                                                this.college_valiate()
-                                            }}
-                                            spellCheck="false"
-                                            required
-                                        />
-                                        <span className="esummit-register-form-field-error-svg">
-                                            {college_error_bool === "" ? null :
-                                                <img alt="correc/wrong" src={college_error_bool === "true" ? wrong : college_error_bool === "false" ? correct : null} />
-                                            }
-                                        </span>
-                                    </div>
-                                    <div className="esummit-register-form-field-error">{college_error}</div>
-                                </div>
+                                    : null
                             : null}
+
                         {profile_type === "non_iitr_student" || profile_type === "ca" ?
                             <div>
                                 <div className="esummit-register-form-input-specific">
@@ -826,50 +831,6 @@ class PersonalDetails extends Component {
                                         </span>
                                     </div>
                                     <div className="esummit-register-form-field-error">{year_error}</div>
-                                </div>
-                            </div>
-                            : null}
-                        {profile_type !== "iitr_student" ?
-                            <div>
-                                <div className="esummit-register-form-input-specific">
-                                    <label htmlFor="inputAboutEsummit">HOW DO YOU KNOW ABOUT ESUMMIT?</label>
-                                    <div className="esummit-register-form-input-specific-inner">
-                                        <Select
-                                            styles={custom_styles}
-                                            value={about_esummit}
-                                            onChange={event => {
-                                                this.handleAboutEsummitChange(event)
-                                                this.about_esummit_validate()
-                                            }}
-                                            options={this.getAbout()}
-                                            placeholder="Select your programme" />
-                                        <span className="esummit-register-form-field-error-svg">
-                                            {about_esummit_error_bool === "" ? null :
-                                                <img alt="correc/wrong" src={about_esummit_error_bool === "true" ? wrong : about_esummit_error_bool === "false" ? correct : null} />
-                                            }
-                                        </span>
-                                    </div>
-                                    <div className="esummit-register-form-field-error">{about_esummit_error}</div>
-                                </div>
-                                <div className="esummit-register-form-input-specific">
-                                    <label htmlFor="inputTshirt">T SHIRT SIZE</label>
-                                    <div className="esummit-register-form-input-specific-inner">
-                                        <Select
-                                            styles={custom_styles}
-                                            value={tshirt_size}
-                                            onChange={event => {
-                                                this.handleTshirtChange(event)
-                                                this.tshirt_validate()
-                                            }}
-                                            options={this.getTshirt()}
-                                            placeholder="Select your t-shirt size" />
-                                        <span className="esummit-register-form-field-error-svg">
-                                            {tshirt_error_bool === "" ? null :
-                                                <img alt="correc/wrong" src={tshirt_error_bool === "true" ? wrong : tshirt_error_bool === "false" ? correct : null} />
-                                            }
-                                        </span>
-                                    </div>
-                                    <div className="esummit-register-form-field-error">{tshirt_error}</div>
                                 </div>
                             </div>
                             : null}
@@ -931,6 +892,51 @@ class PersonalDetails extends Component {
                                     <div className="esummit-register-form-field-error">{industry_error}</div>
                                 </div>
                             </div> : null}
+                        {profile_type !== "iitr_student" ?
+                            <div>
+                                <div className="esummit-register-form-input-specific">
+                                    <label htmlFor="inputAboutEsummit">HOW DO YOU KNOW ABOUT ESUMMIT?</label>
+                                    <div className="esummit-register-form-input-specific-inner">
+                                        <Select
+                                            styles={custom_styles}
+                                            value={about_esummit}
+                                            onChange={event => {
+                                                this.handleAboutEsummitChange(event)
+                                                this.about_esummit_validate()
+                                            }}
+                                            options={this.getAbout()}
+                                            placeholder="Select your programme" />
+                                        <span className="esummit-register-form-field-error-svg">
+                                            {about_esummit_error_bool === "" ? null :
+                                                <img alt="correc/wrong" src={about_esummit_error_bool === "true" ? wrong : about_esummit_error_bool === "false" ? correct : null} />
+                                            }
+                                        </span>
+                                    </div>
+                                    <div className="esummit-register-form-field-error">{about_esummit_error}</div>
+                                </div>
+                                <div className="esummit-register-form-input-specific">
+                                    <label htmlFor="inputTshirt">T SHIRT SIZE</label>
+                                    <div className="esummit-register-form-input-specific-inner">
+                                        <Select
+                                            styles={custom_styles}
+                                            value={tshirt_size}
+                                            onChange={event => {
+                                                this.handleTshirtChange(event)
+                                                this.tshirt_validate()
+                                            }}
+                                            options={this.getTshirt()}
+                                            placeholder="Select your t-shirt size" />
+                                        <span className="esummit-register-form-field-error-svg">
+                                            {tshirt_error_bool === "" ? null :
+                                                <img alt="correc/wrong" src={tshirt_error_bool === "true" ? wrong : tshirt_error_bool === "false" ? correct : null} />
+                                            }
+                                        </span>
+                                    </div>
+                                    <div className="esummit-register-form-field-error">{tshirt_error}</div>
+                                </div>
+                            </div>
+                            : null}
+
                     </div>
                 </div>
                 <div className="esummit-register-form-button">
@@ -941,7 +947,7 @@ class PersonalDetails extends Component {
                         SUBMIT
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import jump from 'jump.js'
-import './css/ignite.css'
-import Header from './../header/header'
+import './css/ignite.scss'
+import Header from './../../NewScreens/nav/nav';
+import MobileNav from "../../NewScreens/mobile_nav/header";
 import "./css/scrollanimation.css"
-import Footer from '../footer/footer'
+import Footer from '../../NewScreens/IdeaStorm/footer/eventfooter';
 
 import jaipur from '../../images/jaipur.jpg'
 import deh from '../../images/dehradun.jpg'
@@ -31,6 +32,7 @@ export default class ComingSoon extends Component {
     return (
       <div>
         <Header />
+        <MobileNav />
         <div className="startup-ignite-parent">
           <div className='ignite_main'>
             <div className='ignite_text'>
@@ -55,76 +57,7 @@ export default class ComingSoon extends Component {
 
           <div className='ignite'>
 
-            <div className='ignite_events'>
-
-              <center>
-
-                <div className='ignite_head'>EVENTS</div>
-
-                <span className='ignite_event_unit'>
-
-                  <div>
-                    <img src={case1} alt='case study' />
-                  </div>
-
-                  <span>
-                    Case Study
-                                </span>
-
-                </span>
-
-                <span className='ignite_event_unit'>
-
-                  <div>
-                    <img src={case2} alt='case study' />
-                  </div>
-
-                  <span>
-                    Workshop
-                                </span>
-
-                </span>
-
-                <span className='ignite_event_unit'>
-
-                  <div>
-                    <img src={comp} alt='Competitiom ' />
-                  </div>
-
-                  <span>
-                    Competitions
-                                </span>
-
-                </span>
-
-                <span className='ignite_event_unit'>
-
-                  <div>
-                    <img src={lec} alt='Guest Leccture ' />
-                  </div>
-
-                  <span>
-                    Guest Lecture
-                                </span>
-
-                </span>
-
-                <span className='ignite_event_unit'>
-
-                  <div>
-                    <img src={panal} alt='Panal Discussion ' />
-                  </div>
-
-                  <span>
-                    Panel Discussion
-                                </span>
-
-                </span>
-
-              </center>
-
-            </div>
-
+            
             <div className='ignite_head'>VENUES</div>
 
             <div className='ignite_venus'>

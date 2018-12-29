@@ -39,6 +39,34 @@ export default class IgniteIndex extends Component {
 			{this.state.activeState==="NOIDA"?
 			<div className="suignite-parent-child2">
 				<div className="suignite-parent-child2-img">
+				Comming Soon
+				<div className="suignite-panelists-img-parent">
+						<div className="suignite-panelists-img-child">
+							<div className="suignite-panelists-img1"></div>
+							<div className="panelists-name">Prakhar agarwal</div>
+							<div className="panelists-company">CEO, Company</div>
+						</div>
+						<div className="suignite-panelists-img-child">
+							<div className="suignite-panelists-img1"></div>
+							<div className="panelists-name">Prakhar agarwal</div>
+							<div className="panelists-company">CEO, Company</div>
+						</div>
+						<div className="suignite-panelists-img-child">
+							<div className="suignite-panelists-img1"></div>
+							<div className="panelists-name">Prakhar agarwal</div>
+							<div className="panelists-company">CEO, Company</div>
+						</div>
+						<div className="suignite-panelists-img-child">
+							<div className="suignite-panelists-img1"></div>
+							<div className="panelists-name">Prakhar agarwal</div>
+							<div className="panelists-company">CEO, Company</div>
+						</div>
+						<div className="suignite-panelists-img-child">
+							<div className="suignite-panelists-img1"></div>
+							<div className="panelists-name">Prakhar agarwal</div>
+							<div className="panelists-company">CEO, Company</div>
+						</div>
+					</div>
 				</div>
 				<div className="suignite-parent-child2-panel">
 					 <div>

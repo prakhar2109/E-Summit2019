@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import esummit from "./static/es.png";
+import esummit from "../../../components/RegistrationPortal/common/svg/esummit_logo.svg";
 import { withRouter } from "react-router-dom";
 import "./css/nav.scss";
 import { Link } from "react-scroll";
@@ -14,11 +14,42 @@ class Nav extends Component {
     document.getElementById("body").style.paddingTop = height;
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     document.getElementById("body").style.paddingTop = 0;
 
   }
   render() {
+
+    let token = localStorage.getItem("user_token");
+    let tabs;
+
+    console.log(token);
+
+    if(token !== undefined && token !== null && token !== ""){
+      tabs = (
+
+        <span> 
+  <NavLink to="/dashboard/invite">
+          <span style = {{marginLeft : "3vw"}}className="login">Dashboard</span>
+        </NavLink>
+        
+        </span>
+
+      )
+    }
+
+    else{
+      tabs = (
+        <span> 
+        <NavLink to="/login">
+          <span className="login">Log in</span>
+        </NavLink>
+        <NavLink to="/register">
+          <span className="register">Register</span>
+        </NavLink>
+        </span>
+      )
+    }
     return (
       <>
         <section id="nav" className="nav_pc">
@@ -56,7 +87,7 @@ class Nav extends Component {
               offset={-100}
               duration={500}
             >
-              Sponsors
+              Partners
             </Link>
           </span>
           <span>
@@ -72,7 +103,7 @@ class Nav extends Component {
             </Link>
           </span>
 
-         <span>
+          <span>
             <Link
               activeClass="active"
               to="contact"
@@ -84,25 +115,20 @@ class Nav extends Component {
               Contact Us
             </Link>
           </span>
-          <span className = "eslogo">
+          <span className="eslogo">
             <NavLink to="/">
               <img alt="ESummit Logo" src={esummit} />
             </NavLink>
           </span>
           <span>
-            <NavLink to="/campusambasder">Campus Ambassador</NavLink>
+            <NavLink to="/campusambassador">Campus Ambassador</NavLink>
           </span>
           <span>
             <NavLink to="/ignite">Startup Ignite</NavLink>
           </span>
 
           <span> 
-            <NavLink to="/registration_portal/login">
-              <span className="login">Log in</span>
-            </NavLink>
-            <NavLink to="/registration_portal/register">
-              <span className="register">Register</span>
-            </NavLink>
+          {tabs}
           </span>
         </section>
       </>

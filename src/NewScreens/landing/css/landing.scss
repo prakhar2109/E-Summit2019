@@ -11,20 +11,29 @@
     }
 
 }
-
+a:hover {
+    text-decoration: none !important;
+}
 .land_screen1 {
-    height: 90vh;
+    
     width: 100vw;
-    background: #0D1313;
+    padding: 3rem  0;
+    min-height:91vh;
+    height: auto;
+ 
+    background:rgb(12,17,19);
     padding: 5rem;
     display: grid;
     align-items: end;
     justify-items: center;
 
+    @include mobile{
+        padding: 0;
+    }
+
     @include mobile {
         height: 80vh;
     }
-
     button {
         border: 2.5px solid #FFFFFF;
         box-sizing: border-box;
@@ -36,10 +45,12 @@
         letter-spacing: 0.09em;
         padding: 20px 24px ;
         color: #FFFFFF;
+        cursor: pointer;
 
         @include mobile {
             font-size: 12px;
             padding: 16px;
+            margin-bottom: 4vh;
         }
 
         @include fhd{
@@ -48,6 +59,37 @@
         }
 
     }
+
+     .PcVid{
+
+        video{
+            height:50vh !important;
+        }
+
+        @include mobile{
+            display: none;
+        }
+
+    }
+
+    .MobVid{
+        display: none;
+        padding-bottom: 5vh;
+
+         img{
+        
+             height: 40vh;
+         }
+        
+       
+        
+
+        @include mobile{
+            display:block;
+        }
+    }
+
+  
 
 }
 
@@ -69,7 +111,7 @@
 
     .p {
         line-height: 128%;
-        font-size: 24px;
+        font-size: 26px;
         letter-spacing: 0.04em;
         padding: 44px 0 6% 0;
         
@@ -275,7 +317,10 @@
         }
 
         @include mobile {
-            display: block;
+            grid-template-columns: 100%;
+            grid-row-gap: 5vw;
+             
+            
         }
 
         #events_production1{
@@ -437,7 +482,7 @@
         color: white;
         padding-bottom: 200px;
         border : 2px solid #c7d2ce;
-        height:110vh;
+        height:90vh;
         display: grid;
         justify-items: center;
         background-repeat: no-repeat;
@@ -465,6 +510,7 @@
             color: #FFFFFF;
             margin-top: 12.5rem;
             text-align: center;
+            text-decoration: none ;
 
             @include mobile {
 
@@ -515,6 +561,7 @@
             color: #FFFFFF;
             font-weight: bold ; 
             padding-top: 16px;
+            text-decoration: none;
 
             @include mobile {
                 line-height: 15px;
@@ -653,6 +700,8 @@
 .land_faq {
 
     padding: 7.6% 13.6vw;
+    z-index: 2;
+    background: white;
 
     @include mobile {
         padding: 32px;
@@ -660,7 +709,7 @@
 
     .head1 {
         color: #1A4D66 !important;
-        font-family: "ProximaNova-Bold";
+        font-family: "ProximaNova-Bold", sans-serif;
     }
 
     @include fhd{
@@ -674,7 +723,7 @@
         letter-spacing: 0.04em;
         margin-bottom: 4.5rem;
         color: #000000;
-        font-family: "Proxima-nova-regular";
+        font-family: "Proxima-nova-regular", sans-serif;
 
         @include mobile {
             line-height: 18px;
@@ -710,6 +759,5 @@
     }
 }
 
- 
 
  

@@ -328,3 +328,30 @@ height:40vh;
 padding-left: 24px;
     padding-right: 24px;
 }
+
+.coming_soon{
+padding: 2rem;
+font-size: 2rem;
+font-family:"ProximaNova-Semibold" !important;
+
+
+}
+
+@media only screen and (max-width: 900px){
+.capayment-parent {
+    color: black;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    min-height: 100vh;
+    padding-bottom: 2vh;
+    background-color: #F7F8F9;
+}
+.capayment-paymentinfo{
+	margin-left:0;
+    
+  
+    width: 100%;
+}
+}

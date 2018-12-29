@@ -20,6 +20,38 @@ class Nav extends Component {
 
   }
   render() {
+
+    let token = localStorage.getItem("user_token");
+
+    let tabs;
+
+    if(token !== undefined && token !== null && token !== ""){
+      tabs = (
+
+        <span> 
+        <NavLink to="/dashboard/invite">
+          <span style = {{marginLeft : "3vw"}}className="login">Dashboard</span>
+        </NavLink>
+
+        
+        
+        </span>
+
+      )
+    }
+
+    else{
+      tabs = (
+        <span> 
+        <NavLink to="/login">
+          <span className="login">Log in</span>
+        </NavLink>
+        <NavLink to="/register">
+          <span className="register">Register</span>
+        </NavLink>
+        </span>
+      )
+    }
     return (
       <>
         <section id="nav" className="nav_pc">
@@ -35,7 +67,7 @@ class Nav extends Component {
 
 
           <span> 
-          <HashLink  to="/#sponsors">Sponsors</HashLink>
+          <HashLink  to="/#sponsors">Partners </HashLink>
           </span>
 
             <span> 
@@ -47,23 +79,18 @@ class Nav extends Component {
           </span>
           <span className="eslogo">
             <NavLink to="/">
-              <img alt="ESummit Logo" src={esummit} />
+              <img style = {{height : "7vh"}} alt="ESummit Logo" src={esummit} />
             </NavLink>
           </span>
           <span>
-            <NavLink to="/campusambasder">Campus Ambassador</NavLink>
+            <NavLink to="/campusambassador">Campus Ambassador</NavLink>
           </span>
           <span>
             <NavLink to="/ignite">Startup Ignite</NavLink>
           </span>
 
           <span> 
-          <NavLink to="/registration_portal/login">
-            <span className="login">Log in</span>
-          </NavLink>
-          <NavLink to="/registration_portal/register">
-            <span className="register">Register</span>
-          </NavLink>
+            {tabs}
           </span>
         </section>
       </>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios"
 import correct from "./svg/correct.svg"
 import wrong from "./svg/wrong.svg"
+import { BASE_URL } from '../../../utils/urls';
 
 let time_out;
 export default class EmailVerification extends Component {
@@ -38,32 +39,57 @@ export default class EmailVerification extends Component {
             .display = "flex";
         axios({
             method: "post",
-            url: "http://localhost:8000/edc/email",
+            url: BASE_URL + "/v1/api/user/check-email/",
             data: data
         }).then((r) => {
-            this.setState({
-                otp: r.data.one_time_pass,
-                confirmation_otp_message: "OTP is successfully send.",
-                resend_otp: false,
-                confirm_otp: "",
-                time: 60,
-                otp_expired: false
-            })
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
-            clearTimeout(time_out)
-            this.another_timer()
+            if (r.status === 200) {
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "flex";
+                axios({
+                    method: "post",
+                    url: BASE_URL + "/v1/api/verification/",
+                    data: data
+                }).then((r) => {
+                    this.setState({
+                        otp: r.data.one_time_pass,
+                        confirmation_otp_message: "OTP is successfully send.",
+                        resend_otp: false,
+                        confirm_otp: "",
+                        time: 60,
+                        otp_expired: false
+                    })
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                    clearTimeout(time_out)
+                    this.another_timer()
+                }).catch((response) => {
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                });
+            }
         }).catch((response) => {
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
+            this.setState({
+                email_error_bool: "true",
+                email_error: "This email is already registered"
+            })
         });
+
     }
     handleVerify = () => {
-        console.log(this.state.otp, "otp")
         if (parseInt(this.state.confirm_otp) === this.state.otp) {
             this.setState({
                 email_verified: true
@@ -119,7 +145,8 @@ export default class EmailVerification extends Component {
         else {
             clearTimeout(time_out)
             return this.setState({
-                otp_expired: true
+                otp_expired: true,
+                otp: ""
             })
         }
 
@@ -135,7 +162,6 @@ export default class EmailVerification extends Component {
         })
         const timer = () => {
             if (this.state.time > 0) {
-                console.log("inside")
                 this.setState({
                     time: this.state.time - 1
                 })
@@ -143,7 +169,8 @@ export default class EmailVerification extends Component {
             else {
                 clearTimeout(time_out)
                 this.setState({
-                    otp_expired: true
+                    otp_expired: true,
+                    otp: ""
                 })
             }
             time_out = setTimeout(timer, 1000)

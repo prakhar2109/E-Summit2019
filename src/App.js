@@ -1,24 +1,19 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm";
-
 import LandingPage from "./NewScreens/landing/landing";
 import Speakers from "./NewScreens/speakers/speakers";
 import Sponsors from "./NewScreens/sponsors/sponsors";
 import FAQBoard from "./NewScreens/faq/faq";
 import CampusAmbasder from "./NewScreens/ambasder/ambasder";
-import Registration from "./components/RegistrationPortal/Index";
-
+import Registration from "./components/RegistrationPortal/registration/Index";
+import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
-
 import "antd/dist/antd.css";
-
 import Caindex from "./screens/cadashboard/js/index";
-
 import Payment from "./screens/cadashboard/js/payment";
-// import Contingent from "./screens/cadashboard/js/cacontigent"
 import Loadable from "react-loadable";
-import Loader from "./screens/common/loader";
+import Loader from "./screens/loader/loader";
 
 // const Loading = ({ error }) => {
 //   if (error) {
@@ -28,55 +23,18 @@ import Loader from "./screens/common/loader";
 //   }
 // };
 
-// const Login = Loadable({
-//   loader: () => import("./screens/login/login"),
-
-//   loading: () => <Loader />,
-// });
-
-// const Stepform = Loadable({
-//   loader: () => import("./components/Stepform"),
-
-//   loading: () => <Loader />,
-// });
-
-// const Timeline = Loadable({
-//   loader: () => import("./components/timeline/Index"),
-
-//   loading: () => <Loader />,
-// });
-
-// const HomePage = Loadable({
-//   loader: () => import("./screens/home/home"),
-//   loading: () => <Loader />,
-// });
 
 const ignite = Loadable({
-  loader: () => import("./NewScreens/startupignite/ignite"),
+  loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
 
-// const Register = Loadable({
-//   loader: () => import("./screens/register/register"),
-//   loading: () => <Loader />,
-// });
-
-// const RegisterPortalIndex = Loadable({
-//   loader: () => import("./components/RegistrationPortal/Index"),
-//   loading: () => <Loader />,
-// });
-
-
-// const SocialLogin = Loadable({
-//   loader: () => import("./components/Index"),
-//   loading: () => <Loader />,
-// });
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      auth: localStorage.getItem("ca_token"),
+      auth: localStorage.getItem("user_token"),
     };
   }
 
@@ -92,11 +50,13 @@ class App extends Component {
                 <Route path="/speakers" component={Speakers} />
                 <Route path="/sponsors" component={Sponsors} />
                 <Route path="/faq" component={FAQBoard} />
-                <Route path="/campusambasder" component={CampusAmbasder} />
+                <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
-                <Route path="/registration_portal" component={Registration} />
+                <Route path="/register" component={Registration} />
+                <Route path="/login" component={Login} />
                 <Route exact path="/payment" component={Payment} />
                 <Route path="/dashboard/" component={Caindex} />
+                <Route path ="/loader" component = {Loader} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />

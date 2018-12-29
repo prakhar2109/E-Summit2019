@@ -48,7 +48,7 @@ export default class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         axios({
             method: "post",
             url: BASE_URL + "/v1/api/user/login",
@@ -68,7 +68,7 @@ export default class RegisterIndex extends React.Component {
                     if (res.data.token) {
                         localStorage.setItem("user_token", res.data.token);
                     }
-                    window.location.href = "/dashboard/task";
+                    window.location.href = "/dashboard/invite";
                     document
                         .getElementById("loader")
                         .style
@@ -162,6 +162,10 @@ export default class RegisterIndex extends React.Component {
         const height = window.innerHeight
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
+        document
+            .getElementById("loader")
+            .style
+            .display = "none";
     }
 
     render() {
@@ -253,7 +257,7 @@ export default class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Don't have an account?</span>
-                    <span><Link to="/registration_portal/register">Register</Link></span>
+                    <span><Link to="/register">Register</Link></span>
                 </div>
             </div >
         );
