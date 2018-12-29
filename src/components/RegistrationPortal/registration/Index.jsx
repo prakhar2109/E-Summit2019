@@ -229,17 +229,17 @@ class RegisterIndex extends React.Component {
         else {
             states = null
         }
-        if (college) {
-            college = college.value.trim()
-        }
-        else {
-            college = "null"
-        }
         if (country) {
             country = country.trim()
         }
         else {
             country = "India"
+        }
+        if (college) {
+            college = country === "India" ? college.value.trim() : college.trim()
+        }
+        else {
+            college = "null"
         }
         if (about_esummit) about_esummit = about_esummit
         else {
