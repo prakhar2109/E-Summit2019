@@ -166,6 +166,7 @@ class PersonalDetails extends Component {
             tshirt_size,
             organisation_name,
             industry } = this.state
+
         let data = {
             phone_no: phone_no,
             gender: gender,

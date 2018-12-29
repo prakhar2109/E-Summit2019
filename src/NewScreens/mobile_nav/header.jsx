@@ -154,33 +154,33 @@ export default class ComingSoon extends Component {
                                 </div>
 
 
+                                <div className="ecell-mobile-nav-register-login-button">
+                                    <div
+                                        className={this.state.displaynavbar
+                                            ? "navbar-show ecell-mobile-menuback"
+                                            : "navbar-hide ecell-mobile-menuback"}>
+                                        <p
+                                            className={this.state.isActive === "Events"
+                                                ? "esummit-navbarevent-cto-active"
+                                                : "esummit-navbarevent-cto-inactive"}
+                                            onClick={() => this.setState({ isActive: "Events" })}>
+                                            <NavLink to="/register"> Registsdader </NavLink>
+                                        </p>
+                                    </div>
 
-                                <div
-                                    className={this.state.displaynavbar
-                                        ? "navbar-show ecell-mobile-menuback"
-                                        : "navbar-hide ecell-mobile-menuback"}>
-                                    <p
-                                        className={this.state.isActive === "Events"
-                                            ? "esummit-navbarevent-cto-active"
-                                            : "esummit-navbarevent-cto-inactive"}
-                                        onClick={() => this.setState({ isActive: "Events" })}>
-                                        <NavLink to="/register"> Register </NavLink>
-                                    </p>
+                                    <div
+                                        className={this.state.displaynavbar
+                                            ? "navbar-show ecell-mobile-menuback"
+                                            : "navbar-hide ecell-mobile-menuback"}>
+                                        <p
+                                            className={this.state.isActive === "Events"
+                                                ? "esummit-navbarevent-cto-active"
+                                                : "esummit-navbarevent-cto-inactive"}
+                                            onClick={() => this.setState({ isActive: "Events" })}>
+                                            <NavLink to="/login"> Login </NavLink>
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <div
-                                    className={this.state.displaynavbar
-                                        ? "navbar-show ecell-mobile-menuback"
-                                        : "navbar-hide ecell-mobile-menuback"}>
-                                    <p
-                                        className={this.state.isActive === "Events"
-                                            ? "esummit-navbarevent-cto-active"
-                                            : "esummit-navbarevent-cto-inactive"}
-                                        onClick={() => this.setState({ isActive: "Events" })}>
-                                        <NavLink to="/login"> Login </NavLink>
-                                    </p>
-                                </div>
-
 
 
                             </div>
