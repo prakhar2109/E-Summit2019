@@ -60,6 +60,7 @@ class caLeaderboard extends Component {
     let scorePercentage = (score / 360) * 100 + "";
     let options;
     let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
+    
 
     if (profile === "AMB") {
       profile_display = "CAMPUS AMBASSADOR";
@@ -91,7 +92,9 @@ class caLeaderboard extends Component {
         profile_display ="";
 
       }
-    if (true) {
+
+
+    if (is_ca) {
 
       options = (
         <>
