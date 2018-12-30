@@ -45,9 +45,9 @@ class caLeaderboard extends Component {
           localStorage.setItem("invite", res.data.invite_url);
 
         })
-        .catch(response => {
-          window.location.href = "/login";
-        });
+        // .catch(response => {
+        //   window.location.href = "/login";
+        // });
     }
   };
 
@@ -60,7 +60,6 @@ class caLeaderboard extends Component {
     let scorePercentage = (score / 360) * 100 + "";
     let options;
     let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
-    
 
     if (profile === "AMB") {
       profile_display = "CAMPUS AMBASSADOR";
@@ -92,8 +91,6 @@ class caLeaderboard extends Component {
         profile_display ="";
 
       }
-
-
     if (is_ca) {
 
       options = (
@@ -175,7 +172,7 @@ class caLeaderboard extends Component {
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/360</span>
             </div>}
-            {is_ca && <div className="progress">
+            {is_ca  && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
@@ -271,7 +268,7 @@ class caLeaderboard extends Component {
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              {is_ca && <div id="leaderboardButton">
+              {is_ca  && <div id="leaderboardButton">
                 <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a>
               </div>}
             </div>
