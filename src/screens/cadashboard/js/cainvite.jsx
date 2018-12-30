@@ -151,14 +151,9 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainviteparent-perks-child">
-                    20 % Off on getting 10 invites successfully who paid the fee.
+                    10% off on the registration fee on each successful payment done through invite link.
                     </div>
-                    <div className="cainviteparent-perks-child">
-                    20 % Off on getting 10 invites successfully who paid the fee.
-                    </div>
-                    <div className="cainviteparent-perks-child">
-                    20 % Off on getting 10 invites successfully who paid the fee.
-                    </div>
+                   
                 </div>
                 
             </div>
