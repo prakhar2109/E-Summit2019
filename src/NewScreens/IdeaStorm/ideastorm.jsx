@@ -16,7 +16,7 @@ import Networking from "./static/3.png";
 import Funding from "./static/4.png";
 import Media from "./static/5.png";
 import "../../screens/ignite/css/scrollanimation.css"
-
+import FAQBoard from './../landing/faqs'
 import "../landing/css/landing.scss";
 import "../../screens/ignite/css/ignite.scss";
 import "../../screens/ignite/css/scrollanimation.css";
@@ -132,7 +132,7 @@ export class IdeaStorm extends Component {
             <span onClick={this.register}>Apply</span>
             <span onClick={this.faq_idea}>FAQs</span>
 
-            <span onClick={this.coordinator}>Contact US</span>
+            <span onClick={this.coordinator}>Contact Us</span>
           </span>
 
           <span />
@@ -164,6 +164,7 @@ export class IdeaStorm extends Component {
         </div>
 
         <div name="timeline" id="timeline" className="timeline">
+        {/* <Header title = "TIMELINE"/> */}
           <div>
             <img className="ideastorm-vector" src={Vector} alt="" />
             <p className="ideastorm-head1">TIMELINE</p>
@@ -284,12 +285,9 @@ export class IdeaStorm extends Component {
           </center>
 
         </div>
-
-        <div id="faq_idea">
-          <FAQ faqList={this.state.faq} />
-        </div>
+        <FAQBoard faqList={this.state.faq} />
         <div className="coordinator">
-          <Header title="EVENT CO-ORDINATOR" />
+          <Header title="EVENT CO-ORDINATORS" />
 
           <div className="coordinator_grid">
             <div className="coordinator_unit">

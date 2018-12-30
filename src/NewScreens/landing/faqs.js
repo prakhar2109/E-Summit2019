@@ -41,12 +41,12 @@ class FAQBoard extends Component {
 
 
             {this.props.faqList.map(update => {
-              if (update.faq_type.type_name === "Homepage") {
+              if (update.faq_type && update.faq_type.type_name && update.faq_type.type_name === "Homepage") {
                 return <SingleFAQ key={update.id} update={update} />;
               }
 
               else {
-                return null;
+                return <SingleFAQ key={update.id} update={update} />;
               }
             })}
 
