@@ -169,6 +169,7 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
+        
         const { email, password, toggleEye, email_error, email_error_bool, pass_error, pass_error_bool } = this.state
         return (
             <div className="esummit-common-parent" >
