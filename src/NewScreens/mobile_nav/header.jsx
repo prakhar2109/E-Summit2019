@@ -30,7 +30,7 @@ export default class ComingSoon extends Component {
         if (token !== undefined && token !== null && token !== "") {
             tabs = (
 
-                <span style={{ paddingLeft: "56px" }}>
+                <span>
                     <NavLink to="/dashboard/invite">
                         <span style={{ marginLeft: "3vw" }} className="login">Dashboard</span>
                     </NavLink>
@@ -42,7 +42,7 @@ export default class ComingSoon extends Component {
 
         else {
             tabs = (
-                <span style={{ paddingLeft: "56px" }}>
+                <span>
                     <NavLink to="/login">
                         <span className="login">Log in</span>
                     </NavLink>
@@ -52,6 +52,7 @@ export default class ComingSoon extends Component {
                 </span>
             )
         }
+        console.log(this.state.isActive)
         return (
             <div id="nav" className="Eventsheader">
                 <NavLink to="/">
@@ -85,6 +86,7 @@ export default class ComingSoon extends Component {
                                 className={this.state.displaynavbar
                                     ? "ecell-mobile-navbarevent-active"
                                     : "ecell-mobile-navbar-inactive"}>
+                                
                                 <div
                                     className={this.state.displaynavbar
                                         ? "navbar-show ecell-mobile-menuback"
@@ -94,10 +96,11 @@ export default class ComingSoon extends Component {
                                             ? "esummit-navbarevent-cto-active"
                                             : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({ isActive: "Events" })}>
-                                        <HashLink to="/#events">Events</HashLink>
+                                       <HashLink to="/#events"> EVENTS   </HashLink>
                                     </p>
                                 </div>
-
+                             
+                                <HashLink to="/#speakers">        
                                 <div
                                     className={this.state.displaynavbar
                                         ? "navbar-show ecell-mobile-menuback"
@@ -107,10 +110,11 @@ export default class ComingSoon extends Component {
                                             ? "esummit-navbarevent-cto-active"
                                             : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({ isActive: "speakers" })}>
-                                        <HashLink to="/#speakers">Speakers</HashLink>
+                                        SPEAKERS
                                     </p>
                                 </div>
-
+                                </HashLink>   
+                                <HashLink to="/#sponsors">          
                                 <div
                                     className={this.state.displaynavbar
                                         ? "navbar-show ecell-mobile-menuback"
@@ -120,10 +124,11 @@ export default class ComingSoon extends Component {
                                             ? "esummit-navbarevent-cto-active"
                                             : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({ isActive: "Sponsors" })}>
-                                        <HashLink to="/#sponsors">Partners</HashLink>
+                                        PARTNERS
                                     </p>
                                 </div>
-
+                                </HashLink>   
+                                <HashLink to="/#faq">      
                                 <div
                                     className={this.state.displaynavbar
                                         ? "navbar-show ecell-mobile-menuback"
@@ -133,10 +138,11 @@ export default class ComingSoon extends Component {
                                             ? "esummit-navbarevent-cto-active"
                                             : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({ isActive: "FAQs" })}>
-                                        <HashLink to="/#faq">FAQs</HashLink>
+                                        FAQs
                                     </p>
                                 </div>
-
+                                </HashLink>
+                                <HashLink to="/#talk">      
                                 <div
                                     className={this.state.displaynavbar
                                         ? "navbar-show ecell-mobile-menuback"
@@ -146,10 +152,11 @@ export default class ComingSoon extends Component {
                                             ? "esummit-navbarevent-cto-active"
                                             : "esummit-navbarevent-cto-inactive"}
                                         onClick={() => this.setState({ isActive: "Contact" })}>
-                                        <HashLink to="/#talk">Contact Us</HashLink>
+                                        CONTACT US
                                     </p>
                                 </div>
-
+                                </HashLink>
+                                
                                 <div
                                     className={this.state.displaynavbar
                                         ? "navbar-show ecell-mobile-menuback"
@@ -158,11 +165,11 @@ export default class ComingSoon extends Component {
                                         className={this.state.isActive === "Ambassador"
                                             ? "esummit-navbarevent-cto-active"
                                             : "esummit-navbarevent-cto-inactive"}
-                                        onClick={() => this.setState({ isActive: "Ambassador" })}>
-                                        <NavLink to="/campusambassador">Campus Ambassador</NavLink>
+                                        onClick={() => this.setState({ isActive: "Ambassador" ,displaynavbar: !this.state.displaynavbar,})}>
+                                        <NavLink to="/campusambassador">      CAMPUS AMBASSADOR </NavLink>   
                                     </p>
                                 </div>
-
+                                 
 
                                 <div
                                     className={
@@ -179,9 +186,10 @@ export default class ComingSoon extends Component {
                                         }
                                         onClick={() => this.setState({ isActive: "ignite", displaynavbar: !this.state.displaynavbar, })}
                                     >
-                                        <NavLink to="/ignite">Startup Ignite</NavLink>
+                                        <NavLink to="/ignite">STARTUP IGNITE</NavLink>
                                     </p>
                                 </div>
+                                
                                 <div className="esummit-mobile-navbar-register-login">
                                     {tabs}
                                 </div>

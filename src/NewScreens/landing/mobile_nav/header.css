@@ -262,13 +262,14 @@
     .esummit-navbarevent-cto-active {
         color: #F39423;
         font-family: Montserrat;
+        font-weight: 600;
         font-size:16px;
         padding: 10px 20px 10px 56px;
         background: rgba(243, 148, 35, 0.09);
     }
 
     .esummit-navbarevent-cto-inactive {
-        color: #F39423;
+        color: #FFFFFF;
         font-family: Montserrat;
         font-size:16px;
         padding: 15px 20px 15px 56px;
@@ -278,7 +279,7 @@
         font-weight: 600;
         text-transform: uppercase;
         color: white;
-        font-size: 18px;
+        font-size: 16px;
     }
     .new-navbarevent-i {
         padding: 16px;
@@ -351,6 +352,7 @@
         height: 0vh;
         top: 70px;
         right: 0px;
+        display:none;
         background:#0D1313;
         position: fixed;
         transition: height 0.4s;
@@ -390,6 +392,8 @@
     }
     .esummit-mobile-navbar-register-login{
         margin-top: 40px;
+        display: flex;
+        justify-content: space-evenly;
     }
     .esummit-mobile-navbar-register-login .login {
         line-height: normal;
