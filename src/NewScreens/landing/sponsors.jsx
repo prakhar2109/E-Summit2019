@@ -50,11 +50,11 @@ export default class Sponsors extends Component {
                 {this.state.sponsors.map(update => {
                   return (
                     <div key={update.id}>
-                      <a href={update.url}>
+                      <a href={update.url} target="_blank">
                         <div className="img_holder" >
                           <img src={update.image} alt={update.name} />
                         </div>
-                        <p className="name">{update.name}</p>
+                        <p className="name">{update.spon_type.spon_type}</p>
                       </a>
                     </div>
                   );
@@ -65,8 +65,9 @@ export default class Sponsors extends Component {
 
             <div className="speaker_mobile">
               <Slider {...settings2}>
-                {this.state.sponsors.map(update => {
-                  return (
+                { 
+                  this.state.sponsors.map(update => {
+                    return (
                     <div key={update.id}>
                       <div className="img_holder">
                         <img src={update.image} alt={update.name} />
