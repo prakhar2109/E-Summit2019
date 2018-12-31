@@ -94,7 +94,7 @@ export class IdeaStorm extends Component {
   };
 
   faq_idea = () => {
-    jump("#faq_idea", { offset: -130 });
+    jump("#faq", { offset: -0 });
   };
 
   coordinator = () => {
