@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import SingleFAQ from "./../../components/singleFaq";
 import Header from "../../components/header";
-import {Element} from "react-scroll";
-import {NavLink } from "react-router-dom";
+import { Element } from "react-scroll";
+import { NavLink } from "react-router-dom";
 class FAQBoard extends Component {
   constructor(props) {
     super(props);
@@ -31,27 +31,27 @@ class FAQBoard extends Component {
   };
   render() {
 
-    
+
     return (
-      <Element id = "faq" name ="faq">
+      <Element id="faq" name="faq">
         <section id="faq">
           <div className="land_faq">
             <Header title="FAQs" />
-            <p>Stuck somewhere ? We’ re here to help you! </p>
-        
+            <p className="esummit-landing-faq-land-para">Stuck somewhere ? We’ re here to help you! </p>
+
 
             {this.props.faqList.map(update => {
-                   if(update.faq_type.type_name ==="Homepage" ){
-                  return <SingleFAQ key = {update.id}update={update} />;
-                   }
+              if (update.faq_type && update.faq_type.type_name && update.faq_type.type_name === "Homepage") {
+                return <SingleFAQ key={update.id} update={update} />;
+              }
 
-                   else{
-                     return null;
-                   }
-                })}
+              else {
+                return <SingleFAQ key={update.id} update={update} />;
+              }
+            })}
 
             <center>
-              <NavLink to = "/faq" > <button className="view_all"> VIEW ALL </button></NavLink>
+              <NavLink to="/faq" > <button className="view_all"> VIEW ALL </button></NavLink>
             </center>
           </div>
         </section>

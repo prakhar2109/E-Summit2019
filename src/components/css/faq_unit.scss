@@ -12,6 +12,11 @@
 
 }
 
+.esummit-landing-faq-update-question{
+    line-height: 20px;
+    letter-spacing: 0.02em;
+}
+
 .faq_unit {
     border-bottom: 4px solid #F7F8F9;
     margin-bottom: 1rem;
@@ -57,8 +62,9 @@
         @include mobile {
             line-height: normal;
             font-size: 16px;
-            padding: 20px 10px;
+            padding: 20px 45px 20px 10px;
             color: #4F4F4F;
+            position: relative;
 
         }
 
@@ -71,6 +77,8 @@
 
             @include mobile{
                 height:20px;
+                position: absolute;
+                right: 0px;
             }
         }
         .crox {

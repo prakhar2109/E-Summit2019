@@ -23,6 +23,7 @@
 
     @include mobile {
         padding: 36px;
+        padding-top: 90px;
     }
 
     p:first-child {
@@ -43,7 +44,7 @@
     }
 
     p:nth-child(2) {
-        line-height: 39px;
+         line-height: 128%;
         font-size: 1.625rem;
         text-align: center;
         letter-spacing: 0.06em;

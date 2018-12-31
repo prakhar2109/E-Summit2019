@@ -110,7 +110,6 @@ class PersonalDetails extends Component {
 
 
     handleSubmit = () => {
-        console.log(this.state)
         if (this.state.phone_no === "") {
             return this.EmptyValidation("phone_no")
         }
@@ -167,6 +166,7 @@ class PersonalDetails extends Component {
             tshirt_size,
             organisation_name,
             industry } = this.state
+
         let data = {
             phone_no: phone_no,
             gender: gender,
@@ -174,7 +174,7 @@ class PersonalDetails extends Component {
             country: country.value,
             states: states.value,
             city: city.value,
-            college: country.value === "India" ? college.value : college,
+            college: college,
             programme: programme,
             year: year.value,
             about_esummit: about_esummit.value,
@@ -182,7 +182,6 @@ class PersonalDetails extends Component {
             organisation_name: organisation_name,
             industry: industry,
         }
-        console.log(data, "data")
         this.props.handleDetails(data)
     }
     getStates = () => {
