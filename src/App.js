@@ -90,6 +90,7 @@ class App extends Component {
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
                 <Route path="/login" component={Login} />
+
         
                 <Route path="/dashboard/" component={Caindex} />
      
