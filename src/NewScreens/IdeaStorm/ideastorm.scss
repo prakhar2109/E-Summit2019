@@ -48,7 +48,7 @@
             justify-self: end;
 
             span {
-                font-family: "ProximaNova-Semibold";
+                font-family: "ProximaNova-Semibold", sans-serif;
                 font-size: 20px;
                 text-align: center;
                 letter-spacing: 0.06em;
@@ -80,7 +80,22 @@
             background-size: cover;
             min-height: 90vh;
         }
+        .ignite-first-page-scroll {
+        #ignite-first-page-scroll-child {
 
+            p{
+                font-size: 14px ;
+                color:white;
+                text-align: center;
+
+                @include mobile {
+                    font-size: 8px;
+                    // padding-bottom: calc(0px + 1vh);
+    
+                }
+            }
+        }
+        }
        
 
         .header_idea {
@@ -98,19 +113,12 @@
             }
         }
 
-        .ignite-first-page-scroll-child {
-            p{
-                font-size: 15px !important;
-                color:white !important;
-            }
-        }
-
         p:nth-child(2) {
             line-height: 41px;
             font-size: 24px;
             letter-spacing: 0.1em;
             color: #FFFFFF;
-            font-family: "ProximaNova-Light";
+            font-family: "ProximaNova-Light", sans-serif;
             padding-bottom: calc(0px + 3vh);
 
             @include mobile {
@@ -123,26 +131,45 @@
 
             }
         }
-	 p:nth-child(3) {
+        p:nth-child(6) {
+            line-height: 41px;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+            color: #FFFFFF;
+            font-family: "ProximaNova-Bold", sans-serif;
+            padding-bottom: calc(0px + 3vh);
+
+            @include mobile {
+                line-height: 15px;
+                font-size: 10px;
+                text-align: center;
+                letter-spacing: 0.1em;
+                padding-bottom: 0;
+                color: #FFFFFF;
+
+            }
+        }
+	 p:nth-child(7) {
 
 	font-size: 26px;
-        font-family: "ProximaNova-Regular", sans-serif;
-	color: #FFFFFF;
+        font-family: "ProximaNova-Light", sans-serif;
+    color: #FFFFFF;
+    padding-top: 4vh;
 	padding-bottom:4.62vh;
 		@include mobile {
-                line-height: 14px;
-                font-size: 10px;
+                line-height: 16px;
+                font-size: 12px;
                 text-align: center;
                 letter-spacing: 0.1em;
                 padding-bottom: calc(15px + 3vh);
                 
 		}
 	}
-        p:nth-child(4) {
+        p:nth-child(8) {
             line-height: 46px;
             font-size: 24px;
             letter-spacing: 0.1em;
-            font-family: "Proxima-nova-regular";
+            font-family: "Proxima-nova-regular", sans-serif;
             color: #FFFFFF;
             text-align: justify;
             margin-bottom: calc(10vh + 5rem);

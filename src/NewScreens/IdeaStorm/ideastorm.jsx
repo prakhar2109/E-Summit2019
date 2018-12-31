@@ -141,6 +141,11 @@ export class IdeaStorm extends Component {
           <p className  = "header_idea">IDEA STORM</p>
 
           <p>You make it happen.</p>
+
+          <br/>
+          <br/>
+          <br/>
+          <p>CASH PRIZE WORTH INR 2,50,000</p>
           <p>
             Idea Storm is the annual business plan competition,conducted as a
             part of Entrepreneurship Summit, the flagship event of
@@ -155,7 +160,7 @@ export class IdeaStorm extends Component {
           <div className="ignite-first-page-scroll">
                 <div onClick={this.timeline} className='icon-scroll'></div> <br />
                 
-                <div id="ignite-first-page-scroll-child"> <span> SCROLL DOWN</span></div>
+                <div id="ignite-first-page-scroll-child"> <p> SCROLL DOWN</p></div>
               </div>
           <center>
 
