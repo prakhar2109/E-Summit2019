@@ -7,20 +7,20 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/urls"
 
 export default class Sponsors extends Component {
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(BASE_URL + "/v1/api/sponsors/")
-    .then(res => {
-      this.setState({
-        sponsors:res.data,
-      });
+      .get(BASE_URL + "/v1/api/sponsors/")
+      .then(res => {
+        this.setState({
+          sponsors: res.data,
+        });
 
-      
-    })
+
+      })
   };
 
   state = {
-    sponsors :[],
+    sponsors: [],
   }
   render() {
     let settings = {
@@ -40,22 +40,22 @@ export default class Sponsors extends Component {
     };
     return (
       <div>
-        <Element id = "sponsors" name="sponsors">
+        <Element id="sponsors" name="sponsors">
           <div className="land_sponsors">
             <Header title="PARTNERS" />
-      
+
 
             <div className="speaker_slidder">
               <Slider {...settings}>
                 {this.state.sponsors.map(update => {
                   return (
                     <div key={update.id}>
-                    <a href = {update.url}> 
-                      <div className="img_holder" >
-                          <img src = {update.image} alt = {update.name} />
-                      </div>
-                      <p className="name">{update.name}</p>
-                   </a>
+                      <a href={update.url} target="_blank">
+                        <div className="img_holder" >
+                          <img src={update.image} alt={update.name} />
+                        </div>
+                        <p className="name">{update.spon_type.spon_type}</p>
+                      </a>
                     </div>
                   );
                 })}
@@ -65,22 +65,23 @@ export default class Sponsors extends Component {
 
             <div className="speaker_mobile">
               <Slider {...settings2}>
-                {this.state.sponsors.map(update => {
-                  return (
+                { 
+                  this.state.sponsors.map(update => {
+                    return (
                     <div key={update.id}>
                       <div className="img_holder">
-                      <img src = {update.image} alt = {update.name} />
+                        <img src={update.image} alt={update.name} />
                       </div>
 
                       <p className="name">{update.name}</p>
-  
+
                     </div>
                   );
                 })}
               </Slider>
             </div>
 
-     
+
             <center>
               <NavLink to="/sponsors">
                 <button className="all_events_button">VIEW ALL PARTNERS</button>

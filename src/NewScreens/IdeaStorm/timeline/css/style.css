@@ -44,14 +44,14 @@ Main Components .timeline
     font-size: 2rem;
     letter-spacing: 0.1em;
     color: #FEFFFF;
-    font-family: "ProximaNova-Bold";
+    font-family: "ProximaNova-Bold", sans-serif;
     display: inline;
     margin-left: -2rem;
     left: 220px;
-    top: 12vh;
+    top: 10vh;
     z-index: 3;
     position: relative;
-
+    font-weight: bold;
 }
 .cd-horizontal-timeline-parent{
   background-color: #1A4D66;

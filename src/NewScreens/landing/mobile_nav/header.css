@@ -37,7 +37,7 @@
     top:0;
     left:0;
     right:0;
-    padding: 0 7.5vw;
+    padding: 10px 7.5vw;
 }
 
 .idealogo {
@@ -228,7 +228,7 @@
     position: relative;
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 1200px) {
     .ecell-special-navbar-toggle {
         display: flex;
         flex-direction: row;
@@ -250,10 +250,10 @@
         transition: height 0.4s ease-in-out;
     }
 
-    #ecell-special-navbar-options-hide {
+    /* #ecell-special-navbar-options-hide {
         display: none;
         transition: all 2s ease-in-out;
-    }
+    } */
 
     .ecell-special-navbar-ctos {
         width: 70%;
@@ -262,18 +262,25 @@
     .esummit-navbarevent-cto-active {
         color: #F39423;
         font-family: Montserrat;
+        font-weight: 600;
         font-size:16px;
         padding: 10px 20px 10px 56px;
         background: rgba(243, 148, 35, 0.09);
     }
 
     .esummit-navbarevent-cto-inactive {
-        color: #F39423;
+        color: #FFFFFF;
         font-family: Montserrat;
         font-size:16px;
-        padding: 10px 20px 10px 56px;
+        padding: 15px 20px 15px 56px;
     }
-
+    .esummit-navbarevent-cto-inactive a{
+        letter-spacing: 0.02em;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: white;
+        font-size: 16px;
+    }
     .new-navbarevent-i {
         padding: 16px;
         padding-top: 15px;
@@ -345,7 +352,8 @@
         height: 0vh;
         top: 70px;
         right: 0px;
-        background: white;
+        display:none;
+        background:#0D1313;
         position: fixed;
         transition: height 0.4s;
     }
@@ -370,7 +378,7 @@
         white-space: nowrap;
     }
 
-    .navbar-show {
+    /* .navbar-show {
         visibility: visible;
         transition: visibility 0.2s;
     }
@@ -378,5 +386,43 @@
     .navbar-hide {
         visibility: hidden;
         transition: visibility 0.2s;
+    } */
+    .ecell-mobile-nav-register-login-button{
+        display: flex;
+    }
+    .esummit-mobile-navbar-register-login{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .esummit-mobile-navbar-register-login .login {
+        line-height: normal;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #F39423;
+        display: inline;
+        border: 1.5px solid #F39423;
+        border-radius: 2px;
+        padding: 10px 18px;
+        margin-right : 11px;
+    }
+
+    .esummit-mobile-navbar-register-login .register {
+        background: #F39423;
+        border-radius: 2px;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+        padding: 10px 18px;
+        border: 1.5px solid #F39423;
+    }
+}
+
+
+@media (min-width:1200px){
+    .Eventsheader{
+        display: none;
     }
 }

@@ -296,7 +296,6 @@ class RegisterIndex extends React.Component {
             about_esummit: about_esummit,
             year: year
         }
-
         document
             .getElementById("loader")
             .style

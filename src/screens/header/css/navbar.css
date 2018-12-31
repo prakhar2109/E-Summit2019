@@ -265,6 +265,7 @@
         width:100vw;
         height: 0vh; 
         top: 70px;
+        display: none;
         right: 0px;
         background: white;
         position: fixed;

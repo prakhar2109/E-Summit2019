@@ -259,7 +259,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details landing-footer-adddetails">
-                                E-Cell Office, SAC Building, IIT Roorkee, Roorkee, Uttarakhand,<br />3.37vh India 247667
+                                E-Cell Office, SAC Building, IIT Roorkee, Roorkee, Uttarakhand<br />India 247667
                             </div>
                             <div className="footer-logo">
                             </div>
@@ -298,7 +298,7 @@ export default class Lfooter extends Component {
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                    sgarg2@ce.iitr.ac.in
+                        sgarg2@ce.iitr.ac.in
                      </div>
 
                 </div>
