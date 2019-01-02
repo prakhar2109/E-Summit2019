@@ -7,7 +7,7 @@ import Bullets from "../../components/bullets/bullets";
 import Coordinator from "../../components/contact/contact";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import MobileNav from "../mobile_nav/header";
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 
 export default class CampusAmbasder extends Component {
@@ -38,9 +38,9 @@ export default class CampusAmbasder extends Component {
 
     let contact = [
       {
-        "name" :"Aman Kumar",
-        "email":"akumar@mt.iitr.ac.in",
-        "number" :'7302200596'
+        "name": "Aman Kumar",
+        "email": "akumar@mt.iitr.ac.in",
+        "number": '7302200596'
 
       }
     ]
@@ -62,15 +62,15 @@ export default class CampusAmbasder extends Component {
             and exciting perks for the Campus Ambassadors.
           </p>
           <center>
-          <NavLink to = "/login"> 
-            <span  className="login">
-            
-              Login
-            </span>
-          </NavLink>
+            <NavLink to="/login">
+              <span className="login">
 
-          <NavLink to = "/register"> 
-            <span className="register">Register</span>
+                Login
+            </span>
+            </NavLink>
+
+            <NavLink to="/register">
+              <span className="register">Register</span>
             </NavLink>
           </center>
         </div>
@@ -88,7 +88,7 @@ export default class CampusAmbasder extends Component {
         </div>
 
         <Bullets data={data} title="THE EXCITING PERKS" />
-        <Coordinator data = {contact} title = "FOR QUERIES" />
+        <Coordinator data={contact} title="FOR QUERIES" />
 
         <Login />
         <Footer />

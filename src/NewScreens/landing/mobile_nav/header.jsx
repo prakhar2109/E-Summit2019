@@ -14,12 +14,43 @@ export default class ComingSoon extends Component {
     };
   }
   componentDidMount() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1200) {
       this.setState({ navdisplay: false });
     }
   }
 
   render() {
+    let token = localStorage.getItem("user_token");
+    let tabs;
+
+    console.log(token);
+
+    if (token !== undefined && token !== null && token !== "") {
+      tabs = (
+
+        <span>
+          <NavLink to="/dashboard/invite">
+            <span style={{ marginLeft: "3vw" }} className="login">Dashboard</span>
+          </NavLink>
+
+        </span>
+
+      )
+    }
+
+    else {
+      tabs = (
+        <span>
+          <NavLink to="/login">
+            <span className="login">Log in</span>
+          </NavLink>
+          <NavLink to="/register">
+            <span className="register">Register</span>
+          </NavLink>
+        </span>
+      )
+    }
+    console.log(this.state.isActive)
     return (
       <div id="nav" className="Eventsheader">
         <NavLink to="/">
@@ -60,229 +91,202 @@ export default class ComingSoon extends Component {
                   : "ecell-mobile-navbar-inactive"
               }
             >
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
+              <Link
+                activeClass="active"
+                to="events"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
               >
-                <p
+                <div
                   className={
-                    this.state.isActive === "Events"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
                   }
-                  onClick={() => this.setState({ isActive: "Events",displaynavbar: !this.state.displaynavbar, })}
                 >
-                  <Link
-                    activeClass="active"
-                    to="events"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                  >
-                    Events
-                  </Link>
-                </p>
-              </div>
 
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
-              >
-                <p
-                  className={
-                    this.state.isActive === "speakers"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
-                  }
-                  onClick={() => this.setState({ isActive: "speakers",displaynavbar: !this.state.displaynavbar, })}
-                >
-                  <Link
-                    activeClass="active"
-                    to="speakers"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
+                  <p
+                    className={
+                      this.state.isActive === "Events"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "Events", displaynavbar: !this.state.displaynavbar, })}
                   >
-                    Speakers
-                  </Link>
+                    EVENTS
                 </p>
-              </div>
+                </div>
 
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
+              </Link>
+
+              <Link
+                activeClass="active"
+                to="speakers"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
               >
-                <p
+
+                <div
                   className={
-                    this.state.isActive === "Sponsors"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
                   }
-                  onClick={() => this.setState({ isActive: "Sponsors",displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <Link
-                    activeClass="active"
-                    to="sponsors"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
+                  <p
+                    className={
+                      this.state.isActive === "speakers"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "speakers", displaynavbar: !this.state.displaynavbar, })}
                   >
-                    Partners
-                  </Link>
+                    SPEAKERS
                 </p>
-              </div>
+                </div>
+              </Link>
 
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
+              <Link
+                activeClass="active"
+                to="sponsors"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
               >
-                <p
+                <div
                   className={
-                    this.state.isActive === "FAQs"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
                   }
-                  onClick={() => this.setState({ isActive: "FAQs" ,displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <Link
-                    activeClass="active"
-                    to="faq"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
+                  <p
+                    className={
+                      this.state.isActive === "Sponsors"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "Sponsors", displaynavbar: !this.state.displaynavbar, })}
+                  >
+                    PARTNERS
+                    </p>
+                </div>
+
+              </Link>
+
+              <Link
+                activeClass="active"
+                to="faq"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+
+                <div
+                  className={
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
+                  }
+                >
+                  <p
+                    className={
+                      this.state.isActive === "FAQs"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "FAQs", displaynavbar: !this.state.displaynavbar, })}
                   >
                     FAQs
-                  </Link>
-                </p>
-              </div>
+                 </p>
+                </div>
 
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
+              </Link>
+
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
               >
-                <p
+
+                <div
                   className={
-                    this.state.isActive === "Contact"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
                   }
-                  onClick={() => this.setState({ isActive: "Contact",displaynavbar: !this.state.displaynavbar, })}
                 >
-                  <Link
-                    activeClass="active"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
+                  <p
+                    className={
+                      this.state.isActive === "Contact"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "Contact", displaynavbar: !this.state.displaynavbar, })}
                   >
-                    Contact Us
-                  </Link>
-                </p>
-              </div>
+                    CONTACT US
+                 </p>
+                </div>
 
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
-              >
-                <p
+              </Link>
+
+              <NavLink to="/campusambassador">
+
+                <div
                   className={
-                    this.state.isActive === "Ambassador"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
                   }
-                  onClick={() => this.setState({ isActive: "Ambassador" ,displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <NavLink to="/campusambassador">Campus Ambassador</NavLink>
+                  <p
+                    className={
+                      this.state.isActive === "Ambassador"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "Ambassador", displaynavbar: !this.state.displaynavbar, })}
+                  >
+                    CAMPUS AMBASSADOR
                 </p>
-              </div>
+                </div>
+              </NavLink>
+             
+              <NavLink to="/ignite">
 
-
-
-
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
-              >
-                <p
+                <div
                   className={
-                    this.state.isActive === "ignite"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
+                    this.state.displaynavbar
+                      ? "navbar-show ecell-mobile-menuback"
+                      : "navbar-hide ecell-mobile-menuback"
                   }
-                  onClick={() => this.setState({ isActive: "ignite" ,displaynavbar: !this.state.displaynavbar,})}
                 >
-                  <NavLink to="/ignite">Startup Ignite</NavLink>
+                  <p
+                    className={
+                      this.state.isActive === "ignite"
+                        ? "esummit-navbarevent-cto-active"
+                        : "esummit-navbarevent-cto-inactive"
+                    }
+                    onClick={() => this.setState({ isActive: "ignite", displaynavbar: !this.state.displaynavbar, })}
+                  >
+                    STARTUP IGNITE
                 </p>
-              </div>
+                </div>
+
+              </NavLink>
 
 
-
-
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
-              >
-                <p
-                  className={
-                    this.state.isActive === "Events"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
-                  }
-                  onClick={() => this.setState({ isActive: "Events" ,displaynavbar: !this.state.displaynavbar,})}
-                >
-                  <NavLink to="/register">
-                    {" "}
-                    Register{" "}
-                  </NavLink>
-                </p>
-              </div>
-
-              <div
-                className={
-                  this.state.displaynavbar
-                    ? "navbar-show ecell-mobile-menuback"
-                    : "navbar-hide ecell-mobile-menuback"
-                }
-              >
-                <p
-                  className={
-                    this.state.isActive === "Events"
-                      ? "esummit-navbarevent-cto-active"
-                      : "esummit-navbarevent-cto-inactive"
-                  }
-                  onClick={() => this.setState({ isActive: "Events" ,displaynavbar: !this.state.displaynavbar,})}
-                >
-                  <NavLink to="/login"> Login </NavLink>
-                </p>
+              <div className="esummit-mobile-navbar-register-login">
+                {tabs}
               </div>
             </div>
           ) : null}

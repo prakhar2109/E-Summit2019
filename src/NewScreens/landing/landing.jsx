@@ -13,9 +13,9 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./mobile_nav/header";
-import VideoMP from "./static/WebsiteVideo.mp4";
-import VideoWebm from "./static/WebsiteVideo.webm";
-import VideoOGV from "./static/WebsiteVideo.ogv";
+// import VideoMP from "./static/WebsiteVideo.mp4";
+// import VideoWebm from "./static/WebsiteVideo.webm";
+// import VideoOGV from "./static/WebsiteVideo.ogv";
 import MobileVid from "./static/Mobile.gif"
 
 
@@ -77,7 +77,7 @@ export default class LandingPage extends Component {
         <Sponsors />
 
         <Testimonials />
-        <FAQBoard faqList={this.state.faq} />
+        <FAQBoard faqList={this.state.faq} isHomePage/>
 
         <Element id="talk" name="contact">
           <Footer />

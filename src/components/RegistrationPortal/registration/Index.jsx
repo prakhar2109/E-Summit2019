@@ -296,11 +296,10 @@ class RegisterIndex extends React.Component {
             about_esummit: about_esummit,
             year: year
         }
-
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         axios({
             method: "post",
             url: BASE_URL + endpoint,
@@ -351,7 +350,7 @@ class RegisterIndex extends React.Component {
             document
                 .getElementById("loader")
                 .style
-                .display = "flex";
+                .display = "grid";
             axios({
                 method: "post",
                 url: BASE_URL + "/v1/api/verification/",
@@ -383,7 +382,7 @@ class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         this.setState(state => ({
             activeStep: state.activeStep + 1,
         }));
@@ -414,7 +413,7 @@ class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         this.setState(state => ({
             activeStep: state.activeStep - 1,
         }));

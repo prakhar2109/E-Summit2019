@@ -1,17 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import IdeaStorm from "./NewScreens/IdeaStorm/ideastorm";
-import LandingPage from "./NewScreens/landing/landing";
-import Speakers from "./NewScreens/speakers/speakers";
-import Sponsors from "./NewScreens/sponsors/sponsors";
-import FAQBoard from "./NewScreens/faq/faq";
-import CampusAmbasder from "./NewScreens/ambasder/ambasder";
-import Registration from "./components/RegistrationPortal/registration/Index";
+import { BrowserRouter, Route, Switch } from "react-router-dom";  
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
-import Caindex from "./screens/cadashboard/js/index";
-import Payment from "./screens/cadashboard/js/payment";
+
 import Loadable from "react-loadable";
 import Loader from "./screens/loader/loader";
 
@@ -29,7 +21,51 @@ const ignite = Loadable({
   loading: () => <Loader />,
 });
 
+const LandingPage = Loadable({
+  loader: () => import("./NewScreens/landing/landing"),
+  loading: () => <Loader />,
+});
 
+const IdeaStorm = Loadable({
+  loader: () => import("./NewScreens/IdeaStorm/ideastorm"),
+  loading: () => <Loader />,
+});
+
+
+const Speakers = Loadable({
+  loader: () => import("./NewScreens/speakers/speakers"),
+  loading: () => <Loader />,
+});
+
+
+const Sponsors = Loadable({
+  loader: () => import("./NewScreens/sponsors/sponsors"),
+  loading: () => <Loader />,
+});
+
+ 
+const FAQBoard = Loadable({
+  loader: () => import("./NewScreens/faq/faq"),
+  loading: () => <Loader />,
+});
+
+const CampusAmbasder = Loadable({
+  loader: () => import("./NewScreens/ambasder/ambasder"),
+  loading: () => <Loader />,
+});
+
+const Registration = Loadable({
+  loader: () => import("./components/RegistrationPortal/registration/Index"),
+  loading: () => <Loader />,
+});
+
+
+
+const Caindex = Loadable({
+  loader: () => import("./screens/cadashboard/js/index"),
+  loading: () => <Loader />,
+});
+ 
 class App extends Component {
   constructor() {
     super();
@@ -54,9 +90,10 @@ class App extends Component {
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
                 <Route path="/login" component={Login} />
-                <Route exact path="/payment" component={Payment} />
+
+        
                 <Route path="/dashboard/" component={Caindex} />
-                <Route path ="/loader" component = {Loader} />
+     
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />

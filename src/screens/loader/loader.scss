@@ -4,8 +4,13 @@
   justify-items: center;
   height:100vh;
   width:100vw;
-  
-background-color: #304B63;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
+  z-index: 30000;
+  background-color:rgb(29,77,98);
   .mobile{
     display: none;
   }

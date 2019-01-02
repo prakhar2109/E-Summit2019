@@ -32,9 +32,9 @@ export default class ComingSoon extends Component {
       .then(res => {
         this.setState({ score: res.data.score, name: res.data.name, data: res.data });
       })
-      .catch(response => {
-        window.location.href = "/login";
-      });
+    .catch(response => {
+      window.location.href = "/login";
+    });
   };
 
   // componentWillUnmount(){
@@ -56,6 +56,7 @@ export default class ComingSoon extends Component {
     document.getElementById("close_button").style.display = "block";
     document.getElementById("menu_button").style.display = "none";
     document.getElementById("optionsToggle").style.display = "block";
+    document.getElementById("mobile-navbar-dashboard-logout").style.display = "block";
   }
 
   hide_menu() {
@@ -63,13 +64,46 @@ export default class ComingSoon extends Component {
     document.getElementById("close_button").style.display = "none";
     document.getElementById("menu_button").style.display = "block";
     document.getElementById("optionsToggle").style.display = "none";
+    document.getElementById("mobile-navbar-dashboard-logout").style.display = "none";
   }
 
   render() {
     let { score } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
     let options;
+    let profile = this.state.data.user_type;
+    let profile_display;
+    let { name, data } = this.state;
+    if (profile === "AMB") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
 
+    else  if (profile === "IIT") {
+      profile_display = "IITR Student ";
+      }
+
+    else if (profile === "NONIIT") {
+      profile_display = "Non IITR Student ";
+      }
+
+      else if (profile === "PROF") {
+        profile_display = "Professor";
+      }
+
+
+    else   if (profile === "CA") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+
+    else  if (profile === "PROFE") {
+      profile_display = "Professional";
+      }
+
+      else{
+        profile_display ="";
+
+      }
 
 
     if (this.state.data.user_type === "AMB") {
@@ -79,7 +113,7 @@ export default class ComingSoon extends Component {
         <>
 
           <span>
-            <Link to="/dashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : null} onClick={() => {
+            <Link to="/dashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
               this.setActive("task");
             }}>
               TASKS
@@ -87,7 +121,7 @@ export default class ComingSoon extends Component {
             <br />
           </span>
           <span>
-            <Link to="/dashboard/leader" className={(this.state.activeState === "leaderboard") ? "linkEventson" : null} onClick={() => {
+            <Link to="/dashboard/leader" className={(this.state.activeState === "leaderboard") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
               this.setActive("leaderboard");
             }}>
               LEADERBOARD
@@ -122,12 +156,12 @@ export default class ComingSoon extends Component {
 
 
           <div className="dashboard-mobile-navbar">
-            <div id="droperShape">{this.state.name[0]}</div>
+            <div id="droperShape">{name[0]}</div>
             <div className="headerdata">
-              <p id="nms">{this.state.name} </p>
-
+              <p id="nms">{name}</p>
+              <p id="typeofdashboard">{profile_display}</p>
               <div className="scor">
-                <span id="scoresWritten">{this.state.score}</span>
+                <span id="scoresWritten">SCORE</span>
                 <span id="scoresValue">{this.state.score}/360</span>
               </div>
               <div className="progress">
@@ -139,21 +173,17 @@ export default class ComingSoon extends Component {
                 />
               </div>
 
-              <div id="submitButton">
-                <button type="submit" onClick={this.handleLogout}>
-                  Log Out
-            </button>
-              </div>
+
             </div>
           </div>
           <div className="mobile-profile-dashboard-esummit1">
             <span id="mobileprofile-dashboard-esummitId">E-Summit’19 ID</span>
-            <span id="mobileprofile-dashboard-esummitId-value">ES172292</span>
+            <span id="mobileprofile-dashboard-esummitId-value">{data.esummit_id}</span>
           </div>
-          <div className="mobile-profile-dashboard-esummit2">
+          {/* <div className="mobile-profile-dashboard-esummit2">
             <span id="mobileprofile-dashboard-esummitId">Contingent No (Leader)</span>
             <span id="mobileprofile-dashboard-esummitId-value">CN 2</span>
-          </div>
+          </div> */}
         </div>
         <div id="optionsToggle">
           {options}
@@ -161,7 +191,7 @@ export default class ComingSoon extends Component {
 
 
           <span>
-            <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
+            <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
               this.setActive("invite");
             }}>
               INVITE
@@ -171,6 +201,14 @@ export default class ComingSoon extends Component {
 
 
           <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a></div>
+        </div>
+        <div id="mobile-navbar-dashboard-logout">
+
+          <div id="mobile-navbar-submitButton">
+            <button type="mobile-navbar-submit" onClick={this.handleLogout}>
+              Log Out
+            </button>
+          </div>
         </div>
       </div>
     );

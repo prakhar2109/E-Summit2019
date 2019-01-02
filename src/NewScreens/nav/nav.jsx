@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import esummit from "./static/es.png";
 import { withRouter } from "react-router-dom";
- 
+import "../landing/nav/css/nav.scss";
 import { HashLink } from "react-router-hash-link";
 
 class Nav extends Component {

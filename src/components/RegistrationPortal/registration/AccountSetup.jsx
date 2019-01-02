@@ -66,7 +66,7 @@ export default class AccountSetup extends Component {
                 document
                     .getElementById("loader")
                     .style
-                    .display = "flex";
+                    .display = "grid";
                 axios({
                     method: "post",
                     url: BASE_URL + "/v1/api/user/check-email/",
@@ -281,6 +281,7 @@ export default class AccountSetup extends Component {
 
     componentDidMount() {
         const height = window.innerHeight
+
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
         this.setState({
@@ -303,6 +304,7 @@ export default class AccountSetup extends Component {
         }
     }
     render() {
+        
         const { email, name, password, confirm_password, toggleConfirmEye, toggleEye, name_error, name_error_bool, email_error, email_error_bool, pass_error, pass_error_bool, confirmpass_error, confirmpass_error_bool, } = this.state
         return (
             <div>

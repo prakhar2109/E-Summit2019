@@ -33,14 +33,14 @@
         right: 0;
         z-index: 100000000000000000;
 
-        height: 100px;
+        height: 10vh !important;
 
         @include mobile {
             display: none;
         }
 
         img {
-            height: 100px;
+            height: 10vh;
         }
 
         .head_array {
@@ -48,7 +48,7 @@
             justify-self: end;
 
             span {
-                font-family: "ProximaNova-Semibold";
+                font-family: "ProximaNova-Semibold", sans-serif;
                 font-size: 20px;
                 text-align: center;
                 letter-spacing: 0.06em;
@@ -71,6 +71,7 @@
         height: auto;
         padding: 100px 10vw;
 
+
         @include mobile {
             padding: 44px 32px;
             padding-top: 60px;
@@ -79,14 +80,31 @@
             background-size: cover;
             min-height: 90vh;
         }
+        .ignite-first-page-scroll {
+        #ignite-first-page-scroll-child {
 
-        p:first-child {
+            p{
+                font-size: 14px ;
+                color:white;
+                text-align: center;
+
+                @include mobile {
+                    font-size: 8px;
+                    // padding-bottom: calc(0px + 1vh);
+    
+                }
+            }
+        }
+        }
+       
+
+        .header_idea {
             font-size: 48px;
             letter-spacing: 0.1em;
             padding-bottom: 0;
-	    margin-bottom:0;
+	        margin-bottom:0;
             color: #FFFFFF;
-            font-family: "ProximaNova-Bold";
+            font-family: "ProximaNova-Bold", sans-serif;
 
             @include mobile {
                 font-size: 16px;
@@ -100,7 +118,7 @@
             font-size: 24px;
             letter-spacing: 0.1em;
             color: #FFFFFF;
-            font-family: "ProximaNova-Light";
+            font-family: "ProximaNova-Light", sans-serif;
             padding-bottom: calc(0px + 3vh);
 
             @include mobile {
@@ -113,26 +131,45 @@
 
             }
         }
-	 p:nth-child(3) {
+        p:nth-child(6) {
+            line-height: 41px;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+            color: #FFFFFF;
+            font-family: "ProximaNova-Bold", sans-serif;
+            padding-bottom: calc(0px + 3vh);
 
-	font-size: 28px;
-        font-family: "ProximaNova-Semibold";
-	color: #FFFFFF;
+            @include mobile {
+                line-height: 15px;
+                font-size: 10px;
+                text-align: center;
+                letter-spacing: 0.1em;
+                padding-bottom: 0;
+                color: #FFFFFF;
+
+            }
+        }
+	 p:nth-child(7) {
+
+	font-size: 26px;
+        font-family: "ProximaNova-Light", sans-serif;
+    color: #FFFFFF;
+    padding-top: 4vh;
 	padding-bottom:4.62vh;
 		@include mobile {
-                line-height: 14px;
-                font-size: 10px;
+                line-height: 16px;
+                font-size: 12px;
                 text-align: center;
                 letter-spacing: 0.1em;
                 padding-bottom: calc(15px + 3vh);
                 
 		}
 	}
-        p:nth-child(4) {
+        p:nth-child(8) {
             line-height: 46px;
             font-size: 24px;
             letter-spacing: 0.1em;
-            font-family: "Proxima-nova-regular";
+            font-family: "Proxima-nova-regular", sans-serif;
             color: #FFFFFF;
             text-align: justify;
             margin-bottom: calc(10vh + 5rem);
@@ -178,6 +215,13 @@
         }
     }
 
+    // .timeline,{
+    //     padding: 120px 10vw;
+
+    //     @include mobile {
+    //         padding: 32px;}
+    // }
+
     .Rules,
     .eligiblity,
         {
@@ -188,15 +232,19 @@
         @include mobile {
             padding: 32px;
         }
+        .head1 {
+            color: #B2b2b2;
+            font-family: "ProximaNova-Bold", sans-serif ;
+        }
 
         .head1 {
             color: #1A4D66;
-            font-family: "ProximaNova-Bold";
+            font-family: "ProximaNova-Bold", sans-serif ;
         }
 
         ol {
             padding-top: 72px;
-            font-family: "Proxima-nova-regular";
+            font-family: "Proxima-nova-regular", sans-serif;
             list-style-type: decimal;
 
             @include mobile {
@@ -207,7 +255,7 @@
                 line-height: 41px;
                 font-size: 24px;
                 letter-spacing: 0.1em;
-                font-family: "Proxima-nova-regular";
+                font-family: "Proxima-nova-regular", sans-serif;
                 color: #000000;
 
                 @include mobile {
@@ -236,11 +284,11 @@
 
         .register_now {
             font-size: 40px;
-            font-family: "ProximaNova-Semibold";
+            font-family: "ProximaNova-Semibold", sans-serif;
         }
 
         p {
-            font-family: "Proxima-nova-regular";
+            font-family: "Proxima-nova-regular", sans-serif;
             text-align: center;
             color: #FFFFFF;
             margin-bottom: 48px;
@@ -255,7 +303,7 @@
 
         span {
             padding: 14px 16px;
-            font-family: "ProximaNova-Bold";
+            font-family: "ProximaNova-Bold", sans-serif;
             border: 2px solid #FFFFFF;
             box-sizing: border-box;
             border-radius: 2px;
@@ -281,7 +329,7 @@
                 font-size: 14px;
                 text-align: center;
                 letter-spacing: 0.1em;
-                font-family: "ProximaNova-Semibold";
+                font-family: "ProximaNova-Semibold", sans-serif;
                 color: #FFFFFF;
             }
 
@@ -291,7 +339,7 @@
                 text-align: center;
                 width: 190px;
                 height: 48px;
-                font-family: "ProximaNova-Bold";
+                font-family: "ProximaNova-Bold", sans-serif;
                 letter-spacing: 0.09em;
                 padding: 0;
                 padding-top: 15px;
@@ -332,7 +380,7 @@
 
         .head1 {
             color: #1A4D66;
-            font-family: "ProximaNova-Bold";
+            font-family: "ProximaNova-Bold", sans-serif;
         }
 
         .coordinator_grid {
@@ -340,7 +388,7 @@
             grid-column-gap: 20px;
             grid-template-columns: 30% 30% 30%;
             padding-top: 72px;
-            font-family: Proxima-nova-regular;
+            font-family: "Proxima-nova-regular", sans-serif;
 
             @include mobile {
                 display: block;
@@ -374,7 +422,7 @@
                 }
 
                 p:first-child {
-                    font-family: ProximaNova-Bold;
+                    font-family: "ProximaNova-Bold", sans-serif;
                 }
             }
         }
@@ -392,7 +440,7 @@
             text-align: center;
             color: #F39423;
             text-decoration: none;
-            font-family: Proxima-nova-regular !important;
+            font-family: Proxima-nova-regular, sans-serif !important;
 
             @include mobile {
 
@@ -447,7 +495,7 @@
                 line-height: 41px;
                 font-size: 20px;
                 letter-spacing: 0.1em;
-                font-family: "Proxima-nova-regular";
+                font-family: "Proxima-nova-regular", sans-serif;
                 color: #4F4F4F;
 
                 @include mobile {
@@ -480,7 +528,7 @@
                         line-height: 24px;
                         font-size: 16px;
                         letter-spacing: 0.1em;
-                        font-family: "ProximaNova-Semibold";
+                        font-family: "ProximaNova-Semibold", sans-serif;
                         color: #F39423;
 
 
@@ -522,7 +570,7 @@ font-size: 19.88px;
 .ideastorm .idea p:nth-child(3) {
 
 	font-size: 19.88px;
-        font-family: "ProximaNova-Semibold";
+        font-family: "ProximaNova-Semibold", sans-serif;
 	color: #FFFFFF;
 }
 
