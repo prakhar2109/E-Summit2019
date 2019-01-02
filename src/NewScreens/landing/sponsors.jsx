@@ -42,7 +42,7 @@ export default class Sponsors extends Component {
       <div>
         <Element id="sponsors" name="sponsors">
           <div className="land_sponsors">
-            <Header title="PARTNERS" />
+            <Header title="PAST PARTNERS" />
 
 
             <div className="speaker_slidder">
