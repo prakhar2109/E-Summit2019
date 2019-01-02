@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";  
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
@@ -43,7 +43,7 @@ const Sponsors = Loadable({
   loading: () => <Loader />,
 });
 
- 
+
 const FAQBoard = Loadable({
   loader: () => import("./NewScreens/faq/faq"),
   loading: () => <Loader />,
@@ -59,13 +59,16 @@ const Registration = Loadable({
   loading: () => <Loader />,
 });
 
-
-
 const Caindex = Loadable({
   loader: () => import("./screens/cadashboard/js/index"),
   loading: () => <Loader />,
 });
- 
+
+const Productathon = Loadable({
+  loader: () => import("./components/Productathon/Index"),
+  loading: () => <Loader />,
+});
+
 class App extends Component {
   constructor() {
     super();
@@ -90,10 +93,10 @@ class App extends Component {
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
                 <Route path="/login" component={Login} />
+                <Route path="/productathon" component={Productathon} />
 
-        
                 <Route path="/dashboard/" component={Caindex} />
-     
+
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
