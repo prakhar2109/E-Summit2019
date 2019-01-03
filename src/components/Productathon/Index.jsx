@@ -208,7 +208,7 @@ Team Size: 2-5.
                     </ol>
                 </div>
 
-                <div className="erks">
+                {/* <div className="erks">
                     <Header title="PERKS" />
                     <center>
                         <div className="perks_array">
@@ -243,7 +243,7 @@ Team Size: 2-5.
               </div>
                         </div>
                     </center>
-                </div>
+                </div> */}
                 <div className="esummit-productathon-partners-parent">
                     <Header title="PARTNERS" />
                     <div className="esummit-productathon-partners-body">
@@ -267,16 +267,16 @@ Team Size: 2-5.
 
 
                 <div className="register">
-                    <p className="register_now">Apply Now</p>
+                    <p className="register_now">Register Now</p>
 
                     <center>
 
                         <a
                             without rel="noopener noreferrer"
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
+                            href="http://bit.ly/productathon"
                             target="_blank"
                         >
-                            <span>APPLY FOR IDEASTORM</span>
+                            <span>APPLY FOR PRODUCTATHON</span>
                         </a>
 
                     </center>
