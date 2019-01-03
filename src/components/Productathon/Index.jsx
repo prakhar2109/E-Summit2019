@@ -147,11 +147,11 @@ export class IdeaStorm extends Component {
                 <div className="idea">
                     <p className="esummit-productathon-heading-para">PRODUCTATHON</p>
                     <p>Ideate.Develop.Innovate</p>
-                    <p className="esummit-productathon-cash-para">CASH PRIZE WORTH INR 40,000</p>
+                    <p className="esummit-productathon-cash-para">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
                     <p className="esummit-productathon-para">
                     Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
 Rules: The team members can be from different colleges/organizations.
-Team Size: 2-5.
+Team Size: 3-5.
           </p>
 
                     <div className="ignite-first-page-scroll">
