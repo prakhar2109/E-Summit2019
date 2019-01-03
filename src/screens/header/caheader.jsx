@@ -25,7 +25,7 @@ export default class ComingSoon extends Component {
 
     axios
       .get(BASE_URL + "/v1/api/user/profile", {
-        headers: {
+        headers: { 
           Authorization: `Token ${token}`,
         },
       })
@@ -106,7 +106,7 @@ export default class ComingSoon extends Component {
       }
 
 
-    if (this.state.data.user_type === "AMB") {
+    if (this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") {
       console.log("AMB")
 
       options = (
