@@ -222,7 +222,7 @@ Team Size: 2-5.
                     </ol>
                 </div>
 
-                {/* <div className="erks">
+                <div className="erks">
                     <Header title="PERKS" />
                     <center>
                         <div className="perks_array">
@@ -257,7 +257,7 @@ Team Size: 2-5.
               </div>
                         </div>
                     </center>
-                </div> */}
+                </div>
                 <div className="esummit-productathon-partners-parent">
                     <Header title="PARTNERS" />
                     <div className="esummit-productathon-partners-body">
