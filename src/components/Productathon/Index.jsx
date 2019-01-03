@@ -150,8 +150,8 @@ export class IdeaStorm extends Component {
                         <span onClick={this.eligiblity}>Eligiblity</span>
 
                         <span onClick={this.erks}>Perks</span>
-                        <span onClick={this.register}>Apply</span>
                         <span onClick={this.partner}>Partners</span>
+                        <span onClick={this.register}>Apply</span>
                         <span onClick={this.faq_idea}>FAQs</span>
 
                         <span onClick={this.coordinator}>Contact Us</span>
