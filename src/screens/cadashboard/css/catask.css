@@ -1,6 +1,6 @@
 .taskparent {
     background: #F7F8F9;
-    height: 100vh;
+    height: fit-content;
     width: 82%;
     position: absolute;
     top:0;
@@ -19,9 +19,9 @@
 .taskchild {
 
     background: #FFFFFF;
-    height: 42.57vh;
+    height: fit-content;
 
-    width: 30.83%;
+    width: 46.57%;
     margin-left: 1.875%;
     margin-bottom: 1.875%;
     box-shadow: 1.5px 2px 15px rgba(51, 51, 51, 0.08);
@@ -34,10 +34,10 @@
 
 .taskchild-heading {
 
-    font-family: proxima-nova, sans-serif;
+    font-family: "Proxima-nova-regular";
     font-size: 28px;
     line-height: 32px;
-    color: #3A667B;
+    color:#000000;
     font-weight: 500;
 
 }
@@ -61,9 +61,6 @@
     border-style: dashed;
     border-width: 2px;
     height: 21vh;
-    display: grid;
-    align-items: center;
-    justify-items: center;
     background: url('../svg/Group\ 16.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -128,6 +125,19 @@
     line-height: 1vh;
     color: #4F4F4F;
 }
+@media (min-width: 1620px) and (max-width: 2560px){
+    .taskchild-heading{
+        font-size: 28px;
+
+    }
+    .taskchild-description{
+        font-size: 16px;
+
+    }
+
+
+}
+
 
 @media only screen and (max-width: 900px) {
     .taskchildrow {
@@ -135,7 +145,14 @@
         justify-items: center;
 
     }
- 
+    .taskchild-description {
+        height: fit-content;
+    }
+    .taskchild-heading{
+        font-size: 18px;
+        line-height: 20px;
+
+    }
     .taskparent {
         color: black;
     position: relative;
