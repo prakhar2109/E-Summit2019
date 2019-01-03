@@ -29,27 +29,27 @@ export class IdeaStorm extends Component {
         faq: [
             {
                 id: 2,
-                question: "What is the last date of submission?",
+                question: "What is a Productathon?",
                 answer:
-                    "1st of January is the last date of submission of entries for the first round of the competition.",
+                    "Productathon is an intense product development meet for creating product-driven technology for those who want to lead innovation and creating a modernized product. Productathon is a design sprint-like event in which computer programmer, designer, product manager, software developers collaborate intensively to complete a problem statement. Productathon give opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per their problem statement. The aim of Productathon would be creating futuristic technology which matches main motive of the E-summit 2019.",
             },
             {
                 id: 3,
-                question: " Is there a participation fee for Idea Storm?",
+                question: "What is an offline Productathon?",
                 answer:
-                    "No, there is no participation fee for participation in the first round of Idea Storm.",
+                    "At an offline Productathon, participants work collaboratively to innovate at a physical location. In this format, organizers will need to consider time, geographical, and logistical constraints while designing the Productathon. In an offline Productathon, organizing workshops, hosting knowledge-sharing sessions, and getting the venue, tools, and other aspects of the working environment ready are important.",
             },
 
             {
                 id: 4,
-                question: " How will the mentors be allocated?",
+                question: "Why should I attend a Productathon?",
                 answer:
                     "Your idea will be judged by a panel of experts and then mentors will be allocated to you based on the area of their expertise.",
             },
 
             {
                 id: 5,
-                question: " How will our ideas be judged? ",
+                question: " How to list Productathons to your Resume? ",
                 answer: [
                     "Your ideas will be judged on the basis of ",
                     "innovation in your idea , " +
@@ -61,23 +61,37 @@ export class IdeaStorm extends Component {
 
             {
                 id: 6,
-                question: " Is it compulsory to have a team to participate? ",
-                answer: "Yes, you should atleast have a team size of 3 members.",
+                question: "Is there any separate fee for productathon?",
+                answer: "No, there is no separate fee for productathon but the participants need to pay for E-Summit’19",
             },
 
             {
                 id: 7,
-                question: " Does my business model have to be technology related? ",
+                question: "How will the productathon be judged?",
                 answer:
-                    "No, we encourage all entries that can get mentorship,funding and be developed into a business venture.",
+                    "The productathon will be judged by judges across various domains.",
             },
 
             {
                 id: 8,
                 question:
-                    "  Can a team consists of people from different college/companies? ",
+                    " Is it necessary to have a team to participate in Productathon?",
                 answer:
-                    "Yes, team size should be in between 3 to 5. Individuals in the team can be from any organization",
+                    "Yes, you must have a team of atleast 3 members and upto 5 members with a team leader to participate in Productathon 2019.",
+            },
+            {
+                id: 9,
+                question:
+                    "Why should I attend Productathon?",
+                answer:
+                    "Productathon is an event which provides a platform to build something new and at the same time get a chance to network with enthusiastic people across various domains.",
+            },
+            {
+                id: 10,
+                question:
+                    "How to list Productathon to your Resume?",
+                answer:
+                    "How can give boost to his resume by mentioning the contributions made at Productathon which shows one’s interest in building products.",
             },
         ],
 
@@ -148,11 +162,12 @@ export class IdeaStorm extends Component {
                 <div className="idea esummit-productathon-parent-back-image">
                     <p className="esummit-productathon-heading-para">PRODUCTATHON</p>
                     <p>Ideate.Develop.Innovate</p>
-                    <p className="esummit-productathon-cash-para">CASH PRIZE WORTH INR 40,000</p>
+                    <p className="esummit-productathon-cash-para">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
                     <p className="esummit-productathon-para">
-                        Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
-    Rules: The team members can be from different colleges/organizations.
-    Team Size: 2-5.
+
+                    Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
+Rules: The team members can be from different colleges/organizations.
+Team Size: 3-5.
           </p>
                     <div className="esummit-productathon-register-now-button-parent">
                         <a
@@ -287,7 +302,7 @@ export class IdeaStorm extends Component {
 
 
                 <div className="register">
-                    <p className="register_now">Apply Now</p>
+                    <p className="register_now">Register Now</p>
 
                     <center>
 
@@ -298,13 +313,14 @@ export class IdeaStorm extends Component {
                             target="_blank"
                         >
                             <span className="esummit-productathon-apply-now">APPLY FOR PRODUCTATHON</span>
+
                         </a>
 
                     </center>
                 </div>
 
                 <div className="register_mobile">
-                    <p className="register_now">Apply Now</p>
+                    <p className="register_now">Register Now</p>
                     <p>To participate in Idea-Storm 2019 register here.</p>
                     <center>
                         <a
