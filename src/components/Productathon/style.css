@@ -1,3 +1,7 @@
+.esummit-productathon-parent-back-image{
+    background-image: url("./product.png") !important;
+    padding: 73px 10vw !important;
+}
 .esummit-productathon-partners-parent{
     height: 100%;
     padding: 120px 10vw;
@@ -10,14 +14,32 @@
     margin-top: 40px;
 }
 .esummit-productathon-partners-body-image-parent{
-    height: 200px;
+    height: auto;
     width: 200px;
-    background-color: red;
 }
 .esummit-productathon-partners-body-image-parent img{
     height: 100%;
     width: 100%;
 }
+.esummit-productathon-register-now-button-parent{
+    display: flex;
+    justify-content: space-around;
+}
+.esummit-productathon-register-now-button-parent button{
+    background-color: #F39423;
+    line-height: normal;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: white;
+    display: inline;
+    border: 1.5px solid #F39423;
+    border-radius: 2px;
+    padding: 10px 18px;
+    margin-right : 11px;
+    cursor: pointer;
+}
+
 .esummit-productathon-partners-parent .head1{
     color: #1A4D66;
 }
@@ -70,3 +92,22 @@
   .ideastorm .idea p:nth-child(4) {
     font-size: 22.07px;
   }
+  .facebook-developer-circle{
+      width: 230px !important;
+  }
+.esummit-productathon-ol li{
+    line-height: 2.5em !important;
+    letter-spacing: 0.05em !important;
+}
+.esummit-productathon-logo-css{
+    height: 80px !important;
+    margin-top: 5px;
+}
+.esummit-productathon-apply-now{
+    font-family: "ProximaNova-Semibold" !important;
+    text-decoration: none;
+    margin-right: 0px !important;
+}
+.esummit-productathon-organizer-name{
+    font-family: "ProximaNova-Semibold" !important;
+}

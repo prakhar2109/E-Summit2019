@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "../../NewScreens/IdeaStorm/ideastorm.css";
 import Header from "../../components/header";
-import Idea from "../../NewScreens/IdeaStorm/static/idea.png";
 import Eventfooter from "../../NewScreens/IdeaStorm/footer/eventfooter";
 import jump from "jump.js";
 import Eventsheader from "../../NewScreens/IdeaStorm/Navbar/header";
-import Timelineindex from "../../NewScreens/IdeaStorm/timeline/Index";
+// import Timelineindex from "../../NewScreens/IdeaStorm/timeline/Index";
 import { NavLink } from "react-router-dom";
 import esummit from "../../NewScreens/IdeaStorm/static/es.png";
 import "../../screens/ignite/css/scrollanimation.css"
@@ -14,6 +13,17 @@ import "../../NewScreens/landing/css/landing.scss";
 import "../../screens/ignite/css/ignite.scss";
 import "../../screens/ignite/css/scrollanimation.css";
 import "./style.css"
+import skill from "./partners/skill.png"
+import he from "./partners/he.png"
+import gfg from "./partners/gfg.png"
+import product_logo from "./logo.png"
+import fdc from "./partners/fdc.png"
+import meeting from "./perks/one.png"
+import handshake from "./perks/handshake.png"
+import tshirt from "./perks/t-shirt.png"
+import online from "./perks/online.png"
+import trophy from "./perks/trophy.png"
+
 export class IdeaStorm extends Component {
     state = {
         faq: [
@@ -94,14 +104,18 @@ export class IdeaStorm extends Component {
         jump(".coordinator", { offset: -130 });
     };
 
+
     eligiblity = () => {
         jump(".eligiblity", { offset: -130 });
     };
     register = () => {
         jump(".register", { offset: -130 });
     };
+    partner = () => {
+        jump(".esummit-productathon-partners-parent", { offset: -130 });
+    };
     jum = () => {
-        jump('#timeline')
+        jump('#rules_and_regulations')
     }
 
     render() {
@@ -111,11 +125,11 @@ export class IdeaStorm extends Component {
 
                 <div id="nav" className="header">
                     <span>
-                        <img alt="IdeaStorm" src={Idea} />
+                        <img className="esummit-productathon-logo-css" alt="IdeaStorm" src={product_logo} />
                     </span>
 
                     <span className="head_array">
-                        <span onClick={this.timeline}>Timeline</span>
+                        {/* <span onClick={this.timeline}>Timeline</span> */}
 
                         <span onClick={this.Rules}>Rules</span>
 
@@ -123,6 +137,7 @@ export class IdeaStorm extends Component {
 
                         <span onClick={this.erks}>Perks</span>
                         <span onClick={this.register}>Apply</span>
+                        <span onClick={this.partner}>Partners</span>
                         <span onClick={this.faq_idea}>FAQs</span>
 
                         <span onClick={this.coordinator}>Contact Us</span>
@@ -130,19 +145,27 @@ export class IdeaStorm extends Component {
 
                     <span />
                 </div>
-                <div className="idea">
+                <div className="idea esummit-productathon-parent-back-image">
                     <p className="esummit-productathon-heading-para">PRODUCTATHON</p>
                     <p>Ideate.Develop.Innovate</p>
                     <p className="esummit-productathon-cash-para">CASH PRIZE WORTH INR 40,000</p>
                     <p className="esummit-productathon-para">
-                    Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
-Rules: The team members can be from different colleges/organizations.
-Team Size: 2-5.
+                        Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
+    Rules: The team members can be from different colleges/organizations.
+    Team Size: 2-5.
           </p>
-
+                    <div className="esummit-productathon-register-now-button-parent">
+                        <a
+                            style={{ textDecoration: "none" }}
+                            without rel="noopener noreferrer"
+                            href="http://bit.ly/productathon"
+                            target="_blank"
+                        >
+                            <button className="esummit-productathon-apply-now">REGISTER</button>
+                        </a>
+                    </div>
                     <div className="ignite-first-page-scroll">
-                        <div onClick={this.timeline} className='icon-scroll'></div> <br />
-
+                        <div onClick={this.Rules} className='icon-scroll'></div> <br />
                         <div id="ignite-first-page-scroll-child"> <p> SCROLL DOWN</p></div>
                     </div>
                     <center>
@@ -151,42 +174,42 @@ Team Size: 2-5.
 
                 </div>
 
-                <div name="timeline" id="timeline" className="timeline">
-                    {/* <Header title="TIMELINE" /> */}
+                {/* <div name="timeline" id="timeline" className="timeline">
+                    <Header title="TIMELINE" />
                     <div>
                         <img className="ideastorm-vector" src={"Vector"} alt="" />
                         <p className="ideastorm-head1">TIMELINE</p>
                     </div>
                     <Timelineindex />
-                </div>
+                </div> */}
 
-                <div className="Rules">
+                <div id="rules_and_regulations" className="Rules">
                     <Header title="RULES & REGULATIONS" />
 
-                    <ol>
+                    <ol className="esummit-productathon-ol">
                         <li>
-                        Each team may consist of atleast 2 and atmost 5 members. Who neednot belong to the same organization.
-            </li>
-
-                        <li>
-                        Multiple teams from the same university / organization are allowed to participate in the event.
+                            Each team may consist of atleast 2 and atmost 5 members. Who neednot belong to the same organization.
             </li>
 
                         <li>
-                        The decision of the judges shall be final and binding, though in all the rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas and choose the eligibility criteria.
+                            Multiple teams from the same university / organization are allowed to participate in the event.
             </li>
 
-            <li>
-            All submissions remain the intellectual property of the individuals or organizations that developed them.
+                        <li>
+                            The decision of the judges shall be final and binding, though in all the rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas and choose the eligibility criteria.
             </li>
 
-            <li>
-            By submitting an Entry or accepting any prize, you represent and warrant the following: you will not submit content that is copyrighted, protected by trade secret or otherwise subject to third party intellectual property rights or other proprietary rights, including privacy and publicity rights, unless you are the owner of such rights or have permission from their rightful owner to post the content; and the content submitted by you does not contain any viruses, Trojan horses, worms or other disabling devices or harmful code.
+                        <li>
+                            All submissions remain the intellectual property of the individuals or organizations that developed them.
             </li>
-            <li>
-            Productathon organizers have the right at their sole discretion to determine whether an entrant is eligible for the Contest. Productathon may disqualify, at organizers’ sole discretion, Productathon entries (including, without limitation, content submitted in connection therewith) that 
-(a) are in violation of third-party rights or law or regulation, 
-(b) use inappropriate or explicit language or images, or display content that Productathon or Sponsors otherwise finds objectionable.
+
+                        <li>
+                            By submitting an Entry or accepting any prize, you represent and warrant the following: you will not submit content that is copyrighted, protected by trade secret or otherwise subject to third party intellectual property rights or other proprietary rights, including privacy and publicity rights, unless you are the owner of such rights or have permission from their rightful owner to post the content; and the content submitted by you does not contain any viruses, Trojan horses, worms or other disabling devices or harmful code.
+            </li>
+                        <li>
+                            Productathon organizers have the right at their sole discretion to determine whether an entrant is eligible for the Contest. Productathon may disqualify, at organizers’ sole discretion, Productathon entries (including, without limitation, content submitted in connection therewith) that
+                (a) are in violation of third-party rights or law or regulation,
+                (b) use inappropriate or explicit language or images, or display content that Productathon or Sponsors otherwise finds objectionable.
 
             </li>
                     </ol>
@@ -196,14 +219,14 @@ Team Size: 2-5.
                     <Header title="ELIGIBILITY CRITERIA" />
                     <ol>
                         <li>
-                        There is no restriction on any individual to participate. Members of all educational and professional fraternities are welcome to participate.
+                            There is no restriction on any individual to participate. Members of all educational and professional fraternities are welcome to participate.
                         </li>
 
                         <li>
-                        Start-ups which have been incorporated more than a year ago (i.e. registered on or before 1 December, 2017) are not eligible to participate in the Idea Storm.
+                            Start-ups which have been incorporated more than a year ago (i.e. registered on or before 1 December, 2017) are not eligible to participate in the Idea Storm.
                         </li>
                         <li>
-                        Ventures that have acquired funding from external investor-networks (angels, VC's, etc) can not participate. We believe in promoting startups that require assistance in the form of seed capital, mentoring and various types of consultancies.
+                            Ventures that have acquired funding from external investor-networks (angels, VC's, etc) can not participate. We believe in promoting startups that require assistance in the form of seed capital, mentoring and various types of consultancies.
                         </li>
                     </ol>
                 </div>
@@ -213,31 +236,31 @@ Team Size: 2-5.
                     <center>
                         <div className="perks_array">
                             <div className="perks_unit">
-                                <img src={"Cash"} alt="Cash Rewards" />
+                                <img src={trophy} alt="Cash Rewards" />
                                 <span>Cash Rewards:</span>
                                 Cash Prizes of INR 2,50,000.
               </div>
 
                             <div className="perks_unit">
-                                <img src={"Mentorship"} alt="Mentorship" />
+                                <img src={meeting} alt="Mentorship" />
                                 <span>Mentorship:</span>
                                 Mentorship opportunities from Venture Capitalists and Industry
                                 Leaders.
               </div>
 
                             <div className="perks_unit">
-                                <img src={"Networking"} alt="networking" />
+                                <img src={handshake} alt="networking" />
                                 <span>Networking Session</span>
                                 Networking session with CXOs, Angel Investors, Venture
                                 Capitalists and Industry Leaders.
               </div>
                             <div className="perks_unit">
-                                <img src={"Funding"} alt="Funding" />
+                                <img src={tshirt} alt="Funding" />
                                 <span>Funding Opportunities</span>
                                 An opportunity to raise real time funds.
               </div>
                             <div className="perks_unit">
-                                <img src={"Media"} alt="Media Coverage" />
+                                <img src={online} alt="Media Coverage" />
                                 <span>Media Coverage</span>
                                 Get featured on many popular media platforms.
               </div>
@@ -248,19 +271,16 @@ Team Size: 2-5.
                     <Header title="PARTNERS" />
                     <div className="esummit-productathon-partners-body">
                         <div className="esummit-productathon-partners-body-image-parent">
-                            {/* <img src={"dasd"} alt="partners" /> */}
+                            <img src={he} alt="partners" />
+                        </div>
+                        <div className="esummit-productathon-partners-body-image-parent facebook-developer-circle">
+                            <img src={fdc} alt="partners" />
                         </div>
                         <div className="esummit-productathon-partners-body-image-parent">
-                            {/* <img src={"dasd"} alt="partners" /> */}
+                            <img src={gfg} alt="partners" />
                         </div>
                         <div className="esummit-productathon-partners-body-image-parent">
-                            {/* <img src={"dasd"} alt="partners" /> */}
-                        </div>
-                        <div className="esummit-productathon-partners-body-image-parent">
-                            {/* <img src={"dasd"} alt="partners" /> */}
-                        </div>
-                        <div className="esummit-productathon-partners-body-image-parent">
-                            {/* <img src={"dasd"} alt="partners" /> */}
+                            <img src={skill} alt="partners" />
                         </div>
                     </div>
                 </div>
@@ -272,11 +292,12 @@ Team Size: 2-5.
                     <center>
 
                         <a
+                            style={{ textDecoration: "none" }}
                             without rel="noopener noreferrer"
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
+                            href="http://bit.ly/productathon"
                             target="_blank"
                         >
-                            <span>APPLY FOR IDEASTORM</span>
+                            <span className="esummit-productathon-apply-now">APPLY FOR PRODUCTATHON</span>
                         </a>
 
                     </center>
@@ -303,7 +324,7 @@ Team Size: 2-5.
 
                     <div className="coordinator_grid">
                         <div className="coordinator_unit">
-                            <p>Ritik Singh Panwar</p>
+                            <p className="esummit-productathon-organizer-name">Ritik Singh Panwar</p>
 
                             <p>+91 8107600630</p>
                             <p>rpanwar@bt.iitr.ac.in</p>
