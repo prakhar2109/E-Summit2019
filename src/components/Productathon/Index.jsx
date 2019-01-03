@@ -165,19 +165,29 @@ Team Size: 2-5.
 
                     <ol>
                         <li>
-                            Each team may consist of at least three to at most five members,
-                            who need not belong to the same organization.
+                        Each team may consist of atleast 2 and atmost 5 members. Who neednot belong to the same organization.
             </li>
 
                         <li>
-                            Multiple teams from the same university / organization are allowed
-                            to participate in the event.
+                        Multiple teams from the same university / organization are allowed to participate in the event.
             </li>
 
                         <li>
-                            The decision of the judges shall be final and binding, though in
-                            all the rounds, E-Cell IIT Roorkee retains the right to evaluate
-                            all ideas and choose the eligibility criteria.
+                        The decision of the judges shall be final and binding, though in all the rounds, E-Cell IIT Roorkee retains the right to evaluate all ideas and choose the eligibility criteria.
+            </li>
+
+            <li>
+            All submissions remain the intellectual property of the individuals or organizations that developed them.
+            </li>
+
+            <li>
+            By submitting an Entry or accepting any prize, you represent and warrant the following: you will not submit content that is copyrighted, protected by trade secret or otherwise subject to third party intellectual property rights or other proprietary rights, including privacy and publicity rights, unless you are the owner of such rights or have permission from their rightful owner to post the content; and the content submitted by you does not contain any viruses, Trojan horses, worms or other disabling devices or harmful code.
+            </li>
+            <li>
+            Productathon organizers have the right at their sole discretion to determine whether an entrant is eligible for the Contest. Productathon may disqualify, at organizers’ sole discretion, Productathon entries (including, without limitation, content submitted in connection therewith) that 
+(a) are in violation of third-party rights or law or regulation, 
+(b) use inappropriate or explicit language or images, or display content that Productathon or Sponsors otherwise finds objectionable.
+
             </li>
                     </ol>
                 </div>
@@ -186,21 +196,14 @@ Team Size: 2-5.
                     <Header title="ELIGIBILITY CRITERIA" />
                     <ol>
                         <li>
-                            There is no restriction on any individual to participate. Members
-                            of all educational and professional fraternities are welcome to
-                            participate.
+                        There is no restriction on any individual to participate. Members of all educational and professional fraternities are welcome to participate.
                         </li>
 
                         <li>
-                            Start-ups which have been incorporated more than a year ago (i.e.
-                            registered on or before 1 December, 2017) are not eligible to
-                            participate in the Idea Storm.
+                        Start-ups which have been incorporated more than a year ago (i.e. registered on or before 1 December, 2017) are not eligible to participate in the Idea Storm.
                         </li>
                         <li>
-                            Ventures that have acquired funding from external
-                            investor-networks (angels, VC's, etc) can not participate. We
-                            believe in promoting startups that require assistance in the form
-                            of seed capital, mentoring and various types of consultancies.
+                        Ventures that have acquired funding from external investor-networks (angels, VC's, etc) can not participate. We believe in promoting startups that require assistance in the form of seed capital, mentoring and various types of consultancies.
                         </li>
                     </ol>
                 </div>
@@ -300,18 +303,12 @@ Team Size: 2-5.
 
                     <div className="coordinator_grid">
                         <div className="coordinator_unit">
-                            <p>Rachit Garg</p>
+                            <p>Ritik Singh Panwar</p>
 
-                            <p>+91 9992929203</p>
-                            <p>rgarg@me.iitr.ac.in</p>
+                            <p>+91 8107600630</p>
+                            <p>rpanwar@bt.iitr.ac.in</p>
                         </div>
 
-                        <div className="coordinator_unit">
-                            <p>Harshit Dubey</p>
-
-                            <p>+91 7412883060</p>
-                            <p>hdubey@ee.iitr.ac.in</p>
-                        </div>
                     </div>
                 </div>
 
