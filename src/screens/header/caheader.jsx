@@ -104,7 +104,7 @@ export default class ComingSoon extends Component {
         profile_display ="";
 
       }
-
+     
 
     if (this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") {
       console.log("AMB")
