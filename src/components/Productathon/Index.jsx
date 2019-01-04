@@ -235,9 +235,7 @@ Team Size: 3-5.
                     <ol>
                         <li>
                             There is no restriction on any individual to participate. Members of all educational and professional fraternities are welcome to participate.
-                        </li>
-
-                    
+                      </li>       
                     </ol>
                 </div>
 
