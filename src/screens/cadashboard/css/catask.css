@@ -106,7 +106,8 @@
 .taskchild-fileupload input {
     cursor: pointer;
     background-color: black;
-    height: 18vh;
+    height: 100%;
+    width: 100%;
     opacity: 0;
 
 }
@@ -123,10 +124,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    background: rgba(255, 241, 224, 0.29);
+}
+.taskchild-uploadedfiles-p{
     color:#B2B2B2;
     font-family: "ProximaNova-Semibold";
     font-size: 16px;
-    background: rgba(255, 241, 224, 0.29);
 }
 .taskchild-filesupload{
     height: 9.25vh;
@@ -134,8 +138,17 @@
     justify-content: center;
     background: rgba(181, 255, 128, 0.31);
 }
+.taskchild-filesupload-p{
+    color:#70BF48;
+    font-family: "ProximaNova-Semibold";
+    font-size: 12px;
+}
 .taskName1 {
     color: #4F4F4F;
+    font-family: "ProximaNova-Semibold";
+    font-size: 16px;
+    margin-bottom: 0;
+
 }
 .taskName2 {
     color: #70BF48;
@@ -173,6 +186,16 @@
         flex-direction: column;
         justify-items: center;
 
+    }
+    .taskName1{
+        font-size: 12px;
+    }
+    .taskchild-filesupload {
+        height: 8.25vh;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        background: rgba(181, 255, 128, 0.31);
     }
     .taskchild-description {
         height: fit-content;

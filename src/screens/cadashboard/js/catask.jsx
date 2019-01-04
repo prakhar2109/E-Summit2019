@@ -104,7 +104,10 @@ class CATask extends Component {
                             .name;
                     document
                         .getElementById(`filestatus${task.id}`)
-                        .innerHTML = "File Uploaded ";
+                        .innerHTML = "Uploaded ";
+                       
+                    var element = document.getElementById(`Uploaded-Task${task.id}`);
+                        element.className = element.className.replace("taskchild-uploadedfiles", "taskchild-filesupload");
                 })
 
         }
@@ -124,21 +127,17 @@ class CATask extends Component {
                         {task.description}
 
                     </div>
-                    {(task.sub === null || task.sub === undefined) ?
-                    <div className="taskchild-uploadedfiles">
-                   
-                       uploaded files shown here
-                   
-                    </div>
-                    : 
-                    <div className="taskchild-filesupload">
+                    
+                  
+                    
+                    <div id={`Uploaded-Task${task.id}`} className={(task.sub === null || task.sub === undefined) ? "taskchild-uploadedfiles" : "taskchild-filesupload" }> 
                         <div className="Selectfilesvg">
-                        <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName"></p>
+                        <p id={`nameOfFileUploadedForTask${task.id}`} className="taskName1"></p>
 
-                        <p id={`filestatus${task.id}`} className="taskName">File uploaded</p>
+                        <p id={`filestatus${task.id}`} className="taskName2">{(task.sub === null || task.sub === undefined) ? (<p className="taskchild-uploadedfiles-p">Uploaded files shown here</p>): (<p className="taskchild-filesupload-p">Uploaded</p>)}</p>
                         </div>
                     </div>
-                    }
+                    
                     <div className="taskchild-fileupload">
 
                         <input
@@ -147,7 +146,7 @@ class CATask extends Component {
                             className="filesvg"
                             onChange={(e) => this.fileUploadHandler(e.target.files, task)} />
                            
-                        
+
                     </div>
                 </div>
             </div>
