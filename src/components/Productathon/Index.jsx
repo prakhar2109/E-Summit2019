@@ -3,7 +3,7 @@ import "../../NewScreens/IdeaStorm/ideastorm.css";
 import Header from "../../components/header";
 import Eventfooter from "../../NewScreens/IdeaStorm/footer/eventfooter";
 import jump from "jump.js";
-import Eventsheader from "../../NewScreens/IdeaStorm/Navbar/header";
+import Eventsheader from "./Navbar/header";
 // import Timelineindex from "../../NewScreens/IdeaStorm/timeline/Index";
 import { NavLink } from "react-router-dom";
 import esummit from "../../NewScreens/IdeaStorm/static/es.png";
@@ -123,7 +123,7 @@ export class IdeaStorm extends Component {
         jump(".eligiblity", { offset: -130 });
     };
     register = () => {
-        jump(".register", { offset: -130 });
+        jump(".register_prod", { offset: -130 });
     };
     partner = () => {
         jump(".esummit-productathon-partners-parent", { offset: -130 });
@@ -176,13 +176,10 @@ Team Size: 3-5.
                             href="http://bit.ly/productathon"
                             target="_blank"
                         >
-                            <button className="esummit-productathon-apply-now">REGISTER</button>
+                            <button className="esummit-productathon-apply-now">Apply for Productathon</button>
                         </a>
                     </div>
-                    <div className="ignite-first-page-scroll">
-                        <div onClick={this.Rules} className='icon-scroll'></div> <br />
-                        <div id="ignite-first-page-scroll-child"> <p> SCROLL DOWN</p></div>
-                    </div>
+ 
                     <center>
 
                     </center>
@@ -292,8 +289,8 @@ Team Size: 3-5.
                 </div>
 
 
-                <div className="register">
-                    <p className="register_now">Register Now</p>
+                <div className="register_prod">
+                    <p className="apply_now">Apply Now</p>
 
                     <center>
 
@@ -309,23 +306,10 @@ Team Size: 3-5.
 
                     </center>
                 </div>
-
-                <div className="register_mobile">
-                    <p className="register_now">Register Now</p>
-                    <p>To participate in Idea-Storm 2019 register here.</p>
-                    <center>
-                        <a
-                            without rel="noopener noreferrer"
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
-                            target="_blank"
-                        >
-                            {" "}
-                            <span>APPLY FOR IDEASTORM</span>
-                        </a>
-                    </center>
-
-                </div>
+ 
+                <span id = "#faq"> 
                 <FAQBoard faqList={this.state.faq} />
+                </span>
                 <div className="coordinator">
                     <Header title="EVENT CO-ORDINATORS" />
 

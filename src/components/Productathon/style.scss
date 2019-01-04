@@ -7,13 +7,18 @@
 
 
 
-.esummit-productathon-parent-back-image{
+.ddsummit-productathon-parent-back-image{
     background-image: url("./product.png") !important;
-    padding: 73px 10vw !important;
+    padding: 140px 10vw !important;
+    display: grid;
+    height:95vh !important;
+
+
 }
 .esummit-productathon-partners-parent{
-    height: 100%;
-    padding: 120px 10vw;
+    padding: 73px 10vw;
+ 
+    
 }
 .esummit-productathon-partners-body{
    
@@ -42,14 +47,14 @@
     justify-content: space-around;
 }
 .esummit-productathon-register-now-button-parent button{
-    background-color: #F39423;
+    background:none;
     line-height: normal;
     font-size: 16px;
     text-align: center;
     letter-spacing: 0.06em;
     color: white;
     display: inline;
-    border: 1.5px solid #F39423;
+    border: 1.5px solid white;
     border-radius: 2px;
     padding: 10px 18px;
     margin-right : 11px;
@@ -131,7 +136,40 @@
     font-family: "ProximaNova-Semibold" !important;
     text-decoration: none;
     margin-right: 0px !important;
+font-size: 20px !important;
+border:1.5px solid white;
+color:white !important;
+padding: 20px;
+
+
+@include mobile{
+    font-size: 14px !important  ;
+    padding: 10px;
+}
+  
 }
 .esummit-productathon-organizer-name{
     font-family: "ProximaNova-Semibold" !important;
+}
+
+
+.register_prod{
+    background: #F49D35;
+    padding:10vh 0;
+
+    @include mobile{
+        padding:4vh 0;
+
+    }
+    .apply_now{
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: white;
+        margin-bottom: 5vh !important;
+        
+        @include mobile{
+            font-size: 20px;
+        }
+    }
 }
