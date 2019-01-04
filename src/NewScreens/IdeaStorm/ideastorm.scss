@@ -64,14 +64,11 @@
     .idea {
         background: url("./static/1920.png");
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
         width: 100vw;
-        min-height: 65rem;
         height: auto;
         padding: 100px 10vw;
-
-
+        max-height: 10vh;
         @include mobile {
             padding: 44px 32px;
             padding-top: 60px;
