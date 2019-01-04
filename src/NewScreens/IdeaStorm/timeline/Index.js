@@ -48,7 +48,7 @@ export default class Timeline extends Component {
        &nbsp; &nbsp; &nbsp;&nbsp;4. The competitive advantage that it possesses<br/>
 The teams with the ideas which qualify the minimum eligibility criteria would be allowed to progress to the next round.<br/>
 <span id="ideastormevents-content-span">Registration starts on            :</span> 12 December, 2018<br/>
-<span id="ideastormevents-content-span">Round 1 submission deadline :</span> 1 January, 2019<br/>
+<span id="ideastormevents-content-span">Round 1 submission deadline :</span> 10 January, 2019<br/>
 Round 1 results will be announced in 1st week of January
       
 
