@@ -90,7 +90,7 @@ export default class Viewprofile extends Component {
       padding: 0,
     };
 
-    const width = 900;
+    const width = 900; 
     let { score, name, data } = this.state;
     let scorePercentage = (score / 360) * 100 + "";
     return (
@@ -113,10 +113,10 @@ export default class Viewprofile extends Component {
             </div>
 
             <div className="caprofile-dropshape">{name[0]}</div>
-            <div className="profile-dashboard-type">NON-IITR STUDENT</div>
+            <div className="profile-dashboard-type">CAMPUS AMBASSADOR</div>
             <div className="profile-dashboard-esummit">
               <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-              <span id="profile-dashboard-esummitId-value">{data.esummit_idgit }</span>
+              <span id="profile-dashboard-esummitId-value">{data.esummit_id}</span>
             </div>
             {/*}
             <div className="profile-dashboard-esummit">
