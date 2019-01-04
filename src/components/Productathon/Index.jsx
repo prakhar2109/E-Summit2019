@@ -12,7 +12,7 @@ import FAQBoard from '../../NewScreens/landing/faqs'
 import "../../NewScreens/landing/css/landing.scss";
 import "../../screens/ignite/css/ignite.scss";
 import "../../screens/ignite/css/scrollanimation.css";
-import "./style.css"
+import "./style.scss"
 import skill from "./partners/skill.png"
 import he from "./partners/he.png"
 import gfg from "./partners/gfg.png"
@@ -162,7 +162,7 @@ export class IdeaStorm extends Component {
                 <div className="idea esummit-productathon-parent-back-image">
                     <p className="esummit-productathon-heading-para">PRODUCTATHON</p>
                     <p>Ideate.Develop.Innovate</p>
-                    <p className="esummit-productathon-cash-para">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
+                    <p className="c">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
                     <p className="esummit-productathon-para">
 
                     Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
