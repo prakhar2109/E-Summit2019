@@ -69,7 +69,7 @@ export default class ComingSoon extends Component {
 
   render() {
     let { score } = this.state;
-    let scorePercentage = (score / 360) * 100 + "";
+    let scorePercentage = (score / 10000) * 100 + "";
     let options;
     let profile = this.state.data.user_type;
     let profile_display;
@@ -162,7 +162,7 @@ export default class ComingSoon extends Component {
               <p id="typeofdashboard">{profile_display}</p>
               <div className="scor">
                 <span id="scoresWritten">SCORE</span>
-                <span id="scoresValue">{this.state.score}/360</span>
+                <span id="scoresValue">{this.state.score}/10000</span>
               </div>
               <div className="progress">
                 <div
