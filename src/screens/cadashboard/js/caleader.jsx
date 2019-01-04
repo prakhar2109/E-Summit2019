@@ -26,6 +26,7 @@ export default class Caleader extends Component {
 };
 
   render() {
+  
     return (
       <div className="caleaderboard-parent">
         <div className="caleader-heading">Top10</div>
@@ -41,10 +42,10 @@ export default class Caleader extends Component {
                 <th id="capoints">Points</th>
               </tr>
 
-              {this.state.leaderboard.map(data => {
+              {this.state.leaderboard.map((data,index) => {
                 return (
                   <tr>
-                    <td id="caranktd">{data.ranking}</td>
+                    <td id="caranktd">{index+1}</td>
                     <td id="canametd">{data.name}</td>
                     <td id="cacollegenametd">{data.college}</td>
                     <td id="capointstd">{data.tot_score}</td>
@@ -66,10 +67,10 @@ export default class Caleader extends Component {
                 <th id="capoints">Points</th>
               </tr>
 
-              {this.state.leaderboard.map(data => {
+              {this.state.leaderboard.map((data,index) => {
                 return(
               <tr>
-                <td id="caranktd">{data.ranking}</td>
+                <td id="caranktd">{index+1}</td>
                 <td id="canametd">
                 {data.name} <br />
                   <span id="cacollegespan">{data.college}</span>
