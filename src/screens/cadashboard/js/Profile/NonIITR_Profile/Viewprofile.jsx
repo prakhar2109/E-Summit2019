@@ -94,7 +94,7 @@ export default class Viewprofile extends Component {
             padding: 0,
         }
 
-        const width = 900;
+        const width = 900; 
         let { data, name } = this.state;
         return (
 
