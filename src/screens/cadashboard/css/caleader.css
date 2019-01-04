@@ -219,14 +219,17 @@ table#ca01 th{
 table#ca01 td{
 
     padding-bottom: 2.60vh;
- 
+    text-transform: lowercase;
+
     padding-top: 2.60vh;
     color: #000000;
     font-size: 20px;
     font-family:"ProximaNova-Semibold" !important; 
  
 }
-
+table#ca01 td::first-letter{
+    text-transform: uppercase;
+}
 }
 @media only screen and (min-width: 900px){
 .caleader-board-mobileparent{
