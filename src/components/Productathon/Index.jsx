@@ -252,32 +252,30 @@ Team Size: 3-5.
                         <div className="perks_array">
                             <div className="perks_unit">
                                 <img src={trophy} alt="Cash Rewards" />
-                                <span>Cash Rewards:</span>
-                                Cash Prizes of INR 2,50,000.
+                                <span>Prizes Worth:</span>
+                                INR 40,000.
               </div>
 
                             <div className="perks_unit">
                                 <img src={meeting} alt="Mentorship" />
                                 <span>Mentorship:</span>
-                                Mentorship opportunities from Venture Capitalists and Industry
-                                Leaders.
+                                Mentorship opportunities from Facebook Dev Circle Mentors
               </div>
 
                             <div className="perks_unit">
                                 <img src={handshake} alt="networking" />
-                                <span>Networking Session</span>
-                                Networking session with CXOs, Angel Investors, Venture
-                                Capitalists and Industry Leaders.
+                                <span>Internship Opportunities</span>
+                                Get internship opportunities from our partners
               </div>
                             <div className="perks_unit">
                                 <img src={tshirt} alt="Funding" />
-                                <span>Funding Opportunities</span>
-                                An opportunity to raise real time funds.
+                                <span>Win Goodies</span>
+                                An opportunity to win goodies from our partners
               </div>
                             <div className="perks_unit">
                                 <img src={online} alt="Media Coverage" />
-                                <span>Media Coverage</span>
-                                Get featured on many popular media platforms.
+                                <span>Network</span>
+                                Network with fellow developers/entrepreneurs
               </div>
                         </div>
                     </center>
