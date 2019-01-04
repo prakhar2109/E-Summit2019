@@ -48,6 +48,7 @@
     width: 100%;
     overflow: hidden;
     /* background: blue; */
+    font-family: "ProximaNova-Light";
     margin-top: 4%;
     opacity: 0.58;
     color: #4F4F4F;
@@ -61,10 +62,10 @@
     border-style: dashed;
     border-width: 2px;
     height: 21vh;
-    background: url('../svg/Group\ 16.svg');
+    background: url('../png/selectdown.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 8vh;
+    background-size: 10vh;
 
 }
 
@@ -113,17 +114,45 @@
 .Selectfilesvg {
     display: flex;
     flex-direction: column;
-    top: -2vh;
-    position: relative;
     font-size: 12px;
-    text-align: center
+    text-align: center;
+    align-self: center;
 }
-
-
-.taskName {
-    margin-top: -4px;
-    line-height: 1vh;
+.taskchild-uploadedfiles{
+    height: 9.25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#B2B2B2;
+    font-family: "ProximaNova-Semibold";
+    font-size: 16px;
+    background: rgba(255, 241, 224, 0.29);
+}
+.taskchild-filesupload{
+    height: 9.25vh;
+    display: flex;
+    justify-content: center;
+    background: rgba(181, 255, 128, 0.31);
+}
+.taskName1 {
     color: #4F4F4F;
+}
+.taskName2 {
+    color: #70BF48;
+    font-family: "ProximaNova-Semibold";
+    font-size: 12px;
+    margin-top: 1vh;
+}
+.tasktick{
+    background: url('../png/tick.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+    margin-top: .8vh;
+}
+.tasktickparent{
+    display:flex;
 }
 @media (min-width: 1620px) and (max-width: 2560px){
     .taskchild-heading{
