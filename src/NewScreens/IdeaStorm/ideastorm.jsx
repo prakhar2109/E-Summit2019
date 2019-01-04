@@ -28,7 +28,7 @@ export class IdeaStorm extends Component {
         id: 2,
         question: "What is the last date of submission?",
         answer:
-          "1st of January is the last date of submission of entries for the first round of the competition.",
+          "10th of January is the last date of submission of entries for the first round of the competition.",
       },
       {
         id: 3,
