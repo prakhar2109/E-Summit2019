@@ -9,6 +9,8 @@ import CAPayment from './payment'
 import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAcontigent from './payment'
+// import CAevents from './events'
+
 
 
 
@@ -39,6 +41,7 @@ class App extends Component {
             <Route exact path="/dashboard/leader" component={CALeader} />
             <Route exact path="/dashboard/contigent" component={CAcontigent} />
             <Route exact path="/dashboard/events" component={CAcontigent} />
+            {/* <Route exact path="/dashboard/events" component={CAevents} /> */}
           </React.Fragment>
           </Switch>
         </div>

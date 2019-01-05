@@ -36,6 +36,7 @@ a:hover {
 
     @include mobile {
         height: 80vh;
+        width: 100%;
     }
     button {
         border: 2.5px solid #FFFFFF;
@@ -81,7 +82,7 @@ a:hover {
 
          img{
         
-             height: 40vh;
+             width: inherit;
          }
         
        
@@ -89,6 +90,7 @@ a:hover {
 
         @include mobile{
             display:block;
+            width: 100%;
         }
     }
 
@@ -114,7 +116,7 @@ a:hover {
 
     .p {
         line-height: 128%;
-        font-size: 28px;
+        font-size: 24px;
         letter-spacing: 0.04em;
         padding: 44px 0 6% 0;
         
@@ -329,6 +331,7 @@ a:hover {
         @include mobile {
             grid-template-columns: 100%;
             grid-row-gap: 5vw;
+            justify-items: center;
              
             
         }
@@ -467,19 +470,19 @@ a:hover {
     }
 
     .conclave {
-        background: url("../static/2.png");
+        background: url("../static/events1.png");
     }
 
     .workshop {
-        background: url("../static/3.png");
+        background: url("../static/events2.png");
     }
 
     .leadership {
-        background: url("../static/4.png");
+        background: url("../static/events3.png");
     }
 
     .competition {
-        background: url("../static/5.png");
+        background: url("../static/events4.png");
     }
 
 
@@ -498,6 +501,7 @@ a:hover {
         justify-items: center;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
 
 
 
