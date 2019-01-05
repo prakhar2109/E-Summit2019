@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Vector from "./static/headVector.png";
-import "./css/header.scss";
+import Vector from './static/headVector.png';
+import './css/header.scss';
 
 class Header extends Component {
+    state={};
     render() {
         return (
             <div className="esummit-landing-bubble-heading">

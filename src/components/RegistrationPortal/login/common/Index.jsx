@@ -11,7 +11,9 @@ export default class CommonIndex extends Component {
             <div className="esummit-login-common-parent-common">
                 <div className="esummit-login-common-first-child">
                     <div className="esummit-login-common-grand-child-first">
+                        <a href="/">
                         <img src={esummit_logo} alt="esummit_logo" />
+                        </a>
                     </div>
                 </div>
             </div>

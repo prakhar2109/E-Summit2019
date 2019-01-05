@@ -37,11 +37,31 @@ export default class Cainvite extends Component {
         document.execCommand("copy");
 
     }
+
+    componentDidMount = () => {
+        let token = localStorage.getItem("user_token");
+    
+        if (token !== undefined) {
+          axios
+            .get(BASE_URL + "/v1/api/user/profile", {
+              headers: {
+                Authorization: `Token ${token}`,
+              },
+            })
+            .then(res => {
+              this.setState({ invite_link : res.data.invite_url });
+    
+            })
+            .catch(response => {
+              window.location.href = "/login";
+            });
+        }
+      };
   
     render() {
         let status="Done";
-        let stat="Notdone"
-        let invite = localStorage.getItem("invite");
+        let stat="Notdone";
+        
         return (
             <div className="cainvite-parent">
 
@@ -56,7 +76,7 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainvite-linkparent-input">
-                        <input value = {invite} type="text" id="camyinput"></input>
+                        <input value = {this.state.invite_link} type="text" id="camyinput"></input>
                         <button id="camyinputbutton" onClick={this.copyLink}>Copy link</button>
                     </div>
                 </div>
