@@ -1,82 +1,67 @@
 import React, { Component } from 'react'
-import "../css/offers.css";
+import "../css/events.css";
 
-export default class dashevents extends Component {
+export default class Viewprofile extends Component {
 
     render() {
         return (
-            <div className="dashevents-parent">
-                <div className="ca-offers-parent-heading1 dasheventsparent-font">
-                    Earned Coupons
+            <div className="caevents-parent">
+                <div className="ca-events-parent-heading1 caeventsparent-font">
+                    Applied Events
             </div>
-	    <div className="dashevents-line1"></div>
-                <div className="dashevents-earnedcoupons-rowparent1">
-                    <div className="dashevents-earnedcoupons-child">
-                        <div className="dashevents-earnedcoupons-child-heading dasheventsheading-font">
+                <div className="caevents-line1"></div>
+                <div className="caevents-earnedcoupons-rowparent1">
+                    <div className="caevents-earnedcoupons-child">
+                        <div className="caevents-earnedcoupons-child-heading caeventsheading-font">
                             50% Offer
                         </div>
-                        <div className="dashevents-earnedcoupons-child-description dasheventsdecription-font">
+                        <div className="caevents-earnedcoupons-child-description caeventsdecription-font">
                             Invited 25 people succesfully.
                              Click the button below to redeem the offer.
                          </div>
 
-                        <div className="dashevents-earnedcoupons-child-button">
-                            <button>REDEEM</button>
+                        <div className="caevents-earnedcoupons-child-button">
+                            <button>DISCARD</button>
                             <button id="caofferb01">INFO</button>
                         </div>
                     </div>
 
-                    <div className="dashevents-earnedcoupons-child">
+                    <div className="caevents-earnedcoupons-child">
 
                     </div>
-                    <div className="dashevents-earnedcoupons-child">
+                    <div className="caevents-earnedcoupons-child">
 
                     </div>
                 </div>
 
-                <div className="ca-offers-parent-heading2 dasheventsparent-font">
-                    Coupons Available
-            </div>
-	    <div className="dashevents-line1"></div>
-                <div className="dashevents-earnedcoupons-rowparent1">
-                    <div className="dashevents-earnedcoupons-child">
-                        <div className="dashevents-earnedcoupons-child-heading dasheventsheading-font">
-                                50% Offer
+                <div className="ca-events-parent-heading2 caeventsparent-font">
+                    All Events
+                </div>
+                <div className="caevents-line1"></div>
+                <div className="caevents-earnedcoupons-rowparent1">
+                    <div className="caevents-earnedcoupons-child">
+                        <div className="caevents-earnedcoupons-child-heading caeventsheading-font">
+                            50% Offer
                             </div>
-                            <div className="dashevents-earnedcoupons-child-description dasheventsdecription-font">
-                                Invited 25 people succesfully to redeem the offer.
+                        <div className="caevents-earnedcoupons-child-description caeventsdecription-font">
+                            Invited 25 people succesfully to redeem the offer.
                             </div>
 
-                            <div className="dashevents-earnedcoupons-invitelink">
+                        <div className="caevents-earnedcoupons-invitelink">
                             Copy Invite Link
                             </div>
 
-                            <div className="dashevents-earnedcoupons-child-button">
-                                <button>5 invites</button>
-                                <button id="caofferb01">INFO</button>
-                            </div>
+                        <div className="caevents-earnedcoupons-child-button">
+                            <button>APPLY</button>
+                            <button id="caofferb01">INFO</button>
                         </div>
-
-                    <div className="dashevents-earnedcoupons-child">
-			   <div className="dashevents-earnedcoupons-child-heading dasheventsheading-font">
-                                50% Offer
-                            </div>
-                            <div className="dashevents-earnedcoupons-child-description-sucess dasheventsdecription-font">
-                              Invited 25 people succesfully.
-				Click the button below to redeem the offer.The invited people must complete the payment to make a succesfull 					invitation
-                            </div>
-
-                           
-
-                            <div className="dashevents-earnedcoupons-child-button">
-                                <button>Back</button>
-                            </div>
-                       
                     </div>
-                    <div className="dashevents-earnedcoupons-child">
+
+                   
+                    <div className="caevents-earnedcoupons-child">
 
                     </div>
-                    <div className="dashevents-earnedcoupons-child">
+                    <div className="caevents-earnedcoupons-child">
 
                     </div>
                 </div>

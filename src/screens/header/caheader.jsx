@@ -83,7 +83,7 @@ export default class ComingSoon extends Component {
       }
 
     else if (profile === "NONIIT") {
-      profile_display = "Non IITR Student ";
+      profile_display = "Delegate";
       }
 
       else if (profile === "PROF") {
@@ -158,8 +158,12 @@ export default class ComingSoon extends Component {
           <div className="dashboard-mobile-navbar">
             <div id="droperShape">{name[0]}</div>
             <div className="headerdata">
+              <Link to="/dashboard/Viewprofile" onClick={this.hide_menu}>
               <p id="nms">{name}</p>
               <p id="typeofdashboard">{profile_display}</p>
+              </Link>
+              {(this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") &&
+              <div>
               <div className="scor">
                 <span id="scoresWritten">SCORE</span>
                 <span id="scoresValue">{this.state.score}/360</span>
@@ -172,7 +176,8 @@ export default class ComingSoon extends Component {
                   }}
                 />
               </div>
-
+              </div>
+              }
 
             </div>
           </div>
@@ -211,6 +216,14 @@ export default class ComingSoon extends Component {
               this.setActive("contigent");
             }}>
               CONTINGENT
+                </Link>
+            <br />
+          </span>
+          <span>
+            <Link to="/dashboard/events" className={(this.state.activeState === "events") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("events");
+            }}>
+              EVENTS
                 </Link>
             <br />
           </span>

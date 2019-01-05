@@ -161,6 +161,8 @@ color: #F39423 !important;
 }
 .dashboard-mobile-navbar{
 display:flex;
+margin-bottom: 2vh;
+
 }
 .mobile-profile-dashboard-esummit1{
     font-size: 14px;

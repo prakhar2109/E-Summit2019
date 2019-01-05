@@ -70,7 +70,7 @@ class caLeaderboard extends Component {
       }
 
     else if (profile === "NONIIT") {
-      profile_display = "Non IITR Student ";
+      profile_display = "Delegate";
       }
 
       else if (profile === "PROF") {
@@ -138,7 +138,7 @@ class caLeaderboard extends Component {
     }
     return (
       <div>
-        <Header />
+        <Header /> 
         <div id="container">
           <div id="leftPane">
 
@@ -148,10 +148,12 @@ class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-            <NavLink to="/dashboard/Viewprofile">
+            <Link to="/dashboard/Viewprofile"  onClick={() => {
+                    this.setActive("payment");
+                  }}>
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
-            </NavLink>
+            </Link>
             <p id="dashboard-typename">{profile_display}</p>
             <div className="sidebar-dashboard-box">
               <div className="sidebar-dashboard-esummit">
@@ -184,23 +186,7 @@ class caLeaderboard extends Component {
             <div id="optionsToggle">
 
               {options}
-              {/*
-              <span>
-                <Link
-                  to="/dashboard/offers"
-                  className={
-                    this.state.activeState === "offers" ? "linkEventson" : null
-                  }
-                  onClick={() => {
-                    this.setActive("offers");
-                  }}
-                >
-                  OFFERS
-                </Link>
-                <br />
-              </span>
-
-                */}
+            
               <span>
                 <Link
                   to="/dashboard/payment"

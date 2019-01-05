@@ -1,6 +1,6 @@
 
  
-.dashevents-parent{
+.caevents-parent{
 
     color: black;
     position: absolute;
@@ -9,7 +9,7 @@
     height: 100vh; 
     width: 82%;
 }
-.dashevents-earnedcoupons-rowparent1{
+.caevents-earnedcoupons-rowparent1{
 
     display: flex;
     flex-direction: row; 
@@ -19,7 +19,7 @@
 
 
 }
-.dashevents-earnedcoupons-child{
+.caevents-earnedcoupons-child{
     position: relative;
     height: 24.90vh;
     width: 30.27%; 
@@ -33,7 +33,7 @@
     border-radius: 8px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 }
 
-.ca-offers-parent-heading1{
+.ca-events-parent-heading1{
 
     margin-top: 3.33vh;
     margin-left: 2.24%;
@@ -41,7 +41,7 @@
    
     color: rgba(130, 130, 130, 0.93);
 }
-.dashevents-line1 {
+.caevents-line1 {
     flex-basis: 65vw;
     height: 0.3vh;
     background-color: #E0E0E0;
@@ -51,7 +51,7 @@
     margin-left: 12vw;
 }
 
-.ca-offers-parent-heading2{
+.ca-events-parent-heading2{
 
     margin-top: 3.33vh;
     margin-left: 2.24%;
@@ -60,14 +60,14 @@
     color: rgba(130, 130, 130, 0.93);
 }
 
-.dashevents-earnedcoupons-child-heading{
+.caevents-earnedcoupons-child-heading{
 
     color: #5A5A5A;
     
 
 }
 
-.dashevents-earnedcoupons-child-description{
+.caevents-earnedcoupons-child-description{
 
     line-height: normal;
     
@@ -77,11 +77,11 @@
 	 width: 16vw;
 }
 
-.dashevents-earnedcoupons-child-button{
+.caevents-earnedcoupons-child-button{
 position: absolute;
 bottom: 2.962vh;
 }
-.dashevents-earnedcoupons-child-button button{
+.caevents-earnedcoupons-child-button button{
     font-size: 11.37px;
     background: #F39423;
     border-radius: 4.28px;
@@ -96,24 +96,24 @@ bottom: 2.962vh;
     margin-left: 1vw;
 }
 
-.dasheventsparent-font{
+.caeventsparent-font{
     font-size: 14.22px;
     font-family:"ProximaNova-Semibold" !important;
 }
 
-.dasheventsheading-font{
+.caeventsheading-font{
     font-size: 22px;
     font-family:"ProximaNova-Semibold" !important;
 
 }
 
-.dasheventsdecription-font{
+.caeventsdecription-font{
 
     font-size: 14.22px;
    
 }
 
-.dashevents-earnedcoupons-invitelink{
+.caevents-earnedcoupons-invitelink{
 
     color: #2EA2F8;
     line-height: normal;
@@ -122,7 +122,7 @@ bottom: 2.962vh;
     margin-top: 1vh;
 }
 
-.dashevents-earnedcoupons-child-description-sucess{
+.caevents-earnedcoupons-child-description-sucess{
     line-height: normal;
     
     color: #4F4F4F;
@@ -131,28 +131,28 @@ bottom: 2.962vh;
 }
 @media (min-width: 1920px) and (max-width: 2560px){
 
-.dasheventsparent-font{
+.caeventsparent-font{
     font-size: 20px;
     font-family:"ProximaNova-Semibold" !important;
 }
 
-.dasheventsheading-font{
+.caeventsheading-font{
     font-size: 31px;
     font-family:"ProximaNova-Semibold" !important;
 
 }
 
-.dasheventsdecription-font{
+.caeventsdecription-font{
 
     font-size: 20px;
    
 }
-.dashevents-earnedcoupons-child-button button{
+.caevents-earnedcoupons-child-button button{
     font-size: 16px;
    
 }
 
-.dashevents-earnedcoupons-invitelink{
+.caevents-earnedcoupons-invitelink{
 
     font-size: 24px;
 
@@ -160,7 +160,68 @@ bottom: 2.962vh;
 
 
 }
+@media (max-width: 900px){
 
-
-
-
+.caevents-parent{
+    color: black;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    height: fit-content;
+    padding-bottom: 2vh;
+    background-color: #F7F8F9;
+    
+}
+.caevents-earnedcoupons-rowparent1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 5.92vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.caevents-earnedcoupons-child {
+    position: relative;
+    height: 24.90vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.148vh;
+  
+}
+.caevents-earnedcoupons-child-description {
+    line-height: normal;
+    color: #4F4F4F;
+    opacity: 0.58;
+    width: 100%;
+}
+.caevents-earnedcoupons-child-button button {
+    font-size: 11.37px;
+    background: #F39423;
+    border-radius: 4.28px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 3.70vh;
+    width: 40%;
+    border: none;
+}
+.caevents-earnedcoupons-child-button {
+    position: absolute;
+    bottom: 2.962vh;
+    width: 50%;
+}
+.ca-events-parent-heading1 {
+    padding-top: 3.33vh;
+    margin-top: 0;
+}
+.caevents-line1 {
+    flex-basis: 65vw;
+    height: 0.3vh;
+    background-color: #E0E0E0;
+    /* position: absolute; */
+    margin-top: -1.4vh;
+    width: 64%;
+    margin-left: 31%;
+}
+}

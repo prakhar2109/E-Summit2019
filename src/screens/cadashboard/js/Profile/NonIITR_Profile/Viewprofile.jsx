@@ -121,7 +121,7 @@ export default class Viewprofile extends Component {
                            {name[0]}
                         </div>
                          <div className="profile-dashboard-type">
-                            NON-IITR STUDENT
+                            DELEGATE
                         </div>
                         <div className="profile-dashboard-esummit">
                             <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
@@ -353,7 +353,7 @@ export default class Viewprofile extends Component {
                                 P
                             </div>
 		                <div className="profile-dashboard-type">
-		                NON-IITR STUDENT
+		                DELEGATE
 		                </div>
 		                <div className="profile-dashboard-esummit">
 		                    <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
