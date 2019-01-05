@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import "../css/paymentstatustable.css";
 
 class PaymentStatusRow extends Component{
-    constructor(){
-        super()
-        this.state={
-            
-        }
-    }
+    
     render(){
         let {id,name,status} = this.props
         return(
