@@ -22,7 +22,9 @@ export default class CommonIndex extends Component {
             <div className="esummit-common-parent-common">
                 <div className="esummit-common-first-child">
                     <div className="esummit-common-grand-child-first">
-                        <img src={esummit_logo} alt="esummit-logo" />
+                    <a href="/">
+                    <img src={esummit_logo} alt="esummit-logo" />
+                    </a>
                     </div>
                     {/* <div className="esummit-common-grand-child-second">
                         <img src={ecell_logo} />

@@ -94,7 +94,7 @@ class Events extends Component {
             <p className="text">
               B-Plan, Case Studies, Productathon, Networking Events and a lot more to explore! Register for the events and compete among the best minds of the country.
             </p>
-
+            <center>     
             <div className="land_events_array2">
               <Link to="/productathon">
                 <div className="events_production" id="events_production1">
@@ -155,6 +155,7 @@ class Events extends Component {
                 <p className="t3">COMING SOON</p>
               </div>
             </div>
+            </center>
           </div>
         </Element>
       </>

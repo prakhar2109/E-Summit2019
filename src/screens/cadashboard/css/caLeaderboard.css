@@ -123,7 +123,7 @@
 
 }
 #optionsToggle a{
-color: rgba(189, 189, 189, 0.55);
+color: #DBDBDB;
 font-family:"ProximaNova-Semibold" !important; 
 
 }
@@ -205,6 +205,9 @@ text-decoration:none !important;
     }
     #optionsToggle{
         display: none;
+    }
+    .progress{
+        width: 100%;
     }
 }
 
