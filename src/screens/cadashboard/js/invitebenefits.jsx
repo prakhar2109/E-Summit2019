@@ -3,10 +3,6 @@ import "../css/invitebenefits.css";
 
 class InviteBenefits extends Component{
     constructor(){
-        super()
-        this.state={
-            
-        }
     }
     render(){
         
@@ -21,8 +17,8 @@ export default class CriteriaMapping extends Component{
     constructor(){
         super()
         this.state={
-            noOfCriterias:10,
-            criteria:["20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee."],
+            noOfCriterias:0,
+            criteria:[],
         }
     }
     render() {
