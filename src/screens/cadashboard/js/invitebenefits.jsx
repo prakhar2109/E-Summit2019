@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import "../css/invitebenefits.css";
 
 class InviteBenefits extends Component{
-    constructor(){
-    }
+   
     render(){
         
         return(
