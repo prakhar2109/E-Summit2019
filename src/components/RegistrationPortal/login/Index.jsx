@@ -169,7 +169,7 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        
+
         const { email, password, toggleEye, email_error, email_error_bool, pass_error, pass_error_bool } = this.state
         return (
             <div className="esummit-common-parent" >
@@ -246,7 +246,7 @@ export default class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-field-error">{pass_error}</div>
                                     </div>
                                     <div className="esummit-register-form-forgot-password-text">
-                                        <Link to="/registration_portal/forgot_password">Forgot your password?</Link>
+                                        <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/findaccount">Forgot your password?</Link>
                                     </div>
                                     <div className="esummit-register-form-button">
                                         <button type="submit">LOGIN</button>

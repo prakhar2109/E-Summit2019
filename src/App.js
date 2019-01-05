@@ -69,6 +69,11 @@ const Productathon = Loadable({
   loading: () => <Loader />,
 });
 
+const ResetPassword = Loadable({
+  loader: () => import("./components/RegistrationPortal/reset/Index"),
+  loading: () => <Loader />,
+});
+
 class App extends Component {
   constructor() {
     super();
@@ -92,17 +97,15 @@ class App extends Component {
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
+                <Route path="/resetPassword/" component={ResetPassword} />
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
-
                 <Route path="/dashboard/" component={Caindex} />
-
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
                 <Route path="/professordashboard/" component={Professorindex} />
                 <Route exact path="/cont" component={Contingent} /> */}
-
               </ScrollToTop>
             </Switch>
           </div>
