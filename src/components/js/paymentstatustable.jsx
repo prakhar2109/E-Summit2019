@@ -40,22 +40,8 @@ export default class PaymentStatusTable extends Component{
     constructor(){
         super()
         this.state={
-            noOfMembers:2,
-            membersList:[
-             
-                   {
-                      "id": "1",
-                      "name": "Herbert Schildt",
-                      "status":"Done"
-                   },
-             
-                   {
-                      "id": "2",
-                      "name": "E.Balagurusamy",
-                      "status":"Pending"
-                   }
-             
-                ]  
+            noOfMembers:0,
+            membersList:[]  
              
         }
     }
