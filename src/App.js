@@ -20,7 +20,10 @@ const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
-
+const Suignite = Loadable({
+  loader: () => import("./NewScreens/startupignite/ignite"),
+  loading: () => <Loader />,
+});
 const LandingPage = Loadable({
   loader: () => import("./NewScreens/landing/landing"),
   loading: () => <Loader />,
@@ -84,6 +87,7 @@ class App extends Component {
           <div>
             <Switch>
               <ScrollToTop>
+                <Route path="/suignite" component={Suignite} />
                 <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
@@ -96,6 +100,7 @@ class App extends Component {
                 <Route path="/productathon" component={Productathon} />
 
                 <Route path="/dashboard/" component={Caindex} />
+               
 
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />

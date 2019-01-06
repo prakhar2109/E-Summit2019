@@ -21,16 +21,18 @@
 }
 .caevents-earnedcoupons-child{
     position: relative;
-    height: 24.90vh;
+    height: 31.1vh;
     width: 30.27%; 
     margin-left: 2.24%;  
     margin-bottom: 3.148vh; 
     padding: 2.962vh;    
     background: #FFFFFF;
-    
+    padding-right: 6.67vh;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    border-radius: 8px;             
+    background: url('../png/circle.png');    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }
 
 .ca-events-parent-heading1{
@@ -63,18 +65,23 @@
 .caevents-earnedcoupons-child-heading{
 
     color: #5A5A5A;
-    
+    font-size: 28px;
+    font-family: "ProximaNova-Semibold" !important;
+    display: flex;
+    position: relative;
 
 }
 
 .caevents-earnedcoupons-child-description{
 
     line-height: normal;
-    
-    /* line-height: 1.4rem; */
+    margin-top: 1.85vh;
     color: #4F4F4F;
     opacity: 0.58;
-	 width: 16vw;
+    min-height: 8vh;
+    font-family: "ProximaNova-Light";
+    font-size: 14.2px;
+
 }
 
 .caevents-earnedcoupons-child-button{
@@ -82,7 +89,7 @@ position: absolute;
 bottom: 2.962vh;
 }
 .caevents-earnedcoupons-child-button button{
-    font-size: 11.37px;
+    font-size: 12.78px;
     background: #F39423;
     border-radius: 4.28px;
     text-align: center;
@@ -102,7 +109,7 @@ bottom: 2.962vh;
 }
 
 .caeventsheading-font{
-    font-size: 22px;
+    font-size: 22.72px;
     font-family:"ProximaNova-Semibold" !important;
 
 }
@@ -113,11 +120,12 @@ bottom: 2.962vh;
    
 }
 
-.caevents-earnedcoupons-invitelink{
+.caevents-earnedcoupons-deadline{
 
-    color: #2EA2F8;
+    color: #5A5A5A;
+    font-size: 14px;
+    font-family: "Proxima-nova-regular";
     line-height: normal;
-    opacity: 0.58;
     font-size: 17.04px;
     margin-top: 1vh;
 }
@@ -129,7 +137,40 @@ bottom: 2.962vh;
     opacity: 0.58;
     width:100%;
 }
-@media (min-width: 1920px) and (max-width: 2560px){
+#caevents-earnedcoupons-child-parent2{
+    display: none;
+}
+.caevents-earnedcoupons-child-info{
+    font-size: 14.2px;
+    color: #4F4F4F;
+    line-height: 2.40vh;
+    font-family: "ProximaNova-Light";
+
+}
+.caevents-registration-status{
+    font-size: 14.2px;
+    font-family: "ProximaNova-Light";
+    color: #5A5A5A;
+}
+.caevents-earnedcoupons-child-reddotpic{
+    background: url('../png/reddots.png');
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+    position: absolute;
+    right: 0;
+}
+.caevents-earnedcoupons-child-greendotpic{
+    background: url('../png/greendots.png');
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    align-self: center;
+    position: absolute;
+    right: 0;
+}
+@media (min-width: 1620px) and (max-width: 2560px){
 
 .caeventsparent-font{
     font-size: 20px;
@@ -137,27 +178,40 @@ bottom: 2.962vh;
 }
 
 .caeventsheading-font{
-    font-size: 31px;
+    font-size: 28px;
     font-family:"ProximaNova-Semibold" !important;
 
 }
 
 .caeventsdecription-font{
 
-    font-size: 20px;
-   
-}
-.caevents-earnedcoupons-child-button button{
     font-size: 16px;
    
 }
+.caevents-registration-status {
+    font-size: 16px;
+    font-family: "ProximaNova-Light";
+    color: #5A5A5A;
+}
+.caevents-earnedcoupons-child-button button{
+    font-size: 12px;
+    font-family:"ProximaNova-Semibold" !important;
+    
+}
 
-.caevents-earnedcoupons-invitelink{
+.caevents-earnedcoupons-deadline{
 
-    font-size: 24px;
+    font-size: 18px;
 
 }
 
+.caevents-earnedcoupons-child-info{
+    font-size: 16px;
+}
+.caevents-earnedcoupons-child-description{
+    font-size: 16px;
+
+}
 
 }
 @media (max-width: 900px){
@@ -183,7 +237,7 @@ bottom: 2.962vh;
 }
 .caevents-earnedcoupons-child {
     position: relative;
-    height: 24.90vh;
+    
     width: 100%;
     margin-left: auto;
     margin-right: auto;

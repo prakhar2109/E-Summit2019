@@ -5,7 +5,7 @@ import Eventfooter from "../IdeaStorm/footer/eventfooter.jsx";
 import './ignite.css';
 export default class IgniteIndex extends Component {
     state={activeState:"NOIDA"}
-     
+      
     setActive(state) {
         this.setState({
             activeState: state
@@ -40,33 +40,11 @@ export default class IgniteIndex extends Component {
 			<div className="suignite-parent-child2">
 				<div className="suignite-parent-child2-img">
 				Comming Soon
-				<div className="suignite-panelists-img-parent">
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-					</div>
+				
+				</div>
+				<div className="suignite-parent-child2-applyparent">
+				<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in noida</div>
+				<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
 				</div>
 				<div className="suignite-parent-child2-panel">
 					 <div>
