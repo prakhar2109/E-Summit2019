@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
-
+import PaymentStatus from './screens/cadashboard/js/paymentstatus'
 import Loadable from "react-loadable";
 import Loader from "./screens/loader/loader";
 
@@ -79,11 +79,13 @@ class App extends Component {
 
   render() {
     return (
+      // <PaymentStatus></PaymentStatus>
       <BrowserRouter>
         <React.Fragment>
           <div>
             <Switch>
               <ScrollToTop>
+                {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
                 <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import "../css/cainvite.css";
+import PaymentStatus from './paymentstatus'
+import InviteBenefits from './invitebenefits'
 import { BASE_URL } from "../../../utils/urls";
 import axios from "axios";
 
@@ -156,7 +158,9 @@ export default class Cainvite extends Component {
 
 
                
-*/}
+*/}         
+            <PaymentStatus />
+
              <div className="cainviteparent-heading">
                     Perks
                 </div>
@@ -171,8 +175,9 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainviteparent-perks-child">
-                    10% off on the registration fee on each successful payment done through invite link.
-                    </div>
+                    <InviteBenefits />
+
+                    </div> 
                    
                 </div>
                 
