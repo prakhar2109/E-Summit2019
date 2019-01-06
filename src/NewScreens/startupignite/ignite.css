@@ -50,7 +50,8 @@ height:39.81vh;
 padding-top:12.31vh;
     padding-right: 3.75%;
 text-align:right;
-
+position: sticky;
+top: 50px;
 width:25.72%;
 }
 .suignite-parent-child1 div{
@@ -523,6 +524,7 @@ font-size: 28px;
         /* text-align: right; */
         width: 100%;
         display: flex;
+        position: unset;    
     }
     .suignite-parent-child2-img {
         height: 10vh;
