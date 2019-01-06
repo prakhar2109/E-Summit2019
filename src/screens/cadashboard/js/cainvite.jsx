@@ -22,6 +22,7 @@ export default class Cainvite extends Component {
 
 
 
+
     }
 
     viewLess() {
@@ -175,7 +176,7 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainviteparent-perks-child">
-                    <InviteBenefits />
+                        10% off on the registration fee on each successful payment done through invite link
 
                     </div> 
                    
