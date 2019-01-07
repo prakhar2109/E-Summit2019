@@ -85,8 +85,9 @@ export default class ResetpasswordIndex extends Component {
 
     }
     confirmpassvalidate = () => {
+        let { password, confirm_password } = this.state
         setTimeout(function () {
-            if (this.state.password !== this.state.confirm_password) {
+            if (password !== confirm_password) {
                 this.setState({
                     confirmpass_error_bool: "true",
                     confirmpass_error: "Both password does not match"
@@ -101,8 +102,9 @@ export default class ResetpasswordIndex extends Component {
         }.bind(this), 1000)
     }
     passvalidate = () => {
+        let { password } = this.state
         setTimeout(function () {
-            if (this.state.password.length < 7) {
+            if (password.length < 7) {
                 this.setState({
                     pass_error_bool: "true",
                     pass_error: "Password should be more than 8 letters"

@@ -15,12 +15,6 @@ import esummit from "../Common/es.png";
 import EventHeader from "../Common/Navbar/header"
 
 class EventComponentIndex extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: "",
-        }
-    }
     componentDidMount() {
         // document 
         //     .getElementById("loader")

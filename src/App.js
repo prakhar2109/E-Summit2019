@@ -113,7 +113,7 @@ class App extends Component {
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
-                <Route path="/reset-password/" component={ResetPassword} />
+                <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />

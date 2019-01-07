@@ -24,9 +24,10 @@ export default class RegisterIndex extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        if (this.state.email !== "") {
+        let { email } = this.state
+        if (email !== "") {
             let data_email = {
-                email: this.state.email
+                email: email
             }
             document
                 .getElementById("loader")
@@ -74,9 +75,10 @@ export default class RegisterIndex extends React.Component {
         }
     }
     handleResend = () => {
-        if (this.state.email !== "") {
+        let { email } = this.state
+        if (email !== "") {
             let data_email = {
-                email: this.state.email
+                email: email
             }
             document
                 .getElementById("loader")
@@ -120,9 +122,10 @@ export default class RegisterIndex extends React.Component {
         }
     }
     emailvalidate = () => {
+        let { email } = this.state
         setTimeout(function () {
             var re = /\S+@\S+\.\S+/
-            if (!this.state.email.match(re)) {
+            if (email.match(re)) {
                 this.setState({
                     email_error_bool: "true",
                     email_error: "Email is not valid"
