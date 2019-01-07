@@ -26,10 +26,10 @@ const LandingPage = Loadable({
   loading: () => <Loader />,
 });
 
-const IdeaStorm = Loadable({
-  loader: () => import("./NewScreens/IdeaStorm/ideastorm"),
-  loading: () => <Loader />,
-});
+// const IdeaStorm = Loadable({
+//   loader: () => import("./NewScreens/IdeaStorm/ideastorm"),
+//   loading: () => <Loader />,
+// });
 
 
 const Speakers = Loadable({
@@ -73,6 +73,10 @@ const ResetPassword = Loadable({
   loader: () => import("./components/RegistrationPortal/reset/Index"),
   loading: () => <Loader />,
 });
+const Startup = Loadable({
+  loader: () => import("./NewScreens/startupignite/ignite"),
+  loading: () => <Loader />,
+});
 
 const Test = Loadable({
   loader: () => import("./components/Events/EventComponent/Index"),
@@ -108,7 +112,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
-                {/* <Route exact path="/test" component={test} /> */}
+                <Route exact path="/test" component={Startup} />
                 <Route path="/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />

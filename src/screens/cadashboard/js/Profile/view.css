@@ -309,6 +309,7 @@ color: rgba(79, 79, 79, 0.44);
     height: 14.62vh;
     max-width: 14.62vh;
     max-height: 14.62vh;
+    text-transform: lowercase;
     /* padding-left: 5.4vh; */
     text-align: center;
     /* padding-top: 1.5vh; */
@@ -353,7 +354,8 @@ color: rgba(79, 79, 79, 0.44);
 box-sizing: border-box;
 border-radius: 4px;
 height: 4.44vh;
-padding: 1.11vh;
+padding: 1vh;
+background: white;
 }
 
 #caprofile02{
@@ -627,6 +629,7 @@ display:none;}
     /* padding-left: 5rem;
     padding-top: 3rem; */
     text-align: center;
+    text-transform: lowercase;
     font-size: 6rem;
     font-weight: 500;
     border-top-left-radius: 6vh;
@@ -670,6 +673,7 @@ color: #F7F8F9;
 height:2.57rem;
 padding:.857rem;
 margin: auto;
+margin-top: 2vh;
 font-size: .857rem;
 border: none;
 font-family: "ProximaNova-Semibold" !important;
@@ -722,5 +726,6 @@ font-family: "ProximaNova-Semibold" !important;
     border-radius: 2px;
     font-size: 16px;
     color: #4F4F4F;
+    background: white;
 }
 }
