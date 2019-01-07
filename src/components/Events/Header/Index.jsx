@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import "./style.css"
+import { BASE_URL } from "../../../utils/urls"
+import "../Common/ideastorm.scss"
+import "../Common/ignite.scss"
 
 export default class HeaderSection extends Component {
     constructor(props) {
@@ -10,7 +14,7 @@ export default class HeaderSection extends Component {
     }
     componentDidMount() {
         this.setState({
-            data: this.props.data
+            data: this.props.data[0]
         })
         if (window.innerWidth <= 768) {
             this.setState({ desktop: false });
@@ -18,27 +22,31 @@ export default class HeaderSection extends Component {
     }
     render() {
         return (
-            <div className="esummit-events-header-section-parent"
-                style={{
-                    backgroundImage: `url(${this.state.desktop ? this.state.data.background_image : this.state.data.background_image_mobile})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                <div className="esummit-events-header-section-body">
-                    <div className="esummit-events-header-section-body-heading">
-                        {this.state.data.heading}
-                    </div>
-                    <div className="esummit-events-header-section-body-subheading">
-                        {this.state.data.subheading}
-                    </div>
-                    <div className="esummit-events-header-section-body-prizes">
-                        {this.state.data.prizes}
-                    </div>
-                    <div className="esummit-events-header-section-body-description">
-                        <p>{this.state.data.description}</p>
-                    </div>
+            <div className="idea" style={{
+                backgroundImage: `url(${this.state.desktop ? BASE_URL + this.state.data.background_image_pc : BASE_URL + this.state.data.background_image_mobile})`
+            }}>
+                <p className="header_idea">
+                    {this.state.data.heading}
+                </p>
+                <p>{this.state.data.subheading}</p>
+
+                <br />
+                <br />
+                <br />
+                <p>CASH PRIZE WORTH INR {this.state.data.prizes}</p>
+                <p>
+                    {this.state.data.description}
+                </p>
+
+                <div className="ignite-first-page-scroll">
+                    <div onClick={this.timeline} className='icon-scroll'></div> <br />
+
+                    <div id="ignite-first-page-scroll-child"> <p> SCROLL DOWN</p></div>
                 </div>
+                <center>
+
+                </center>
+
             </div>
         );
     }

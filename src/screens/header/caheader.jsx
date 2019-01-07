@@ -83,7 +83,7 @@ export default class ComingSoon extends Component {
       }
 
     else if (profile === "NONIIT") {
-      profile_display = "Non IITR Student ";
+      profile_display = "Delegate";
       }
 
       else if (profile === "PROF") {
@@ -158,8 +158,12 @@ export default class ComingSoon extends Component {
           <div className="dashboard-mobile-navbar">
             <div id="droperShape">{name[0]}</div>
             <div className="headerdata">
+              <Link to="/dashboard/Viewprofile" onClick={this.hide_menu}>
               <p id="nms">{name}</p>
               <p id="typeofdashboard">{profile_display}</p>
+              </Link>
+              {(this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") &&
+              <div>
               <div className="scor">
                 <span id="scoresWritten">SCORE</span>
                 <span id="scoresValue">{this.state.score}/10000</span>
@@ -172,7 +176,8 @@ export default class ComingSoon extends Component {
                   }}
                 />
               </div>
-
+              </div>
+              }
 
             </div>
           </div>
@@ -198,9 +203,33 @@ export default class ComingSoon extends Component {
                 </Link>
             <br />
           </span>
+          <span>
+            <Link to="/dashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("payment");
+            }}>
+              PAYMENT
+                </Link>
+            <br />
+          </span>
+          <span>
+            <Link to="/dashboard/contigent" className={(this.state.activeState === "contigent") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("contigent");
+            }}>
+              CONTINGENT
+                </Link>
+            <br />
+          </span>
+          <span>
+            <Link to="/dashboard/events" className={(this.state.activeState === "events") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("events");
+            }}>
+              EVENTS
+                </Link>
+            <br />
+          </span>
 
-
-          <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a></div>
+          {(this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") &&
+          <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a></div>}
         </div>
         <div id="mobile-navbar-dashboard-logout">
 

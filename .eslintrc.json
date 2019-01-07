@@ -1,3 +1,13 @@
 {
-    "extends": "airbnb"
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules":{
+    "quotes": "off",
+    "react/prop-types": "off",
+    "react/button-has-type": "off",
+    "no-unused-vars": ["error"]
+  },
+  "env":{
+      "browser": true
+    }
 }

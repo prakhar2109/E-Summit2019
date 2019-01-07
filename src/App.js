@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
-
+import PaymentStatus from './screens/cadashboard/js/paymentstatus'
 import Loadable from "react-loadable";
 import Loader from "./screens/loader/loader";
 
@@ -74,6 +74,11 @@ const ResetPassword = Loadable({
   loading: () => <Loader />,
 });
 
+const Test = Loadable({
+  loader: () => import("./components/Events/EventComponent/Index"),
+  loading: () => <Loader />,
+});
+
 class App extends Component {
   constructor() {
     super();
@@ -84,12 +89,14 @@ class App extends Component {
 
   render() {
     return (
+      // <PaymentStatus></PaymentStatus>
       <BrowserRouter>
         <React.Fragment>
           <div>
             <Switch>
               <ScrollToTop>
-                <Route path="/ideastorm" component={IdeaStorm} />
+                {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
+                {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
                 <Route path="/sponsors" component={Sponsors} />
@@ -101,6 +108,8 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
+                {/* <Route exact path="/test" component={test} /> */}
+                <Route path="/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
