@@ -52,10 +52,10 @@ export default class Viewprofile extends Component {
     changeProfile = () => {
         document.getElementById("caprofile-containter").style.display = "none";
 
-        document.getElementById("caprofile-parent3").style.display = "none";
+        // document.getElementById("caprofile-parent3").style.display = "none";
         document.getElementById("caprofile-mobile-editprofilecontainter").style.display = "block";
 
-        document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "block";
+        // document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "block";
         document.getElementById("caprofilemobile-b01").style.display = "none";
         document.getElementById("caprofilemobile-b02").style.display = "block";
 
@@ -67,10 +67,10 @@ export default class Viewprofile extends Component {
     saveProfile = () => {
         document.getElementById("caprofile-containter").style.display = "block";
 
-        document.getElementById("caprofile-parent3").style.display = "block";
+        // document.getElementById("caprofile-parent3").style.display = "block";
         document.getElementById("caprofile-mobile-editprofilecontainter").style.display = "none";
 
-        document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "none";
+        // document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "none";
         document.getElementById("caprofilemobile-b01").style.display = "block";
         document.getElementById("caprofilemobile-b02").style.display = "none";
 
@@ -78,7 +78,30 @@ export default class Viewprofile extends Component {
 
 
     }
+    handleClick = e => {
 
+        e.preventDefault();
+        let {
+            data
+        } = this.state
+        let token = localStorage.getItem("user_token");
+       
+        axios({
+            method: "post",
+            url: BASE_URL + "/v1/api/user/edit-profile/",
+            data: data,
+            headers: {
+                Authorization: `Token ${token}`,
+            }
+
+        }).then((r) => {
+            console.log("hellll")
+        })
+            .catch((r) => {
+                console.log(r)
+            })
+        this.handleOk()
+    }
 
     render() {
         const { visible } = this.state;
@@ -105,9 +128,9 @@ export default class Viewprofile extends Component {
                 </div>
 
                 <div className="caprofile-line1"></div>
-                {/*}
+
                 <button id="caprofile-b01" onClick={this.showModal}>Edit Profile</button>
-        <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>*/}
+                <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>
                 <div className="caprofile-parent1">
 
                     <div className="caprofile-parent1-child1">
@@ -137,7 +160,7 @@ export default class Viewprofile extends Component {
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                {name}
+                                {data.name}
                             </div>
                         </div>
 
@@ -193,18 +216,49 @@ export default class Viewprofile extends Component {
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                <input type="text" defaultValue={data.name} onChange={e => { data.name = e.target.value }} required id="editprofile-input-mobile"></input>
+                                <input
+                                    type="text"
+                                    placeholder={data.name}
+                                    defaultValue={data.name}
+                                    onChange={e => {
+                                        data.name = e.target.value;
+                                    }}
+                                    required
+                                    id="editprofile-input-mobile"
+                                />
                             </div>
                         </div>
 
                         <div className="caprofile-containter-parent-child2">
                             <div className="caprofile-containter-parent-child2-child1">
                                 <div className="caprofile-heading">
-                                    E-mail ID
+                                    Gender
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                    <input type="text" defaultValue={data.email} onChange={e => { data.email = e.target.value }} required id="editprofile-input-mobile" ></input>
+                                    <select id="editprofile-input-mobile"
+                                        placeholder={data.gender}
+                                        defaultValue={data.gender}
+                                        onChange={e => {
+                                            data.gender = e.target.value;
+                                        }}
+
+
+                                    >
+                                        {data.gender === "M" &&
+                                            <><option value="M" selected>M</option>
+                                                <option value="F">F</option>
+                                                <option value="O">O</option></>}
+
+                                        {data.gender === "F" &&
+                                            <><option value="M" >M</option>
+                                                <option value="F" selected>F</option>
+                                                <option value="O">O</option></>}
+                                        {data.gender === "O" &&
+                                            <><option value="M" >M</option>
+                                                <option value="F">F</option>
+                                                <option value="O" selected>O</option></>}
+                                    </select>
                                 </div>
 
                             </div>
@@ -214,20 +268,32 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    <input type="text" defaultValue={data.phone} onChange={e => { data.phone = e.target.value }} id="editprofile-input-mobile"></input>
+                                    <input
+                                        type="text"
+                                        placeholder={data.phone}
+                                        defaultValue={data.phone}
+                                        onChange={e => {
+                                            data.phone = e.target.value;
+                                        }}
+                                        required
+                                        id="editprofile-input-mobile"
+                                    />
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
 
                 </div>
 
 
-             
 
 
-               <button id="caprofilemobile-b02" onClick={this.saveProfile}>SAVE CHANGES</button>
+
+                <button id="caprofilemobile-b02" onClick={e => {
+                    this.handleClick(e)
+                    this.saveProfile()
+                }}>SAVE CHANGES</button>
 
 
                 <Modal
@@ -242,7 +308,7 @@ export default class Viewprofile extends Component {
                 >
 
                     <form>
-                        <input type="submit" value="Save Changes" id="caprofile-b02" />
+                        <button onClick={this.handleClick} id="caprofile-b02">SAVE CHANGES</button>
 
                         <div className="caprofile-parent1 ca-profile-modalparent1">
                             <div className="caprofile-parent1-child1">
@@ -271,7 +337,16 @@ export default class Viewprofile extends Component {
                             </div>
                                     <div className="caprofile-parent1-child2-name caprofile-data">
 
-                                        <input type="text" defaultValue={data.name} onChange={e => { data.name = e.target.value }} required id="caprofile02"></input>
+                                        <input
+                                            type="text"
+                                            placeholder={data.name}
+                                            onChange={e => {
+                                                data.name = e.target.value;
+                                            }}
+                                            defaultValue={data.name}
+                                            required
+                                            id="caprofile02"
+                                        />
 
                                     </div>
                                 </div>
@@ -279,12 +354,24 @@ export default class Viewprofile extends Component {
                                 <div className="caprofile-containter-parent-child2">
                                     <div className="caprofile-containter-parent-child2-child1">
                                         <div className="caprofile-heading">
-                                            E-mail ID
+                                            Gender
                                 </div>
 
                                         <div className="caprofile-parent1-child2-email caprofile-data">
+                                            <select
+                                                placeholder={data.gender}
+                                                defaultValue={data.gender}
+                                                onChange={e => {
+                                                    data.gender = e.target.value;
+                                                }}
+                                                id="caprofile01"
 
-                                            <input type="email" defaultValue={data.email} onChange={e => { data.email = e.target.value }} required id="caprofile01" ></input>
+                                            >
+                                                <option value="M">M</option>
+                                                <option value="F">F</option>
+                                                <option value="O">O</option>
+
+                                            </select>
                                         </div>
 
                                     </div>
@@ -294,18 +381,26 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                         <div className="caprofile-parent1-child3-phone caprofile-data">
+                                            <input
+                                                type="text"
+                                                placeholder={data.phone}
+                                                defaultValue={data.phone}
+                                                id="caprofile01"
+                                                required
+                                                onChange={event => {
+                                                    data.phone = event.target.value;
+                                                }}
+                                            />
 
-
-                                            <input type="text" defaultValue={data.phone} onChange={e => { data.phone = e.target.value }} id="caprofile01"></input>
                                         </div>
                                     </div>
                                 </div>
-                                 </div>
+                            </div>
 
 
                         </div>
 
-                        </form>
+                    </form>
                 </Modal>
 
             </div>
