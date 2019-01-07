@@ -149,8 +149,8 @@ class caLeaderboard extends Component {
             <hr id="line1" />
 
             <Link to="/dashboard/Viewprofile"  onClick={() => {
-                    this.setActive("payment");
-                  }}>
+                    this.setActive("Viewprofile");
+                  }} className="link-viewprofile">
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
             </Link>

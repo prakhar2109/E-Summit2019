@@ -454,18 +454,18 @@ export default class Viewprofile extends Component {
                 <div className="caprofile-parent1-child1-heading">
                   BASIC INFORMATION
               </div>
-                <div className="caprofile-dropshape">P</div>
-                <div className="profile-dashboard-type">NON-IITR STUDENT</div>
+                <div className="caprofile-dropshape">{name[0]}</div>
+                <div className="profile-dashboard-type">CAMPUS AMBASSADOR</div>
                 <div className="profile-dashboard-esummit">
                   <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-                  <span id="profile-dashboard-esummitId-value">ES172292</span>
+                  <span id="profile-dashboard-esummitId-value">{data.esummit_id}</span>
                 </div>
-                <div className="profile-dashboard-esummit">
+                {/* <div className="profile-dashboard-esummit">
                   <span id="profile-dashboard-esummitId">
                     Contingent No (Leader)
-                </span>
+                  </span>
                   <span id="profile-dashboard-esummitId-value">CN 2</span>
-                </div>
+                </div> */}
               </div>
               <div className="caprofile-parent1-childline" />
 
