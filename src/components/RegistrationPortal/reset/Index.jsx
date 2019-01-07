@@ -21,8 +21,8 @@ export default class ResetIndex extends Component {
     render() {
         return (
             <React.Fragment>
-                <Route exact path="/resetPassword" component={FindAccount} />
-                <Route exact path="/resetPassword/:para" component={ResetPasswordField} />
+                <Route exact path="/reset-password" component={FindAccount} />
+                <Route exact path="/reset-password/:para" component={ResetPasswordField} />
             </React.Fragment>
         );
     }

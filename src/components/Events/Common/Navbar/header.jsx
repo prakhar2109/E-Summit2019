@@ -82,8 +82,13 @@ export default class ComingSoon extends Component {
     render() {
         return (
             <div id="nav" className="Eventsheader">
+                {console.log(BASE_URL + this.props.logo[0].logo, "dashdgjajbk")}
                 <div className="idealogo" style={{
-                    backgroundImage: `url(${BASE_URL + this.props.logo})`
+                    backgroundImage: `url(${BASE_URL + this.props.logo[0].logo})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "40%",
+                    backgroundRepeat: "no-repeat"
+
                 }} />
 
                 <span className="mobile_menu">

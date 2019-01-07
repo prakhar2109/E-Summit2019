@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from "../Header/Index"
+import jump from "jump.js";
 import axios from "axios"
 import Perks from "../Perks/Index"
 import ApplyNow from "../ApplyNow/Index"
@@ -51,18 +52,44 @@ class EventComponentIndex extends Component {
             // window.location.href = "/"
         });
     }
+
+    Rules = () => {
+        jump(".Rules", { offset: -130 });
+    };
+
+    erks = () => {
+        jump(".erks", { offset: -130 });
+    };
+
+    faq_idea = () => {
+        jump("#faq", { offset: -0 });
+    };
+
+    coordinator = () => {
+        jump(".coordinator", { offset: -130 });
+    };
+
+    eligiblity = () => {
+        jump(".eligiblity", { offset: -130 });
+    };
+    register = () => {
+        jump(".register", { offset: -130 });
+    };
+    jum = () => {
+        jump('#timeline')
+    }
     render() {
         return (
             <div className="ideastorm">
                 {console.log(this.state.data, "dasdyugtduagjbdkj")}
-                {this.state.data.event_logo ?
-                    <EventHeader logo={this.state.data.event_logo} />
+                {this.state.data.event_data ?
+                    <EventHeader logo={this.state.data.event_data} />
                     : null}
 
                 <div id="nav" className="header">
                     <span>
-                        {this.state.data.event_logo ?
-                            <img alt="IdeaStorm" src={BASE_URL + this.state.data.event_logo} />
+                        {this.state.data.event_data ?
+                            <img alt="IdeaStorm" src={BASE_URL + this.state.data.event_data[0].logo} />
                             : null}
                     </span>
                     <span className="head_array">

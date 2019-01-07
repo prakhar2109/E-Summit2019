@@ -20,7 +20,10 @@ const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
-
+const Suignite = Loadable({
+  loader: () => import("./NewScreens/startupignite/ignite"),
+  loading: () => <Loader />,
+});
 const LandingPage = Loadable({
   loader: () => import("./NewScreens/landing/landing"),
   loading: () => <Loader />,
@@ -101,6 +104,8 @@ class App extends Component {
               <ScrollToTop>
                 {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
                 {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
+                <Route path="/suignite" component={Suignite} />
+                {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
                 <Route path="/sponsors" component={Sponsors} />
@@ -108,12 +113,12 @@ class App extends Component {
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
-                <Route path="/resetPassword/" component={ResetPassword} />
+                <Route path="/reset-password/" component={ResetPassword} />
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
                 <Route exact path="/test" component={Startup} />
-                <Route path="/:id" render={(props) => <Test {...props} />} />
+                <Route exact path="/event/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />

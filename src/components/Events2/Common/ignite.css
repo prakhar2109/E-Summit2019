@@ -5,7 +5,7 @@ padding: 3.24vh 19.63vw;
 background:black;
 }
 .suignite-parent-img{
-background:url('./img/Startup_Ignite.png');
+/* background:url('./img/Startup_Ignite.png'); */
 background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

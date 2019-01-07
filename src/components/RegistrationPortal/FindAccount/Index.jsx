@@ -73,6 +73,52 @@ export default class RegisterIndex extends React.Component {
 
         }
     }
+    handleResend = () => {
+        if (this.state.email !== "") {
+            let data_email = {
+                email: this.state.email
+            }
+            document
+                .getElementById("loader")
+                .style
+                .display = "none";
+            document
+                .getElementById("loader")
+                .style
+                .display = "grid";
+            axios({
+                method: "post",
+                url: BASE_URL + "/v1/api/user/forgot-password/",
+                data: data_email
+            }).then((r) => {
+                document
+                    .getElementById("loader")
+                    .style
+                    .display = "none";
+                this.setState({
+                    confirmation_message: "A link has been successfully sent to your email.",
+                    confirm_bool: true
+                })
+            }).catch((response) => {
+                if (response.response.status === 404) {
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                }
+                else {
+                    document
+                        .getElementById("loader")
+                        .style
+                        .display = "none";
+                    this.setState({
+                        error_message: "Something went wrong!"
+                    })
+                }
+            });
+
+        }
+    }
     emailvalidate = () => {
         setTimeout(function () {
             var re = /\S+@\S+\.\S+/
@@ -133,7 +179,7 @@ export default class RegisterIndex extends React.Component {
                                 <Loader />
                                 <div className="esummit-register-form-body-parent">
                                     <div className="esummit-resent-password-second-heading">
-                                        Please enter your email address to seacrh for your account
+                                        Please enter your email address to search for your account
                                             </div>
                                     <div className="esummit-register-form-error-message-handle">
                                         {this.state.error_message}

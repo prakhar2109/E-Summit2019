@@ -246,7 +246,7 @@ export default class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-field-error">{pass_error}</div>
                                     </div>
                                     <div className="esummit-register-form-forgot-password-text">
-                                        <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/findaccount">Forgot your password?</Link>
+                                        <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/reset-password">Forgot your password?</Link>
                                     </div>
                                     <div className="esummit-register-form-button">
                                         <button type="submit">LOGIN</button>

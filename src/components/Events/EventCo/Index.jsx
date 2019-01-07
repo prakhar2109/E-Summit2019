@@ -9,7 +9,7 @@ export default class EventCoordinatorSection extends Component {
                 <Header title="EVENT CO-ORDINATOR" />
                 <div className="coordinator_grid">
                     {this.props.data.map((cordinate, index) =>
-                        <div key={index} className="coordinator_unit">
+                        <div key={index} className="esummit-coordinator_unit">
                             <p>{cordinate.name}</p>
                             <p>{cordinate.number}</p>
                             <p>{cordinate.email}</p>

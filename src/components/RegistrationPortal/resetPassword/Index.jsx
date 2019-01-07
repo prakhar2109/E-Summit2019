@@ -46,8 +46,12 @@ export default class ResetpasswordIndex extends Component {
                         url: BASE_URL + `/v1/api/user/reset-password/${url}`,
                         data: info,
                     }).then(r => {
+                        document
+                            .getElementById("loader")
+                            .style
+                            .display = "none";
                         this.setState({
-                            confirm_bool: false,
+                            confirm_bool: true,
                             confirmation_message: "Password has being succesfully changed please go back to login page and login."
                         })
                     }).catch(response => {
@@ -58,6 +62,7 @@ export default class ResetpasswordIndex extends Component {
                         this.setState({
                             error_message: "Something went wrong!"
                         })
+                        window.location.href = "/login"
                     });
                 }
                 else {
@@ -126,32 +131,30 @@ export default class ResetpasswordIndex extends Component {
         this.setState({ [name]: value });
     }
     componentDidMount() {
-        let data = {
-            uuid: window.location.pathname.substring(15)
-        }
+        let uuid = window.location.pathname.substring(15)
         document
             .getElementById("loader")
             .style
-            .display = "none";
-        // document
-        //     .getElementById("loader")
-        //     .style
-        //     .display = "grid";
-        // axios({
-        //     method: "post",
-        //     url: BASE_URL + "/v1/api/user/forget-password/isvaliduuid",
-        //     data: data,
-        // }).then(r => {
-        //     this.setState({
-        //         url: window.location.pathname.substring(15)
-        //     })
-        // }).catch(response => {
-        //     document
-        //         .getElementById("loader")
-        //         .style
-        //         .display = "none";
-        //     window.location.href = "/register"
-        // });
+            .display = "grid";
+        axios({
+            method: "post",
+            url: BASE_URL + "/v1/api/user/verify-code/" + uuid,
+        }).then(r => {
+            document
+                .getElementById("loader")
+                .style
+                .display = "none";
+            this.setState({
+                url: window.location.pathname.substring(15)
+            })
+        }).catch(response => {
+            document
+                .getElementById("loader")
+                .style
+                .display = "none";
+            // console.log(response, "dahgjhajujk")
+            window.location.href = "/register"
+        });
 
     }
     render() {

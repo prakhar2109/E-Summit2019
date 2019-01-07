@@ -14,7 +14,7 @@ export default class PerksSection extends Component {
                             {this.props.data.map((perks, index) =>
                                 <div key={index} className="perks_unit">
                                     <img src={BASE_URL + perks.image} alt="Cash Rewards" />
-                                    <span>{perks.heading}:</span>
+                                    <span className="esummit-perks-heading">{perks.heading}:</span>
                                     {perks.description}
                                 </div>
                             )}

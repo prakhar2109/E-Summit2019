@@ -10,7 +10,7 @@ color:white;
 
 }
 .landingpagefooter {
-    background: url('../static/landingfooter.png');
+    background: url('../landingfooter.png');
     background-size: cover;
     height: fit-content;
     padding-top: 14.07vh;
@@ -60,7 +60,7 @@ color:white;
 
     height: 8.41vh;
     width: 17.44vw;
-    background: url('../static/ecelllogo.svg');
+    background: url('../ecelllogo.svg');
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -294,10 +294,10 @@ color:white;
 @media (max-width: 900px) {
 
     .landingpagefooter-mobile {
-        background: url('../static/landingfooter.png');
+        background: url('../landingfooter.png');
         background-size: cover;
         height: fit-content;
-        width: 100%;
+        width: 100vw;
         padding:1rem;
 
       
@@ -310,7 +310,7 @@ color:white;
    
         padding-bottom: 2.85rem;
         display: inline-block;
-        width: 100%;
+        width: 100vw;
         
 
 
