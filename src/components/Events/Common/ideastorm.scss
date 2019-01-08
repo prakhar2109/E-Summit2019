@@ -39,13 +39,14 @@
         }
 
         img {
-            height: 8vh;
-            margin-top: 5px;
+            height: 4vh;
+            margin-top: 10px;
         }
 
         .head_array {
 
             justify-self: end;
+            margin-top: 10px;
 
             span {
                 font-family: "ProximaNova-Semibold", sans-serif;
@@ -542,7 +543,24 @@
 
     }
 }
-
+@media (min-width: 1500px) {
+    .ideastorm .esummit-idea{
+        background-size: cover;
+    }
+    .ideastorm .esummit-idea p{
+        font-size: 28px;
+        color: white;
+        padding: 10px;
+        margin-top: 2%;
+    }
+    .ideastorm .esummit-idea .ignite-first-page-scroll{
+        margin-top:10%;
+    }
+    .ideastorm .esummit-idea .esummit-header_idea{
+        letter-spacing: 0.04em;
+        font-size: 52px;
+    }
+}
 
 
 @media (min-width: 1200px) and (max-width: 1500px) {
@@ -612,5 +630,13 @@ font-size: 19.88px;
 
     .faq_unit .question {
         font-size: 22.72px;
+    }
+}
+@media (max-width:768px){
+    .ideastorm .esummit-idea p{
+        color: white;
+    }
+    .esummit-cash-prize{
+        color: white;
     }
 }

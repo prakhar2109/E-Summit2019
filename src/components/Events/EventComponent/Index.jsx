@@ -15,13 +15,18 @@ import esummit from "../Common/es.png";
 import EventHeader from "../Common/Navbar/header"
 
 class EventComponentIndex extends Component {
+    constructor() {
+        super()
+        this.state = {
+            data: ""
+        }
+    }
     componentDidMount() {
         // document 
         //     .getElementById("loader")
         //     .style
         //     .display = "grid";
         let event_name = this.props.match.params.id.charAt(0).toUpperCase() + this.props.match.params.id.slice(1)
-
         let data = {
             event_name: event_name
         }
@@ -33,6 +38,7 @@ class EventComponentIndex extends Component {
             this.setState({
                 data: r.data
             })
+            console.log(r.data, "r.data")
             // document
             //     .getElementById("loader")
             //     .style
@@ -43,7 +49,7 @@ class EventComponentIndex extends Component {
             //     .getElementById("loader")
             //     .style
             //     .display = "none";
-            // window.location.href = "/"
+            // window.location.href = "/" 
         });
     }
 
@@ -75,7 +81,6 @@ class EventComponentIndex extends Component {
     render() {
         return (
             <div className="ideastorm">
-                {console.log(this.state.data, "dasdyugtduagjbdkj")}
                 {this.state.data.event_data ?
                     <EventHeader logo={this.state.data.event_data} />
                     : null}
@@ -100,24 +105,25 @@ class EventComponentIndex extends Component {
                 {this.state.data.head_section ?
                     <Header data={this.state.data.head_section} />
                     : null}
-                {this.state.data.perks ?
-                    <Perks data={this.state.data.perks} />
-                    : null}
-                {this.state.data.faq ?
-                    <FAQ data={this.state.data.faq} />
+                {this.state.data.rules ?
+                    <Rules data={this.state.data.rules} />
                     : null}
                 {this.state.data.elligiblity ?
                     <Eligibility data={this.state.data.elligiblity} />
                     : null}
-                {this.state.data.rules ?
-                    <Rules data={this.state.data.rules} />
-                    : null}
-                {this.state.data.coordinator ?
-                    <EventCo data={this.state.data.coordinator} />
+                {this.state.data.perks ?
+                    <Perks data={this.state.data.perks} />
                     : null}
                 {this.state.data.name && this.state.data.event_data ?
                     <ApplyNow data={this.state.data.event_data} name={this.state.data.name} />
                     : null}
+                {this.state.data.faq ?
+                    <FAQ data={this.state.data.faq} />
+                    : null}
+                {this.state.data.coordinator ?
+                    <EventCo data={this.state.data.coordinator} />
+                    : null}
+
                 <div className="es">
                     <center>
                         <NavLink to="/">
