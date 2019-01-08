@@ -390,6 +390,9 @@ input[type=number]::-webkit-outer-spin-button {
       color:#F6AF5A;
       font-weight: 600;
 }
+.esummit-register-form-footer a:hover{
+    color:#F6AF5A !important;
+}
 .esummit-register-form-successfull-parent{
     width: 100%;
     height: 100%;
@@ -455,6 +458,9 @@ input[type=number]::-webkit-outer-spin-button {
     color: #F39423;
     padding: 20px 0px;
     cursor: pointer;
+}
+.esummit-register-form-forgot-password-text a:hover{
+    color: #F39423 !important;
 }
 .esummit-register-form-error-message-handle{
     font-size: 13px;

@@ -91,46 +91,8 @@ export default class AccountSetup extends Component {
                                     password: password,
                                     confirm_password: confirm_password,
                                     social_signup: social_signup
-                                    // otp: r.data.one_time_pass
                                 }
                                 this.props.handleSubmit(data)
-                                // let request = new Promise(function (resolve, reject) {
-                                // document
-                                //     .getElementById("loader")
-                                //     .style
-                                //     .display = "flex";
-                                // axios({
-                                //     method: "post",
-                                //     url: "http://localhost:8000/edc/email",
-                                //     data: data_email
-                                // }).then((r) => {
-                                //     this.setState({
-                                //         otp: r.data.one_time_pass
-                                //     })
-                                //     document
-                                //         .getElementById("loader")
-                                //         .style
-                                //         .display = "none";
-
-                                // }).catch((response) => {
-                                //     document
-                                //         .getElementById("loader")
-                                //         .style
-                                //         .display = "none";
-                                //     alert("Network error")
-                                // });
-                                // })
-                                // request.then(function () {
-                                //     let data = {
-                                //         name: name,
-                                //         email: email,
-                                //         password: password,
-                                //         confirm_password: confirm_password,
-                                //         otp: otp
-                                //     }
-                                //     return console.log(data, "dashdghajkasghdkj")
-                                //     // this.props.handleSubmit(data)
-                                // })
                             }
                             else {
                                 this.setState({
@@ -304,7 +266,7 @@ export default class AccountSetup extends Component {
         }
     }
     render() {
-        
+
         const { email, name, password, confirm_password, toggleConfirmEye, toggleEye, name_error, name_error_bool, email_error, email_error_bool, pass_error, pass_error_bool, confirmpass_error, confirmpass_error_bool, } = this.state
         return (
             <div>

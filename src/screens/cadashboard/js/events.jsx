@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import "../css/events.css";
 
-export default class Viewprofile extends Component {
 
+export default class Viewprofile extends Component {
+    infoMenushow() {
+        document.getElementById("caevents-earnedcoupons-child-parent1").style.display = "none";
+        document.getElementById("caevents-earnedcoupons-child-parent2").style.display = "block";
+    }
+    infoMenuhide() {
+        document.getElementById("caevents-earnedcoupons-child-parent1").style.display = "block";
+        document.getElementById("caevents-earnedcoupons-child-parent2").style.display = "none";
+    }
     render() {
         return (
             <div className="caevents-parent">
@@ -12,26 +20,26 @@ export default class Viewprofile extends Component {
                 <div className="caevents-line1"></div>
                 <div className="caevents-earnedcoupons-rowparent1">
                     <div className="caevents-earnedcoupons-child">
-                        <div className="caevents-earnedcoupons-child-heading caeventsheading-font">
-                            50% Offer
-                        </div>
-                        <div className="caevents-earnedcoupons-child-description caeventsdecription-font">
-                            Invited 25 people succesfully.
-                             Click the button below to redeem the offer.
-                         </div>
+                        <div className="caevents-earnedcoupons-child-heading">
+                            Ideastorm
+                            </div>
+                        <div className="caevents-registration-status">
+                            Registration open
+                            </div>
+                        <div className="caevents-earnedcoupons-child-description">
+                            Invited 25 people succesfully to redeem the offer.
+                            </div>
+
+                        <div className="caevents-earnedcoupons-deadline">
+                            Deadline:
+                            </div>
+
 
                         <div className="caevents-earnedcoupons-child-button">
                             <button>DISCARD</button>
                             <button id="caofferb01">INFO</button>
                         </div>
-                    </div>
-
-                    <div className="caevents-earnedcoupons-child">
-
-                    </div>
-                    <div className="caevents-earnedcoupons-child">
-
-                    </div>
+                    </div>                    
                 </div>
 
                 <div className="ca-events-parent-heading2 caeventsparent-font">
@@ -39,30 +47,43 @@ export default class Viewprofile extends Component {
                 </div>
                 <div className="caevents-line1"></div>
                 <div className="caevents-earnedcoupons-rowparent1">
+
+
                     <div className="caevents-earnedcoupons-child">
-                        <div className="caevents-earnedcoupons-child-heading caeventsheading-font">
-                            50% Offer
+                        <div id="caevents-earnedcoupons-child-parent1">
+                            <div className="caevents-earnedcoupons-child-heading">
+                                Ideastorm
+                                <div className="caevents-earnedcoupons-child-reddotpic">
+                                </div> 
+                                <div className="caevents-earnedcoupons-child-greendotpic">
+                                </div> 
                             </div>
-                        <div className="caevents-earnedcoupons-child-description caeventsdecription-font">
-                            Invited 25 people succesfully to redeem the offer.
+                            <div className="caevents-registration-status">
+                                Registration open
+                            </div>
+                            <div className="caevents-earnedcoupons-child-description">
+                                Invited 25 people succesfully to redeem the offer.
                             </div>
 
-                        <div className="caevents-earnedcoupons-invitelink">
-                            Copy Invite Link
+                            <div className="caevents-earnedcoupons-deadline">
+                                Deadline:
                             </div>
 
-                        <div className="caevents-earnedcoupons-child-button">
-                            <button>APPLY</button>
-                            <button id="caofferb01">INFO</button>
+                            <div className="caevents-earnedcoupons-child-button">
+                                <button>APPLY</button>
+                                <button id="caofferb01" onClick={this.infoMenushow}>INFO</button>
+                            </div>
                         </div>
-                    </div>
+                        <div id="caevents-earnedcoupons-child-parent2">
+                            <div className="caevents-earnedcoupons-child-info">
+                                The Idea Storm is the annual business model competition organized by Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. Every year, IIT Roorkee is a spectacle to over 400 startups showcasing their business, vision and novelty. The plans that are judged to be the best, get mentorship and a prize money as
+                            </div>
+                          
+                            <div className="caevents-earnedcoupons-child-button">
 
-                   
-                    <div className="caevents-earnedcoupons-child">
-
-                    </div>
-                    <div className="caevents-earnedcoupons-child">
-
+                                <button onClick={this.infoMenuhide}>BACK</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
