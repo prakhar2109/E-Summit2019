@@ -25,7 +25,7 @@ export default class ApplyNowIdenx extends Component {
                     <center>
                         <a
                             without rel="noopener noreferrer"
-                            href={this.props.data.registration_url}
+                            href={this.props.data[0].registration_url}
                             target="_blank"
                         >
                             {" "}
