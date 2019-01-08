@@ -77,7 +77,8 @@
 .cacontigent-joinparent-form {
 	display: flex;
 	flex-direction: row;
-	margin-top: 3.33vh;
+	margin-top: 1.33vh;
+	position: relative;
 }
 
 .cacontigent-joinparent-form-child1 {
@@ -334,6 +335,94 @@ position:relative;
 position:absolute;
 right:45px;
 }
+#cacontigent-joinparent-form-hidelist{
+	display: none;
+}
+#cacontignet-table-row1{
+	font-size: 14.2pxpx;
+	color: rgba(79, 79, 79, 0.44);
+	font-family: "ProximaNova-Semibold";
+	text-align: center;
+	border-bottom: 2px solid rgba(223, 223, 223, 0.59);
+
+}
+#cacontignet-table-row2{
+	border-bottom: 2px solid rgba(223, 223, 223, 0.59);
+	text-align: center;
+}
+#cacontignet-table-row1 th{
+	padding: 2.4vh;
+	width: 20%;
+}
+#cacontignet-table-row2 td{
+	color:#000000;
+	font-family: "Proxima-nova-regular";
+	font-size: 17.75px;
+	padding: 1.4vh;
+}
+#ca02{
+	width: 100%;
+}
+.cacontigent-joinparent-formlist{
+	background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 4px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 2.24%;
+    width: 86.70%;
+    color: #000000;
+    padding: 2.96vh;
+}
+
+#cacontignet-th-4{
+	padding: 2.4vh;
+	padding-right: 0 !important;
+	width: 10% !important;
+}
+#cacontignet-th-5{
+	padding: 2.4vh;
+	width: 10% !important;
+}
+#cacontignet-td-b01{
+	background: #F39423;
+	border: none;
+	color: #FFFFFF;
+	font-size: 12.78px;
+	font-family: "ProximaNova-Semibold";
+	padding: 1.11vh;
+	padding-right: 0;
+	width: 99%;
+	border-radius: 4px;
+}
+#cacontignet-td-b02{
+	background:transparent;
+	border: 1.5px solid rgba(130, 130, 130, 0.93);
+	color: #808080;
+	font-size: 12.78px;
+	font-family: "ProximaNova-Semibold";
+	padding: 1.11vh;
+	padding-right: 0;
+	width: 99%;
+	border-radius: 4px;
+}
+.cacontigent-joinparent-form-invites{
+	color:#000000;
+	font-family: "Proxima-nova-regular";
+	font-size: 19.88px;
+}
+.cacontigent-Viewoption{
+	position: absolute;
+	right: 0;
+    text-align: right;
+    cursor: pointer;
+	color: #F39423;
+	font-size: 17.04px;
+	align-self: center;
+	font-family: "Proxima-nova-regular";
+	
+}
 @media (min-width: 0px) and (max-width: 900px){
 .ant-modal {
 width:90px !important;
@@ -450,7 +539,7 @@ right:15px;
 }
 
 }
-@media (min-width: 1920px) and (max-width: 2560px){
+@media (min-width: 1820px) and (max-width: 2560px){
 .cacontigent-congratsparent-child1{
 font-size:28px;
 }
@@ -512,6 +601,26 @@ font-size: 15px;
 .cacontigent-create-img{
     height: 28px;
     width: 28px;
+
+}
+#cacontignet-table-row{
+	font-size: 16px;
+	
+}
+#cacontignet-table-row2 td{
+	font-size: 21px;
+}
+#cacontignet-table-row1{
+	font-size: 16px;
+}
+.cacontigent-joinparent-form-invites{
+	color:#000000;
+	font-family: "Proxima-nova-regular";
+	font-size: 24px;
+}
+.cacontigent-Viewoption{
+	
+	font-size: 24px;
 
 }
 }

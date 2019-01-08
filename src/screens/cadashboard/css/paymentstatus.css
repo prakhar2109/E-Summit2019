@@ -78,12 +78,12 @@
     margin-left: 20vw;
     cursor: pointer;
 }
-table, td, th {  
+.capayment-status table, .capayment-status td, .capayment-status th {  
     border: 1px solid #ddd;
     text-align: left;
   }
   
-  table {
+  .capayment-status table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 3vh;
@@ -92,18 +92,18 @@ table, td, th {
     
   }
   
-  th{
+  .capayment-status th{
     padding-left: 14vw;
     padding-top:1.5vh;
     padding-bottom: 1.5vh;
     border-left-width: 0px;
     border-top-width: 0px;
   }
-  th{
+  .capayment-status th{
       font-size: 18px;
       font-weight: 500;
   }
-  td{
+  .capayment-status td{
     font-family: Proxima Nova;
     line-height: normal;
     font-size: 17px;

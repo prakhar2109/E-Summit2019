@@ -31,7 +31,7 @@
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;             
-    background: url('../png/circle.png');    
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 }
 
@@ -99,7 +99,7 @@ bottom: 2.962vh;
     border: none;
 }
 
-#caofferb01{
+.caofferb01{
     margin-left: 1vw;
 }
 
@@ -170,6 +170,13 @@ bottom: 2.962vh;
     position: absolute;
     right: 0;
 }
+.caevents-coming-soon{
+    color: #5A5A5A;
+    font-family:"ProximaNova-Semibold" !important;
+    font-size: 16px;
+    position: absolute;
+    bottom: 5vh;
+}
 @media (min-width: 1620px) and (max-width: 2560px){
 
 .caeventsparent-font{
@@ -207,6 +214,9 @@ bottom: 2.962vh;
 
 .caevents-earnedcoupons-child-info{
     font-size: 16px;
+    overflow: scroll;
+    height: 20vh;
+    overflow-x: hidden;
 }
 .caevents-earnedcoupons-child-description{
     font-size: 16px;

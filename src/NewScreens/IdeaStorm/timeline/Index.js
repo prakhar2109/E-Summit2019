@@ -16,9 +16,9 @@ export default class Timeline extends Component {
         return (
             <div className="cd-horizontal-timeline-parent">
                 <section class="cd-horizontal-timeline">
-                    <div class="timeline">
-                        <div class="ideastormevents-wrapper">
-                            <div class="ideastormevents">
+                    <div className="timeline">
+                        <div className="ideastormevents-wrapper">
+                            <div className="ideastormevents">
                                 <ol>
                                     <li><a href="#0" data-date="16/01/2014" className="selected" >Round 1</a></li>
                                     <li><a href="#0" data-date="20/03/2014" >Round 2</a></li>
@@ -36,7 +36,7 @@ export default class Timeline extends Component {
                         </ul>
                     </div>
 
-                    <div class="ideastormevents-content">
+                    <div className="ideastormevents-content">
                         <ol>
                             <li class="selected" data-date="16/01/2014">
                                 
