@@ -57,7 +57,7 @@ class caLeaderboard extends Component {
     let { name, score , data } = this.state;
     let profile = this.state.data.user_type;
     let profile_display;
-    let scorePercentage = (score / 360) * 100 + "";
+    let scorePercentage = (score / 10000) * 100 + "";
     let options;
     let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
 
@@ -172,7 +172,7 @@ class caLeaderboard extends Component {
               */}
             {is_ca && <div className="score">
               <span id="scoreWritten">SCORE</span>
-              <span id="scoreValue">{score}/360</span>
+              <span id="scoreValue">{score}/10000</span>
             </div>}
             {is_ca  && <div className="progress">
               <div

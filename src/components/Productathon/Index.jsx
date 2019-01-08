@@ -3,7 +3,7 @@ import "../../NewScreens/IdeaStorm/ideastorm.css";
 import Header from "../../components/header";
 import Eventfooter from "../../NewScreens/IdeaStorm/footer/eventfooter";
 import jump from "jump.js";
-import Eventsheader from "../../NewScreens/IdeaStorm/Navbar/header";
+import Eventsheader from "./Navbar/header";
 // import Timelineindex from "../../NewScreens/IdeaStorm/timeline/Index";
 import { NavLink } from "react-router-dom";
 import esummit from "../../NewScreens/IdeaStorm/static/es.png";
@@ -12,7 +12,7 @@ import FAQBoard from '../../NewScreens/landing/faqs'
 import "../../NewScreens/landing/css/landing.scss";
 import "../../screens/ignite/css/ignite.scss";
 import "../../screens/ignite/css/scrollanimation.css";
-import "./style.css"
+import "./style.scss"
 import skill from "./partners/skill.png"
 import he from "./partners/he.png"
 import gfg from "./partners/gfg.png"
@@ -123,7 +123,7 @@ export class IdeaStorm extends Component {
         jump(".eligiblity", { offset: -130 });
     };
     register = () => {
-        jump(".register", { offset: -130 });
+        jump(".register_prod", { offset: -130 });
     };
     partner = () => {
         jump(".esummit-productathon-partners-parent", { offset: -130 });
@@ -143,7 +143,7 @@ export class IdeaStorm extends Component {
                     </span>
 
                     <span className="head_array">
-                        {/* <span onClick={this.timeline}>Timeline</span> */}
+                       
 
                         <span onClick={this.Rules}>Rules</span>
 
@@ -162,12 +162,12 @@ export class IdeaStorm extends Component {
                 <div className="idea esummit-productathon-parent-back-image">
                     <p className="esummit-productathon-heading-para">PRODUCTATHON</p>
                     <p>Ideate.Develop.Innovate</p>
-                    <p className="esummit-productathon-cash-para">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
+                    <p className="c">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
                     <p className="esummit-productathon-para">
 
                     Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
-Rules: The team members can be from different colleges/organizations.
-Team Size: 3-5.
+                Rules: The team members can be from different colleges/organizations.
+                Team Size: 3-5.
           </p>
                     <div className="esummit-productathon-register-now-button-parent">
                         <a
@@ -176,13 +176,10 @@ Team Size: 3-5.
                             href="http://bit.ly/productathon"
                             target="_blank"
                         >
-                            <button className="esummit-productathon-apply-now">REGISTER</button>
+                            <button className="esummit-productathon-apply-now">Apply for Productathon</button>
                         </a>
                     </div>
-                    <div className="ignite-first-page-scroll">
-                        <div onClick={this.Rules} className='icon-scroll'></div> <br />
-                        <div id="ignite-first-page-scroll-child"> <p> SCROLL DOWN</p></div>
-                    </div>
+ 
                     <center>
 
                     </center>
@@ -235,9 +232,8 @@ Team Size: 3-5.
                     <ol>
                         <li>
                             There is no restriction on any individual to participate. Members of all educational and professional fraternities are welcome to participate.
-                        </li>
-
-                     </ol>
+                      </li>       
+                    </ol>
                 </div>
 
                 <div className="erks">
@@ -293,8 +289,8 @@ Team Size: 3-5.
                 </div>
 
 
-                <div className="register">
-                    <p className="register_now">Register Now</p>
+                <div className="register_prod">
+                    <p className="apply_now">Apply Now</p>
 
                     <center>
 
@@ -310,23 +306,10 @@ Team Size: 3-5.
 
                     </center>
                 </div>
-
-                <div className="register_mobile">
-                    <p className="register_now">Register Now</p>
-                    <p>To participate in Idea-Storm 2019 register here.</p>
-                    <center>
-                        <a
-                            without rel="noopener noreferrer"
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
-                            target="_blank"
-                        >
-                            {" "}
-                            <span>APPLY FOR IDEASTORM</span>
-                        </a>
-                    </center>
-
-                </div>
+ 
+                <span id = "#faq"> 
                 <FAQBoard faqList={this.state.faq} />
+                </span>
                 <div className="coordinator">
                     <Header title="EVENT CO-ORDINATORS" />
 
