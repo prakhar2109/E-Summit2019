@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import "../css/cacontigent.css";
 import { Modal } from 'antd';
-
+import axios from "axios";
+import { BASE_URL } from "../../../utils/urls";
 
 
 
@@ -12,20 +13,40 @@ export default class Cacontigent extends Component {
 			contigent: true,
 
 			loading: false,
-
+			data:[],
 			no_contingent: [
-				{ "esummit_id": "A" },
+				{ esummit_id: "" },
+				{ esummit_id: "" },
+				
+			
 
-			]
+			],
+			es_iddata:[],
 		}
 	}
+	componentDidMount = () => {
+		let token = localStorage.getItem("user_token");
+		console.log(token)
+		axios
+		  .get(BASE_URL + "/v1/api/user/profile", {
+			headers: {
+			  Authorization: `Token ${token}`,
+			},
+		  })
+		  .then(res => {
+			this.setState({
+			  data: res.data,
+			});
+		  })
+		  .catch(response => {
+			alert(response);
+		  });
+	  };
 	createContigent = () => {
 		document.getElementById("createcontigent").style.display = "none";
 		this.setState({
 			visible: true,
 		});
-
-
 	}
 	editContigent = () => {
 
@@ -33,9 +54,40 @@ export default class Cacontigent extends Component {
 			visible: true,
 		});
 
+		let token = localStorage.getItem("user_token");
+		
+		
+		console.log(token)
+		axios
+		  .get(BASE_URL + "/v1/api/contingent/info/", {
+			headers: {
+			  Authorization: `Token ${token}`,
+			},
+		  })
+		  .then(res => {
+			this.setState({
+				es_iddata: res.data.members,
+
+			});
+		console.log(this.state.es_iddata)
+			
+
+		  })
+		  .catch(response => {
+			alert(response);
+		  });
+		 
+		  
+		 
+		  
 
 	}
+	createContigentSubmit=()=>{
 
+		console.log(this.state.contigent)
+		this.handleCancel();
+		this.setState({contigent:false})
+	}
 
 	addContingent = (e) => {
 
@@ -90,20 +142,33 @@ export default class Cacontigent extends Component {
 		const bodyStyle = {
 			padding: 0,
 		}
-
+		let {data}=this.state;
+		let no_contingents=[];
 		const width = 900;
-		if (contigent) {
+		no_contingents= 	this.state.es_iddata && this.state.es_iddata.map(e=>{
+			
+				return  {esummit_id: e.esummit_id}
+			
+		})
+		// this.setState({no_contingent:no_contingents});
+
+		console.log(no_contingents,"ssssssssssss")
+
+		console.log(this.state.no_contingent,"aaaaaaaaaaaaa")
+
 			return (
+				<div>
+				{ this.state.contigent?
 				<div className="cacontigent-parent">
 					<div className="cacontigent-parent-heading1">
 						Create Contingent
-                </div>
+                	</div>
 					<div className="cacontigent-line1"></div>
 					<div className="cacontigent-innerparent" id="createcontigent">
 						<div className="cacontigent-createparent" >
 							<div className="cacontigent-heading">
 								Create Contingent
-				</div>
+							</div>
 							<div className="cacontigent-create-img" onClick={this.createContigent}>
 							</div>
 						</div>
@@ -220,41 +285,37 @@ export default class Cacontigent extends Component {
 								<div className="contigent-adduserform">
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading">E-Summit ID</div>
-										<input type="text" id="contigent-adduserform-input" required />
+										<div id="contigent-adduserform-input" required >{data.esummit_id}</div>
 									</div>
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading"> Name</div>
 
-										<input type="text" id="contigent-adduserform-input" />
+										<div id="contigent-adduserform-input" >{data.name}</div>
 									</div>
 								</div>
 								<div className="cacontigent-aboutparent-head">
 									Members
-						</div>
-								{this.state.no_contingent.map((id, e) => {
+								</div>
+								{this.state.no_contingent.map((id, e) => {	
+									{console.log(e,"[[[[[[[[[[[[")}
 
-
-									id.esummit_id = "test";
-									console.log(this.state)
-									return <AddUserForm form={id} />
-
-
+									return <AddUserForm form={id} index={e}/>
 								})}
 
-								{console.log(this.state)}
 
+								
 
 								<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
-
+								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISHS</button>
 							</div>
 						</div>
 					</Modal>
 
 				</div>
-			)
-		}
-		else {
-			return (
+			
+		
+		:
+			
 				<div className="cacontigent-parent">
 					<div className="cacontigent-innerparent" id="congratscontigent">
 						<div className="cacontigent-parent-heading1">
@@ -383,61 +444,141 @@ export default class Cacontigent extends Component {
 								<div className="contigent-adduserform">
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading">E-Summit ID</div>
-										<input type="text" id="contigent-adduserform-input" required />
+										<div id="contigent-adduserform-input" required >{data.esummit_id}</div>
 									</div>
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading"> Name</div>
 
-										<input type="text" id="contigent-adduserform-input" />
+										<div id="contigent-adduserform-input" >{data.name}</div>
 									</div>
 								</div>
 								<div className="cacontigent-aboutparent-head">
 									Members
 								</div>
-								{this.state.no_contingent.map((id, e) => {
-
-
-									id.esummit_id = "test";
-									console.log(this.state)
+								{this.state.no_contingent.map((id, e) => {								
 									return <AddUserForm form={id} />
-
-
 								})}
+
 
 								{console.log(this.state)}
 
 
 								<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
-
+								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISHS</button>
 							</div>
 						</div>
 					</Modal>
 
+
 				</div>
+							}
+							</div>
 			)
-		}
 	}
 }
 
 
 class AddUserForm extends Component {
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			es_id:props.form.esummit_id,
+			name:"",
+		}
+	}
+
+	onChange=(e)=>{
+		this.setState({
+			es_id: e.target.value,
+		   },);
+		   this.handleClick(e.target.value)
+		
+	}
+	handleSubmit=()=>{
+		let token = localStorage.getItem("user_token");
+		let data = {
+			"esummit_id" : this.state.es_id
+		}
+		console.log(data,"handleSubmit");
+		axios
+		({
+			method: "post",
+			url: BASE_URL + "/v1/api/contingent/member/invite/",
+			data: data,
+			  headers: {
+				Authorization: `Token ${token}`,
+			  }
+	  
+		  })
+		  .then(res => {
+		
+		  })
+		  .catch(response => {
+				
+		  });
+	}
+	handleClick=(es_id)=>{
+		let token = localStorage.getItem("user_token");
+		let data = {
+			"esummit_id" : es_id
+		}
+		console.log(data,"handleClick");
+		axios
+		({
+			method: "post",
+			url: BASE_URL + "/v1/api/contingent/user/name/",
+			data: data,
+			  headers: {
+				Authorization: `Token ${token}`,
+			  }
+	  
+		  })
+		  .then(res => {
+			if (res.status === 200) {
+			this.setState({
+			 name: res.data.name,
+			});
+			
+			}
+		
+			// console.log(res,"hhhhhhhhhhhhhhhhhh")
+		  })
+		  .catch(response => {
+			
+				this.setState({
+					name: "",
+				   });	
+			
+		  });
+		
+	}
+	
 	render() {
+		
 		return (
 			<div>
-
+				
 				<form>
 					<div className="contigent-adduserform">
 						<div className="contigent-adduserform-child">
 							<div className="contigent-adduserform-heading">E-Summit ID</div>
-							<input type="text" id="contigent-adduserform-input" required />
+							<input type="text" id="contigent-adduserform-input"  defaultValue={this.props.form.esummit_id} onChange={e => {
+
+   this.onChange(e)
+
+}} />
+{/* // {console.log(this.props.form,"jjjjjjjjjjj")} */}
+ {console.log(this.props.form.esummit_id,"es_id")} 
+
 						</div>
 						<div className="contigent-adduserform-child">
 							<div className="contigent-adduserform-heading"> Name</div>
 
-							<input type="text" id="contigent-adduserform-input" />{/*{this.props.form.esummit_id = "tesghn"}*/}
+							<div id="contigent-adduserform-input" >{this.state.name}</div>
 						</div>
 
-						<div className="contigent-adduserform-button"> <input type="submit" id="contigent-adduserform-buttonb01" /></div>
+						<div className="contigent-adduserform-button"> <div className="contigent-adduserform-buttonb01" id={this.props.index} onClick={this.handleSubmit} >Submit</div></div>
 					</div>
 				</form>
 

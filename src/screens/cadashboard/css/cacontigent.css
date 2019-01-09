@@ -218,7 +218,8 @@
 	height:4.44vh;
     border: 1px solid #000000;
 	padding:1.11vh;
-        color:#4F4F4F;
+		color:#4F4F4F;
+		line-height: 20px;
 }
 #contigent-adduserform-input:focus{
 	border: 1px solid #2EA2F8 !important;
@@ -229,7 +230,7 @@
 	position:relative;
 }
 
-#contigent-adduserform-buttonb01{
+.contigent-adduserform-buttonb01{
 	position:absolute;
 	bottom:0;
 	height: 4.44vh;
@@ -239,6 +240,10 @@
 	color:#F39423;
 	font-size:9.94px;
 	cursor:pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 .cacontigent-aboutparent-head-addmember{
 	color:#F39423;
@@ -444,7 +449,7 @@ width:90px !important;
     width: 44%;
     margin-right: 3.72%;
 }
-#contigent-adduserform-buttonb01 {
+.contigent-adduserform-buttonb01 {
     margin-top: 1vh;
     position: unset;
 }
@@ -577,7 +582,7 @@ font-size: 24px;
 #contigent-adduserform-input{
 font-size: 20px;
 }
-#contigent-adduserform-buttonb01{
+.contigent-adduserform-buttonb01{
 font-size:16px;
     width: 6rem;
 color: #F39423;

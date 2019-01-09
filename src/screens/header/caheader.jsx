@@ -107,7 +107,7 @@ export default class ComingSoon extends Component {
      
 
     if (this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") {
-      console.log("AMB")
+     
 
       options = (
         <>
