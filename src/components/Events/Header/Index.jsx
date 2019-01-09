@@ -35,7 +35,7 @@ export default class HeaderSection extends Component {
                     {this.state.data.heading}
                 </p>
                 <p>{this.state.data.subheading}</p>
-                {this.state.data.prizes === "" ? null :
+                {this.state.data.prizes === "100" ? null :
                     <p className="esummit-cash-prize">CASH PRIZE WORTH INR {this.state.data.prizes}</p>}
                 <p>
                     {this.state.data.description}
