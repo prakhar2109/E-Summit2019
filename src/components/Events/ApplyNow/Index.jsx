@@ -10,7 +10,7 @@ export default class ApplyNowIdenx extends Component {
 
                         <a
                             without rel="noopener noreferrer"
-                            href={this.props.data.registration_url}
+                            href={this.props.data[0].registration_url}
                             target="_blank"
                         >
                             <span style={{ textTransform: "uppercase" }}>APPLY FOR {this.props.name}</span>
