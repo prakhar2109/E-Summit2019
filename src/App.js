@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
@@ -29,10 +29,10 @@ const LandingPage = Loadable({
   loading: () => <Loader />,
 });
 
-// const IdeaStorm = Loadable({
-//   loader: () => import("./NewScreens/IdeaStorm/ideastorm"),
-//   loading: () => <Loader />,
-// });
+const IdeaStorm = Loadable({
+  loader: () => import("./NewScreens/IdeaStorm/ideastorm"),
+  loading: () => <Loader />,
+});
 
 
 const Speakers = Loadable({
@@ -105,7 +105,7 @@ class App extends Component {
                 {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
                 {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
                 {/* <Route path="/suignite" component={Suignite} /> */}
-                {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
+                <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
                 <Route path="/sponsors" component={Sponsors} />
@@ -117,8 +117,9 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
+                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference"/>}/>
                 {/* <Route exact path="/test" component={Startup} /> */}
-                <Route exact path="/event/:id" render={(props) => <Test {...props} />} />
+                <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
