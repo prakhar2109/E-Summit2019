@@ -5,7 +5,7 @@ import Eventfooter from "../IdeaStorm/footer/eventfooter.jsx";
 import './ignite.css';
 export default class IgniteIndex extends Component {
     state={activeState:"NOIDA"}
-     
+      
     setActive(state) {
         this.setState({
             activeState: state
@@ -18,14 +18,14 @@ export default class IgniteIndex extends Component {
         return(
 	
             <div>
-		<Nav />
-                <div className="suignite-parent">
-			<div className="suignite-parent-img"></div>
-			<p>STARTUP IGNITE</p>
-			<p>Be a part of something bigger</p>
-			<p>The Idea Storm is the annual business model competition organized by Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. Every year, IIT Roorkee is a spectacle to over 400 startups showcasing their business, vision and novelty. The plans that are judged to be the best, get mentorship and a prize money as the funding. Gear up to compete with the best minds in the country to prove your business acumen . If you want to turn your idea into an entrepreneur venture, we have got the perfect stage for you! 
-</p>
-		</div>
+			<Nav />
+            <div className="suignite-parent">
+				<div className="suignite-parent-img"></div>
+				<p>STARTUP IGNITE</p>
+				<p>Be a part of something bigger</p>
+				<p>The Idea Storm is the annual business model competition organized by Entrepreneurship Cell, IIT Roorkee in its flagship event, the E-Summit. Every year, IIT Roorkee is a spectacle to over 400 startups showcasing their business, vision and novelty. The plans that are judged to be the best, get mentorship and a prize money as the funding. Gear up to compete with the best minds in the country to prove your business acumen . If you want to turn your idea into an entrepreneur venture, we have got the perfect stage for you! 
+				</p>
+			</div>
 
 		<div className="suignite-parent-childparent">
 			{console.log(this.state.activeState)}
@@ -40,33 +40,11 @@ export default class IgniteIndex extends Component {
 			<div className="suignite-parent-child2">
 				<div className="suignite-parent-child2-img">
 				Comming Soon
-				<div className="suignite-panelists-img-parent">
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-						<div className="suignite-panelists-img-child">
-							<div className="suignite-panelists-img1"></div>
-							<div className="panelists-name">Prakhar agarwal</div>
-							<div className="panelists-company">CEO, Company</div>
-						</div>
-					</div>
+				
+				</div>
+				<div className="suignite-parent-child2-applyparent">
+				<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in noida</div>
+				<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
 				</div>
 				<div className="suignite-parent-child2-panel">
 					 <div>

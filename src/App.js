@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
-
+// import PaymentStatus from './screens/cadashboard/js/paymentstatus'
 import Loadable from "react-loadable";
 import Loader from "./screens/loader/loader";
 
@@ -20,7 +20,10 @@ const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
-
+// const Suignite = Loadable({
+//   loader: () => import("./NewScreens/startupignite/ignite"),
+//   loading: () => <Loader />,
+// });
 const LandingPage = Loadable({
   loader: () => import("./NewScreens/landing/landing"),
   loading: () => <Loader />,
@@ -69,6 +72,20 @@ const Productathon = Loadable({
   loading: () => <Loader />,
 });
 
+const ResetPassword = Loadable({
+  loader: () => import("./components/RegistrationPortal/reset/Index"),
+  loading: () => <Loader />,
+});
+// const Startup = Loadable({
+//   loader: () => import("./NewScreens/startupignite/ignite"),
+//   loading: () => <Loader />,
+// });
+
+const Test = Loadable({
+  loader: () => import("./components/Events/EventComponent/Index"),
+  loading: () => <Loader />,
+});
+
 class App extends Component {
   constructor() {
     super();
@@ -79,11 +96,15 @@ class App extends Component {
 
   render() {
     return (
+      // <PaymentStatus></PaymentStatus>
       <BrowserRouter>
         <React.Fragment>
           <div>
             <Switch>
               <ScrollToTop>
+                {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
+                {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
+                {/* <Route path="/suignite" component={Suignite} /> */}
                 <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
@@ -92,17 +113,18 @@ class App extends Component {
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
                 <Route path="/register" component={Registration} />
+                <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
-
                 <Route path="/dashboard/" component={Caindex} />
-
+                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference"/>}/>
+                {/* <Route exact path="/test" component={Startup} /> */}
+                <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
                 <Route path="/professordashboard/" component={Professorindex} />
                 <Route exact path="/cont" component={Contingent} /> */}
-
               </ScrollToTop>
             </Switch>
           </div>
