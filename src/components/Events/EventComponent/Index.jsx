@@ -38,7 +38,6 @@ class EventComponentIndex extends Component {
             this.setState({
                 data: r.data
             })
-            console.log(r.data, "r.data")
             // document
             //     .getElementById("loader")
             //     .style

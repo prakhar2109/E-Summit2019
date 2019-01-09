@@ -20,7 +20,6 @@ export default class Lfooter extends Component {
     jump("#body");
   };
   validate = () => {
-    console.log("empty field");
     let isError = false;
 
     if (
@@ -51,11 +50,11 @@ export default class Lfooter extends Component {
         footermessage: "",
       });
 
-      console.log(this.state.footername);
-      console.log(this.state.footerPhoneno);
+      // console.log(this.state.footername);
+      // console.log(this.state.footerPhoneno);
 
-      console.log(this.state.footerEmailid);
-      console.log(this.state.footermessage);
+      // console.log(this.state.footerEmailid);
+      // console.log(this.state.footermessage);
 
       let $form = $("form");
       let url =
@@ -65,11 +64,11 @@ export default class Lfooter extends Component {
         method: "GET",
         dataType: "json",
         data: $form.serializeObject(),
-        success: function() {
+        success: function () {
           document.getElementById("footerinfo").innerHTML =
             "Form successfully Submitted";
         }.bind(this),
-        error: function() {
+        error: function () {
           document.getElementById("footerinfo").innerHTML =
             "Form Not Submitted";
         }.bind(this),
@@ -88,7 +87,7 @@ export default class Lfooter extends Component {
               <div className="fcontact">
                 <div>
                   <div className="flogo">
-               <img src = {Ecell} alt = "Ecell logo" />  
+                    <img src={Ecell} alt="Ecell logo" />
                   </div>
                   <div className="landing-footer-inspiring">
                     #inspiringinnovation
@@ -143,7 +142,7 @@ export default class Lfooter extends Component {
                 </div>
 
                 <div />
-                <div className = "Address">
+                <div className="Address">
                   <div className="landing-footer-heading">Our Address</div>
 
                   <div className="landing-footer-details landing-footer-adddetails">

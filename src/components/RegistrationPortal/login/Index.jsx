@@ -60,7 +60,6 @@ export default class RegisterIndex extends React.Component {
             }
         }).then(function (res) {
 
-            console.log(res);
 
             if (res !== undefined && res.data !== undefined) {
                 if (res.data) {
@@ -80,7 +79,6 @@ export default class RegisterIndex extends React.Component {
 
             .catch(response => {
 
-                console.log(response);
                 document
                     .getElementById("loader")
                     .style
