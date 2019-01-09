@@ -173,13 +173,13 @@ color:#B2B2B2
 .suignite-panelists-img1{
 height:19.44vh;
 width:19.44vh;
-background:green;
+background-size: cover;
+background-position: center;
 margin-right: 3.2vw;
 border-top-right-radius: 4px;
 border-top-left-radius: 15px;
 border-bottom-right-radius: 16px;
-border-bottom-left-radius: 4px	
-
+border-bottom-left-radius: 4px;
 }
 
 

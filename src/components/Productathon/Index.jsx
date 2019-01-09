@@ -143,7 +143,7 @@ export class IdeaStorm extends Component {
                     </span>
 
                     <span className="head_array">
-                       
+
 
                         <span onClick={this.Rules}>Rules</span>
 
@@ -165,9 +165,9 @@ export class IdeaStorm extends Component {
                     <p className="c">PRIZE WORTH INR 40,000<br></br>(many more goodies to win)</p>
                     <p className="esummit-productathon-para">
 
-                    Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
-                Rules: The team members can be from different colleges/organizations.
-                Team Size: 3-5.
+                        Productathon is an intense development meet for creating product-driven technology for those who want to lead innovation and create a modernized solution. Productathon is a design sprint-like event where enthusiasts across various domains collaborate to find solution to a provided problem statement. Productathon gives opportunity to all the Creators and Innovators to showcase their skills and compete with the best talent of the nation. Participants will work in small groups to create a prototype before the deadline as per the problem statement. The aim of Productathon is to help create futuristic technology which aligns with the theme of E-Summit'19.
+                    Rules: The team members can be from different colleges/organizations.
+                    Team Size: 3-5.
           </p>
                     <div className="esummit-productathon-register-now-button-parent">
                         <a
@@ -179,7 +179,7 @@ export class IdeaStorm extends Component {
                             <button className="esummit-productathon-apply-now">Apply for Productathon</button>
                         </a>
                     </div>
- 
+
                     <center>
 
                     </center>
@@ -232,7 +232,7 @@ export class IdeaStorm extends Component {
                     <ol>
                         <li>
                             There is no restriction on any individual to participate. Members of all educational and professional fraternities are welcome to participate.
-                      </li>       
+                      </li>
                     </ol>
                 </div>
 
@@ -306,9 +306,9 @@ export class IdeaStorm extends Component {
 
                     </center>
                 </div>
- 
-                <span id = "#faq"> 
-                <FAQBoard faqList={this.state.faq} />
+
+                <span id="#faq">
+                    <FAQBoard faqList={this.state.faq} />
                 </span>
                 <div className="coordinator">
                     <Header title="EVENT CO-ORDINATORS" />

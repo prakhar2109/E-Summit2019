@@ -20,10 +20,10 @@ const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
-// const Suignite = Loadable({
-//   loader: () => import("./NewScreens/startupignite/ignite"),
-//   loading: () => <Loader />,
-// });
+const Suignite = Loadable({
+  loader: () => import("./NewScreens/startupignite/ignite"),
+  loading: () => <Loader />,
+});
 const LandingPage = Loadable({
   loader: () => import("./NewScreens/landing/landing"),
   loading: () => <Loader />,
@@ -82,7 +82,7 @@ const ResetPassword = Loadable({
 // });
 
 const Test = Loadable({
-  loader: () => import("./components/Events/EventComponent/Index"),
+  loader: () => import("./components/EventsMain/Index"),
   loading: () => <Loader />,
 });
 
@@ -104,7 +104,7 @@ class App extends Component {
               <ScrollToTop>
                 {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
                 {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
-                {/* <Route path="/suignite" component={Suignite} /> */}
+                <Route path="/suignite" component={Suignite} />
                 <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
@@ -117,7 +117,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
-                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference"/>}/>
+                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
                 {/* <Route exact path="/test" component={Startup} /> */}
                 <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />

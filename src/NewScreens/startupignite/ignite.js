@@ -28,7 +28,6 @@ export default class IgniteIndex extends Component {
 			</div>
 
 		<div className="suignite-parent-childparent">
-			{console.log(this.state.activeState)}
 			<div className="suignite-parent-child1">
 			<div className={this.state.activeState==="NOIDA"?"suignite-parent-child1-active":"suignite-parent-child1-inactive"} onClick={() => { this.setActive("NOIDA"); }}>NOIDA</div>
 			<div className={this.state.activeState==="CHANDIGARH"?"suignite-parent-child1-active":"suignite-parent-child1-inactive"}onClick={() => { this.setActive("CHANDIGARH"); }}>CHANDIGARH</div>
@@ -92,8 +91,7 @@ export default class IgniteIndex extends Component {
 						<p>SAURABH KOCHHAR</p>
 						<p>CEO, Company Name</p>
 						<p>Topic : Make in India</p>
-						<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. 
-</p>
+						<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
 						</div>
 					 </div>
 					 <div className="suignite-guestlecture-child-parent">
@@ -102,8 +100,7 @@ export default class IgniteIndex extends Component {
 						<p>SAURABH KOCHHAR</p>
 						<p>CEO, Company Name</p>
 						<p>Topic : Make in India</p>
-						<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. 
-</p>		
+						<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>		
 						</div>
 					 </div>
 					
