@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import "../css/cainvite.css";
+import PaymentStatus from './paymentstatus'
+import InviteBenefits from './invitebenefits'
 import { BASE_URL } from "../../../utils/urls";
 import axios from "axios";
 
@@ -10,41 +12,14 @@ export default class Cainvite extends Component {
         loading: false,
         visible: false,
         invite_link : ""
-      }
-
-
-      componentDidMount = () => {
-        let token = localStorage.getItem("user_token");
-        console.log(token);
-    
-        if (token !== undefined) {
-          axios
-            .get(BASE_URL + "/v1/api/user/profile", {
-              headers: {
-                Authorization: `Token ${token}`,
-              },
-            })
-            .then(res => {
-                console.log(res);
-             
-              this.setState({  
-                  invite_link : BASE_URL + "/v1/api/user/signup/?ref="+ res.data.esummit_id , 
-                  
-              });
-            })
-            .catch(response => {
-              console.log(response);
-            });
-        }
-      };
-
-      
+      }      
     viewMore() {
         document.getElementById("viewmore").style.display = "none";
         document.getElementById("viewless").style.display = "block";
         document.getElementById("show").style.display = "block";
         document.getElementById("show1").style.marginBottom = "0";
         document.getElementById("show1").style.background = "#FFFAF4";
+
 
 
 
@@ -63,17 +38,38 @@ export default class Cainvite extends Component {
         document.execCommand("copy");
 
     }
+
+    componentDidMount = () => {
+        let token = localStorage.getItem("user_token");
+    
+        if (token !== undefined) {
+          axios
+            .get(BASE_URL + "/v1/api/user/profile", {
+              headers: {
+                Authorization: `Token ${token}`,
+              },
+            })
+            .then(res => {
+              this.setState({ invite_link : res.data.invite_url });
+    
+            })
+            .catch(response => {
+              window.location.href = "/login";
+            });
+        }
+      };
   
     render() {
         let status="Done";
-        let stat="Notdone"
+        let stat="Notdone";
+        
         return (
             <div className="cainvite-parent">
 
                 <div className="cainviteparent-heading">
                     Invites here
                 </div>
-
+                <div className="cainvite-line1"></div>
                 <div className="cainvite-linkparent">
 
                     <div className="cainvite-linkparent-heading">
@@ -160,12 +156,16 @@ export default class Cainvite extends Component {
                     </table>
                 </div>
 
-*/}
 
-                <div className="cainviteparent-heading">
+
+               
+*/}         
+            {/* <PaymentStatus /> */}
+
+             <div className="cainviteparent-heading">
                     Perks
                 </div>
-
+                <div className="cainvite-line2"></div>
                 <div className="cainviteparent-perks">
                     <div className="cainviteparent-perks-heading">
                     Benefits of sending invites
@@ -176,17 +176,11 @@ export default class Cainvite extends Component {
                     </div>
 
                     <div className="cainviteparent-perks-child">
-                    20 % Off on getting 10 invites successfully who paid the fee.
-                    </div>
-                    <div className="cainviteparent-perks-child">
-                    20 % Off on getting 10 invites successfully who paid the fee.
-                    </div>
-                    <div className="cainviteparent-perks-child">
-                    20 % Off on getting 10 invites successfully who paid the fee.
-                    </div>
+                        10% off on the registration fee on each successful payment done through invite link
+
+                    </div> 
+                   
                 </div>
-
-
                 
             </div>
 

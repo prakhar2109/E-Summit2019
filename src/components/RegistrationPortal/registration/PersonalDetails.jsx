@@ -131,7 +131,7 @@ class PersonalDetails extends Component {
         if (this.state.city === "" && this.state.country.value === "India" && this.state.profile_type !== "iitr_student") {
             return this.EmptyValidation("city")
         }
-        if (this.state.college === "" && this.state.profile_type !== "iitr_student") {
+        if (this.state.college === "" && (this.state.profile_type !== "iitr_student" && this.state.profile_type !== "professional")) {
             return this.EmptyValidation("college")
         }
         if (this.state.programme === "" && (this.state.profile_type === "non_iitr_student" || this.state.profile_type === "ca")) {
@@ -166,18 +166,19 @@ class PersonalDetails extends Component {
             tshirt_size,
             organisation_name,
             industry } = this.state
+
         let data = {
             phone_no: phone_no,
             gender: gender,
             enrollment_no: enrollment_no,
             country: country.value,
-            states: states,
-            city: city,
+            states: states.value,
+            city: city.value,
             college: college,
             programme: programme,
-            year: year,
-            about_esummit: about_esummit,
-            tshirt_size: tshirt_size,
+            year: year.value,
+            about_esummit: about_esummit.value,
+            tshirt_size: tshirt_size.value,
             organisation_name: organisation_name,
             industry: industry,
         }
@@ -366,10 +367,10 @@ class PersonalDetails extends Component {
         this.setState({ country: selectedOption });
     };
     handleOrganisationChange = (selectedOption) => {
-        this.setState({ organisation_name: selectedOption });
+        this.setState({ organisation_name: selectedOption.target.value });
     };
     handleIndustryChange = (selectedOption) => {
-        this.setState({ industry: selectedOption });
+        this.setState({ industry: selectedOption.target.value });
     };
     // custom_validate = (data) => {
     //     const [custom, setData] = useState(data)
@@ -772,7 +773,7 @@ class PersonalDetails extends Component {
                                                 value={college}
                                                 onChange={event => {
                                                     this.onChange(event)
-                                                    this.college_valiate()
+                                                    this.college_validate()
                                                 }}
                                                 spellCheck="false"
                                                 required

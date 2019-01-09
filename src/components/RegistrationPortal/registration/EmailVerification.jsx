@@ -36,7 +36,7 @@ export default class EmailVerification extends Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         axios({
             method: "post",
             url: BASE_URL + "/v1/api/user/check-email/",
@@ -50,7 +50,7 @@ export default class EmailVerification extends Component {
                 document
                     .getElementById("loader")
                     .style
-                    .display = "flex";
+                    .display = "grid";
                 axios({
                     method: "post",
                     url: BASE_URL + "/v1/api/verification/",
@@ -91,6 +91,7 @@ export default class EmailVerification extends Component {
     }
     handleVerify = () => {
         if (parseInt(this.state.confirm_otp) === this.state.otp) {
+        // if(true){
             this.setState({
                 email_verified: true
             })

@@ -23,7 +23,9 @@ class Nav extends Component {
     let token = localStorage.getItem("user_token");
     let tabs;
 
-    if(token !== undefined){
+    console.log(token);
+
+    if(token !== undefined && token !== null && token !== ""){
       tabs = (
 
         <span> 
@@ -39,10 +41,10 @@ class Nav extends Component {
     else{
       tabs = (
         <span> 
-        <NavLink to="/registration_portal/login">
+        <NavLink to="/login">
           <span className="login">Log in</span>
         </NavLink>
-        <NavLink to="/registration_portal/register">
+        <NavLink to="/register">
           <span className="register">Register</span>
         </NavLink>
         </span>
@@ -85,7 +87,7 @@ class Nav extends Component {
               offset={-100}
               duration={500}
             >
-              Sponsors
+              Partners
             </Link>
           </span>
           <span>
@@ -119,7 +121,7 @@ class Nav extends Component {
             </NavLink>
           </span>
           <span>
-            <NavLink to="/campusambasder">Campus Ambassador</NavLink>
+            <NavLink to="/campusambassador">Campus Ambassador</NavLink>
           </span>
           <span>
             <NavLink to="/ignite">Startup Ignite</NavLink>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "../view.css";
-import '../../header/css/main.css'
+
 import axios from "axios";
-import { BASE_URL } from "../../../utils/urls";
+import { BASE_URL } from "../../../../../utils/urls";
 import { Modal } from 'antd';
 
 export default class Viewprofile extends Component {
@@ -12,13 +12,13 @@ export default class Viewprofile extends Component {
             loading: false,
             name: "",
             score: "",
-            data:[],
+            data: [],
 
         }
     }
 
     componentDidMount = () => {
-        let token = localStorage.getItem('user_token'); 
+        let token = localStorage.getItem('user_token');
 
 
 
@@ -29,12 +29,13 @@ export default class Viewprofile extends Component {
                 },
             })
             .then(res => {
-                this.setState({ 
-                    score: res.data.score, 
-                    name: res.data.name 
+                this.setState({
+                    score: res.data.score,
+                    name: res.data.name,
+                    data: res.data,
                 });
             })
-          
+
     };
     showModal = () => {
         this.setState({
@@ -52,11 +53,13 @@ export default class Viewprofile extends Component {
     }
     changeProfile = () => {
         document.getElementById("caprofile-containter").style.display = "none";
+        
+
         document.getElementById("caprofile-parent2").style.display = "none";
-        document.getElementById("caprofile-parent3").style.display = "none";
+
         document.getElementById("caprofile-mobile-editprofilecontainter").style.display = "block";
-        document.getElementById("caprofile-mobile-editprofile-parent2").style.display = "block";
-         document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "block";
+
+
         document.getElementById("caprofilemobile-b01").style.display = "none";
         document.getElementById("caprofilemobile-b02").style.display = "block";
 
@@ -67,11 +70,13 @@ export default class Viewprofile extends Component {
     }
     saveProfile = () => {
         document.getElementById("caprofile-containter").style.display = "block";
+
+
         document.getElementById("caprofile-parent2").style.display = "block";
-        document.getElementById("caprofile-parent3").style.display = "block";
+
         document.getElementById("caprofile-mobile-editprofilecontainter").style.display = "none";
-        document.getElementById("caprofile-mobile-editprofile-parent2").style.display = "none";
-        document.getElementById("caprofile-mobile-editprofile-parent3").style.display = "none";
+
+
         document.getElementById("caprofilemobile-b01").style.display = "block";
         document.getElementById("caprofilemobile-b02").style.display = "none";
 
@@ -79,7 +84,30 @@ export default class Viewprofile extends Component {
 
 
     }
+    handleClick = e => {
 
+        e.preventDefault();
+        let {
+            data
+        } = this.state
+        let token = localStorage.getItem("user_token");
+       
+        axios({
+            method: "post",
+            url: BASE_URL + "/v1/api/user/edit-profile/",
+            data: data,
+            headers: {
+                Authorization: `Token ${token}`,
+            }
+
+        }).then((r) => {
+            console.log("hellll")
+        })
+            .catch((r) => {
+                console.log(r)
+            })
+        this.handleOk()
+    }
 
     render() {
         const { visible } = this.state;
@@ -94,19 +122,20 @@ export default class Viewprofile extends Component {
         }
 
         const width = 900;
-        let { score } = this.state;
-        let scorePercentage = (score / 360) * 100 + "";
+        let { data, name } = this.state;
         return (
 
             <div className="caprofile-container">
-          
+
                 <div className="caprofile-container-heading">
                     PROFILE
                 </div>
 
                 <div className="caprofile-line1"></div>
+
                 <button id="caprofile-b01" onClick={this.showModal}>Edit Profile</button>
                 <button id="caprofilemobile-b01" onClick={this.changeProfile}>Edit Profile</button>
+
                 <div className="caprofile-parent1">
 
                     <div className="caprofile-parent1-child1">
@@ -116,20 +145,17 @@ export default class Viewprofile extends Component {
 
                         <div className="caprofile-dropshape">
 
-                            P
+                            {name[0]}
                         </div>
-                         <div className="profile-dashboard-type">
-                            NON-IITR STUDENT
+                        <div className="profile-dashboard-type">
+                            DELEGATE
                         </div>
                         <div className="profile-dashboard-esummit">
                             <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-                            <span id="profile-dashboard-esummitId-value">ES172292</span>
+                            <span id="profile-dashboard-esummitId-value">{data.esummit_id}</span>
                         </div>
-                        <div className="profile-dashboard-esummit">
-                            <span id="profile-dashboard-esummitId">Contingent No (Leader)</span>
-                            <span id="profile-dashboard-esummitId-value">CN 2</span>
-                        </div>
-                       
+
+
                     </div>
 
                     <div className="caprofile-parent1-childline"></div>
@@ -140,7 +166,7 @@ export default class Viewprofile extends Component {
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                Prakhar Agarwal
+                                {data.name}
                             </div>
                         </div>
 
@@ -151,7 +177,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                    prakhar@prakhar.com
+                                    {data.email}
                                 </div>
 
                             </div>
@@ -161,7 +187,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    888888888888
+                                    {data.phone}
                                 </div>
                             </div>
                         </div>
@@ -172,7 +198,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                    XL
+                                    {data.tshirt_size}
                                 </div>
 
                             </div>
@@ -182,7 +208,7 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                    Male
+                                    {data.gender}
                                 </div>
                             </div>
                         </div>
@@ -195,18 +221,48 @@ export default class Viewprofile extends Component {
                                 Full name
                             </div>
                             <div className="caprofile-parent1-child2-name caprofile-data">
-                                <input type="text" placeholder="Prakhar Agarwal" id="editprofile-input-mobile"></input>
+                                <input
+                                    type="text"
+                                    defaultValue={data.name}
+                                    id="editprofile-input-mobile"
+                                    onChange={e => {
+                                        data.name = e.target.value
+                                    }}
+                                    required
+                                ></input>
                             </div>
                         </div>
 
                         <div className="caprofile-containter-parent-child2">
                             <div className="caprofile-containter-parent-child2-child1">
                                 <div className="caprofile-heading">
-                                    E-mail ID
+                                    Gender
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                <input type="text" placeholder="prakhar@prakhar.com" id="editprofile-input-mobile" ></input>
+                                    <select id="editprofile-input-mobile"
+                                        placeholder={data.gender}
+                                        defaultValue={data.gender}
+                                        onChange={e => {
+                                            data.gender = e.target.value;
+                                        }}
+
+
+                                    >
+                                        {data.gender === "M" &&
+                                            <><option value="M" selected>M</option>
+                                                <option value="F">F</option>
+                                                <option value="O">O</option></>}
+
+                                        {data.gender === "F" &&
+                                            <><option value="M" >M</option>
+                                                <option value="F" selected>F</option>
+                                                <option value="O">O</option></>}
+                                        {data.gender === "O" &&
+                                            <><option value="M" >M</option>
+                                                <option value="F">F</option>
+                                                <option value="O" selected>O</option></>}
+                                    </select>
                                 </div>
 
                             </div>
@@ -216,10 +272,20 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child3-phone caprofile-data">
-                                <input type="text" placeholder="888888888888" id="editprofile-input-mobile"></input> 
+                                    <input
+                                        type="text"
+                                        placeholder={data.phone}
+                                        defaultValue={data.phone}
+                                        onChange={e => {
+                                            data.phone = e.target.value;
+                                        }}
+                                        required
+                                        id="editprofile-input-mobile"
+                                    />
                                 </div>
                             </div>
                         </div>
+
                         <div className="caprofile-containter-parent-child2">
                             <div className="caprofile-containter-parent-child2-child1">
                                 <div className="caprofile-heading">
@@ -227,21 +293,58 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                 <div className="caprofile-parent1-child2-email caprofile-data">
-                                <input type="text" placeholder="XL" id="editprofile-input-mobile"></input>
+                                    <select id="editprofile-input-mobile"
+
+                                        defaultValue={data.tshirt_size}
+                                        onChange={event => {
+                                            data.tshirt_size = event.target.value;
+                                        }}
+
+                                    >
+                                        {data.tshirt_size === "XS" &&
+                                            <>
+                                                <option value="XS" selected>XS</option>
+                                                <option value="S">S</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="XXL">XXL</option></>}
+                                        {data.tshirt_size === "S" &&
+                                            <>
+                                                <option value="XS">XS</option>
+                                                <option value="S" selected>S</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="XXL">XXL</option></>}
+                                        {data.tshirt_size === "L" &&
+                                            <>
+                                                <option value="XS" selected>XS</option>
+                                                <option value="S">S</option>
+                                                <option value="L" selected>L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="XXL">XXL</option></>}
+                                        {data.tshirt_size === "XL" &&
+                                            <>
+                                                <option value="XS" selected>XS</option>
+                                                <option value="S">S</option>
+                                                <option value="L">L</option>
+                                                <option value="XL" selected>XL</option>
+                                                <option value="XXL">XXL</option></>}
+                                        {data.tshirt_size === "XXL" &&
+                                            <>
+                                                <option value="XS" selected>XS</option>
+                                                <option value="S">S</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="XXL" selected>XXL</option></>}
+
+
+                                    </select>
                                 </div>
 
                             </div>
-                            <div className="caprofile-containter-parent-child2-child2">
-                                <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
-                                    Gender
-                                </div>
 
-                                <div className="caprofile-parent1-child3-phone caprofile-data">
-                                <input type="text" placeholder="Male" id="editprofile-input-mobile"></input> 
-                                </div>
-                            </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -255,8 +358,8 @@ export default class Viewprofile extends Component {
                         College name
                         </div>
                     <div className="caprofile-parent2-child2-name caprofile-data">
-                        IIT ROORKEEfooter
-                        </div>
+                        {data.college}
+                    </div>
 
                     <div className="caprofile-parent2-innerchild">
                         <div className="caprofile-parent2-innerchild1-parent">
@@ -265,7 +368,7 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent2-child2-programname caprofile-data">
-                                B.Tech, Mechanical Engineering
+                                {data.programme}
                             </div>
                         </div>
 
@@ -275,7 +378,7 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent2-child2-year caprofile-data">
-                                2019
+                                {data.year}
                             </div>
                         </div>
 
@@ -289,7 +392,7 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent3-child2-city caprofile-data">
-                                Bareilly
+                                {data.city}
                             </div>
                         </div>
 
@@ -299,138 +402,24 @@ export default class Viewprofile extends Component {
                             </div>
 
                             <div className="caprofile-parent3-child2-State caprofile-data">
-                                UP
+                                {data.state}
                             </div>
                         </div>
 
 
-                    </div>
-
-                     <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
-                        Country
-                        </div>
-                    	<div className="caprofile-parent2-child2-name caprofile-data">
-                        India
-                        </div>
-                </div>
-                <div className="caprofile-parent2" id="caprofile-parent3">
-                    <div className="caprofile-parent2-heading">
-                    SOCIAL ACCOUNTS
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                                <div className="caprofile-socialaccounts-child-heading">
-                                Facebook
-                                </div>
-                                <div className="caprofile-socialaccounts-child-data ">
-                                https://www.facebook.com/profile.php?id=100006245897944
-                                </div>
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                                <div className="caprofile-socialaccounts-child-heading ">
-                                Linked in
-                                </div>
-                                <div className="caprofile-socialaccounts-child-data ">
-                                https://www.facebook.com/profile.php?id=100006245897944
-                                </div>
-                    </div>
-                   
-
-                   
-
-                </div>                
-
-                
-                <div className="caprofile-parent2" id="caprofile-mobile-editprofile-parent2">
-                    <div className="caprofile-parent2-heading">
-                        COLLEGE INFORMATION
                     </div>
 
                     <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
-                        College name
-                        </div>
-                    <div className="caprofile-parent2-child2-name caprofile-data">
-                    <input type="text" placeholder="IIT ROORKEE" id="editprofile-input-mobile"></input> 
-                        </div>
-
-                    <div className="caprofile-parent2-innerchild">
-                        <div className="caprofile-parent2-innerchild1-parent">
-                            <div className="caprofile-parent2-child2-programheading caprofile-heading">
-                                Program
-                            </div>
-
-                            <div className="caprofile-parent2-child2-programname caprofile-data">
-                            <input type="text" placeholder="B.Tech, Mechanical Engineering" id="editprofile-input-mobile"></input>   
-                            </div>
-                        </div>
-
-                        <div className="caprofile-parent2-innerchild2-parent">
-                            <div className="caprofile-parent2-child2-Yearheading caprofile-heading">
-                                Year
-                            </div>
-
-                            <div className="caprofile-parent2-child2-year caprofile-data">
-                            <input type="text" placeholder="2019" id="editprofile-input-mobile"></input> 
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div className="caprofile-parent3-innerchild">
-                        <div className="caprofile-parent3-innerchild1-parent">
-                            <div className="caprofile-parent3-child2-cityheading caprofile-heading">
-                                City
-                            </div>
-
-                            <div className="caprofile-parent3-child2-city caprofile-data">
-                            <input type="text" placeholder="Bareilly" id="editprofile-input-mobile"></input> 
-                            </div>
-                        </div>
-
-                        <div className="caprofile-parent3-innerchild2-parent">
-                            <div className="caprofile-parent3-child2-Stateheading caprofile-heading">
-                                State
-                            </div>
-
-                            <div className="caprofile-parent3-child2-State caprofile-data">
-                            <input type="text" placeholder="UP" id="editprofile-input-mobile"></input> 
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                   <div className="caprofile-parent2-child2-collegename-heading caprofile-heading">
                         Country
                         </div>
                     <div className="caprofile-parent2-child2-name caprofile-data">
-                    <input type="text" placeholder="India" id="editprofile-input-mobile"></input> 
-                        </div>
+                        {data.country}
+                    </div>
                 </div>
-                
-                <div className="caprofile-parent2" id="caprofile-mobile-editprofile-parent3">
-                    <div className="caprofile-parent2-heading">
-                    SOCIAL ACCOUNTS
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                                <div className="caprofile-socialaccounts-child-heading">
-                                Facebookdddddddddddddddddddd
-                                </div>
-                                <div className="caprofile-socialaccounts-child-data ">
-                                <input type="text" placeholder="https://www.facebook.com/profile.php?id=100006245897944" id="editprofile-input-mobile"></input> 
-                                </div>
-                    </div>
-                    <div className="caprofile-socialaccounts-child">
-                                <div className="caprofile-socialaccounts-child-heading ">
-                                Linked in
-                                </div>
-                                <div className="caprofile-socialaccounts-child-data ">
-                                <input type="text" placeholder="https://www.facebook.com/profile.php?id=100006245897944" id="editprofile-input-mobile"></input> 
-                                </div>
-                    </div>
-                
-                </div>
-                <button id="caprofilemobile-b02" onClick={this.saveProfile}>SAVE CHANGES</button>
+                <button id="caprofilemobile-b02" onClick={e => {
+                    this.handleClick(e)
+                    this.saveProfile()
+                }}>SAVE CHANGES</button>
 
 
                 <Modal
@@ -443,7 +432,8 @@ export default class Viewprofile extends Component {
                     footer={null}
 
                 >
-                    <button id="caprofile-b02" onClick={this.handleOk}>Save Changes</button>
+                    <button onClick={this.handleClick} id="caprofile-b02">SAVE CHANGES</button>
+
 
                     <div className="caprofile-parent1 ca-profile-modalparent1">
                         <div className="caprofile-parent1-child1">
@@ -454,17 +444,19 @@ export default class Viewprofile extends Component {
 
                                 P
                             </div>
-		                <div className="profile-dashboard-type">
-		                NON-IITR STUDENT
+                            <div className="profile-dashboard-type">
+                                DELEGATE
 		                </div>
-		                <div className="profile-dashboard-esummit">
-		                    <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-		                    <span id="profile-dashboard-esummitId-value">ES172292</span>
-		                </div>
+                            <div className="profile-dashboard-esummit">
+                                <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
+                                <span id="profile-dashboard-esummitId-value">ES172292</span>
+                            </div>
+                            {/*
 		                <div className="profile-dashboard-esummit">
 		                    <span id="profile-dashboard-esummitId">Contingent No (Leader)</span>
 		                    <span id="profile-dashboard-esummitId-value">CN 2</span>
-		                </div>
+                        </div>
+                        */}
                         </div>
                         <div className="caprofile-parent1-childline"></div>
 
@@ -475,19 +467,40 @@ export default class Viewprofile extends Component {
                                     Full name
                             </div>
                                 <div className="caprofile-parent1-child2-name caprofile-data">
-                                    <input type="text" placeholder="Prakhar" id="caprofile02"></input>
-
+                                    <input
+                                        type="text"
+                                        placeholder={data.name}
+                                        onChange={e => {
+                                            data.name = e.target.value;
+                                        }}
+                                        defaultValue={data.name}
+                                        required
+                                        id="caprofile02"
+                                    />
                                 </div>
                             </div>
 
                             <div className="caprofile-containter-parent-child2">
                                 <div className="caprofile-containter-parent-child2-child1">
                                     <div className="caprofile-heading">
-                                        E-mail ID
+                                        Gender
                                 </div>
 
                                     <div className="caprofile-parent1-child2-email caprofile-data">
-                                        <input type="text" value=" prakhar@prakhar.com" id="caprofile01"></input>
+                                        <select
+                                            placeholder={data.gender}
+                                            defaultValue={data.gender}
+                                            onChange={e => {
+                                                data.gender = e.target.value;
+                                            }}
+                                            id="caprofile01"
+
+                                        >
+                                            <option value="M">M</option>
+                                            <option value="F">F</option>
+                                            <option value="O">O</option>
+
+                                        </select>
                                     </div>
 
                                 </div>
@@ -497,7 +510,16 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                     <div className="caprofile-parent1-child3-phone caprofile-data">
-                                        <input type="text" value="888888888888" id="caprofile01"></input>
+                                        <input
+                                            type="text"
+                                            placeholder={data.phone}
+                                            defaultValue={data.phone}
+                                            id="caprofile01"
+                                            required
+                                            onChange={event => {
+                                                data.phone = event.target.value;
+                                            }}
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -508,25 +530,32 @@ export default class Viewprofile extends Component {
                                 </div>
 
                                     <div className="caprofile-parent1-child2-email caprofile-data">
-                                        <input type="text" value=" XL" id="caprofile01"></input>
+                                        <select id="caprofile01"
+
+                                            defaultValue={data.tshirt_size}
+                                            onChange={event => {
+                                                data.tshirt_size = event.target.value;
+                                            }}
+
+                                        >
+                                            <option value="XS">XS</option>
+                                            <option value="S">S</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+
+
+                                        </select>
                                     </div>
 
                                 </div>
-                                <div className="caprofile-containter-parent-child2-child2">
-                                    <div className="caprofile-parent1-child3-phoneheading caprofile-heading">
-                                        Gender
-                                </div>
 
-                                    <div className="caprofile-parent1-child3-phone caprofile-data">
-                                        <input type="text" value="Male" id="caprofile01"></input>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
 
                     </div>
-                    <div className="caprofile-grandparent">
+                    {/* <div className="caprofile-grandparent">
                     </div>
                     <div className="caprofile-parent2 ca-profile-modalparent2">
                         <div className="caprofile-parent2-heading">
@@ -598,8 +627,8 @@ export default class Viewprofile extends Component {
 
                     </div>
                     <div className="caprofile-grandparent">
-                    </div>
-                    <div className="caprofile-parent2 ca-profile-modalparent2" id="caprofile-parent3" >
+                    </div> */}
+                    {/* <div className="caprofile-parent2 ca-profile-modalparent2" id="caprofile-parent3" >
 		            <div className="caprofile-parent2-heading">
 		            SOCIAL ACCOUNTS
 		            </div>
@@ -623,7 +652,7 @@ export default class Viewprofile extends Component {
 
                    
 
-                </div>
+                </div> */}
                 </Modal>
 
             </div>

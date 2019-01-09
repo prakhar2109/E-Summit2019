@@ -133,7 +133,7 @@ color: #4F4F4F;
 
     width: 2px;
     margin-left: 1%;
-    height: 38vh;
+
     background: #E0E0E0;
     margin-top: 7vh;
 }
@@ -302,15 +302,18 @@ color: rgba(79, 79, 79, 0.44);
 }
 .caprofile-dropshape{
     margin-top: 6%;
-    margin-left: 22%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #F39423;
     color: white;
     height: 14.62vh;
     max-width: 14.62vh;
     max-height: 14.62vh;
-    padding-left: 5.4vh;
-    padding-top: 3.5vh;
-    font-size: 2.5rem;
+    text-transform: lowercase;
+    /* padding-left: 5.4vh; */
+    text-align: center;
+    /* padding-top: 1.5vh; */
+    font-size: 6rem;
     font-weight: 500;
     border-top-left-radius: 6vh;
     border-top-right-radius: 55vh;
@@ -351,7 +354,8 @@ color: rgba(79, 79, 79, 0.44);
 box-sizing: border-box;
 border-radius: 4px;
 height: 4.44vh;
-padding: 1.11vh;
+padding: 1vh;
+background: white;
 }
 
 #caprofile02{
@@ -436,18 +440,22 @@ display:none;}
 #caprofilemobile-b02{
 display:none}
 }
-@media (min-width: 1920px) and (max-width: 2560px){
+@media (min-width: 1820px) and (max-width: 2560px){
 .caprofile-parent1-child1-heading{
-    font-size: 30px;
+    font-size: 28px;
+}
+.caprofile-dropshape{
+    font-size: 6rem;
+    /* padding-top: 1.5vh; */
 }
 .caprofile-heading{
-    font-size: 28px;
+    font-size: 24px;
 }
 .caprofile-data{
     font-size:24px;
 }
 .caprofile-parent2-heading{
-font-size: 30px;
+font-size: 28px;
 }
 .caprofile-container-heading{
 font-size:20px;
@@ -608,22 +616,45 @@ margin-top:1.71rem;
 }
 #caprofile-b01{
 display:none;}
+
 .caprofile-dropshape {
     margin-top: 6%;
-    margin-left: 22%;
+    margin-left: auto;
+    margin-left: auto;
     background-color: #F39423;
     color: white;
     height: 11.28rem;
     max-width: 11.28rem;
     max-height: 11.28rem;
-    padding-left: 5rem;
-    padding-top: 3rem;
-    font-size: 3.42rem;
+    /* padding-left: 5rem;
+    padding-top: 3rem; */
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 6rem;
     font-weight: 500;
     border-top-left-radius: 6vh;
     border-top-right-radius: 55vh;
     border-bottom-left-radius: 50vh;
     border-bottom-right-radius: 55vh;
+}
+#profile-dashboard-esummitId-value {
+    float: right;
+    font-size: 14px;
+    color: #1A4D66;
+    font-family: "ProximaNova-Semibold";
+}
+#profile-dashboard-esummitId {
+    color: #4F4F4F;
+    font-size: 14px;
+    font-family: "Proxima-nova-regular";
+    
+}
+.profile-dashboard-type {
+    margin-top: 2.44vh;
+    text-align: center;
+    font-size: 14px;
+    color: #4F4F4F;
+    margin-bottom: 2.59vh;
 }
 .caprofile-containter-parent {
    
@@ -642,6 +673,7 @@ color: #F7F8F9;
 height:2.57rem;
 padding:.857rem;
 margin: auto;
+margin-top: 2vh;
 font-size: .857rem;
 border: none;
 font-family: "ProximaNova-Semibold" !important;
@@ -694,5 +726,6 @@ font-family: "ProximaNova-Semibold" !important;
     border-radius: 2px;
     font-size: 16px;
     color: #4F4F4F;
+    background: white;
 }
 }

@@ -10,12 +10,13 @@ import Speakers from "./speakers";
 import Sponsors from "./sponsors";
 import Footer from "../IdeaStorm/footer/eventfooter";
 import axios from "axios";
-import {BASE_URL} from "../../utils/urls";
-import {NavLink } from "react-router-dom";
+import { BASE_URL } from "../../utils/urls";
+import { NavLink } from "react-router-dom";
 import MobileNav from "./mobile_nav/header";
-import VideoMP from "./static/WebsiteVideo.mp4";
-import VideoWebm from "./static/WebsiteVideo.webm";
-import VideoOGV from "./static/WebsiteVideo.ogv";
+// import VideoMP from "./static/WebsiteVideo.mp4";
+// import VideoWebm from "./static/WebsiteVideo.webm";
+// import VideoOGV from "./static/WebsiteVideo.ogv";
+import MobileVid from "./static/Mobile.gif"
 
 
 
@@ -53,18 +54,20 @@ export default class LandingPage extends Component {
           <div className="land_screen1">
 
 
-          <div className ="PcVid" > 
-          <video  playsinline  muted autoplay="autoplay">
-              <source src = {VideoWebm} type ="video/webm"/> 
-              <source src={VideoMP} type="video/mp4" />
-              <source src={VideoOGV} type="video/ogg" />
-          </video>
-          </div>
- 
+            <div className="PcVid" >
+              <img src={MobileVid} />
+            </div>
 
 
-          
-            <NavLink to ="/registration_portal/register"><button>REGISTER NOW</button></NavLink>
+            <div className="MobVid">
+
+              <img src={MobileVid} />
+            </div>
+
+
+
+
+            <NavLink to="/register"><button>REGISTER NOW</button></NavLink>
 
           </div>
         </section>
@@ -74,7 +77,7 @@ export default class LandingPage extends Component {
         <Sponsors />
 
         <Testimonials />
-        <FAQBoard faqList={this.state.faq} />
+        <FAQBoard faqList={this.state.faq} isHomePage/>
 
         <Element id="talk" name="contact">
           <Footer />

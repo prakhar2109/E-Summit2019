@@ -5,6 +5,7 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import esummit from "./static/esummit.png";
 import "./css/canavbar.css";
+import ca_rulebook from "../../pdfs/ca_rulebook.pdf"
 
 // import Ca from "../caLeaderboard/js/caLeaderboard";
 
@@ -12,7 +13,8 @@ export default class ComingSoon extends Component {
   state = {
     name: "",
     score: "0",
-    activeState: ""
+    activeState: "",
+    data: []
   };
 
   componentDidMount = () => {
@@ -23,16 +25,16 @@ export default class ComingSoon extends Component {
 
     axios
       .get(BASE_URL + "/v1/api/user/profile", {
-        headers: {
+        headers: { 
           Authorization: `Token ${token}`,
         },
       })
       .then(res => {
-        this.setState({ score: res.data.score, name: res.data.name });
+        this.setState({ score: res.data.score, name: res.data.name, data: res.data });
       })
-      .catch(response => {
-        alert(response);
-      });
+    .catch(response => {
+      window.location.href = "/login";
+    });
   };
 
   // componentWillUnmount(){
@@ -46,7 +48,7 @@ export default class ComingSoon extends Component {
     this.hide_menu();
   }
   handleLogout = () => {
-    localStorage.removeItem("ca_token");
+    localStorage.removeItem("user_token");
     window.location.href = "/login";
   };
   handle_menu() {
@@ -54,6 +56,7 @@ export default class ComingSoon extends Component {
     document.getElementById("close_button").style.display = "block";
     document.getElementById("menu_button").style.display = "none";
     document.getElementById("optionsToggle").style.display = "block";
+    document.getElementById("mobile-navbar-dashboard-logout").style.display = "block";
   }
 
   hide_menu() {
@@ -61,11 +64,79 @@ export default class ComingSoon extends Component {
     document.getElementById("close_button").style.display = "none";
     document.getElementById("menu_button").style.display = "block";
     document.getElementById("optionsToggle").style.display = "none";
+    document.getElementById("mobile-navbar-dashboard-logout").style.display = "none";
   }
 
   render() {
     let { score } = this.state;
-    let scorePercentage = (score / 360) * 100 + "";
+    let scorePercentage = (score / 10000) * 100 + "";
+    let options;
+    let profile = this.state.data.user_type;
+    let profile_display;
+    let { name, data } = this.state;
+    if (profile === "AMB") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+    else  if (profile === "IIT") {
+      profile_display = "IITR Student ";
+      }
+
+    else if (profile === "NONIIT") {
+      profile_display = "Delegate";
+      }
+
+      else if (profile === "PROF") {
+        profile_display = "Professor";
+      }
+
+
+    else   if (profile === "CA") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+
+    else  if (profile === "PROFE") {
+      profile_display = "Professional";
+      }
+
+      else{
+        profile_display ="";
+
+      }
+     
+
+    if (this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") {
+      console.log("AMB")
+
+      options = (
+        <>
+
+          <span>
+            <Link to="/dashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("task");
+            }}>
+              TASKS
+                </Link>
+            <br />
+          </span>
+          <span>
+            <Link to="/dashboard/leader" className={(this.state.activeState === "leaderboard") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("leaderboard");
+            }}>
+              LEADERBOARD
+                </Link>
+            <br />
+          </span>
+        </>
+      )
+    }
+
+
+
+    else {
+      options = null;
+    }
     return (
       <div className="caheader">
         <div className="caheader-parent">
@@ -79,23 +150,23 @@ export default class ComingSoon extends Component {
           <i id="close_button" class="fas fa-times" onClick={this.hide_menu} />
         </div>
         <div id="phone" className="mob_menu">
-          <div id="viewProfile">
-            <NavLink to="/dashboard/Viewprofile" className={(this.state.activeState === "profile") ? "linkEventson" : null} onClick={() => {
-              this.setActive("profile");
-            }}>
-              VIEW PROFILE
-                      </NavLink>
 
 
-          </div>
+
+
+
           <div className="dashboard-mobile-navbar">
-            <div id="droperShape">{this.state.name[0]}</div>
+            <div id="droperShape">{name[0]}</div>
             <div className="headerdata">
-              <p id="nms">{this.state.name} </p>
-
+              <Link to="/dashboard/Viewprofile" onClick={this.hide_menu}>
+              <p id="nms">{name}</p>
+              <p id="typeofdashboard">{profile_display}</p>
+              </Link>
+              {(this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") &&
+              <div>
               <div className="scor">
-                <span id="scoresWritten">{this.state.score}</span>
-                <span id="scoresValue">{this.state.score}/360</span>
+                <span id="scoresWritten">SCORE</span>
+                <span id="scoresValue">{this.state.score}/10000</span>
               </div>
               <div className="progress">
                 <div
@@ -105,70 +176,68 @@ export default class ComingSoon extends Component {
                   }}
                 />
               </div>
-
-              <div id="submitButton">
-                <button type="submit" onClick={this.handleLogout}>
-                  Log Outs
-            </button>
               </div>
+              }
+
             </div>
           </div>
           <div className="mobile-profile-dashboard-esummit1">
             <span id="mobileprofile-dashboard-esummitId">E-Summit’19 ID</span>
-            <span id="mobileprofile-dashboard-esummitId-value">ES172292</span>
+            <span id="mobileprofile-dashboard-esummitId-value">{data.esummit_id}</span>
           </div>
-          <div className="mobile-profile-dashboard-esummit2">
+          {/* <div className="mobile-profile-dashboard-esummit2">
             <span id="mobileprofile-dashboard-esummitId">Contingent No (Leader)</span>
             <span id="mobileprofile-dashboard-esummitId-value">CN 2</span>
-          </div>
+          </div> */}
         </div>
         <div id="optionsToggle">
+          {options}
+
+
+
           <span>
-            <Link to="/dashboard/task" className={(this.state.activeState === "task") ? "linkEventson" : null} onClick={() => {
-              this.setActive("task");
+            <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("invite");
             }}>
-              TASKS
+              INVITE
                 </Link>
             <br />
           </span>
           <span>
-            <Link to="/dashboard/leader" className={(this.state.activeState === "leaderboard") ? "linkEventson" : null} onClick={() => {
-              this.setActive("leaderboard");
-            }}>
-              LEADERBOARD
-                </Link>
-            <br />
-          </span>
-          {/*
-            <span>
-              <Link to="/dashboard/offers" className={(this.state.activeState === "offers") ? "linkEventson" : null} onClick={() => {
-                this.setActive("offers");
-              }}>
-                OFFERS
-                </Link>
-              <br />
-            </span>
-    */}
-          <span>
-            <Link to="/dashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : null} onClick={() => {
+            <Link to="/dashboard/payment" className={(this.state.activeState === "payment") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
               this.setActive("payment");
             }}>
               PAYMENT
                 </Link>
             <br />
           </span>
-          {/*
-            <span>
-              <Link to="/dashboard/invite" className={(this.state.activeState === "invite") ? "linkEventson" : null} onClick={() => {
-                this.setActive("invite");
-              }}>
-                INVITE
+          <span>
+            <Link to="/dashboard/contigent" className={(this.state.activeState === "contigent") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("contigent");
+            }}>
+              CONTINGENT
                 </Link>
-              <br />
-            </span>
-    */}
-          {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-          <div id="leaderboardButton"><a href="/">CA RULEBOOK</a></div>
+            <br />
+          </span>
+          <span>
+            <Link to="/dashboard/events" className={(this.state.activeState === "events") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+              this.setActive("events");
+            }}>
+              EVENTS
+                </Link>
+            <br />
+          </span>
+
+          {(this.state.data.user_type === "AMB"|| this.state.data.user_type === "CA") &&
+          <div id="leaderboardButton"><a without rel="noopener noreferrer" target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a></div>}
+        </div>
+        <div id="mobile-navbar-dashboard-logout">
+
+          <div id="mobile-navbar-submitButton">
+            <button type="mobile-navbar-submit" onClick={this.handleLogout}>
+              Log Out
+            </button>
+          </div>
         </div>
       </div>
     );

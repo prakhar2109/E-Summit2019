@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import Header from "../../header/caheader";
 import { BASE_URL } from "../../../utils/urls";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export default class caLeaderboard extends Component {
+class caLeaderboard extends Component {
   constructor() {
     super();
     this.state = {
@@ -39,9 +40,13 @@ export default class caLeaderboard extends Component {
         })
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
+          console.log(res.data)
+          localStorage.setItem("profile", res.data.user_type);
+          localStorage.setItem("invite", res.data.invite_url);
+
         })
         .catch(response => {
-          // console.log(response);
+          window.location.href = "/login";
         });
     }
   };
@@ -49,12 +54,44 @@ export default class caLeaderboard extends Component {
 
 
   render() {
-    let { name, score } = this.state;
-    let scorePercentage = (score / 360) * 100 + "";
+    let { name, score , data } = this.state;
+    let profile = this.state.data.user_type;
+    let profile_display;
+    let scorePercentage = (score / 10000) * 100 + "";
     let options;
+    let is_ca = this.state.data.user_type === "AMB" || this.state.data.user_type === "CA";
 
-    if (this.state.data.user_type === "AMB") {
-      console.log("AMB")
+    if (profile === "AMB") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+    else  if (profile === "IIT") {
+      profile_display = "IITR Student ";
+      }
+
+    else if (profile === "NONIIT") {
+      profile_display = "Delegate";
+      }
+
+      else if (profile === "PROF") {
+        profile_display = "Professor";
+      }
+
+
+    else   if (profile === "CA") {
+      profile_display = "CAMPUS AMBASSADOR";
+      }
+
+
+    else  if (profile === "PROFE") {
+      profile_display = "Professional";
+      }
+
+      else{
+        profile_display ="";
+
+      }
+    if (is_ca) {
 
       options = (
         <>
@@ -62,7 +99,7 @@ export default class caLeaderboard extends Component {
             <Link
               to="/dashboard/task"
               className={
-                this.state.activeState === "task" ? "linkEventson" : null
+                this.state.activeState === "task" ? "linkEventson" : "linkEventson-inactive"
               }
               onClick={() => {
                 this.setActive("task");
@@ -73,13 +110,13 @@ export default class caLeaderboard extends Component {
             <br />
           </span>
 
-          <span>
+          {<span>
             <Link
               to="/dashboard/leader"
               className={
                 this.state.activeState === "leaderboard"
                   ? "linkEventson"
-                  : null
+                  : "linkEventson-inactive"
               }
               onClick={() => {
                 this.setActive("leaderboard");
@@ -88,7 +125,7 @@ export default class caLeaderboard extends Component {
               LEADERBOARD
 </Link>
             <br />
-          </span>
+          </span>}
 
         </>
       )
@@ -101,57 +138,60 @@ export default class caLeaderboard extends Component {
     }
     return (
       <div>
-        <Header />
+        <Header /> 
         <div id="container">
           <div id="leftPane">
 
-            <NavLink to="/">
+            <a href="/">
               <img id="logo" src={logo} alt="" />
-            </NavLink>
+            </a>
 
             <hr id="line1" />
 
-
-            <div id="dropShape">{name[0]}</div>
-            <p id="name">{name}</p>
-
-            <div className="score">
-              <span id="scoreWritten">SCORE</span>
-              <span id="scoreValue">{score}/360</span>
+            <Link to="/dashboard/Viewprofile"  onClick={() => {
+                    this.setActive("payment");
+                  }}>
+              <div id="dropShape">{name[0]}</div>
+              <p id="name">{name}</p>
+            </Link>
+            <p id="dashboard-typename">{profile_display}</p>
+            <div className="sidebar-dashboard-box">
+              <div className="sidebar-dashboard-esummit">
+                <span id="sidebar-dashboard-esummitId">E-Summit’19 ID</span>
+                <span id="sidebar-dashboard-esummitId-value">{data.esummit_id}</span>
+              </div>
+              </div>
+              {/*
+              <div className="sidebar-dashboard-esummit">
+                <span id="sidebar-dashboard-esummitId">
+                  Contingent No (Leader)
+                </span>
+                <span id="sidebar-dashboard-esummitId-value">CN 2</span>
+              </div>
             </div>
-            <div className="progress">
+              */}
+            {is_ca && <div className="score">
+              <span id="scoreWritten">SCORE</span>
+              <span id="scoreValue">{score}/10000</span>
+            </div>}
+            {is_ca  && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
                   width: scorePercentage + "%",
                 }}
               />
-            </div>
+            </div>}
+
             <div id="optionsToggle">
 
               {options}
-              {/*
-              <span>
-                <Link
-                  to="/dashboard/offers"
-                  className={
-                    this.state.activeState === "offers" ? "linkEventson" : null
-                  }
-                  onClick={() => {
-                    this.setActive("offers");
-                  }}
-                >
-                  OFFERS
-                </Link>
-                <br />
-              </span>
-
-                */}
+            
               <span>
                 <Link
                   to="/dashboard/payment"
                   className={
-                    this.state.activeState === "payment" ? "linkEventson" : null
+                    this.state.activeState === "payment" ? "linkEventson" : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("payment");
@@ -166,7 +206,7 @@ export default class caLeaderboard extends Component {
                 <Link
                   to="/dashboard/invite"
                   className={
-                    this.state.activeState === "invite" ? "linkEventson" : null
+                    this.state.activeState === "invite" ? "linkEventson" : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("invite");
@@ -176,27 +216,47 @@ export default class caLeaderboard extends Component {
                 </Link>
                 <br />
               </span>
+
+
               <span>
                 <Link
                   to="/dashboard/contigent"
                   className={
                     this.state.activeState === "contigent"
                       ? "linkEventson"
-                      : null
+                      : "linkEventson-inactive"
                   }
                   onClick={() => {
                     this.setActive("contigent");
                   }}
                 >
-                  CONTIGENT
+                  CONTINGENT
                 </Link>
                 <br />
               </span>
 
+              <span>
+                <Link
+                  to="/dashboard/Events"
+                  className={
+                    this.state.activeState === "Events"
+                      ? "linkEventson"
+                      : "linkEventson-inactive"
+                  }
+                  onClick={() => {
+                    this.setActive("Events");
+                  }}
+                >
+                  EVENTS
+                </Link>
+                <br />
+              </span>
+
+
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              <div id="leaderboardButton">
-                <a  target = "_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/1r5QzYM8CxwGX8RPbGQj9cH7MePxO4cQ4/view?usp=sharing">CA RULEBOOK</a>
-              </div>
+              {is_ca  && <div id="leaderboardButton">
+                <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a>
+              </div>}
             </div>
             <div id="submitButton">
               <button type="submit" onClick={this.handleLogout}>
@@ -209,3 +269,6 @@ export default class caLeaderboard extends Component {
     );
   }
 }
+
+
+export default withRouter(caLeaderboard);

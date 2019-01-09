@@ -1,1 +1,3 @@
-export const BASE_URL = "http://104.211.11.192";
+
+// export const BASE_URL = "https://dev.esummit.in"; // dev
+export const BASE_URL = 'https://api.esummit.in'; // prod

@@ -15,8 +15,12 @@ import Mentorship from "./static/2.png";
 import Networking from "./static/3.png";
 import Funding from "./static/4.png";
 import Media from "./static/5.png";
-
+import "../../screens/ignite/css/scrollanimation.css"
+import FAQBoard from './../landing/faqs'
 import "../landing/css/landing.scss";
+import "../../screens/ignite/css/ignite.scss";
+import "../../screens/ignite/css/scrollanimation.css";
+
 export class IdeaStorm extends Component {
   state = {
     faq: [
@@ -24,7 +28,7 @@ export class IdeaStorm extends Component {
         id: 2,
         question: "What is the last date of submission?",
         answer:
-          "1st of January is the last date of submission of entries for the first round of the competition.",
+          "10th of January is the last date of submission of entries for the first round of the competition.",
       },
       {
         id: 3,
@@ -90,7 +94,7 @@ export class IdeaStorm extends Component {
   };
 
   faq_idea = () => {
-    jump("#faq_idea", { offset: -130 });
+    jump("#faq", { offset: -0 });
   };
 
   coordinator = () => {
@@ -103,6 +107,9 @@ export class IdeaStorm extends Component {
   register = () => {
     jump(".register", { offset: -130 });
   };
+  jum = () => {
+    jump('#timeline')
+  }
 
   render() {
     return (
@@ -125,15 +132,20 @@ export class IdeaStorm extends Component {
             <span onClick={this.register}>Apply</span>
             <span onClick={this.faq_idea}>FAQs</span>
 
-            <span onClick={this.coordinator}>Contact US</span>
+            <span onClick={this.coordinator}>Contact Us</span>
           </span>
 
           <span />
         </div>
         <div className="idea">
-          <p>IDEA STORM</p>
+          <p className  = "header_idea">IDEA STORM</p>
 
           <p>You make it happen.</p>
+
+          <br/>
+          <br/>
+          <br/>
+          <p>CASH PRIZE WORTH INR 2,50,000</p>
           <p>
             Idea Storm is the annual business plan competition,conducted as a
             part of Entrepreneurship Summit, the flagship event of
@@ -144,15 +156,20 @@ export class IdeaStorm extends Component {
             business acumen. This would be a perfect stage for you, If you want
             to turn your ideas into an entrepreneurial ventures
           </p>
+
+          <div className="ignite-first-page-scroll">
+                <div onClick={this.timeline} className='icon-scroll'></div> <br />
+                
+                <div id="ignite-first-page-scroll-child"> <p> SCROLL DOWN</p></div>
+              </div>
           <center>
-          <NavLink to = "registration_portal/login"> 
-        
-              <span className="register_button">APPLY FOR IDEASTORM</span>
-            </NavLink>
+
           </center>
+           
         </div>
 
         <div name="timeline" id="timeline" className="timeline">
+        {/* <Header title = "TIMELINE"/> */}
           <div>
             <img className="ideastorm-vector" src={Vector} alt="" />
             <p className="ideastorm-head1">TIMELINE</p>
@@ -244,12 +261,9 @@ export class IdeaStorm extends Component {
 
         <div className="register">
           <p className="register_now">Apply Now</p>
-          <p>
-            To participate in Idea-Storm 2019 first apply for Ideastorm. After
-            registering, submit your enteries for round 1.
-          </p>
+
           <center>
-            {" "}
+
             <a
               without rel="noopener noreferrer"
               href="https://docs.google.com/forms/d/e/1FAIpQLSeso_7FRi2A42dVvvbzRro_XA6DoKUILfW1EB0E01RAAtus2g/viewform"
@@ -257,13 +271,7 @@ export class IdeaStorm extends Component {
             >
               <span>APPLY FOR IDEASTORM</span>
             </a>
-            <a
-              without rel="noopener noreferrer"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform"
-              target="_blank"
-            >
-              <span>APPLY FOR ROUND 1</span>
-            </a>
+
           </center>
         </div>
 
@@ -280,24 +288,11 @@ export class IdeaStorm extends Component {
               <span>APPLY FOR IDEASTORM</span>
             </a>
           </center>
-          <p>After registering, submit your enteries for round 1.</p>
-          <center>
-            <a
-              without rel="noopener noreferrer"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd93gw3nU9Dfarl8rfJ_DcNBPvoupPAubr5ZAF-dnaIp2dnrg/viewform"
-              target="_blank"
-            >
-              {" "}
-              <span>APPLY FOR ROUND 1</span>
-            </a>
-          </center>
-        </div>
 
-        <div id="faq_idea">
-          <FAQ faqList={this.state.faq} />
         </div>
+        <FAQBoard faqList={this.state.faq} />
         <div className="coordinator">
-          <Header title="EVENT CO-ORDINATOR" />
+          <Header title="EVENT CO-ORDINATORS" />
 
           <div className="coordinator_grid">
             <div className="coordinator_unit">

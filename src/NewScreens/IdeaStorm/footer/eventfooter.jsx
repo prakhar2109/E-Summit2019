@@ -22,7 +22,7 @@ export default class Lfooter extends Component {
         console.log("empty field")
         let isError = false;
 
-        if (this.state.footername === '' || this.state.footerPhoneno === '' || this.state.footerEmailid === '' || this.state.footerEmailid === '')
+        if (this.state.footername === '' || this.state.footerPhoneno === '' || this.state.footerEmailid === '' || this.state.footermessage === '')
 
             isError = true;
         return isError;
@@ -161,7 +161,7 @@ export default class Lfooter extends Component {
                                                 footerEmailid: event.target.value
                                             })
                                         }} />
-                                    <textarea rows="8" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage} required
+                                    <textarea rows="8" type="text" name="Message" id="ladingpagetextinput" placeholder="Message" value={this.state.footermessage} required
                                         onChange={(event) => {
                                             this.setState({
                                                 footermessage: event.target.value
@@ -259,7 +259,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details landing-footer-adddetails">
-                                E-Cell Office, SAC Building, IIT Roorkee, Roorkee, Uttarakhand,<br />3.37vh India 247667
+                                E-Cell Office, SAC Building, IIT Roorkee, Roorkee, Uttarakhand<br />India 247667
                             </div>
                             <div className="footer-logo">
                             </div>
@@ -298,7 +298,7 @@ export default class Lfooter extends Component {
                     </div>
 
                     <div className="landing-bottomfooter-mail">
-                    sgarg2@ce.iitr.ac.in
+                        sgarg2@ce.iitr.ac.in
                      </div>
 
                 </div>

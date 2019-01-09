@@ -17,6 +17,8 @@ export default class Sponsors extends Component {
         sponsors:res.data,
       });
 
+      console.log(this.state)
+
       
     })
   };
@@ -34,24 +36,22 @@ export default class Sponsors extends Component {
         <Nav />
         <MobileNav />
         <div className="sponsors">
-          <Header title="SPONSORS" />
-          <p className="text">
-            Meet the awesome companies who make this all possible.
-          </p>
-
-          <center>
-            <img className="title_sponsor_img" alt="" src={img1} />
-            <span className="title_sponsor">Rohit Jha </span>
-          </center>
+          <Header title="PARTNERS" />
+      
+         
 
           <div className="sponsors_array">
             {this.state.sponsors.map(update => {
               return (
-                <div className="sponsors_unit " key={update.id}>
-                  <div className="sonsors_logo">
-                  <img src = {update.image} alt= {update.name} />
+                <div>
+                  <a href = {update.url}> 
+                  <div className="sponsors_unit " key={update.id}>
+                    <div className="sonsors_logo">
+                    <img src = {update.image} alt= {update.name} />
+                    </div>
+                    <div className="sponsors_name">{update.name}</div>
                   </div>
-                  <div className="sponsors_name">{update.name}</div>
+                  </a>
                 </div>
               );
             })}

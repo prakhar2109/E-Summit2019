@@ -11,6 +11,9 @@
     }
 
 }
+.esummit-landing-view-more-button{
+    padding: 10px;
+}
 a:hover {
     text-decoration: none !important;
 }
@@ -18,16 +21,22 @@ a:hover {
     
     width: 100vw;
     padding: 3rem  0;
-    height:91vh;
+    min-height:91vh;
+    height: auto;
  
-    background: #0D1313;
+    background:rgb(12,17,19);
     padding: 5rem;
     display: grid;
     align-items: end;
     justify-items: center;
 
+    @include mobile{
+        padding: 0;
+    }
+
     @include mobile {
         height: 80vh;
+        width: 100%;
     }
     button {
         border: 2.5px solid #FFFFFF;
@@ -40,10 +49,12 @@ a:hover {
         letter-spacing: 0.09em;
         padding: 20px 24px ;
         color: #FFFFFF;
+        cursor: pointer;
 
         @include mobile {
-            font-size: 12px;
+            font-size: 16px;
             padding: 16px;
+            margin-bottom: 4vh;
         }
 
         @include fhd{
@@ -67,11 +78,19 @@ a:hover {
 
     .MobVid{
         display: none;
+        padding-bottom: 5vh;
+
+         img{
+        
+             width: inherit;
+         }
+        
        
         
 
         @include mobile{
             display:block;
+            width: 100%;
         }
     }
 
@@ -105,15 +124,17 @@ a:hover {
 
 
         @include mobile {
-            line-height: 18px;
-            font-size: 14px;
-            letter-spacing: 0.1em;
+            line-height: 20px;
+            font-size: 16px;
+            padding: 25px 0 6% 0;
+            letter-spacing: 0.02em;
 
         }
 
-        @include fhd{
-            font-size: 18px;
-        }
+   @media (max-width: 1400px) and (min-width : 1000px) {
+       font-size: 21px; 
+       
+   }
     }
 }
 
@@ -126,16 +147,17 @@ a:hover {
 
     .text {
         line-height:124%;
-        font-size: 26px;
+        font-size: 24px;
         letter-spacing: 0.02em;
         padding: 2% 0 0 0;
         color: #D8D8D8;
 
         @include mobile {
-            line-height: 18px;
-            font-size: 14px;
-            letter-spacing: 0.1em;
+            line-height: 20px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
             color: #D8D8D8;
+            padding: 25px 0 0 0;
 
         }
 
@@ -161,7 +183,7 @@ a:hover {
         @include mobile {
             margin-bottom: 0;
             line-height: 15px;
-            font-size: 12px;
+            font-size: 14px;
             text-align: center;
             letter-spacing: 0.06em;
             padding: 1rem;
@@ -171,7 +193,7 @@ a:hover {
     }
 
     .slick-list {
-        margin: 1.25rem;
+        // margin: 1.25rem;
     }
 
 
@@ -179,7 +201,7 @@ a:hover {
 
     .speaker_slidder {
         padding-top: 6.75rem;
-        padding-bottom: 6.75rem;
+        padding-bottom: 5rem;
 
         @include mobile {
             display: none;
@@ -194,7 +216,7 @@ a:hover {
 
         @include mobile{
             height:300px !important;
-            width:300px;
+            width:100%;
         }
 
 
@@ -209,12 +231,11 @@ a:hover {
 
     .name {
         
-        font-size: 24px;
+        font-size: 26px;
         letter-spacing: 0.02em;
         padding-top: 1rem;
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
-
 
 
         color: #138AD6;
@@ -227,7 +248,7 @@ a:hover {
             line-height: 35px;
             font-size: 24px;
             letter-spacing: 0.1em;
-
+            text-align: center;
             color: #138AD6;
 
         }
@@ -245,7 +266,7 @@ a:hover {
             line-height: 24px;
             font-size: 16px;
             letter-spacing: 0.1em;
-
+            text-align: center;
             color: #FFFFFF;
             padding-bottom: 32px;
         }
@@ -263,6 +284,7 @@ a:hover {
 
     @include mobile{
         display: block;
+        padding-top: 25px;
     }
 }
 .land_speakers,
@@ -272,6 +294,7 @@ a:hover {
 
     @include mobile {
         padding: 32px;
+        padding-bottom: 125px;
     }
 
     @include fhd{
@@ -281,6 +304,9 @@ a:hover {
 
 .land_sponsors{
     padding-bottom: 7.6%;
+    @include mobile {
+        padding-bottom: 125px;
+    }
  
 }
 .land_events {
@@ -303,7 +329,16 @@ a:hover {
         }
 
         @include mobile {
-            display: block;
+            grid-template-columns: 100%;
+            grid-row-gap: 5vw;
+            justify-items: center;
+             
+            
+        }
+        #events_production7{
+            background: url("../static/con.jpg");
+            background-position: center;
+            background-size: cover;
         }
 
         #events_production1{
@@ -343,6 +378,7 @@ a:hover {
 
             @include mobile {
                 height: 300px;
+                width: 300px;
             }
 
             p {
@@ -439,19 +475,19 @@ a:hover {
     }
 
     .conclave {
-        background: url("../static/2.png");
+        background: url("../static/events1.png");
     }
 
     .workshop {
-        background: url("../static/3.png");
+        background: url("../static/events2.png");
     }
 
     .leadership {
-        background: url("../static/4.png");
+        background: url("../static/events3.png");
     }
 
     .competition {
-        background: url("../static/5.png");
+        background: url("../static/events4.png");
     }
 
 
@@ -470,6 +506,7 @@ a:hover {
         justify-items: center;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
 
 
 
@@ -607,6 +644,7 @@ a:hover {
             
             @include mobile {
                 margin-top: -20%;
+                height:120px;
             }
         }
 
@@ -621,11 +659,10 @@ a:hover {
 
 
             @include mobile {
-
  
-                font-size: 18px;
+                font-size: 16px;
                 text-align: center;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.04em;
                 margin-top: 48px;
             }
 
@@ -688,31 +725,34 @@ a:hover {
 
     @include mobile {
         padding: 32px;
+        padding-top: 50px;
+        padding-bottom: 125px;
     }
 
     .head1 {
         color: #1A4D66 !important;
-        font-family: "ProximaNova-Bold";
+        font-family: "ProximaNova-Bold", sans-serif;
     }
 
     @include fhd{
         padding: 100px 13.6vw;
     }
 
-    p {
-        
+    .esummit-landing-faq-land-para {
         line-height:35px;
         font-size: 1.75rem;
         letter-spacing: 0.04em;
         margin-bottom: 4.5rem;
         color: #000000;
-        font-family: "Proxima-nova-regular";
+        font-family: "Proxima-nova-regular", sans-serif;
 
         @include mobile {
-            line-height: 18px;
-            font-size: 14px;
-            letter-spacing: 0.1em;
-            padding-top: 10px;
+            line-height: 20px;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            // padding-top: 10px;
+            position: relative;
+            margin-top: 40px;
             margin-bottom: 20px;
         }
 
@@ -731,7 +771,7 @@ a:hover {
         font-size: 1rem;
         text-align: center;
         letter-spacing: 0.09em;
-        padding: 15px 30px;
+        padding: 15px 20px;
         color: #F39423;
         border: 3px solid #F39423;
         box-sizing: border-box;

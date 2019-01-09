@@ -1,13 +1,21 @@
 import React, { Component } from "react";
 import Header from "../../components/header";
 import { Element } from "react-scroll";
+import { Link } from "react-router-dom"
 import ViewMore from "./static/view_more.png";
-import {NavLink } from "react-router-dom"
+// import { NavLink } from "react-router-dom"
 class Events extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: ''
+    }
+  }
   render() {
+    let { data } = this.state
     return (
       <>
-      
+
         <Element id="events" name="events">
           <div className="land_events">
             <Header title="HIGHLIGHT EVENTS" />
@@ -18,34 +26,30 @@ class Events extends Component {
             </p>
           </div>
           <div className="land_events_array">
-          <div> 
-            <a href = "/ideastorm" target = "_blank">
-            <div className="conclave" >
-              <span>
-                <p className="title">IDEASTORM</p>
-                <p className="tagline"></p>
-              </span>
-              <span>
-                <center>
-                   
-                  <i>
-                    
-                    <img src={ViewMore} alt="view more" />
-                  </i>
-                  <p className="viewmore">VIEW MORE</p>
-                
-                </center>
-              </span>
+            <div>
+              <a href="/ideastorm" target="_blank">
+                <div className="conclave" >
+                  <span>
+                    <p className="title">IDEASTORM</p>
+                    <p className="tagline"></p>
+                  </span>
+                  <span>
+                    <center>
+                      <i>
+                        <img src={ViewMore} alt="view more" />
+                      </i>
+                      <p className="viewmore">VIEW MORE</p>
+                    </center>
+                  </span>
+                </div>
+              </a>
             </div>
-</a>
-            </div>
-
             <div className="workshop">
               <span>
                 <p className="title">CONCLAVES</p>
                 <p className="tagline"></p>
               </span>
-               <span>
+              <span>
                 <center>
                   {/* <i>
                   
@@ -53,14 +57,14 @@ class Events extends Component {
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
                 </center>
-              </span> 
+              </span>
             </div>
             <div className="leadership">
               <span>
                 <p className="title">LEADERSHIP SERIES</p>
                 <p className="tagline"></p>
               </span>
-               <span>
+              <span>
                 <center>
                   {/* <i>
                 
@@ -68,7 +72,7 @@ class Events extends Component {
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
                 </center>
-              </span> 
+              </span>
             </div>
             <div className="competition">
               <span>
@@ -91,59 +95,90 @@ class Events extends Component {
             <Header title="EVENTS " />
 
             <p className="text">
-              Expert investor or an emerging entrepreneur or a quiz master, you
-              think you know it all? Put that test to claim, battle it out in
-              the field for the ultimate glory.
+              B-Plan, Case Studies, Productathon, Networking Events and a lot more to explore! Register for the events and compete among the best minds of the country.
             </p>
+            <center>
+              <div className="land_events_array2">
+                <Link to="/productathon">
+                  <div className="events_production" id="events_production1">
+                    <span>
+                      <p className="t1">PRODUCTATHON</p>
 
-            <div className="land_events_array2">
-              <div className="events_production" id="events_production1">
-                <span>
-                  <p className="t1">PRODUCTATHON</p>
-                  
-                </span>
-                <p className="t3">COMING SOON</p>
-              </div>
+                    </span>
+                    <span>
+                      <center>
 
-              <div className="events_production" id="events_production2">
-                <span>
-                  <p className="t1">COMPETITIONS</p>
-                </span>
-                <p className="t3">COMING SOON</p>
-              </div>
+                        <i>
 
-              <div className="events_production" id="events_production3">
-                <span>
-                  <p className="t1">STARTUP EXPO</p>
-                 
-                </span>
-                <p className="t3">COMING SOON</p>
-              </div>
+                          <img src={ViewMore} alt="view more" />
+                        </i>
+                        <p className="viewmore esummit-landing-view-more-button">VIEW MORE</p>
 
-              <div className="events_production" id="events_production4">
-                <span>
-                  <p className="t1">CASE STUDY CHALLENEGE</p>
-                  
-                </span>
-                <p className="t3">COMING SOON</p>
-              </div>
+                      </center>
+                    </span>
+                  </div>
+                </Link>
+                <Link to="/events/e-conference">
+                  <div className="events_production" id="events_production7">
+                    <span>
+                      <p className="t1">E-CONFERENCE</p>
 
-              <div className="events_production" id="events_production5">
-                <span>
-                  <p className="t1">ONLINE EVENTS</p>
-                  
-                </span>
-                <p className="t3">COMING SOON</p>
-              </div>
+                    </span>
+                    <span>
+                      <center>
 
-              <div className="events_production" id="events_production6">
-                <span>
-                  <p className="t1">CORPORATE SPEED DATING</p>
-                  
-                </span>
-                <p className="t3">COMING SOON</p>
+                        <i>
+
+                          <img src={ViewMore} alt="view more" />
+                        </i>
+                        <p className="viewmore esummit-landing-view-more-button">VIEW MORE</p>
+
+                      </center>
+                    </span>
+                  </div>
+                </Link>
+
+
+
+                <div className="events_production" id="events_production3">
+                  <span>
+                    <p className="t1">STARTUP EXPO</p>
+
+                  </span>
+                  <p className="t3">COMING SOON</p>
+                </div>
+
+                <div className="events_production" id="events_production4">
+                  <span>
+                    <p className="t1">CASE STUDY CHALLENGE</p>
+
+                  </span>
+                  <p className="t3">COMING SOON</p>
+                </div>
+
+                <div className="events_production" id="events_production5">
+                  <span>
+                    <p className="t1">ONLINE EVENTS</p>
+
+                  </span>
+                  <p className="t3">COMING SOON</p>
+                </div>
+
+                <div className="events_production" id="events_production6">
+                  <span>
+                    <p className="t1">CORPORATE SPEED DATING</p>
+
+                  </span>
+                  <p className="t3">COMING SOON</p>
+                </div>
+                <div className="events_production" id="events_production2">
+                  <span>
+                    <p className="t1">COMPETITIONS</p>
+                  </span>
+                  <p className="t3">COMING SOON</p>
+                </div>
               </div>
-            </div>
+            </center>
           </div>
         </Element>
       </>

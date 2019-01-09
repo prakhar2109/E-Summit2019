@@ -57,7 +57,7 @@ table#ca01 td{
  
     padding-top: 2.60vh;
     color: #000000;
-    font-size: 17.067px;
+    font-size: 14.2px;
     font-family:"ProximaNova-Semibold" !important; 
  
 }
@@ -199,7 +199,7 @@ border-right:1px solid #DDDDDD;
 
 
 
-@media (min-width: 1920px) and (max-width: 2560px){
+@media (min-width: 1820px) and (max-width: 2560px){
 
 
 
@@ -219,14 +219,17 @@ table#ca01 th{
 table#ca01 td{
 
     padding-bottom: 2.60vh;
- 
+    text-transform: lowercase;
+
     padding-top: 2.60vh;
     color: #000000;
-    font-size: 24px;
+    font-size: 20px;
     font-family:"ProximaNova-Semibold" !important; 
  
 }
-
+table#ca01 td::first-letter{
+    text-transform: uppercase;
+}
 }
 @media only screen and (min-width: 900px){
 .caleader-board-mobileparent{
@@ -268,7 +271,7 @@ table#ca01 th {
  margin-top: 2rem;
  background: #fff;
  width: 95.52%;
- height: 100vh;
+ height: fit-content;
  margin-left: 2.24%;
     
 

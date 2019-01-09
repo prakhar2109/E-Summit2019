@@ -14,7 +14,7 @@ import EmailVerification from './EmailVerification';
 import ProfileType from "./ProfileType"
 import PersonalDetails from './PersonalDetails';
 import axios from "axios"
-import sample_image from "./sample_image.jpg"
+import sample_image from "./sample_image.jpeg"
 import { BASE_URL } from '../../../utils/urls';
 
 const styles = theme => ({
@@ -108,6 +108,12 @@ class RegisterIndex extends React.Component {
             social_signup: false
         }
     }
+    componentDidMount() {
+        document
+            .getElementById("loader")
+            .style
+            .display = "none";
+    }
 
     handleAccountSetup = (data) => {
         this.setState({
@@ -123,13 +129,13 @@ class RegisterIndex extends React.Component {
         this.setState({
             otp: data.otp,
             resend_email: data.resend_email,
-            activeStep: this.state.activeStep + 1
         })
         if (data.resend_email !== "") {
             this.setState({
                 email: data.resend_email
             })
         }
+        this.handleFullSubmit()
     }
     handleProfile = (data) => {
         this.setState({
@@ -157,6 +163,14 @@ class RegisterIndex extends React.Component {
             social_signup: response.social_signup
         })
     }
+    goToDashboard = () => {
+        window.location.href = "/dashboard/invite";
+        document
+            .getElementById("loader")
+            .style
+            .display = "none";
+    }
+
     handleFullSubmit = () => {
         let {
             name,
@@ -164,7 +178,6 @@ class RegisterIndex extends React.Component {
             image_url,
             password,
             confirm_password,
-            resend_email,
             year,
             tshirt_size,
             programme,
@@ -210,62 +223,59 @@ class RegisterIndex extends React.Component {
 
         if (gender) {
             gender = gender.trim()
-            if (gender === "Male") {
-                gender = "M"
-            }
-            if (gender === "Female") {
-                gender = "F"
-            }
-            if (gender === "Other") {
-                gender = "O"
-            }
+            gender = gender[0]
         }
         if (states) states = states.trim()
         else {
             states = null
         }
-        if (college) college = college.trim()
-        else {
-            college = null
-        }
         if (country) {
-            country = country.value.trim()
+            country = country.trim()
         }
         else {
             country = "India"
         }
-        if (about_esummit) about_esummit = about_esummit.trim()
+        if (college) {
+            college = country === "India" ? college.value.trim() : college.trim()
+        }
+        else {
+            college = "null"
+        }
+        if (about_esummit) about_esummit = about_esummit
         else {
             about_esummit = null
         }
-        if (tshirt_size) tshirt_size = tshirt_size.trim()
+        if (tshirt_size) tshirt_size = tshirt_size
         else {
             tshirt_size = null
         }
         if (password) password = password.trim()
         if (confirm_password) confirm_password = confirm_password.trim()
-        if (year) year = year.trim()
+        if (year) year = year
         else {
             year = null
         }
-        if (programme) programme = programme.trim()
+        if (programme) programme = programme.value
         else {
             programme = null
         }
-        if (enrollment_no) enrollment_no = enrollment_no.trim()
+        if (enrollment_no) enrollment_no = enrollment_no
         else {
             enrollment_no = null
         }
-        if (industry) industry = industry.trim()
+        if (industry) industry = industry
         else {
             industry = null
         }
-        if (organisation_name) organisation_name = organisation_name.trim()
+        if (organisation_name) organisation_name = organisation_name
         else {
             organisation_name = null
         }
 
-
+        let url_q = window.location.href;
+        let url = new URL(url_q); 
+        let ref = url.searchParams.get("ref");
+        let endpoint = ref === null ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
         let data = {
             name: name,
             email: email,
@@ -276,6 +286,7 @@ class RegisterIndex extends React.Component {
             phone: phone_no,
             gender: gender,
             enrollment_no: enrollment_no,
+            programme: programme,
             college: college,
             city: city,
             state: states,
@@ -288,24 +299,25 @@ class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         axios({
             method: "post",
-            url: BASE_URL + "/v1/api/user/signup/",
+            url: BASE_URL + endpoint,
             data: data
         }).then((r) => {
             var d = new Date();
             d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
-
             if (r.data.token) {
                 localStorage.setItem("user_token", r.data.token);
+
+                this.setState({
+                    activeStep: this.state.activeStep + 1
+                })
             }
-            window.location.href = "/dashboard";
             document
                 .getElementById("loader")
                 .style
                 .display = "none";
-
         }).catch((response) => {
             document
                 .getElementById("loader")
@@ -334,12 +346,11 @@ class RegisterIndex extends React.Component {
         if (!this.state.social_signup) {
             let data_details = {
                 email: this.state.email,
-
             }
             document
                 .getElementById("loader")
                 .style
-                .display = "flex";
+                .display = "grid";
             axios({
                 method: "post",
                 url: BASE_URL + "/v1/api/verification/",
@@ -364,16 +375,14 @@ class RegisterIndex extends React.Component {
             });
         }
         else {
-            this.setState({
-                activeStep: this.state.activeStep + 2
-            })
+            this.handleFullSubmit()
         }
     }
     handleNext = () => {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         this.setState(state => ({
             activeStep: state.activeStep + 1,
         }));
@@ -404,7 +413,7 @@ class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         this.setState(state => ({
             activeStep: state.activeStep - 1,
         }));
@@ -432,7 +441,7 @@ class RegisterIndex extends React.Component {
     render() {
         const { classes } = this.props;
         const steps = getSteps();
-        const { otp, social_signup, activeStep, email, image_url, profile_type } = this.state;
+        const { otp, social_signup, activeStep, email, profile_type } = this.state;
         return (
             <div className="esummit-common-parent" >
                 <CommonIndex />
@@ -469,7 +478,7 @@ class RegisterIndex extends React.Component {
                                     activeStep === 1 ? "PROFILE TYPE" :
                                         activeStep === 2 ? "PERSONAL DETAILS" :
                                             activeStep === 3 ? "EMAIL VERIFICATION" :
-                                                activeStep === 4 ? "SUCCESSFULLY REGISTERED" : null
+                                                activeStep === 4 ? "REGISTRATION COMPLETED" : null
                                 }
                             </div>
                             {activeStep !== 4 ?
@@ -515,34 +524,21 @@ class RegisterIndex extends React.Component {
                                 {activeStep === 4 ?
                                     <div className="esummit-register-form-successfull-grand-parent">
                                         <div className="esummit-register-form-successfull-parent">
-                                            {!social_signup ?
-                                                <div style={{
-                                                    backgroundImage: `url(${sample_image})`,
-                                                    backgroundPosition: "center",
-                                                    backgroundSize: "cover",
-                                                    width: "200px",
-                                                    height: "200px",
-                                                    borderRadius: "2px",
-                                                    padding: "20px"
-                                                }}></div>
-                                                :
-                                                <div style={{
-                                                    backgroundImage: `url(${image_url})`,
-                                                    backgroundPosition: "center",
-                                                    backgroundSize: "cover",
-                                                    width: "200px",
-                                                    height: "200px",
-                                                    borderRadius: "2px",
-                                                    padding: "20px"
-                                                }}></div>
-                                            }
-
+                                            <div style={{
+                                                backgroundImage: `url(${sample_image})`,
+                                                backgroundPosition: "center",
+                                                backgroundSize: "cover",
+                                                width: "100%",
+                                                height: "200px",
+                                                borderRadius: "2px",
+                                                padding: "20px"
+                                            }}></div>
                                         </div>
                                         <div className="esummit-register-form-go-to-name">
                                             {this.state.name}
                                         </div>
                                         <div className="esummit-register-form-button">
-                                            <div className="esummit-register-form-button-back" onClick={this.handleFullSubmit}>GO TO DASHBOARD</div>
+                                            <div className="esummit-register-form-button-back" onClick={this.goToDashboard}>GO TO DASHBOARD</div>
                                         </div>
                                     </div>
                                     : null
@@ -553,7 +549,7 @@ class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Already have an account?</span>
-                    <span><Link to="/registration_portal/login">Log in</Link></span>
+                    <span><Link to="/login">Log in</Link></span>
                 </div>
             </div >
         );

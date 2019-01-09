@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 import Nav from "../nav/nav"
 import Footer from "../IdeaStorm/footer/eventfooter";
 import SingleFAQ from "./../../components/singleFaq";
-import axios from "axios" ;
+import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
 import MobileNav from "../mobile_nav/header";
 
@@ -19,66 +19,64 @@ export default class FAQPage extends Component {
   };
 
 
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(BASE_URL + "/v1/api/faqs/")
-    .then(res => {
-      this.setState({
-        faq:res.data,
+      .get(BASE_URL + "/v1/api/faqs/")
+      .then(res => {
+        this.setState({
+          faq: res.data,
 
-        
-      });
 
-      console.log(this.state)
-    })
+        });
+
+      })
   }
 
 
 
   render() {
-    console.log("faqList", this.state.faqList);
     return (
       <React.Fragment>
         <Nav />
         <MobileNav />
- 
+
         <div className="faq">
           <Header title="FAQs" />
           <p className="text">Stuck somewhere? We’re here to help you!</p>
 
           <Tabs defaultActiveKey="1">
             <TabPane tab="General" key="1" >
-                {this.state.faq.map(update => {
-                   if(update.faq_type.type_name === "General"){
-                  return <SingleFAQ key = {update.id}update={update} />;
-                   }
+              {this.state.faq.map(update => {
+                if (update.faq_type.type_name === "General") {
+                  return <SingleFAQ key={update.id} update={update} />;
+                }
 
-                   else{
-                     return null;
-                   }
-                })}
+                else {
+                  return null;
+                }
+              })}
             </TabPane>
             <TabPane tab="Contingent" key="2">
-            {this.state.faq.map(update => {
-                   if(update.faq_type.type_name === "Contingent"){
-                  return <SingleFAQ key = {update.id}update={update} />;
-                   }
+              {this.state.faq.map(update => {
+                if (update.faq_type.type_name === "Contingent") {
+                  return <SingleFAQ key={update.id} update={update} />;
+                }
 
-                   else{
-                     return null;
-                   }
-                })}
+                else {
+                  return null;
+                }
+              })}
             </TabPane>
             <TabPane tab="Campus Ambassador" key="3">
-            {this.state.faq.map(update => {
-                   if(update.faq_type.type_name ==="Campus Ambassador" ){
-                  return <SingleFAQ key = {update.id}update={update} />;
-                   }
+              {this.state.faq.map(update => {
+                if (update.faq_type.type_name === "Campus Ambassador") {
+                  return <SingleFAQ key={update.id} update={update} />;
+                }
 
-                   else{
-                     return null;
-                   }
-                })}
+                else {
+                  return null;
+                }
+              })}
             </TabPane>
           </Tabs>
         </div>

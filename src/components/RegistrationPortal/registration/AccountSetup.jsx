@@ -66,13 +66,12 @@ export default class AccountSetup extends Component {
                 document
                     .getElementById("loader")
                     .style
-                    .display = "flex";
+                    .display = "grid";
                 axios({
                     method: "post",
                     url: BASE_URL + "/v1/api/user/check-email/",
                     data: data_email
                 }).then((r) => {
-                    console.log(r)
                     document
                         .getElementById("loader")
                         .style
@@ -92,46 +91,8 @@ export default class AccountSetup extends Component {
                                     password: password,
                                     confirm_password: confirm_password,
                                     social_signup: social_signup
-                                    // otp: r.data.one_time_pass
                                 }
                                 this.props.handleSubmit(data)
-                                // let request = new Promise(function (resolve, reject) {
-                                // document
-                                //     .getElementById("loader")
-                                //     .style
-                                //     .display = "flex";
-                                // axios({
-                                //     method: "post",
-                                //     url: "http://localhost:8000/edc/email",
-                                //     data: data_email
-                                // }).then((r) => {
-                                //     this.setState({
-                                //         otp: r.data.one_time_pass
-                                //     })
-                                //     document
-                                //         .getElementById("loader")
-                                //         .style
-                                //         .display = "none";
-
-                                // }).catch((response) => {
-                                //     document
-                                //         .getElementById("loader")
-                                //         .style
-                                //         .display = "none";
-                                //     alert("Network error")
-                                // });
-                                // })
-                                // request.then(function () {
-                                //     let data = {
-                                //         name: name,
-                                //         email: email,
-                                //         password: password,
-                                //         confirm_password: confirm_password,
-                                //         otp: otp
-                                //     }
-                                //     return console.log(data, "dashdghajkasghdkj")
-                                //     // this.props.handleSubmit(data)
-                                // })
                             }
                             else {
                                 this.setState({
@@ -279,8 +240,10 @@ export default class AccountSetup extends Component {
         this.namevalidate()
         this.emailvalidate()
     }
+
     componentDidMount() {
         const height = window.innerHeight
+
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
         this.setState({
@@ -303,6 +266,7 @@ export default class AccountSetup extends Component {
         }
     }
     render() {
+
         const { email, name, password, confirm_password, toggleConfirmEye, toggleEye, name_error, name_error_bool, email_error, email_error_bool, pass_error, pass_error_bool, confirmpass_error, confirmpass_error_bool, } = this.state
         return (
             <div>
@@ -347,6 +311,7 @@ export default class AccountSetup extends Component {
                                     autoCapitalize="off"
                                     value={name}
                                     onChange={event => {
+
                                         this.onChange(event)
                                         this.namevalidate()
                                     }}
@@ -375,8 +340,14 @@ export default class AccountSetup extends Component {
                                     autoCapitalize="off"
                                     value={email}
                                     onChange={event => {
-                                        this.onChange(event)
-                                        this.emailvalidate()
+                                        if (this.state.social_signup) {
+
+                                            return this.emailvalidate()
+                                        }
+                                        else {
+                                            this.onChange(event)
+                                            this.emailvalidate()
+                                        }
                                     }}
                                     spellCheck="false"
                                     required

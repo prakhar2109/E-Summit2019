@@ -310,11 +310,16 @@
 .ignite_main{
     background: url("../static/pc.png");
     background-position: center;
-    background-repeat: none;
+ 
     background-size: cover;
+    background-repeat: no-repeat;
 
 
     @include hd{
         background: url("../static/mobile.png");
+        background-position: center;
+ 
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }

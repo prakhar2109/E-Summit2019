@@ -48,7 +48,7 @@ export default class RegisterIndex extends React.Component {
         document
             .getElementById("loader")
             .style
-            .display = "flex";
+            .display = "grid";
         axios({
             method: "post",
             url: BASE_URL + "/v1/api/user/login",
@@ -60,7 +60,6 @@ export default class RegisterIndex extends React.Component {
             }
         }).then(function (res) {
 
-            console.log(res);
 
             if (res !== undefined && res.data !== undefined) {
                 if (res.data) {
@@ -68,7 +67,7 @@ export default class RegisterIndex extends React.Component {
                     if (res.data.token) {
                         localStorage.setItem("user_token", res.data.token);
                     }
-                    window.location.href = "/dashboard/task";
+                    window.location.href = "/dashboard/invite";
                     document
                         .getElementById("loader")
                         .style
@@ -80,7 +79,6 @@ export default class RegisterIndex extends React.Component {
 
             .catch(response => {
 
-                console.log(response);
                 document
                     .getElementById("loader")
                     .style
@@ -162,9 +160,14 @@ export default class RegisterIndex extends React.Component {
         const height = window.innerHeight
         let push = 0 * height
         window.scroll({ top: push, behavior: "auto" });
+        document
+            .getElementById("loader")
+            .style
+            .display = "none";
     }
 
     render() {
+
         const { email, password, toggleEye, email_error, email_error_bool, pass_error, pass_error_bool } = this.state
         return (
             <div className="esummit-common-parent" >
@@ -241,7 +244,7 @@ export default class RegisterIndex extends React.Component {
                                         <div className="esummit-register-form-field-error">{pass_error}</div>
                                     </div>
                                     <div className="esummit-register-form-forgot-password-text">
-                                        <Link to="/registration_portal/forgot_password">Forgot your password?</Link>
+                                        <Link style={{ textDecoration: "none", cursor: "pointer" }} to="/reset-password">Forgot your password?</Link>
                                     </div>
                                     <div className="esummit-register-form-button">
                                         <button type="submit">LOGIN</button>
@@ -253,7 +256,7 @@ export default class RegisterIndex extends React.Component {
                 </div >
                 <div className="esummit-register-form-footer">
                     <span>Don't have an account?</span>
-                    <span><Link to="/registration_portal/register">Register</Link></span>
+                    <span><Link to="/register">Register</Link></span>
                 </div>
             </div >
         );
