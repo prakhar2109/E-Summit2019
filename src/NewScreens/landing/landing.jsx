@@ -14,11 +14,9 @@ import { BASE_URL } from "../../utils/urls";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./mobile_nav/header";
 // import VideoMP from "./static/WebsiteVideo.mp4";
-// import VideoWebm from "./static/WebsiteVideo.webm";
+// import MobileVid from "./static/WebsiteVideo.webm";
 // import VideoOGV from "./static/WebsiteVideo.ogv";
-import MobileVid from "./static/Mobile.gif"
-
-
+import MobileVid from "./static/Mobile.gif";
 
 import Nav from "./nav/nav.jsx";
 
@@ -31,17 +29,12 @@ export default class LandingPage extends Component {
     faq: [],
   };
 
-
   componentDidMount() {
-    axios
-      .get(BASE_URL + "/v1/api/faqs/")
-      .then(res => {
-        this.setState({
-          faq: res.data,
-
-
-        });
-      })
+    axios.get(BASE_URL + "/v1/api/faqs/").then(res => {
+      this.setState({
+        faq: res.data,
+      });
+    });
   }
 
   render() {
@@ -50,25 +43,18 @@ export default class LandingPage extends Component {
         <Nav />
         <MobileNav />
         <section id="screen1">
-
           <div className="land_screen1">
-
-
-            <div className="PcVid" >
+            <div className="PcVid">
               <img src={MobileVid} />
             </div>
-
 
             <div className="MobVid">
-
               <img src={MobileVid} />
             </div>
 
-
-
-
-            <NavLink to="/register"><button>REGISTER NOW</button></NavLink>
-
+            <NavLink to="/register">
+              <button>REGISTER NOW</button>
+            </NavLink>
           </div>
         </section>
         <About />
@@ -77,7 +63,7 @@ export default class LandingPage extends Component {
         <Sponsors />
 
         <Testimonials />
-        <FAQBoard faqList={this.state.faq} isHomePage/>
+        <FAQBoard faqList={this.state.faq} isHomePage />
 
         <Element id="talk" name="contact">
           <Footer />
