@@ -9,7 +9,7 @@ export default class Cacontigent extends Component {
 	constructor() {
 		super();
 		this.state = {
-			contigent:null,
+			contigent:true,
 			contingent_member:null,
 			contingent_id:null,
 			loading: false,
@@ -88,7 +88,24 @@ export default class Cacontigent extends Component {
 		  });
 	  };
 	  
-	  
+	deleteContigent=()=>{
+		let token = localStorage.getItem("user_token");
+		axios
+		.get(BASE_URL + "/v1/api/contingent/delete/", {
+		  headers: {
+			Authorization: `Token ${token}`,
+		  },
+		})
+		.then(res => {
+		  if(res.status==200){
+			  this.setState({contigent:null})
+			  window.location.href='/dashboard/contigent'
+		  }
+		})
+		.catch(response => {
+		  
+		});
+	} 
 	createContigent = () => {
 		document.getElementById("createcontigent").style.display = "none";
 		this.setState({
@@ -562,6 +579,9 @@ export default class Cacontigent extends Component {
 								<div className="cacontigent-heading">
 									Edit Contingent
 								</div>
+								<div className="cacontigent-heading-deletecontigent" onClick={this.deleteContigent}>
+									Delete Contingent
+								</div>
 							</div>
 
 							<div className="createcontigent-body">
@@ -601,7 +621,7 @@ export default class Cacontigent extends Component {
 
 
 								<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
-								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISH</button>
+								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>SAVE CHANGES</button>
 							</div>
 						</div>
 					</Modal>
