@@ -21,8 +21,8 @@ export default class CriteriaMapping extends Component{
     constructor(){
         super()
         this.state={
-            noOfCriterias:14,
-            criteria:["20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee.","20 % Off on getting 10 invites successfully who paid the fee."],
+            noOfCriterias:1,
+            criteria:['10% off on the registration fee on each successful payment through invite link'],
         }
     }
     render() {

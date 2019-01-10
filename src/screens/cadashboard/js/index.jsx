@@ -5,7 +5,7 @@ import Viewprofile from './Profile/profile';
 import LeaderBoard from "./Sidenavbar"
 import CATaskBoard from "./catask"
 import CAOffers from './payment'
-import CAPayment from './payment'
+import CAPayment from './payment/paymentwithoutworkshop'
 import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAcontigent from './payment'
