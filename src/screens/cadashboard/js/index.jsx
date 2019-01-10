@@ -10,7 +10,8 @@ import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAcontigent from './payment'
 import CAevents from './events'
-
+// import { BASE_URL } from  './../../../../utils/urls'
+import axios from "axios";
 
 
 
@@ -25,8 +26,14 @@ class App extends Component {
     
     };
   }
-
+componentDidMount = () =>{
+  let token = localStorage.getItem("user_token");
+            
+}
   render() {
+    let{dashboardProps} = this.props
+    console.log(this.props)
+    console.log(dashboardProps,'dvd')
     return (
       <Router>
         <div>
@@ -36,7 +43,7 @@ class App extends Component {
             <Route exact path="/dashboard/Viewprofile" component={Viewprofile} />
             <Route exact path="/dashboard/task" component={CATaskBoard} />
             <Route exact path="/dashboard/offers" component={CAOffers} />
-            <Route exact path="/dashboard/payment" component={CAPayment} />
+            <Route path="/dashboard/payment" render={() => <CAPayment {...this.props}/>} />
             <Route exact path="/dashboard/invite" component={CAInvite} />
             <Route exact path="/dashboard/leader" component={CALeader} />
             <Route exact path="/dashboard/contigent" component={CAcontigent} />
