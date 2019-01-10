@@ -1,0 +1,15 @@
+.capaymentwv-workshopmappingelement{    
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+    color: #8A8A8A;
+    font-size: 18px;
+    font-weight: 500;
+}
+.capaymentwv-workshop-spaceaboutcolon{
+    width: 30vw;
+    
+
+}
