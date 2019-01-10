@@ -309,6 +309,7 @@ letter-spacing: 0.02em;
 color: #4F4F4F;
 }
 .cacontigent-congratsparent-child2-id{
+width: 20%;
 font-size: 14.2px;
 letter-spacing: 0.02em;
 
@@ -652,7 +653,7 @@ font-size: 15px;
 }
 .cacontigent-finish{
     font-size: 16px;
-    width: 6rem;
+    width: 10rem;
     color: #F39423;
 }
 }
