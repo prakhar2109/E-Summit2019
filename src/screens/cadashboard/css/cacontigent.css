@@ -213,7 +213,7 @@
 	color: #B2B2B2;
     font-size: 17.04px;
 }
-#contigent-adduserform-input{
+.contigent-adduserform-input{
 	width: 100%;
 	height:4.44vh;
     border: 1px solid #000000;
@@ -221,7 +221,7 @@
 		color:#4F4F4F;
 		line-height: 20px;
 }
-#contigent-adduserform-input:focus{
+.contigent-adduserform-input:focus{
 	border: 1px solid #2EA2F8 !important;
 	outline:none;
  
@@ -579,7 +579,7 @@ font-size: 24px;
 .contigent-adduserform-heading{
 font-size: 24px;
 }
-#contigent-adduserform-input{
+.contigent-adduserform-input{
 font-size: 20px;
 }
 .contigent-adduserform-buttonb01{

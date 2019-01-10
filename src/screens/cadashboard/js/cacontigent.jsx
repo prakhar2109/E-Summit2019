@@ -5,23 +5,19 @@ import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
 
 
-
 export default class Cacontigent extends Component {
 	constructor() {
 		super();
 		this.state = {
-			contigent: true,
+			contigent:null,
 
 			loading: false,
 			data:[],
 			no_contingent: [
-				{ esummit_id: "" },
-				{ esummit_id: "" },
-				
-			
-
+				{esummit_id:"",name:""},
 			],
 			es_iddata:[],
+			invitelist:[],
 		}
 	}
 	componentDidMount = () => {
@@ -41,7 +37,39 @@ export default class Cacontigent extends Component {
 		  .catch(response => {
 			alert(response);
 		  });
+
+		  axios
+		  .get(BASE_URL + "/v1/api/contingent/info/", {
+			headers: {
+			  Authorization: `Token ${token}`,
+			},
+		  })
+		  .then(res => {
+			if(res.status==200){
+				this.setState({contigent:false})
+			}
+		  })
+		  .catch(response => {
+			this.setState({contigent:true})
+		  });
+		  axios
+		  .get(BASE_URL + "/v1/api/contingent/member/invite/list/", {
+			headers: {
+			  Authorization: `Token ${token}`,
+			},
+		  })
+		  .then(res => {
+			if(res.status==200){
+				this.setState({invitelist:res.data})
+				
+			}
+		  })
+		  .catch(response => {
+			
+		  });
 	  };
+	  
+	  
 	createContigent = () => {
 		document.getElementById("createcontigent").style.display = "none";
 		this.setState({
@@ -69,8 +97,16 @@ export default class Cacontigent extends Component {
 				es_iddata: res.data.members,
 
 			});
-		console.log(this.state.es_iddata)
+		 
+			let no_contingent= this.state.es_iddata && this.state.es_iddata.map(e=>{
 			
+				return  {esummit_id: e.esummit_id, name:e.name}
+			
+			})
+			this.setState({
+			no_contingent:  no_contingent,
+
+			});
 
 		  })
 		  .catch(response => {
@@ -78,14 +114,12 @@ export default class Cacontigent extends Component {
 		  });
 		 
 		  
-		 
-		  
-
+		
 	}
 	createContigentSubmit=()=>{
 
 		console.log(this.state.contigent)
-		this.handleCancel();
+		this.handleOk();
 		this.setState({contigent:false})
 	}
 
@@ -93,10 +127,61 @@ export default class Cacontigent extends Component {
 
 
 		this.setState((prevState) => ({
-			no_contingent: [...prevState.no_contingent, { "esummit_id": "" }],
+			no_contingent: [...prevState.no_contingent, { "esummit_id": "" ,"name":""}],
 		}));
 
 
+	}
+	acceptInvitation=(es_id)=>{
+		let token = localStorage.getItem("user_token");
+		let data = {
+			"contingent_id" : es_id
+		}
+	
+		axios
+		({
+			method: "post",
+			url: BASE_URL + "/v1/api/contingent/member/join/",
+			data: data,
+			  headers: {
+				Authorization: `Token ${token}`,
+			  }
+	  
+		  })
+		  .then(res => {
+			if (res.status === 200) {
+				this.setState({contigent:false})
+			
+			// this.props.form.name = res.data.name;
+			}
+		  })
+		  .catch(response => {
+			
+		  });
+	}
+	declineInvitation=(es_id)=>{
+		let token = localStorage.getItem("user_token");
+		let data = {
+			"contingent_id" : es_id
+		}
+	
+		axios
+		({
+			method: "post",
+			url: BASE_URL + "/v1/api/contingent/member/decline/",
+			data: data,
+			  headers: {
+				Authorization: `Token ${token}`,
+			  }
+	  
+		  })
+		  .then(res => {
+			if(res.status==200)
+			this.setState({contigent:true})
+		  })
+		  .catch(response => {
+			
+		  });
 	}
 	viewMore=()=>{
 		document.getElementById("cacontigent-joinparent-form-hidelist").style.display = "block";
@@ -145,16 +230,11 @@ export default class Cacontigent extends Component {
 		let {data}=this.state;
 		let no_contingents=[];
 		const width = 900;
-		no_contingents= 	this.state.es_iddata && this.state.es_iddata.map(e=>{
-			
-				return  {esummit_id: e.esummit_id}
-			
-		})
-		// this.setState({no_contingent:no_contingents});
+	
+	
 
-		console.log(no_contingents,"ssssssssssss")
+	
 
-		console.log(this.state.no_contingent,"aaaaaaaaaaaaa")
 
 			return (
 				<div>
@@ -201,16 +281,17 @@ export default class Cacontigent extends Component {
 
 									</tr>
 
-									
-									<tr id="cacontignet-table-row2">
-											<td>Anshul Tembhurne</td>
-											<td>ES172288</td>
-											<td>4</td>
-											<td><button id="cacontignet-td-b01">ACCEPT</button></td>
-											<td><button id="cacontignet-td-b02">DECLINE</button></td>
+									{this.state.invitelist.map(e=>  
+										e.status=="P" &&
+										<tr id="cacontignet-table-row2">
+												<td>{e.contingent}</td>
+												<td>{e.user}</td>
+												<td>4</td>
+												<td><button id="cacontignet-td-b01" onClick={()=>{this.acceptInvitation(e.contingent)}}>ACCEPT</button></td>
+												<td><button id="cacontignet-td-b02" onClick={()=>{this.declineInvitation(e.contingent)}}>DECLINE</button></td>
 
-									</tr>
-								
+										</tr>
+									)}
 										
 									</tbody>
 								</table>
@@ -285,12 +366,12 @@ export default class Cacontigent extends Component {
 								<div className="contigent-adduserform">
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading">E-Summit ID</div>
-										<div id="contigent-adduserform-input" required >{data.esummit_id}</div>
+										<div className="contigent-adduserform-input" required >{data.esummit_id}</div>
 									</div>
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading"> Name</div>
 
-										<div id="contigent-adduserform-input" >{data.name}</div>
+										<div className="contigent-adduserform-input" >{data.name}</div>
 									</div>
 								</div>
 								<div className="cacontigent-aboutparent-head">
@@ -444,23 +525,28 @@ export default class Cacontigent extends Component {
 								<div className="contigent-adduserform">
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading">E-Summit ID</div>
-										<div id="contigent-adduserform-input" required >{data.esummit_id}</div>
+										<div className="contigent-adduserform-input" required >{data.esummit_id}</div>
 									</div>
 									<div className="contigent-adduserform-child">
 										<div className="contigent-adduserform-heading"> Name</div>
 
-										<div id="contigent-adduserform-input" >{data.name}</div>
+										<div className="contigent-adduserform-input" >{data.name}</div>
 									</div>
 								</div>
 								<div className="cacontigent-aboutparent-head">
 									Members
 								</div>
-								{this.state.no_contingent.map((id, e) => {								
-									return <AddUserForm form={id} />
-								})}
+								{this.state.no_contingent.map((e,index)=>
 
+								<div>
+									{console.log(e,"sfkjdsfadfbabfb")}
+									<AddUserForm index={index} form={e} />
+								
+								</div>
+							
+								)}
 
-								{console.log(this.state)}
+								{/* {console.log(this.state)} */}
 
 
 								<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
@@ -484,27 +570,33 @@ class AddUserForm extends Component {
 		
 		this.state = {
 			es_id:props.form.esummit_id,
-			name:"",
+            name:props.form.name,
 		}
 	}
-
+	componentDidMount() {
+		console.log(this.props.form,"dasgbkadbjaskdjak")
+        this.setState({
+			es_id:this.props.form.esummit_id,
+            name:this.props.form.name,
+        })
+	}
 	onChange=(e)=>{
 		this.setState({
 			es_id: e.target.value,
 		   },);
 		   this.handleClick(e.target.value)
-		
 	}
 	handleSubmit=()=>{
 		let token = localStorage.getItem("user_token");
 		let data = {
 			"esummit_id" : this.state.es_id
 		}
-		console.log(data,"handleSubmit");
+		// console.log(data,"handleSubmit");
 		axios
 		({
 			method: "post",
 			url: BASE_URL + "/v1/api/contingent/member/invite/",
+
 			data: data,
 			  headers: {
 				Authorization: `Token ${token}`,
@@ -539,16 +631,19 @@ class AddUserForm extends Component {
 			this.setState({
 			 name: res.data.name,
 			});
+
+			// this.props.form.name = res.data.name;
 			
 			}
 		
-			// console.log(res,"hhhhhhhhhhhhhhhhhh")
+			console.log(res,"hhhhhhhhhhhhhhhhhh")
 		  })
 		  .catch(response => {
 			
-				this.setState({
-					name: "",
-				   });	
+			// this.props.form.name = "";
+			this.setState({
+				name: "",
+			   });
 			
 		  });
 		
@@ -558,30 +653,21 @@ class AddUserForm extends Component {
 		
 		return (
 			<div>
-				
-				<form>
+                    <form>
 					<div className="contigent-adduserform">
 						<div className="contigent-adduserform-child">
 							<div className="contigent-adduserform-heading">E-Summit ID</div>
-							<input type="text" id="contigent-adduserform-input"  defaultValue={this.props.form.esummit_id} onChange={e => {
-
-   this.onChange(e)
-
-}} />
-{/* // {console.log(this.props.form,"jjjjjjjjjjj")} */}
- {console.log(this.props.form.esummit_id,"es_id")} 
-
+							<input type="text" className="contigent-adduserform-input" id={"contigent-adduserform-input"+this.props.index}  defaultValue={this.state.es_id} onChange={e => {
+								this.onChange(e)
+								}} />
 						</div>
 						<div className="contigent-adduserform-child">
 							<div className="contigent-adduserform-heading"> Name</div>
-
-							<div id="contigent-adduserform-input" >{this.state.name}</div>
+							<div className="contigent-adduserform-input" id={"contigent-adduserform-input"+this.props.index}>{this.state.name}</div>
 						</div>
-
 						<div className="contigent-adduserform-button"> <div className="contigent-adduserform-buttonb01" id={this.props.index} onClick={this.handleSubmit} >Submit</div></div>
 					</div>
-				</form>
-
+				</form> 
 			</div>
 		)
 	}
