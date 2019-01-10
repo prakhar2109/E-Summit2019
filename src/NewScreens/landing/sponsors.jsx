@@ -25,6 +25,7 @@ export default class Sponsors extends Component {
   render() {
     let settings = {
       dots: false,
+      lazyLoad: true,
       infinite: true,
       speed: 500,
       slidesToShow: 4,
@@ -33,6 +34,7 @@ export default class Sponsors extends Component {
 
     let settings2 = {
       dots: false,
+      lazyLoad: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
