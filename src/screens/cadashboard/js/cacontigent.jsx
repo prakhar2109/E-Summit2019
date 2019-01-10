@@ -10,19 +10,26 @@ export default class Cacontigent extends Component {
 		super();
 		this.state = {
 			contigent:null,
-
+			contingent_member:null,
+			contingent_id:null,
 			loading: false,
 			data:[],
 			no_contingent: [
 				{esummit_id:"",name:""},
+				{esummit_id:"",name:""},
+				{esummit_id:"",name:""},
+				{esummit_id:"",name:""},
 			],
 			es_iddata:[],
 			invitelist:[],
+			invitesno:"0",
 		}
 	}
 	componentDidMount = () => {
 		let token = localStorage.getItem("user_token");
+		let invites=0;
 		console.log(token)
+		console.log(this.state.contigent)
 		axios
 		  .get(BASE_URL + "/v1/api/user/profile", {
 			headers: {
@@ -30,9 +37,11 @@ export default class Cacontigent extends Component {
 			},
 		  })
 		  .then(res => {
+			  console.log(res.data,"data")
 			this.setState({
 			  data: res.data,
 			});
+			
 		  })
 		  .catch(response => {
 			alert(response);
@@ -46,12 +55,13 @@ export default class Cacontigent extends Component {
 		  })
 		  .then(res => {
 			if(res.status==200){
-				this.setState({contigent:false})
+				this.setState({contigent:false,contingent_id:res.data.contingent_id})
 			}
 		  })
 		  .catch(response => {
 			this.setState({contigent:true})
 		  });
+
 		  axios
 		  .get(BASE_URL + "/v1/api/contingent/member/invite/list/", {
 			headers: {
@@ -60,7 +70,16 @@ export default class Cacontigent extends Component {
 		  })
 		  .then(res => {
 			if(res.status==200){
-				this.setState({invitelist:res.data})
+				res.data.map(e=>{
+					if(e.status=="P"){
+						invites=invites+1;
+					}
+					else if(e.status=="A"){
+						console.log("dagfsdf")
+						this.setState({contigent:false,contingent_member:true})
+					}
+				})
+				this.setState({invitelist:res.data,invitesno:invites})
 				
 			}
 		  })
@@ -78,9 +97,6 @@ export default class Cacontigent extends Component {
 	}
 	editContigent = () => {
 
-		this.setState({
-			visible: true,
-		});
 
 		let token = localStorage.getItem("user_token");
 		
@@ -93,8 +109,11 @@ export default class Cacontigent extends Component {
 			},
 		  })
 		  .then(res => {
-			this.setState({
+			
+			this.setState(
+				{
 				es_iddata: res.data.members,
+				
 
 			});
 		 
@@ -105,7 +124,7 @@ export default class Cacontigent extends Component {
 			})
 			this.setState({
 			no_contingent:  no_contingent,
-
+			visible: true,
 			});
 
 		  })
@@ -119,8 +138,10 @@ export default class Cacontigent extends Component {
 	createContigentSubmit=()=>{
 
 		console.log(this.state.contigent)
-		this.handleOk();
+		
 		this.setState({contigent:false})
+		this.handleOk();
+		window.location.href='/dashboard/contigent'
 	}
 
 	addContingent = (e) => {
@@ -137,7 +158,7 @@ export default class Cacontigent extends Component {
 		let data = {
 			"contingent_id" : es_id
 		}
-	
+		
 		axios
 		({
 			method: "post",
@@ -150,10 +171,13 @@ export default class Cacontigent extends Component {
 		  })
 		  .then(res => {
 			if (res.status === 200) {
+				
+				window.location.href='/dashboard/contigent'
 				this.setState({contigent:false})
 			
 			// this.props.form.name = res.data.name;
 			}
+			
 		  })
 		  .catch(response => {
 			
@@ -177,11 +201,32 @@ export default class Cacontigent extends Component {
 		  })
 		  .then(res => {
 			if(res.status==200)
-			this.setState({contigent:true})
+			{this.setState({contigent:true})
+			window.location.href='/dashboard/contigent'
+		 	 }
+
 		  })
 		  .catch(response => {
 			
 		  });
+	}
+	leaveContigent=()=>{
+		let token = localStorage.getItem("user_token");
+		axios
+		.get(BASE_URL + "/v1/api/contingent/member/leave/", {
+		  headers: {
+			Authorization: `Token ${token}`,
+		  },
+		})
+		.then(res => {
+		  if(res.status==200){
+			  this.setState({contingent_member:null})
+			  window.location.href='/dashboard/contigent'
+		  }
+		})
+		.catch(response => {
+		  
+		});
 	}
 	viewMore=()=>{
 		document.getElementById("cacontigent-joinparent-form-hidelist").style.display = "block";
@@ -216,7 +261,7 @@ export default class Cacontigent extends Component {
 		}, 300);
 	}
 	render() {
-		let contigent = this.state.contigent;
+		
 		const { visible } = this.state;
 		const modalstyle = {
 			left: "20vw",
@@ -228,14 +273,8 @@ export default class Cacontigent extends Component {
 			padding: 0,
 		}
 		let {data}=this.state;
-		let no_contingents=[];
 		const width = 900;
 	
-	
-
-	
-
-
 			return (
 				<div>
 				{ this.state.contigent?
@@ -261,7 +300,7 @@ export default class Cacontigent extends Component {
 								Join Contingent
 							</div>
 							<div className="cacontigent-joinparent-form" id="cacontigent-joinparent-form-viewlist">
-								<div className="cacontigent-joinparent-form-invites">Invites :<strong> 4 </strong> </div>
+								<div className="cacontigent-joinparent-form-invites">Invites :<strong> {this.state.invitesno} </strong> </div>
 								<div id="viewmore" className="cacontigent-Viewoption" onClick={this.viewMore}>View List</div>
 								<div id="viewless" className="cacontigent-Viewoption" onClick={this.viewLess}>Hide List</div>
 
@@ -282,15 +321,16 @@ export default class Cacontigent extends Component {
 									</tr>
 
 									{this.state.invitelist.map(e=>  
-										e.status=="P" &&
+									 e.status=="P"&&
 										<tr id="cacontignet-table-row2">
-												<td>{e.contingent}</td>
-												<td>{e.user}</td>
+												<td>{e.user.name}</td>
+												<td>{e.user.esummit_id}</td>
 												<td>4</td>
 												<td><button id="cacontignet-td-b01" onClick={()=>{this.acceptInvitation(e.contingent)}}>ACCEPT</button></td>
 												<td><button id="cacontignet-td-b02" onClick={()=>{this.declineInvitation(e.contingent)}}>DECLINE</button></td>
 
 										</tr>
+									 
 									)}
 										
 									</tbody>
@@ -387,7 +427,7 @@ export default class Cacontigent extends Component {
 								
 
 								<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
-								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISHS</button>
+								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISH</button>
 							</div>
 						</div>
 					</Modal>
@@ -404,7 +444,7 @@ export default class Cacontigent extends Component {
 						</div>
 						<div className="cacontigent-line1"></div>
 
-
+{console.log("jfwekjfa")}
 
 						<div className="cacontigent-congratsparent">
 							<div className="cacontigent-congratsparent-child1">
@@ -414,9 +454,15 @@ export default class Cacontigent extends Component {
 								</svg></div>
 								<div>Congrats! Contingent succesfully created</div>
 							</div>
+							{this.state.contingent_member?
 							<div className="cacontigent-congratsparent-child2">
 								Your contingent has been succesfully created Contingent No. CN 2 . A mail with the contingent no and unique password has been send to all members. Their names will be shown here as soon as they join the contingent. If you want to edit the members an edit option
 							</div>
+							:
+							<div className="cacontigent-congratsparent-child2">
+								Your contingent has been succesfully created Contingent No. <strong>{this.state.contingent_id} </strong>. A mail with the contingent no and unique password has been send to all members. Their names will be shown here as soon as they join the contingent. If you want to edit the members an edit option
+							</div>
+							}
 							<button onClick={this.yourContigent} id="cacontigent-congratsparent-b01">DONE</button>
 
 
@@ -433,9 +479,14 @@ export default class Cacontigent extends Component {
 						<div className="cacontigent-congratsparent">
 							<div className="cacontigent-congratsparent-child1">
 								<div>Your Contingent</div>
+								{this.state.contingent_member?
+									<div className="cacontigent-congratsparent-editcontigent" onClick={this.leaveContigent}>
+									Leave
+								</div>:
 								<div className="cacontigent-congratsparent-editcontigent" onClick={this.editContigent}>
 									Edit
 								</div>
+								}
 							</div>
 							<div className="cacontigent-congratsparent-child2">
 								<div className="cacontigent-congratsparent-child2-heading">
@@ -509,7 +560,7 @@ export default class Cacontigent extends Component {
 						<div className="Createcontigent-parentbody" id="submitcontigent">
 							<div className="cacontigent-createparent" id="cacontigent5789" >
 								<div className="cacontigent-heading">
-									Create Contingent
+									Edit Contingent
 								</div>
 							</div>
 
@@ -536,10 +587,10 @@ export default class Cacontigent extends Component {
 								<div className="cacontigent-aboutparent-head">
 									Members
 								</div>
-								{this.state.no_contingent.map((e,index)=>
-
-								<div>
-									{console.log(e,"sfkjdsfadfbabfb")}
+								{console.log(this.state.no_contingent)}
+								{ this.state.no_contingent.map((e,index)=>
+								<div key={index}>
+									{console.log(e,index,"sfkjdsfadfbabfb")}
 									<AddUserForm index={index} form={e} />
 								
 								</div>
@@ -550,7 +601,7 @@ export default class Cacontigent extends Component {
 
 
 								<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
-								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISHS</button>
+								 <button className="cacontigent-finish" onClick={this.createContigentSubmit}>FINISH</button>
 							</div>
 						</div>
 					</Modal>
