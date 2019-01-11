@@ -19,7 +19,7 @@ export default class Payment extends Component {
       accomodationFee: null,
       totalFee: null,
       // visibleAccomodationFee:1000,
-      isDiscarded: false,
+      isDiscarded: null,
       isCouponValid: true,
       discountAvailedPercent: 0,
       isApplied: false,
@@ -54,7 +54,8 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          console.log(res.data, 'sfs')
+          // console.log(res.data, 'sfs')
+
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
               isPayed: false,
@@ -84,7 +85,8 @@ export default class Payment extends Component {
           //   console.log(res.data)
         })
         .catch(response => {
-          console.log("could not connect to the server");
+          // console.log("could not connect to the server");
+          alert('could not connect to the server')
         });
 
       let ta = this.props.location.search;
@@ -98,21 +100,21 @@ export default class Payment extends Component {
           })
           .then(res => {
               window.location.href = '/dashboard/payment'
-            console.log(res.data, "data");
+            // console.log(res.data, "data");
             let datePayed = res.data.date_created.substr(0, 10);
             let totAmtPayed = res.data.amount_paid;
             datePayed = datePayed.split("-");
             let year = datePayed[0];
             let month = datePayed[1];
             let date = datePayed[2];
-            console.log("totalAMT", totAmtPayed);
+            // console.log("totalAMT", totAmtPayed);
             this.setState({
               datePayed: date + "/" + month + "/" + year,
               totAmtPayed: totAmtPayed,
             });
           })
           .catch(response => {
-            console.log(response, "could not connect to the server");
+            alert("could not connect to the server");
           });
       }
     }
@@ -120,36 +122,61 @@ export default class Payment extends Component {
 
   toggleAccomodation = e => {
     // e.preventDefault()
-    if (this.state.isDiscarded) {
-      document.getElementById(
-        "capayment-toggleaccomodation"
-      ).style.borderColor = "#E2574C";
-      document.getElementById("capayment-toggleaccomodation").innerHTML =
-        "DISCARD";
-      this.setState(
-        {
-          isDiscarded: false,
-          visibleAccomodationFee: this.state.accomodationFee,
-        },
-        () => {
-          // console.log(this.state.isDiscarded)
+    let token = localStorage.getItem("user_token");
+    let data = null
+    axios
+      .post(BASE_URL+'/v1/api/user/acco/toogle/',data,{
+        headers:{
+          Authorization:`Token ${token}`
         }
-      );
-    } else {
-      document.getElementById(
-        "capayment-toggleaccomodation"
-      ).style.borderColor = "#F39423";
-      document.getElementById("capayment-toggleaccomodation").innerHTML = "ADD";
-      this.setState(
-        {
-          isDiscarded: true,
-          visibleAccomodationFee: 0,
-        },
-        () => {
-          // console.log(this.state.isDiscarded)
-        }
-      );
-    }
+      })
+      .then(res=>{
+        // console.log(res.data,'ddfssf')
+        this.setState({
+          isDiscarded:res.data.is_accommodation,
+          visibleAccomodationFee:res.data.payment_details.payble_acco_fees,
+          totalFee:res.data.payment_details.total_payble
+        },()=>{
+          // console.log(this.state.isDiscarded,'outside')
+
+          if (this.state.isDiscarded===true) { 
+            // console.log(this.state.isDiscarded,'inside discard')
+            document.getElementById(
+              "capayment-toggleaccomodation"
+            ).style.borderColor = "#E2574C";
+            document.getElementById("capayment-toggleaccomodation").innerHTML =
+              "DISCARD";
+            this.setState(
+              {
+                // isDiscarded: false,
+                // visibleAccomodationFee: this.state.accomodationFee,
+              },
+              () => {
+                // console.log(this.state.isDiscarded)
+              }
+            );
+          } else  {
+            // console.log(this.state.isDiscarded,'inside add')
+            document.getElementById(
+              "capayment-toggleaccomodation"
+            ).style.borderColor = "#F39423";
+            document.getElementById("capayment-toggleaccomodation").innerHTML = "ADD";
+            this.setState(
+              {
+                // isDiscarded: true,
+                // visibleAccomodationFee: 0,
+              },
+              () => {
+                // console.log(this.state.isDiscarded)
+              }
+            );
+          }
+          
+        })
+          
+      })
+
+    
   };
   toggleCoupon = e => {
     e.preventDefault();
@@ -215,11 +242,11 @@ export default class Payment extends Component {
     let token = localStorage.getItem("user_token");
     if (token !== undefined) {
       // let URL = '10.42.0.1:8000'
-      console.log("sdsd", "ss");
+      // console.log("sdsd", "ss");
       window.location.assign(BASE_URL + `/v1/pay/now?order=${token}`);
-      console.log("sdsd", "ss");
+      // console.log("sdsd", "ss");
       let ta = window.location.search;
-      console.log(ta);
+      // console.log(ta);
     }
   };
   viewBillingDetails = () => {
@@ -332,7 +359,7 @@ export default class Payment extends Component {
     couponDiscount = (registrationFee * couponDiscountPercent) / 100;
     // let totalamt = registrationFee+visibleAccomodationFee-discountAvailed-couponDiscount
     // totalFee = registrationFee + visibleAccomodationFee - couponDiscount
-    console.log(totAmtPayed, "in render");
+    // console.log(totAmtPayed, "in render");
     let {
       registrationFeePayed,
       couponDiscountPayed,
@@ -384,21 +411,24 @@ export default class Payment extends Component {
             </div>
             <div className="capayment-registrationfee">
               <div className="capayment-spaceaboutcolon">Registration Fee</div>{" "}
-              :<div className="capayment-space" />Rs {registrationFee}
+              :<div className="capayment-space" />
+              <div className='capayment-registrationfee-innerdiv'>
+                Rs {registrationFee}
               <div className="capayment-earlybirddiscount">
                 (Early Bird Discount)
+              </div>
               </div>
             </div>
             <div className="capayment-accomodationfee">
               <div className="capayment-spaceaboutcolon">
                 Accomodation Fee{" "}
-                {/* <button
+                <div
                   id="capayment-toggleaccomodation"
                   className="capayment-toggleaccomodation"
                   onClick={e => this.toggleAccomodation(e)}
                 >
                   DISCARD
-                </button> */}
+                </div>
                 {" "}
               </div>{" "}
               :<div className="capayment-space" />Rs {visibleAccomodationFee}
@@ -547,8 +577,8 @@ export default class Payment extends Component {
                   />
                 </svg>
                 <span className="capayment-span">Payment Status</span> : Done
-              </div>
-            </div>
+              {/* </div> */}
+            {/* </div> */}
             <div className="capayment-billingdetails-secondrow">
               {/* <div className="capayment-billingdetails-date">
                 DATE
@@ -574,6 +604,7 @@ export default class Payment extends Component {
               >
                 View Billing Details
                 <svg
+                className='capayment-viewbillingdetails-svg'
                   width="15"
                   height="9.44"
                   viewBox="0 0 27 17"
@@ -586,8 +617,11 @@ export default class Payment extends Component {
                     stroke-width="3"
                   />
                 </svg>
+                </div>
+              </div>
               </div>
             </div>
+          
           </div>
 
           <div

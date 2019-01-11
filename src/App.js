@@ -114,6 +114,7 @@ class App extends Component {
                 <Route path="/faq" component={FAQBoard} />
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
+                <Route path="/startupignite" render={() => <Redirect to="/ignite"/>}/>
                 <Route path="/register" component={Registration} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
