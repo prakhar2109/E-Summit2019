@@ -40,7 +40,7 @@ class caLeaderboard extends Component {
         })
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
-          console.log(res.data)
+         
           localStorage.setItem("profile", res.data.user_type);
           localStorage.setItem("invite", res.data.invite_url);
 

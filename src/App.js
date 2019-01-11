@@ -102,9 +102,8 @@ class App extends Component {
           <div>
             <Switch>
               <ScrollToTop>
-                {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
-                {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
                 <Route path="/suignite" component={Suignite} />
+                {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
                 <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
