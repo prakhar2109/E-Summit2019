@@ -54,7 +54,7 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          console.log(res.data, 'sfs')
+          // console.log(res.data, 'sfs')
 
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
@@ -101,12 +101,14 @@ export default class Payment extends Component {
           .then(res => {
               window.location.href = '/dashboard/payment'
             // console.log(res.data, "data");
+            
             let datePayed = res.data.date_created.substr(0, 10);
             let totAmtPayed = res.data.amount_paid;
             datePayed = datePayed.split("-");
             let year = datePayed[0];
             let month = datePayed[1];
             let date = datePayed[2];
+            // console(res.data,'data')
             // console.log("totalAMT", totAmtPayed);
             this.setState({
               datePayed: date + "/" + month + "/" + year,

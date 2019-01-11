@@ -160,7 +160,7 @@ export default class Cainvite extends Component {
 
                
 */}         
-            {/* <PaymentStatus /> */}
+            <PaymentStatus />
 
              <div className="cainviteparent-heading">
                     Perks
