@@ -1,13 +1,48 @@
 import './../css/paymentstatus.css'
 import PaymentStatusTable from './../../../components/js/paymentstatustable'
 import React, { Component } from 'react'
+import { BASE_URL } from './../../../utils/urls'
+import axios from "axios";
 export default class PaymentStatus extends Component{
     constructor(){
         super()
         this.state={
-            viewListIsVisible:true
+            viewListIsVisible:true,
+            onOfMembers:null,
+            membersList:null,
+            membersPaymentDone:null,
         }
     }
+    componentDidMount = () => {
+        let token = localStorage.getItem('user_token')
+        axios
+            .get(BASE_URL + "/v1/api/user/invited-users/", {
+                headers: {
+                    Authorization: `Token ${token}`,
+                },
+            })
+            .then(res => {
+                // console.log(res.data)
+                this.setState({
+                    membersList:res.data,
+                    noOfMembers:res.data.length
+                },()=>{
+                    let successList = this.state.membersList.filter(x=>x.status==='SUC')
+                    this.setState({
+                        membersPaymentDone:successList.length
+                    })
+                });
+                
+     
+            })
+            .catch(response => {
+                alert(response);
+            });
+        
+
+        
+    };
+    
     viewListHandler = ()=>{
         if(this.state.viewListIsVisible){
             this.setState({
@@ -15,7 +50,7 @@ export default class PaymentStatus extends Component{
             },()=>{
                 document.getElementById('cainvite-paymentstatus-viewlist').innerHTML = 'Hide List <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26 15L14.0003 3L2 15" stroke="#F39423" stroke-width="3"/></svg>'
                 document.getElementById('cainvite-paymentnametable').style.display='block'
-                document.getElementById('cainvite-linkparentstatic').style.backgroundColor=' #FFFAF4'
+                document.getElementById('cainvite-linkparentstatic-subparent').style.backgroundColor=' #FFFAF4'
             })
         }
         else{
@@ -24,7 +59,7 @@ export default class PaymentStatus extends Component{
             },()=>{
                 document.getElementById('cainvite-paymentstatus-viewlist').innerHTML = 'View List<svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L13.9997 14L26 2" stroke="#F39423" stroke-width="3"/></svg>'
                 document.getElementById('cainvite-paymentnametable').style.display='none'
-                document.getElementById('cainvite-linkparentstatic').style.backgroundColor=''
+                document.getElementById('cainvite-linkparentstatic-subparent').style.backgroundColor='white'
 
 
             })
@@ -32,12 +67,14 @@ export default class PaymentStatus extends Component{
     }
     render(){
         // let {totalMembers,membersPaymentDone,membersPaymentNotDone}= this.props
-        let totalMembers = 10//comment this when using data from backend
-        let membersPaymentDone = 6//comment this when using data from backend
-        let membersPaymentNotDone = 4//comment this when using data from backend
+        let {noOfMembers,membersList,membersPaymentDone} = this.state
+        let totalMembers = noOfMembers//comment this when using data from backend
+        let membersPaymentNotDone = totalMembers - membersPaymentDone//comment this when using data from backend
+        
         return(
-            <div className='cainvite-linkparent'>
-                <div id='cainvite-linkparentstatic'>
+            <div className='cainvite-linkparent-parent-parent'>
+            
+                <div id='cainvite-linkparentstatic-subparent'>
                 <div className='cainvite-linkparent-heading'>
                 Successfully Registered Members : {totalMembers}
                 </div>
@@ -64,13 +101,15 @@ export default class PaymentStatus extends Component{
                         <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2L13.9997 14L26 2" stroke="#F39423" stroke-width="3"/>
                         </svg>
-
+                        
                     </div>
+                
                 </div>
                 </div>
-                <div id='cainvite-paymentnametable' className='cainvite-paymentnametable'>
+                
+                <div id='cainvite-paymentnametable' className='cainvite-paymentnametable capayment-status'>
 
-                    <table >
+                    <table>
                         <tr>
                             
                             <th>
@@ -80,7 +119,7 @@ export default class PaymentStatus extends Component{
                                 STATUS
                             </th>
                         </tr>
-                        <PaymentStatusTable />
+                        <PaymentStatusTable noOfMembers={noOfMembers} membersList={membersList} />
                     </table>
                 </div>
             </div>
