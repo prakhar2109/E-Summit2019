@@ -95,6 +95,8 @@ class App extends Component {
   }
 
   render() {
+    let success = 'Success'
+    let fail = 'Fail'
     return (
       // <PaymentStatus></PaymentStatus>
       <BrowserRouter>
@@ -119,6 +121,12 @@ class App extends Component {
                 <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
                 {/* <Route exact path="/test" component={Startup} /> */}
                 <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
+                {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
+                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
+                <Route path="/dashboard/payment/fail"  render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
+                {/* <Route path="dashboard/payment/fail" render={() => <Redirect to="/dashboard"/>}/> */}
+
+                {/* <Route path='dashbard/payment/success/' render{()=><Redirect to='/dashboard'/>}/> */}
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />
