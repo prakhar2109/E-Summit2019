@@ -70,7 +70,7 @@ export default class PaymentStatus extends Component{
                 </div>
                 <div id='cainvite-paymentnametable' className='cainvite-paymentnametable'>
 
-                    <table>
+                    <table >
                         <tr>
                             
                             <th>
