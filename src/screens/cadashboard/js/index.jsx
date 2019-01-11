@@ -47,7 +47,7 @@ componentDidMount = () =>{
             <Route exact path="/dashboard/invite" component={CAInvite} />
             <Route exact path="/dashboard/leader" component={CALeader} />
             <Route exact path="/dashboard/contigent" component={CAcontigent} />
-            {/* <Route exact path="/dashboard/events" component={CAcontigent} /> */}
+            <Route exact path="/dashboard/events" component={CAcontigent} />
             {/* <Route exact path="/dashboard/events" component={CAevents} /> */}
           </React.Fragment>
           </Switch>
