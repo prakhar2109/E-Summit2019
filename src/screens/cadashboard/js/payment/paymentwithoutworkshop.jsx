@@ -19,7 +19,7 @@ export default class Payment extends Component {
       accomodationFee: null,
       totalFee: null,
       // visibleAccomodationFee:1000,
-      isDiscarded: null,
+      isDiscarded: true,
       isCouponValid: true,
       discountAvailedPercent: 0,
       isApplied: false,
@@ -54,16 +54,16 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          // console.log(res.data, 'sfs')
+          console.log(res.data, 'sfs')
 
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
               isPayed: false,
               registrationFee: res.data.payment.payment_details.payble_reg_fees,
               visibleAccomodationFee:
-                res.data.payment.payment_details.accommodation_fees,
+                res.data.payment.payment_details.payble_acco_fees,
               accomodationFee:
-                res.data.payment.payment_details.accommodation_fees,
+                res.data.payment.payment_details.payble_acco_fees,
               totalFee: res.data.payment.payment_details.total_payble,
             });
           } else if (res.data.payment.payment_status === "SUC") {
