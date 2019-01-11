@@ -235,7 +235,7 @@ class caLeaderboard extends Component {
                 <br />
               </span>
 
-              {/* <span>
+              <span>
                 <Link
                   to="/dashboard/Events"
                   className={
@@ -250,7 +250,7 @@ class caLeaderboard extends Component {
                   EVENTS
                 </Link>
                 <br />
-              </span> */}
+              </span>
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
