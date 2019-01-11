@@ -392,13 +392,14 @@ export default class Payment extends Component {
             <div className="capayment-accomodationfee">
               <div className="capayment-spaceaboutcolon">
                 Accomodation Fee{" "}
-                <button
+                {/* <button
                   id="capayment-toggleaccomodation"
                   className="capayment-toggleaccomodation"
                   onClick={e => this.toggleAccomodation(e)}
                 >
                   DISCARD
-                </button>{" "}
+                </button> */}
+                {" "}
               </div>{" "}
               :<div className="capayment-space" />Rs {visibleAccomodationFee}
             </div>
