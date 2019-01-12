@@ -31,8 +31,6 @@ export default class Cacontigent extends Component {
 	componentDidMount = () => {
 		let token = localStorage.getItem("user_token");
 		let invites = 0;
-		console.log(token)
-		console.log(this.state.contigent)
 		axios
 			.get(BASE_URL + "/v1/api/user/profile", {
 				headers: {
@@ -40,7 +38,6 @@ export default class Cacontigent extends Component {
 				},
 			})
 			.then(res => {
-				console.log(res.data, "data")
 				this.setState({
 					data: res.data,
 				});
@@ -61,7 +58,6 @@ export default class Cacontigent extends Component {
 				if (res.status == 200) {
 					
 					this.setState({ contigent: false, contingent_data: res.data})
-					console.log(this.state.contingent_data.leader.name)
 				}
 			})
 			.catch(response => {
@@ -81,7 +77,6 @@ export default class Cacontigent extends Component {
 							invites = invites + 1;
 						}
 						else if (e.status == "A") {
-							console.log("dagfsdf")
 							this.setState({ contigent: false, contingent_member: true })
 						}
 					})
@@ -122,9 +117,6 @@ export default class Cacontigent extends Component {
 
 
 		let token = localStorage.getItem("user_token");
-
-
-		console.log(token)
 		axios
 			.get(BASE_URL + "/v1/api/contingent/info/", {
 				headers: {
@@ -191,9 +183,7 @@ export default class Cacontigent extends Component {
 						})
 					}
 					if (this.state.no_contingent.length !== res.data.members.length) {
-						console.log(this.state.no_contingent, "this.state.no_contingent")
-						console.log(res.data.members, "res.data.members")
-
+						
 
 						this.setState({
 							contingent_error_message: "Field cannot be empty!"
@@ -350,7 +340,7 @@ export default class Cacontigent extends Component {
 		}
 		let { data } = this.state;
 		const width = 900;
-		console.log(this.state.contingent_data)		
+		
 		return (
 			<div>
 				{this.state.contigent ?
@@ -397,12 +387,12 @@ export default class Cacontigent extends Component {
 
 										</tr>
 
-										{this.state.invitelist.map(e =>
+										{this.state.invitelist&&this.state.invitelist.map(e =>
 											e.status == "P" &&
 											<tr id="cacontignet-table-row2">
 												<td>{e.user.name}</td>
 												<td>{e.user.esummit_id}</td>
-												<td>4</td>
+												<td>{e.accepted_users}</td>
 												<td><button id="cacontignet-td-b01" onClick={() => { this.acceptInvitation(e.contingent) }}>ACCEPT</button></td>
 												<td><button id="cacontignet-td-b02" onClick={() => { this.declineInvitation(e.contingent) }}>DECLINE</button></td>
 
@@ -502,8 +492,7 @@ export default class Cacontigent extends Component {
 										{this.state.contingent_error_message}
 									</div>
 									{this.state.no_contingent.map((id, e) => {
-										{ console.log(e, "[[[[[[[[[[[[") }
-
+										
 										return <AddUserForm deleterow={this.handleDeleteRow} form={id} index={e} no_contigent={this.state.no_contingent} />
 									})}
 
@@ -528,7 +517,7 @@ export default class Cacontigent extends Component {
 							</div>
 							<div className="cacontigent-line1"></div>
 
-							{console.log("jfwekjfa")}
+							
 
 							<div className="cacontigent-congratsparent">
 								<div className="cacontigent-congratsparent-child1">
@@ -649,6 +638,8 @@ export default class Cacontigent extends Component {
 													<div className="cacontigent-congratsparent-child3-id">
 														{e.status=="P"?"Pending":null}
 														{e.status=="A"?"Accepted":null}
+														{e.status=="D"?"Declined":null}
+
 
 
 													</div>
@@ -750,7 +741,7 @@ export default class Cacontigent extends Component {
 
 									)}
 
-									{/* {console.log(this.state)} */}
+									
 
 
 									<div className="cacontigent-aboutparent-head-addmember" onClick={this.addContingent}> Add member</div>
@@ -843,16 +834,16 @@ class AddUserForm extends Component {
 
 				})
 				.then(res => {
-					console.log(res.data.detail,"res.data")
+					
 					if(res.data.detail=="invitation already sent")
 					{
-						console.log("hello")
+						
 						this.setState({
 							contingent_error_messages: res.data.detail
 						})
 					}
 					else{
-					console.log(res.data,"res.data")
+					
 					document.getElementById("contigent-adduserform-input" + index).readOnly = true;
 					this.setState({
 						show_reset: true, contingent_error_messages: ""
@@ -873,7 +864,7 @@ class AddUserForm extends Component {
 		let data = {
 			"esummit_id": es_id
 		}
-		console.log(data, "handleClick");
+		
 		axios
 			({
 				method: "post",
