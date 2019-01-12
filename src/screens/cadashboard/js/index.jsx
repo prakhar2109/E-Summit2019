@@ -11,7 +11,7 @@ import CALeader from './caleader'
 import CAnewcontigent from './cacontigent'
 
 
-// import CAevents from './cacontigent'
+import CAevents from './comingsoon'
 // import { BASE_URL } from  './../../../../utils/urls'
 
 
@@ -48,7 +48,7 @@ componentDidMount = () =>{
             <Route exact path="/dashboard/leader" component={CALeader} />
             <Route exact path="/dashboard/contigent" component={CAnewcontigent} />
 
-            {/* <Route exact path="/dashboard/events" component={CAevents} /> */}
+            <Route exact path="/dashboard/events" component={CAevents} />
           </React.Fragment>
           </Switch>
         </div>
