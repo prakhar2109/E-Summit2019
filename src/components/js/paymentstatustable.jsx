@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import "../css/paymentstatustable.css";
+import { BASE_URL } from './../../utils/urls'
+import axios from "axios";
+
 
 class PaymentStatusRow extends Component{
     
@@ -9,9 +12,9 @@ class PaymentStatusRow extends Component{
             <React.Fragment>
                 <tr className='cainvite-table-row'>
                     <td>{id}. {name}</td>
-                    <td>{status}{
-                     status=='Done'?(
-                     <svg className='cainvite-table-svg' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <td>{status} {
+                     status==='Success'?(
+                        <svg className='cainvite-table-svg' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.2484 8.8584L12.474 15.7559L9.00471 12.2702L7.13477 14.1402L12.6052 19.6024L21.3972 11.0728L19.2484 8.8584Z" fill="#70BF48"/>
                         <path d="M14 0C6.26596 0 0 6.26596 0 14C0 21.734 6.26596 28 14 28C21.734 28 28 21.734 28 14C27.9918 6.26596 21.7258 0 14 0ZM14 25.4575C7.66842 25.4575 2.53427 20.3234 2.53427 13.9918C2.53427 7.66022 7.66842 2.52607 14 2.52607C20.3316 2.53427 25.4575 7.66022 25.4657 13.9918C25.4575 20.3316 20.3316 25.4575 14 25.4575Z" fill="#70BF48"/>
                     </svg>   
@@ -36,16 +39,29 @@ export default class PaymentStatusTable extends Component{
         super()
         this.state={
             noOfMembers:0,
-            membersList:[]  
+            membersList:[
+                
+            ]  
              
         }
     }
+    
     render() {
-        let {noOfMembers, membersList} = this.state
+        let {noOfMembers, membersList} = this.props
+        let i=0
+        let PEN = 'Pending'
+        let SUC = 'Success'
         return (
             <React.Fragment>
                 {noOfMembers ? membersList.map((member,i) => {
-                    return   <PaymentStatusRow id={member.id} name={member.name} status={member.status} key={i} ></PaymentStatusRow>
+                    i++
+                    if(member.status==='PEN'){
+                        return <PaymentStatusRow id={i} name={member.name} status={PEN} key={i} ></PaymentStatusRow>
+                    }
+                    else if(member.status==='SUC'){
+                        return <PaymentStatusRow id={i} name={member.name} status={SUC} key={i} ></PaymentStatusRow>
+                    }
+                    
                 }) : null
                 }
             </React.Fragment>
