@@ -64,6 +64,9 @@
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #name{
     padding-top: 10%;

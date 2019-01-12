@@ -229,7 +229,7 @@ export default class Payment extends Component{
                      <div className="capayment-line1"></div>
                  </div> */}
                  <div className="capayment-paymentinfo">
-                    <div class="coming_soon">COMING SOON</div>
+                    <div className="coming_soon">COMING SOON</div>
                      {/* <div className="capayment-paymentstatus">
                      <svg width="30" height="30" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.6771 2C11.3047 2 2 11.3083 2 22.6852C2 34.062 11.3047 43.3704 22.6771 43.3704C34.0495 43.3704 43.3542 34.062 43.3542 22.6852C43.3542 11.3083 34.0495 2 22.6771 2Z" stroke="#E2574C" stroke-width="3.5" stroke-miterlimit="10"/>
