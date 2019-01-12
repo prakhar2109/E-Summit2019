@@ -57,12 +57,15 @@ export default class Cacontigent extends Component {
 				},
 			})
 			.then(res => {
+				
 				if (res.status == 200) {
-					this.setState({ contigent: false, contingent_data: res.data, contingent_leader: true })
+					
+					this.setState({ contigent: false, contingent_data: res.data})
+					console.log(this.state.contingent_data.leader.name)
 				}
 			})
 			.catch(response => {
-				this.setState({ contigent: true })
+				
 			});
 
 		axios
@@ -347,7 +350,7 @@ export default class Cacontigent extends Component {
 		}
 		let { data } = this.state;
 		const width = 900;
-
+		console.log(this.state.contingent_data)		
 		return (
 			<div>
 				{this.state.contigent ?
@@ -426,9 +429,9 @@ export default class Cacontigent extends Component {
 									Steps to make a contingent
 								</div>
 								<div className="cacontigent-aboutparent-para">
-									Here are the steps to make a contingent<br />
-									To make a contingent, first everybody has to do individual registration.<br />
-									To make a contingent, first everybody has to do individual registration.
+								To make a contingent, first each member has to do individual registration.<br/>
+								After individual registration, contingent leader creates a contingent from his dashboard submitting details of each member.<br/>
+								A unique ID will be generated using which other contingent member can join their respective contingents<br/>
 								</div>
 							</div>
 							<div className="cacontigent-parent-heading2">
@@ -531,11 +534,11 @@ export default class Cacontigent extends Component {
 										<path d="M27.9224 12.6543L18.2446 22.5078L13.2885 17.5283L10.6172 20.1997L18.4321 28.0029L30.9921 15.8177L27.9224 12.6543Z" fill="#70BF48" />
 										<path d="M20.4258 0C9.37716 0 0.425781 8.95138 0.425781 20C0.425781 31.0486 9.37716 40 20.4258 40C31.4744 40 40.4258 31.0486 40.4258 20C40.4141 8.95138 31.4627 0 20.4258 0ZM20.4258 36.3679C11.3807 36.3679 4.04617 29.0334 4.04617 19.9883C4.04617 10.9432 11.3807 3.60867 20.4258 3.60867C29.4709 3.62039 36.7937 10.9432 36.8054 19.9883C36.7937 29.0451 29.4709 36.3679 20.4258 36.3679Z" fill="#70BF48" />
 									</svg></div>
-									<div>Congrats! Contingent succesfully created</div>
+									{this.state.contingent_member ? <div>Congrats! Contingent successfully joined </div>: <div>Congrats! Contingent successfully created</div>}
 								</div>
 								{this.state.contingent_member ?
 									<div className="cacontigent-congratsparent-child2">
-										Your contingent has been succesfully created Contingent No. CN 2 . A mail with the contingent no and unique password has been send to all members. Their names will be shown here as soon as they join the contingent. If you want to edit the members an edit option
+										Your Contingent No. is <strong>{this.state.contingent_data.contingent_id} </strong>.
 									</div>
 									:
 									<div className="cacontigent-congratsparent-child2">
@@ -565,23 +568,27 @@ export default class Cacontigent extends Component {
 											</div>
 										</div>
 
-										{/* <div className="cacontigent-congratsparent-child2">
+										<div className="cacontigent-congratsparent-child2">
 											<div className="cacontigent-congratsparent-child2-heading">
 												Leader
 											</div>
 											<div className="cacontigent-congratsparent-child2-parent">
 												<div className="cacontigent-congratsparent-child2-name">
-													Prakhar
+												{this.state.contingent_data.leader ? 
+												this.state.contingent_data.leader.name : null}
 												</div>
 												<div className="cacontigent-congratsparent-child2-id">
-													ES!###!#!3
+												{this.state.contingent_data.leader ? 
+												this.state.contingent_data.leader.esummit_id : null}
 												</div>
 											</div>
 
 											<div className="cacontigent-congratsparent-child2-heading">
 												Members
 								 			</div>
-											{this.state.contingent_data.members.map(e =>
+											 {this.state.contingent_data.members && this.state.contingent_data.members.map(e =>
+											
+												e.status=="A"&&
 												<div className="cacontigent-congratsparent-child2-parent">
 													<div className="cacontigent-congratsparent-child2-name">
 														{e.name}
@@ -589,17 +596,19 @@ export default class Cacontigent extends Component {
 													<div className="cacontigent-congratsparent-child2-id">
 														{e.esummit_id}
 													</div>
-													<div className="cacontigent-congratsparent-child2-id">
-														{e.status}
-													</div>
+													
 												</div>
+												
+												
+												
+											
 
-											)}
-										</div> */}
+											)} 
+										</div>
 									</div>
 								}
 
-								{this.state.contingent_leader &&
+								{!this.state.contingent_member &&
 									<div>
 										<div className="cacontigent-congratsparent-child1">
 											<div>Your Contingent</div>
@@ -615,17 +624,19 @@ export default class Cacontigent extends Component {
 											</div>
 											<div className="cacontigent-congratsparent-child2-parent">
 												<div className="cacontigent-congratsparent-child2-name">
-													{this.state.contingent_data.leader.name}
+												{this.state.contingent_data.leader ? 
+												this.state.contingent_data.leader.name : null}
 												</div>
 												<div className="cacontigent-congratsparent-child2-id">
-													{this.state.contingent_data.leader.esummit_id}
+												{this.state.contingent_data.leader ? 
+												this.state.contingent_data.leader.esummit_id : null}
 												</div>
 											</div>
 
 											<div className="cacontigent-congratsparent-child2-heading">
 												Members
 											</div>
-											{this.state.contingent_data.members.map(e =>
+											 {this.state.contingent_data.members && this.state.contingent_data.members.map(e =>
 												<div className="cacontigent-congratsparent-child2-parent">
 													<div className="cacontigent-congratsparent-child2-name">
 														{e.name}
@@ -634,7 +645,10 @@ export default class Cacontigent extends Component {
 														{e.esummit_id}
 													</div>
 													<div className="cacontigent-congratsparent-child3-id">
-														{e.status}
+														{e.status=="P"?"Pending":null}
+														{e.status=="A"?"Accepted":null}
+
+
 													</div>
 												</div>
 
@@ -669,9 +683,9 @@ export default class Cacontigent extends Component {
 								Steps to make a contingent
 							</div>
 							<div className="cacontigent-aboutparent-para">
-								Here are the steps to make a contingent<br />
-								To make a contingent, first everybody has to do individual registration.<br />
-								To make a contingent, first everybody has to do individual registration.
+							To make a contingent, first each member has to do individual registration.<br/>
+							After individual registration, contingent leader creates a contingent from his dashboard submitting details of each member.<br/>
+							A unique ID will be generated using which other contingent member can join their respective contingents<br/>
 							</div>
 						</div>
 
@@ -844,7 +858,11 @@ class AddUserForm extends Component {
 					}
 				})
 				.catch(response => {
-
+					
+						this.setState({
+							contingent_error_messages: "User already in contingent"
+						})
+			
 				});
 	
 	}
@@ -923,15 +941,17 @@ class AddUserForm extends Component {
 							&#x2715;
 							</div> */}
 							</div> :
-
+							<>
 							<div className="contigent-adduserform-button">
 								<div className="contigent-adduserform-buttonb01" id={this.props.index} onClick={() => { this.handleSubmit(this.props.index) }} >
 									Submit
+								</div>
+								
 							</div>
-								<div style={{ fontSize: "26px", cursor: "pointer", position: "absolute", left: "120px", top: "40px" }} onClick={() => this.props.deleterow(this.props.index)}>
+							<div className="contigent-adduserform-cross" onClick={() => this.props.deleterow(this.props.index)}>
 									&#x2715;
-						</div>
-							</div>}
+								</div>
+							</>}
 					</div>
 				</form>
 			</div>
