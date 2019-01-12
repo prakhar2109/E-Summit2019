@@ -448,8 +448,10 @@ export default class Cacontigent extends Component {
 								</div>
 
 								<div className="cacontigent-aboutparent-para">
-									20 % Off on getting 10 invites successfully who paid the fee.
-									20 % Off on getting 10 invites successfully who paid the fee.
+									30 % Off on team size of 5-7 .<br/>
+									40 % Off on team size of 8-10.<br/>
+									50 % Off on team size of more than 10 .<br/>
+
 								</div>
 							</div>
 						</div>
