@@ -6,6 +6,7 @@
     top: 0;
     left: 18%;
     width: 82%;
+    
     padding-bottom: 2vh;
     padding-left: 2vw;
     
@@ -52,6 +53,8 @@
     font-size: 20px;
     font-weight: 600;
     margin-top: 3.611vh;
+    height: fit-content;
+    /* align-content: center; */
 }
 .capayment-span{
     color: black;
@@ -97,7 +100,11 @@
 }
 .capayment-spaceaboutcolon{
     width: 30vw;
-    font-size: 18px
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
 }
 .capayment-space{
     width: 13vw;    
@@ -115,9 +122,12 @@
     /* padding: 1px;
     widh
      */
-    width: auto;
+     cursor: pointer;
+    width: fit-content;
+    padding-left :0.4vw;
+    padding-right:0.4vw;
     
-    height: 3.7vh;
+    height: auto;
     font-size: 14px;
     border-radius: 4px;
     font-weight: 600;
@@ -142,9 +152,11 @@
     margin-left: 5.7vw;
     /* border: 2px solid #4F4F4F; */
 }
-svg{
+.capayment-paymentstatus svg{
     /* margin-left: 1vw; */
+    /* margin-top: 1vh; */
     margin-right: 0.5vw;
+    
 }
 .capayment-totalamt{
     margin-left: 5.625vw;
@@ -247,7 +259,9 @@ svg{
     flex-wrap: wrap; 
 }
 .capayment-paymentstatusdone12{
-    
+    /* margin-left: 1vw; */
+    margin-top: 0.5vh;   
+    padding-left: 1vw;
 }
 .capayment-viewbillingdetails{
     color: orange;
@@ -256,9 +270,10 @@ svg{
     cursor:pointer;
 }
 .capayment-paymentinfodoneu{
-    /* padding-top: 2.5vh; */
+    padding-top: 0vh !important;
     background-color: white;
     margin-left: 1vw;
+    /* padding-left: 1vw; */
     margin-top: 2vh;
     height: auto;
     width: 70vw;
@@ -279,6 +294,7 @@ svg{
     font-size: 16px;
     font-weight: 500;
     display: flex;
+    margin-left:1.5vw;
     flex-wrap: wrap;
     flex-direction: row;
     padding-bottom: 3vh;
@@ -314,10 +330,11 @@ svg{
 }
 .capayment-paymentinfodonee{
     display: none;
-    /* padding-top: 2.5vh; */
+    padding-top: 0vh !important;
     padding-bottom:2.5vh;
     background-color: white;
     margin-left: 1vw;
+    /* padding-left: 1vw; */
     margin-top: 2vh;
     height: fit-content;
     width: 70vw;
@@ -384,6 +401,12 @@ padding-bottom:0;
    
 
 }
+.capayment-registrationfee-innerdiv{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .capayment-earlybirddiscount{
     margin-left:2vw;
 }
@@ -436,5 +459,192 @@ font-family:"ProximaNova-Semibold" !important;
     
   
     width: 100%;
+}
+.capayment-middlerow{
+    
+    width: 100%;
+    margin-top: 2.59vh;
+    margin-left: auto;
+    display: flex;
+    line-height: 3.5vh;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    
+    height: fit-content;
+}
+
+.capayment-tnc{
+    border:1px solid #989898;
+    border-radius: 8px;
+    width: auto;
+    color: #8A8A8A;
+}
+.capayment-paymentbtn{
+    background-color: #F39423;
+    width: auto;
+    height: 9vh;
+    border: none;
+    font-size: 20px;
+    margin-left: 0px;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 0.8vh;
+    /* display: inline;     */
+}
+.capayment-registrationfee{
+    margin-left: 5.625vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+    font-size: 14px;
+    color: #8A8A8A;
+}
+.capayment-accomodationfee{
+    margin-left: 5.625vw;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2.96vh;
+    color: #8A8A8A;
+}
+.capayment-spaceaboutcolon{
+    width: 30vw;
+    font-size: 14px
+}
+.capayment-discountcoupon{
+    margin-left: 5.625vw;
+    font-size: 14px;
+    margin-top: 2.96vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #8A8A8A;
+}
+.capayment-toggleaccomodation{
+    margin-left:4.5vw;
+    background-color: white;
+    border:1.5px solid #E2574C;
+    color: #E2574C;
+    /* width: 6.21vw; */
+    /* padding-left: 0.4vw; */
+    /* padding-right: 0.4vw; */
+    /* padding: 1px;
+    widh
+     */
+    width: auto;
+    cursor: pointer;
+    
+    height: auto;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.capayment-totalamt{
+    margin-left: 5.625vw;
+    margin-top: 2.96vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 18px;
+    color: black;
+}
+.capayment-horizontalline{
+    height: 0.2vh;
+    background-color: #4F4F4F;
+    /* position:absolute; */
+    margin-top: 4vh;
+    width: 80vw;
+    margin-left: 5.7vw;
+    /* border: 2px solid #4F4F4F; */
+}
+.capayment-paymentstatus{
+    
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 3.611vh;
+    height: fit-content;
+    /* align-content: center; */
+}
+
+.capayment-criterialistparent{
+    background-color: white;
+    margin-left: 1vw;
+    margin-top: 5.925vh;
+    height: auto;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+    padding-left: 1vw;
+    overflow-y: auto;
+}
+.capayment-paymentinfodonee{
+    display: none;
+    /* padding-top: 2.5vh; */
+    padding-bottom:2.5vh;
+    background-color: white;
+    /* margin-left: 1vw; */
+    /* margin-top: 2vh; */
+    padding-top: 0vh !important;
+    height: fit-content;
+    width: 100%;
+    /* padding-left: 3vw; */
+
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+}
+.capayment-paymentinfodoneu{
+    /* padding-top: 2.5vh; */
+    background-color: white;
+    /* margin-left: 1vw; */
+    /* margin-right: 10vw; */
+    /* margin-top: 2vh; */
+    height: auto;
+    width: 100%;
+    /* padding-left: 3vw; */
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+    flex-wrap: wrap;
+    padding-top: 0vh !important;
+
+    flex-direction: column;
+}
+.capayment-criterialistparentdone{
+    background-color: white;
+    /* margin-left: 1vw; */
+    margin-top: 2vh;
+    height: fit-content;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.08);
+    border-radius: 6px;
+    padding-left: 1vw;
+
+}
+.capayment-paymentstatusdone12 svg{
+    height: 4vh;
+}
+.capayment-viewbillingdetails-svg{
+    height: 1vh !important;
+}
+.capayment-upArrowSVg{
+    height: 1vh !important;   
+}
+
+.capayment-billingdetails-secondrow{
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    margin-left:3vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 3vh;
+}
+.capayment-viewbillingdetails{
+    color: orange;
+    margin-left: 50vw;
+    font-size: 14px;
+    cursor:pointer;
 }
 }

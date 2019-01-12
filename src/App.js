@@ -102,8 +102,9 @@ class App extends Component {
           <div>
             <Switch>
               <ScrollToTop>
-                <Route path="/suignite" component={Suignite} />
                 {/* <Route path="/paymentstatus" component={PaymentStatus} /> */}
+                {/* <Route path="/ideastorm" component={IdeaStorm} /> */}
+                {/* <Route path="/suignite" component={Suignite} /> */}
                 <Route path="/ideastorm" component={IdeaStorm} />
                 <Route path="/" component={LandingPage} exact />
                 <Route path="/speakers" component={Speakers} />
@@ -111,6 +112,7 @@ class App extends Component {
                 <Route path="/faq" component={FAQBoard} />
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={ignite} />
+                <Route path="/startupignite" render={() => <Redirect to="/ignite"/>}/>
                 <Route path="/register" component={Registration} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
@@ -119,6 +121,12 @@ class App extends Component {
                 <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
                 {/* <Route exact path="/test" component={Startup} /> */}
                 <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
+                {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
+                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
+                <Route path="/dashboard/payment/fail"  render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
+                {/* <Route path="dashboard/payment/fail" render={() => <Redirect to="/dashboard"/>}/> */}
+
+                {/* <Route path='dashbard/payment/success/' render{()=><Redirect to='/dashboard'/>}/> */}
                 {/* <Route path="/iitrdashboard/" component={Iitrindex} />
                 <Route path="/noniitrdashboard/" component={Noniitrindex} />
                 <Route path="/prodashboard/" component={Professionalindex} />

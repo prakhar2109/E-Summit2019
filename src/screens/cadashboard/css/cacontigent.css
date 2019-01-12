@@ -202,7 +202,8 @@
 }
 .contigent-adduserform{
 	display:flex;
-        margin-bottom: 2.59vh;
+		margin-bottom: 2.59vh;
+		position: relative;
 }
 
 .contigent-adduserform-child{
@@ -307,9 +308,10 @@ font-size: 14.2px;
 width: 50%;
 letter-spacing: 0.02em;
 color: #4F4F4F;
+text-transform: lowercase;
 }
 .cacontigent-congratsparent-child2-id{
-width: 20%;
+width: 28%;
 font-size: 14.2px;
 letter-spacing: 0.02em;
 
@@ -436,6 +438,7 @@ right:45px;
 	letter-spacing: 0.02em;
 	font-family: "Proxima-nova-regular";
 	color: #F39423;
+	cursor: pointer;
 }
 .cacontigent-finish{
 	height: 4.44vh;
@@ -451,13 +454,33 @@ right:45px;
 	text-align: center;
 	margin-top: 5.9vh;
 }
+.cacontigent-congratsparent-child3-id{
+	width: 20%;
+    font-size: 14.2px;
+    letter-spacing: 0.02em;
+    color: #1A4D66;
+}
+.contigent-adduserform-cross{
+	font-size: 26px;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    right: 21%;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 @media (min-width: 0px) and (max-width: 900px){
 .ant-modal {
 width:90px !important;
 
 }
 .Createcontigent-parentbody{
-  
+	width: 74vw;
+    margin-left: -25.76%;
 }
 .contigent-adduserform {
     flex-wrap: wrap;
@@ -474,7 +497,15 @@ width:90px !important;
 }
 .contigent-adduserform-buttonb01 {
     margin-top: 1vh;
-    position: unset;
+	position: unset;
+	height: 3.44vh;
+}
+.cacontigent-heading-deletecontigent{
+	font-size: 10px;
+
+}
+.cacontigent-aboutparent-head-addmember{
+	font-size: 12px;
 }
 .cacontigent-parent {
     color: black;
@@ -530,6 +561,12 @@ margin: auto;
     font-size: 16px;
    
 }
+.cacontigent-congratsparent-child3-id {
+    width: 30%;
+    margin-left: 3%;
+    word-break: break-all;
+}
+
 .cacontigent-congratsparent-child1 div{
 	font-family: "ProximaNova-Semibold";
 }
@@ -551,19 +588,44 @@ font-size: 14px;
 }
 .cacontigent-congratsparent-child2-name{
 font-size: 14px;
+width: 31%;
+word-break: break-word;
+
 }
 .cacontigent-congratsparent-child2-id{
 font-size: 14px;
+margin-left: 3%;
+word-break: break-all;
+width: 30%;
 }
 .cacontigent-congratsparent-editcontigent{
 font-size: 10px;
 }
 .contigent-adduserform-heading{
-font-size: 16.04px;
+font-size: 14px;
+}
+.contigent-adduserform-input{
+	font-size: 12px;
+	width: 100%;
+    height: 3.44vh;
+    border: 1px solid #000000;
+    padding: 1.11vh;
+    color: #4F4F4F;
+    line-height: 12px;
 }
 .cacontigent-congratsparent-editcontigent{
 position:absolute;
 right:15px;
+}
+.contigent-adduserform-cross{
+	font-size: 26px;
+    cursor: pointer;
+    position: absolute;
+	bottom: 0;
+	height: 40%;
+    left: 0%;
+    top: 66%;
+    
 }
 
 }
@@ -609,6 +671,7 @@ font-size: 20px;
 font-size:16px;
     width: 6rem;
 color: #F39423;
+
 }
 .cacontigent-aboutparent-head-addmember{
 font-size: 20px;
