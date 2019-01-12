@@ -111,8 +111,8 @@ class App extends Component {
                 <Route path="/sponsors" component={Sponsors} />
                 <Route path="/faq" component={FAQBoard} />
                 <Route path="/campusambassador" component={CampusAmbasder} />
-                <Route path="/ignite" component={ignite} />
-                <Route path="/startupignite" render={() => <Redirect to="/ignite"/>}/>
+                <Route path="/ignite" component={Suignite} />
+                <Route path="/startupignite" render={() => <Redirect to="/ignite" />} />
                 <Route path="/register" component={Registration} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
@@ -122,8 +122,8 @@ class App extends Component {
                 {/* <Route exact path="/test" component={Startup} /> */}
                 <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
-                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
-                <Route path="/dashboard/payment/fail"  render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
+                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
+                <Route path="/dashboard/payment/fail" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
                 {/* <Route path="dashboard/payment/fail" render={() => <Redirect to="/dashboard"/>}/> */}
 
                 {/* <Route path='dashbard/payment/success/' render{()=><Redirect to='/dashboard'/>}/> */}
