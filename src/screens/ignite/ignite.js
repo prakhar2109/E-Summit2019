@@ -56,10 +56,7 @@ export default class ComingSoon extends Component {
           </div>
 
           <div className='ignite'>
-
-
             <div className='ignite_head'>VENUES</div>
-
             <div className='ignite_venus'>
 
               <center>

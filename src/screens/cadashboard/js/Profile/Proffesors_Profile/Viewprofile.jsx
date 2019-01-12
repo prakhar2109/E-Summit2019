@@ -444,10 +444,9 @@ export default class Viewprofile extends Component {
                             <div className="caprofile-dropshape">
 
                             {name[0]}
-                
                             </div>
                             <div className="profile-dashboard-type">
-                                PROFESSOR
+                            PROFESSOR
 		                </div>
                             <div className="profile-dashboard-esummit">
                                 <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>

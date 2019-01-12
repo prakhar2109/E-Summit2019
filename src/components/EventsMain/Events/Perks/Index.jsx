@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./style.css"
 import Header from "../Common/header"
-import { BASE_URL } from '../../../utils/urls';
+import { BASE_URL } from '../../../../utils/urls';
 
 export default class PerksSection extends Component {
     render() {
