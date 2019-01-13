@@ -212,7 +212,7 @@ export default class ComingSoon extends Component {
             <br />
           </span>
           <span>
-            <Link to="/dashboard/contigent" className={(this.state.activeState === "contigent") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
+            <Link to="/dashboard/contingent" className={(this.state.activeState === "contigent") ? "linkEventson" : "linkEventson-inactive"} onClick={() => {
               this.setActive("contigent");
             }}>
               CONTINGENT

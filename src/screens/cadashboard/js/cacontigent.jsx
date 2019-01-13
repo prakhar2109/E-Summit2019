@@ -99,7 +99,7 @@ export default class Cacontigent extends Component {
 			.then(res => {
 				if (res.status == 200) {
 					this.setState({ contigent: null })
-					window.location.href = '/dashboard/contigent'
+					window.location.href = '/dashboard/contingent'
 				}
 			})
 			.catch(response => {
@@ -173,7 +173,7 @@ export default class Cacontigent extends Component {
 				if (this.state.no_contingent.length > 3 && !isempty) {
 					this.setState({ contigent: false })
 					this.handleOk();
-					window.location.href = '/dashboard/contigent'
+					window.location.href = '/dashboard/contingent'
 
 
 				}
@@ -233,7 +233,7 @@ export default class Cacontigent extends Component {
 			.then(res => {
 				if (res.status === 200) {
 
-					window.location.href = '/dashboard/contigent'
+					window.location.href = '/dashboard/contingent'
 					this.setState({ contigent: false })
 
 					// this.props.form.name = res.data.name;
@@ -263,7 +263,7 @@ export default class Cacontigent extends Component {
 			.then(res => {
 				if (res.status == 200) {
 					this.setState({ contigent: true })
-					window.location.href = '/dashboard/contigent'
+					window.location.href = '/dashboard/contingent'
 				}
 
 			})
@@ -282,7 +282,7 @@ export default class Cacontigent extends Component {
 			.then(res => {
 				if (res.status == 200) {
 					this.setState({ contingent_member: null })
-					window.location.href = '/dashboard/contigent'
+					window.location.href = '/dashboard/contingent'
 				}
 			})
 			.catch(response => {
@@ -340,7 +340,7 @@ export default class Cacontigent extends Component {
 				newData.splice(index, 1) // remove element
 				return {no_contingent: newData} // update state
 			  })
-			  window.location.href='/dashboard/contigent'
+			  window.location.href='/dashboard/contingent'
 			}
 			else{
 				this.setState({
