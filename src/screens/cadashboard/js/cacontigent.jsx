@@ -3,7 +3,7 @@ import "../css/cacontigent.css";
 import { Modal } from 'antd';
 import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
-
+import update from 'react-addons-update';
 
 export default class Cacontigent extends Component {
 	constructor() {
@@ -17,10 +17,10 @@ export default class Cacontigent extends Component {
 			loading: false,
 			data: [],
 			no_contingent: [
-				{ esummit_id: "", name: "", status: null },
-				{ esummit_id: "", name: "", status: null },
-				{ esummit_id: "", name: "", status: null },
-				{ esummit_id: "", name: "", status: null },
+				{ esummit_id: "", name: "", },
+				{ esummit_id: "", name: "", },
+				{ esummit_id: "", name: "", },
+				{ esummit_id: "", name: "", },
 			],
 			es_iddata: [],
 			invitelist: [],
@@ -151,7 +151,7 @@ export default class Cacontigent extends Component {
 
 	}
 	createContigentSubmit = () => {
-
+		console.log(this.state.no_contingent,"createcontigentsubmit")
 		// this.state.no_contingent.map((e,index)=>
 		// e.esummit_id === "" || e.name === ""?
 
@@ -326,6 +326,7 @@ export default class Cacontigent extends Component {
 			this.setState({ no_contingent: array });
 		}
 	}
+	
 	render() {
 
 		const { visible } = this.state;
@@ -493,7 +494,7 @@ export default class Cacontigent extends Component {
 									</div>
 									{this.state.no_contingent.map((id, e) => {
 										
-										return <AddUserForm deleterow={this.handleDeleteRow} form={id} index={e} no_contigent={this.state.no_contingent} />
+										return <AddUserForm  form={id} deleterow={this.handleDeleteRow}  index={e} no_contigent={this.state.no_contingent} />
 									})}
 
 
@@ -735,7 +736,7 @@ export default class Cacontigent extends Component {
 									{this.state.no_contingent.map((e, index) =>
 										<div key={index}>
 
-											<AddUserForm deleterow={this.handleDeleteRow} index={index} form={e} no_contigent={this.state.no_contingent} />
+											<AddUserForm  index={index} form={e} deleterow={this.handleDeleteRow}  no_contigent={this.state.no_contingent} />
 
 										</div>
 
@@ -768,16 +769,16 @@ class AddUserForm extends Component {
 			name: props.form.name,
 			show_reset: false,
 			contingent_error_messages: "",
-			contingent_data: []
+			contingent_data: props.no_contigent
 		}
 	}
-	componentDidMount() {
-		this.setState({
-			es_id: this.props.form.esummit_id,
-			name: this.props.form.name,
-		})
+	// componentDidMount() {
+	// 	this.setState({
+	// 		es_id: this.props.form.esummit_id,
+	// 		name: this.props.form.name,
+	// 	})
 
-	}
+	// }
 	onChange = (e) => {
 		this.setState({
 			es_id: e.target.value,
@@ -813,10 +814,14 @@ class AddUserForm extends Component {
 
 			});
 	}
+
 	handleSubmit = (index) => {
-		
-			
-		
+		// console.log(this.state.no_contigent)
+		// document.getElementById("contigent-adduserform-input" + index).readOnly = true;
+		// this.setState({
+		// 	items: update(this.state.no_contigent, {index: {essumit_id: {$set: this.state.es_id}}})
+		//   })
+			console.log(this.state.contingent_data)
 			let token = localStorage.getItem("user_token");
 			let data = {
 				"esummit_id": this.state.es_id
@@ -892,6 +897,7 @@ class AddUserForm extends Component {
 			});
 
 	}
+
 	componentDidMount() {
 		if (this.state.show_reset)
 			document.getElementById("contigent-adduserform-input" + this.props.index).readOnly = true;
@@ -941,7 +947,7 @@ class AddUserForm extends Component {
 								</div>
 								
 							</div>
-							<div className="contigent-adduserform-cross" onClick={() => this.props.deleterow(this.props.index)}>
+							<div className="contigent-adduserform-cross" onClick={() => {this.props.deleterow(this.props.index)}}>
 									&#x2715;
 								</div>
 							</>}
