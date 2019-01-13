@@ -151,7 +151,7 @@ export default class Cacontigent extends Component {
 
 	}
 	createContigentSubmit = () => {
-		console.log(this.state.no_contingent,"createcontigentsubmit")
+		// console.log(this.state.no_contingent,"createcontigentsubmit")
 		let isempty=false
 		this.state.no_contingent.map((e,index)=>
 		e.esummit_id === "" || e.name === ""?
@@ -323,12 +323,7 @@ export default class Cacontigent extends Component {
 		}, 300);
 	}
 	handleDeleteRow = (index) => {
-		console.log(this.state.no_contingent,"handledelete")
-		// var array = [...this.state.no_contingent]; // make a separate copy of the array
-		// var index = index
-		// if (index !== -1) {
-		// 	array.splice(index, 1);
-		// 	this.setState({ no_contingent: array });
+	
 		
 		if(index==this.state.no_contingent.length-1)
 		{
@@ -339,6 +334,8 @@ export default class Cacontigent extends Component {
 		  })
 		}
 		else{
+			if(this.state.no_contingent.length>4)
+			{
 			this.setState(prevState => { // pass callback in setState to avoid race condition
 				let newData = prevState.no_contingent.slice() //copy array from prevState
 				newData.splice(index, 1) // remove element
@@ -346,6 +343,12 @@ export default class Cacontigent extends Component {
 			  })
 			  window.location.href='/dashboard/contigent'
 			}
+			else{
+				this.setState({
+					contingent_error_message: "Minimum four members required!"
+				})
+			}
+		}
 		
 	}
 	closeContigent=()=>{
@@ -354,7 +357,7 @@ export default class Cacontigent extends Component {
 
 	}
 	render() {
-		console.log(this.state.no_contingent,"parent render")
+	
 		const { visible } = this.state;
 		const modalstyle = {
 			left: "20vw",
@@ -523,7 +526,7 @@ export default class Cacontigent extends Component {
 										{this.state.contingent_error_message}
 									</div>
 									{this.state.no_contingent.map((id, e) => {
-										{console.log(id,"inside map")}
+										// {console.log(id,"inside map")}
 										return <AddUserForm  form={id} deleterow={this.handleDeleteRow}  index={e} no_contigent={this.state.no_contingent} />
 									})}
 
@@ -765,7 +768,7 @@ export default class Cacontigent extends Component {
 
 									{this.state.no_contingent.map((e, index) =>
 										<div key={index}>
-											{console.log(this.state.no_contingent,index,"In parent render map")}
+											{/* {console.log(this.state.no_contingent,index,"In parent render map")} */}
 											<AddUserForm  index={index} form={e} deleterow={this.handleDeleteRow}  no_contigent={this.state.no_contingent} />
 
 										</div>
@@ -816,7 +819,7 @@ class AddUserForm extends Component {
 		this.handleClick(e.target.value)
 	}
 	handleReset = (index) => {
-		console.log(this.state.contingent_data,"after reset")
+		// console.log(this.state.contingent_data,"after reset")
 		let token = localStorage.getItem("user_token");
 		let data = {
 			"esummit_id": this.state.es_id
@@ -859,7 +862,7 @@ class AddUserForm extends Component {
 		// this.setState({
 		// 	items: update(this.state.no_contigent, {index: {essumit_id: {$set: this.state.es_id}}})
 		//   })
-			console.log(this.state.contingent_data,"handleSubmit")
+			// console.log(this.state.contingent_data,"handleSubmit")
 			let token = localStorage.getItem("user_token");
 			let data = {
 				"esummit_id": this.state.es_id
@@ -943,7 +946,7 @@ class AddUserForm extends Component {
 			document.getElementById("contigent-adduserform-input" + this.props.index).readOnly = true;
 		// console.log(this.props.index,"hello")
 		this.setState({contingent_data:this.props.no_contigent})
-		console.log(this.state.contingent_data,this.props.index,"child-compounddidmount")
+		// console.log(this.state.contingent_data,this.props.index,"child-compounddidmount")
 
 
 	}
@@ -953,12 +956,12 @@ class AddUserForm extends Component {
 				show_reset: true
 			})
 		}
-		console.log(this.state.contingent_data,this.props.index,"child-compoundWillmount")
+		// console.log(this.state.contingent_data,this.props.index,"child-compoundWillmount")
 
 	}
 
 	render() {
-{	console.log(this.props.no_contigent,this.props.index,"inside child render")}
+// {	console.log(this.props.no_contigent,this.props.index,"inside child render")}
 		return (
 			<div>
 				<form >
