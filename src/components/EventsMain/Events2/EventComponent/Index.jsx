@@ -3,8 +3,9 @@ import Header from "../Header/Index"
 // import axios from "axios"
 // import { BASE_URL } from "../../../utils/urls"
 // import Eventfooter from "../Common/footer/eventfooter"
-import { NavLink } from "react-router-dom";
-import esummit from "../Common/es.png";
+// import { NavLink } from "react-router-dom";
+// import esummit from "../Common/es.png";
+import MobileNav from "../../../../NewScreens/mobile_nav/header"
 import Eventfooter from "../Common/footer/eventfooter"
 import Nav from "../Common/nav/nav"
 import Body from "../Body/Index"
@@ -25,6 +26,7 @@ class EventComponentIndex extends Component {
         return (
             <React.Fragment>
                 <Nav />
+                <MobileNav />
                 {this.state.data ?
                     <Header data={this.state.data} />
                     : null}
