@@ -6,16 +6,16 @@ export default class SmallEventData extends Component {
         return (
             <React.Fragment>
                 <p className="suignite-topic-heading">
-                    {this.props.data.heading}
+                    {this.props.data && this.props.data.heading}
                 </p>
                 {this.props.data.para === "yes" ?
                     <p className="suignite-topic-para">
-                        {this.props.data.paragraph}
+                        {this.props.data && this.props.data.paragraph}
                     </p>
                     : null}
-                {this.props.data.bullets === "yes" ?
+                {this.props.data && this.props.data.bullets === "yes" ?
                     <ul>
-                        {this.props.data.bullets_data.map((e, index) =>
+                        {this.props.data && this.props.data.bullets_data && this.props.data.bullets_data.map((e, index) =>
                             <li key={index}>
                                 {e.data}
                             </li>
@@ -23,9 +23,9 @@ export default class SmallEventData extends Component {
                     </ul>
                     : null
                 }
-                {this.props.data.array === "yes" ?
+                {this.props.data && this.props.data.array === "yes" ?
                     <div className="suignite-panelists-img-parent">
-                        {this.props.data.array_data.map((e, index) =>
+                        {this.props.data && this.props.data.array_data && this.props.data.array_data.map((e, index) =>
                             <div key={index} className="suignite-panelists-img-child">
                                 <div className="suignite-panelists-img1" style={{
                                     backgroundImage: `url(${BASE_URL + e.photo})`

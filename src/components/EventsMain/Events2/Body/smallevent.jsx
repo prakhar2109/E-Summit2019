@@ -10,15 +10,20 @@ export default class SmallEventIndex extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="suignite-parent-child2-panel">
-                    <div>
-                        <img className="suignite-vector" src={Vector} alt="vector" />
-                        <div className="suignite-head1">{this.props.data.heading}</div>
+                {this.props.data ?
+                    <div className="suignite-parent-child2-panel">
+                        {this.props.data && this.props.data.heading ?
+                            <div>
+                                < img className="suignite-vector" src={Vector} alt="vector" />
+                                <div className="suignite-head1">{this.props.data.heading}</div>
+                            </div>
+                            : null}
+
+                        {this.props.data && this.props.data.data && this.props.data.data.map((e, index) =>
+                            <SmallEventData key={index} data={e} />
+                        )}
                     </div>
-                    {this.props.data.data.map((e, index) =>
-                        <SmallEventData key={index} data={e} />
-                    )}
-                </div>
+                    : null}
             </React.Fragment>
         );
     }

@@ -313,6 +313,7 @@ margin-bottom:0;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    margin-top: 10vh;
 }
 .suignite-parent-child2-applyparent-heading{
 color: #FFFFFF;
@@ -467,8 +468,11 @@ font-size: 28px;
 }
 
 @media (max-width: 900px){
-    #suignite-parent-child2-applyparent-button{
-
+    .suignite-parent-child1-inactive{
+        padding: 0px 50px 0px 0px !important;
+    }
+    .suignite-parent-child1-active{
+        padding: 0px 50px 0px 0px !important;
     }
     .suignite-parent-child2-applyparent-heading{
         font-size: 20px;
@@ -521,8 +525,10 @@ font-size: 28px;
     }
     .suignite-parent-child1 {
         /* height: 39.81vh; */
-        height: 10vh;
+        height: 25vh;
         padding-top: 12.31vh;
+        overflow-x: scroll;
+        overflow-y: hidden;
         padding-right: 3.75%;
         /* text-align: right; */
         width: 100%;

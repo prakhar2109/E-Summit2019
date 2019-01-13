@@ -223,7 +223,7 @@ export default class IgniteIndex extends Component {
 								</p>
 							<p>RULES & REGULATIONS</p>
 							<p>
-								1.This is an individual game and open to all.
+								1.This is an individual game and open to all.<br />
 								2.Speaking or murmuring any sort of hint will lead to disqualification of the candidate.
 								</p>
 							<p>ELIGIBILITY</p>

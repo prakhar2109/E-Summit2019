@@ -31,7 +31,7 @@ export default class BodyIndex extends Component {
                             "suignite-parent-child1-active" :
                             "suignite-parent-child1-inactive"}
                             onClick={() => { this.setActive(name.sub_event_name); }}>
-                            {name.sub_event_name}
+                            <p>{name.sub_event_name}</p>
                         </div>
                     )}
 
