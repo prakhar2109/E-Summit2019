@@ -326,7 +326,11 @@ export default class Cacontigent extends Component {
 			this.setState({ no_contingent: array });
 		}
 	}
-	
+	closeContigent=()=>{
+		this.handleOk();
+		document.getElementById("createcontigent").style.display = "block";
+
+	}
 	render() {
 
 		const { visible } = this.state;
@@ -463,6 +467,10 @@ export default class Cacontigent extends Component {
 								<div className="cacontigent-createparent" id="cacontigent5789" >
 									<div className="cacontigent-heading">
 										Create Contingent
+									</div>
+									<div className="cacontigent-heading-deletecontigent" style={{display:"flex"}} onClick={this.closeContigent}>
+										Close
+										<div style={{marginLeft:"10%"}}>&#x2715;</div>
 									</div>
 								</div>
 
