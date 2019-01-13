@@ -3,7 +3,7 @@ import "../css/cacontigent.css";
 import { Modal } from 'antd';
 import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
-
+import update from 'react-addons-update';
 
 export default class Cacontigent extends Component {
 	constructor() {
@@ -17,10 +17,10 @@ export default class Cacontigent extends Component {
 			loading: false,
 			data: [],
 			no_contingent: [
-				{ esummit_id: "", name: "", status: null },
-				{ esummit_id: "", name: "", status: null },
-				{ esummit_id: "", name: "", status: null },
-				{ esummit_id: "", name: "", status: null },
+				{ esummit_id: "", name: "", },
+				{ esummit_id: "", name: "", },
+				{ esummit_id: "", name: "", },
+				{ esummit_id: "", name: "", },
 			],
 			es_iddata: [],
 			invitelist: [],
@@ -150,12 +150,16 @@ export default class Cacontigent extends Component {
 
 	}
 	createContigentSubmit = () => {
+		// console.log(this.state.no_contingent,"createcontigentsubmit")
+		let isempty=false
+		this.state.no_contingent.map((e,index)=>
+		e.esummit_id === "" || e.name === ""?
 
-		// this.state.no_contingent.map((e,index)=>
-		// e.esummit_id === "" || e.name === ""?
+		isempty=true
+		:null)
+		
 
-		// forward = false
-		// :forward=true
+
 		let token = localStorage.getItem("user_token");
 		let es_idmember;
 		axios
@@ -165,8 +169,8 @@ export default class Cacontigent extends Component {
 				},
 			})
 			.then(res => {
-				if (this.state.no_contingent.length > 3 && this.state.no_contingent.length === res.data.members.length) {
-
+			
+				if (this.state.no_contingent.length > 3 && !isempty) {
 					this.setState({ contigent: false })
 					this.handleOk();
 					window.location.href = '/dashboard/contigent'
@@ -181,7 +185,7 @@ export default class Cacontigent extends Component {
 							contingent_error_message: "Minimum four members required!"
 						})
 					}
-					if (this.state.no_contingent.length !== res.data.members.length) {
+					if (isempty) {
 						
 
 						this.setState({
@@ -318,15 +322,41 @@ export default class Cacontigent extends Component {
 		}, 300);
 	}
 	handleDeleteRow = (index) => {
-		var array = [...this.state.no_contingent]; // make a separate copy of the array
-		var index = index
-		if (index !== -1) {
-			array.splice(index, 1);
-			this.setState({ no_contingent: array });
+	
+		
+		if(index==this.state.no_contingent.length-1)
+		{
+		this.setState(prevState => { // pass callback in setState to avoid race condition
+			let newData = prevState.no_contingent.slice() //copy array from prevState
+			newData.splice(index, 1) // remove element
+			return {no_contingent: newData} // update state
+		  })
 		}
+		else{
+			if(this.state.no_contingent.length>4)
+			{
+			this.setState(prevState => { // pass callback in setState to avoid race condition
+				let newData = prevState.no_contingent.slice() //copy array from prevState
+				newData.splice(index, 1) // remove element
+				return {no_contingent: newData} // update state
+			  })
+			  window.location.href='/dashboard/contigent'
+			}
+			else{
+				this.setState({
+					contingent_error_message: "Minimum four members required!"
+				})
+			}
+		}
+		
+	}
+	closeContigent=()=>{
+		this.handleOk();
+		document.getElementById("createcontigent").style.display = "block";
+
 	}
 	render() {
-
+	
 		const { visible } = this.state;
 		const modalstyle = {
 			left: "20vw",
@@ -462,6 +492,10 @@ export default class Cacontigent extends Component {
 									<div className="cacontigent-heading">
 										Create Contingent
 									</div>
+									<div className="cacontigent-heading-deletecontigent" style={{display:"flex"}} onClick={this.closeContigent}>
+										Close
+										<div style={{marginLeft:"10%"}}>&#x2715;</div>
+									</div>
 								</div>
 
 								<div className="createcontigent-body">
@@ -491,8 +525,8 @@ export default class Cacontigent extends Component {
 										{this.state.contingent_error_message}
 									</div>
 									{this.state.no_contingent.map((id, e) => {
-										
-										return <AddUserForm deleterow={this.handleDeleteRow} form={id} index={e} no_contigent={this.state.no_contingent} />
+										// {console.log(id,"inside map")}
+										return <AddUserForm  form={id} deleterow={this.handleDeleteRow}  index={e} no_contigent={this.state.no_contingent} />
 									})}
 
 
@@ -733,8 +767,8 @@ export default class Cacontigent extends Component {
 
 									{this.state.no_contingent.map((e, index) =>
 										<div key={index}>
-
-											<AddUserForm deleterow={this.handleDeleteRow} index={index} form={e} no_contigent={this.state.no_contingent} />
+											{/* {console.log(this.state.no_contingent,index,"In parent render map")} */}
+											<AddUserForm  index={index} form={e} deleterow={this.handleDeleteRow}  no_contigent={this.state.no_contingent} />
 
 										</div>
 
@@ -767,16 +801,16 @@ class AddUserForm extends Component {
 			name: props.form.name,
 			show_reset: false,
 			contingent_error_messages: "",
-			contingent_data: []
+			contingent_data: props.no_contigent
 		}
 	}
-	componentDidMount() {
-		this.setState({
-			es_id: this.props.form.esummit_id,
-			name: this.props.form.name,
-		})
+	// componentDidMount() {
+	// 	this.setState({
+	// 		es_id: this.props.form.esummit_id,
+	// 		name: this.props.form.name,
+	// 	})
 
-	}
+	// }
 	onChange = (e) => {
 		this.setState({
 			es_id: e.target.value,
@@ -784,6 +818,7 @@ class AddUserForm extends Component {
 		this.handleClick(e.target.value)
 	}
 	handleReset = (index) => {
+		// console.log(this.state.contingent_data,"after reset")
 		let token = localStorage.getItem("user_token");
 		let data = {
 			"esummit_id": this.state.es_id
@@ -800,19 +835,34 @@ class AddUserForm extends Component {
 
 			})
 			.then(res => {
-				document.getElementById(index).style.display = "none";
+				// document.getElementById(index).style.display = "none";
+				let array=[...this.state.contingent_data]
+					array[index].esummit_id=""
+					array[index].name=""
+
+
 				this.setState({
-					show_reset: true
+					name: "",
+					show_reset: false,
+					contingent_data:array
 				})
+				
+				document.getElementById("contigent-adduserform-input" + index).value = ""
+				document.getElementById("contigent-adduserform-input" + index).readOnly = false;
+
 			})
 			.catch(response => {
 
 			});
 	}
+
 	handleSubmit = (index) => {
-		
-			
-		
+		// console.log(this.state.no_contigent)
+		// document.getElementById("contigent-adduserform-input" + index).readOnly = true;
+		// this.setState({
+		// 	items: update(this.state.no_contigent, {index: {essumit_id: {$set: this.state.es_id}}})
+		//   })
+			// console.log(this.state.contingent_data,"handleSubmit")
 			let token = localStorage.getItem("user_token");
 			let data = {
 				"esummit_id": this.state.es_id
@@ -839,10 +889,12 @@ class AddUserForm extends Component {
 						})
 					}
 					else{
-					
+					let array=[...this.state.contingent_data]
+					array[index].esummit_id=this.state.es_id
+					array[index].name=this.state.name
 					document.getElementById("contigent-adduserform-input" + index).readOnly = true;
 					this.setState({
-						show_reset: true, contingent_error_messages: ""
+						show_reset: true, contingent_error_messages: "",contingent_data:array
 					})
 					}
 				})
@@ -888,9 +940,14 @@ class AddUserForm extends Component {
 			});
 
 	}
+
 	componentDidMount() {
 		if (this.state.show_reset)
 			document.getElementById("contigent-adduserform-input" + this.props.index).readOnly = true;
+		// console.log(this.props.index,"hello")
+		this.setState({contingent_data:this.props.no_contigent})
+		// console.log(this.state.contingent_data,this.props.index,"child-compounddidmount")
+
 
 	}
 	componentWillMount() {
@@ -899,11 +956,12 @@ class AddUserForm extends Component {
 				show_reset: true
 			})
 		}
+		// console.log(this.state.contingent_data,this.props.index,"child-compoundWillmount")
 
 	}
 
 	render() {
-
+// {	console.log(this.props.no_contigent,this.props.index,"inside child render")}
 		return (
 			<div>
 				<form >
@@ -926,9 +984,7 @@ class AddUserForm extends Component {
 								<div className="contigent-adduserform-buttonb01" id={this.props.index} onClick={() => { this.handleReset(this.props.index) }} >
 									Reset
 							</div>
-								{/* <div style={{fontSize:"26px",cursor:"pointer",position: "absolute",left: "120px",top: "40px"}} onClick={()=>this.props.deleterow(this.props.index)}>
-							&#x2715;
-							</div> */}
+							
 							</div> :
 							<>
 							<div className="contigent-adduserform-button">
@@ -937,7 +993,7 @@ class AddUserForm extends Component {
 								</div>
 								
 							</div>
-							<div className="contigent-adduserform-cross" onClick={() => this.props.deleterow(this.props.index)}>
+							<div className="contigent-adduserform-cross" onClick={() => {this.props.deleterow(this.props.index)}}>
 									&#x2715;
 								</div>
 							</>}
