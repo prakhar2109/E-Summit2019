@@ -103,7 +103,7 @@ export default class Viewprofile extends Component {
         this.handleOk()
     }
 
-    render() {
+    render() { 
         const { visible } = this.state;
         const modalstyle = {
             left: "20vw",
@@ -147,7 +147,7 @@ export default class Viewprofile extends Component {
 		                </div>
                         <div className="profile-dashboard-esummit">
                             <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-                            <span id="profile-dashboard-esummitId-value">ES172292</span>
+                            <span id="profile-dashboard-esummitId-value">{data.esummit_id}</span>
                         </div>
 
                     </div>
@@ -324,7 +324,7 @@ export default class Viewprofile extends Component {
 		                </div>
                                 <div className="profile-dashboard-esummit">
                                     <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-                                    <span id="profile-dashboard-esummitId-value">ES172292</span>
+                                    <span id="profile-dashboard-esummitId-value">{data.esummit_id}</span>
                                 </div>
                             </div>
                             <div className="caprofile-parent1-childline"></div>

@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import Header from "../Header/Index"
+import { Route } from "react-router-dom";
+import Loadable from "react-loadable";
+import Loader from "../../screens/loader/loader";
 import axios from "axios"
-import { BASE_URL } from "../../../utils/urls"
-import Eventfooter from "../Common/footer/eventfooter"
-import { NavLink } from "react-router-dom";
-import esummit from "../Common/es.png";
-import Eventfooter from "../Common/footer/eventfooter"
-import Nav from "../Common/nav/nav"
+import { BASE_URL } from "../../utils/urls"
 
-class EventComponentIndex extends Component {
+const Events = Loadable({
+    loader: () => import("./Events/EventComponent/Index"),
+    loading: () => <Loader />,
+});
+
+const Events2 = Loadable({
+    loader: () => import("./Events2/EventComponent/Index"),
+    loading: () => <Loader />,
+});
+
+export default class EventsMainIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: "",
+            data: ""
         }
     }
     componentDidMount() {
@@ -31,13 +38,12 @@ class EventComponentIndex extends Component {
             data: data
         }).then((r) => {
             this.setState({
-                data: r.data
+                data: r.data.event_data[0]
             })
             // document
             //     .getElementById("loader")
             //     .style
             //     .display = "none";
-
         }).catch((response) => {
             // document
             //     .getElementById("loader")
@@ -49,26 +55,14 @@ class EventComponentIndex extends Component {
     render() {
         return (
             <React.Fragment>
-                <Nav />
-                {this.state.data.head_section ?
-                    <Header data={this.state.data.head_section} />
-                    : null}
-                <div className="es">
-                    <center>
-                        <NavLink to="/">
-                            <img alt="Esummit Logo" src={esummit} />
-                        </NavLink>
-                    </center>
-
-                    <p>
-                        Go to &nbsp;
-            <NavLink to="/">esummit.in</NavLink>
-                    </p>
-                </div>
-                <Eventfooter />
+                {this.state.data.event_type2 === "TYPE1" ?
+                    <Route exact path="/events/:id" render={props => (<Events {...props} data={this.state.data} />)} /> :
+                    this.state.data.event_type2 === "TYPE2" ?
+                        <Route exact path="/events/:id" render={props => (<Events2 {...props} data={this.state.data} />)} />
+                        : null
+                }
             </React.Fragment>
         );
     }
 }
 
-export default EventComponentIndex;

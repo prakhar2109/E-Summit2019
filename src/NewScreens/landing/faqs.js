@@ -26,8 +26,8 @@ class FAQBoard extends Component {
     }
   };
   render() {
-    let {faqList, isHomePage} = this.props;
-    if(isHomePage){
+    let { faqList, isHomePage } = this.props;
+    if (isHomePage) {
       faqList = faqList.filter(update => update.faq_type.type_name === "Homepage");
     }
     return (
@@ -38,11 +38,13 @@ class FAQBoard extends Component {
             <p className="esummit-landing-faq-land-para">Stuck somewhere ? We’ re here to help you! </p>
 
             {faqList.map(update => {
-                return <SingleFAQ key={update.id} update={update} />;
+              return <SingleFAQ key={update.id} update={update} />;
             })}
-            <center>
-              <NavLink to="/faq" > <button className="view_all"> VIEW ALL </button></NavLink>
-            </center>
+            {this.props.viewall === "false" ? null :
+              <center>
+                <NavLink to="/faq" > <button className="view_all"> VIEW ALL </button></NavLink>
+              </center>
+            }
           </div>
         </section>
       </Element>

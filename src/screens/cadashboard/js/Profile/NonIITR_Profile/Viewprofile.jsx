@@ -86,7 +86,7 @@ export default class Viewprofile extends Component {
     }
     handleClick = e => {
 
-        e.preventDefault();
+        e.preventDefault(); 
         let {
             data
         } = this.state
