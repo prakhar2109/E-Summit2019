@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./style.css"
 import jump from "jump.js";
-import { BASE_URL } from "../../../utils/urls"
+import { BASE_URL } from "../../../../utils/urls"
 import "../Common/ideastorm.scss"
 import "../Common/ignite.scss"
 import "../Common/scrollanimation.css"

@@ -429,7 +429,6 @@ export default class Viewprofile extends Component {
                             <div className="caprofile-dropshape">
 
                             {name[0]}
-                                
                         </div>
                             <div className="profile-dashboard-type">
                                 PROFESSIONAL

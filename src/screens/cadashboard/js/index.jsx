@@ -9,28 +9,27 @@ import CAPayment from './payment/paymentwithoutworkshop'
 import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAnewcontigent from './cacontigent'
-
-
-import CAevents from './comingsoon'
+import CAevents from './events'
 // import { BASE_URL } from  './../../../../utils/urls'
+import axios from "axios";
 
 
 
 
 
- 
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-    
+
     };
   }
-componentDidMount = () =>{
-  let token = localStorage.getItem("user_token");
-            
-}
+  componentDidMount = () => {
+    let token = localStorage.getItem("user_token");
+
+  }
   render() {
     let{dashboardProps} = this.props
   
@@ -47,7 +46,6 @@ componentDidMount = () =>{
             <Route exact path="/dashboard/invite" component={CAInvite} />
             <Route exact path="/dashboard/leader" component={CALeader} />
             <Route exact path="/dashboard/contigent" component={CAnewcontigent} />
-
             <Route exact path="/dashboard/events" component={CAevents} />
           </React.Fragment>
           </Switch>

@@ -56,8 +56,7 @@ export default class Cacontigent extends Component {
 			.then(res => {
 				
 				if (res.status == 200) {
-					
-					this.setState({ contigent: false, contingent_data: res.data})
+					this.setState({ contigent: false, contingent_data: res.data, contingent_leader: true })
 				}
 			})
 			.catch(response => {
@@ -850,6 +849,7 @@ class AddUserForm extends Component {
 				
 				document.getElementById("contigent-adduserform-input" + index).value = ""
 				document.getElementById("contigent-adduserform-input" + index).readOnly = false;
+
 			})
 			.catch(response => {
 
