@@ -222,6 +222,8 @@
 	padding:1.11vh;
 		color:#4F4F4F;
 		line-height: 20px;
+		display: flex;
+		align-items: center;
 }
 .contigent-adduserform-input:focus{
 	border: 1px solid #2EA2F8 !important;
