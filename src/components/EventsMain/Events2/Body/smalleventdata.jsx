@@ -3,6 +3,8 @@ import { BASE_URL } from "../../../../utils/urls"
 
 export default class SmallEventData extends Component {
     render() {
+        console.log('smalleventdata', this.props)
+
         return (
             <React.Fragment>
                 <p className="suignite-topic-heading">

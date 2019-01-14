@@ -3,6 +3,8 @@ import SmallEvent from "./smallevent"
 
 export default class ContentIndex extends Component {
     render() {
+        console.log('content', this.props)
+
         return (
             <React.Fragment>
                 {this.props.data && this.props.data.map((body, index) =>
@@ -21,7 +23,7 @@ export default class ContentIndex extends Component {
                             </div>
 
                             {this.props.data && this.props.data.map((e, index) =>
-                                <SmallEvent key={index} data={e.detail[0]} />
+                                <SmallEvent key={index} data={e.detail} />
                             )}
                         </div>
                         : null

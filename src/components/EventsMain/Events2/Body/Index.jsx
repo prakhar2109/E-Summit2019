@@ -23,6 +23,7 @@ export default class BodyIndex extends Component {
         });
     }
     render() {
+        console.log('index_body', this.props)
         return (
             <div className="suignite-parent-childparent">
                 <div className="suignite-parent-child1">
