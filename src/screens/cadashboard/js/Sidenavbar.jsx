@@ -220,7 +220,7 @@ class caLeaderboard extends Component {
 
               <span>
                 <Link
-                  to="/dashboard/contigent"
+                  to="/dashboard/contingent"
                   className={
                     this.state.activeState === "contigent"
                       ? "linkEventson"
