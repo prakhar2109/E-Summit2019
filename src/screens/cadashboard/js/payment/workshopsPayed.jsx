@@ -8,7 +8,7 @@ class Workshop extends Component{
     constructor(props){
         super(props)
         this.state={
-            isWorkshopDiscarded:false
+            isWorkshopDiscarded:true
         }
     }
     toggleWorkshop = e =>{
@@ -17,7 +17,7 @@ class Workshop extends Component{
         if(this.state.isWorkshopDiscarded){
         document.getElementById(`capayment-toggleaccomodation-workshops-${this.props.id}`).innerHTML = 'ADD'
         axios
-        .get(BASE_URL + `/v1/api/event/${this.props.id}/unregister` , {
+        .get(BASE_URL + `/v1/api/event/${this.props.id}/apply` , {
           headers: {
             Authorization: `Token ${token}`,
           },
@@ -40,7 +40,7 @@ class Workshop extends Component{
             document.getElementById(`capayment-toggleaccomodation-workshops-${this.props.id}`).innerHTML = 'DISCARD'
 
             axios
-            .get(BASE_URL + `/v1/api/event/${this.props.id}/apply` , {
+            .get(BASE_URL + `/v1/api/event/${this.props.id}/unregister` , {
               headers: {
                 Authorization: `Token ${token}`,
               },
@@ -78,7 +78,7 @@ class Workshop extends Component{
                 {!isPayed && <button 
                   id= {`capayment-toggleaccomodation-workshops-${id}`}
                   className="capayment-toggleaccomodation-workshops"
-                  onClick={e => this.toggleWorkshop(e)}>ADD</button>
+                  onClick={e => this.toggleWorkshop(e)}>DISCARD</button>
                  }
                 
 
@@ -97,14 +97,17 @@ export default class Workshops extends Component{
     render() {
         let {workshops,noOfWorkshops,isPayed,letMeknowIfDiscardClicked} = this.props
         return (
+            
             <React.Fragment>
+                
                 {noOfWorkshops ? workshops.map((workshop,i) => {
-                    if(workshop.fee>0){
-                    return   <Workshop workshopName={workshop.title} workshopFee={workshop.fee} id={workshop.id} key={i} isPayed={isPayed} letMeknowIfDiscardClicked={letMeknowIfDiscardClicked}></Workshop>
-                    }
-                    else{
-                        return   <Workshop workshopName={workshop.title} workshopFee={0} id={workshop.id} key={i} isPayed={isPayed} letMeknowIfDiscardClicked={letMeknowIfDiscardClicked}></Workshop>
-                    }
+                    // if(workshop.fee>0){
+                        
+                        return   <Workshop workshopName={workshop.event_title} workshopFee={workshop.event_fee} id={workshop.id} key={i} isPayed={isPayed} letMeknowIfDiscardClicked={letMeknowIfDiscardClicked}></Workshop>
+                    // }
+                    // else{
+                    //     return   <Workshop workshopName={workshop.event_title} workshopFee={0} id={workshop.id} key={i} isPayed={isPayed} letMeknowIfDiscardClicked={letMeknowIfDiscardClicked}></Workshop>
+                    // }
                 }) : null
                 }
                 
