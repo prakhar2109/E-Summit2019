@@ -43,7 +43,7 @@ export default class ResetpasswordIndex extends Component {
                         .display = "grid";
                     axios({
                         method: "post",
-                        url: BASE_URL + `/v1/api/user/reset-password/${url}`,
+                        url: BASE_URL + `/v1/api/user/reset-password${url}`,
                         data: info,
                     }).then(r => {
                         document
@@ -86,20 +86,18 @@ export default class ResetpasswordIndex extends Component {
     }
     confirmpassvalidate = () => {
         let { password, confirm_password } = this.state
-        setTimeout(function () {
-            if (password !== confirm_password) {
-                this.setState({
-                    confirmpass_error_bool: "true",
-                    confirmpass_error: "Both password does not match"
-                })
-            }
-            else {
-                this.setState({
-                    confirmpass_error_bool: "false",
-                    confirmpass_error: ""
-                })
-            }
-        }.bind(this), 1000)
+        if (password !== confirm_password && confirm_password !== "") {
+            this.setState({
+                confirmpass_error_bool: "true",
+                confirmpass_error: "Both passwords do not match"
+            })
+        }
+        else {
+            this.setState({
+                confirmpass_error_bool: "false",
+                confirmpass_error: ""
+            })
+        }
     }
     passvalidate = () => {
         let { password } = this.state
@@ -131,6 +129,7 @@ export default class ResetpasswordIndex extends Component {
         const name = e.target.name;
         let value = e.target.value;
         this.setState({ [name]: value });
+        setTimeout(() => this.confirmpassvalidate(), 1000)
     }
     componentDidMount() {
         let uuid = window.location.pathname.substring(15)
@@ -140,7 +139,7 @@ export default class ResetpasswordIndex extends Component {
             .display = "grid";
         axios({
             method: "post",
-            url: BASE_URL + "/v1/api/user/verify-code/" + uuid,
+            url: BASE_URL + "/v1/api/user/verify-code" + uuid,
         }).then(r => {
             document
                 .getElementById("loader")
@@ -154,8 +153,7 @@ export default class ResetpasswordIndex extends Component {
                 .getElementById("loader")
                 .style
                 .display = "none";
-            // console.log(response, "dahgjhajujk")
-            window.location.href = "/register"
+            // window.location.href = "/register"
         });
 
     }
@@ -231,8 +229,8 @@ export default class ResetpasswordIndex extends Component {
                                                             autoCapitalize="off"
                                                             value={confirm_password}
                                                             onChange={event => {
+                                                                // this.confirmpassvalidate()
                                                                 this.onChange(event)
-                                                                this.confirmpassvalidate()
                                                             }}
                                                             spellCheck="false"
                                                             required
