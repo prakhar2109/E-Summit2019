@@ -191,7 +191,7 @@ export default class AccountSetup extends Component {
             if (this.state.password !== this.state.confirm_password) {
                 this.setState({
                     confirmpass_error_bool: "true",
-                    confirmpass_error: "Both password does not match"
+                    confirmpass_error: "Both passwords do not match"
                 })
             } else {
                 this.setState({
