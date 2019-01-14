@@ -422,8 +422,8 @@ export default class Cacontigent extends Component {
 												<td>{e.user.name}</td>
 												<td>{e.user.esummit_id}</td>
 												<td>{e.accepted_users}</td>
-												<td><button id="cacontignet-td-b01" onClick={() => { this.acceptInvitation(e.contingent) }}>ACCEPT</button></td>
-												<td><button id="cacontignet-td-b02" onClick={() => { this.declineInvitation(e.contingent) }}>DECLINE</button></td>
+												<td id="cacontignet-td-4"><button id="cacontignet-td-b01" onClick={() => { this.acceptInvitation(e.contingent) }}>ACCEPT</button></td>
+												<td id="cacontignet-td-5"><button id="cacontignet-td-b02" onClick={() => { this.declineInvitation(e.contingent) }}>DECLINE</button></td>
 
 											</tr>
 
