@@ -5,8 +5,6 @@ import { Modal } from "antd";
 import Coupon from "./../coupon";
 import { BASE_URL } from "./../../../../utils/urls";
 import axios from "axios";
-import Payments from './workshops'
-import PaymentsPayed from './workshopsPayed'
 
 export default class Payment extends Component {
   constructor() {
@@ -31,13 +29,6 @@ export default class Payment extends Component {
       isModalVisible: false,
       couponcode: "",
       couponSelected: "",
-      //workshops
-      workshopsNotPayed:[
-    ],
-      noOfWorkshopsNotPayed:0,
-      workshopsPayed:[],
-      noOfWorkshopsPayed:0,
-
 
       //if payment is done isPayed will become true
       // values will come from backend
@@ -51,10 +42,12 @@ export default class Payment extends Component {
       datePayed: "12/12/18",
     };
   }
-
-  letMeknowIfDiscardClicked = () =>{
+  componentDidMount = () => {
     let token = localStorage.getItem("user_token");
-    axios
+    // let URL = '10.42.0.1:8000'
+    if (token !== undefined) {
+
+      axios
         .get(BASE_URL + "/v1/api/user/profile", {
           headers: {
             Authorization: `Token ${token}`,
@@ -95,89 +88,7 @@ export default class Payment extends Component {
           // console.log("could not connect to the server");
           alert('could not connect to the server')
         });
-        axios
-        .get(BASE_URL + "/v1/api/events/" , {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        })
-        .then(res => {
-          console.log(res.data,'dfnam')
-          this.setState({
-            workshopsNotPayed:res.data,
-            noOfWorkshopsNotPayed:res.data.length
-          })
-        })
-        .catch(response => {
-          alert("could not connect to the server");
-        });
-  }
-  componentDidMount = () => {
-    let token = localStorage.getItem("user_token");
-    // let URL = '10.42.0.1:8000'
-    if (token !== undefined) {
 
-      axios
-        .get(BASE_URL + "/v1/api/user/profile", {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        })
-        .then(res => {
-          // console.log(res., 'sfs')
-
-          if (res.data.payment.payment_status === "PEN") {
-            this.setState({
-              isPayed: false,
-              registrationFee: res.data.payment.payment_details.payble_reg_fees,
-              visibleAccomodationFee:
-                res.data.payment.payment_details.payble_acco_fees,
-              accomodationFee:
-                res.data.payment.payment_details.payble_acco_fees,
-              totalFee: res.data.payment.payment_details.total_payble,
-
-            });
-          } else if (res.data.payment.payment_status === "SUC") {
-            this.setState({
-              isPayed: true,
-              registrationFeePayed: res.data.payment.payment_details.payble_reg_fees,
-              visibleAccomodationFeePayed: res.data.payment.payment_details.payble_acco_fees,
-              accomodationFee: res.data.payment.payble_acco_fees,
-              totAmtPayed: res.data.payment.payment_details.amount_paid,
-              workshopsPayed:res.data.payment.applications.filter(workshop => workshop.status=='REG'),
-              noOfWorkshopsPayed:res.data.payment.applications.filter(workshop => workshop.status=='REG').length,
-            });
-          } else {
-            this.setState({
-              isPayed: false,
-              registrationFee: res.data.payment.registration_fee,
-              visibleAccomodationFee: res.data.payment.accommodation_fee,
-              accomodationFee: res.data.payment.accommodation_fee,
-            });
-          }
-          //   console.log(res.data)
-        })
-        .catch(response => {
-          // console.log("could not connect to the server");
-          alert('could not connect to the server')
-        });
-
-        axios
-        .get(BASE_URL + "/v1/api/events/" , {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        })
-        .then(res => {
-          console.log(res.data,'dfnam')
-          this.setState({
-            workshopsNotPayed:res.data,
-            noOfWorkshopsNotPayed:res.data.length
-          })
-        })
-        .catch(response => {
-          alert("could not connect to the server");
-        });
       let ta = this.props.location.search;
       // console.log(ta,'sad')
       if (ta.length !== 0) {
@@ -445,10 +356,6 @@ export default class Payment extends Component {
       couponDiscountPercent,
       totAmtPayed,
       datePayed,
-      workshopsNotPayed,
-      workshopsPayed,
-      noOfWorkshopsNotPayed,
-      noOfWorkshopsPayed
     } = this.state;
     // let discountAvailed = (visibleAccomodationFee+registrationFee)*discountAvailedPercent/100//formula has to be changed
     couponDiscount = (registrationFee * couponDiscountPercent) / 100;
@@ -503,13 +410,8 @@ export default class Payment extends Component {
                 />
               </svg>
               <span className="capayment-span">Payment Status</span> : Pending
-                
             </div>
-            <div className='capayment-registration1-header'>
-                            Registration
-                        </div>
             <div className="capayment-registrationfee">
-            
               <div className="capayment-spaceaboutcolon">Registration Fee</div>{" "}
               :<div className="capayment-space" />
               <div className='capayment-registrationfee-innerdiv'>
@@ -604,15 +506,6 @@ export default class Payment extends Component {
                 </Modal>
               )}
             </div>
-            
-            <div className='capayment-hortizontalline2'></div>
-                    <div className='capaymentwv-workshop-parent'>
-                        <div className='capaymentwv-workshop-header'>
-                            Workshops
-                        </div>
-                        <Payments workshops={workshopsNotPayed} noOfWorkshops={noOfWorkshopsNotPayed} isPayed={false} letMeknowIfDiscardClicked = {this.letMeknowIfDiscardClicked}/>
-                    </div>          
-                    {/* <div className="capaymentwv-horizontalline"></div>     */}
             <div className="capayment-horizontalline" />
             <div className="capayment-totalamt">
               <div className="capayment-spaceaboutcolon">Total Amount</div>:
@@ -830,27 +723,6 @@ export default class Payment extends Component {
                 ({couponDiscountPercentPayed} % Off)
               </div>
             </div>
-            {/* <div className='capaymentwv-hortizontalline21'></div>
-                 <div className='capaymentwv-workshop-parent'>
-                        <div className='capaymentwv-workshop-header'>
-                            Workshops
-                        </div>
-                        <Payments workshops={workshopsPayed} noOfWorkshops={noOfWorkshopsPayed} />
-                    </div> */}
-                  
-                {noOfWorkshopsPayed>0 ?
-                  <React.Fragment>
-                  <div className='capayment-hortizontalline2'></div>
-                  <div className='capaymentwv-workshop-parent'>
-                      <div className='capaymentwv-workshop-header'>
-                          Workshops
-                      </div>
-                      <PaymentsPayed workshops={workshopsPayed} noOfWorkshops={noOfWorkshopsPayed} isPayed={true}/>
-                  </div>
-                  </React.Fragment>
-                :
-                null}
-                 
             <div className="capayment-horizontalline" />
             <div className="capayment-totalamt">
               <div className="capayment-spaceaboutcolon">Total Amount</div>:

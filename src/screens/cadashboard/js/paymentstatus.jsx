@@ -121,7 +121,6 @@ export default class PaymentStatus extends Component{
                         <PaymentStatusTable noOfMembers={noOfMembers} membersList={membersList} />
                     </table>
                 </div>
-                
             </div>
         )
     }
