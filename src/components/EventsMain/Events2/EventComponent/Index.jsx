@@ -23,6 +23,7 @@ class EventComponentIndex extends Component {
         })
     }
     render() {
+        console.log('comp_index', this.props.data)
         return (
             <React.Fragment>
                 <Nav />
