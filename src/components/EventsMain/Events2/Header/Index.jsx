@@ -7,10 +7,10 @@ export default class HeaderEvents2 extends Component {
 
     render() {
         return (
-            <div className="suignite-parent">
-                <div className="suignite-parent-img" style={{
-                    backgroundImage: `url(${BASE_URL + this.props.data.logo})`
-                }}></div>
+            <div className="suignite-parent" style={{
+                backgroundImage: `url(${BASE_URL + this.props.data.card_image})`
+            }}>
+                <div className="suignite-parent-img" ></div>
                 <p>{this.props.data.title}</p>
                 <p>{this.props.data.tagline}</p>
                 <p>{this.props.data.long_description}</p>

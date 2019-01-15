@@ -120,6 +120,7 @@ class App extends Component {
                 <Route path="/dashboard/" component={Caindex} />
                 <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
                 {/* <Route exact path="/test" component={Startup} /> */}
+                <Route path="/events/onlineevents" render={() => <Redirect to="/events/online%20events" />} />
                 <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
                 <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
