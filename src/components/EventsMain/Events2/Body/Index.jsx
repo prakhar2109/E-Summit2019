@@ -10,7 +10,7 @@ export default class BodyIndex extends Component {
             activeState: ""
         }
     }
-    setActive(state) {
+    setActive = (state) => {
         this.setState({
             activeState: state
         });
