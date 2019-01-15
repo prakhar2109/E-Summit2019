@@ -15,7 +15,7 @@ export default class ContentIndex extends Component {
                                     Apply for {this.props.event_name} in {body.sub_event_name}
                                 </div>
                                 {console.log(body.sub_event_reg_url)}
-                                <a href={body.sub_event_reg_url} >
+                                <a href={body.sub_event_reg_url} target="_blank">
                                     <button id="suignite-parent-child2-applyparent-button">
                                         APPLY
                                     </button>
@@ -23,7 +23,7 @@ export default class ContentIndex extends Component {
                             </div>
 
                             {this.props.data && this.props.data.map((e, index) =>
-                                <SmallEvent key={index} data={e.detail} />
+                                e.sub_event_name === this.props.active && <SmallEvent key={index} data={e.detail} />
                             )}
                         </div>
                         : null

@@ -16,7 +16,7 @@ export default class SmallEventIndex extends Component {
                     <div className="suignite-parent-child2-panel">
                         {datum && datum.heading ?
                             <div>
-                                < img className="suignite-vector" src={Vector} alt="vector" />
+                                <img className="suignite-vector" src={Vector} alt="vector" />
                                 <div className="suignite-head1">{datum.heading}</div>
                             </div>
                             : null}
