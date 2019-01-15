@@ -23,7 +23,7 @@ export default class ContentIndex extends Component {
                             </div>
 
                             {this.props.data && this.props.data.map((e, index) =>
-                                <SmallEvent key={index} data={e.detail} />
+                                e.sub_event_name === this.props.active && <SmallEvent key={index} data={e.detail} />
                             )}
                         </div>
                         : null
