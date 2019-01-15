@@ -15,7 +15,7 @@ export default class ContentIndex extends Component {
                                     Apply for {this.props.event_name} in {body.sub_event_name}
                                 </div>
                                 {console.log(body.sub_event_reg_url)}
-                                <a href={body.sub_event_reg_url} >
+                                <a href={body.sub_event_reg_url} target="_blank">
                                     <button id="suignite-parent-child2-applyparent-button">
                                         APPLY
                                     </button>
