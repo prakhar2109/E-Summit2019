@@ -11,7 +11,7 @@ import jump from "jump.js"
 
 export default class IgniteIndex extends Component {
 	state = {
-		activeState: "NOIDA",
+		activeState: "NEWDELHI",
 		faq: [
 			{
 				id: 2,
@@ -67,10 +67,12 @@ export default class IgniteIndex extends Component {
 					<p>STARTUP IGNITE</p>
 					<p>Prelude to symphony</p>
 					<p>
-						Startup Ignite aims to spread awareness about entrepreneurship and startups in various cities PAN-India.
-						Startup Ignite presents students across multiple cities the chance to widen their scope of knowledge in
-						entrepreneurship and meet some of the best people in the field today. E-Cell IITR organises various events
-						in collaboration with local entrepreneurship development organisations.
+						Startup Ignite is the drive to spread awareness about Entrepreneurship and
+						Startups in various cities of North India. The zonal event of E-Summit brings
+						the chance to get a taste of entrepreneurship to your cities in collaboration
+						with your regional Entrepreneurship development organisations. It would be
+						the right stage for you to widen your scope of entrepreneurial knowledge, meet
+						the best in business today and network with them.
 					</p>
 					<div className="ignite-first-page-scroll">
 						<div onClick={this.jum} className='icon-scroll'></div> <br />
@@ -80,8 +82,8 @@ export default class IgniteIndex extends Component {
 
 				<div id="ignite" className="suignite-parent-childparent">
 					<div className="suignite-parent-child1">
-						<div className={this.state.activeState === "NOIDA" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("NOIDA"); }}>NOIDA</div>
-						<div className={this.state.activeState === "CHANDIGARH" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("CHANDIGARH"); }}>CHANDIGARH</div>
+						{/* <div className={this.state.activeState === "NOIDA" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("NOIDA"); }}>NOIDA</div> */}
+						{/* <div className={this.state.activeState === "CHANDIGARH" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("CHANDIGARH"); }}>CHANDIGARH</div> */}
 						<div className={this.state.activeState === "NEWDELHI" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("NEWDELHI"); }}>NEWDELHI</div>
 						<div className={this.state.activeState === "DEHRADUN" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("DEHRADUN"); }}>DEHRADUN</div>
 						<div className={this.state.activeState === "JAIPUR" ? "suignite-parent-child1-active" : "suignite-parent-child1-inactive"} onClick={() => { this.setActive("JAIPUR"); }}>JAIPUR</div>
@@ -183,33 +185,116 @@ export default class IgniteIndex extends Component {
 								</div>
 							</div>
 						</div> */}
-						<div className="suignite-guestlecture-parent">
-							<div>
-								<img className="suignite-vector" src={Vector} alt="" />
-								<div className="suignite-head1">GUEST LECTURE</div>
-							</div>
-							<div className="suignite-guestlecture-child-parent">
-								{/* <div className="suignite-guestlecture-child1"></div>
-								<div className="suignite-guestlecture-child2">
-									<p>SAURABH KOCHHAR</p>
-									<p>CEO, Company Name</p>
-									<p>Topic : Make in India</p>
-									<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
+						{this.state.activeState === "NEWDELHI" ?
+							<div className="suignite-guestlecture-parent">
+								<div>
+									<img className="suignite-vector" src={Vector} alt="" />
+									<div className="suignite-head1">GUEST LECTURE</div>
+								</div>
+								<div className="suignite-guestlecture-child-parent">
+									<div className="suignite-guestlecture-child1 back-delhi-one"></div>
+									<div className="suignite-guestlecture-child2">
+										<p>AVELO ROY</p>
+										<p>MD,  Kolkata Ventures</p>
+										<p>Topic : Aspiring Young Achievers.</p>
+										<p>Achievers don't have any age,they have the will to do things.
+											Aspiration is required to direct their sheer talent and hardwork.</p>
+									</div>
+								</div>
+								{/* <div className="suignite-guestlecture-child-parent">
+									<div className="suignite-guestlecture-child1"></div>
+									<div className="suignite-guestlecture-child2">
+										<p>SAURABH KOCHHAR</p>
+										<p>CEO, Company Name</p>
+										<p>Topic : Make in India</p>
+										<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
+									</div>
 								</div> */}
-								<h1>Coming Soon</h1>
-							</div>
-							{/* <div className="suignite-guestlecture-child-parent">
-								 <div className="suignite-guestlecture-child1"></div>
-								<div className="suignite-guestlecture-child2">
-									<p>SAURABH KOCHHAR</p>
-									<p>CEO, Company Name</p>
-									<p>Topic : Make in India</p>
-									<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
-								</div> 
-							<h1>Coming Soon</h1>
-						</div> */}
 
-						</div>
+							</div>
+							:
+							this.state.activeState === "DEHRADUN" ?
+								<div className="suignite-guestlecture-parent">
+									<div>
+										<img className="suignite-vector" src={Vector} alt="" />
+										<div className="suignite-head1">GUEST LECTURE</div>
+									</div>
+									<div className="suignite-guestlecture-child-parent">
+										<div className="suignite-guestlecture-child1 back-dehradun-first"></div>
+										<div className="suignite-guestlecture-child2">
+											<p>SUSHIL RAMOLA</p>
+											<p>Chairman, B-ABLE</p>
+											<p>Topic : Realising Success</p>
+											<p>Success is the gradual realization of a worthy goal and the key to success is realising that our big goals aren't going to happen overnight.</p>
+										</div>
+									</div>
+									<div className="suignite-guestlecture-child-parent">
+										<div className="suignite-guestlecture-child1 back-dehradun-second"></div>
+										<div className="suignite-guestlecture-child2">
+											<p>PANKAJ GUPTA</p>
+											<p>President, Industries Association of Uttarakhand</p>
+											<p>Topic : Building for India</p>
+											<p>India as a country has a billion problems and we as citizens need to provide a billion solutions.</p>
+										</div>
+									</div>
+									<div className="suignite-guestlecture-child-parent">
+										<div className="suignite-guestlecture-child1 back-dehradun-three"></div>
+										<div className="suignite-guestlecture-child2">
+											<p>SANDEEP SINGH SANDHAR</p>
+											<p>Advisor, Centre for Mindfulness, Wellness</p>
+											<p>Topic : Entrepreneurial Well Being</p>
+											<p>Entrepreneurship is a unique and challenging human endeavour.So here we are to ensure well being of all you entrepreneurs.</p>
+										</div>
+									</div>
+									{/* <div className="suignite-guestlecture-child-parent">
+										<div className="suignite-guestlecture-child1 back-dehradun-four"></div>
+										<div className="suignite-guestlecture-child2">
+											<p>SAURABH KOCHHAR</p>
+											<p>CEO, Company Name</p>
+											<p>Topic : Make in India</p>
+											<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
+										</div>
+									</div>
+									<div className="suignite-guestlecture-child-parent">
+										<div className="suignite-guestlecture-child1 back-dehradun-five"></div>
+										<div className="suignite-guestlecture-child2">
+											<p>SAURABH KOCHHAR</p>
+											<p>CEO, Company Name</p>
+											<p>Topic : Make in India</p>
+											<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
+										</div>
+									</div> */}
+
+								</div> :
+								this.state.activeState === "JAIPUR" ?
+									<div className="suignite-guestlecture-parent">
+										<div>
+											<img className="suignite-vector" src={Vector} alt="" />
+											<div className="suignite-head1">GUEST LECTURE</div>
+										</div>
+										{/* <div className="suignite-guestlecture-child-parent">
+											<div className="suignite-guestlecture-child1 back-jaipur-one"></div>
+											<div className="suignite-guestlecture-child2">
+												<p>AKHILESH TRIVEDI</p>
+												<p>CEO, Anand Incubation Center</p>
+												<p>Topic : Make in India</p>
+												<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
+											</div>
+										</div> */}
+										<div className="suignite-guestlecture-child-parent">
+											<div className="suignite-guestlecture-child1 back-jaipur-second"></div>
+											<div className="suignite-guestlecture-child2">
+												<p>DILNAWAZ KHAN</p>
+												<p>Founder, Codesign Labs</p>
+												<p>Topic : Aspiring YOUNG Achievers.</p>
+												<p>Achievers don't have any age,they have the will to do things.
+											Aspiration is required to direct their sheer talent and hardwork.</p>
+											</div>
+										</div>
+
+									</div> : null
+
+						}
 						<div className="suignite-casestudy-parent">
 							<div>
 								<img className="suignite-vector" src={Vector} alt="" />
@@ -225,6 +310,27 @@ export default class IgniteIndex extends Component {
 							<p>
 								1.This is an individual game and open to all.<br />
 								2.Speaking or murmuring any sort of hint will lead to disqualification of the candidate.
+								</p>
+							<p>ELIGIBILITY</p>
+							<p>Everyone can participate in this .</p>
+							<p>PRIZES</p>
+							<p>People answering the riddle and guessing the picture will be given goodies.</p>
+						</div>
+						<div className="suignite-casestudy-parent">
+							<div>
+								<img className="suignite-vector" src={Vector} alt="" />
+								<div className="suignite-head1">GUESS ME?</div>
+							</div>
+
+
+							<p style={{ marginTop: "6.67vh" }}>
+								Wouldn’t it be interesting if we play a grown-up version of
+								‘pictionary’? Play this game to know cool things about the entrepreneurial world.
+								</p>
+							<p>RULES & REGULATIONS</p>
+							<p>
+								1. This is an individual game and open to all.<br />
+								2. Speaking or murmuring any sort of hint will lead to disqualification of the candidate.
 								</p>
 							<p>ELIGIBILITY</p>
 							<p>Everyone can participate in this .</p>
@@ -264,7 +370,12 @@ export default class IgniteIndex extends Component {
 							<p>Amritha Muthuraman</p>
 							<p>am@cy.iitr.ac.in</p>
 							<p>+91 9500048067</p>
+							<br />
+							<p style={{ marginBottom: "0px" }} className="suignite-topic-heading">Keshvam Verma</p>
+							<p style={{ marginBottom: "0px", color: "#4F4F4F", fontFamily: "Proxima-nova-regular", fontSize: "19.88px" }}>keshvam@me.iitr.ac.in</p>
+							<p style={{ marginBottom: "0px", color: "#4F4F4F", fontFamily: "Proxima-nova-regular", fontSize: "19.88px" }}>+91 8901120295</p>
 						</div>
+
 
 					</div>
 

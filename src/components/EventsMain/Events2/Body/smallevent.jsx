@@ -12,7 +12,7 @@ export default class SmallEventIndex extends Component {
         return (
             data.map(datum => <React.Fragment>
                 {datum ?
-                    <div className="suignite-parent-child2-panel">
+                    <div id={datum.heading === "Event Coordinators" ? "coordinators" : null} className="suignite-parent-child2-panel">
                         {datum && datum.heading ?
                             <div>
                                 <img className="suignite-vector" src={Vector} alt="vector" />

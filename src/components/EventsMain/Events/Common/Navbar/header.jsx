@@ -83,7 +83,7 @@ export default class ComingSoon extends Component {
         return (
             <div id="nav" className="Eventsheader">
                 <div className="idealogo" style={{
-                    backgroundImage: `url(${BASE_URL + this.props.logo[0].logo})`,
+                    backgroundImage: `url(${BASE_URL + this.props.logo[0] ? this.props.logo[0].logo : this.props.logo})`,
                     backgroundPosition: "center",
                     backgroundSize: "40%",
                     backgroundRepeat: "no-repeat"
