@@ -10,11 +10,13 @@ class SingleFAQ extends Component {
       show: 1,
     };
   }
+
   toggle = (e, id) => {
+    const { show } = this.state;
     const qid = `q${id}`;
     const pid = `p${id}`;
     const cid = `c${id}`;
-    if (this.state.show === 1) {
+    if (show === 1) {
       document.getElementById(id).style.display = "block";
       document.getElementById(qid).style.background = "#F7F8F9";
       document.getElementById(pid).style.display = "none";
@@ -29,20 +31,21 @@ class SingleFAQ extends Component {
       this.setState({ show: 1 });
     }
   };
+
   render() {
-    let { update } = this.props;
+    const { update } = this.props;
     return (
       <div
         onClick={e => this.toggle(e, update.id)}
         key={update.id}
         className="faq_unit"
       >
-        <div className="question" id={"q" + update.id}>
+        <div className="question" id={`q${update.id}`}>
           <span className="esummit-landing-faq-update-question">
             {update.question}
           </span>
-          <img alt="images" className="plus" src={Plus} id={"p" + update.id} />
-          <img alt="images" className="crox" src={cross} id={"c" + update.id} />
+          <img alt="images" className="plus" src={Plus} id={`p${update.id}`} />
+          <img alt="images" className="crox" src={cross} id={`c${update.id}`} />
         </div>
         <div className="answer" id={update.id}>
           {update.answer}
