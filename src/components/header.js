@@ -4,6 +4,7 @@ import "./css/header.scss";
 
 class Header extends Component {
   state = {};
+
   render() {
     return (
       <div className="esummit-landing-bubble-heading">
