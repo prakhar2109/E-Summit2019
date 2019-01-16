@@ -218,7 +218,7 @@ class caLeaderboard extends Component {
               </span>
 
 
-              <span>
+              {profile !== "IIT" && <span>
                 <Link
                   to="/dashboard/contingent"
                   className={
@@ -233,7 +233,7 @@ class caLeaderboard extends Component {
                   CONTINGENT
                 </Link>
                 <br />
-              </span>
+              </span>}
 
               <span>
                 <Link
