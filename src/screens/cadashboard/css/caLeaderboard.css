@@ -64,6 +64,9 @@
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #name{
     padding-top: 10%;
@@ -196,6 +199,9 @@ text-decoration:none !important;
 #dashboard-typename{
     font-size: 10px;
     text-align:center;
+}
+.link-viewprofile{
+    color: #F39423 !important;
 }
 @media only screen and (max-width: 900px){
 

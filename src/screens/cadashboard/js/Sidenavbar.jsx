@@ -40,7 +40,7 @@ class caLeaderboard extends Component {
         })
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
-          console.log(res.data)
+         
           localStorage.setItem("profile", res.data.user_type);
           localStorage.setItem("invite", res.data.invite_url);
 
@@ -149,8 +149,8 @@ class caLeaderboard extends Component {
             <hr id="line1" />
 
             <Link to="/dashboard/Viewprofile"  onClick={() => {
-                    this.setActive("payment");
-                  }}>
+                    this.setActive("Viewprofile");
+                  }} className="link-viewprofile">
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
             </Link>
@@ -220,7 +220,7 @@ class caLeaderboard extends Component {
 
               <span>
                 <Link
-                  to="/dashboard/contigent"
+                  to="/dashboard/contingent"
                   className={
                     this.state.activeState === "contigent"
                       ? "linkEventson"

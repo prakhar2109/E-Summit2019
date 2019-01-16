@@ -20,10 +20,10 @@ const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
   loading: () => <Loader />,
 });
-// const Suignite = Loadable({
-//   loader: () => import("./NewScreens/startupignite/ignite"),
-//   loading: () => <Loader />,
-// });
+const Suignite = Loadable({
+  loader: () => import("./NewScreens/startupignite/ignite"),
+  loading: () => <Loader />,
+});
 const LandingPage = Loadable({
   loader: () => import("./NewScreens/landing/landing"),
   loading: () => <Loader />,
@@ -82,7 +82,7 @@ const ResetPassword = Loadable({
 // });
 
 const Test = Loadable({
-  loader: () => import("./components/Events/EventComponent/Index"),
+  loader: () => import("./components/EventsMain/Index"),
   loading: () => <Loader />,
 });
 
@@ -95,8 +95,6 @@ class App extends Component {
   }
 
   render() {
-    let success = 'Success'
-    let fail = 'Fail'
     return (
       // <PaymentStatus></PaymentStatus>
       <BrowserRouter>
@@ -113,19 +111,20 @@ class App extends Component {
                 <Route path="/sponsors" component={Sponsors} />
                 <Route path="/faq" component={FAQBoard} />
                 <Route path="/campusambassador" component={CampusAmbasder} />
-                <Route path="/ignite" component={ignite} />
-                <Route path="/startupignite" render={() => <Redirect to="/ignite"/>}/>
+                <Route path="/ignite" component={Suignite} />
+                <Route path="/startupignite" render={() => <Redirect to="/ignite" />} />
                 <Route path="/register" component={Registration} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
-                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference"/>}/>
+                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
                 {/* <Route exact path="/test" component={Startup} /> */}
+                <Route path="/events/onlineevents" render={() => <Redirect to="/events/online%20events" />} />
                 <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
                 {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
-                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
-                <Route path="/dashboard/payment/fail"  render={(props) => <Caindex dashboardProps="Sic" {...props}/>}/>
+                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
+                <Route path="/dashboard/payment/fail" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
                 {/* <Route path="dashboard/payment/fail" render={() => <Redirect to="/dashboard"/>}/> */}
 
                 {/* <Route path='dashbard/payment/success/' render{()=><Redirect to='/dashboard'/>}/> */}

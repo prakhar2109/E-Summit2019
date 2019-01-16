@@ -86,7 +86,7 @@ export default class Viewprofile extends Component {
     }
     handleClick = e => {
 
-        e.preventDefault();
+        e.preventDefault(); 
         let {
             data
         } = this.state
@@ -101,10 +101,8 @@ export default class Viewprofile extends Component {
             }
 
         }).then((r) => {
-            console.log("hellll")
         })
             .catch((r) => {
-                console.log(r)
             })
         this.handleOk()
     }
@@ -442,14 +440,14 @@ export default class Viewprofile extends Component {
                             </div>
                             <div className="caprofile-dropshape">
 
-                                P
+                            {name[0]}
                             </div>
                             <div className="profile-dashboard-type">
                                 DELEGATE
 		                </div>
                             <div className="profile-dashboard-esummit">
                                 <span id="profile-dashboard-esummitId">E-Summit’19 ID</span>
-                                <span id="profile-dashboard-esummitId-value">ES172292</span>
+                                <span id="profile-dashboard-esummitId-value">{data.esummit_id}</span>
                             </div>
                             {/*
 		                <div className="profile-dashboard-esummit">

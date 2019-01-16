@@ -530,7 +530,7 @@ export default class Payment extends Component {
             </div>
             {isIIT!=='IIT' && 
             <React.Fragment>
-              {console.log(!isIIT,'idhar')}
+              {/* {console.log(!isIIT,'idhar')} */}
               <div className='capayment-registration1-header'>
               Registration
           </div>

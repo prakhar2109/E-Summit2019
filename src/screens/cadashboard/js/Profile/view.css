@@ -319,6 +319,9 @@ color: rgba(79, 79, 79, 0.44);
     border-top-right-radius: 55vh;
     border-bottom-left-radius: 50vh;
     border-bottom-right-radius: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ca-profile-modalparent1{

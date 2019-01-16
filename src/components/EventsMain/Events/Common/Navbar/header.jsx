@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { BASE_URL } from "../../../../utils/urls"
+import { BASE_URL } from "../../../../../utils/urls"
 
 import "./header.css";
 import jump from "jump.js";

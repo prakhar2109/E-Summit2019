@@ -8,7 +8,7 @@ import Eligibility from "../Eligibility/Index"
 import FAQ from "../FAQ/Index"
 import EventCo from "../EventCo/Index"
 import Rules from "../Rules/Index"
-import { BASE_URL } from "../../../utils/urls"
+import { BASE_URL } from "../../../../utils/urls"
 import Eventfooter from "../Common/footer/eventfooter"
 import { NavLink } from "react-router-dom";
 import esummit from "../Common/es.png";
