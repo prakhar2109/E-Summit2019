@@ -20,7 +20,7 @@ export default class EmailVerification extends Component {
             email_error: "",
             email_error_bool: "",
             confirmation_otp_message: "",
-            time: 60,
+            time: 120,
             otp_expired: false
         }
     }
@@ -220,7 +220,7 @@ export default class EmailVerification extends Component {
                             <div className="esummit-register-form-field-error">{otp_error}</div>
                             {!otp_expired ?
                                 <div className="esummit-register-form-timer">
-                                    00:{this.state.time < 10 ? "0" : null}{this.state.time}
+                                    0{parseInt(this.state.time/60)}:{this.state.time%60 < 10 ? "0" : null}{this.state.time%60}
                                 </div> : null}
                         </div>
                         <div className="esummit-register-form-resend-otp-field" onClick={this.handleResend}>Resend OTP</div>
