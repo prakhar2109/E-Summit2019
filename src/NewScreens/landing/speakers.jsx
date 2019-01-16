@@ -5,6 +5,8 @@ import { Element } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../utils/urls";
+import parse from "html-react-parser";
+
 export default class Speakers extends Component {
   componentDidMount() {
     axios.get(BASE_URL + "/v1/api/speakers/").then(res => {
@@ -54,7 +56,7 @@ export default class Speakers extends Component {
                         />
                       </div>
 
-                      <p className="name">{update.name}</p>
+                      <p className="name">{parse(`${update.name}`)}</p>
                       <p className="designation">{update.designation}</p>
                     </div>
                   );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BASE_URL } from "../../../../utils/urls"
+import parse from 'html-react-parser'
 
 export default class SmallEventData extends Component {
     render() {
@@ -12,7 +13,7 @@ export default class SmallEventData extends Component {
                 </p>
                 {this.props.data.para === "yes" ?
                     <p className="suignite-topic-para">
-                        {this.props.data && this.props.data.paragraph}
+                        {this.props.data && parse(this.props.data.paragraph)}
                     </p>
                     : null}
                 {this.props.data && this.props.data.bullets === "yes" ?
