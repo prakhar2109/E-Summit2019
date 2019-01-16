@@ -29,7 +29,6 @@ export default class Viewprofile extends Component {
           })
       }
     render() {
-        console.log(this.state.events,"events")
         return (
             <div className="caevents-parent">
                 <div className="ca-events-parent-heading1 caeventsparent-font">

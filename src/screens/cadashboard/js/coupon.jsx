@@ -17,7 +17,6 @@ export default class Coupon extends Component {
         return(
             <React.Fragment>
                 {this.state.noOfCoupons ? couponsKey.map((coupon,i) => {
-                    console.log(coupon)
                     return <SingleCoupon cashback={couponsValue[i]} couponId={couponsKey[i]} ></SingleCoupon>
                 }) : null
                 }

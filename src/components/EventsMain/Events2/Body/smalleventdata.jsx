@@ -4,7 +4,6 @@ import parse from 'html-react-parser'
 
 export default class SmallEventData extends Component {
     render() {
-        console.log('smalleventdata', this.props)
 
         return (
             <React.Fragment>

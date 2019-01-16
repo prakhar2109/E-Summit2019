@@ -16,10 +16,6 @@ export default class Sponsors extends Component {
       this.setState({
         sponsors:res.data,
       });
-
-      console.log(this.state)
-
-      
     })
   };
 

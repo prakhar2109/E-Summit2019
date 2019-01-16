@@ -19,7 +19,6 @@ export default class Lfooter extends Component {
         jump("#body");
     };
     validate = () => {
-        console.log("empty field")
         let isError = false;
 
         if (this.state.footername === '' || this.state.footerPhoneno === '' || this.state.footerEmailid === '' || this.state.footermessage === '')

@@ -22,7 +22,6 @@ export default class CATaskBoard extends Component {
             })
             .then(res => {
                 if (res && res.data) {
-                    console.log(res.data, "res.data")
                     this.setState({ tasks: res.data })
                 }
             })
@@ -36,7 +35,6 @@ export default class CATaskBoard extends Component {
         let { tasks } = this.state;
         let today = new Date();
         let dayToday = today.getDate();
-        console.log("dayToday", dayToday)
         let dateString = (dayToday <= 31 && dayToday > 26) ? '24 Dec - 31 Dec 2018' : (dayToday < 8 ? '1 Jan - 7 Jan 2019' : (dayToday < 15 ? '8 Jan - 14 Jan 2019' : (dayToday < 22 ? '15 Jan - 21 Jan 2019' : (dayToday < 29 ? '22 Jan - 28 Jan 2019' : '29 Jan - 2 Feb 2019'))));
         return (
 

@@ -41,7 +41,6 @@ export default class ComingSoon extends Component {
   //   document.getElementById("main_class").style.marginTop = '13vh';
   // }
   setActive = (state) => {
-    console.log(this.activeState, "helllo")
     this.setState({
       activeState: state
     });
