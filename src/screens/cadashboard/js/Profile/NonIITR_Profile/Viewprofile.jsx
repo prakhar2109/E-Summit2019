@@ -101,10 +101,8 @@ export default class Viewprofile extends Component {
             }
 
         }).then((r) => {
-            console.log("hellll")
         })
             .catch((r) => {
-                console.log(r)
             })
         this.handleOk()
     }

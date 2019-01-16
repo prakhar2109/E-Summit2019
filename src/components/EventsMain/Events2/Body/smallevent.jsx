@@ -9,7 +9,6 @@ export default class SmallEventIndex extends Component {
     }
     render() {
         let { data } = this.props;
-        console.log('smallevent',this.props)
         return (
             data.map(datum => <React.Fragment>
                 {datum ?

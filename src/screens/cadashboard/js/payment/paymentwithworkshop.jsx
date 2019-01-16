@@ -4,7 +4,7 @@ import CriteriaMapping from './../discountcriterias';
 import { Modal } from 'antd';
 import Coupon from './../coupon'
 import Payments from './workshops'
-import UpArrowSVG from './../../svg/Vector.svg'
+// import UpArrowSVG from './../../svg/Vector.svg'
 
 export default class Payment extends Component{
     constructor(){
@@ -242,7 +242,7 @@ export default class Payment extends Component{
                      <div className="capaymentwv-spaceaboutcolon">Registration Fee</div> :<div className="capaymentwv-space"></div>Rs&nbsp;{registrationFee}<div className='capaymentwv-earlybirddiscount'>(Early Bird Discount)</div>
                  </div>
                  <div className="capaymentwv-accomodationfee">
-                 <div className="capaymentwv-spaceaboutcolon">Accomodation Fee <button id="capaymentwv-toggleaccomodation" className="capaymentwv-toggleaccomodation" onClick={(e)=>this.toggleAccomodation(e)}>DISCARD</button>   </div> :<div className="capaymentwv-space"></div>Rs&nbsp;{visibleAccomodationFee}
+                 <div className="capaymentwv-spaceaboutcolon">Accommodation Fee <button id="capaymentwv-toggleaccomodation" className="capaymentwv-toggleaccomodation" onClick={(e)=>this.toggleAccomodation(e)}>DISCARD</button>   </div> :<div className="capaymentwv-space"></div>Rs&nbsp;{visibleAccomodationFee}
                  </div>
                  
                  <div className="capaymentwv-discountcoupon">

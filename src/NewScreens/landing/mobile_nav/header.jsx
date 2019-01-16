@@ -50,7 +50,6 @@ export default class ComingSoon extends Component {
         </span>
       )
     }
-    console.log(this.state.isActive)
     return (
       <div id="nav" className="Eventsheader">
         <NavLink to="/">

@@ -5,8 +5,8 @@ import { Modal } from "antd";
 import Coupon from "./../coupon";
 import { BASE_URL } from "./../../../../utils/urls";
 import axios from "axios";
-import Payments from './workshops'
-import PaymentsPayed from './workshopsPayed'
+import Payments from "./workshops";
+import PaymentsPayed from "./workshopsPayed";
 
 export default class Payment extends Component {
   constructor() {
@@ -14,6 +14,8 @@ export default class Payment extends Component {
     this.state = {
       //payment data
       dataPayment: null,
+      convenienceFeeDiscount: 2.36,
+      convenienceFee: 0,
 
       isPayed: null, //if payment is done, value will come from backend
       possibleCoupons: null, //{"GFDS":"50}coupons which are to be entered
@@ -32,12 +34,11 @@ export default class Payment extends Component {
       couponcode: "",
       couponSelected: "",
       //workshops
-      workshopsNotPayed:[
-    ],
-      noOfWorkshopsNotPayed:0,
-      workshopsPayed:[],
-      noOfWorkshopsPayed:0,
-
+      workshopsNotPayed: [],
+      noOfWorkshopsNotPayed: 0,
+      workshopsPayed: [],
+      noOfWorkshopsPayed: 0,
+      isIIT: false,
 
       //if payment is done isPayed will become true
       // values will come from backend
@@ -52,71 +53,74 @@ export default class Payment extends Component {
     };
   }
 
-  letMeknowIfDiscardClicked = () =>{
+  letMeknowIfDiscardClicked = () => {
     let token = localStorage.getItem("user_token");
     axios
-        .get(BASE_URL + "/v1/api/user/profile", {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        })
-        .then(res => {
-          // console.log(res.data, 'sfs')
+      .get(BASE_URL + "/v1/api/user/profile", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then(res => {
+        console.log(res.data, "AAA");
 
-          if (res.data.payment.payment_status === "PEN") {
-            this.setState({
-              isPayed: false,
-              registrationFee: res.data.payment.payment_details.payble_reg_fees,
-              visibleAccomodationFee:
-                res.data.payment.payment_details.payble_acco_fees,
-              accomodationFee:
-                res.data.payment.payment_details.payble_acco_fees,
-              totalFee: res.data.payment.payment_details.total_payble,
-            });
-          } else if (res.data.payment.payment_status === "SUC") {
-            this.setState({
-              isPayed: true,
-              registrationFeePayed: res.data.payment.payment_details.payble_reg_fees,
-              visibleAccomodationFeePayed: res.data.payment.payment_details.payble_acco_fees,
-              accomodationFee: res.data.payment.payble_acco_fees,
-              totAmtPayed: res.data.payment.payment_details.amount_paid,
-            });
-          } else {
-            this.setState({
-              isPayed: false,
-              registrationFee: res.data.payment.registration_fee,
-              visibleAccomodationFee: res.data.payment.accommodation_fee,
-              accomodationFee: res.data.payment.accommodation_fee,
-            });
-          }
-          //   console.log(res.data)
-        })
-        .catch(response => {
-          // console.log("could not connect to the server");
-          alert('could not connect to the server')
-        });
-        axios
-        .get(BASE_URL + "/v1/api/events/" , {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        })
-        .then(res => {
-          console.log(res.data,'dfnam')
+        if (res.data.payment.payment_status === "PEN") {
           this.setState({
-            workshopsNotPayed:res.data,
-            noOfWorkshopsNotPayed:res.data.length
-          })
-        })
-        .catch(response => {
-          alert("could not connect to the server");
+            isPayed: false,
+            registrationFee: res.data.payment.payment_details.payble_reg_fees,
+            visibleAccomodationFee:
+              res.data.payment.payment_details.payble_acco_fees,
+            accomodationFee: res.data.payment.payment_details.payble_acco_fees,
+            totalFee: res.data.payment.payment_details.total_payble,
+            isIIT: res.data.user_type,
+          });
+        } else if (res.data.payment.payment_status === "SUC") {
+          this.setState({
+            isPayed: true,
+            registrationFeePayed:
+              res.data.payment.payment_details.payble_reg_fees,
+            visibleAccomodationFeePayed:
+              res.data.payment.payment_details.payble_acco_fees,
+            accomodationFee: res.data.payment.payble_acco_fees,
+            totAmtPayed: res.data.payment.payment_details.amount_paid,
+            isIIT: res.data.user_type,
+          });
+        } else {
+          this.setState({
+            isPayed: false,
+            registrationFee: res.data.payment.registration_fee,
+            visibleAccomodationFee: res.data.payment.accommodation_fee,
+            accomodationFee: res.data.payment.accommodation_fee,
+            isIIT: res.data.user_type,
+          });
+        }
+        //   console.log(res.data)
+      })
+      .catch(response => {
+        // console.log("could not connect to the server");
+        alert("could not connect to the server");
+      });
+    axios
+      .get(BASE_URL + "/v1/api/events/", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then(res => {
+        console.log(res.data, "dfnam");
+        this.setState({
+          workshopsNotPayed: res.data,
+          noOfWorkshopsNotPayed: res.data.length,
         });
-  }
+      })
+      .catch(response => {
+        alert("could not connect to the server");
+      });
+  };
   componentDidMount = () => {
     let token = localStorage.getItem("user_token");
     // let URL = '10.42.0.1:8000'
     if (token !== undefined) {
-
       axios
         .get(BASE_URL + "/v1/api/user/profile", {
           headers: {
@@ -124,7 +128,7 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          // console.log(res., 'sfs')
+          console.log(res.data.user_type, "sfs");
 
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
@@ -135,17 +139,24 @@ export default class Payment extends Component {
               accomodationFee:
                 res.data.payment.payment_details.payble_acco_fees,
               totalFee: res.data.payment.payment_details.total_payble,
-
+              isIIT: res.data.user_type,
             });
           } else if (res.data.payment.payment_status === "SUC") {
             this.setState({
               isPayed: true,
-              registrationFeePayed: res.data.payment.payment_details.payble_reg_fees,
-              visibleAccomodationFeePayed: res.data.payment.payment_details.payble_acco_fees,
+              registrationFeePayed:
+                res.data.payment.payment_details.payble_reg_fees,
+              visibleAccomodationFeePayed:
+                res.data.payment.payment_details.payble_acco_fees,
               accomodationFee: res.data.payment.payble_acco_fees,
               totAmtPayed: res.data.payment.payment_details.amount_paid,
-              workshopsPayed:res.data.payment.applications.filter(workshop => workshop.status=='REG'),
-              noOfWorkshopsPayed:res.data.payment.applications.filter(workshop => workshop.status=='REG').length,
+              workshopsPayed: res.data.payment.applications.filter(
+                workshop => workshop.status == "REG"
+              ),
+              noOfWorkshopsPayed: res.data.payment.applications.filter(
+                workshop => workshop.status == "REG"
+              ).length,
+              isIIT: res.data.user_type,
             });
           } else {
             this.setState({
@@ -153,27 +164,28 @@ export default class Payment extends Component {
               registrationFee: res.data.payment.registration_fee,
               visibleAccomodationFee: res.data.payment.accommodation_fee,
               accomodationFee: res.data.payment.accommodation_fee,
+              isIIT: res.data.user_type,
             });
           }
           //   console.log(res.data)
         })
         .catch(response => {
           // console.log("could not connect to the server");
-          alert('could not connect to the server')
+          alert("could not connect to the server");
         });
 
-        axios
-        .get(BASE_URL + "/v1/api/events/" , {
+      axios
+        .get(BASE_URL + "/v1/api/events/", {
           headers: {
             Authorization: `Token ${token}`,
           },
         })
         .then(res => {
-          console.log(res.data,'dfnam')
+          console.log(res.data, "dfnam");
           this.setState({
-            workshopsNotPayed:res.data,
-            noOfWorkshopsNotPayed:res.data.length
-          })
+            workshopsNotPayed: res.data,
+            noOfWorkshopsNotPayed: res.data.length,
+          });
         })
         .catch(response => {
           alert("could not connect to the server");
@@ -188,9 +200,9 @@ export default class Payment extends Component {
             },
           })
           .then(res => {
-              window.location.href = '/dashboard/payment'
+            window.location.href = "/dashboard/payment";
             // console.log(res.data, "data");
-            
+
             let datePayed = res.data.date_created.substr(0, 10);
             let totAmtPayed = res.data.amount_paid;
             datePayed = datePayed.split("-");
@@ -214,60 +226,62 @@ export default class Payment extends Component {
   toggleAccomodation = e => {
     // e.preventDefault()
     let token = localStorage.getItem("user_token");
-    let data = null
+    let data = null;
     axios
-      .post(BASE_URL+'/v1/api/user/acco/toogle/',data,{
-        headers:{
-          Authorization:`Token ${token}`
-        }
+      .post(BASE_URL + "/v1/api/user/acco/toogle/", data, {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
       })
-      .then(res=>{
+      .then(res => {
         // console.log(res.data,'ddfssf')
-        this.setState({
-          isDiscarded:res.data.is_accommodation,
-          visibleAccomodationFee:res.data.payment_details.payble_acco_fees,
-          totalFee:res.data.payment_details.total_payble
-        },()=>{
-          // console.log(this.state.isDiscarded,'outside')
+        this.setState(
+          {
+            isDiscarded: res.data.is_accommodation,
+            visibleAccomodationFee: res.data.payment_details.payble_acco_fees,
+            totalFee: res.data.payment_details.total_payble,
+          },
+          () => {
+            // console.log(this.state.isDiscarded,'outside')
 
-          if (this.state.isDiscarded===true) { 
-            // console.log(this.state.isDiscarded,'inside discard')
-            document.getElementById(
-              "capayment-toggleaccomodation"
-            ).style.borderColor = "#E2574C";
-            document.getElementById("capayment-toggleaccomodation").innerHTML =
-              "DISCARD";
-            this.setState(
-              {
-                // isDiscarded: false,
-                // visibleAccomodationFee: this.state.accomodationFee,
-              },
-              () => {
-                // console.log(this.state.isDiscarded)
-              }
-            );
-          } else  {
-            // console.log(this.state.isDiscarded,'inside add')
-            document.getElementById(
-              "capayment-toggleaccomodation"
-            ).style.borderColor = "#F39423";
-            document.getElementById("capayment-toggleaccomodation").innerHTML = "ADD";
-            this.setState(
-              {
-                // isDiscarded: true,
-                // visibleAccomodationFee: 0,
-              },
-              () => {
-                // console.log(this.state.isDiscarded)
-              }
-            );
+            if (this.state.isDiscarded === true) {
+              // console.log(this.state.isDiscarded,'inside discard')
+              document.getElementById(
+                "capayment-toggleaccomodation"
+              ).style.borderColor = "#E2574C";
+              document.getElementById(
+                "capayment-toggleaccomodation"
+              ).innerHTML = "DISCARD";
+              this.setState(
+                {
+                  // isDiscarded: false,
+                  // visibleAccomodationFee: this.state.accomodationFee,
+                },
+                () => {
+                  // console.log(this.state.isDiscarded)
+                }
+              );
+            } else {
+              // console.log(this.state.isDiscarded,'inside add')
+              document.getElementById(
+                "capayment-toggleaccomodation"
+              ).style.borderColor = "#F39423";
+              document.getElementById(
+                "capayment-toggleaccomodation"
+              ).innerHTML = "ADD";
+              this.setState(
+                {
+                  // isDiscarded: true,
+                  // visibleAccomodationFee: 0,
+                },
+                () => {
+                  // console.log(this.state.isDiscarded)
+                }
+              );
+            }
           }
-          
-        })
-          
-      })
-
-    
+        );
+      });
   };
   toggleCoupon = e => {
     e.preventDefault();
@@ -445,23 +459,39 @@ export default class Payment extends Component {
       couponDiscountPercent,
       totAmtPayed,
       datePayed,
+      isIIT,
+      convenienceFee,
       workshopsNotPayed,
       workshopsPayed,
       noOfWorkshopsNotPayed,
-      noOfWorkshopsPayed
-    } = this.state;
-    // let discountAvailed = (visibleAccomodationFee+registrationFee)*discountAvailedPercent/100//formula has to be changed
-    couponDiscount = (registrationFee * couponDiscountPercent) / 100;
-    // let totalamt = registrationFee+visibleAccomodationFee-discountAvailed-couponDiscount
-    // totalFee = registrationFee + visibleAccomodationFee - couponDiscount
-    // console.log(totAmtPayed, "in render");
-    let {
+      convenienceFeeDiscount,
+      noOfWorkshopsPayed,
       registrationFeePayed,
       couponDiscountPayed,
       visibleAccomodationFeePayed,
       discountAvailedPercentPayed,
       couponDiscountPercentPayed,
     } = this.state;
+    console.log("this.state", this.state);
+    // let discountAvailed = (visibleAccomodationFee+registrationFee)*discountAvailedPercent/100//formula has to be changed
+    // let convenienceFee2 = (convenienceFeeDiscount * totAmtPayed) / 100;
+    let convenienceFee1 = (convenienceFeeDiscount * totalFee) / 100;
+    // console.log(totalFee,'conv')
+    // totalFee = totalFee + convenienceFeeDiscount*totalFee/100
+    // totAmtPayed = totAmtPayed + convenienceFeeDiscount*totAmtPayed/100
+    let actualFee = totalFee / 1.0236;
+    let convenienceFee2 = totalFee - actualFee;
+    couponDiscount = (registrationFee * couponDiscountPercent) / 100;
+    totalFee = Number(totalFee).toFixed(2);
+    totAmtPayed = Number(totAmtPayed).toFixed(2);
+    convenienceFee1 = Number(convenienceFee1).toFixed(2);
+    convenienceFee2 = Number(convenienceFee2).toFixed(2);
+    // convenienceFee = Number.toFixed(2)
+    // totalFee = Number(totalFee).toFixed(2)
+    // let totalamt = registrationFee+visibleAccomodationFee-discountAvailed-couponDiscount
+    // totalFee = registrationFee + visibleAccomodationFee - couponDiscount
+    // console.log(totAmtPayed, "in render");
+
     // let discountAvailedPayed = (visibleAccomodationFeePayed+registrationFeePayed)*discountAvailedPercentPayed/100//formula has to be changed
     // let couponDiscountPayed = registrationFeePayed*couponDiscountPercentPayed/100
     // let totalamtPayed = registrationFeePayed+visibleAccomodationFeePayed-discountAvailedPayed-couponDiscountPayed
@@ -503,47 +533,134 @@ export default class Payment extends Component {
                 />
               </svg>
               <span className="capayment-span">Payment Status</span> : Pending
-                
             </div>
-            <div className='capayment-registration1-header'>
-                            Registration
-                        </div>
-            <div className="capayment-registrationfee">
-            
-              <div className="capayment-spaceaboutcolon">Registration Fee</div>{" "}
-              :<div className="capayment-space" />
-              <div className='capayment-registrationfee-innerdiv'>
-                Rs {registrationFee}
-              <div className="capayment-earlybirddiscount">
-                (Early Bird Discount)
-              </div>
-              </div>
-            </div>
-            <div className="capayment-accomodationfee">
-              <div className="capayment-spaceaboutcolon">
-                Accomodation Fee{" "}
-                <div
-                  id="capayment-toggleaccomodation"
-                  className="capayment-toggleaccomodation"
-                  onClick={e => this.toggleAccomodation(e)}
-                >
-                  DISCARD
+            {isIIT !== "IIT" && (
+              <React.Fragment>
+                {/* {console.log(!isIIT,'idhar')} */}
+                <div className="capayment-registration1-header">
+                  Registration
                 </div>
-                {" "}
-              </div>{" "}
-              :<div className="capayment-space" />Rs {visibleAccomodationFee}
+                <div className="capayment-registrationfee">
+                  <div className="capayment-spaceaboutcolon">
+                    Registration Fee
+                  </div>{" "}
+                  :<div className="capayment-space" />
+                  <div className="capayment-registrationfee-innerdiv">
+                    Rs {registrationFee}
+                    <div className="capayment-earlybirddiscount">
+                      (Early Bird Discount)
+                    </div>
+                  </div>
+                </div>
+                <div className="capayment-accomodationfee">
+                  <div className="capayment-spaceaboutcolon">
+                    Accomodation Fee{" "}
+                    <div
+                      id="capayment-toggleaccomodation"
+                      className="capayment-toggleaccomodation"
+                      onClick={e => this.toggleAccomodation(e)}
+                    >
+                      DISCARD
+                    </div>{" "}
+                  </div>{" "}
+                  :<div className="capayment-space" />
+                  Rs {visibleAccomodationFee}
+                </div>
+                {/* <div className="capayment-discountavailed">
+           <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
+       </div> */}
+                <div className="capayment-discountcoupon">
+                  <div className="capayment-spaceaboutcolon">
+                    Coupon Discount{" "}
+                  </div>{" "}
+                  :<div className="capayment-space" />
+                  <div className="capayment-viewbillingdetails-coupondiscount">
+                    - Rs {couponDiscount}
+                  </div>
+                  <div className="capayment-earlybirddiscount">
+                    ({couponDiscountPercent} % Off)
+                  </div>
+                  {/* use this when coupons come from back-end */}
+                  {/* <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>APPLY</button> </div> :<div className="capayment-space"></div><div className='capayment-viewbillingdetails-coupondiscount'>- Rs {couponDiscount}</div><div className='capayment-earlybirddiscount'>({couponDiscountPercent} % Off)</div> */}
+                  {isCouponValid ? (
+                    <Modal
+                      className="capayment-couponmodal"
+                      title="APPLY COUPON"
+                      visible={this.state.isModalVisible}
+                      onOk={this.handleOk}
+                      onCancel={this.handleCancel}
+                    >
+                      <div className="capayment-modalparent">
+                        <div className="capayment-modalheader">
+                          Enter Coupon Code
+                        </div>
+                        <input
+                          className="capayment-modalinputcode"
+                          value={this.state.couponcode}
+                          onChange={e => {
+                            this.setState({
+                              couponcode: e.target.value,
+                            });
+                          }}
+                          type="text"
+                        />
+                        <div className="capayment-modalmiddlerow">
+                          <hr className="capayment-modalline" /> OR{" "}
+                          <hr className="capayment-modalline" />
+                        </div>
+                        <div className="capayment-modallastrow">
+                          <div className="capayment-modallastrowheader">
+                            Choose a valid coupon
+                          </div>
+                          <div className="capayment-modalcouponlist1">
+                            <Coupon />
+                          </div>
+                        </div>
+                      </div>
+                    </Modal>
+                  ) : (
+                    <Modal
+                      className="capayment-couponmodal"
+                      title="APPLY COUPON"
+                      visible={this.state.isModalVisible}
+                      onOk={this.handleOk}
+                      onCancel={this.handleCancel}
+                    >
+                      <div className="capayment-modalparent">
+                        <div className="capayment-modallastrow">
+                          <div className="capayment-modallastrowheader1">
+                            Coupons not Valid on this payment
+                          </div>
+                          <div className="capayment-modalcouponlist">
+                            <Coupon />
+                          </div>
+                        </div>
+                      </div>
+                    </Modal>
+                  )}
+                </div>
+
+                <div className="capayment-hortizontalline2" />
+              </React.Fragment>
+            )}
+
+            <div className="capaymentwv-workshop-parent">
+              <div className="capaymentwv-workshop-header">Workshops</div>
+              <Payments
+                workshops={workshopsNotPayed}
+                noOfWorkshops={noOfWorkshopsNotPayed}
+                isPayed={false}
+                letMeknowIfDiscardClicked={this.letMeknowIfDiscardClicked}
+              />
             </div>
-            {/* <div className="capayment-discountavailed">
-                         <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
-                     </div> */}
             <div className="capayment-discountcoupon">
-              <div className="capayment-spaceaboutcolon">Coupon Discount </div>{" "}
+              <div className="capayment-spaceaboutcolon">Convenience Fee </div>{" "}
               :<div className="capayment-space" />
-              <div className="capayment-viewbillingdetails-coupondiscount">
-                - Rs {couponDiscount}
+              <div className="capayment-registrationfee-innerdiv">
+                Rs {convenienceFee2}
               </div>
               <div className="capayment-earlybirddiscount">
-                ({couponDiscountPercent} % Off)
+                ({convenienceFeeDiscount} %)
               </div>
               {/* use this when coupons come from back-end */}
               {/* <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>APPLY</button> </div> :<div className="capayment-space"></div><div className='capayment-viewbillingdetails-coupondiscount'>- Rs {couponDiscount}</div><div className='capayment-earlybirddiscount'>({couponDiscountPercent} % Off)</div> */}
@@ -604,19 +721,13 @@ export default class Payment extends Component {
                 </Modal>
               )}
             </div>
-            
-            <div className='capayment-hortizontalline2'></div>
-                    <div className='capaymentwv-workshop-parent'>
-                        <div className='capaymentwv-workshop-header'>
-                            Workshops
-                        </div>
-                        <Payments workshops={workshopsNotPayed} noOfWorkshops={noOfWorkshopsNotPayed} isPayed={false} letMeknowIfDiscardClicked = {this.letMeknowIfDiscardClicked}/>
-                    </div>          
-                    {/* <div className="capaymentwv-horizontalline"></div>     */}
+
+            {/* <div className="capaymentwv-horizontalline"></div>     */}
             <div className="capayment-horizontalline" />
             <div className="capayment-totalamt">
               <div className="capayment-spaceaboutcolon">Total Amount</div>:
-              <div className="capayment-space" />Rs {totalFee}
+              <div className="capayment-space" />
+              Rs {totalFee}
             </div>
           </div>
           <div className="capayment-middlerow">
@@ -686,51 +797,50 @@ export default class Payment extends Component {
                   />
                 </svg>
                 <span className="capayment-span">Payment Status</span> : Done
-              {/* </div> */}
-            {/* </div> */}
-            <div className="capayment-billingdetails-secondrow">
-              {/* <div className="capayment-billingdetails-date">
+                {/* </div> */}
+                {/* </div> */}
+                <div className="capayment-billingdetails-secondrow">
+                  {/* <div className="capayment-billingdetails-date">
                 DATE
                 <div className="capayment-billingdetails-date-value">
                   {datePayed}
                 </div>
               </div> */}
-              <div className="capayment-billingdetails-amount">
-                AMOUNT
-                <div className="capayment-billingdetails-amount-value">
-                  Rs {totAmtPayed}
+                  <div className="capayment-billingdetails-amount">
+                    AMOUNT
+                    <div className="capayment-billingdetails-amount-value">
+                      Rs {totAmtPayed}
+                    </div>
+                  </div>
+                  <div className="capayment-billingdetails-type">
+                    TYPE
+                    <div className="capayment-billingdetails-type-value">
+                      Registration
+                    </div>
+                  </div>
+                  <div
+                    className="capayment-viewbillingdetails"
+                    onClick={this.viewBillingDetails}
+                  >
+                    View Billing Details
+                    <svg
+                      className="capayment-viewbillingdetails-svg"
+                      width="15"
+                      height="9.44"
+                      viewBox="0 0 27 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1.42578 2L13.4255 14L25.4258 2"
+                        stroke="#F39423"
+                        stroke-width="3"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div className="capayment-billingdetails-type">
-                TYPE
-                <div className="capayment-billingdetails-type-value">
-                  Registration
-                </div>
-              </div>
-              <div
-                className="capayment-viewbillingdetails"
-                onClick={this.viewBillingDetails}
-              >
-                View Billing Details
-                <svg
-                className='capayment-viewbillingdetails-svg'
-                  width="15"
-                  height="9.44"
-                  viewBox="0 0 27 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.42578 2L13.4255 14L25.4258 2"
-                    stroke="#F39423"
-                    stroke-width="3"
-                  />
-                </svg>
-                </div>
-              </div>
               </div>
             </div>
-          
           </div>
 
           <div
@@ -801,35 +911,46 @@ export default class Payment extends Component {
                 </div>
               </div>
             </div>
-
-            <div className="capayment-viewbillingdetails-registration">
-              Registration
-            </div>
-            <div className="capayment-registrationfee">
-              <div className="capayment-spaceaboutcolon">Registration Fee</div>{" "}
-              :<div className="capayment-space" />Rs {registrationFeePayed}
-              <div className="capayment-earlybirddiscount">
-                (Early Bird Discount)
-              </div>
-            </div>
-            <div className="capayment-accomodationfee">
-              <div className="capayment-spaceaboutcolon">Accomodation Fee </div>{" "}
-              :<div className="capayment-space" />Rs{" "}
-              {visibleAccomodationFeePayed}
-            </div>
-            {/* <div className="capayment-discountavailed">
+            {isIIT !== "IIT" && (
+              <React.Fragment>
+                <div className="capayment-viewbillingdetails-registration">
+                  Registration
+                </div>
+                <div className="capayment-registrationfee">
+                  <div className="capayment-spaceaboutcolon">
+                    Registration Fee
+                  </div>{" "}
+                  :<div className="capayment-space" />
+                  Rs {registrationFeePayed}
+                  <div className="capayment-earlybirddiscount">
+                    (Early Bird Discount)
+                  </div>
+                </div>
+                <div className="capayment-accomodationfee">
+                  <div className="capayment-spaceaboutcolon">
+                    Accomodation Fee{" "}
+                  </div>{" "}
+                  :<div className="capayment-space" />
+                  Rs {visibleAccomodationFeePayed}
+                </div>
+                {/* <div className="capayment-discountavailed">
                          <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailedPayed}
                      </div> */}
-            <div className="capayment-discountcoupon">
-              <div className="capayment-spaceaboutcolon">Coupon Discount </div>{" "}
-              :<div className="capayment-space" />
-              <div className="capayment-viewbillingdetails-coupondiscount">
-                - Rs {couponDiscountPayed}
-              </div>
-              <div className="capayment-earlybirddiscount">
-                ({couponDiscountPercentPayed} % Off)
-              </div>
-            </div>
+                <div className="capayment-discountcoupon">
+                  <div className="capayment-spaceaboutcolon">
+                    Coupon Discount{" "}
+                  </div>{" "}
+                  :<div className="capayment-space" />
+                  <div className="capayment-viewbillingdetails-coupondiscount">
+                    - Rs {couponDiscountPayed}
+                  </div>
+                  <div className="capayment-earlybirddiscount">
+                    ({couponDiscountPercentPayed} % Off)
+                  </div>
+                </div>
+              </React.Fragment>
+            )}
+
             {/* <div className='capaymentwv-hortizontalline21'></div>
                  <div className='capaymentwv-workshop-parent'>
                         <div className='capaymentwv-workshop-header'>
@@ -837,34 +958,44 @@ export default class Payment extends Component {
                         </div>
                         <Payments workshops={workshopsPayed} noOfWorkshops={noOfWorkshopsPayed} />
                     </div> */}
-                  
-                {noOfWorkshopsPayed>0 ?
-                  <React.Fragment>
-                  <div className='capayment-hortizontalline2'></div>
-                  <div className='capaymentwv-workshop-parent'>
-                      <div className='capaymentwv-workshop-header'>
-                          Workshops
-                      </div>
-                      <PaymentsPayed workshops={workshopsPayed} noOfWorkshops={noOfWorkshopsPayed} isPayed={true}/>
-                  </div>
-                  </React.Fragment>
-                :
-                null}
-                 
+
+            {noOfWorkshopsPayed > 0 ? (
+              <React.Fragment>
+                <div className="capayment-hortizontalline2" />
+                <div className="capaymentwv-workshop-parent">
+                  <div className="capaymentwv-workshop-header">Workshops</div>
+                  <PaymentsPayed
+                    workshops={workshopsPayed}
+                    noOfWorkshops={noOfWorkshopsPayed}
+                    isPayed={true}
+                  />
+                </div>
+              </React.Fragment>
+            ) : null}
+            <div className="capayment-discountcoupon">
+              <div className="capayment-spaceaboutcolon">Convenience Fee</div> :
+              <div className="capayment-space" />
+              <div className="capayment-viewbillingdetails1s-coupondiscount">
+                Rs {convenienceFee2}
+              </div>
+              <div className="capayment-earlybirddiscount">
+                ({convenienceFeeDiscount} %)
+              </div>
+            </div>
             <div className="capayment-horizontalline" />
             <div className="capayment-totalamt">
               <div className="capayment-spaceaboutcolon">Total Amount</div>:
-              <div className="capayment-space" />Rs {totAmtPayed}
+              <div className="capayment-space" />
+              Rs {totAmtPayed}
             </div>
           </div>
           <div className="capayment-bottomrow">
             <div className="capayment-discountcriterion">
-              
               Discount Criterion
             </div>
             <div className="capayment-line2" />
-          </div> 
-           <div className="capayment-criterialistparentdone">
+          </div>
+          <div className="capayment-criterialistparentdone">
             <div className="capayment-criterialistheader">
               Criterias used for discounts
             </div>

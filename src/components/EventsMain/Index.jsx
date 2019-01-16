@@ -28,7 +28,6 @@ export default class EventsMainIndex extends Component {
         //     .style
         //     .display = "grid";
         let event_name = this.props.match.params.id.charAt(0).toUpperCase() + this.props.match.params.id.slice(1)
-        console.log(event_name)
         let data = {
             event_name: event_name
         }
@@ -55,7 +54,6 @@ export default class EventsMainIndex extends Component {
     render() {
         return (
             <React.Fragment>
-                {console.log(this.props.match.params.id)}
                 {this.state.data.event_type2 === "TYPE1" ?
                     <Route exact path="/events/:id" render={props => (<Events {...props} data={this.state.data} />)} /> :
                     this.state.data.event_type2 === "TYPE2" ?

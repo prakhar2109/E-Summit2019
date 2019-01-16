@@ -12,7 +12,6 @@ export default class Profile extends Component {
         let profile = localStorage.getItem("profile");
 
         if (profile === "AMB") {
-            console.log("inside");
             return (<CAProfile/>);
         }
 

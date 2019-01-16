@@ -3,7 +3,6 @@ import SmallEvent from "./smallevent"
 
 export default class ContentIndex extends Component {
     render() {
-        console.log('content', this.props)
 
         return (
             <React.Fragment>
@@ -14,7 +13,6 @@ export default class ContentIndex extends Component {
                                 <div className="suignite-parent-child2-applyparent-heading">
                                     {body.apply_now_description}
                                 </div>
-                                {console.log(body.sub_event_reg_url)}
                                 <a href={body.sub_event_reg_url} target="_blank">
                                     <button id="suignite-parent-child2-applyparent-button">
                                         APPLY
