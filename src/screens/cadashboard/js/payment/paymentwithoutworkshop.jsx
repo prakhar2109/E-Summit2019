@@ -423,7 +423,7 @@ export default class Payment extends Component {
             </div>
             <div className="capayment-accomodationfee">
               <div className="capayment-spaceaboutcolon">
-                Accomodation Fee{" "}
+                Accommodation Fee{" "}
                 <div
                   id="capayment-toggleaccomodation"
                   className="capayment-toggleaccomodation"
