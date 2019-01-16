@@ -14,6 +14,8 @@ export default class Payment extends Component {
     this.state = {
       //payment data
       dataPayment: null,
+      convenienceFeeDiscount:2.36,
+      convenienceFee:0,
 
       isPayed: null, //if payment is done, value will come from backend
       possibleCoupons: null, //{"GFDS":"50}coupons which are to be entered
@@ -37,6 +39,7 @@ export default class Payment extends Component {
       noOfWorkshopsNotPayed:0,
       workshopsPayed:[],
       noOfWorkshopsPayed:0,
+      isIIT:false,
 
 
       //if payment is done isPayed will become true
@@ -61,7 +64,7 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          // console.log(res.data, 'sfs')
+          console.log(res.data, 'AAA')
 
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
@@ -72,6 +75,7 @@ export default class Payment extends Component {
               accomodationFee:
                 res.data.payment.payment_details.payble_acco_fees,
               totalFee: res.data.payment.payment_details.total_payble,
+              isIIT:res.data.user_type,
             });
           } else if (res.data.payment.payment_status === "SUC") {
             this.setState({
@@ -80,6 +84,7 @@ export default class Payment extends Component {
               visibleAccomodationFeePayed: res.data.payment.payment_details.payble_acco_fees,
               accomodationFee: res.data.payment.payble_acco_fees,
               totAmtPayed: res.data.payment.payment_details.amount_paid,
+              isIIT:res.data.user_type,
             });
           } else {
             this.setState({
@@ -87,6 +92,7 @@ export default class Payment extends Component {
               registrationFee: res.data.payment.registration_fee,
               visibleAccomodationFee: res.data.payment.accommodation_fee,
               accomodationFee: res.data.payment.accommodation_fee,
+              isIIT:res.data.user_type,
             });
           }
           //   console.log(res.data)
@@ -124,7 +130,7 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          // console.log(res., 'sfs')
+          console.log(res.data.user_type, 'sfs')
 
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
@@ -135,6 +141,7 @@ export default class Payment extends Component {
               accomodationFee:
                 res.data.payment.payment_details.payble_acco_fees,
               totalFee: res.data.payment.payment_details.total_payble,
+              isIIT:res.data.user_type,
 
             });
           } else if (res.data.payment.payment_status === "SUC") {
@@ -146,6 +153,7 @@ export default class Payment extends Component {
               totAmtPayed: res.data.payment.payment_details.amount_paid,
               workshopsPayed:res.data.payment.applications.filter(workshop => workshop.status=='REG'),
               noOfWorkshopsPayed:res.data.payment.applications.filter(workshop => workshop.status=='REG').length,
+              isIIT:res.data.user_type,
             });
           } else {
             this.setState({
@@ -153,6 +161,7 @@ export default class Payment extends Component {
               registrationFee: res.data.payment.registration_fee,
               visibleAccomodationFee: res.data.payment.accommodation_fee,
               accomodationFee: res.data.payment.accommodation_fee,
+              isIIT:res.data.user_type,
             });
           }
           //   console.log(res.data)
@@ -445,13 +454,27 @@ export default class Payment extends Component {
       couponDiscountPercent,
       totAmtPayed,
       datePayed,
+      isIIT,
+      convenienceFee,
       workshopsNotPayed,
       workshopsPayed,
       noOfWorkshopsNotPayed,
+      convenienceFeeDiscount,
       noOfWorkshopsPayed
     } = this.state;
     // let discountAvailed = (visibleAccomodationFee+registrationFee)*discountAvailedPercent/100//formula has to be changed
+    let convenienceFee2 = convenienceFeeDiscount*totAmtPayed/100
+    let convenienceFee1 = convenienceFeeDiscount*totalFee/100
+    // console.log(totalFee,'conv')
+    totalFee = totalFee + convenienceFeeDiscount*totalFee/100
+    // totAmtPayed = totAmtPayed + convenienceFeeDiscount*totAmtPayed/100 
     couponDiscount = (registrationFee * couponDiscountPercent) / 100;
+    totalFee = Number(totalFee).toFixed(2)
+    totAmtPayed = Number(totAmtPayed).toFixed(2)
+    convenienceFee1 = Number(convenienceFee1).toFixed(2)
+    convenienceFee2 = Number(convenienceFee2).toFixed(2)
+    convenienceFee = Number(convenienceFee).toFixed(2)
+    // totalFee = Number(totalFee).toFixed(2)
     // let totalamt = registrationFee+visibleAccomodationFee-discountAvailed-couponDiscount
     // totalFee = registrationFee + visibleAccomodationFee - couponDiscount
     // console.log(totAmtPayed, "in render");
@@ -505,113 +528,187 @@ export default class Payment extends Component {
               <span className="capayment-span">Payment Status</span> : Pending
                 
             </div>
-            <div className='capayment-registration1-header'>
-                            Registration
-                        </div>
-            <div className="capayment-registrationfee">
+            {isIIT!=='IIT' && 
+            <React.Fragment>
+              {console.log(!isIIT,'idhar')}
+              <div className='capayment-registration1-header'>
+              Registration
+          </div>
+<div className="capayment-registrationfee">
+
+<div className="capayment-spaceaboutcolon">Registration Fee</div>{" "}
+:<div className="capayment-space" />
+<div className='capayment-registrationfee-innerdiv'>
+  Rs {registrationFee}
+<div className="capayment-earlybirddiscount">
+  (Early Bird Discount)
+</div>
+</div>
+</div>
+<div className="capayment-accomodationfee">
+<div className="capayment-spaceaboutcolon">
+  Accomodation Fee{" "}
+  <div
+    id="capayment-toggleaccomodation"
+    className="capayment-toggleaccomodation"
+    onClick={e => this.toggleAccomodation(e)}
+  >
+    DISCARD
+  </div>
+  {" "}
+</div>{" "}
+:<div className="capayment-space" />Rs {visibleAccomodationFee}
+</div>
+{/* <div className="capayment-discountavailed">
+           <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
+       </div> */}
+<div className="capayment-discountcoupon">
+<div className="capayment-spaceaboutcolon">Coupon Discount </div>{" "}
+:<div className="capayment-space" />
+<div className="capayment-viewbillingdetails-coupondiscount">
+  - Rs {couponDiscount}
+</div>
+<div className="capayment-earlybirddiscount">
+  ({couponDiscountPercent} % Off)
+</div>
+{/* use this when coupons come from back-end */}
+{/* <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>APPLY</button> </div> :<div className="capayment-space"></div><div className='capayment-viewbillingdetails-coupondiscount'>- Rs {couponDiscount}</div><div className='capayment-earlybirddiscount'>({couponDiscountPercent} % Off)</div> */}
+{isCouponValid ? (
+  <Modal
+    className="capayment-couponmodal"
+    title="APPLY COUPON"
+    visible={this.state.isModalVisible}
+    onOk={this.handleOk}
+    onCancel={this.handleCancel}
+  >
+    <div className="capayment-modalparent">
+      <div className="capayment-modalheader">
+        Enter Coupon Code
+      </div>
+      <input
+        className="capayment-modalinputcode"
+        value={this.state.couponcode}
+        onChange={e => {
+          this.setState({
+            couponcode: e.target.value,
+          });
+        }}
+        type="text"
+      />
+      <div className="capayment-modalmiddlerow">
+        <hr className="capayment-modalline" /> OR{" "}
+        <hr className="capayment-modalline" />
+      </div>
+      <div className="capayment-modallastrow">
+        <div className="capayment-modallastrowheader">
+          Choose a valid coupon
+        </div>
+        <div className="capayment-modalcouponlist1">
+          <Coupon />
+        </div>
+      </div>
+    </div>
+  </Modal>
+) : (
+  <Modal
+    className="capayment-couponmodal"
+    title="APPLY COUPON"
+    visible={this.state.isModalVisible}
+    onOk={this.handleOk}
+    onCancel={this.handleCancel}
+  >
+    <div className="capayment-modalparent">
+      <div className="capayment-modallastrow">
+        <div className="capayment-modallastrowheader1">
+          Coupons not Valid on this payment
+        </div>
+        <div className="capayment-modalcouponlist">
+          <Coupon />
+        </div>
+      </div>
+    </div>
+  </Modal>
+)}
+</div>
+
+<div className='capayment-hortizontalline2'></div></React.Fragment>
+            }
             
-              <div className="capayment-spaceaboutcolon">Registration Fee</div>{" "}
-              :<div className="capayment-space" />
-              <div className='capayment-registrationfee-innerdiv'>
-                Rs {registrationFee}
-              <div className="capayment-earlybirddiscount">
-                (Early Bird Discount)
-              </div>
-              </div>
-            </div>
-            <div className="capayment-accomodationfee">
-              <div className="capayment-spaceaboutcolon">
-                Accomodation Fee{" "}
-                <div
-                  id="capayment-toggleaccomodation"
-                  className="capayment-toggleaccomodation"
-                  onClick={e => this.toggleAccomodation(e)}
-                >
-                  DISCARD
-                </div>
-                {" "}
-              </div>{" "}
-              :<div className="capayment-space" />Rs {visibleAccomodationFee}
-            </div>
-            {/* <div className="capayment-discountavailed">
-                         <div className="capayment-spaceaboutcolon">{discountAvailedPercent}% Discount availed* </div>:<div className="capayment-space"></div>Rs&nbsp;{discountAvailed}
-                     </div> */}
-            <div className="capayment-discountcoupon">
-              <div className="capayment-spaceaboutcolon">Coupon Discount </div>{" "}
-              :<div className="capayment-space" />
-              <div className="capayment-viewbillingdetails-coupondiscount">
-                - Rs {couponDiscount}
-              </div>
-              <div className="capayment-earlybirddiscount">
-                ({couponDiscountPercent} % Off)
-              </div>
-              {/* use this when coupons come from back-end */}
-              {/* <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>APPLY</button> </div> :<div className="capayment-space"></div><div className='capayment-viewbillingdetails-coupondiscount'>- Rs {couponDiscount}</div><div className='capayment-earlybirddiscount'>({couponDiscountPercent} % Off)</div> */}
-              {isCouponValid ? (
-                <Modal
-                  className="capayment-couponmodal"
-                  title="APPLY COUPON"
-                  visible={this.state.isModalVisible}
-                  onOk={this.handleOk}
-                  onCancel={this.handleCancel}
-                >
-                  <div className="capayment-modalparent">
-                    <div className="capayment-modalheader">
-                      Enter Coupon Code
-                    </div>
-                    <input
-                      className="capayment-modalinputcode"
-                      value={this.state.couponcode}
-                      onChange={e => {
-                        this.setState({
-                          couponcode: e.target.value,
-                        });
-                      }}
-                      type="text"
-                    />
-                    <div className="capayment-modalmiddlerow">
-                      <hr className="capayment-modalline" /> OR{" "}
-                      <hr className="capayment-modalline" />
-                    </div>
-                    <div className="capayment-modallastrow">
-                      <div className="capayment-modallastrowheader">
-                        Choose a valid coupon
-                      </div>
-                      <div className="capayment-modalcouponlist1">
-                        <Coupon />
-                      </div>
-                    </div>
-                  </div>
-                </Modal>
-              ) : (
-                <Modal
-                  className="capayment-couponmodal"
-                  title="APPLY COUPON"
-                  visible={this.state.isModalVisible}
-                  onOk={this.handleOk}
-                  onCancel={this.handleCancel}
-                >
-                  <div className="capayment-modalparent">
-                    <div className="capayment-modallastrow">
-                      <div className="capayment-modallastrowheader1">
-                        Coupons not Valid on this payment
-                      </div>
-                      <div className="capayment-modalcouponlist">
-                        <Coupon />
-                      </div>
-                    </div>
-                  </div>
-                </Modal>
-              )}
-            </div>
-            
-            <div className='capayment-hortizontalline2'></div>
                     <div className='capaymentwv-workshop-parent'>
                         <div className='capaymentwv-workshop-header'>
                             Workshops
                         </div>
                         <Payments workshops={workshopsNotPayed} noOfWorkshops={noOfWorkshopsNotPayed} isPayed={false} letMeknowIfDiscardClicked = {this.letMeknowIfDiscardClicked}/>
-                    </div>          
+                    </div>    
+                    <div className="capayment-discountcoupon">
+<div className="capayment-spaceaboutcolon">Convenience Fee </div>{" "}
+:<div className="capayment-space" />
+<div className="capayment-registrationfee-innerdiv">
+   Rs {convenienceFee1}
+</div>
+<div className="capayment-earlybirddiscount">
+  ({convenienceFeeDiscount} %)
+</div>
+{/* use this when coupons come from back-end */}
+{/* <div className="capayment-spaceaboutcolon">Coupon Discount<button id="capayment-couponapply" className="capayment-couponapply" onClick={e=>{this.toggleCoupon(e)}}>APPLY</button> </div> :<div className="capayment-space"></div><div className='capayment-viewbillingdetails-coupondiscount'>- Rs {couponDiscount}</div><div className='capayment-earlybirddiscount'>({couponDiscountPercent} % Off)</div> */}
+{isCouponValid ? (
+  <Modal
+    className="capayment-couponmodal"
+    title="APPLY COUPON"
+    visible={this.state.isModalVisible}
+    onOk={this.handleOk}
+    onCancel={this.handleCancel}
+  >
+    <div className="capayment-modalparent">
+      <div className="capayment-modalheader">
+        Enter Coupon Code
+      </div>
+      <input
+        className="capayment-modalinputcode"
+        value={this.state.couponcode}
+        onChange={e => {
+          this.setState({
+            couponcode: e.target.value,
+          });
+        }}
+        type="text"
+      />
+      <div className="capayment-modalmiddlerow">
+        <hr className="capayment-modalline" /> OR{" "}
+        <hr className="capayment-modalline" />
+      </div>
+      <div className="capayment-modallastrow">
+        <div className="capayment-modallastrowheader">
+          Choose a valid coupon
+        </div>
+        <div className="capayment-modalcouponlist1">
+          <Coupon />
+        </div>
+      </div>
+    </div>
+  </Modal>
+) : (
+  <Modal
+    className="capayment-couponmodal"
+    title="APPLY COUPON"
+    visible={this.state.isModalVisible}
+    onOk={this.handleOk}
+    onCancel={this.handleCancel}
+  >
+    <div className="capayment-modalparent">
+      <div className="capayment-modallastrow">
+        <div className="capayment-modallastrowheader1">
+          Coupons not Valid on this payment
+        </div>
+        <div className="capayment-modalcouponlist">
+          <Coupon />
+        </div>
+      </div>
+    </div>
+  </Modal>
+)}
+</div>
+      
                     {/* <div className="capaymentwv-horizontalline"></div>     */}
             <div className="capayment-horizontalline" />
             <div className="capayment-totalamt">
@@ -801,8 +898,9 @@ export default class Payment extends Component {
                 </div>
               </div>
             </div>
-
-            <div className="capayment-viewbillingdetails-registration">
+            {isIIT!=='IIT' &&
+            <React.Fragment>
+              <div className="capayment-viewbillingdetails-registration">
               Registration
             </div>
             <div className="capayment-registrationfee">
@@ -830,6 +928,12 @@ export default class Payment extends Component {
                 ({couponDiscountPercentPayed} % Off)
               </div>
             </div>
+            
+            
+            </React.Fragment>
+            
+            }
+            
             {/* <div className='capaymentwv-hortizontalline21'></div>
                  <div className='capaymentwv-workshop-parent'>
                         <div className='capaymentwv-workshop-header'>
@@ -840,7 +944,7 @@ export default class Payment extends Component {
                   
                 {noOfWorkshopsPayed>0 ?
                   <React.Fragment>
-                  <div className='capayment-hortizontalline2'></div>
+                    <div className='capayment-hortizontalline2'></div>
                   <div className='capaymentwv-workshop-parent'>
                       <div className='capaymentwv-workshop-header'>
                           Workshops
@@ -850,7 +954,16 @@ export default class Payment extends Component {
                   </React.Fragment>
                 :
                 null}
-                 
+                 <div className="capayment-discountcoupon">
+              <div className="capayment-spaceaboutcolon">Convenience Fee</div>{" "}
+              :<div className="capayment-space" />
+              <div className="capayment-viewbillingdetails1s-coupondiscount">
+                 Rs {convenienceFee2}
+              </div>
+              <div className="capayment-earlybirddiscount">
+                ({convenienceFeeDiscount} %)
+              </div>
+            </div>
             <div className="capayment-horizontalline" />
             <div className="capayment-totalamt">
               <div className="capayment-spaceaboutcolon">Total Amount</div>:
