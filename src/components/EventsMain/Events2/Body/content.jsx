@@ -12,7 +12,7 @@ export default class ContentIndex extends Component {
                         <div key={index}>
                             <div className="suignite-parent-child2-applyparent">
                                 <div className="suignite-parent-child2-applyparent-heading">
-                                    Apply for {this.props.event_name} in {body.sub_event_name}
+                                    {body.apply_now_description}
                                 </div>
                                 {console.log(body.sub_event_reg_url)}
                                 <a href={body.sub_event_reg_url} target="_blank">
