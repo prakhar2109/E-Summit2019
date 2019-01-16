@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./contact.scss";
-import Header from "../header"
+import Header from "../header";
 export default class Contact extends Component {
   render() {
     return (
