@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter, Route, Switch, Redirect,
+} from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 import "antd/dist/antd.css";
@@ -92,6 +94,8 @@ class App extends Component {
     this.state = {
       auth: localStorage.getItem("user_token"),
     };
+    console.clear();
+    console.log("%cWelcome to ESummit IITR!", "color: rgb(243,147,36); font-size:30px;");
   }
 
   render() {
@@ -121,10 +125,10 @@ class App extends Component {
                 <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
                 {/* <Route exact path="/test" component={Startup} /> */}
                 <Route path="/events/onlineevents" render={() => <Redirect to="/events/online%20events" />} />
-                <Route exact path="/events/:id" render={(props) => <Test {...props} />} />
+                <Route exact path="/events/:id" render={props => <Test {...props} />} />
                 {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
-                <Route path="/dashboard/payment/success" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
-                <Route path="/dashboard/payment/fail" render={(props) => <Caindex dashboardProps="Sic" {...props} />} />
+                <Route path="/dashboard/payment/success" render={props => <Caindex dashboardProps="Sic" {...props} />} />
+                <Route path="/dashboard/payment/fail" render={props => <Caindex dashboardProps="Sic" {...props} />} />
                 {/* <Route path="dashboard/payment/fail" render={() => <Redirect to="/dashboard"/>}/> */}
 
                 {/* <Route path='dashbard/payment/success/' render{()=><Redirect to='/dashboard'/>}/> */}

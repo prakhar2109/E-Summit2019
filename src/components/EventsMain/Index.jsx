@@ -22,7 +22,7 @@ export default class EventsMainIndex extends Component {
             data: "",
             faq: ''
         }
-    }
+    } 
     componentDidMount() {
         // document 
         //     .getElementById("loader")

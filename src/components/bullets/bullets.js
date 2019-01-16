@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Header from "../header";
 import "./bullets.scss";
+
 export default class Bullets extends Component {
   render() {
     return (
@@ -10,15 +11,15 @@ export default class Bullets extends Component {
 
           <ol>
 
-              {this.props.data.map(update => {
-                  return <li>
-                      {update.value}
-                  </li>
-              })}
-      
+            {this.props.data.map(update => (
+              <li>
+                {update.value}
+              </li>
+            ))}
+
           </ol>
         </div>
       </div>
-    )
+    );
   }
 }

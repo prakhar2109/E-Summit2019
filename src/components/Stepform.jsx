@@ -94,35 +94,33 @@ class Stepform extends React.Component {
     return (
       <div className={classes.root}>
         <Stepper activeStep={activeStep} alternativeLabel>
-          {steps.map(label => {
-            return (
-              <Step
-                classes={{
-                  root: classes.step,
-                  completed: classes.completed,
-                  active: classes.active,
+          {steps.map(label => (
+            <Step
+              classes={{
+                root: classes.step,
+                completed: classes.completed,
+                active: classes.active,
+              }}
+              key={label}
+            >
+              <StepLabel
+                StepIconProps={{
+                  classes: {
+                    root: classes.icon,
+                    active: classes.iconactive,
+                  },
                 }}
-                key={label}
+                classes={{
+                  root: classes.steproot,
+                }}
               >
-                <StepLabel
-                  StepIconProps={{
-                    classes: {
-                      root: classes.icon,
-                      active: classes.iconactive,
-                    },
-                  }}
-                  classes={{
-                    root: classes.steproot,
-                  }}
-                >
-                  {label}
-                </StepLabel>
-              </Step>
-            );
-          })}
+                {label}
+              </StepLabel>
+            </Step>
+          ))}
         </Stepper>
         <div>
-          {this.state.activeStep === steps.length ? (
+          {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
                 All steps completed

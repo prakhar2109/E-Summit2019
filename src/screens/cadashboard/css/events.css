@@ -21,7 +21,7 @@
 }
 .caevents-earnedcoupons-child{
     position: relative;
-    height: 31.1vh;
+    height: 33.1vh;
     width: 30.27%; 
     margin-left: 2.24%;  
     margin-bottom: 3.148vh; 
@@ -63,7 +63,7 @@
 }
 
 .caevents-earnedcoupons-child-heading{
-
+    line-height: 32px;
     color: #5A5A5A;
     font-size: 28px;
     font-family: "ProximaNova-Semibold" !important;
@@ -78,6 +78,7 @@
     margin-top: 1.85vh;
     color: #4F4F4F;
     opacity: 0.58;
+    word-break: break-all;
     min-height: 8vh;
     font-family: "ProximaNova-Light";
     font-size: 14.2px;
@@ -96,11 +97,13 @@ bottom: 2.962vh;
     color: #FFFFFF;
     height: 3.70vh;
     width: 7.81vw;
+    cursor: pointer;
     border: none;
 }
 
 .caofferb01{
     margin-left: 1vw;
+    cursor: pointer;
 }
 
 .caeventsparent-font{
@@ -128,6 +131,8 @@ bottom: 2.962vh;
     line-height: normal;
     font-size: 17.04px;
     margin-top: 1vh;
+    position: absolute;
+    bottom: 8vh;
 }
 
 .caevents-earnedcoupons-child-description-sucess{
@@ -168,7 +173,8 @@ bottom: 2.962vh;
     background-repeat: no-repeat;
     align-self: center;
     position: absolute;
-    right: 0;
+    right: 3vh;
+    top: 3vh;
 }
 .caevents-coming-soon{
     color: #5A5A5A;
@@ -210,6 +216,7 @@ bottom: 2.962vh;
 
     font-size: 18px;
 
+
 }
 
 .caevents-earnedcoupons-child-info{
@@ -224,7 +231,7 @@ bottom: 2.962vh;
 }
 
 }
-@media (max-width: 900px){
+@media (max-width: 1000px){
 
 .caevents-parent{
     color: black;
@@ -259,6 +266,7 @@ bottom: 2.962vh;
     color: #4F4F4F;
     opacity: 0.58;
     width: 100%;
+    min-height: 0;
 }
 .caevents-earnedcoupons-child-button button {
     font-size: 11.37px;
@@ -287,5 +295,21 @@ bottom: 2.962vh;
     margin-top: -1.4vh;
     width: 64%;
     margin-left: 31%;
+}
+.caevents-earnedcoupons-child{
+    height: fit-content;
+}
+.caevents-earnedcoupons-deadline{
+
+    font-size: 18px;
+    position: unset;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+
+}
+.caevents-earnedcoupons-child-button {
+    position: unset;
+    bottom: 2.962vh;
+    width: 50%;
 }
 }

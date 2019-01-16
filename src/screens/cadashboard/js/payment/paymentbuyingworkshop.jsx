@@ -2,10 +2,10 @@
 import React, { Component } from 'react'
 import './../../css/payment/paymentbuyingworkshop.css'
 import CriteriaMapping from './../discountcriterias';
-import { Modal } from 'antd';
-import Coupon from './../coupon'
+// import { Modal } from 'antd';
+// import Coupon from './../coupon'
 import Payments from './workshops'
-import UpArrowSVG from './../../svg/Vector.svg'
+// import UpArrowSVG from './../../svg/Vector.svg'
 
 
 export default class Payment extends Component{

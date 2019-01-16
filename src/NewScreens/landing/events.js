@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Header from "../../components/header";
 import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
+import Header from "../../components/header";
 import ViewMore from "./static/view_more.png";
 // import { NavLink } from "react-router-dom"
 class Events extends Component {
@@ -11,8 +11,9 @@ class Events extends Component {
       data: "",
     };
   }
+
   render() {
-    let { data } = this.state;
+    const { data } = this.state;
     return (
       <>
         <Element id="events" name="events">
@@ -70,7 +71,7 @@ class Events extends Component {
               <span>
                 <center>
                   {/* <i>
-                
+
                     <img src={ViewMore} alt="view more" />
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
@@ -86,7 +87,7 @@ class Events extends Component {
               <span>
                 <center>
                   {/* <i>
-                    
+
                     <img src={ViewMore} alt="view more" />
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
