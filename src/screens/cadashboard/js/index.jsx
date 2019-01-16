@@ -10,7 +10,7 @@ import CAPayment from './payment/paymentwithoutworkshop'
 import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAnewcontigent from './cacontigent'
-import CAevents from './comingsoon'
+import CAevents from './events'
 // import { BASE_URL } from  './../../../../utils/urls'
 import axios from "axios";
 

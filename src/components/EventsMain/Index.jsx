@@ -21,7 +21,7 @@ export default class EventsMainIndex extends Component {
         this.state = {
             data: ""
         }
-    }
+    } 
     componentDidMount() {
         // document 
         //     .getElementById("loader")
