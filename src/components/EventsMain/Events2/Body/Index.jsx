@@ -25,7 +25,7 @@ export default class BodyIndex extends Component {
     render() {
         return (
             <div className="suignite-parent-childparent">
-                <div className="suignite-parent-child1">
+                <div id="events" className="suignite-parent-child1">
                     {this.props.data.sub_events.map((name, index) =>
                         <div key={index} className={this.state.activeState === name.sub_event_name ?
                             "suignite-parent-child1-active" :

@@ -19,7 +19,8 @@ export default class EventsMainIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: ""
+            data: "",
+            faq: ''
         }
     } 
     componentDidMount() {
@@ -37,7 +38,8 @@ export default class EventsMainIndex extends Component {
             data: data
         }).then((r) => {
             this.setState({
-                data: r.data.event_data[0]
+                data: r.data.event_data[0],
+                faq: r.data
             })
             // document
             //     .getElementById("loader")
@@ -57,7 +59,7 @@ export default class EventsMainIndex extends Component {
                 {this.state.data.event_type2 === "TYPE1" ?
                     <Route exact path="/events/:id" render={props => (<Events {...props} data={this.state.data} />)} /> :
                     this.state.data.event_type2 === "TYPE2" ?
-                        <Route exact path="/events/:id" render={props => (<Events2 {...props} data={this.state.data} />)} />
+                        <Route exact path="/events/:id" render={props => (<Events2 {...props} faq={this.state.faq} data={this.state.data} />)} />
                         : null
                 }
             </React.Fragment>

@@ -2,7 +2,10 @@
 height:93vh;
 width:100vw;
 padding: 3.24vh 19.63vw;
-background:black;
+background:url('./img/suback.png');
+background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .suignite-parent-img{
 background:url('./img/Startup_Ignite.png');
@@ -64,7 +67,7 @@ text-align:center;
 font-size: 1.25em !important;
 }
 .esummit-ignite-faq .faq_unit .question{
-    font-size: 1.25em !important;
+    font-size: 1em !important;
 }
 .suignite-parent p:nth-child(3){
 font-family: "ProximaNova-Light";
@@ -252,6 +255,47 @@ background:#C4C4C4;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
 }
+.back-dehradun-first{
+    background-image: url("./img/sushil.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.back-dehradun-second{
+    background-image: url("./img/pankaj.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.back-dehradun-three{
+    background-image: url("./img/sandeep.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.back-delhi-one{
+    background-image: url("./img/roy.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.back-jaipur-one{
+    background-image: url("./img/dil.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.back-jaipur-second{
+    background-image: url("");
+    background-position: center;
+    background-size: cover;
+}
+/* .back-dehradun-four{
+    background-image: url("");
+    background-position: center;
+    background-size: cover;
+}
+.back-dehradun-five{
+    background-image: url("");
+    background-position: center;
+    background-size: cover;
+} */
+
 .suignite-guestlecture-child2{
 padding-left: 4.89%;
     width: 71%;
