@@ -6,10 +6,11 @@ import LeaderBoard from "./Sidenavbar"
 import CATaskBoard from "./catask"
 import CAOffers from './payment'
 import CAPayment from './payment/paymentwithoutworkshop'
+// import CAcontingent from './payment/paymentwithworkshop'//edit afterwards
 import CAInvite from './cainvite'
 import CALeader from './caleader'
 import CAnewcontigent from './cacontigent'
-import CAevents from './comingsoon'
+import CAevents from './events'
 // import { BASE_URL } from  './../../../../utils/urls'
 import axios from "axios";
 

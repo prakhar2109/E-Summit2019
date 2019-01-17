@@ -3,11 +3,11 @@ import Nav from "../nav/nav.jsx";
 import Vector from './img/headVector.png';
 import Eventfooter from "../IdeaStorm/footer/eventfooter.jsx";
 import './ignite.css';
-import FAQBoard from '../landing/faqs'
+import FAQBoard from '../landing/faqs';
 import MobileNav from "../mobile_nav/header";
-import "../../screens/ignite/css/ignite.scss"
-import "./scrollanimation.css"
-import jump from "jump.js"
+import "../../screens/ignite/css/ignite.scss";
+import "./scrollanimation.css";
+import jump from "jump.js";
 
 export default class IgniteIndex extends Component {
 	state = {
@@ -17,6 +17,7 @@ export default class IgniteIndex extends Component {
 				id: 2,
 				question: "I am from a different college from the college where startup ignite is happening. Can I still participate?",
 				answer:
+
 					"Yes, anyone who is interested to be a part of the Startup Ignite is invited.",
 			},
 			{
@@ -44,19 +45,18 @@ export default class IgniteIndex extends Component {
 
 
 	}
+
 	jum = () => {
-		jump('#ignite')
+		jump('#ignite');
 	}
 
 	setActive(state) {
 		this.setState({
-			activeState: state
+			activeState: state,
 		});
-
-
 	}
-	render() {
 
+	render() {
 		return (
 
 			<div>
@@ -107,45 +107,51 @@ export default class IgniteIndex extends Component {
 											</div>
 											: null
 						}
-						{this.state.activeState === "NOIDA" ?
-							<div className="suignite-parent-child2-applyparent">
-								<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Noida</div>
-								<a style={{ cursor: "pointer" }} href="http://bit.ly/sinoida">
-									<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
-								</a>
-							</div>
-							:
-							this.state.activeState === "CHANDIGARH" ?
+						{this.state.activeState === "NOIDA"
+							? (
 								<div className="suignite-parent-child2-applyparent">
-									<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Chandigarh</div>
-									<a style={{ cursor: "pointer" }} href="http://bit.ly/sichandigarh">
+									<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Noida</div>
+									<a style={{ cursor: "pointer" }} href="http://bit.ly/sinoida">
 										<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
 									</a>
 								</div>
-								:
-								this.state.activeState === "NEWDELHI" ?
+							)
+							: this.state.activeState === "CHANDIGARH"
+								? (
 									<div className="suignite-parent-child2-applyparent">
-										<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in New Delhi</div>
-										<a style={{ cursor: "pointer" }} href="http://bit.ly/sinewdelhi">
+										<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Chandigarh</div>
+										<a style={{ cursor: "pointer" }} href="http://bit.ly/sichandigarh">
 											<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
 										</a>
 									</div>
-									:
-									this.state.activeState === "DEHRADUN" ?
+								)
+								: this.state.activeState === "NEWDELHI"
+									? (
 										<div className="suignite-parent-child2-applyparent">
-											<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Dehradun</div>
-											<a style={{ cursor: "pointer" }} href="http://bit.ly/sidehradun">
+											<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in New Delhi</div>
+											<a style={{ cursor: "pointer" }} href="http://bit.ly/sinewdelhi">
 												<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
 											</a>
 										</div>
-										:
-										this.state.activeState === "JAIPUR" ?
+									)
+									: this.state.activeState === "DEHRADUN"
+										? (
 											<div className="suignite-parent-child2-applyparent">
-												<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Jaipur</div>
-												<a style={{ cursor: "pointer" }} href="http://bit.ly/sijaipur">
+												<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Dehradun</div>
+												<a style={{ cursor: "pointer" }} href="http://bit.ly/sidehradun">
 													<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
 												</a>
 											</div>
+										)
+										: this.state.activeState === "JAIPUR"
+											? (
+												<div className="suignite-parent-child2-applyparent">
+													<div className="suignite-parent-child2-applyparent-heading">Apply for startup ignite in Jaipur</div>
+													<a style={{ cursor: "pointer" }} href="http://bit.ly/sijaipur">
+														<button id="suignite-parent-child2-applyparent-button"> APPLY</button>
+													</a>
+												</div>
+											)
 											: null
 
 
@@ -305,10 +311,12 @@ export default class IgniteIndex extends Component {
 							<p style={{ marginTop: "6.67vh" }}>
 								An investor, as cool as it may sound is always on the knife’s edge;
 								 a bad decision and it would rip him off. So let’s get into his shoes and see how tough it may get just to make a choice
-								</p>
+
+          </p>
 							<p>RULES & REGULATIONS</p>
 							<p>
-								1.This is an individual game and open to all.<br />
+								1.This is an individual game and open to all.
+            <br />
 								2.Speaking or murmuring any sort of hint will lead to disqualification of the candidate.
 								</p>
 							<p>ELIGIBILITY</p>
@@ -382,7 +390,7 @@ export default class IgniteIndex extends Component {
 
 				</div>
 				<Eventfooter />
-			</div >
-		)
+			</div>
+		);
 	}
 }

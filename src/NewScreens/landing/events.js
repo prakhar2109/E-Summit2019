@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Header from "../../components/header";
 import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
+import Header from "../../components/header";
 import ViewMore from "./static/view_more.png";
 // import { NavLink } from "react-router-dom"
 class Events extends Component {
@@ -11,8 +11,9 @@ class Events extends Component {
       data: "",
     };
   }
+
   render() {
-    let { data } = this.state;
+    const { data } = this.state;
     return (
       <>
         <Element id="events" name="events">
@@ -70,14 +71,32 @@ class Events extends Component {
               <span>
                 <center>
                   {/* <i>
-                
+
                     <img src={ViewMore} alt="view more" />
                   </i> */}
                   <p className="viewmore">COMING SOON</p>
                 </center>
               </span>
             </div>
-            <div className="competition">
+            <div>
+              <a href="/events/workshops" target="_blank">
+                <div className="competition">
+                  <span>
+                    <p className="title">WORKSHOPS</p>
+                    <p className="tagline" />
+                  </span>
+                  <span>
+                    <center>
+                      <i>
+                        <img src={ViewMore} alt="view more" />
+                      </i>
+                      <p className="viewmore">VIEW MORE</p>
+                    </center>
+                  </span>
+                </div>
+              </a>
+            </div>
+            {/* <div className="competition">
               <span>
                 <p className="title">WORKSHOPS</p>
                 <p className="tagline" />
@@ -85,15 +104,15 @@ class Events extends Component {
 
               <span>
                 <center>
-                  {/* <i>
-                    
+                  <i>
+
                     <img src={ViewMore} alt="view more" />
-                  </i> */}
+                  </i>
                   <p className="viewmore">COMING SOON</p>
                 </center>
               </span>
-            </div>
-          </div>
+            </div>*/}
+          </div> 
           <div className="land_events">
             <Header title="EVENTS " />
 

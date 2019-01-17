@@ -5,6 +5,8 @@ import axios from "axios";
 import { BASE_URL } from "../../../utils/urls";
 import update from 'react-addons-update';
 
+import Loader from '../../loader/loader'
+
 export default class Cacontigent extends Component {
 	constructor() {
 		super();
@@ -29,6 +31,10 @@ export default class Cacontigent extends Component {
 		}
 	}
 	componentDidMount = () => {
+		document
+        .getElementById("loader")
+        .style
+        .display = "grid";
 		let token = localStorage.getItem("user_token");
 		let invites = 0;
 		axios
@@ -57,10 +63,18 @@ export default class Cacontigent extends Component {
 
 				if (res.status == 200) {
 					this.setState({ contigent: false, contingent_data: res.data, contingent_leader: true })
+					document
+					.getElementById("loader")
+					.style
+					.display = "none";
 				}
+			
 			})
 			.catch(response => {
-
+				document
+				.getElementById("loader")
+				.style
+				.display = "none";
 			});
 
 		axios
@@ -86,6 +100,8 @@ export default class Cacontigent extends Component {
 			.catch(response => {
 
 			});
+
+		
 	};
 
 	deleteContigent = () => {
@@ -372,8 +388,10 @@ export default class Cacontigent extends Component {
 
 		return (
 			<div>
+				
 				{this.state.contigent ?
 					<div className="cacontigent-parent">
+						<Loader/>
 						<div className="cacontigent-parent-heading1">
 							Create Contingent
                 		</div>
@@ -546,6 +564,7 @@ export default class Cacontigent extends Component {
 					:
 
 					<div className="cacontigent-parent">
+					<Loader/>
 						<div className="cacontigent-innerparent" id="congratscontigent">
 							<div className="cacontigent-parent-heading1">
 								Create Contingent

@@ -1,7 +1,7 @@
 .coordinator {
   padding: 120px 10vw;
   display: block;
-  border-bottom: 1px solid #B2B2B2;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 @media (max-width: 1000px) {
@@ -11,7 +11,7 @@
 }
 
 .coordinator .head1 {
-  color: #1A4D66;
+  color: #1a4d66;
   font-family: "ProximaNova-Bold";
 }
 
@@ -21,7 +21,7 @@
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   -ms-grid-columns: 30% 30% 30%;
-      grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 30% 30% 30%;
   padding-top: 72px;
   font-family: Proxima-nova-regular;
 }

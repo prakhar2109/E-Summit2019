@@ -97,11 +97,11 @@ export default class Lfooter extends Component {
 			                </div>
 
                             <div className="landing-footer-icons">
-                                <a rel="noopener noreferrer" href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
-                                <a rel="noopener noreferrer" href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a rel="noopener noreferrer" href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i class="fab fa-youtube" target="_blank"></i></a>
-                                <a rel="noopener noreferrer" href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a rel="noopener noreferrer" href="https://www.linkedin.com/company/ecelliitr/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.facebook.com/ecelliitr/" target="_blank"><i className="fab fa-facebook"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.instagram.com/ecelliitr/" target="_blank"><i className="fab fa-instagram"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i className="fab fa-youtube" target="_blank"></i></a>
+                                <a rel="noopener noreferrer" href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i className="fab fa-twitter"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.linkedin.com/company/ecelliitr/" target="_blank"><i className="fab fa-linkedin"></i></a>
 
 
                             </div>
@@ -268,11 +268,11 @@ export default class Lfooter extends Component {
 			                </div>
 
                             <div className="landing-footer-icons">
-                                <a rel="noopener noreferrer" href="https://www.facebook.com/ecelliitr/" target="_blank"><i class="fab fa-facebook"></i></a>
-                                <a rel="noopener noreferrer" href="https://www.instagram.com/ecelliitr/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a rel="noopener noreferrer" href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i class="fab fa-youtube"></i></a>
-                                <a rel="noopener noreferrer" href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a rel="noopener noreferrer" href="https://www.linkedin.com/company/esummit/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.facebook.com/ecelliitr/" target="_blank"><i className="fab fa-facebook"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.instagram.com/ecelliitr/" target="_blank"><i className="fab fa-instagram"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.youtube.com/channel/UCf1py66Ov1easJAswwjxQZw" target="_blank"><i className="fab fa-youtube"></i></a>
+                                <a rel="noopener noreferrer" href="https://twitter.com/EDC_IITRoorkee" target="_blank"><i className="fab fa-twitter"></i></a>
+                                <a rel="noopener noreferrer" href="https://www.linkedin.com/company/esummit/" target="_blank"><i className="fab fa-linkedin"></i></a>
 
 
                             </div>
