@@ -89,7 +89,7 @@ export default class Viewprofile extends Component {
                     {this.state.appliedevents.map((event, index) =>
 
 
-                        <div key={index} className="caevents-earnedcoupons-child" style={{ backgroundImage: `url(${event.card_image})`, }} >
+                        <div key={index} className="caevents-earnedcoupons-child" style={{ backgroundImage: `url(${event.dashboard_image})`, }} >
                             {console.log(this.state.appliedevents, "helloboys")}
                             <div id={"caevents-earnedcoupons-child-parent1" + index}>
                                 <div className="caevents-earnedcoupons-child-heading">

@@ -63,7 +63,7 @@ export default class Allevents extends Component {
                         
                         <>
                         {event.sub_events.length==0?
-                        <div key={index} className="caevents-earnedcoupons-child" style={{ backgroundImage: `url(${event.card_image})`, }} >
+                        <div key={index} className="caevents-earnedcoupons-child" style={{ backgroundImage: `url(${event.dashboard_image})`, }} >
                             {event.status === "Dead" &&
                                         <div className="caevents-earnedcoupons-child-reddotpic">
                                         </div>

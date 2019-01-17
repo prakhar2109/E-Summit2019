@@ -236,7 +236,7 @@ class RegisterIndex extends React.Component {
             country = "India"
         }
         if (college) {
-            college = country === "India" ? college.value.trim() : college.trim()
+            college = country === "India" && college !== "IITR" ? college.value.trim() : college.trim()
         }
         else {
             college = "null"

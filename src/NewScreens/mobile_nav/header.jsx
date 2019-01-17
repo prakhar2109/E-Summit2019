@@ -25,7 +25,6 @@ export default class ComingSoon extends Component {
         let token = localStorage.getItem("user_token");
         let tabs;
 
-        console.log(token);
 
         if (token !== undefined && token !== null && token !== "") {
             tabs = (
@@ -52,7 +51,6 @@ export default class ComingSoon extends Component {
                 </span>
             )
         }
-        console.log(this.state.isActive)
         return (
             <div id="nav" className="Eventsheader">
                 <NavLink to="/">
