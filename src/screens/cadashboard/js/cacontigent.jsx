@@ -63,14 +63,18 @@ export default class Cacontigent extends Component {
 
 				if (res.status == 200) {
 					this.setState({ contigent: false, contingent_data: res.data, contingent_leader: true })
+					document
+					.getElementById("loader")
+					.style
+					.display = "none";
 				}
-				document
-                .getElementById("loader")
-                .style
-                .display = "none";
+			
 			})
 			.catch(response => {
-
+				document
+				.getElementById("loader")
+				.style
+				.display = "none";
 			});
 
 		axios
