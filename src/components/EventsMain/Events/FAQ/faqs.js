@@ -31,19 +31,25 @@ class FAQBoard extends Component {
   render() {
     let { faqList, isHomePage } = this.props;
     if (isHomePage) {
-      faqList = faqList.filter(update => update.faq_type.type_name === "Homepage");
+      faqList = faqList.filter(
+        update => update.faq_type.type_name === "Homepage"
+      );
     }
     return (
       <Element id="faq" name="faq">
         <section id="faq">
           <div className="land_faq">
             <Header title="FAQs" />
-            <p className="esummit-landing-faq-land-para">Stuck somewhere ? We’ re here to help you! </p>
+            <p className="esummit-landing-faq-land-para">
+              Stuck somewhere ? We’ re here to help you!{" "}
+            </p>
 
-            {faqList.map(update => <SingleFAQ key={update.id} update={update} />)}
+            {faqList.map(update => (
+              <SingleFAQ key={update.id} update={update} />
+            ))}
             <center>
               <NavLink to="/faq">
-                {' '}
+                {" "}
                 <button className="view_all"> VIEW ALL </button>
               </NavLink>
             </center>

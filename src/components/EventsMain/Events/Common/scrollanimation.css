@@ -1,9 +1,9 @@
-.ignite-first-page-scroll{
+.ignite-first-page-scroll {
   position: relative;
   height: 100px;
   margin-top: 40px;
 }
-#ignite-first-page-scroll-child p{
+#ignite-first-page-scroll-child p {
   font-size: 0.5rem;
   padding: 7px;
   width: 100%;
@@ -12,7 +12,7 @@
   position: absolute;
   font-family: Montserrat;
 }
-.icon-scroll{
+.icon-scroll {
   position: absolute;
   left: calc(50% - 20px);
   cursor: pointer;
@@ -31,7 +31,7 @@
   border-radius: 25px;
 }
 .icon-scroll:before {
-  content: '';
+  content: "";
   width: 8px;
   height: 8px;
   background: #fff;

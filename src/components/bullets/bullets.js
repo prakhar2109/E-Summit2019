@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Header from "../header";
 import "./bullets.scss";
 
@@ -10,13 +10,9 @@ export default class Bullets extends Component {
           <Header title={this.props.title} />
 
           <ol>
-
             {this.props.data.map(update => (
-              <li>
-                {update.value}
-              </li>
+              <li>{update.value}</li>
             ))}
-
           </ol>
         </div>
       </div>
