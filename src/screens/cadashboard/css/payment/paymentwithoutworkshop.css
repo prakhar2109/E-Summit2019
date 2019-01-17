@@ -150,6 +150,13 @@
     font-size: 14px;
     font-weight: 600;
 }
+.capaymentwv-workshop-header{
+    font-size: 20px;
+
+}
+.capaymentwv-workshop-parent{
+    margin-left: 5.625vw;
+}
 .capayment-horizontalline{
     height: 0.2vh;
     background-color: #4F4F4F;
@@ -254,13 +261,16 @@
 .capayment-viewbillingdetails-coupondiscount{
     color: #70BF48;
 }
+.capayment-viewbillingdetails1-coupondiscount{
+    color: #8a8a8a;
+}
 .capayment-criterialist{
     margin-top: 2vh;
         
 }
 .capayment-viewbillingdetails-registration{
     margin-left:5.625vw;
-    font-size:18px; 
+    font-size:20px; 
     margin-top: 1.8vh;
 }
 .capayment-paymentstatusdone{
