@@ -201,12 +201,29 @@ class Events extends Component {
                   </span>
                   <p className="t3">COMING SOON</p>
                 </div>
-                <div className="events_production" id="events_production2">
+                {/* <div className="events_production" id="events_production2">
                   <span>
                     <p className="t1">COMPETITIONS</p>
                   </span>
                   <p className="t3">COMING SOON</p>
-                </div>
+                </div> */}
+                <Link to="/events/offline%20Competitions">
+                  <div className="events_production" id="events_production2">
+                    <span>
+                      <p className="t1">COMPETITIONS</p>
+                    </span>
+                    <span>
+                      <center>
+                        <i>
+                          <img src={ViewMore} alt="view more" />
+                        </i>
+                        <p className="viewmore esummit-landing-view-more-button">
+                          VIEW MORE
+                        </p>
+                      </center>
+                    </span>
+                  </div>
+                </Link>
               </div>
             </center>
           </div>
