@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
-import "antd/dist/antd.css";
 // import PaymentStatus from './screens/cadashboard/js/paymentstatus'
 import Loadable from "react-loadable";
 import Loader from "./screens/loader/loader";
