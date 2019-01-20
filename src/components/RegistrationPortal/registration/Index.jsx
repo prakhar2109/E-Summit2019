@@ -273,7 +273,7 @@ class RegisterIndex extends React.Component {
         }
 
         let url_q = window.location.href;
-        let url = new URL(url_q); 
+        let url = new URL(url_q);
         let ref = url.searchParams.get("ref");
         let endpoint = ref === null ? "/v1/api/user/signup/" : `/v1/api/user/signup/?ref=${ref}`
         let data = {
@@ -309,7 +309,6 @@ class RegisterIndex extends React.Component {
             d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
             if (r.data.token) {
                 localStorage.setItem("user_token", r.data.token);
-
                 this.setState({
                     activeStep: this.state.activeStep + 1
                 })
@@ -342,41 +341,43 @@ class RegisterIndex extends React.Component {
             tshirt_size: data.tshirt_size,
             organisation_name: data.organisation_name,
             industry: data.industry,
-        })
-        if (!this.state.social_signup) {
-            let data_details = {
-                email: this.state.email,
-            }
-            document
-                .getElementById("loader")
-                .style
-                .display = "grid";
-            axios({
-                method: "post",
-                url: BASE_URL + "/v1/api/verification/",
-                data: data_details
-            }).then((r) => {
-                this.setState({
-                    otp: r.data.one_time_pass,
-                    activeStep: this.state.activeStep + 1
-                })
-                document
-                    .getElementById("loader")
-                    .style
-                    .display = "none";
-
-            }).catch((response) => {
-                document
-                    .getElementById("loader")
-                    .style
-                    .display = "none";
-                alert(response)
-
-            });
-        }
-        else {
+        }, function () {
             this.handleFullSubmit()
-        }
+        })
+
+        // if (!this.state.social_signup) {
+        //     let data_details = {
+        //         email: this.state.email,
+        //     }
+        //     document
+        //         .getElementById("loader")
+        //         .style
+        //         .display = "grid";
+        //     axios({
+        //         method: "post",
+        //         url: BASE_URL + "/v1/api/verification/",
+        //         data: data_details
+        //     }).then((r) => {
+        //         this.setState({
+        //             otp: r.data.one_time_pass,
+        //             activeStep: this.state.activeStep + 1
+        //         })
+        //         document
+        //             .getElementById("loader")
+        //             .style
+        //             .display = "none";
+
+        //     }).catch((response) => {
+        //         document
+        //             .getElementById("loader")
+        //             .style
+        //             .display = "none";
+        //         alert(response)
+
+        //     });
+        // }
+        // else {
+        // }
     }
     handleNext = () => {
         document
@@ -477,11 +478,11 @@ class RegisterIndex extends React.Component {
                                 {activeStep === 0 ? "ACCOUNT SETUP" :
                                     activeStep === 1 ? "PROFILE TYPE" :
                                         activeStep === 2 ? "PERSONAL DETAILS" :
-                                            activeStep === 3 ? "EMAIL VERIFICATION" :
-                                                activeStep === 4 ? "REGISTRATION COMPLETED" : null
+                                            // activeStep === 3 ? "EMAIL VERIFICATION" :
+                                            activeStep === 3 ? "REGISTRATION COMPLETED" : null
                                 }
                             </div>
-                            {activeStep !== 4 ?
+                            {activeStep !== 3 ?
                                 <div className="esummit-regsiter-form-heading-child-second">
                                     Let’s begin with setting up your account
                             </div> : <div className="esummit-regsiter-form-heading-child-second">
@@ -514,14 +515,14 @@ class RegisterIndex extends React.Component {
                                         handleDetails={this.handleDetails}
                                     />
                                     : null}
-                                {activeStep === 3 ?
+                                {/* {activeStep === 3 ?
                                     <EmailVerification
                                         email={email}
                                         handleOTP={otp}
                                         handleSubmit={this.handleEmailVerification}
                                     />
-                                    : null}
-                                {activeStep === 4 ?
+                                    : null} */}
+                                {activeStep === 3 ?
                                     <div className="esummit-register-form-successfull-grand-parent">
                                         <div className="esummit-register-form-successfull-parent">
                                             <div style={{
