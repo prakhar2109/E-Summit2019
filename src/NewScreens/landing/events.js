@@ -207,7 +207,7 @@ class Events extends Component {
                   </span>
                   <p className="t3">COMING SOON</p>
                 </div> */}
-                <Link to="/events/offline%20Competitions">
+                <Link to="/events/On-spot%20Competitions">
                   <div className="events_production" id="events_production2">
                     <span>
                       <p className="t1">COMPETITIONS</p>
