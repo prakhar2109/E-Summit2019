@@ -42,7 +42,7 @@ export default class Speakers extends Component {
       <div>
         <Element id="speakers" name="speakers">
           <div className="land_speakers">
-            <Header title="PAST SPEAKERS" />
+            <Header title="SPEAKERS" />
 
             <div className="speaker_slidder">
               <Slider {...settings}>
