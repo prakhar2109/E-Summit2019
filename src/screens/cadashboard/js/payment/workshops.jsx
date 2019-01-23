@@ -17,6 +17,7 @@ class Workshop extends Component {
       document.getElementById(
         `capayment-toggleaccomodation-workshops-${this.props.id}`
       ).innerHTML = "ADD";
+      
       axios
         .get(BASE_URL + `/v1/api/event/${this.props.id}/unregister`, {
           headers: {
@@ -39,6 +40,7 @@ class Workshop extends Component {
       document.getElementById(
         `capayment-toggleaccomodation-workshops-${this.props.id}`
       ).innerHTML = "DISCARD";
+      
 
       axios
         .get(BASE_URL + `/v1/api/event/${this.props.id}/apply`, {

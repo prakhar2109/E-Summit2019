@@ -430,6 +430,14 @@ padding-bottom:0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    color: #4F4F4F;
+}
+.capayment-registrationfee-innerdiv strike{
+    
+    
+    
+    
+    color: #8A8A8A;
 }
 .capayment-earlybirddiscount{
     margin-left:2vw;

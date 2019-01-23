@@ -546,9 +546,10 @@ export default class Payment extends Component {
                   </div>{" "}
                   :<div className="capayment-space" />
                   <div className="capayment-registrationfee-innerdiv">
-                    Rs {registrationFee}
+                    Rs {registrationFee}&nbsp; 
+                    <strike>Rs 800</strike>
                     <div className="capayment-earlybirddiscount">
-                      (Early Bird Discount)
+                      (Republic Week Discount)
                     </div>
                   </div>
                 </div>
