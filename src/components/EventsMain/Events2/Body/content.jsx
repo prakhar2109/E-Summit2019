@@ -6,7 +6,16 @@ export default class ContentIndex extends Component {
 
         return (
             <React.Fragment>
-                {this.props.data && this.props.data.map((body, index) =>
+                {this.props.data && this.props.data.map((body, index) =>{
+
+                    
+
+                    if(body.apply_now_description ==="100"){
+                        return null;
+                    }
+
+                    else{
+                        return(
                     body.sub_event_name === this.props.active ?
                         <div key={index}>
                             <div className="suignite-parent-child2-applyparent">
@@ -25,7 +34,7 @@ export default class ContentIndex extends Component {
                             )}
                         </div>
                         : null
-                )}
+                    )}})}
             </React.Fragment>
         );
     }
