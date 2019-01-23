@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter, Route, Switch, Redirect,
-} from "react-router-dom";
+import Loadable from "react-loadable";
+import "./App.css";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
 import Login from "./components/RegistrationPortal/login/Index";
 import ScrollToTop from "./screens/common/scrolltotop";
 // import PaymentStatus from './screens/cadashboard/js/paymentstatus'
-import Loadable from "react-loadable";
 import Loader from "./screens/loader/loader";
 
 // const Loading = ({ error }) => {
@@ -15,7 +15,6 @@ import Loader from "./screens/loader/loader";
 //     return <Loader />;
 //   }
 // };
-
 
 const ignite = Loadable({
   loader: () => import("./screens/ignite/ignite"),
@@ -35,18 +34,15 @@ const IdeaStorm = Loadable({
   loading: () => <Loader />,
 });
 
-
 const Speakers = Loadable({
   loader: () => import("./NewScreens/speakers/speakers"),
   loading: () => <Loader />,
 });
 
-
 const Sponsors = Loadable({
   loader: () => import("./NewScreens/sponsors/sponsors"),
   loading: () => <Loader />,
 });
-
 
 const FAQBoard = Loadable({
   loader: () => import("./NewScreens/faq/faq"),
@@ -94,7 +90,10 @@ class App extends Component {
       auth: localStorage.getItem("user_token"),
     };
     console.clear();
-    console.log("%cWelcome to ESummit IITR!", "color: rgb(243,147,36); font-size:30px;");
+    console.log(
+      "%cWelcome to ESummit IITR!",
+      "color: rgb(243,147,36); font-size:30px;"
+    );
   }
 
   render() {
@@ -115,19 +114,38 @@ class App extends Component {
                 <Route path="/faq" component={FAQBoard} />
                 <Route path="/campusambassador" component={CampusAmbasder} />
                 <Route path="/ignite" component={Suignite} />
-                <Route path="/startupignite" render={() => <Redirect to="/ignite" />} />
+                <Route
+                  path="/startupignite"
+                  render={() => <Redirect to="/ignite" />}
+                />
                 <Route path="/register" component={Registration} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
-                <Route path="/e-conference" render={() => <Redirect to="/events/e-conference" />} />
+                <Route
+                  path="/e-conference"
+                  render={() => <Redirect to="/events/e-conference" />}
+                />
                 {/* <Route exact path="/test" component={Startup} /> */}
-                <Route path="/events/onlineevents" render={() => <Redirect to="/events/online%20events" />} />
-                <Route exact path="/events/:id" render={props => <Test {...props} />} />
+                <Route
+                  path="/events/onlineevents"
+                  render={() => <Redirect to="/events/online%20events" />}
+                />
+                <Route
+                  exact
+                  path="/events/:id"
+                  render={props => <Test {...props} />}
+                />
                 {/* <Route path="dashboard/payment/success" render={() => <Redirect to="/dashboard"/>}/> */}
-                <Route path="/dashboard/payment/success" render={props => <Caindex dashboardProps="Sic" {...props} />} />
-                <Route path="/dashboard/payment/fail" render={props => <Caindex dashboardProps="Sic" {...props} />} />
+                <Route
+                  path="/dashboard/payment/success"
+                  render={props => <Caindex dashboardProps="Sic" {...props} />}
+                />
+                <Route
+                  path="/dashboard/payment/fail"
+                  render={props => <Caindex dashboardProps="Sic" {...props} />}
+                />
                 {/* <Route path="dashboard/payment/fail" render={() => <Redirect to="/dashboard"/>}/> */}
 
                 {/* <Route path='dashbard/payment/success/' render{()=><Redirect to='/dashboard'/>}/> */}
