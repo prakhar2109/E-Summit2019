@@ -144,6 +144,9 @@ bottom: 2.962vh;
 }
 #caevents-earnedcoupons-child-parent2{
     display: none;
+    height: 30vh;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 .caevents-earnedcoupons-child-info{
     font-size: 14.2px;
@@ -221,7 +224,6 @@ bottom: 2.962vh;
 
 .caevents-earnedcoupons-child-info{
     font-size: 16px;
-    overflow: scroll;
     height: 20vh;
     overflow-x: hidden;
 }

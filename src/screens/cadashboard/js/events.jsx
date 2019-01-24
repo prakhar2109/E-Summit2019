@@ -118,9 +118,9 @@ export default class Viewprofile extends Component {
                                 </div>
                                 {event.status === "Upcomming" ? <div className="caevents-coming-soon">COMING SOON</div> :
                                     <div>
-                                        <div className="caevents-earnedcoupons-deadline">
+                                        {/* <div className="caevents-earnedcoupons-deadline">
                                             Deadline: {event.deadline}
-                                        </div>
+                                        </div> */}
 
                                         <div className="caevents-earnedcoupons-child-button">
                                             {/* {console.log(event.id,"event_id")} */}
@@ -129,7 +129,7 @@ export default class Viewprofile extends Component {
                                         </div>
                                     </div>}
                             </div>
-                            <div style={{ display: "none" }} id={"caevents-earnedcoupons-child-parent2" + index}>
+                            <div style={{ display: "none",overflow:"scroll",height:"20vh",overflowY:"hidden",overflowX:"hidden" }} id={"caevents-earnedcoupons-child-parent2" + index}>
                                 <div className="caevents-earnedcoupons-child-info">
                                     {event.long_description}
                                 </div>
