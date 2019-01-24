@@ -250,3 +250,10 @@ height: fit-content;
     text-decoration: none !important;
 }
 }
+@media (max-width: 1500px){
+    #leftPane{
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+}
