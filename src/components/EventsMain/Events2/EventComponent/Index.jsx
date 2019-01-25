@@ -86,7 +86,7 @@ class EventComponentIndex extends Component {
                 <div className="ideastorm">
                     <div id="nav" className="header">
                         <span>
-                            {this.state.data.event_data ?
+                            {this.state.data ?
                                 <img alt="IdeaStorm" src={BASE_URL + this.state.data.logo} />
                                 : null}
                         </span>
@@ -105,7 +105,7 @@ class EventComponentIndex extends Component {
                         <span />
                     </div>
                 </div>
-                <MobileNav />
+                <MobileNav logo={this.state.data.logo} />
                 {this.state.data ?
                     <Header data={this.state.data} />
                     : null}

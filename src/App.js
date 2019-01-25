@@ -89,7 +89,7 @@ class App extends Component {
     this.state = {
       auth: localStorage.getItem("user_token"),
     };
-    console.clear();
+    // console.clear();
     console.log(
       "%cWelcome to ESummit IITR!",
       "color: rgb(243,147,36); font-size:30px;"

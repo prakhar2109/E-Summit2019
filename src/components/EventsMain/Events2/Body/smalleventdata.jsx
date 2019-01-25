@@ -4,7 +4,6 @@ import parse from 'html-react-parser'
 
 export default class SmallEventData extends Component {
     render() {
-
         return (
             <React.Fragment>
                 <p className="suignite-topic-heading">
@@ -33,10 +32,26 @@ export default class SmallEventData extends Component {
                                     backgroundImage: `url(${BASE_URL + e.photo})`
                                 }}></div>
                                 <div className="panelists-name">{e.name}</div>
-                                <div className="panelists-company">{e.designation}, {e.company_name}</div>
+                                <div className="panelists-company">{e.designation}, {e.companay_name}</div>
                             </div>
                         )}
                     </div>
+                    : null}
+                {this.props.datat && this.props.data.speaker_2 !== "" ?
+                    this.props.data.speaker_2.map((speaker, index) =>
+                        <div key={index} className="suignite-guestlecture-child-parent" >
+                            {console.log(speaker, "speaker")}
+                            <div className="suignite-guestlecture-child1 back-jaipur-second" style={{
+                                backgroundImage: `url(${BASE_URL + speaker.photo})`
+                            }}></div>
+                            <div className="suignite-guestlecture-child2">
+                                <p>{speaker.name}</p>
+                                <p>{speaker.designation}, {speaker.company_name}</p>
+                                <p>Topic : {speaker.topic}</p>
+                                <p>{speaker.description}</p>
+                            </div>
+                        </div>
+                    )
                     : null}
             </React.Fragment >
         );
