@@ -37,6 +37,7 @@ export default class BodyIndex extends Component {
 
                 </div>
                 <div className="suignite-parent-child2">
+                            {console.log(this.props.data,"tushar")}
                     {this.props.data.sub_events ?
                         <Content event_name={this.props.data.title} active={this.state.activeState} data={this.props.data.sub_events} />
                         : null}
