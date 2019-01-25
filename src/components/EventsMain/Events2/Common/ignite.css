@@ -159,7 +159,7 @@ flex-direction:row;
 
 .suignite-panelists-img-child{
 height:fit-content;
-
+padding: 0px 10px;
 }
 .panelists-name
 {
@@ -329,7 +329,10 @@ font-family: "Proxima-nova-regular";
     margin-top: 1.85vh;
 
 }
-
+.back-jaipur-second{
+    background-position: center;
+    background-size: cover;
+}
 @media (min-width: 1820px) and (max-width: 2560px){
 
 .suignite-head1{
