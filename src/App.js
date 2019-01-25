@@ -118,6 +118,10 @@ class App extends Component {
                   path="/startupignite"
                   render={() => <Redirect to="/ignite" />}
                 />
+                <Route
+                  path="/events/casestudy"
+                  render={() => <Redirect to="/events/case%20Challenge" />}
+                />
                 <Route path="/register" component={Registration} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route path="/login" component={Login} />

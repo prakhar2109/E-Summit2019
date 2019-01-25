@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Richard from "./static/varun.jpg";
+import "./css/landing.scss";
 
 class Testimonials extends Component {
     render() {

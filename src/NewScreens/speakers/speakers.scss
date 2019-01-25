@@ -36,7 +36,7 @@
     }
 
     .text {
-        line-height: 41px;
+        line-height: 441px;
         font-size: 24px;
         letter-spacing: 0.1em;
         padding-top: 45px;
@@ -75,15 +75,15 @@
     }
 
     .name {
-        line-height: 41px;
+        line-height: 30px;
         font-size: 24px;
         letter-spacing: 0.1em;
         text-align: center;
-
+        margin-top: 80px;
         color: #138AD6;
 
         @include mobile {
-            line-height: 35px;
+            line-height: 30px;
             font-size: 20px;
             letter-spacing: 0.1em;
 
@@ -112,9 +112,9 @@
     .speakers_array {
         padding-top: 72px;
         display: grid;
-        grid-template-columns: repeat(5,17%);
+        grid-template-columns: repeat(4,22%);
         grid-column-gap: 3vw;
-        grid-row-gap: calc(5em + 5vh);
+        grid-row-gap: calc(1em + 4vh);
 
         @include mobile {
             grid-template-columns: 90%;
