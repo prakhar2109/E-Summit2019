@@ -252,8 +252,27 @@ height: fit-content;
 }
 @media (max-width: 1500px){
     #leftPane{
+
         overflow: scroll;
         overflow-x: hidden;
     }
+    #leftPane::-webkit-scrollbar {
+        width: 2px;
+      }
+      
+      /* Track */
+      #leftPane::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      /* Handle */
+      #leftPane::-webkit-scrollbar-thumb {
+        background: #F39423; 
+      }
+      
+      /* Handle on hover */
+      #leftPane::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
 
 }

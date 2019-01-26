@@ -98,7 +98,7 @@ export default class Allevents extends Component {
                                         </div>
                                     </div>}
                             </div>
-                            <div style={{ display: "none" ,overflow:"scroll",height:"20vh",overflowY:"hidden",overflowX:"hidden"}} id={"caevents-earnedcoupons-child-parent2" + index}>
+                            <div className="caevents-earnedcoupons-child-parent-parent"  id={"caevents-earnedcoupons-child-parent2" + index}>
                                 <div className="caevents-earnedcoupons-child-info">
                                     {event.long_description}
                                 </div>
