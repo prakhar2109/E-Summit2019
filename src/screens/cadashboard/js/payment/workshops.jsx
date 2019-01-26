@@ -99,7 +99,7 @@ class Workshop extends Component {
       <div className="capaymentwv-workshopmappingelement">
         <div className="capayment-workshops-registrationfee-parent">
           <div className="capaymentwv-workshop-spaceaboutcolon">
-            {workshopName}
+            {workshopName}&nbsp;(Rs {workshopFee})
           </div>
           <div className="capayment-toggleaccomodation-div">
             {!isPayed && (
