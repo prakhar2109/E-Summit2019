@@ -71,7 +71,6 @@ export default class Viewprofile extends Component {
     }
 
     render() {
-
         return (
             <div className="caevents-parent">
                 {this.state.appliedevents && this.state.appliedevents.length > 0 ?
@@ -89,7 +88,11 @@ export default class Viewprofile extends Component {
                     {this.state.appliedevents.map((event, index) =>
 
 
-                        <div key={index} className="caevents-earnedcoupons-child" style={{ backgroundImage: `url(${event.dashboard_image})`, }} >
+                        <div key={index} className="caevents-earnedcoupons-child" style={{ backgroundImage: `url(${event.dashboard_image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                         }} >
                             {console.log(this.state.appliedevents, "helloboys")}
                             <div id={"caevents-earnedcoupons-child-parent1" + index}>
                                 <div className="caevents-earnedcoupons-child-heading">
@@ -129,7 +132,7 @@ export default class Viewprofile extends Component {
                                         </div>
                                     </div>}
                             </div>
-                            <div style={{ display: "none",overflow:"scroll",height:"20vh",overflowY:"hidden",overflowX:"hidden" }} id={"caevents-earnedcoupons-child-parent2" + index}>
+                            <div className="caevents-earnedcoupons-child-parent-parent" id={"caevents-earnedcoupons-child-parent2" + index}>
                                 <div className="caevents-earnedcoupons-child-info">
                                     {event.long_description}
                                 </div>

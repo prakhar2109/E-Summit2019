@@ -6,7 +6,8 @@
     position: absolute;
     top: 0;
     left: 18%;
-    height: 100vh; 
+    height: fit-content; 
+    background-color: #F7F8F9;      
     width: 82%;
 }
 .caevents-earnedcoupons-rowparent1{
@@ -142,6 +143,31 @@ bottom: 2.962vh;
     opacity: 0.58;
     width:100%;
 }
+.caevents-earnedcoupons-child-parent-parent::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .caevents-earnedcoupons-child-parent-parent::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .caevents-earnedcoupons-child-parent-parent::-webkit-scrollbar-thumb {
+    background: #F39423; 
+  }
+  
+  /* Handle on hover */
+  .caevents-earnedcoupons-child-parent-parent::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.caevents-earnedcoupons-child-parent-parent{
+display: none;
+overflow:scroll;
+height:20vh;    
+overflow-x:hidden;
+} 
 #caevents-earnedcoupons-child-parent2{
     display: none;
     height: 30vh;
@@ -225,7 +251,7 @@ bottom: 2.962vh;
 .caevents-earnedcoupons-child-info{
     font-size: 16px;
     height: 20vh;
-    overflow-x: hidden;
+
 }
 .caevents-earnedcoupons-child-description{
     font-size: 16px;
