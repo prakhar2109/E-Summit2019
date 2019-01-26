@@ -53,12 +53,14 @@ class Workshop extends Component {
             noOfWorkshopsNotPayed: res.data.length,
             isWorkshopDiscarded: true,
             actualFee:0
+          },()=>{
+            this.props.letMeknowIfDiscardClicked();
           });
         })
         .catch(response => {
           alert("could not connect to the server");
         });
-      this.props.letMeknowIfDiscardClicked();
+      // this.props.letMeknowIfDiscardClicked();
     } else {
       document.getElementById(
         `capayment-toggleaccomodation-workshops-${this.props.id}`
@@ -78,12 +80,14 @@ class Workshop extends Component {
             noOfWorkshopsNotPayed: res.data.length,
             isWorkshopDiscarded: false,
             actualFee:this.props.workshopFee
+          },()=>{
+            this.props.letMeknowIfDiscardClicked();
           });
         })
         .catch(response => {
           alert("could not connect to the server");
         });
-      this.props.letMeknowIfDiscardClicked();
+      
     }
   };
   render() {
