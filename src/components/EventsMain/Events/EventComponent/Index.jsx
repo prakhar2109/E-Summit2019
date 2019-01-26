@@ -102,7 +102,7 @@ class EventComponentIndex extends Component {
             <span onClick={this.eligiblity}>Eligiblity</span>
             <span onClick={this.erks}>Perks</span>
             <span onClick={this.register}>Apply</span>
-            <span onClick={this.faq_idea}>FAQs</span>
+            {this.state.data.faq && this.state.data.faq.length > 0 && <span onClick={this.faq_idea}>FAQs</span>}
             <span onClick={this.coordinator}>Contact Us</span>
           </span>
           <span />
@@ -121,7 +121,7 @@ class EventComponentIndex extends Component {
             name={this.state.data.name}
           />
         ) : null}
-        {this.state.data.faq ? <FAQ data={this.state.data.faq} /> : null}
+        {this.state.data.faq && this.state.data.faq.length > 0 ? <FAQ data={this.state.data.faq} /> : null}
         {this.state.data.coordinator ? (
           <EventCo data={this.state.data.coordinator} />
         ) : null}
