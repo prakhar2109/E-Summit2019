@@ -6,18 +6,13 @@ export default class ContentIndex extends Component {
         console.log(this.props.data, "again")
         return (
             <React.Fragment>
+                {console.log(this.props.data, "tushar")}
                 {this.props.data && this.props.data.map((body, index) => {
 
-
-
-                    if (body.apply_now_description === "100") {
-                        return null;
-                    }
-
-                    else {
-                        return (
-                            body.sub_event_name === this.props.active ?
-                                <div key={index}>
+                    return (
+                        body.sub_event_name === this.props.active ?
+                            <div key={index}>
+                                {body.apply_now_description !== "100" ?
                                     <div className="suignite-parent-child2-applyparent">
                                         <div className="suignite-parent-child2-applyparent-heading">
                                             {body.apply_now_description}
@@ -25,17 +20,17 @@ export default class ContentIndex extends Component {
                                         <a href={body.sub_event_reg_url} target="_blank">
                                             <button id="suignite-parent-child2-applyparent-button">
                                                 APPLY
-                                    </button>
+                                        </button>
                                         </a>
                                     </div>
+                                    : null}
 
-                                    {this.props.data && this.props.data.map((e, index) =>
-                                        e.sub_event_name === this.props.active && <SmallEvent key={index} data={e.detail} />
-                                    )}
-                                </div>
-                                : null
-                        )
-                    }
+                                {this.props.data && this.props.data.map((e, index) =>
+                                    e.sub_event_name === this.props.active && <SmallEvent key={index} data={e.detail} />
+                                )}
+                            </div>
+                            : null
+                    )
                 })}
             </React.Fragment>
         );
