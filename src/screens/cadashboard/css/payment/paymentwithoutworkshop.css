@@ -440,7 +440,8 @@ padding-bottom:0;
     color: #8A8A8A;
 }
 .capayment-earlybirddiscount{
-    margin-left:2vw;
+    margin-left:1vw;
+    font-size: 14px;
 }
 .capayment-modallastrowheader{
     color: black;

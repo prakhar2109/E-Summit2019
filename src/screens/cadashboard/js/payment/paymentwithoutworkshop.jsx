@@ -36,6 +36,7 @@ export default class Payment extends Component {
       //workshops
       workshopsNotPayed: [],
       noOfWorkshopsNotPayed: 0,
+      workshopsAppNotPayed:[],
       workshopsPayed: [],
       noOfWorkshopsPayed: 0,
       isIIT: false,
@@ -73,6 +74,7 @@ export default class Payment extends Component {
             accomodationFee: res.data.payment.payment_details.payble_acco_fees,
             totalFee: res.data.payment.payment_details.total_payble,
             isIIT: res.data.user_type,
+            workshopsAppNotPayed:res.data.applications
           });
         } else if (res.data.payment.payment_status === "SUC") {
           this.setState({
@@ -128,7 +130,7 @@ export default class Payment extends Component {
           },
         })
         .then(res => {
-          console.log(res.data.user_type, "sfs");
+          console.log(res.data, "sfs");
 
           if (res.data.payment.payment_status === "PEN") {
             this.setState({
@@ -140,6 +142,8 @@ export default class Payment extends Component {
                 res.data.payment.payment_details.payble_acco_fees,
               totalFee: res.data.payment.payment_details.total_payble,
               isIIT: res.data.user_type,
+              workshopsAppNotPayed:res.data.applications
+
             });
           } else if (res.data.payment.payment_status === "SUC") {
             this.setState({
@@ -652,7 +656,9 @@ export default class Payment extends Component {
                 noOfWorkshops={noOfWorkshopsNotPayed}
                 isPayed={false}
                 letMeknowIfDiscardClicked={this.letMeknowIfDiscardClicked}
+                workshopsAppNotPayed={this.state.workshopsAppNotPayed}
               />
+              
             </div>
             <div className="capayment-discountcoupon">
               <div className="capayment-spaceaboutcolon">Convenience Fee </div>{" "}

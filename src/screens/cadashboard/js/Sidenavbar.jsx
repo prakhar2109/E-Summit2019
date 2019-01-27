@@ -40,7 +40,7 @@ class caLeaderboard extends Component {
         })
         .then(res => {
           this.setState({ score: res.data.score, name: res.data.name, data: res.data });
-         
+
           localStorage.setItem("profile", res.data.user_type);
           localStorage.setItem("invite", res.data.invite_url);
 
@@ -54,7 +54,7 @@ class caLeaderboard extends Component {
 
 
   render() {
-    let { name, score , data } = this.state;
+    let { name, score, data } = this.state;
     let profile = this.state.data.user_type;
     let profile_display;
     let scorePercentage = (score / 10000) * 100 + "";
@@ -63,34 +63,34 @@ class caLeaderboard extends Component {
 
     if (profile === "AMB") {
       profile_display = "CAMPUS AMBASSADOR";
-      }
+    }
 
-    else  if (profile === "IIT") {
+    else if (profile === "IIT") {
       profile_display = "IITR Student ";
-      }
+    }
 
     else if (profile === "NONIIT") {
       profile_display = "Delegate";
-      }
+    }
 
-      else if (profile === "PROF") {
-        profile_display = "Professor";
-      }
+    else if (profile === "PROF") {
+      profile_display = "Professor";
+    }
 
 
-    else   if (profile === "CA") {
+    else if (profile === "CA") {
       profile_display = "CAMPUS AMBASSADOR";
-      }
+    }
 
 
-    else  if (profile === "PROFE") {
+    else if (profile === "PROFE") {
       profile_display = "Professional";
-      }
+    }
 
-      else{
-        profile_display ="";
+    else {
+      profile_display = "";
 
-      }
+    }
     if (is_ca) {
 
       options = (
@@ -138,7 +138,7 @@ class caLeaderboard extends Component {
     }
     return (
       <div>
-        <Header /> 
+        <Header />
         <div id="container">
           <div id="leftPane">
 
@@ -148,9 +148,9 @@ class caLeaderboard extends Component {
 
             <hr id="line1" />
 
-            <Link to="/dashboard/Viewprofile"  onClick={() => {
-                    this.setActive("Viewprofile");
-                  }} className="link-viewprofile">
+            <Link to="/dashboard/Viewprofile" onClick={() => {
+              this.setActive("Viewprofile");
+            }} className="link-viewprofile">
               <div id="dropShape">{name[0]}</div>
               <p id="name">{name}</p>
             </Link>
@@ -160,8 +160,8 @@ class caLeaderboard extends Component {
                 <span id="sidebar-dashboard-esummitId">E-Summit’19 ID</span>
                 <span id="sidebar-dashboard-esummitId-value">{data.esummit_id}</span>
               </div>
-              </div>
-              {/*
+            </div>
+            {/*
               <div className="sidebar-dashboard-esummit">
                 <span id="sidebar-dashboard-esummitId">
                   Contingent No (Leader)
@@ -174,7 +174,7 @@ class caLeaderboard extends Component {
               <span id="scoreWritten">SCORE</span>
               <span id="scoreValue">{score}/10000</span>
             </div>}
-            {is_ca  && <div className="progress">
+            {is_ca && <div className="progress">
               <div
                 className="progress-bar bg-custom"
                 style={{
@@ -186,7 +186,7 @@ class caLeaderboard extends Component {
             <div id="optionsToggle">
 
               {options}
-            
+
               <span>
                 <Link
                   to="/dashboard/payment"
@@ -254,7 +254,7 @@ class caLeaderboard extends Component {
 
 
               {/*<span id="leaderboardButton">LeaderBoard</span>*/}
-              {is_ca  && <div id="leaderboardButton">
+              {is_ca && <div id="leaderboardButton">
                 <a target="_blank" href="https://drive.google.com/a/iitr.ac.in/file/d/10xdhHFS-OVZVYh6fIJRm-XSMuPga4TqX/view?usp=sharing">CA RULEBOOK</a>
               </div>}
             </div>

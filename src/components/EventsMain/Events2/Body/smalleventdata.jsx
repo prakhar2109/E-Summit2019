@@ -37,7 +37,7 @@ export default class SmallEventData extends Component {
                         )}
                     </div>
                     : null}
-                {this.props.datat && this.props.data.speaker_2 !== "" ?
+                {this.props.data && this.props.data.speaker_2 !== "" ?
                     this.props.data.speaker_2.map((speaker, index) =>
                         <div key={index} className="suignite-guestlecture-child-parent" >
                             {console.log(speaker, "speaker")}
