@@ -54,21 +54,23 @@ class Events extends Component {
                 </div>
               </a>
             </div>
-
-            <div className="leadership">
-              <span>
-                <p className="title">LEADERSHIP SERIES</p>
-                <p className="tagline" />
-              </span>
-              <span>
-                <center>
-                  {/* <i>
-
-                    <img src={ViewMore} alt="view more" />
-                  </i> */}
-                  <p className="viewmore">COMING SOON</p>
-                </center>
-              </span>
+            <div>
+              <a href="/events/leadership%20Series" target="_blank">
+                <div className="leadership">
+                  <span>
+                    <p className="title">LEADERSHIP SERIES</p>
+                    <p className="tagline" />
+                  </span>
+                  <span>
+                    <center>
+                      <i>
+                        <img src={ViewMore} alt="view more" />
+                      </i>
+                      <p className="viewmore">VIEW MORE</p>
+                    </center>
+                  </span>
+                </div>
+              </a>
             </div>
             <div>
               <a href="/events/workshops" target="_blank">
@@ -214,7 +216,7 @@ class Events extends Component {
                     </span>
                   </div>
                 </Link>
-                
+
                 {/* <div className="events_production" id="events_production2">
                   <span>
                     <p className="t1">COMPETITIONS</p>
