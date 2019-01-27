@@ -46,7 +46,7 @@ export default class SmallEventData extends Component {
                             }}></div>
                             <div className="suignite-guestlecture-child2">
                                 <p>{speaker.name}</p>
-                                <p>{speaker.designation}, {speaker.company_name}</p>
+                                <p>{speaker.designation}, {speaker.companay_name}</p>
                                 <p>Topic : {speaker.topic}</p>
                                 <p>{speaker.description}</p>
                             </div>
