@@ -25,7 +25,7 @@ class GetInTouch extends Component {
           <div>
             <p className="title">Phone no.</p>
             <p className="value">
-+ 91 8888 888 88
++ 91 73022 00596
             </p>
 
             <p className="title">E-Mail ID</p>

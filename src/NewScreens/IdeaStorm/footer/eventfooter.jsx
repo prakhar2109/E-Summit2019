@@ -115,7 +115,7 @@ export default class Lfooter extends Component {
                             </div>
 
                             <div className="landing-footer-details">
-                                +91 9992929203
+                                +91 9992929203, +91 7302200596
                             </div>
 
                             <div className="landing-footer-heading">
