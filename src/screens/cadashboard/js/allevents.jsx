@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "../css/events.css";
 import { BASE_URL } from "../../../utils/urls"
-import Loader from '../..//loader/loader'
+import Loader from '../../loader/loader'
 import axios from "axios";
 export default class Allevents extends Component {
     state = {

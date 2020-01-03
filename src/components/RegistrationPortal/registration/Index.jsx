@@ -447,7 +447,7 @@ class RegisterIndex extends React.Component {
             <div className="esummit-common-parent" >
                 <CommonIndex />
                 <div className="esummit-register-parent">
-                    <Stepper classes={{ root: classes.stepper }} activeStep={activeStep} alternativeLabel>
+                    {/* <Stepper classes={{ root: classes.stepper }} activeStep={activeStep} alternativeLabel>
                         {steps.map(label => {
                             return (
                                 <Step classes={{
@@ -470,12 +470,12 @@ class RegisterIndex extends React.Component {
                                 </Step>
                             );
                         })}
-                    </Stepper>
+                    </Stepper> */}
                     <div className="esummit-register-form-parent">
 
                         <div className="esummit-register-form-heading">
                             <div className="esummit-regsiter-form-heading-child">
-                                {activeStep === 0 ? "ACCOUNT SETUP" :
+                                {activeStep === 0 ? "ACCOUNT SETUPSS" :
                                     activeStep === 1 ? "PROFILE TYPE" :
                                         activeStep === 2 ? "PERSONAL DETAILS" :
                                             // activeStep === 3 ? "EMAIL VERIFICATION" :

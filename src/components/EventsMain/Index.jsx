@@ -10,7 +10,7 @@ const Events = Loadable({
     loading: () => <Loader />,
 });
 
-const Events2 = Loadable({
+const Events2 = Loadable({ 
     loader: () => import("./Events2/EventComponent/Index"),
     loading: () => <Loader />,
 });
@@ -28,7 +28,9 @@ export default class EventsMainIndex extends Component {
         //     .getElementById("loader")
         //     .style
         //     .display = "grid";
+        console.log(this.props,"maaaaaaaaaaaxxxxxxxxxxxxxxxx")
         let event_name = this.props.match.params.id.charAt(0).toUpperCase() + this.props.match.params.id.slice(1)
+        console.log(event_name,"maaaaaaaaaaaxxxxxxxxxxxxxxxx")
         let data = {
             event_name: event_name
         }

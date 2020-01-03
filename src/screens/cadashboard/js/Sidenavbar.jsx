@@ -46,7 +46,7 @@ class caLeaderboard extends Component {
 
         })
         .catch(response => {
-          window.location.href = "/login";
+          // window.location.href = "/login";
         });
     }
   };

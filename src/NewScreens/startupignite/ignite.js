@@ -156,41 +156,7 @@ export default class IgniteIndex extends Component {
 
 
 						}
-						{/* <div className="suignite-parent-child2-panel">
-							<div>
-								<img className="suignite-vector" src={Vector} alt="" />
-								<div className="suignite-head1">PANEL DISCUSSION</div>
-							</div>
-
-							<p className="suignite-topic-heading">TOPIC : GROWTH RATE IN INDIA</p>
-							<p className="suignite-topic-para">A brisk description about what does the topic consist of and its
-						benefits to our country</p>
-							<p className="suignite-topic-heading">PANELISTS</p>
-							<p className="suignite-topic-para">The panelists for this discussion</p>
-
-							<div className="suignite-panelists-img-parent">
-								<div className="suignite-panelists-img-child">
-									<div className="suignite-panelists-img1"></div>
-									<div className="panelists-name">Prakhar agarwal</div>
-									<div className="panelists-company">CEO, Company</div>
-								</div>
-								<div className="suignite-panelists-img-child">
-									<div className="suignite-panelists-img1"></div>
-									<div className="panelists-name">Prakhar agarwal</div>
-									<div className="panelists-company">CEO, Company</div>
-								</div>
-								<div className="suignite-panelists-img-child">
-									<div className="suignite-panelists-img1"></div>
-									<div className="panelists-name">Prakhar agarwal</div>
-									<div className="panelists-company">CEO, Company</div>
-								</div>
-								<div className="suignite-panelists-img-child">
-									<div className="suignite-panelists-img1"></div>
-									<div className="panelists-name">Prakhar agarwal</div>
-									<div className="panelists-company">CEO, Company</div>
-								</div>
-							</div>
-						</div> */}
+					
 						{this.state.activeState === "NEWDELHI" ?
 							<div className="suignite-guestlecture-parent">
 								<div>
@@ -207,16 +173,7 @@ export default class IgniteIndex extends Component {
 											Aspiration is required to direct their sheer talent and hardwork.</p>
 									</div>
 								</div>
-								{/* <div className="suignite-guestlecture-child-parent">
-									<div className="suignite-guestlecture-child1"></div>
-									<div className="suignite-guestlecture-child2">
-										<p>SAURABH KOCHHAR</p>
-										<p>CEO, Company Name</p>
-										<p>Topic : Make in India</p>
-										<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
-									</div>
-								</div> */}
-
+							
 							</div>
 							:
 							this.state.activeState === "DEHRADUN" ?
@@ -252,24 +209,7 @@ export default class IgniteIndex extends Component {
 											<p>Entrepreneurship is a unique and challenging human endeavour.So here we are to ensure well being of all you entrepreneurs.</p>
 										</div>
 									</div>
-									{/* <div className="suignite-guestlecture-child-parent">
-										<div className="suignite-guestlecture-child1 back-dehradun-four"></div>
-										<div className="suignite-guestlecture-child2">
-											<p>SAURABH KOCHHAR</p>
-											<p>CEO, Company Name</p>
-											<p>Topic : Make in India</p>
-											<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
-										</div>
-									</div>
-									<div className="suignite-guestlecture-child-parent">
-										<div className="suignite-guestlecture-child1 back-dehradun-five"></div>
-										<div className="suignite-guestlecture-child2">
-											<p>SAURABH KOCHHAR</p>
-											<p>CEO, Company Name</p>
-											<p>Topic : Make in India</p>
-											<p>A brisk description about what does the topic consist of and its benefits to our country and what will saurabh kochhar do to make India great. </p>
-										</div>
-									</div> */}
+									
 
 								</div> :
 								this.state.activeState === "JAIPUR" ?

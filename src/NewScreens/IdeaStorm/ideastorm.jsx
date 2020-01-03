@@ -18,7 +18,7 @@ import Media from "./static/5.png";
 import "../../screens/ignite/css/scrollanimation.css"
 import FAQBoard from './../landing/faqs'
 import "../landing/css/landing.scss";
-import "../../screens/ignite/css/ignite.scss";
+// import "../../screens/ignite/css/ignite.scss";
 import "../../screens/ignite/css/scrollanimation.css";
 
 export class IdeaStorm extends Component {

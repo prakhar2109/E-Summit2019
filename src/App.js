@@ -128,7 +128,7 @@ class App extends Component {
                 <Route path="/productathon" component={Productathon} />
                 <Route path="/dashboard/" component={Caindex} />
                 <Route
-                  path="/e-conference"
+                  path="/e-conference" 
                   render={() => <Redirect to="/events/e-conference" />}
                 />
                 {/* <Route exact path="/test" component={Startup} /> */}

@@ -11,7 +11,7 @@ import Eventfooter from "../Common/footer/eventfooter"
 // import Nav from "../Common/nav/nav"
 import "../../Events/Common/ideastorm.scss"
 import Body from "../Body/Index"
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"; 
 import jump from "jump.js"
 import Faq from "../FAQ/Index"
 
@@ -24,6 +24,7 @@ class EventComponentIndex extends Component {
         }
     }
     componentDidMount() {
+        console.log("HELLO")
         this.setState({
             data: this.props.data,
             faq: this.props.faq

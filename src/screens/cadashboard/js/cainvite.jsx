@@ -54,7 +54,7 @@ export default class Cainvite extends Component {
     
             })
             .catch(response => {
-              window.location.href = "/login";
+            //   window.location.href = "/login";
             });
         }
       };

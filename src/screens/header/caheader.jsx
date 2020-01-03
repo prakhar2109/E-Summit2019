@@ -33,7 +33,7 @@ export default class ComingSoon extends Component {
         this.setState({ score: res.data.score, name: res.data.name, data: res.data });
       })
     .catch(response => {
-      window.location.href = "/login";
+      // window.location.href = "/login";
     });
   };
 
